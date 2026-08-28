@@ -1,0 +1,16 @@
+---
+interface BreadcrumbItem {
+  label: string;
+  href?: string;
+}
+
+interface Props {
+  items: BreadcrumbItem[];
+}
+
+const { items } = Astro.props;
+// Visual breadcrumb disabled on 2026-07-01 per user request.
+// This component is kept as a no-op stub so existing page imports continue to work without edits.
+// The breadcrumb used to render a <nav class="breadcrumb"> visual bar above page content.
+// To re-enable, restore the original markup that was archived in Breadcrumb_backup_20260525_1635.astro.
+---

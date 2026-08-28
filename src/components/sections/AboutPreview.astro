@@ -1,0 +1,299 @@
+---
+const advantages = [
+  { icon: '🏭', label: '15+ Years Experience', desc: 'Since 2008 in auto parts manufacturing' },
+  { icon: '🔧', label: 'OEM & ODM', desc: 'Custom design and manufacturing capability' },
+  { icon: '✅', label: 'ISO 9001 Certified', desc: 'ISO 9001 quality management system' },
+  { icon: '🌍', label: 'Global Export', desc: 'Trusted by customers in 50+ countries' },
+];
+---
+
+<section class="about-preview">
+  <div class="container">
+    <div class="about-grid">
+      <!-- Text Content -->
+      <div class="about-text">
+        <span class="section-label">About CareLong</span>
+        <h2 class="section-title">
+          Precision Manufacturing for<br />Automotive Excellence
+        </h2>
+        <p class="about-desc">
+          Xiamen Carelong Co., Ltd. is a professional manufacturer specializing in 
+          automotive fasteners and components. With over 15 years of industry experience, 
+          we serve clients worldwide with high-quality hub bolts, king pin kits, 
+          cold heading parts, and hot forging components.
+        </p>
+        <p class="about-desc">
+          Our state-of-the-art facilities and strict quality control systems ensure 
+          every product meets international standards. We are committed to delivering 
+          reliable solutions for the commercial vehicle and automotive industries.
+        </p>
+
+        <!-- Advantages List -->
+        <ul class="advantages-list">
+          {advantages.map((adv) => (
+            <li class="advantage-item">
+              <span class="adv-icon">{adv.icon}</span>
+              <div class="adv-content">
+                <strong class="adv-label">{adv.label}</strong>
+                <span class="adv-desc">{adv.desc}</span>
+              </div>
+            </li>
+          ))}
+        </ul>
+
+        <a href="/about/" class="learn-more-btn">
+          Learn More About Us
+          <span class="btn-arrow">→</span>
+        </a>
+      </div>
+
+      <!-- Image -->
+      <div class="about-image">
+        <div class="image-wrapper">
+          <div class="image-placeholder">
+            <span class="placeholder-icon">🏭</span>
+            <span class="placeholder-text">Carelong Factory</span>
+          </div>
+          <div class="image-badge">
+            <span class="badge-number">15+</span>
+            <span class="badge-label">Years of Excellence</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .about-preview {
+    padding: 5rem 0;
+    background-color: #f8f9fb;
+    font-family: 'Inter', 'Noto Sans SC', system-ui, sans-serif;
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    width: 100%;
+  }
+
+  /* Grid Layout */
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+  }
+
+  /* Text Content */
+  .section-label {
+    display: inline-block;
+    font-size: 0.8125rem;
+    font-weight: 600;
+    color: #e85a1f;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 0.75rem;
+  }
+
+  .section-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #1a2332;
+    line-height: 1.25;
+    margin-bottom: 1.5rem;
+    letter-spacing: -0.02em;
+  }
+
+  .about-desc {
+    font-size: 1rem;
+    color: #6b7280;
+    line-height: 1.7;
+    margin-bottom: 1.25rem;
+  }
+
+  /* Advantages List */
+  .advantages-list {
+    list-style: none;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.25rem;
+    margin: 2rem 0;
+  }
+
+  .advantage-item {
+    display: flex;
+    gap: 0.875rem;
+    align-items: flex-start;
+  }
+
+  .adv-icon {
+    font-size: 1.75rem;
+    flex-shrink: 0;
+  }
+
+  .adv-content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  .adv-label {
+    font-size: 0.9375rem;
+    font-weight: 600;
+    color: #1a2332;
+  }
+
+  .adv-desc {
+    font-size: 0.8125rem;
+    color: #9ca3af;
+  }
+
+  /* Learn More Button */
+  .learn-more-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.625rem;
+    padding: 0.875rem 1.75rem;
+    font-size: 0.9375rem;
+    font-weight: 600;
+    color: #ffffff;
+    background-color: #e85a1f;
+    border-radius: 4px;
+    transition: all 0.25s ease;
+  }
+
+  .learn-more-btn:hover {
+    background-color: #d44f1a;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(232,90,31,0.3);
+  }
+
+  .btn-arrow {
+    transition: transform 0.2s ease;
+  }
+
+  .learn-more-btn:hover .btn-arrow {
+    transform: translateX(4px);
+  }
+
+  /* Image */
+  .image-wrapper {
+    position: relative;
+  }
+
+  .image-placeholder {
+    aspect-ratio: 4/3;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    background: linear-gradient(135deg, #1a2332 0%, #243044 100%);
+    border-radius: 12px;
+    color: rgba(255,255,255,0.6);
+  }
+
+  .placeholder-icon {
+    font-size: 5rem;
+    opacity: 0.4;
+  }
+
+  .placeholder-text {
+    font-size: 1rem;
+    font-weight: 500;
+    opacity: 0.5;
+  }
+
+  .image-badge {
+    position: absolute;
+    bottom: -1.25rem;
+    right: -1.25rem;
+    width: 120px;
+    height: 120px;
+    background-color: #e85a1f;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    box-shadow: 0 8px 30px rgba(232,90,31,0.4);
+  }
+
+  .badge-number {
+    font-size: 2rem;
+    font-weight: 800;
+    line-height: 1;
+  }
+
+  .badge-label {
+    font-size: 0.6875rem;
+    font-weight: 600;
+    text-align: center;
+    line-height: 1.3;
+    padding: 0 0.5rem;
+  }
+
+  /* Responsive */
+  @media (max-width: 900px) {
+    .about-grid {
+      grid-template-columns: 1fr;
+      gap: 3rem;
+    }
+
+    .about-preview {
+      padding: 4rem 0;
+    }
+
+    .section-title {
+      font-size: 1.75rem;
+    }
+
+    .advantages-list {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .about-preview {
+      padding: 3rem 0;
+    }
+
+    .advantages-list {
+      grid-template-columns: 1fr;
+      gap: 1rem;
+    }
+
+    .about-text {
+      text-align: center;
+    }
+
+    .section-label,
+    .section-title {
+      text-align: center;
+    }
+
+    .advantage-item {
+      justify-content: center;
+      text-align: left;
+    }
+
+    .learn-more-btn {
+      display: flex;
+      margin: 0 auto;
+    }
+
+    .image-badge {
+      width: 100px;
+      height: 100px;
+      right: -1rem;
+      bottom: -1rem;
+    }
+
+    .badge-number {
+      font-size: 1.75rem;
+    }
+  }
+</style>

@@ -1,4 +1,4 @@
-﻿export const siteConfig = {
+export const siteConfig = {
   name: 'Xiamen Carelong Co., Ltd.',
   nameCn: '厦门凯龙汽车零部件有限公司',
   domain: 'carelong.com.cn',

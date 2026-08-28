@@ -1,0 +1,547 @@
+﻿---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import type { Lang } from '../../data/i18n/navigation';
+
+interface Props { lang: Lang; }
+const { lang } = Astro.props;
+const isEs = lang === 'es';
+const t = (en: string, es: string) => isEs ? es : en;
+---
+<BaseLayout
+  lang={lang}
+  title={isEs ? 'Nuestras Capacidades de Fabricación | Xiamen Carelong' : 'Our Manufacturing Capabilities | Xiamen Carelong'}
+  description={isEs ? 'Equipos y procesos de fabricación de vanguardia.' : 'State-of-the-art manufacturing equipment and processes.'}
+>
+  <!-- Page Header -->
+  <header class="page-header">
+    <div class="container">
+      <h1>{isEs ? 'Capacidades de Fabricación' : 'Manufacturing Capabilities'}</h1>
+      <p>{isEs ? 'Equipos avanzados, estándares rigurosos' : 'Advanced equipment, rigorous standards'}</p>
+    </div>
+  </header>
+
+  <!-- Detailed Capability 1: Cold Heading -->
+  <section class="section">
+    <div class="container">
+      <div class="cap-detail">
+        <div class="cap-text">
+          <div class="cap-tag">{t('01 — Cold Heading', '01 — Embutición en Frío')}</div>
+          <h2>{isEs ? 'Embutición en Frío (Cold Forming)' : 'Cold Heading (Cold Forming)'}</h2>
+          <p>{t(
+            'Our cold heading facility is the heart of our production. With multi-stage cold punchers and high-speed formers, we produce precision fasteners at high speed with minimal material waste. Cold forming strengthens the metal through work hardening, resulting in parts with superior mechanical properties and fatigue resistance.',
+            'Nuestra instalación de embutición en frío es el corazón de nuestra producción. Con punzonadoras multifase y formadoras de alta velocidad, producimos sujetadores de precisión a alta velocidad con mínimo desperdicio de material. El formado en frío fortalece el metal mediante el endurecimiento por trabajo, resultando en piezas con propiedades mecánicas superiores y resistencia a la fatiga.'
+          )}</p>
+          <div class="cap-stats">
+            <div class="cap-stat">
+              <span class="cap-stat-num">20+</span>
+              <span class="cap-stat-label">{t('Cold Headers', 'Punzonadoras en Frío')}</span>
+            </div>
+            <div class="cap-stat">
+              <span class="cap-stat-num">0.8–28mm</span>
+              <span class="cap-stat-label">{t('Wire Diameter', 'Diámetro de Alambre')}</span>
+            </div>
+            <div class="cap-stat">
+              <span class="cap-stat-num">4–220mm</span>
+              <span class="cap-stat-label">{t('Length Range', 'Rango de Longitud')}</span>
+            </div>
+          </div>
+        </div>
+        <div class="cap-visual">
+          <img src="/images/capabilities/capability-1.webp" alt={isEs ? 'Máquina de embutición en frío' : 'Cold Heading Machine'} />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Detailed Capability 2: Hot Forging -->
+  <section class="section section-alt">
+    <div class="container">
+      <div class="cap-detail cap-detail-reverse">
+        <div class="cap-text">
+          <div class="cap-tag">{t('02 — Hot Forging', '02 — Forjado en Caliente')}</div>
+          <h2>{isEs ? 'Forjado en Caliente' : 'Hot Forging'}</h2>
+          <p>{t(
+            'For larger or more complex components that exceed cold heading capacity, our hot forging line delivers parts with excellent grain flow and mechanical properties. Our intermediate-frequency heating forging assembly line provides precise temperature control, ensuring consistent quality across production runs.',
+            'Para componentes más grandes o complejos que exceden la capacidad de embutición en frío, nuestra línea de forjado en caliente entrega piezas con excelente flujo de grano y propiedades mecánicas. Nuestra línea de forjado con calentamiento de frecuencia intermedia proporciona control preciso de temperatura, asegurando calidad consistente en cada corrida de producción.'
+          )}</p>
+          <div class="cap-stats">
+            <div class="cap-stat">
+              <span class="cap-stat-num">30+</span>
+              <span class="cap-stat-label">{t('Forging Presses', 'Prensas de Forjado')}</span>
+            </div>
+            <div class="cap-stat">
+              <span class="cap-stat-num">M12–M80</span>
+              <span class="cap-stat-label">{t('Dimension Range', 'Rango Dimensional')}</span>
+            </div>
+            <div class="cap-stat">
+              <span class="cap-stat-num">20–800mm</span>
+              <span class="cap-stat-label">{t('Length Range', 'Rango de Longitud')}</span>
+            </div>
+          </div>
+        </div>
+        <div class="cap-visual">
+          <img src="/images/capabilities/capability-2.webp" alt={isEs ? 'Prensa de forjado en caliente' : 'Hot Forging Press'} />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Detailed Capability 3: CNC Machining -->
+  <section class="section">
+    <div class="container">
+      <div class="cap-detail">
+        <div class="cap-text">
+          <div class="cap-tag">{t('03 — CNC Machining', '03 — Mecanizado CNC')}</div>
+          <h2>{isEs ? 'Mecanizado CNC' : 'CNC Machining'}</h2>
+          <p>{t(
+            'Our CNC machining center handles secondary operations, custom parts, and precision-machined components that require tight tolerances beyond the capability of cold forming. From multi-axis CNC lathes to machining centers, we have the equipment and programming expertise to deliver complex geometries with micron-level precision.',
+            'Nuestro centro de mecanizado CNC maneja operaciones secundarias, piezas personalizadas y componentes mecanizados de precisión que requieren tolerancias estrictas más allá de la capacidad de embutición en frío. Desde tornos CNC multieje hasta centros de mecanizado, contamos con el equipo y la experiencia en programación para entregar geometrías complejas con precisión de nivel de micras.'
+          )}</p>
+          <div class="cap-stats">
+            <div class="cap-stat">
+              <span class="cap-stat-num">80+</span>
+              <span class="cap-stat-label">{t('CNC Machines', 'Máquinas CNC')}</span>
+            </div>
+            <div class="cap-stat">
+              <span class="cap-stat-num">±0.01mm</span>
+              <span class="cap-stat-label">{t('Tolerance', 'Tolerancia')}</span>
+            </div>
+            <div class="cap-stat">
+              <span class="cap-stat-num">1M+</span>
+              <span class="cap-stat-label">{t('Parts / Month', 'Piezas / Mes')}</span>
+            </div>
+          </div>
+        </div>
+        <div class="cap-visual">
+          <img src="/images/capabilities/capability-3.webp" alt={isEs ? 'Centro de mecanizado CNC' : 'CNC Machining Center'} />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Detailed Capability 4: Stamping -->
+  <section class="section section-alt">
+    <div class="container">
+      <div class="cap-detail cap-detail-reverse">
+        <div class="cap-text">
+          <div class="cap-tag">{t('04 — Stamping', '04 — Estampado')}</div>
+          <h2>{isEs ? 'Estampado de Metal' : 'Metal Stamping'}</h2>
+          <p>{t(
+            'Our metal stamping department produces precision stamped parts and components using high-speed mechanical presses. From simple blanking and piercing to complex progressive die operations, we deliver consistent, high-quality stamped parts for the automotive, agricultural, and industrial equipment industries.',
+            'Nuestro departamento de estampado de metal produce piezas y componentes estampados de precisión utilizando prensas mecánicas de alta velocidad. Desde punzonado simple hasta operaciones complejas con matrices progresivas, entregamos piezas estampadas consistentes y de alta calidad para las industrias automotriz, agrícola y de equipos industriales.'
+          )}</p>
+          <div class="cap-stats">
+            <div class="cap-stat">
+              <span class="cap-stat-num">25+</span>
+              <span class="cap-stat-label">{t('Stamping Presses', 'Prensas de Estampado')}</span>
+            </div>
+            <div class="cap-stat">
+              <span class="cap-stat-num">25–600</span>
+              <span class="cap-stat-label">{t('Ton Range', 'Rango de Tonelaje')}</span>
+            </div>
+            <div class="cap-stat">
+              <span class="cap-stat-num">10–600mm</span>
+              <span class="cap-stat-label">{t('Stroke Range', 'Rango de Carrera')}</span>
+            </div>
+          </div>
+        </div>
+        <div class="cap-visual">
+          <img src="/images/capabilities/capability-stamping.webp" alt={isEs ? 'Máquina de estampado de metal' : 'Metal Stamping Press'} />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Detailed Capability 5: Quality Control -->
+  <section class="section">
+    <div class="container">
+      <div class="cap-detail">
+        <div class="cap-text">
+          <div class="cap-tag">{t('05 — Quality Control', '05 — Control de Calidad')}</div>
+          <h2>{isEs ? 'Inspección y Pruebas de Calidad' : 'Quality Inspection & Testing'}</h2>
+          <p>{t(
+            'Quality is not a department — it\'s embedded in every process. Our quality control team performs multi-stage inspections throughout production, from incoming raw materials to final packaging. Every batch ships with full inspection reports, material certificates, and traceability documentation.',
+            'La calidad no es un departamento — está integrada en cada proceso. Nuestro equipo de control de calidad realiza inspecciones multifase durante toda la producción, desde la recepción de materias primas hasta el empaquetado final. Cada lote se envía con informes de inspección completos, certificados de material y documentación de trazabilidad.'
+          )}</p>
+          <div class="cap-stats">
+            <div class="cap-stat">
+              <span class="cap-stat-num">100%</span>
+              <span class="cap-stat-label">{t('Inspection Rate', 'Tasa de Inspección')}</span>
+            </div>
+            <div class="cap-stat">
+              <span class="cap-stat-num">ISO 9001</span>
+              <span class="cap-stat-label">{t('Certified', 'Certificado')}</span>
+            </div>
+            <div class="cap-stat">
+              <span class="cap-stat-num">3σ</span>
+              <span class="cap-stat-label">{t('Process Control', 'Control de Proceso')}</span>
+            </div>
+          </div>
+        </div>
+        <div class="cap-visual">
+          <img src="/images/capabilities/capability-4.webp" alt={isEs ? 'Laboratorio de inspección de calidad' : 'Quality Inspection Lab'} />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Equipment Table -->
+  <section class="section">
+    <div class="container">
+      <header class="section-header">
+        <p class="eyebrow">{isEs ? 'Equipamiento' : 'Equipment'}</p>
+        <h2>{isEs ? 'Nuestros Equipos de Producción' : 'Our Production Equipment'}</h2>
+      </header>
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>{isEs ? 'Categoría' : 'Category'}</th>
+              <th>{isEs ? 'Tipo de Equipo' : 'Equipment Type'}</th>
+              <th>{isEs ? 'Cantidad' : 'Quantity'}</th>
+              <th>{isEs ? 'Capacidad / Rango' : 'Capacity / Range'}</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td rowspan="3"><strong>{t('Cold Heading', 'Embutición en Frío')}</strong></td>
+              <td>{t('Multi-station Cold Headers', 'Punzonadoras Multifase en Frío')}</td>
+              <td>15 {t('units', 'unidades')}</td>
+              <td>3–16mm {t('wire diameter', 'diámetro de alambre')}</td>
+            </tr>
+            <tr>
+              <td>{t('High-speed Cold Headers', 'Punzonadoras de Alta Velocidad en Frío')}</td>
+              <td>10 {t('units', 'unidades')}</td>
+              <td>2–8mm {t('wire diameter', 'diámetro de alambre')}</td>
+            </tr>
+            <tr>
+              <td>{t('Upsetters / Bolt Formers', 'Upsetters / Formadores de Pernos')}</td>
+              <td>8 {t('units', 'unidades')}</td>
+              <td>Up to 32mm {t('wire diameter', 'diámetro de alambre')}</td>
+            </tr>
+            <tr>
+              <td rowspan="2"><strong>{t('Hot Forging', 'Forjado en Caliente')}</strong></td>
+              <td>{t('Mechanical Presses', 'Prensas Mecánicas')}</td>
+              <td>33 {t('units', 'unidades')}</td>
+              <td>160–2500 {t('Ton', 'Ton')}</td>
+            </tr>
+            <tr>
+              <td>{t('Electric Induction Forging Furnaces', 'Hornos de Forjado por Inducción Eléctrica')}</td>
+              <td>10 {t('units', 'unidades')}</td>
+              <td>{t('Temperature:', 'Temperatura:')} 900–1250°C</td>
+            </tr>
+            <tr>
+              <td rowspan="2"><strong>{t('CNC Machining', 'Mecanizado CNC')}</strong></td>
+              <td>{t('CNC Lathes', 'Tornos CNC')}</td>
+              <td>50+ {t('units', 'unidades')}</td>
+              <td>±0.01mm {t('tolerance', 'tolerancia')}</td>
+            </tr>
+            <tr>
+              <td>{t('CNC Machining Centers', 'Centros de Mecanizado CNC')}</td>
+              <td>30+ {t('units', 'unidades')}</td>
+              <td>3/4/5-{t('axis', 'eje')}</td>
+            </tr>
+            <tr>
+              <td rowspan="2"><strong>{t('Stamping', 'Estampado')}</strong></td>
+              <td>{t('Mechanical Stamping Presses', 'Prensas Mecánicas de Estampado')}</td>
+              <td>18 {t('units', 'unidades')}</td>
+              <td>25–600 {t('Ton', 'Ton')}</td>
+            </tr>
+            <tr>
+              <td>{t('High-speed Stamping Presses', 'Prensas de Estampado de Alta Velocidad')}</td>
+              <td>7 {t('units', 'unidades')}</td>
+              <td>Up to 600 {t('Ton', 'Ton')}</td>
+            </tr>
+            <tr>
+              <td><strong>{t('Heat Treatment', 'Tratamiento Térmico')}</strong></td>
+              <td>{t('Tempering & Quenching Furnaces', 'Hornos de Revenido y Muesca')}</td>
+              <td>8 {t('units', 'unidades')}</td>
+              <td>180–900°C</td>
+            </tr>
+            <tr>
+              <td><strong>{t('Threading', 'Roscado')}</strong></td>
+              <td>{t('Thread Rolling Machines', 'Máquinas de Laminado de Roscas')}</td>
+              <td>15 {t('units', 'unidades')}</td>
+              <td>M3–M36</td>
+            </tr>
+            <tr>
+              <td><strong>{t('Surface Treatment', 'Tratamiento Superficial')}</strong></td>
+              <td>{t('Plating & Coating Lines', 'Líneas de Galvanoplastia y Recubrimiento')}</td>
+              <td>6 {t('units', 'unidades')}</td>
+              <td>{t('Zinc, Nickel, Dacromet, Black Oxide', 'Zinc, Níquel, Dacromet, Óxido Negro')}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quality Standards -->
+  <section class="section section-alt">
+    <div class="container">
+      <header class="section-header">
+        <p class="eyebrow">{isEs ? 'Estándares de Calidad' : 'Quality Standards'}</p>
+        <h2>{isEs ? 'Certificación ISO 9001' : 'ISO 9001 Certified'}</h2>
+        <p>{isEs
+          ? 'Cada pieza pasa por múltiples etapas de inspección para garantizar que cumple con las especificaciones exactas.'
+          : 'Every part goes through multiple inspection stages to ensure it meets exact specifications.'}</p>
+      </header>
+      <div class="grid-4">
+        <div class="qc-item">
+          <span class="qc-icon">📏</span>
+          <h3>{isEs ? 'Inspección Dimensional' : 'Dimensional Inspection'}</h3>
+          <p>{isEs ? 'Calibradores, micrómetros, CMM' : 'Calipers, micrometers, CMM'}</p>
+        </div>
+        <div class="qc-item">
+          <span class="qc-icon">🧪</span>
+          <h3>{isEs ? 'Prueba de Dureza' : 'Hardness Testing'}</h3>
+          <p>{isEs ? 'Prueba Rockwell, Vickers' : 'Rockwell, Vickers testing'}</p>
+        </div>
+        <div class="qc-item">
+          <span class="qc-icon">💪</span>
+          <h3>{isEs ? 'Prueba de Tracción' : 'Tensile Testing'}</h3>
+          <p>{isEs ? 'Fuerza máxima, límite elástico' : 'Ultimate tensile strength, yield strength'}</p>
+        </div>
+        <div class="qc-item">
+          <span class="qc-icon">🔬</span>
+          <h3>{isEs ? 'Análisis de Materiales' : 'Material Analysis'}</h3>
+          <p>{isEs ? 'Espectrómetro para composición química' : 'Spectrometer for chemical composition'}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Materials -->
+  <section class="section">
+    <div class="container">
+      <header class="section-header">
+        <p class="eyebrow">{isEs ? 'Materiales' : 'Materials'}</p>
+        <h2>{isEs ? 'Materias Primas' : 'Raw Materials'}</h2>
+      </header>
+      <div class="mat-grid">
+        <div class="mat-card">
+          <strong>S40Cr</strong>
+          <p>{isEs ? 'Acero de baja aleación para componentes de alta resistencia' : 'Low alloy steel for high-strength components'}</p>
+        </div>
+        <div class="mat-card">
+          <strong>ML20MnTiB</strong>
+          <p>{isEs ? 'Acero de temple y revenido para pernos clase 10.9' : 'Quenched and tempered steel for 10.9 class bolts'}</p>
+        </div>
+        <div class="mat-card">
+          <strong>35CrMo</strong>
+          <p>{isEs ? 'Acero de baja aleación para alta tenacidad' : 'Low alloy steel for high toughness'}</p>
+        </div>
+        <div class="mat-card">
+          <strong>40Cr</strong>
+          <p>{isEs ? 'Acero de carbono medio para componentes mecánicos' : 'Medium carbon steel for mechanical components'}</p>
+        </div>
+        <div class="mat-card">
+          <strong>SCM435</strong>
+          <p>{isEs ? 'Acero cromo-molibdeno para pernos de alta resistencia' : 'Chromium-molybdenum steel for high-strength bolts'}</p>
+        </div>
+        <div class="mat-card">
+          <strong>AISI 1018</strong>
+          <p>{isEs ? 'Acero bajo en carbono para piezas estampadas' : 'Low carbon steel for stamped parts'}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Additional Processes -->
+  <section class="section section-alt">
+    <div class="container">
+      <header class="section-header">
+        <p class="eyebrow">{isEs ? 'Procesos Adicionales' : 'Additional Processes'}</p>
+        <h2>{isEs ? 'Capacidades Complementarias' : 'Complementary Capabilities'}</h2>
+      </header>
+      <div class="grid-3">
+        <div class="eq-card">
+          <h3>🔩 {isEs ? 'Roscado' : 'Threading'}</h3>
+          <p>{isEs
+            ? 'Máquinas de laminado de roscas para M3-M36. El laminado produce roscas de alta resistencia con excelente acabado superficial.'
+            : 'Thread rolling machines for M3-M36. Rolling produces high-strength threads with excellent surface finish.'}</p>
+        </div>
+        <div class="eq-card">
+          <h3>🔥 {isEs ? 'Tratamiento Térmico' : 'Heat Treatment'}</h3>
+          <p>{isEs
+            ? 'Hornos de revenido y muesca 180-900°C. Control preciso de dureza y propiedades mecánicas según especificaciones.'
+            : 'Tempering and quenching furnaces 180-900°C. Precise control of hardness and mechanical properties per specifications.'}</p>
+        </div>
+        <div class="eq-card">
+          <h3>🎨 {isEs ? 'Tratamiento Superficial' : 'Surface Treatment'}</h3>
+          <p>{isEs
+            ? 'Líneas de galvanoplastia y recubrimiento: zinc, níquel, dacromet, óxido negro, fosfato de manganeso.'
+            : 'Plating and coating lines: zinc, nickel, dacromet, black oxide, manganese phosphate.'}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section cta-band">
+    <div class="container text-center">
+      <h2>{isEs ? '¿Tiene un Proyecto en Mente?' : 'Have a Project in Mind?'}</h2>
+      <p>{isEs
+        ? 'Contáctenos para discutir sus requisitos de fabricación. Ofrecemos muestras gratuitas y cotizaciones competitivas.'
+        : 'Contact us to discuss your manufacturing requirements. We offer free samples and competitive quotes.'}</p>
+      <div class="cta-actions">
+        <a href={isEs ? '/es/contact' : '/contact'} class="btn btn-primary btn-lg">
+          {isEs ? 'Solicitar Cotización' : 'Request a Quote'}
+        </a>
+        <a href={isEs ? '/es/products' : '/products'} class="btn btn-outline-white btn-lg">
+          {isEs ? 'Ver Productos' : 'View Products'}
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+.page-header {
+  background: linear-gradient(135deg, #0F3060 0%, #1E3A6E 100%);
+  color: #fff; padding: var(--space-12) 0; text-align: center;
+}
+.page-header h1 { color: #fff; font-size: clamp(1.75rem, 4vw, 2.5rem); margin-bottom: var(--space-3); font-weight: 800; }
+.page-header p { font-size: clamp(1rem, 2.5vw, 1.125rem); color: rgba(255,255,255,0.85); margin: 0 auto; }
+.section-header { text-align: center; margin-bottom: var(--space-10); }
+.eyebrow { font-size: 0.8125rem; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; color: var(--color-secondary); margin-bottom: var(--space-3); }
+
+/* Capability Detail */
+.cap-detail {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-12);
+  align-items: center;
+}
+.cap-detail-reverse { direction: rtl; }
+.cap-detail-reverse > * { direction: ltr; }
+.cap-tag {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--color-secondary);
+  margin-bottom: var(--space-3);
+}
+.cap-text h2 { margin-bottom: var(--space-4); font-size: clamp(1.5rem, 3vw, 2rem); }
+.cap-text p { color: var(--color-text-light, #4a5568); line-height: 1.75; margin-bottom: var(--space-6); }
+.cap-stats {
+  display: flex;
+  gap: var(--space-6);
+  flex-wrap: wrap;
+}
+.cap-stat {
+  text-align: center;
+  min-width: 80px;
+}
+.cap-stat-num {
+  display: block;
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--color-primary);
+  line-height: 1;
+  margin-bottom: 4px;
+}
+.cap-stat-label {
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.cap-visual {
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+}
+.cap-visual img {
+  width: 100%;
+  height: 380px;
+  object-fit: cover;
+  display: block;
+}
+
+/* Equipment Table */
+.table-wrapper {
+  overflow-x: auto;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-border);
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+  background: var(--color-bg);
+}
+thead { background: var(--color-primary); color: #fff; }
+thead th {
+  padding: var(--space-4) var(--space-5);
+  text-align: left;
+  font-weight: 600;
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+tbody tr { border-bottom: 1px solid var(--color-border); }
+tbody tr:last-child { border-bottom: none; }
+tbody tr:hover { background: rgba(27,75,142,0.03); }
+tbody td {
+  padding: var(--space-3) var(--space-5);
+  vertical-align: top;
+  color: var(--color-text);
+}
+
+/* QC Items */
+.qc-item {
+  text-align: center;
+  padding: var(--space-6);
+  background: #fff;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-border);
+}
+.qc-icon { font-size: 2rem; display: block; margin-bottom: var(--space-3); }
+.qc-item h3 { font-size: 0.9rem; margin-bottom: var(--space-2); }
+.qc-item p { font-size: 0.8rem; color: var(--color-text-muted); margin: 0; }
+
+/* Materials */
+.mat-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-4);
+}
+.mat-card {
+  padding: var(--space-5);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: var(--color-bg-alt);
+}
+.mat-card strong { color: var(--color-primary); font-size: 1.1rem; display: block; margin-bottom: var(--space-2); }
+.mat-card p { font-size: 0.875rem; margin: 0; }
+
+/* Equipment cards */
+.eq-card {
+  padding: var(--space-6);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+}
+.eq-card h3 { font-size: 1rem; margin-bottom: var(--space-3); }
+.eq-card p { font-size: 0.9rem; margin: 0; }
+
+/* CTA Band */
+.cta-band { background: var(--color-primary); color: #fff; }
+.cta-band h2 { color: #fff; margin-bottom: var(--space-4); }
+.cta-band p { color: rgba(255,255,255,0.85); font-size: 1.125rem; margin-bottom: var(--space-6); }
+.cta-actions { display: flex; gap: var(--space-4); justify-content: center; flex-wrap: wrap; }
+
+/* Responsive */
+@media (max-width: 768px) {
+  .cap-detail, .cap-detail-reverse { grid-template-columns: 1fr; direction: ltr; }
+  .mat-grid { grid-template-columns: 1fr 1fr; }
+  .table-wrapper { font-size: 0.8rem; }
+}
+@media (max-width: 480px) {
+  .mat-grid { grid-template-columns: 1fr; }
+  .cap-stats { gap: var(--space-4); }
+}
+</style>
+</BaseLayout>

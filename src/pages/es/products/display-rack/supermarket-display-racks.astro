@@ -1,0 +1,228 @@
+---
+import BaseLayout from '../../../../layouts/BaseLayout.astro';
+import Breadcrumb from '../../../../components/Breadcrumb.astro';
+
+const images = [
+  { src: '/images/products/display-rack/supermarket-display-racks-01.webp', alt: 'Opciones de color: Plata, Negro Mate, Blanco y Oro Champán con muestras RAL' },
+  { src: '/images/products/display-rack/supermarket-display-racks-03.webp', alt: 'Aplicación en supermercado mostrando productos de abarrotes en estantería tipo góndola de doble cara' },
+  { src: '/images/products/display-rack/supermarket-display-racks-04.webp', alt: 'Aplicación en tienda de cosméticos y cuidado personal con estantería tipo góndola de doble cara' },
+  { src: '/images/products/display-rack/supermarket-display-racks-05.webp', alt: 'Estantería tipo góndola de supermercado de doble cara con construcción de acero laminado en frío de alta resistencia y acabado en pintura en polvo' },
+  { src: '/images/products/display-rack/supermarket-display-racks-06.webp', alt: 'Múltiples tamaños disponibles - opciones de ancho 900mm/1200mm/1500mm con alturas 1400mm/1600mm/1800mm' }
+];
+---
+
+<BaseLayout
+  title="Exhibidores para Supermercados - Soluciones de Exhibición para Retail | Carelong"
+  description="Exhibidores metálicos resistentes para supermercados y tiendas de comestibles. Múltiples opciones de color, tamaños personalizados, alta capacidad de carga y acabado en pintura en polvo."
+>
+  <Breadcrumb items={[
+    { label: 'Productos', href: '/es/products' },
+    { label: 'Exhibidores', href: '/es/products/display-rack' },
+    { label: 'Exhibidores para Supermercados' }
+  ]} />
+
+  <header class="page-header">
+    <div class="container">
+      <h1>Exhibidores para Supermercados</h1>
+      <p>Soluciones de exhibición resistentes para entornos minoristas de alto tráfico.</p>
+    </div>
+  </header>
+
+  <section class="section">
+    <div class="container">
+      <div class="product-overview">
+        <div class="product-gallery" id="productGallery">
+          <div class="gallery-thumbs" aria-label="Imágenes del producto">
+            {images.map((img, i) => (
+              <button
+                type="button"
+                class={`thumb ${i === 0 ? 'is-active' : ''}`}
+                data-index={i}
+                aria-label={`Ver imagen ${i + 1}`}
+              >
+                <img src={img.src} alt={img.alt} loading="lazy" />
+              </button>
+            ))}
+          </div>
+          <div class="gallery-stage" id="galleryStage">
+            {images.map((img, i) => (
+              <img
+                src={img.src}
+                alt={img.alt}
+                class={`stage-img ${i === 0 ? 'is-active' : ''}`}
+                data-index={i}
+                loading={i === 0 ? 'eager' : 'lazy'}
+              />
+            ))}
+            <button type="button" class="stage-arrow stage-arrow-prev" aria-label="Imagen anterior" hidden>
+              <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M15 6l-6 6 6 6" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <button type="button" class="stage-arrow stage-arrow-next" aria-label="Imagen siguiente" hidden>
+              <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M9 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <div class="zoom-hint" aria-hidden="true">Pasa el ratón para ampliar y mover</div>
+          </div>
+        </div>
+        <div class="product-intro">
+          <p class="eyebrow">Descripción del Producto</p>
+          <h2>Exhibidores para Supermercados</h2>
+          <p>Nuestras estanterías gondola para supermercados están diseñadas para entornos minoristas de alto tráfico. Construidas con acero de calibre pesado y acabados con pintura en polvo duradera, estas unidades gondola soportan el desgaste diario mientras mantienen una apariencia profesional.</p>
+          <p>Disponibles en colores estándar (Plata, Negro Mate, Blanco, Oro Champán) y una amplia gama de colores RAL. Dimensiones y capacidades de carga personalizadas disponibles.</p>
+
+          <div class="product-badges">
+            <span class="badge">Resistente</span>
+            <span class="badge">60-80kg/Nivel</span>
+            <span class="badge">Pintura en Polvo</span>
+            <span class="badge">Tamaños Personalizados</span>
+          </div>
+
+          <div class="product-actions">
+            <a href="/es/contact" class="btn btn-primary btn-lg">Solicitar Cotización</a>
+            <a href="/es/products/display-rack" class="btn btn-outline btn-lg">Todos los Exhibidores</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt">
+    <div class="container">
+      <header class="section-header">
+        <p class="eyebrow">Especificaciones</p>
+        <h2>Atributos clave</h2>
+      </header>
+      <div class="spec-table spec-table-grid">
+        <div class="spec-row"><div class="spec-name">lugar de origen</div><div class="spec-value">Fujian, China</div></div>
+        <div class="spec-row"><div class="spec-name">número de modelo</div><div class="spec-value">personalizado</div></div>
+        <div class="spec-row"><div class="spec-name">marca</div><div class="spec-value">carelong</div></div>
+        <div class="spec-row"><div class="spec-name">Uso</div><div class="spec-value">Exhibición</div></div>
+        <div class="spec-row"><div class="spec-name">Tamaño</div><div class="spec-value">Tamaño Personalizado</div></div>
+        <div class="spec-row"><div class="spec-name">Aplicación</div><div class="spec-value">Punto de Venta</div></div>
+        <div class="spec-row"><div class="spec-name">Logotipo</div><div class="spec-value">Logotipo Personalizado</div></div>
+        <div class="spec-row"><div class="spec-name">Color</div><div class="spec-value">Color Personalizado</div></div>
+      </div>
+
+      <header class="section-header" style="margin-top: var(--space-12);">
+        <h2>Embalaje y entrega</h2>
+      </header>
+      <div class="spec-table spec-table-grid">
+        <div class="spec-row"><div class="spec-name">Unidades de Venta</div><div class="spec-value">Artículo Individual</div></div>
+        <div class="spec-row"><div class="spec-name">Tamaño del paquete individual</div><div class="spec-value">180×120×80 cm</div></div>
+        <div class="spec-row"><div class="spec-name">Peso bruto individual</div><div class="spec-value">50.0 kg</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section cta-band">
+    <div class="container text-center">
+      <h2>¿Necesita Exhibidores para Supermercados?</h2>
+      <p>Contáctenos con la disposición de su tienda y requisitos de productos. Ofrecemos soluciones personalizadas.</p>
+      <div class="cta-actions">
+        <a href="/es/contact" class="btn btn-primary btn-lg">Solicitar Cotización</a>
+        <a href="mailto:Jason@carelong.com.cn?subject=Consulta%20Exhibidores%20Supermercados" class="btn btn-outline-white btn-lg">Envíenos un Correo</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const gallery = document.getElementById('productGallery');
+    if (!gallery) return;
+
+    const thumbs = Array.from(gallery.querySelectorAll('.thumb'));
+    const stageImgs = Array.from(gallery.querySelectorAll('.stage-img'));
+    const stages = Array.from(gallery.querySelectorAll('.gallery-stage'));
+    let current = 0;
+
+    function activate(idx) {
+      if (idx === current) return;
+      current = idx;
+      thumbs.forEach((t) => t.classList.toggle('is-active', Number(t.dataset.index) === current));
+      stageImgs.forEach((img) => {
+        const isActive = Number(img.dataset.index) === current;
+        img.classList.toggle('is-active', isActive);
+        if (isActive) img.style.transformOrigin = 'center center';
+      });
+      stages.forEach((s) => s.classList.remove('is-zooming'));
+    }
+
+    thumbs.forEach((t) => {
+      const idx = Number(t.dataset.index);
+      t.addEventListener('mouseenter', () => activate(idx));
+      t.addEventListener('focus', () => activate(idx));
+      t.addEventListener('click', () => activate(idx));
+    });
+
+    stages.forEach((stage) => {
+      stage.addEventListener('mouseenter', () => stage.classList.add('is-zooming'));
+      stage.addEventListener('mouseleave', () => {
+        stage.classList.remove('is-zooming');
+        const active = stage.querySelector('.stage-img.is-active');
+        if (active) {
+          active.style.transformOrigin = 'center center';
+        }
+      });
+      stage.addEventListener('mousemove', (e) => {
+        const active = stage.querySelector('.stage-img.is-active');
+        if (!active) return;
+        const rect = stage.getBoundingClientRect();
+        const x = ((e.clientX - rect.left) / rect.width) * 100;
+        const y = ((e.clientY - rect.top) / rect.height) * 100;
+        const cx = Math.max(0, Math.min(100, x));
+        const cy = Math.max(0, Math.min(100, y));
+        active.style.transformOrigin = cx + '% ' + cy + '%';
+      });
+    });
+  });
+</script>
+
+<style>
+.eyebrow { font-size: 0.8125rem; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; color: var(--color-secondary); margin-bottom: var(--space-3); }
+.product-overview { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-12); align-items: start; }
+
+/* Left thumbs + right big image */
+.product-gallery { display: grid; grid-template-columns: 88px 1fr; gap: var(--space-4); align-items: start; }
+.gallery-thumbs { display: flex; flex-direction: column; gap: var(--space-2); max-height: 480px; overflow-y: auto; padding-right: 4px; }
+.thumb { all: unset; cursor: pointer; display: block; width: 88px; height: 88px; border-radius: var(--radius-md); border: 2px solid transparent; background: #fff; overflow: hidden; transition: border-color .2s ease, transform .18s ease, box-shadow .18s ease; }
+.thumb img { width: 100%; height: 100%; object-fit: contain; display: block; }
+.thumb:hover { transform: translateY(-1px); box-shadow: 0 4px 12px rgba(27,75,142,.18); }
+.thumb.is-active { border-color: var(--color-primary); box-shadow: 0 4px 12px rgba(27,75,142,.25); transform: translateY(-1px); }
+
+.gallery-stage { position: relative; background: #fff; border-radius: var(--radius-xl); box-shadow: var(--shadow-lg); overflow: hidden; aspect-ratio: 1 / 1; cursor: zoom-in; outline: none; }
+.stage-arrow[hidden] { display: none; }
+.stage-img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; padding: var(--space-4); opacity: 0; transition: opacity .25s ease; transform: scale(1); cursor: zoom-in; }
+.stage-img.is-active { opacity: 1; }
+.gallery-stage.is-zooming .stage-img.is-active { transform: scale(2); transition: transform .15s ease-out; }
+.zoom-hint { position: absolute; bottom: var(--space-3); right: var(--space-4); padding: 4px 10px; border-radius: 100px; background: rgba(15, 48, 96, 0.7); color: #fff; font-size: 0.75rem; font-weight: 500; letter-spacing: .5px; pointer-events: none; }
+
+.product-intro h2 { margin-bottom: var(--space-4); }
+.product-intro p { color: var(--color-text-light); line-height: 1.7; }
+.product-badges { display: flex; flex-wrap: wrap; gap: var(--space-2); margin: var(--space-6) 0; }
+.badge { display: inline-block; background: rgba(27, 75, 142, 0.08); color: var(--color-primary); padding: var(--space-1) var(--space-3); border-radius: 100px; font-size: 0.8125rem; font-weight: 600; }
+.product-actions { display: flex; gap: var(--space-4); flex-wrap: wrap; }
+
+.spec-table { display: flex; flex-direction: column; gap: var(--space-2); }
+.spec-table-grid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-2); }
+.spec-row { display: flex; justify-content: space-between; padding: var(--space-4) var(--space-6); background: var(--color-bg); border: 1px solid var(--color-border); border-radius: var(--radius-md); }
+.spec-table-grid .spec-row { flex-direction: column; gap: var(--space-1); }
+.spec-table-grid .spec-name { font-weight: 600; color: var(--color-text); font-size: 0.875rem; }
+.spec-table-grid .spec-value { color: var(--color-text); font-weight: 500; text-align: left; max-width: 100%; }
+.spec-name { font-weight: 600; color: var(--color-text); }
+.spec-value { color: var(--color-text-light); text-align: right; max-width: 60%; }
+
+.cta-band { background: var(--color-primary); color: #fff; }
+.cta-band h2 { color: #fff; margin-bottom: var(--space-4); }
+.cta-band p { color: rgba(255,255,255,0.85); font-size: 1.125rem; margin-bottom: var(--space-6); }
+.cta-actions { display: flex; gap: var(--space-4); justify-content: center; flex-wrap: wrap; }
+
+
+@media (max-width: 768px) {
+  .product-overview { grid-template-columns: 1fr; }
+  .product-gallery { grid-template-columns: 72px 1fr; }
+  .thumb { width: 72px; height: 72px; }
+  .spec-row { flex-direction: column; gap: var(--space-1); }
+  .spec-value { text-align: left; max-width: 100%; }
+  .spec-table-grid { grid-template-columns: 1fr; }
+}
+</style>

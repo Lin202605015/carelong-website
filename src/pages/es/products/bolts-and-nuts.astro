@@ -1,0 +1,114 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+const isEs = true;
+---
+<BaseLayout lang="es" title="Pernos y Tuercas - Fabricante y Exportador | Carelong" description="Fabricante de pernos y tuercas de calidad. Pernos de rueda, pernos de arado, pernos de oruga, tuercas hexagonales, tuercas de brida.">
+  <header class="page-header">
+    <div class="container">
+      <h1>{isEs ? 'Pernos y Tuercas' : 'Bolts and Nuts'}</h1>
+      <p>{isEs ? 'Pernos y tuercas de calidad para aplicaciones automotrices, de construcción e industriales' : 'Quality bolts and nuts for automotive, construction, and industrial applications'}</p>
+    </div>
+  </header>
+
+  <section class="section">
+    <div class="container">
+      <div class="product-overview">
+        <div class="product-image" style="background:#fff;border-radius:var(--radius-xl);display:flex;align-items:center;justify-content:center;height:400px;overflow:hidden;">
+          <img src="/images/products/bolts-and-nuts/hub-bolts/hub-bolt -(1).webp" alt="Bolts and Nuts" style="max-height:100%;max-width:100%;object-fit:contain;" />
+        </div>
+        <div class="product-intro">
+          <p class="eyebrow">{isEs ? 'Resumen del Producto' : 'Product Overview'}</p>
+          <h2>{isEs ? 'Pernos y Tuercas' : 'Bolts and Nuts'}</h2>
+          <p>{isEs
+            ? 'Xiamen Carelong es fabricante y exportador de pernos y tuercas de calidad. Producimos pernos de rueda, pernos de arado, pernos de oruga, pernos de segmento y varios tipos de tuercas incluyendo tuercas hexagonales, tuercas de brida, tuercas autoblocantes y tuercas BPW.'
+            : 'Xiamen Carelong is a manufacturer and exporter of quality bolts and nuts. We produce hub bolts, plow bolts, track bolts, segment bolts, and various nut types including hex nuts, flange nuts, nylon insert nuts, and BPW nuts.'}</p>
+          <div class="product-badges">
+            <span class="badge">Grado 8.8/10.9/12.9</span>
+            <span class="badge">{isEs ? 'Tamaños Personalizados' : 'Custom Sizes'}</span>
+            <span class="badge">OEM</span>
+          </div>
+          <div class="product-actions">
+            <a href="/es/contact" class="btn btn-primary btn-lg">{isEs ? 'Solicitar Cotización' : 'Request a Quote'}</a>
+            <a href="/es/products" class="btn btn-primary btn-lg">{isEs ? 'Todos los Productos' : 'All Products'}</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt">
+    <div class="container">
+      <header class="section-header">
+        <p class="eyebrow">{isEs ? 'Explorar por Tipo' : 'Browse by Type'}</p>
+        <h2>{isEs ? 'Categorías de Pernos y Tuercas' : 'Bolts and Nuts Categories'}</h2>
+      </header>
+      <div class="sub-cat-grid">
+        <a href="/es/products/bolts-and-nuts/hub-bolts" class="sub-cat-card">
+          <img src="/images/products/bolts-and-nuts/hub-bolts/hub-bolt -(1).webp" alt="Hub Bolts" />
+          <div class="card-body"><h3>{isEs ? 'Pernos de Rueda' : 'Hub Bolts'}</h3></div>
+        </a>
+        <a href="/es/products/bolts-and-nuts/plow-bolts" class="sub-cat-card">
+          <img src="/images/products/bolts-and-nuts/plow-bolts/plow-bolt-01.webp" alt="Plow Bolts" />
+          <div class="card-body"><h3>{isEs ? 'Pernos de Arado' : 'Plow Bolts'}</h3></div>
+        </a>
+        <a href="/es/products/bolts-and-nuts/track-bolts" class="sub-cat-card">
+          <img src="/images/products/bolts-and-nuts/track-bolts/track-bolt-01.webp" alt="Track Bolts" />
+          <div class="card-body"><h3>{isEs ? 'Pernos de Oruga' : 'Track Bolts'}</h3></div>
+        </a>
+        <a href="/es/products/bolts-and-nuts/segment-bolts" class="sub-cat-card">
+          <img src="/images/products/bolts-and-nuts/segment-bolts/segment-bolt-01.webp" alt="Segment Bolts" />
+          <div class="card-body"><h3>{isEs ? 'Pernos de Segmento' : 'Segment Bolts'}</h3></div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Specs -->
+  <section class="section">
+    <div class="container">
+      <header class="section-header">
+        <p class="eyebrow">{isEs ? 'Especificaciones' : 'Specifications'}</p>
+        <h2>{isEs ? 'Estándares y Grados' : 'Standards & Grades'}</h2>
+      </header>
+      <div class="specs-table">
+        <table>
+          <thead><tr><th>{isEs ? 'Parámetro' : 'Parameter'}</th><th>{isEs ? 'Rango' : 'Range'}</th></tr></thead>
+          <tbody>
+            <tr><td>{isEs ? 'Grado de Resistencia' : 'Strength Grade'}</td><td>8.8, 10.9, 12.9 (DIN/ISO/ASME)</td></tr>
+            <tr><td>{isEs ? 'Diámetro' : 'Diameter'}</td><td>M6 ~ M36 (o personalizado / custom)</td></tr>
+            <tr><td>{isEs ? 'Longitud' : 'Length'}</td><td>10mm ~ 300mm</td></tr>
+            <tr><td>{isEs ? 'Material' : 'Material'}</td><td>S40Cr, ML20MnTiB, 35CrMo, 40Cr, SCM435</td></tr>
+            <tr><td>{isEs ? 'Acabado' : 'Finish'}</td><td>{isEs ? 'Negro, Zincado, Dacromet, Geomet' : 'Black, Zinc Plated, Dacromet, Geomet'}</td></tr>
+            <tr><td>{isEs ? 'Estándar' : 'Standard'}</td><td>DIN, ISO, ANSI, JIS, GB, o {isEs ? 'personalizado' : 'custom'}</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+.page-header { background: linear-gradient(135deg, #0F3060 0%, #1E3A6E 100%); color: #fff; padding: var(--space-12) 0; text-align: center; }
+.page-header h1 { color: #fff; font-size: clamp(1.75rem, 4vw, 2.5rem); margin-bottom: var(--space-3); font-weight: 800; }
+.page-header p { font-size: clamp(1rem, 2.5vw, 1.125rem); color: rgba(255,255,255,0.85); margin: 0 auto; }
+.section-header { text-align: center; margin-bottom: var(--space-10); }
+.eyebrow { font-size: 0.8125rem; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; color: var(--color-secondary); margin-bottom: var(--space-3); }
+.product-overview { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-10); align-items: center; }
+.product-intro h2 { font-size: 2rem; margin-bottom: var(--space-4); }
+.product-intro p { line-height: 1.7; margin-bottom: var(--space-6); }
+.product-badges { display: flex; flex-wrap: wrap; gap: var(--space-2); margin-bottom: var(--space-6); }
+.badge { display: inline-block; padding: 4px 12px; background: var(--color-bg-alt); border: 1px solid var(--color-border); border-radius: 100px; font-size: 0.8125rem; font-weight: 600; }
+.product-actions { display: flex; gap: var(--space-3); flex-wrap: wrap; }
+.sub-cat-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: var(--space-4); }
+.sub-cat-card { border: 1px solid var(--color-border); border-radius: var(--radius-lg); overflow: hidden; text-decoration: none; color: inherit; transition: all 0.3s; }
+.sub-cat-card:hover { border-color: var(--color-primary); box-shadow: var(--shadow-md); transform: translateY(-2px); }
+.sub-cat-card img { width: 100%; height: 140px; object-fit: contain; background: var(--color-bg-alt); }
+.sub-cat-card .card-body { padding: var(--space-3); }
+.sub-cat-card h3 { font-size: 0.875rem; text-align: center; margin: 0; }
+.specs-table { overflow-x: auto; }
+.specs-table table { width: 100%; border-collapse: collapse; }
+.specs-table th, .specs-table td { padding: var(--space-3) var(--space-4); border: 1px solid var(--color-border); text-align: left; }
+.specs-table th { background: var(--color-bg-alt); font-weight: 700; }
+@media (max-width: 900px) { .product-overview { grid-template-columns: 1fr; } .sub-cat-grid { grid-template-columns: repeat(3, 1fr); } }
+@media (max-width: 480px) { .sub-cat-grid { grid-template-columns: repeat(2, 1fr); } }
+</style>

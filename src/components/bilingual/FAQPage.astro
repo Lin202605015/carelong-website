@@ -1,0 +1,159 @@
+﻿---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import type { Lang } from '../../data/i18n/navigation';
+
+interface Props { lang: Lang; }
+const { lang } = Astro.props;
+const isEs = lang === 'es';
+const t = (en: string, es: string) => isEs ? es : en;
+
+const faqItems = [
+  {
+    q: t('What is your Minimum Order Quantity (MOQ)?', '¿Cuál es su Cantidad Mínima de Pedido (MOQ)?'),
+    a: t('Our MOQ varies by product type and complexity. For standard catalog products, MOQ typically starts at 500–1,000 pieces per size. For custom OEM parts, MOQ starts at 2,000–5,000 pieces depending on the manufacturing process. Contact us for specific MOQ requirements.',
+      'Nuestra MOQ varía según el tipo de producto y complejidad. Para productos estándar del catálogo, la MOQ típicamente comienza en 500–1,000 piezas por tamaño. Para piezas OEM personalizadas, la MOQ comienza en 2,000–5,000 piezas según el proceso de fabricación.')
+  },
+  {
+    q: t('What are your typical lead times?', '¿Cuáles son sus tiempos de entrega típicos?'),
+    a: t('Standard products: 15–25 days after order confirmation. Custom OEM parts: 25–40 days for first production run. Samples: 7–15 days for existing products, 15–25 days for custom samples. We always try to accommodate urgent orders.',
+      'Productos estándar: 15–25 días después de la confirmación del pedido. Piezas OEM personalizadas: 25–40 días para la primera corrida de producción. Muestras: 7–15 días para productos existentes, 15–25 días para muestras personalizadas.')
+  },
+  {
+    q: t('Can you produce custom OEM parts?', '¿Pueden producir piezas OEM personalizadas?'),
+    a: t('Yes, we specialize in custom OEM manufacturing. We can produce parts according to your drawings, samples, or specifications. Our engineering team works with you to ensure parts meet exact requirements.',
+      'Sí, nos especializamos en fabricación OEM personalizada. Podemos producir piezas según sus dibujos, muestras o especificaciones. Nuestro equipo de ingeniería trabaja con usted para garantizar que las piezas cumplan los requisitos exactos.')
+  },
+  {
+    q: t('Can I get samples before placing a bulk order?', '¿Puedo obtener muestras antes de hacer un pedido en masa?'),
+    a: t('Absolutely. We provide samples for evaluation before bulk production. Sample costs may apply depending on the product, but these can be credited against your first bulk order.',
+      'Por supuesto. Proporcionamos muestras para evaluación antes de la producción en masa. Los costos de muestra pueden aplicarse según el producto, pero pueden acreditarse contra su primer pedido en masa.')
+  },
+  {
+    q: t('What materials do you use?', '¿Qué materiales usan?'),
+    a: t('We work with carbon steel (45#, Q235), alloy steel (40Cr, 20CrMnTi, 35CrMo), stainless steel (304, 316), brass, copper, aluminum, and various plastics and rubber compounds.',
+      'Trabajamos con acero al carbono (45#, Q235), acero aleado (40Cr, 20CrMnTi, 35CrMo), acero inoxidable (304, 316), latón, cobre, aluminio y varios compuestos de plástico y caucho.')
+  },
+  {
+    q: t('What quality certifications do you have?', '¿Qué certificaciones de calidad tienen?'),
+    a: t('We are ISO 9001 certified. We comply with ISO 9001 standards for automotive parts. Every product undergoes multi-stage quality inspection including dimensional checks, hardness testing, and surface finish verification.',
+      'Estamos certificados ISO 9001. Cumplimos con los estándares ISO 9001 para piezas automotrices. Cada producto se somete a inspección de calidad multifase incluyendo verificaciones dimensionales, prueba de dureza y verificación de acabado superficial.')
+  },
+  {
+    q: t('What payment methods do you accept?', '¿Qué métodos de pago aceptan?'),
+    a: t('We accept T/T (bank transfer), L/C at sight, and Western Union. For new customers, we typically require 30% deposit with balance before shipment. Long-term customers may negotiate more favorable terms.',
+      'Aceptamos T/T (transferencia bancaria), L/C a la vista y Western Union. Para clientes nuevos, típicamente requerimos 30% de depósito con saldo antes del envío. Los clientes a largo plazo pueden negociar términos más favorables.')
+  },
+  {
+    q: t('Do you offer packaging customization?', '¿Ofrecen personalización de empaquetado?'),
+    a: t('Yes. We offer custom packaging including branded boxes, poly bags with headers, blister packs, and bulk packaging. We can also arrange labeling with your brand name and product information.',
+      'Sí. Ofrecemos empaquetado personalizado incluyendo cajas de marca, bolsas de polietileno con encabezado, empaquetado de burbujas y empaquetado a granel. También podemos organizar etiquetado con el nombre de su marca e información del producto.')
+  },
+  {
+    q: t('What shipping methods do you use?', '¿Qué métodos de envío usan?'),
+    a: t('We ship via sea freight (FOB Xiamen), air freight, and express courier (DHL, FedEx, UPS). For large orders, sea freight is the most economical. We handle all export documentation and customs clearance.',
+      'Enviamos por flete marítimo (FOB Xiamen), flete aéreo y courier expreso (DHL, FedEx, UPS). Para pedidos grandes, el flete marítimo es el más económico. Manejamos toda la documentación de exportación y el despacho de aduanas.')
+  },
+  {
+    q: t('Can you help with product design and development?', '¿Pueden ayudar con el diseño y desarrollo de productos?'),
+    a: t('Yes. Our engineering team can assist with product design, material selection, and prototyping. We use CAD/CAM software and can optimize designs for manufacturability and cost-effectiveness.',
+      'Sí. Nuestro equipo de ingeniería puede ayudar con el diseño del producto, selección de materiales y prototipado. Usamos software CAD/CAM y podemos optimizar diseños para manufacturabilidad y rentabilidad.')
+  },
+  {
+    q: t('What is your defect rate?', '¿Cuál es su tasa de defectos?'),
+    a: t('We maintain a defect rate below 0.5% through our rigorous quality control process. Every batch is inspected at multiple stages, and we provide full traceability from raw material to finished product.',
+      'Mantenemos una tasa de defectos por debajo del 0.5% a través de nuestro riguroso proceso de control de calidad. Cada lote se inspecciona en múltiples etapas, y proporcionamos trazabilidad completa desde la materia prima hasta el producto terminado.')
+  },
+  {
+    q: t('Do you have experience with specific industries?', '¿Tienen experiencia en industrias específicas?'),
+    a: t('We primarily serve the automotive, construction machinery, and agricultural equipment industries. Our parts are used in trucks, excavators, bulldozers, and various industrial applications.',
+      'Servimos principalmente las industrias automotriz, de maquinaria de construcción y de equipos agrícolas. Nuestras piezas se usan en camiones, excavadoras, topadoras y varias aplicaciones industriales.')
+  },
+  {
+    q: t('How do you handle warranty and returns?', '¿Cómo manejan la garantía y las devoluciones?'),
+    a: t('We stand behind our products. If any quality issues are found, we will replace the defective parts free of charge or provide a credit note. Claims must be made within 30 days of delivery with supporting documentation.',
+      'Respaldamos nuestros productos. Si se encuentran problemas de calidad, reemplazaremos las piezas defectuosas sin cargo o proporcionaremos una nota de crédito. Las reclamaciones deben hacerse dentro de los 30 días posteriores a la entrega con documentación de respaldo.')
+  },
+  {
+    q: t('Can you provide material certificates?', '¿Pueden proporcionar certificados de materiales?'),
+    a: t('Yes. We provide material certificates (mill test reports), inspection reports, and certificates of conformance upon request. Full traceability documentation is available for all products.',
+      'Sí. Proporcionamos certificados de material (informes de prueba de molino), informes de inspección y certificados de conformidad a pedido. Documentación de trazabilidad completa está disponible para todos los productos.')
+  },
+  {
+    q: t('What surface treatments are available?', '¿Qué tratamientos superficiales están disponibles?'),
+    a: t('We offer zinc plating (white, yellow, black), phosphate coating, black oxide, hot-dip galvanizing, Dacromet, nickel plating, chrome plating, anodizing, and powder coating. We recommend the best treatment based on your application requirements.',
+      'Ofrecemos galvanoplastia de zinc (blanco, amarillo, negro), recubrimiento de fosfato, óxido negro, galvanizado en caliente, Dacromet, niquelado, cromado, anodizado y recubrimiento en polvo. Recomendamos el mejor tratamiento según los requisitos de su aplicación.')
+  },
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqItems.map(item => ({
+    "@type": "Question",
+    "name": item.q,
+    "acceptedAnswer": { "@type": "Answer", "text": item.a }
+  }))
+};
+---
+<BaseLayout lang={lang} title={t('FAQ — Frequently Asked Questions | Carelong', 'Preguntas Frecuentes | Carelong')} description={t('Answers to common questions about MOQ, lead time, OEM orders, samples, payment terms, and shipping for auto parts from Carelong.', 'Respuestas a preguntas comunes sobre MOQ, tiempo de entrega, pedidos OEM, muestras, términos de pago y envío de autopartes de Carelong.')}>
+  <header class="page-header">
+    <div class="container">
+      <h1>{t('Frequently Asked Questions', 'Preguntas Frecuentes')}</h1>
+      <p>{t('Find answers to common questions about our products, ordering process, and services', 'Encuentre respuestas a preguntas comunes sobre nuestros productos, proceso de pedido y servicios')}</p>
+    </div>
+  </header>
+
+  <section class="section">
+    <div class="container">
+      <div class="faq-list">
+        {faqItems.map((item, i) => (
+          <details class="faq-item" name="faq">
+            <summary class="faq-question">
+              <span class="faq-q">{item.q}</span>
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </summary>
+            <div class="faq-answer">
+              <p>{item.a}</p>
+            </div>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section cta-band">
+    <div class="container text-center">
+      <h2>{t('Still Have Questions?', '¿Todavía Tiene Preguntas?')}</h2>
+      <p>{t('Our team is ready to answer any questions about our products, capabilities, and ordering process.', 'Nuestro equipo está listo para responder cualquier pregunta sobre nuestros productos, capacidades y proceso de pedido.')}</p>
+      <div class="cta-actions">
+        <a href={isEs ? '/es/contact' : '/contact'} class="btn btn-primary btn-lg">{t('Contact Us', 'Contáctenos')}</a>
+        <a href={isEs ? '/es/products' : '/products'} class="btn btn-outline-white btn-lg">{t('View Products', 'Ver Productos')}</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQPage Schema (JSON-LD) -->
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+</BaseLayout>
+
+<style>
+.page-header { background: linear-gradient(135deg, #0F3060 0%, #1E3A6E 100%); color: #fff; padding: var(--space-12) 0; text-align: center; }
+.page-header h1 { color: #fff; font-size: clamp(1.75rem, 4vw, 2.5rem); margin-bottom: var(--space-3); font-weight: 800; }
+.page-header p { font-size: clamp(1rem, 2.5vw, 1.125rem); color: rgba(255,255,255,0.85); margin: 0 auto; }
+.faq-list { display: flex; flex-direction: column; gap: var(--space-3); max-width: 860px; margin: 0 auto; }
+.faq-item { background: var(--color-bg); border: 1px solid var(--color-border); border-radius: var(--radius-lg); overflow: hidden; transition: border-color var(--transition-fast); }
+.faq-item[open] { border-color: var(--color-primary); box-shadow: 0 2px 12px rgba(27,75,142,0.08); }
+.faq-question { display: flex; justify-content: space-between; align-items: center; padding: var(--space-5) var(--space-6); cursor: pointer; list-style: none; gap: var(--space-4); }
+.faq-question::-webkit-details-marker { display: none; }
+.faq-q { font-weight: 600; font-size: 1rem; color: var(--color-text); flex: 1; }
+.faq-icon { font-size: 1.5rem; color: var(--color-primary); flex-shrink: 0; transition: transform 0.2s; font-weight: 300; }
+.faq-item[open] .faq-icon { transform: rotate(45deg); }
+.faq-answer { padding: 0 var(--space-6) var(--space-5); }
+.faq-answer p { color: var(--color-text-light); line-height: 1.75; font-size: 0.9375rem; margin: 0; }
+.cta-band { background: var(--color-primary); color: #fff; }
+.cta-band h2 { color: #fff; margin-bottom: var(--space-4); }
+.cta-band p { color: rgba(255,255,255,0.85); font-size: 1.125rem; margin-bottom: var(--space-6); }
+.cta-actions { display: flex; gap: var(--space-4); justify-content: center; flex-wrap: wrap; }
+</style>
+</BaseLayout>

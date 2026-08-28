@@ -1,0 +1,470 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { about } from '../../data/i18n/translations';
+import type { Lang } from '../../data/i18n/navigation';
+
+interface Props { lang: Lang; }
+const { lang } = Astro.props;
+const t = about;
+const isEs = lang === 'es';
+
+// Helper
+const tl = (en: string, es: string) => isEs ? es : en;
+---
+<BaseLayout
+  lang={lang}
+  title={t.pageTitle[lang]}
+  description={t.pageDesc[lang]}
+>
+  <!-- Page Header -->
+  <header class="page-header">
+    <div class="container">
+      <h1>{t.header.h1[lang]}</h1>
+      <p>{t.header.subtitle[lang]}</p>
+    </div>
+  </header>
+
+  <!-- Company Story -->
+  <section class="section">
+    <div class="container">
+      <div class="about-story-grid">
+        <div class="about-story-text">
+          <p class="eyebrow">{t.story.eyebrow[lang]}</p>
+          <h2>{t.story.title[lang]}</h2>
+          <p>{t.story.p1[lang]}</p>
+          <p>{t.story.p2[lang]}</p>
+        </div>
+        <div class="about-story-visual">
+          <div class="factory-carousel" id="about-carousel">
+            <img src="/images/about/factory/1.webp" alt="Factory 1" class="carousel-slide active" />
+            <img src="/images/about/factory/2.webp" alt="Factory 2" class="carousel-slide" />
+            <img src="/images/about/factory/3.webp" alt="Factory 3" class="carousel-slide" />
+            <img src="/images/about/factory/4.webp" alt="Factory 4" class="carousel-slide" />
+            <img src="/images/about/factory/5.webp" alt="Factory 5" class="carousel-slide" />
+            <div class="carousel-dots">
+              <span class="carousel-dot active" data-index="0"></span>
+              <span class="carousel-dot" data-index="1"></span>
+              <span class="carousel-dot" data-index="2"></span>
+              <span class="carousel-dot" data-index="3"></span>
+              <span class="carousel-dot" data-index="4"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Timeline -->
+  <section class="section section-alt">
+    <div class="container">
+      <header class="section-header">
+        <p class="eyebrow">{t.timeline.eyebrow[lang]}</p>
+        <h2>{t.timeline.title[lang]}</h2>
+      </header>
+      <div class="timeline">
+        {t.timeline.items.map(item => (
+          <div class="timeline-item">
+            <div class="timeline-year">{item.year}</div>
+            <div class="timeline-content">
+              <h3>{isEs ? item.titleEs : item.titleEn}</h3>
+              <p>{isEs ? item.descEs : item.descEn}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Mission / Vision / Values -->
+  <section class="section">
+    <div class="container">
+      <header class="section-header">
+        <p class="eyebrow">{tl('Our Foundation', 'Nuestra Base')}</p>
+        <h2>{tl('Mission, Vision & Values', 'Misión, Visión y Valores')}</h2>
+      </header>
+      <div class="grid-3">
+        <div class="mvv-card">
+          <div class="mvv-icon">🎯</div>
+          <h3>{tl('Our Mission', 'Nuestra Misión')}</h3>
+          <p>{tl(
+            'To deliver precision-engineered auto parts that meet the highest quality standards at competitive prices, enabling our clients to succeed in their markets.',
+            'Entregar autopartes de ingeniería de precisión que cumplan con los más altos estándares de calidad a precios competitivos, permitiendo a nuestros clientes tener éxito en sus mercados.'
+          )}</p>
+        </div>
+        <div class="mvv-card">
+          <div class="mvv-icon">🔭</div>
+          <h3>{tl('Our Vision', 'Nuestra Visión')}</h3>
+          <p>{tl(
+            'To become the most trusted auto parts manufacturer in China — recognized globally for quality, reliability, and customer service excellence.',
+            'Convertirnos en el fabricante de autopartes más confiable de China — reconocido globalmente por calidad, confiabilidad y excelencia en servicio al cliente.'
+          )}</p>
+        </div>
+        <div class="mvv-card">
+          <div class="mvv-icon">💎</div>
+          <h3>{tl('Our Values', 'Nuestros Valores')}</h3>
+          <p>{tl(
+            'Quality First — Every part must meet spec. Customer Focus — Your success is our success. Continuous Improvement — Always getting better. Integrity — Honest and transparent.',
+            'Calidad Primero — Cada pieza debe cumplir con las especificaciones. Enfoque al Cliente — Su éxito es nuestro éxito. Mejora Continua — Siempre mejorando. Integridad — Honestos y transparentes.'
+          )}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Core Advantages -->
+  <section class="section section-alt">
+    <div class="container">
+      <header class="section-header">
+        <p class="eyebrow">{tl('Why Choose Us', 'Por Qué Elegirnos')}</p>
+        <h2>{tl('Core Advantages', 'Ventajas Principales')}</h2>
+      </header>
+      <div class="grid-3 advantages-grid">
+        {[
+          {
+            num: '01',
+            titleEn: 'Direct Factory Pricing',
+            titleEs: 'Precios de Fábrica Directos',
+            descEn: 'As a manufacturer, we offer competitive factory-direct pricing with no middleman markups. Cost-effective solutions without compromising quality.',
+            descEs: 'Como fabricante, ofrecemos precios competitivos directamente de fábrica sin márgenes de intermediarios. Soluciones rentables sin comprometer la calidad.',
+          },
+          {
+            num: '02',
+            titleEn: 'Full Production Capabilities',
+            titleEs: 'Capacidades de Producción Completas',
+            descEn: 'From raw material to finished product — cold heading, hot forging, machining, and quality inspection all under one roof.',
+            descEs: 'Desde la materia prima hasta el producto terminado — embutición en frío, forjado en caliente, mecanizado e inspección de calidad todo bajo un mismo techo.',
+          },
+          {
+            num: '03',
+            titleEn: 'OEM & Custom Manufacturing',
+            titleEs: 'Fabricación OEM y Personalizada',
+            descEn: 'We specialize in custom OEM orders. Share your specifications and we\'ll deliver parts designed exactly for your application.',
+            descEs: 'Nos especializamos en pedidos OEM personalizados. Comparta sus especificaciones y entregaremos piezas diseñadas exactamente para su aplicación.',
+          },
+          {
+            num: '04',
+            titleEn: '20+ Years Industry Experience',
+            titleEs: 'Más de 20 Años de Experiencia',
+            descEn: 'Over 20 years of manufacturing expertise ensures we understand the demands of global auto parts markets and deliver accordingly.',
+            descEs: 'Más de 20 años de experiencia en fabricación nos aseguran comprender las demandas de los mercados globales de autopartes y entregar en consecuencia.',
+          },
+          {
+            num: '05',
+            titleEn: 'Strict Quality Control',
+            titleEs: 'Control de Calidad Estricto',
+            descEn: 'Every batch undergoes multi-stage inspection. ISO 9001 certified quality management system ensures consistent, reliable products.',
+            descEs: 'Cada lote pasa por inspección multifásica. El sistema de gestión de calidad certificado ISO 9001 asegura productos consistentes y confiables.',
+          },
+          {
+            num: '06',
+            titleEn: 'Fast & Reliable Delivery',
+            titleEs: 'Entrega Rápida y Confiable',
+            descEn: 'Efficient production planning and established logistics partnerships ensure your orders arrive on time, every time.',
+            descEs: 'La planificación eficiente de la producción y las alianzas logísticas establecidas aseguran que sus pedidos lleguen a tiempo, siempre.',
+          },
+        ].map(item => (
+          <div class="advantage-card">
+            <div class="advantage-number">{item.num}</div>
+            <h3>{isEs ? item.titleEs : item.titleEn}</h3>
+            <p>{isEs ? item.descEs : item.descEn}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Team -->
+  <section class="section">
+    <div class="container">
+      <header class="section-header">
+        <p class="eyebrow">{t.team.eyebrow[lang]}</p>
+        <h2>{t.team.title[lang]}</h2>
+        <p>{t.team.subtitle[lang]}</p>
+      </header>
+      <div class="grid-3 team-grid">
+        <div class="team-card">
+          <div class="team-avatar" style="background: var(--color-primary);">JL</div>
+          <h3>Jason Lin</h3>
+          <p class="team-role">{tl('Export Manager', 'Gerente de Exportación')}</p>
+          <p>{tl(
+            '10+ years in international auto parts trade. Speaks English and Chinese. Jason is your main contact for inquiries and orders.',
+            'Más de 10 años en el comercio internacional de autopartes. Habla inglés y chino. Jason es su contacto principal para consultas y pedidos.'
+          )}</p>
+        </div>
+        <div class="team-card">
+          <div class="team-avatar" style="background: var(--color-secondary);">ZJN</div>
+          <h3>Zhu Jian Ning</h3>
+          <p class="team-role">{tl('Production Manager', 'Gerente de Producción')}</p>
+          <p>{tl(
+            'Oversees all manufacturing operations. Ensures production schedules and quality standards are consistently met.',
+            'Supervisa todas las operaciones de fabricación. Asegura que los cronogramas de producción y los estándares de calidad se cumplan consistentemente.'
+          )}</p>
+        </div>
+        <div class="team-card">
+          <div class="team-avatar" style="background: #059669;">HT</div>
+          <h3>He Ting</h3>
+          <p class="team-role">{tl('Quality Manager', 'Gerente de Calidad')}</p>
+          <p>{tl(
+            'Leads our QC department with strict protocols. Every product passes through her team before shipment.',
+            'Lidera nuestro departamento de control de calidad con protocolos estrictos. Cada producto pasa por su equipo antes del envío.'
+          )}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Certifications -->
+  <section class="section section-alt">
+    <div class="container">
+      <header class="section-header">
+        <p class="eyebrow">{tl('Certifications', 'Certificaciones')}</p>
+        <h2>{tl('Quality Certifications', 'Certificaciones de Calidad')}</h2>
+        <p>{tl(
+          'We maintain rigorous quality standards verified by internationally recognized certifications. Our trading company is ISO 9001 certified, and our manufacturing facility holds IATF 16949.',
+          'Mantenemos estándares de calidad rigurosos verificados por certificaciones reconocidas internacionalmente. Nuestra empresa comercial está certificada ISO 9001, y nuestra planta de fabricación cuenta con IATF 16949.'
+        )}</p>
+      </header>
+      <div class="cert-grid">
+        <div class="cert-card">
+          <div class="cert-icon">🏅</div>
+          <h3>ISO 9001</h3>
+          <p>{tl('Quality Management System — Certified by DNV', 'Sistema de Gestión de Calidad — Certificado por DNV')}</p>
+        </div>
+        <div class="cert-card">
+          <div class="cert-icon">🔒</div>
+          <h3>IATF 16949</h3>
+          <p>{tl('Our manufacturing facility is IATF 16949 certified (DNV)', 'Nuestra planta de fabricación cuenta con certificación IATF 16949 (DNV)')}</p>
+        </div>
+        <div class="cert-card">
+          <div class="cert-icon">🧪</div>
+          <h3>PPAP</h3>
+          <p>{tl('Production Part Approval Process available', 'Proceso de Aprobación de Piezas de Producción disponible')}</p>
+        </div>
+        <div class="cert-card">
+          <div class="cert-icon">📋</div>
+          <h3>{tl('Customs AEO', 'AEO Aduanero')}</h3>
+          <p>{tl('Authorized Economic Operator certified', 'Operador Económico Autorizado certificado')}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section cta-band">
+    <div class="container text-center">
+      <h2>{tl('Have Questions?', '¿Tiene Preguntas?')}</h2>
+      <p>{tl(
+        "We're happy to discuss your requirements and provide a competitive quote.",
+        'Estaremos encantados de discutir sus requisitos y proporcionarle una cotización competitiva.'
+      )}</p>
+      <div class="cta-actions">
+        <a href={isEs ? '/es/contact' : '/contact'} class="btn btn-primary btn-lg">
+          {tl('Contact Us Today', 'Contáctenos Hoy')}
+        </a>
+        <a href={isEs ? '/es/factory' : '/factory'} class="btn btn-outline-white btn-lg">
+          {tl('Visit Our Factory', 'Visite Nuestra Fábrica')}
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<script>
+const carousel = document.getElementById('about-carousel');
+if (carousel) {
+  const slides = carousel.querySelectorAll('.carousel-slide');
+  const dots = carousel.querySelectorAll('.carousel-dot');
+  let current = 0;
+  let timer = setInterval(next, 3500);
+  function show(idx: number) {
+    slides.forEach(s => s.classList.remove('active'));
+    dots.forEach(d => d.classList.remove('active'));
+    slides[idx].classList.add('active');
+    dots[idx].classList.add('active');
+    current = idx;
+  }
+  function next() { show((current + 1) % slides.length); }
+  dots.forEach((dot, i) => dot.addEventListener('click', () => {
+    clearInterval(timer);
+    show(i);
+    timer = setInterval(next, 3500);
+  }));
+}
+</script>
+
+<style>
+.page-header {
+  background: linear-gradient(135deg, #0F3060 0%, #1E3A6E 100%);
+  color: #fff;
+  padding: var(--space-12) 0;
+  text-align: center;
+}
+.page-header h1 {
+  color: #fff;
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  margin-bottom: var(--space-3);
+  font-weight: 800;
+}
+.page-header p {
+  font-size: clamp(1rem, 2.5vw, 1.125rem);
+  color: rgba(255,255,255,0.85);
+  margin: 0 auto;
+}
+.eyebrow {
+  font-size: 0.8125rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--color-secondary);
+  margin-bottom: var(--space-3);
+}
+/* Story */
+.about-story-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-12);
+  align-items: center;
+}
+.about-story-text h2 { margin-bottom: var(--space-4); }
+.about-story-text p { color: var(--color-text-light, #4a5568); line-height: 1.75; margin-bottom: var(--space-4); }
+/* Timeline */
+.timeline {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+  max-width: 700px;
+  margin: 0 auto;
+}
+.timeline-item {
+  display: grid;
+  grid-template-columns: 80px 1fr;
+  gap: var(--space-6);
+  align-items: start;
+}
+.timeline-year {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--color-primary);
+}
+.timeline-content {
+  border-left: 3px solid var(--color-primary);
+  padding-left: var(--space-6);
+}
+.timeline-content h3 { margin-bottom: var(--space-2); }
+.timeline-content p { margin: 0; }
+/* MVV */
+.mvv-card {
+  padding: var(--space-8);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  text-align: center;
+}
+.mvv-icon { font-size: 2.5rem; margin-bottom: var(--space-4); }
+.mvv-card h3 { margin-bottom: var(--space-3); }
+/* Advantages */
+.advantage-card {
+  padding: var(--space-6);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  background: var(--color-bg);
+}
+.advantage-number {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: var(--color-primary);
+  opacity: 0.15;
+  line-height: 1;
+  margin-bottom: var(--space-2);
+}
+.advantage-card h3 { font-size: 1.0625rem; margin-bottom: var(--space-2); }
+/* Team */
+.team-card {
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-8);
+  text-align: center;
+}
+.team-avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 1.5rem;
+  margin: 0 auto var(--space-4);
+}
+.team-card h3 { margin-bottom: var(--space-1); }
+.team-role {
+  font-size: 0.875rem;
+  color: var(--color-secondary);
+  font-weight: 600;
+  margin-bottom: var(--space-3);
+}
+/* Certifications */
+.cert-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-6);
+}
+.cert-card {
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-8);
+  text-align: center;
+}
+.cert-icon { font-size: 2.5rem; margin-bottom: var(--space-4); }
+.cert-card h3 { font-size: 1rem; margin-bottom: var(--space-2); }
+/* CTA Band */
+.cta-band {
+  background: var(--color-primary);
+  color: #fff;
+}
+.cta-band h2 { color: #fff; margin-bottom: var(--space-4); }
+.cta-band p { color: rgba(255,255,255,0.85); font-size: 1.125rem; margin-bottom: var(--space-6); }
+.cta-actions {
+  display: flex;
+  gap: var(--space-4);
+  justify-content: center;
+  flex-wrap: wrap;
+}
+/* Factory Carousel */
+.factory-carousel {
+  position: relative; width: 100%; height: 400px;
+  border-radius: var(--radius-xl); overflow: hidden;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+}
+.carousel-slide {
+  position: absolute; top: 0; left: 0;
+  width: 100%; height: 100%;
+  object-fit: cover; opacity: 0;
+  transition: opacity 0.6s ease;
+}
+.carousel-slide.active { opacity: 1; }
+.carousel-dots {
+  position: absolute; bottom: 12px; left: 50%;
+  transform: translateX(-50%);
+  display: flex; gap: 8px;
+}
+.carousel-dot {
+  width: 10px; height: 10px; border-radius: 50%;
+  background: rgba(255,255,255,0.5); cursor: pointer; transition: background 0.3s;
+}
+.carousel-dot.active { background: #fff; }
+/* Responsive */
+@media (max-width: 768px) {
+  .about-story-grid { grid-template-columns: 1fr; }
+  .timeline-item { grid-template-columns: 1fr; }
+  .timeline-year { font-size: 1.2rem; }
+  .timeline-content { border-left: none; border-top: 3px solid var(--color-primary); padding-left: 0; padding-top: var(--space-3); }
+  .cert-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 640px) {
+  .cert-grid { grid-template-columns: 1fr; }
+}
+</style>
+</BaseLayout>

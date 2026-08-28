@@ -1,0 +1,138 @@
+﻿---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+---
+
+<BaseLayout
+  title="Stamping Parts —Manufacturer & Exporter | Carelong"
+  description="Custom stamping parts manufacturer. Stainless steel, carbon steel stamping. CNC punching, bending, stretching for automotive and industrial applications."
+>
+  <Breadcrumb items={[
+    { label: 'Products', href: '/products' },
+    { label: 'Stamping Parts' }
+  ]} />
+
+  <header class="page-header">
+    <div class="container">
+      <h1>Stamping Parts</h1>
+      <p>Custom stamping parts manufacturer.</p>
+    </div>
+  </header>
+
+  <section class="section">
+    <div class="container">
+      <div class="product-overview">
+        <div class="product-image" style="background: #fff; border-radius: var(--radius-xl); box-shadow: var(--shadow-lg); display:flex; align-items:center; justify-content:center; height: 400px; overflow:hidden;">
+          <img src="/images/products/stamping-parts/stamping-parts-01.webp" alt="Stamping Parts" style="max-height: 100%; max-width: 100%; object-fit: contain;" />
+        </div>
+        <div class="product-intro">
+          <p class="eyebrow">Product Overview</p>
+          <h2>Stamping Parts</h2>
+          <p>Custom stamping parts manufacturer. Stainless steel, carbon steel stamping. CNC punching, bending, stretching for automotive and industrial applications.</p>
+
+          <div class="product-badges">
+            <span class="badge">Precision Stamping</span>
+            <span class="badge">Stainless Steel</span>
+            <span class="badge">Progressive Die</span>
+            <span class="badge">Custom Design</span>
+          </div>
+
+          <div class="product-actions">
+            <a href="/contact" class="btn btn-primary btn-lg">Request a Quote</a>
+            <a href="/products" class="btn btn-primary btn-lg">All Products</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt">
+    <div class="container">
+      <header class="section-header">
+        <p class="eyebrow">Specifications</p>
+        <h2>Technical Specifications</h2>
+      </header>
+      <div class="spec-table">
+        <div class="spec-row">
+          <div class="spec-name">Process</div>
+          <div class="spec-value">Progressive stamping, deep drawing, punching, bending</div>
+        </div>
+        <div class="spec-row">
+          <div class="spec-name">Material</div>
+          <div class="spec-value">Stainless steel, carbon steel, aluminum, copper</div>
+        </div>
+        <div class="spec-row">
+          <div class="spec-name">Thickness</div>
+          <div class="spec-value">0.1mm —6mm</div>
+        </div>
+        <div class="spec-row">
+          <div class="spec-name">Tolerance</div>
+          <div class="spec-value">±0.05mm</div>
+        </div>
+        <div class="spec-row">
+          <div class="spec-name">Surface Treatment</div>
+          <div class="spec-value">Zinc plating, nickel plating, anodizing, powder coating</div>
+        </div>
+        <div class="spec-row">
+          <div class="spec-name">Application</div>
+          <div class="spec-value">Automotive, electronics, appliances, industrial equipment</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <header class="section-header">
+        <p class="eyebrow">Product Gallery</p>
+        <h2>Stamping Parts Photos</h2>
+      </header>
+            <div class="gallery-grid">
+  <div class="gallery-item"><img src="/images/products/stamping-parts/stamping-parts-02.webp" alt="stamping parts 02" loading="lazy" /></div>
+  <div class="gallery-item"><img src="/images/products/stamping-parts/stamping-parts-03.webp" alt="stamping parts 03" loading="lazy" /></div>
+  <div class="gallery-item"><img src="/images/products/stamping-parts/stamping-parts-04.webp" alt="stamping parts 04" loading="lazy" /></div>
+  <div class="gallery-item"><img src="/images/products/stamping-parts/stamping-parts-05.webp" alt="stamping parts 05" loading="lazy" /></div>
+  <div class="gallery-item"><img src="/images/products/stamping-parts/stamping-parts-06.webp" alt="stamping parts 06" loading="lazy" /></div>
+  <div class="gallery-item"><img src="/images/products/stamping-parts/stamping-parts-07.webp" alt="stamping parts 07" loading="lazy" /></div>
+  <div class="gallery-item"><img src="/images/products/stamping-parts/stamping-parts-09.webp" alt="stamping parts 09" loading="lazy" /></div>
+  <div class="gallery-item"><img src="/images/products/stamping-parts/stamping-parts-10.webp" alt="stamping parts 10" loading="lazy" /></div>
+</div>
+</section>
+<section class="section cta-band">
+    <div class="container text-center">
+      <h2>Need Stamping Parts?</h2>
+      <p>Contact us for specifications and pricing. OEM and custom sizes available.</p>
+      <div class="cta-actions">
+        <a href="/contact" class="btn btn-primary btn-lg">Request a Quote</a>
+        <a href="mailto:Jason@carelong.com.cn?subject=Product%20Inquiry%20-%20Carelong%20Website" class="btn btn-outline-white btn-lg">Email Us</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+.eyebrow { font-size: 0.8125rem; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; color: var(--color-secondary); margin-bottom: var(--space-3); }
+.product-overview { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-12); align-items: center; }
+.product-intro h2 { margin-bottom: var(--space-4); }
+.product-intro p { color: var(--color-text-light); }
+.product-badges { display: flex; flex-wrap: wrap; gap: var(--space-2); margin: var(--space-6) 0; }
+.badge { display: inline-block; background: rgba(27, 75, 142, 0.08); color: var(--color-primary); padding: var(--space-1) var(--space-3); border-radius: 100px; font-size: 0.8125rem; font-weight: 600; }
+.product-actions { display: flex; gap: var(--space-4); flex-wrap: wrap; }
+.spec-table { display: flex; flex-direction: column; gap: var(--space-2); }
+.spec-row { display: flex; justify-content: space-between; padding: var(--space-4) var(--space-6); background: var(--color-bg); border: 1px solid var(--color-border); border-radius: var(--radius-md); }
+.spec-name { font-weight: 600; color: var(--color-text); }
+.spec-value { color: var(--color-text-light); text-align: right; }
+.gallery-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--space-4); }
+.gallery-item { background: #fff; border: 1px solid var(--color-border); border-radius: var(--radius-lg); overflow: hidden; aspect-ratio: 1/1; display: flex; align-items: center; justify-content: center; }
+.gallery-item img { max-width: 100%; max-height: 100%; object-fit: contain; display: block; }
+.cta-band { background: var(--color-primary); color: #fff; }
+.cta-band h2 { color: #fff; margin-bottom: var(--space-4); }
+.cta-band p { color: rgba(255,255,255,0.85); font-size: 1.125rem; margin-bottom: var(--space-6); }
+.cta-actions { display: flex; gap: var(--space-4); justify-content: center; flex-wrap: wrap; }
+@media (max-width: 768px) {
+  .product-overview { grid-template-columns: 1fr; }
+  .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+  .spec-row { flex-direction: column; gap: var(--space-1); }
+  .spec-value { text-align: left; }
+}
+</style>

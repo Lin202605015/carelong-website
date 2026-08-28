@@ -1,0 +1,15 @@
+# Security Policy for carelong.com.cn
+# Contact: Report vulnerabilities to admin@carelong.com.cn
+#
+# Encryption
+# For sensitive communications, please use email to request PGP key
+#
+# Scope
+# *.carelong.com.cn
+#
+# Preferred-Languages: en, zh
+
+Contact: mailto:admin@carelong.com.cn
+Expires: 2027-07-03T00:00:00.000Z
+Preferred-Languages: en, zh
+Policy: https://carelong.com.cn

@@ -1,0 +1,239 @@
+---
+import { siteConfig } from '../../data/site';
+---
+
+<section class="cta-section">
+  <div class="container">
+    <div class="cta-content">
+      <h2 class="cta-title">Ready to Start Your Project?</h2>
+      <p class="cta-subtitle">Get a free quote within 24 hours</p>
+
+      <div class="cta-contact">
+        <div class="contact-method">
+          <span class="contact-icon">✉</span>
+          <div class="contact-details">
+            <span class="contact-label">Email us directly</span>
+            <a href={`mailto:${siteConfig.contact.email}?subject=Product%20Inquiry%20-%20Carelong%20Website`} class="contact-value">{siteConfig.contact.email}</a>
+          </div>
+        </div>
+        <div class="contact-method">
+          <span class="contact-icon">📞</span>
+          <div class="contact-details">
+            <span class="contact-label">Call our team</span>
+            <a href={`tel:${siteConfig.contact.tel}`} class="contact-value">{siteConfig.contact.tel}</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="cta-actions">
+        <a href="/contact/" class="cta-btn">Contact Us Now</a>
+      </div>
+    </div>
+
+    <div class="cta-decoration">
+      <div class="deco-circle deco-circle-1"></div>
+      <div class="deco-circle deco-circle-2"></div>
+      <div class="deco-lines">
+        <span class="deco-line"></span>
+        <span class="deco-line"></span>
+        <span class="deco-line"></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .cta-section {
+    position: relative;
+    padding: 5rem 0;
+    background: linear-gradient(135deg, #e85a1f 0%, #d44f1a 50%, #c04a18 100%);
+    overflow: hidden;
+    font-family: 'Inter', 'Noto Sans SC', system-ui, sans-serif;
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    width: 100%;
+    position: relative;
+    z-index: 1;
+  }
+
+  /* Content */
+  .cta-content {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
+  .cta-title {
+    font-size: clamp(1.75rem, 4vw, 2.5rem);
+    font-weight: 800;
+    color: #ffffff;
+    margin-bottom: 0.75rem;
+    letter-spacing: -0.02em;
+  }
+
+  .cta-subtitle {
+    font-size: 1.125rem;
+    color: rgba(255,255,255,0.85);
+    margin-bottom: 2.5rem;
+  }
+
+  /* Contact Methods */
+  .cta-contact {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    margin-bottom: 2.5rem;
+    flex-wrap: wrap;
+  }
+
+  .contact-method {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    background-color: rgba(255,255,255,0.1);
+    padding: 1rem 1.5rem;
+    border-radius: 8px;
+    border: 1px solid rgba(255,255,255,0.2);
+  }
+
+  .contact-icon {
+    font-size: 1.5rem;
+  }
+
+  .contact-details {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    text-align: left;
+  }
+
+  .contact-label {
+    font-size: 0.8125rem;
+    color: rgba(255,255,255,0.7);
+    font-weight: 500;
+  }
+
+  .contact-value {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #ffffff;
+    transition: opacity 0.2s ease;
+  }
+
+  .contact-value:hover {
+    opacity: 0.85;
+  }
+
+  /* CTA Button */
+  .cta-actions {
+    display: flex;
+    justify-content: center;
+  }
+
+  .cta-btn {
+    display: inline-flex;
+    align-items: center;
+    padding: 1rem 2.5rem;
+    font-size: 1.0625rem;
+    font-weight: 700;
+    color: #e85a1f;
+    background-color: #ffffff;
+    border-radius: 6px;
+    transition: all 0.25s ease;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+  }
+
+  .cta-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(0,0,0,0.2);
+  }
+
+  /* Decoration */
+  .cta-decoration {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    overflow: hidden;
+  }
+
+  .deco-circle {
+    position: absolute;
+    border-radius: 50%;
+    border: 2px solid rgba(255,255,255,0.1);
+  }
+
+  .deco-circle-1 {
+    width: 400px;
+    height: 400px;
+    top: -200px;
+    right: -100px;
+  }
+
+  .deco-circle-2 {
+    width: 300px;
+    height: 300px;
+    bottom: -150px;
+    left: -80px;
+  }
+
+  .deco-lines {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    opacity: 0.05;
+  }
+
+  .deco-line {
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: #ffffff;
+  }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .cta-section {
+      padding: 4rem 0;
+    }
+
+    .cta-contact {
+      flex-direction: column;
+      gap: 1rem;
+      align-items: center;
+    }
+
+    .contact-method {
+      width: 100%;
+      max-width: 320px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .cta-section {
+      padding: 3rem 0;
+    }
+
+    .cta-subtitle {
+      font-size: 1rem;
+      margin-bottom: 2rem;
+    }
+
+    .contact-method {
+      padding: 0.875rem 1.25rem;
+    }
+
+    .cta-btn {
+      padding: 0.875rem 2rem;
+      font-size: 1rem;
+    }
+  }
+</style>

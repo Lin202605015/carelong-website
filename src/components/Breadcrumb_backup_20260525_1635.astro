@@ -1,0 +1,35 @@
+---
+import { siteConfig } from '../data/site';
+import { navigation } from '../data/navigation';
+
+interface BreadcrumbItem {
+  label: string;
+  href?: string;
+}
+
+interface Props {
+  items: BreadcrumbItem[];
+}
+
+const { items } = Astro.props;
+const structuredItems: BreadcrumbItem[] = [
+  { label: 'Home', href: '/' },
+  ...items,
+];
+---
+
+<nav class="breadcrumb" aria-label="Breadcrumb">
+  <div class="container">
+    <ol class="breadcrumb-list">
+      {structuredItems.map((item, i) => (
+        <li class="breadcrumb-item">
+          {item.href ? (
+            <a href={item.href}>{item.label}</a>
+          ) : (
+            <span aria-current="page">{item.label}</span>
+          )}
+        </li>
+      ))}
+    </ol>
+  </div>
+</nav>

@@ -1,0 +1,143 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import Breadcrumb from '../../../components/Breadcrumb.astro';
+---
+
+<BaseLayout
+  lang="es"
+  title="Piezas Soldadas - Fabricante y Exportador | Carelong"
+  description="Fabricante de soldadura y fabricación. Soldadura robotizada, soldadura de tuberías, barreras de carretera y conjuntos soldados a medida."
+>
+  <Breadcrumb items={[
+    { label: 'Productos', href: '/es/products' },
+    { label: 'Piezas Soldadas' }
+  ]} />
+
+  <header class="page-header">
+    <div class="container">
+      <h1>Piezas Soldadas</h1>
+      <p>Fabricante de soldadura y fabricación.</p>
+    </div>
+  </header>
+
+  <section class="section">
+    <div class="container">
+      <div class="product-overview">
+        <div class="product-image" style="background: #fff; border-radius: var(--radius-xl); box-shadow: var(--shadow-lg); display:flex; align-items:center; justify-content:center; height: 400px; overflow:hidden;">
+          <img src="/images/products/welding-parts/welding-parts-01.webp" alt="Piezas Soldadas" style="max-height: 100%; max-width: 100%; object-fit: contain;" />
+        </div>
+        <div class="product-intro">
+          <p class="eyebrow">Descripción del Producto</p>
+          <h2>Piezas Soldadas</h2>
+          <p>Fabricante de soldadura y fabricación. Soldadura robotizada, soldadura de tuberías, barreras de carretera y conjuntos soldados a medida.</p>
+
+          <div class="product-badges">
+            <span class="badge">Soldadura Robotizada</span>
+            <span class="badge">Soldadura MIG/TIG</span>
+            <span class="badge">Fabricación Personalizada</span>
+            <span class="badge">Tratamiento Superficial</span>
+          </div>
+
+          <div class="product-actions">
+            <a href="/es/contact" class="btn btn-primary btn-lg">Solicitar Cotización</a>
+            <a href="/es/products" class="btn btn-primary btn-lg">Todos los Productos</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt">
+    <div class="container">
+      <header class="section-header">
+        <p class="eyebrow">Especificaciones</p>
+        <h2>Especificaciones Técnicas</h2>
+      </header>
+      <div class="spec-table">
+        <div class="spec-row">
+          <div class="spec-name">Proceso</div>
+          <div class="spec-value">Soldadura robotizada, MIG, TIG, soldadura por puntos, soldadura por arco</div>
+        </div>
+        <div class="spec-row">
+          <div class="spec-name">Material</div>
+          <div class="spec-value">Acero al carbono, acero inoxidable, aluminio</div>
+        </div>
+        <div class="spec-row">
+          <div class="spec-name">Norma de Soldadura</div>
+          <div class="spec-value">ISO 3834, AWS D1.1</div>
+        </div>
+        <div class="spec-row">
+          <div class="spec-name">Tratamiento Superficial</div>
+          <div class="spec-value">Pintura, recubrimiento en polvo, galvanizado por inmersión en caliente, galvanoplastia</div>
+        </div>
+        <div class="spec-row">
+          <div class="spec-name">Tamaño Máx. de Conjunto</div>
+          <div class="spec-value">Hasta 3000mm × 1500mm × 800mm</div>
+        </div>
+        <div class="spec-row">
+          <div class="spec-name">Aplicación</div>
+          <div class="spec-value">Barreras de carretera, equipo deportivo, construcción, automoción</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <header class="section-header">
+        <p class="eyebrow">Galería de Productos</p>
+        <h2>Fotos de Piezas Soldadas</h2>
+      </header>
+            <div class="gallery-grid">
+  <div class="gallery-item"><img src="/images/products/welding-parts/welding-parts-02.webp" alt="piezas soldadas 02" loading="lazy" /></div>
+  <div class="gallery-item"><img src="/images/products/welding-parts/welding-parts-04.webp" alt="piezas soldadas 04" loading="lazy" /></div>
+  <div class="gallery-item"><img src="/images/products/welding-parts/welding-parts-05.webp" alt="piezas soldadas 05" loading="lazy" /></div>
+  <div class="gallery-item"><img src="/images/products/welding-parts/welding-parts-06.webp" alt="piezas soldadas 06" loading="lazy" /></div>
+  <div class="gallery-item"><img src="/images/products/welding-parts/welding-parts-07.webp" alt="piezas soldadas 07" loading="lazy" /></div>
+  <div class="gallery-item"><img src="/images/products/welding-parts/welding-parts-10.webp" alt="piezas soldadas 10" loading="lazy" /></div>
+  <div class="gallery-item"><img src="/images/products/welding-parts/welding-parts-13.webp" alt="piezas soldadas 13" loading="lazy" /></div>
+  <div class="gallery-item"><img src="/images/products/welding-parts/welding-parts-16.webp" alt="piezas soldadas 16" loading="lazy" /></div>
+  <div class="gallery-item"><img src="/images/products/welding-parts/welding-parts-17.webp" alt="piezas soldadas 17" loading="lazy" /></div>
+  <div class="gallery-item"><img src="/images/products/welding-parts/welding-parts-20.webp" alt="piezas soldadas 20" loading="lazy" /></div>
+  <div class="gallery-item"><img src="/images/products/welding-parts/welding-parts-21.webp" alt="piezas soldadas 21" loading="lazy" /></div>
+  <div class="gallery-item"><img src="/images/products/welding-parts/welding-parts-22.webp" alt="piezas soldadas 22" loading="lazy" /></div>
+            </div>
+</section>
+<section class="section cta-band">
+    <div class="container text-center">
+      <h2>¿Necesita Piezas Soldadas?</h2>
+      <p>Contáctenos para especificaciones y precios. Disponibles tamaños OEM y personalizados.</p>
+      <div class="cta-actions">
+        <a href="/es/contact" class="btn btn-primary btn-lg">Solicitar Cotización</a>
+        <a href="mailto:Jason@carelong.com.cn?subject=Product%20Inquiry%20-%20Carelong%20Website" class="btn btn-outline-white btn-lg">Envíenos un Correo</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+.eyebrow { font-size: 0.8125rem; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; color: var(--color-secondary); margin-bottom: var(--space-3); }
+.product-overview { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-12); align-items: center; }
+.product-intro h2 { margin-bottom: var(--space-4); }
+.product-intro p { color: var(--color-text-light); }
+.product-badges { display: flex; flex-wrap: wrap; gap: var(--space-2); margin: var(--space-6) 0; }
+.badge { display: inline-block; background: rgba(27, 75, 142, 0.08); color: var(--color-primary); padding: var(--space-1) var(--space-3); border-radius: 100px; font-size: 0.8125rem; font-weight: 600; }
+.product-actions { display: flex; gap: var(--space-4); flex-wrap: wrap; }
+.spec-table { display: flex; flex-direction: column; gap: var(--space-2); }
+.spec-row { display: flex; justify-content: space-between; padding: var(--space-4) var(--space-6); background: var(--color-bg); border: 1px solid var(--color-border); border-radius: var(--radius-md); }
+.spec-name { font-weight: 600; color: var(--color-text); }
+.spec-value { color: var(--color-text-light); text-align: right; }
+.gallery-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--space-4); }
+.gallery-item { background: #fff; border: 1px solid var(--color-border); border-radius: var(--radius-lg); overflow: hidden; aspect-ratio: 1/1; display: flex; align-items: center; justify-content: center; }
+.gallery-item img { max-width: 100%; max-height: 100%; object-fit: contain; display: block; }
+.cta-band { background: var(--color-primary); color: #fff; }
+.cta-band h2 { color: #fff; margin-bottom: var(--space-4); }
+.cta-band p { color: rgba(255,255,255,0.85); font-size: 1.125rem; margin-bottom: var(--space-6); }
+.cta-actions { display: flex; gap: var(--space-4); justify-content: center; flex-wrap: wrap; }
+@media (max-width: 768px) {
+  .product-overview { grid-template-columns: 1fr; }
+  .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+  .spec-row { flex-direction: column; gap: var(--space-1); }
+  .spec-value { text-align: left; }
+}
+</style>

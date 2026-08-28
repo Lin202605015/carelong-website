@@ -1,0 +1,465 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+
+interface ProductCategory {
+  slug: string;
+  name: string;
+  image: string;
+  description: string;
+  count: number;
+  filter: string;
+}
+
+const categories: ProductCategory[] = [
+  // Bolts and Nuts - 5 subcategories
+  {
+    slug: 'bolts-and-nuts/hub-bolts',
+    name: 'Hub Bolts',
+    image: '/images/products/bolts-and-nuts/hub-bolts/hub-bolt -(1).webp',
+    description: 'High tensile hub bolts for automotive and heavy equipment applications. Available in various sizes and specifications.',
+    count: 5,
+    filter: 'fasteners',
+  },
+  {
+    slug: 'bolts-and-nuts/plow-bolts',
+    name: 'Plow Bolts',
+    image: '/images/products/bolts-and-nuts/plow-bolts/plow-bolt-01.webp',
+    description: 'Plow bolts for construction machinery undercarriage. Durable and reliable for heavy-duty applications.',
+    count: 5,
+    filter: 'fasteners',
+  },
+  {
+    slug: 'bolts-and-nuts/track-bolts',
+    name: 'Track Bolts',
+    image: '/images/products/bolts-and-nuts/track-bolts/track-bolt-01.webp',
+    description: 'Track link bolts for excavators and bulldozers. High strength 10.9 and 12.9 class.',
+    count: 5,
+    filter: 'fasteners',
+  },
+  {
+    slug: 'bolts-and-nuts/segment-bolts',
+    name: 'Segment Bolts',
+    image: '/images/products/bolts-and-nuts/segment-bolts/segment-bolt-01.webp',
+    description: 'Segment bolts for heavy equipment undercarriage. Precision manufactured to OEM specifications.',
+    count: 5,
+    filter: 'fasteners',
+  },
+  {
+    slug: 'bolts-and-nuts/hex-nuts',
+    name: 'Hex Nuts',
+    image: '/images/products/bolts-and-nuts/hex-nuts/hex-nuts-01.webp',
+    description: 'Standard hexagonal nuts in carbon steel and alloy steel. M6–M36, Grade 8/10, zinc plated and black finish. DIN 934, ISO 4032 standard.',
+    count: 5,
+    filter: 'fasteners',
+  },
+  {
+    slug: 'bolts-and-nuts/flange-nuts',
+    name: 'Flange Nuts',
+    image: '/images/products/bolts-and-nuts/flange-nuts/flange-nuts-01.webp',
+    description: 'Hex flange nuts and serrated flange nuts with integrated washer base. DIN 6923, ISO 4161 standard. Carbon and alloy steel.',
+    count: 5,
+    filter: 'fasteners',
+  },
+  {
+    slug: 'bolts-and-nuts/nylon-nuts',
+    name: 'Nylon Nuts',
+    image: '/images/products/bolts-and-nuts/nylon-nuts/nylon-nuts-01.webp',
+    description: 'Nylon insert lock nuts (prevailing torque nuts). DIN 982, ISO 10511. M4–M24, Grade 8/10. Self-locking design prevents loosening from vibration.',
+    count: 5,
+    filter: 'fasteners',
+  },
+  {
+    slug: 'bolts-and-nuts/wheel-nuts',
+    name: 'Wheel Nuts',
+    image: '/images/products/bolts-and-nuts/wheel-nuts/wheel-nuts-01.webp',
+    description: 'Wheel lug nuts for trucks, trailers, and commercial vehicles. M18–M27, right-hand and left-hand thread. Compatible with BPW, SAF, Meritor.',
+    count: 5,
+    filter: 'fasteners',
+  },
+  {
+    slug: 'bolts-and-nuts/slotted-nuts',
+    name: 'Slotted Nuts',
+    image: '/images/products/bolts-and-nuts/slotted-nuts/slotted-nuts-01.webp',
+    description: 'Castle nuts and slotted hex nuts for cotter pin locking. DIN 935, ISO 4037. M6–M36, Grade 8/10. Used in agricultural and construction machinery.',
+    count: 5,
+    filter: 'fasteners',
+  },
+  // Display Fixture - 5 subcategories
+  {
+    slug: 'display-rack/supermarket-display-racks',
+    name: 'Supermarket Display Racks',
+    image: '/images/products/display-rack/supermarket-display-racks-01.webp',
+    description: 'Heavy-duty gondola shelving systems for supermarkets and grocery stores. Designed for high traffic and maximum product visibility.',
+    count: 5,
+    filter: 'parts',
+  },
+  {
+    slug: 'display-rack/wall-mounted-storage-racks',
+    name: 'Pegboard & Slatwall Display',
+    image: '/images/products/display-rack/pegboard-slatwall-01.webp',
+    description: 'Versatile pegboard and slatwall display panels with hooks, shelves, and accessories. Ideal for retail walls, workshops, and trade shows.',
+    count: 5,
+    filter: 'parts',
+  },
+  {
+    slug: 'display-rack/clothing-display-racks',
+    name: 'Clothing Display Racks',
+    image: '/images/products/display-rack/clothing-racks-01.webp',
+    description: 'Stylish garment display racks for boutiques, showrooms, and trade shows. Various styles including round racks, garment rails, and display stands.',
+    count: 5,
+    filter: 'parts',
+  },
+  {
+    slug: 'display-rack/wooden-display-racks',
+    name: 'Wooden Display Racks',
+    image: '/images/products/display-rack/wooden-racks-01.webp',
+    description: 'Elegant wooden display racks combining metal frames with wooden shelves. Perfect for boutiques, gift shops, and high-end retail environments.',
+    count: 5,
+    filter: 'parts',
+  },
+  {
+    slug: 'display-rack/newspaper-magazine-racks',
+    name: 'Display Tables & Stands',
+    image: '/images/products/display-rack/newspaper-racks-01.webp',
+    description: 'Freestanding display tables and stands for publications, brochures, and promotional merchandise. Ideal for bookstores, newsstands, libraries, and retail floors.',
+    count: 5,
+    filter: 'parts',
+  },
+  // Other product categories
+  {
+    slug: 'stamping-parts',
+    name: 'Stamping Parts',
+    image: '/images/products/stamping-parts/stamping-parts-01.webp',
+    description: 'Precision metal stamping parts for automotive and industrial applications. Progressive die stamping with tight tolerances and high consistency.',
+    count: 8,
+    filter: 'parts',
+  },
+  {
+    slug: 'die-casting-parts',
+    name: 'Die Casting Parts',
+    image: '/images/products/die-casting-parts/die-casting-parts-01.webp',
+    description: 'Aluminum and zinc die casting components with CNC machining for complex geometries requiring high dimensional accuracy.',
+    count: 16,
+    filter: 'parts',
+  },
+  {
+    slug: 'forging-parts',
+    name: 'Forging Parts',
+    image: '/images/products/forging-parts/forging-parts-01.webp',
+    description: 'Hot forged components with superior grain flow. We specialize in high tensile 10.9 and 12.9 class using S40Cr and ML20MnTiB materials.',
+    count: 12,
+    filter: 'fasteners',
+  },
+  {
+    slug: 'machining-parts',
+    name: 'Machining Parts',
+    image: '/images/products/machining-parts/machining-parts-01.webp',
+    description: 'Precision CNC turned and milled parts from steel, stainless steel, aluminum, and brass. Multi-axis capabilities for complex geometries.',
+    count: 8,
+    filter: 'parts',
+  },
+  {
+    slug: 'welding-parts',
+    name: 'Welding Parts',
+    image: '/images/products/welding-parts/welding-parts-01.webp',
+    description: 'Custom welding fabrication including MIG, TIG, and spot welding. Assemblies from stamped, machined, and forged components.',
+    count: 12,
+    filter: 'parts',
+  },
+  {
+    slug: 'plastic-rubber-parts',
+    name: 'Plastic and Rubber Parts',
+    image: '/images/products/plastic-rubber-parts/plastic-rubber-parts-01.webp',
+    description: 'Injection molded plastic and rubber components including seals, grommets, bushings, and custom molded parts.',
+    count: 12,
+    filter: 'parts',
+  },
+  {
+    slug: 'tooling-and-moulds',
+    name: 'Tooling and Moulds',
+    image: '/images/products/tooling-and-moulds/tooling-and-moulds-01.webp',
+    description: 'Custom tooling design and manufacturing for cold heading, stamping, die casting, and injection molding applications.',
+    count: 4,
+    filter: 'tooling',
+  },
+  {
+    slug: 'heavy-equipment-parts',
+    name: 'Heavy Equipment Parts',
+    image: '/images/products/heavy-equipment-parts/heavy-equipment-parts-01.webp',
+    description: 'Undercarriage spare parts for Caterpillar, Komatsu, and other heavy construction machinery. Track chains, rollers, idlers, and custom parts.',
+    count: 12,
+    filter: 'heavy',
+  },
+  {
+    slug: 'auto-parts',
+    name: 'Auto Parts',
+    image: '/images/products/auto-parts/auto-parts-1.webp',
+    description: 'Automotive fasteners and components for Hino, Mitsubishi Fuso, Benz, Volvo, Nissan, and Suzuki. Wheel bolts, hub bolts, U-bolts, and wheel studs.',
+    count: 12,
+    filter: 'fasteners',
+  },
+  {
+    slug: 'other-parts',
+    name: 'Other Parts',
+    image: '/images/products/other-parts/other-parts-01.webp',
+    description: 'Custom mechanical components per your specifications. We welcome inquiries for non-standard parts, prototype components, and specialty items.',
+    count: 4,
+    filter: 'parts',
+  },
+];
+---
+
+<BaseLayout
+  title="Our Products — Bolts, Nuts, Forging & Auto Parts Manufacturer"
+  description="Browse our full range of products including Bolts and Nuts, Stamping Parts, Die Casting Parts, Forging Parts, Machining Parts, and more. OEM and custom manufacturing available."
+>
+  <Breadcrumb items={[{ label: 'Products' }]} />
+
+  <header class="page-header">
+    <div class="container">
+      <h1>Our Product Categories</h1>
+      <p>Quality forging parts and high tensile auto fasteners for global markets</p>
+    </div>
+  </header>
+
+
+
+  <!-- Products Grid -->
+  <section class="section">
+    <div class="container">
+      <div class="products-grid">
+        {categories.map(cat => (
+          <a href={`/products/${cat.slug}`} class="product-cat-card" data-category={cat.filter}>
+            <div class="product-cat-image">
+              <img src={cat.image} alt={cat.name} />
+            </div>
+            <div class="product-cat-body">
+              <div class="product-cat-meta">
+                <span class="product-count">{cat.count} products</span>
+              </div>
+              <h2>{cat.name}</h2>
+              <p>{cat.description}</p>
+              <span class="btn btn-primary btn-sm">
+                View Products
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Custom Products CTA -->
+  <section class="section section-alt">
+    <div class="container">
+      <div class="custom-cta">
+        <div class="custom-cta-text">
+          <p class="eyebrow">Custom Manufacturing</p>
+          <h2>Don't See What You Need?</h2>
+          <p>
+            We specialize in custom OEM parts. Send us your specifications — material, dimensions, surface treatment, quantity — and we'll provide a competitive quote within 24 hours.
+          </p>
+          <ul class="custom-cta-features">
+            <li>✓ Custom sizes and thread specifications</li>
+            <li>✓ Custom materials and surface treatments</li>
+            <li>✓ Prototype and sample production available</li>
+            <li>✓ Free technical consultation</li>
+          </ul>
+        </div>
+        <div class="custom-cta-action">
+          <a href="/contact" class="btn btn-primary btn-lg">Request Custom Quote</a>
+          <p class="cta-subtext">Or email us at <a href="mailto:Jason@carelong.com.cn?subject=Product%20Inquiry%20-%20Carelong%20Website">Jason@carelong.com.cn</a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+.eyebrow {
+  font-size: 0.8125rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--color-secondary);
+  margin-bottom: var(--space-3);
+}
+
+/* Filter Bar */
+.filter-bar {
+  background: var(--color-bg-alt);
+  border-bottom: 1px solid var(--color-border);
+  padding: var(--space-4) 0;
+  position: sticky;
+  top: 60px;
+  z-index: 10;
+}
+
+.filter-inner {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  flex-wrap: wrap;
+}
+
+.filter-label {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--color-text-light);
+}
+
+.filter-buttons {
+  display: flex;
+  gap: var(--space-2);
+  flex-wrap: wrap;
+}
+
+.filter-btn {
+  padding: var(--space-2) var(--space-4);
+  border: 1px solid var(--color-border-dark);
+  border-radius: 100px;
+  background: var(--color-bg);
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--color-text);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+  background: var(--color-primary);
+  color: #fff;
+  border-color: var(--color-primary);
+}
+
+/* Products Grid */
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-8);
+}
+
+.product-cat-card {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  background: var(--color-bg);
+  transition: all var(--transition-base);
+}
+
+.product-cat-card:hover {
+  box-shadow: var(--shadow-xl);
+  transform: translateY(-4px);
+  border-color: var(--color-primary);
+}
+
+.product-cat-image {
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 220px;
+  overflow: hidden;
+}
+
+.product-cat-image img {
+  max-height: 100%;
+  max-width: 100%;
+  object-fit: contain;
+}
+
+.product-cat-body {
+  padding: var(--space-6);
+}
+
+.product-cat-meta {
+  margin-bottom: var(--space-2);
+}
+
+.product-count {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--color-primary);
+  background: rgba(27, 75, 142, 0.08);
+  padding: var(--space-1) var(--space-2);
+  border-radius: 100px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.product-cat-body h2 {
+  font-size: 1.25rem;
+  margin-bottom: var(--space-2);
+}
+
+.product-cat-body p {
+  color: var(--color-text-light);
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  margin-bottom: var(--space-4);
+}
+
+.btn-sm {
+  padding: var(--space-2) var(--space-4);
+  font-size: 0.875rem;
+}
+
+/* Custom CTA */
+.custom-cta {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: var(--space-12);
+  align-items: center;
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  padding: var(--space-12);
+}
+
+.custom-cta-features {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  margin-top: var(--space-4);
+}
+
+.custom-cta-features li {
+  font-size: 0.9375rem;
+  color: var(--color-text-light);
+}
+
+.custom-cta-action {
+  text-align: center;
+  flex-shrink: 0;
+}
+
+.cta-subtext {
+  font-size: 0.8125rem;
+  color: var(--color-text-muted);
+  margin-top: var(--space-3);
+  margin-bottom: 0;
+}
+
+@media (max-width: 1024px) {
+  .products-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 768px) {
+  .custom-cta { grid-template-columns: 1fr; text-align: center; }
+  .custom-cta-features { align-items: center; }
+  .custom-cta-features li { text-align: center; }
+}
+
+@media (max-width: 640px) {
+  .products-grid { grid-template-columns: 1fr; }
+}
+</style>

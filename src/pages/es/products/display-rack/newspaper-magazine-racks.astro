@@ -1,0 +1,253 @@
+---
+import BaseLayout from '../../../../layouts/BaseLayout.astro';
+import Breadcrumb from '../../../../components/Breadcrumb.astro';
+
+const images = [
+  { src: '/images/products/display-rack/newspaper-racks-01.webp', alt: 'Exhibidor independiente de revistas y folletos con marco Z cromado y 6-7 bolsillos inclinados con publicaciones' },
+  { src: '/images/products/display-rack/newspaper-racks-02.webp', alt: 'Dispensador de folletos de metal cepillado con panel frontal arqueado y 6-8 bolsillos con folletos de colores' },
+  { src: '/images/products/display-rack/newspaper-racks-03.webp', alt: 'Soporte independiente de doble cara con panel perforado negro con tarjetas de horquillas Scunci colgadas' },
+  { src: '/images/products/display-rack/newspaper-racks-04.webp', alt: 'Exhibidor blanco de rejilla metálica montado en pared con 20-25 bolsillos mostrando publicaciones vintage' },
+  { src: '/images/products/display-rack/newspaper-racks-05.webp', alt: 'Exhibidor móvil negro de rejilla metálica para caramelos con 6-7 estantes y ruedas' }
+];
+---
+
+<BaseLayout
+  title="Mesas y Soportes de Exhibición — Exhibidores Profesionales de Publicaciones | Carelong"
+  description="Mesas y soportes de exhibición independientes para publicaciones, folletos y productos promocionales. Ideales para librerías, quioscos, bibliotecas, pisos de venta y ferias comerciales."
+>
+  <Breadcrumb items={[
+    { label: 'Productos', href: '/es/products' },
+    { label: 'Exhibidores', href: '/es/products/display-rack' },
+    { label: 'Mesas y Soportes de Exhibición' }
+  ]} />
+
+  <header class="page-header">
+    <div class="container">
+      <h1>Mesas y Soportes de Exhibición</h1>
+      <p>Mesas y soportes versátiles para tiendas, ferias y merchandising promocional.</p>
+    </div>
+  </header>
+
+  <section class="section">
+    <div class="container">
+      <div class="product-overview">
+        <div class="product-gallery" id="productGallery">
+          <div class="gallery-thumbs" aria-label="Imágenes del producto">
+            {images.map((img, i) => (
+              <button
+                type="button"
+                class={`thumb ${i === 0 ? 'is-active' : ''}`}
+                data-index={i}
+                aria-label={`Ver imagen ${i + 1}`}
+              >
+                <img src={img.src} alt={img.alt} loading="lazy" />
+              </button>
+            ))}
+          </div>
+          <div class="gallery-stage" id="galleryStage">
+            {images.map((img, i) => (
+              <img
+                src={img.src}
+                alt={img.alt}
+                class={`stage-img ${i === 0 ? 'is-active' : ''}`}
+                data-index={i}
+                loading={i === 0 ? 'eager' : 'lazy'}
+              />
+            ))}
+            <button type="button" class="stage-arrow stage-arrow-prev" aria-label="Imagen anterior" hidden>
+              <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M15 6l-6 6 6 6" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <button type="button" class="stage-arrow stage-arrow-next" aria-label="Imagen siguiente" hidden>
+              <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M9 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <div class="zoom-hint" aria-hidden="true">Pasa el ratón para ampliar y mover</div>
+          </div>
+        </div>
+        <div class="product-intro">
+          <p class="eyebrow">Descripción del Producto</p>
+          <h2>Mesas y Soportes de Exhibición</h2>
+          <p>Nuestras mesas y soportes de exhibición proporcionan superficies flexibles de merchandising para pisos de venta, stands de ferias y exhibidores promocionales. Úselos para publicaciones, folletos, productos promocionales o exhibidores de temporada. Construcción resistente con acabados en acero con pintura en polvo o cromados.</p>
+          <p>Disponibles en diseños de piso y mostrador, con opciones giratorias, unidades multi-bolsillo y superficies planas para mercancía. Construcción metálica duradera con acabados personalizables.</p>
+
+          <div class="product-badges">
+            <span class="badge">Opciones Giratorias</span>
+            <span class="badge">Diseño Multi-Bolsillo</span>
+            <span class="badge">Visibilidad Clara</span>
+            <span class="badge">Piso y Mostrador</span>
+          </div>
+
+          <div class="product-actions">
+            <a href="/es/contact" class="btn btn-primary btn-lg">Solicitar Cotización</a>
+            <a href="/es/products/display-rack" class="btn btn-outline btn-lg">Todos los Exhibidores</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt">
+    <div class="container">
+      <header class="section-header">
+        <p class="eyebrow">Especificaciones</p>
+        <h2>Atributos clave</h2>
+      </header>
+      <div class="spec-table spec-table-grid">
+        <div class="spec-row">
+          <div class="spec-cell"><div class="spec-name">número de modelo</div><div class="spec-value">CARELONG-BROCHURE 1</div></div>
+          <div class="spec-cell"><div class="spec-name">lugar de origen</div><div class="spec-value">Fujian, China</div></div>
+        </div>
+        <div class="spec-row">
+          <div class="spec-cell"><div class="spec-name">marca</div><div class="spec-value">carelong</div></div>
+          <div class="spec-cell"><div class="spec-name">Acabado</div><div class="spec-value">recubrimiento en polvo</div></div>
+        </div>
+        <div class="spec-row">
+          <div class="spec-cell"><div class="spec-name">certificado</div><div class="spec-value">ISO9001:2008</div></div>
+          <div class="spec-cell"><div class="spec-name">Material</div><div class="spec-value">Metal</div></div>
+        </div>
+        <div class="spec-row">
+          <div class="spec-cell"><div class="spec-name">Color</div><div class="spec-value">Color Personalizado</div></div>
+          <div class="spec-cell"><div class="spec-name">Uso</div><div class="spec-value">Exhibición de Mercancías</div></div>
+        </div>
+      </div>
+
+      <header class="section-header" style="margin-top: var(--space-12);">
+        <h2>Embalaje y entrega</h2>
+      </header>
+      <div class="spec-table spec-table-grid">
+        <div class="spec-row">
+          <div class="spec-cell"><div class="spec-name">Detalles del embalaje</div><div class="spec-value">embalaje en cartón</div></div>
+          <div class="spec-cell"><div class="spec-name">Puerto de despacho</div><div class="spec-value">Xiamen</div></div>
+        </div>
+        <div class="spec-row">
+          <div class="spec-cell"><div class="spec-name">Unidades de venta</div><div class="spec-value">Artículo individual</div></div>
+          <div class="spec-cell"><div class="spec-name">Tamaño del paquete individual</div><div class="spec-value">120X100X90 cm</div></div>
+        </div>
+        <div class="spec-row">
+          <div class="spec-cell"><div class="spec-name">Peso bruto individual</div><div class="spec-value">25.0 kg</div></div>
+        </div>
+      </div>
+
+      <header class="section-header" style="margin-top: var(--space-12);">
+        <h2>Capacidad de suministro</h2>
+      </header>
+      <div class="spec-table spec-table-grid">
+        <div class="spec-row">
+          <div class="spec-cell"><div class="spec-name">Capacidad de suministro</div><div class="spec-value">2000 juegos por mes</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section cta-band">
+    <div class="container text-center">
+      <h2>¿Necesita Mesas o Soportes de Exhibición?</h2>
+      <p>Indíquenos los tamaños de sus publicaciones y necesidades de exhibición. Configuraciones personalizadas disponibles.</p>
+      <div class="cta-actions">
+        <a href="/es/contact" class="btn btn-primary btn-lg">Solicitar Cotización</a>
+        <a href="mailto:Jason@carelong.com.cn?subject=Consulta%20Mesas%20y%20Soportes" class="btn btn-outline-white btn-lg">Envíenos un Correo</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const gallery = document.getElementById('productGallery');
+    if (!gallery) return;
+
+    const thumbs = Array.from(gallery.querySelectorAll('.thumb'));
+    const stageImgs = Array.from(gallery.querySelectorAll('.stage-img'));
+    const stages = Array.from(gallery.querySelectorAll('.gallery-stage'));
+    let current = 0;
+
+    function activate(idx) {
+      if (idx === current) return;
+      current = idx;
+      thumbs.forEach((t) => t.classList.toggle('is-active', Number(t.dataset.index) === current));
+      stageImgs.forEach((img) => {
+        const isActive = Number(img.dataset.index) === current;
+        img.classList.toggle('is-active', isActive);
+        if (isActive) img.style.transformOrigin = 'center center';
+      });
+      stages.forEach((s) => s.classList.remove('is-zooming'));
+    }
+
+    thumbs.forEach((t) => {
+      const idx = Number(t.dataset.index);
+      t.addEventListener('mouseenter', () => activate(idx));
+      t.addEventListener('focus', () => activate(idx));
+      t.addEventListener('click', () => activate(idx));
+    });
+
+    stages.forEach((stage) => {
+      stage.addEventListener('mouseenter', () => stage.classList.add('is-zooming'));
+      stage.addEventListener('mouseleave', () => {
+        stage.classList.remove('is-zooming');
+        const active = stage.querySelector('.stage-img.is-active');
+        if (active) {
+          active.style.transformOrigin = 'center center';
+        }
+      });
+      stage.addEventListener('mousemove', (e) => {
+        const active = stage.querySelector('.stage-img.is-active');
+        if (!active) return;
+        const rect = stage.getBoundingClientRect();
+        const x = ((e.clientX - rect.left) / rect.width) * 100;
+        const y = ((e.clientY - rect.top) / rect.height) * 100;
+        const cx = Math.max(0, Math.min(100, x));
+        const cy = Math.max(0, Math.min(100, y));
+        active.style.transformOrigin = cx + '% ' + cy + '%';
+      });
+    });
+  });
+</script>
+
+<style>
+.eyebrow { font-size: 0.8125rem; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; color: var(--color-secondary); margin-bottom: var(--space-3); }
+.product-overview { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-12); align-items: start; }
+
+/* Left thumbs + right big image */
+.product-gallery { display: grid; grid-template-columns: 88px 1fr; gap: var(--space-4); align-items: start; }
+.gallery-thumbs { display: flex; flex-direction: column; gap: var(--space-2); max-height: 480px; overflow-y: auto; padding-right: 4px; }
+.thumb { all: unset; cursor: pointer; display: block; width: 88px; height: 88px; border-radius: var(--radius-md); border: 2px solid transparent; background: #fff; overflow: hidden; transition: border-color .2s ease, transform .18s ease, box-shadow .18s ease; }
+.thumb img { width: 100%; height: 100%; object-fit: contain; display: block; }
+.thumb:hover { transform: translateY(-1px); box-shadow: 0 4px 12px rgba(27,75,142,.18); }
+.thumb.is-active { border-color: var(--color-primary); box-shadow: 0 4px 12px rgba(27,75,142,.25); transform: translateY(-1px); }
+
+.gallery-stage { position: relative; background: #fff; border-radius: var(--radius-xl); box-shadow: var(--shadow-lg); overflow: hidden; aspect-ratio: 1 / 1; cursor: zoom-in; outline: none; }
+.stage-arrow[hidden] { display: none; }
+.stage-img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; padding: var(--space-4); opacity: 0; transition: opacity .25s ease; transform: scale(1); cursor: zoom-in; }
+.stage-img.is-active { opacity: 1; }
+.gallery-stage.is-zooming .stage-img.is-active { transform: scale(2); transition: transform .15s ease-out; }
+.zoom-hint { position: absolute; bottom: var(--space-3); right: var(--space-4); padding: 4px 10px; border-radius: 100px; background: rgba(15, 48, 96, 0.7); color: #fff; font-size: 0.75rem; font-weight: 500; letter-spacing: .5px; pointer-events: none; }
+
+.product-intro h2 { margin-bottom: var(--space-4); }
+.product-intro p { color: var(--color-text-light); line-height: 1.7; }
+.product-badges { display: flex; flex-wrap: wrap; gap: var(--space-2); margin: var(--space-6) 0; }
+.badge { display: inline-block; background: rgba(27, 75, 142, 0.08); color: var(--color-primary); padding: var(--space-1) var(--space-3); border-radius: 100px; font-size: 0.8125rem; font-weight: 600; }
+.product-actions { display: flex; gap: var(--space-4); flex-wrap: wrap; }
+
+.spec-table { display: flex; flex-direction: column; gap: var(--space-2); }
+.spec-table-grid { display: flex; flex-direction: column; gap: var(--space-2); }
+.spec-row { display: flex; justify-content: space-between; padding: var(--space-4) var(--space-6); background: var(--color-bg); border: 1px solid var(--color-border); border-radius: var(--radius-md); gap: var(--space-6); }
+.spec-table-grid .spec-row { flex-direction: row; gap: var(--space-6); }
+.spec-cell { flex: 1; display: flex; flex-direction: column; gap: var(--space-1); min-width: 0; }
+.spec-table-grid .spec-name { font-weight: 600; color: var(--color-text); font-size: 0.875rem; }
+.spec-table-grid .spec-value { color: var(--color-text); font-weight: 500; text-align: left; max-width: 100%; }
+.spec-name { font-weight: 600; color: var(--color-text); }
+.spec-value { color: var(--color-text-light); text-align: right; max-width: 60%; }
+
+.cta-band { background: var(--color-primary); color: #fff; }
+.cta-band h2 { color: #fff; margin-bottom: var(--space-4); }
+.cta-band p { color: rgba(255,255,255,0.85); font-size: 1.125rem; margin-bottom: var(--space-6); }
+.cta-actions { display: flex; gap: var(--space-4); justify-content: center; flex-wrap: wrap; }
+
+
+@media (max-width: 768px) {
+  .product-overview { grid-template-columns: 1fr; }
+  .product-gallery { grid-template-columns: 72px 1fr; }
+  .thumb { width: 72px; height: 72px; }
+  .spec-row { flex-direction: column; gap: var(--space-3); }
+  .spec-value { text-align: left; max-width: 100%; }
+}
+</style>

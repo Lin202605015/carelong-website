@@ -1,0 +1,320 @@
+---
+import BaseLayout from '../../../../layouts/BaseLayout.astro';
+import Breadcrumb from '../../../../components/Breadcrumb.astro';
+
+const images = [
+  { src: '/images/products/bolts-and-nuts/hub-bolts/hub-bolt-01.webp', alt: 'Foto del producto Pernos de Maza' },
+  { src: '/images/products/bolts-and-nuts/hub-bolts/hub-bolt-02.webp', alt: 'Vista detallada de Pernos de Maza' },
+  { src: '/images/products/bolts-and-nuts/hub-bolts/hub-bolt-03.webp', alt: 'Aplicación de Pernos de Maza' },
+  { src: '/images/products/bolts-and-nuts/hub-bolts/hub-bolt-04.webp', alt: 'Detalle de Pernos de Maza' },
+  { src: '/images/products/bolts-and-nuts/hub-bolts/hub-bolt-05.webp', alt: 'Escena de aplicación de Pernos de Maza' },
+];
+---
+
+<BaseLayout
+  lang="es"
+  title="Pernos de Maza — Kits de Pernos de Maza de Rueda para Automoción y Equipo Pesado | Carelong"
+  description="Fabricante de pernos de maza y conjuntos de pernos de maza. M18-M42, Grado 10.9/12.9, acero aleado 40Cr. Servicio OEM para Nissan, Hino, Isuzu, Mitsubishi, Benz."
+>
+  <Breadcrumb items={[
+    { label: 'Productos', href: '/es/products' },
+    { label: 'Pernos y Tuercas', href: '/es/products/bolts-and-nuts' },
+    { label: 'Pernos de Maza' }
+  ]} />
+
+  <header class="page-header">
+    <div class="container">
+      <h1>Pernos de Maza</h1>
+      <p>Kits de pernos de maza de rueda para aplicaciones automotrices y de equipo pesado</p>
+    </div>
+  </header>
+
+  <section class="section">
+    <div class="container">
+      <div class="product-overview">
+        <div class="product-gallery" id="productGallery">
+          <div class="gallery-thumbs" aria-label="Imágenes del producto">
+            {images.map((img, i) => (
+              <button
+                type="button"
+                class={`thumb ${i === 0 ? 'is-active' : ''}`}
+                data-index={i}
+                aria-label={`Ver imagen ${i + 1}`}
+              >
+                <img src={img.src} alt={img.alt} loading="lazy" />
+              </button>
+            ))}
+          </div>
+          <div class="gallery-stage" id="galleryStage">
+            {images.map((img, i) => (
+              <img
+                src={img.src}
+                alt={img.alt}
+                class={`stage-img ${i === 0 ? 'is-active' : ''}`}
+                data-index={i}
+                loading={i === 0 ? 'eager' : 'lazy'}
+              />
+            ))}
+            <button type="button" class="stage-arrow stage-arrow-prev" aria-label="Imagen anterior" hidden>
+              <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M15 6l-6 6 6 6" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <button type="button" class="stage-arrow stage-arrow-next" aria-label="Imagen siguiente" hidden>
+              <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M9 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <div class="zoom-hint" aria-hidden="true">Pase el cursor para ampliar y mover</div>
+          </div>
+        </div>
+        <div class="product-intro">
+          <p class="eyebrow">Descripción del Producto</p>
+          <h2>Pernos de Maza</h2>
+          <p>Nuestros pernos de maza de rueda están diseñados con precisión para una fijación segura de la rueda en aplicaciones automotrices y de equipo pesado. Fabricados en acero aleado premium 40Cr con tratamiento térmico, ofrecen superior resistencia a la tracción y a la fatiga.</p>
+
+          <div class="product-badges">
+            <span class="badge">M18–M42</span>
+            <span class="badge">Grado 10.9/12.9</span>
+            <span class="badge">Acero Aleado 40Cr</span>
+            <span class="badge">Servicio OEM</span>
+          </div>
+
+          <div class="product-actions">
+            <a href="/es/contact" class="btn btn-primary btn-lg">Solicitar Cotización</a>
+            <a href="/es/products/bolts-and-nuts" class="btn btn-outline btn-lg">Volver a Pernos y Tuercas</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt">
+    <div class="container">
+      <header class="section-header">
+        <p class="eyebrow">Especificaciones</p>
+        <h2>Características Principales</h2>
+      </header>
+      <div class="spec-table spec-table-grid">
+        <div class="spec-row"><div class="spec-name">medida de rosca</div><div class="spec-value">M18–M42</div></div>
+        <div class="spec-row"><div class="spec-name">grado de resistencia</div><div class="spec-value">10.9, 12.9</div></div>
+        <div class="spec-row"><div class="spec-name">material</div><div class="spec-value">Acero Aleado 40Cr, 42CrMo</div></div>
+        <div class="spec-row"><div class="spec-name">tratamiento superficial</div><div class="spec-value">Negro, Galvanizado</div></div>
+        <div class="spec-row"><div class="spec-name">vehículos compatibles</div><div class="spec-value">Nissan, Hino, Isuzu, Mitsubishi, Benz</div></div>
+        <div class="spec-row"><div class="spec-name">aplicación</div><div class="spec-value">Mazas de rueda, Camiones, Maquinaria de construcción</div></div>
+      </div>
+
+      <header class="section-header" style="margin-top: var(--space-12);">
+        <h2>Especificaciones de Pernos de Maza</h2>
+      </header>
+      <div class="data-table-wrapper">
+        <table class="data-table spec-table-8col">
+          <thead>
+            <tr>
+              <th>Nombre de Pieza</th>
+              <th>N.º Pieza/Modelo</th>
+              <th>Medida</th>
+              <th>Trat. Sup.</th>
+              <th>Marca</th>
+              <th>Peso Neto Kgs./Juego</th>
+              <th>Juegos/Caja</th>
+              <th>Peso Neto Kgs./Caja</th>
+              <th>Tamaño Caja</th>
+              <th>N.º OEM</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>HUB BOLT ASSY</td><td>8008-444</td><td>&nbsp;</td><td>BLACK</td><td>L/R</td><td>0.632</td><td>50</td><td>32</td><td>30X25X19</td><td>&nbsp;</td></tr>
+            <tr><td>HUB BOLT ASSY</td><td>8008-465</td><td>&nbsp;</td><td>BLACK</td><td>L/R</td><td>0.496</td><td>50</td><td>25</td><td>30X25X19</td><td>&nbsp;</td></tr>
+            <tr><td>HUB BOLT ASSY</td><td>8008-466</td><td>&nbsp;</td><td>BLACK</td><td>L/R</td><td>0.624</td><td>50</td><td>31</td><td>30X25X19</td><td>&nbsp;</td></tr>
+            <tr><td>HUB BOLT ASSY</td><td>NISSAN</td><td>M18X68</td><td>ZINC</td><td>L/R</td><td>0.390</td><td>50</td><td>20</td><td>42X21X14.5</td><td>JQ-01-266</td></tr>
+            <tr><td>HUB BOLT ASSY</td><td>NISSAN</td><td>M18X68</td><td>ZINC</td><td>L/R</td><td>0.390</td><td>50</td><td>20</td><td>42X21X14.5</td><td>JQ-01-264</td></tr>
+            <tr><td>HUB BOLT ASSY</td><td>NISSAN</td><td>M18X68</td><td>ZINC</td><td>L/R</td><td>0.310</td><td>50</td><td>16</td><td>42X21X14.5</td><td>JQ-01-265</td></tr>
+            <tr><td>HUB BOLT ASSY</td><td>NISSAN</td><td>M18X68</td><td>ZINC</td><td>L/R</td><td>0.310</td><td>50</td><td>16</td><td>42X21X14.5</td><td>JQ-01-263</td></tr>
+            <tr><td>HUB BOLT ASSY(RH)(FR)</td><td>NISSAN FRONT</td><td>&nbsp;</td><td>BLACK</td><td>L/R</td><td>0.605</td><td>40</td><td>24</td><td>30X25X19</td><td>&nbsp;</td></tr>
+            <tr><td>HUB BOLT ASSY(LH)(FR)</td><td>NISSAN FRONT</td><td>&nbsp;</td><td>BLACK</td><td>L/R</td><td>0.605</td><td>40</td><td>24</td><td>30X25X19</td><td>&nbsp;</td></tr>
+            <tr><td>HUB BOLT ASSY REAR</td><td>NISSAN FRONT</td><td>M24X102</td><td>ZINC</td><td>L/R</td><td>0.610</td><td>50</td><td>31</td><td>42X21X14.5</td><td>JQ-01-228</td></tr>
+            <tr><td>HUB BOLT ASSY(RH)</td><td>NISSAN REAR</td><td>&nbsp;</td><td>BLACK</td><td>L/R</td><td>0.740</td><td>40</td><td>30</td><td>30X25X19</td><td>&nbsp;</td></tr>
+            <tr><td>HUB BOLT ASSY(LH)(REAR)</td><td>NISSAN REAR</td><td>&nbsp;</td><td>BLACK</td><td>L/R</td><td>0.740</td><td>40</td><td>30</td><td>30X25X19</td><td>&nbsp;</td></tr>
+            <tr><td>HUB BOLT ASSY REAR</td><td>NISSAN REAR</td><td>M20X83</td><td>BLACK</td><td>L/R</td><td>0.610</td><td>50</td><td>31</td><td>42X21X14.5</td><td>&nbsp;</td></tr>
+            <tr><td>HUB BOLT ASSY REAR</td><td>NISSAN REAR</td><td>M22X102</td><td>ZINC</td><td>L/R</td><td>0.730</td><td>50</td><td>37</td><td>42X21X14.5</td><td>JQ-01-262</td></tr>
+            <tr><td>HUB BOLT ASSY REAR</td><td>NISSAN N/S CWD30 REAR</td><td>M22X102</td><td>ZINC</td><td>L/R</td><td>0.740</td><td>50</td><td>37</td><td>42X21X14.5</td><td>JQ-01-079</td></tr>
+            <tr><td>HUB BOLT ASSY REAR</td><td>NISSAN GENERAL REAR</td><td>M22X102</td><td>ZINC</td><td>L/R</td><td>0.720</td><td>50</td><td>36</td><td>42X21X14.5</td><td>JQ-01-268</td></tr>
+            <tr><td>HUB BOLT ASSY FRONT</td><td>HINO KT FRONT</td><td>&nbsp;</td><td>BLACK</td><td>L/R</td><td>0.540</td><td>40</td><td>22</td><td>30X25X19</td><td>&nbsp;</td></tr>
+            <tr><td>HUB BOLT ASSY REAR</td><td>HINO KT REAR</td><td>&nbsp;</td><td>BLACK</td><td>L/R</td><td>0.630</td><td>40</td><td>25</td><td>30X25X19</td><td>&nbsp;</td></tr>
+            <tr><td>HUB BOLT ASSY REAR</td><td>HINO ZM REAR</td><td>&nbsp;</td><td>BLACK</td><td>L/R</td><td>0.680</td><td>40</td><td>27</td><td>30X25X19</td><td>&nbsp;</td></tr>
+            <tr><td>HUB BOLT ASSY REAR</td><td>HINO MG REAR</td><td>&nbsp;</td><td>BLACK</td><td>L/R</td><td>0.630</td><td>40</td><td>25</td><td>30X25X19</td><td>&nbsp;</td></tr>
+            <tr><td>HUB BOLT ASSY FRONT</td><td>HINO ZM FRONT</td><td>&nbsp;</td><td>BLACK</td><td>L/R</td><td>0.570</td><td>40</td><td>23</td><td>30X25X19</td><td>&nbsp;</td></tr>
+            <tr><td>HUB BOLT ASSY FRONT</td><td>HINO HM FRONT</td><td>&nbsp;</td><td>BLACK</td><td>L/R</td><td>0.590</td><td>40</td><td>24</td><td>30X25X19</td><td>&nbsp;</td></tr>
+            <tr><td>HUB BOLT ASSY REAR</td><td>HINO REAR</td><td>M22X98</td><td>BLACK</td><td>L/R</td><td>0.680</td><td>50</td><td>34</td><td>42X21X14.5</td><td>JQ-01-124</td></tr>
+            <tr><td>HUB BOLT ASSY REAR</td><td>HINO REAR</td><td>M20X85</td><td>BLACK</td><td>L/R</td><td>0.630</td><td>50</td><td>32</td><td>42X21X14.5</td><td>JQ-01-122</td></tr>
+            <tr><td>HUB BOLT ASSY FRONT</td><td>HINO FRONT</td><td>M20X85</td><td>BLACK</td><td>L/R</td><td>0.530</td><td>50</td><td>27</td><td>42X21X14.5</td><td>JQ-01-121</td></tr>
+            <tr><td>HUB BOLT ASSY REAR</td><td>ISUZU JUMBO REAR</td><td>&nbsp;</td><td>BLACK</td><td>L/R</td><td>0.680</td><td>40</td><td>27</td><td>30X25X19</td><td>&nbsp;</td></tr>
+            <tr><td>HUB BOLT ASSY REAR</td><td>ISUZU JCM REAR</td><td>&nbsp;</td><td>BLACK</td><td>L/R</td><td>0.660</td><td>40</td><td>26</td><td>30X25X19</td><td>&nbsp;</td></tr>
+            <tr><td>HUB BOLT ASSY FRONT</td><td>ISUZU RK FRONT</td><td>&nbsp;</td><td>BLACK</td><td>L/R</td><td>0.570</td><td>40</td><td>23</td><td>30X25X19</td><td>&nbsp;</td></tr>
+            <tr><td>HUB BOLT ASSY REAR</td><td>ISUZU RK REAR</td><td>&nbsp;</td><td>BLACK</td><td>L/R</td><td>0.680</td><td>40</td><td>27</td><td>30X25X19</td><td>&nbsp;</td></tr>
+            <tr><td>HUB BOLT ASSY REAR</td><td>FUSO 527 FRONT</td><td>&nbsp;</td><td>BLACK</td><td>L/R</td><td>0.550</td><td>40</td><td>22</td><td>30X25X19</td><td>&nbsp;</td></tr>
+            <tr><td>HUB BOLT ASSY REAR</td><td>FUSO REAR</td><td>&nbsp;</td><td>BLACK</td><td>L/R</td><td>0.630</td><td>40</td><td>25</td><td>30X25X19</td><td>&nbsp;</td></tr>
+            <tr><td>HUB BOLT ASSY REAR</td><td>Mitsubishi 527 REAR</td><td>&nbsp;</td><td>BLACK</td><td>L/R</td><td>0.640</td><td>40</td><td>26</td><td>30X25X20</td><td>&nbsp;</td></tr>
+            <tr><td>HUB BOLT ASSY LH FRONT</td><td>GE FRONT</td><td>M30X110</td><td>BLACK</td><td>L/R</td><td>0.830</td><td>35</td><td>29</td><td>33X19X12</td><td>40210-90129B</td></tr>
+            <tr><td>HUB BOLT ASSY RH FRONT</td><td>GE FRONT</td><td>M30X110</td><td>BLACK</td><td>L/R</td><td>0.830</td><td>35</td><td>29</td><td>33X19X12</td><td>40211-90127B</td></tr>
+            <tr><td>HUB BOLT ASSY FRONT</td><td>GE FRONT</td><td>M30X116</td><td>BLACK</td><td>L/R</td><td>0.850</td><td>30</td><td>26</td><td>42X21X14.5</td><td>&nbsp;</td></tr>
+            <tr><td>HUB BOLT ASSY LH REAR</td><td>GE REAR</td><td>M30X130</td><td>BLACK</td><td>170</td><td>0.930</td><td>35</td><td>33</td><td>33X19X12</td><td>43210-90129B</td></tr>
+            <tr><td>HUB BOLT ASSY RH REAR</td><td>GE REAR</td><td>M30X130</td><td>BLACK</td><td>170</td><td>0.930</td><td>35</td><td>33</td><td>33X19X12</td><td>43211-90129B</td></tr>
+            <tr><td>HUB BOLT ASSY LH REAR</td><td>GE REAR</td><td>M30X148</td><td>BLACK</td><td>170</td><td>1.040</td><td>30</td><td>33</td><td>42X21X14.5</td><td>JQ-01-261</td></tr>
+            <tr><td>HUB BOLT ASSY RH REAR</td><td>GE REAR</td><td>M30X148</td><td>BLACK</td><td>170</td><td>1.040</td><td>30</td><td>33</td><td>42X21X14.5</td><td>JQ-01-261</td></tr>
+            <tr><td>HUB BOLT ASSY</td><td>BENZ</td><td>M22X98</td><td>BLACK</td><td>12.9</td><td>0.500</td><td>50</td><td>25</td><td>42X21X14.5</td><td>JQ-02-003</td></tr>
+            <tr><td>HUB BOLT ASSY</td><td>BENZ</td><td>M22X140</td><td>BLACK</td><td>12.9</td><td>0.640</td><td>50</td><td>32</td><td>42X21X14.5</td><td>JQ-02-004</td></tr>
+            <tr><td>HUB BOLT ASSY</td><td>BENZ</td><td>M22X130</td><td>BLACK</td><td>12.9</td><td>0.630</td><td>50</td><td>32</td><td>42X21X14.5</td><td>JQ-01-029</td></tr>
+            <tr><td>HUB BOLT ASSY</td><td>BENZ</td><td>M22X112</td><td>BLACK</td><td>12.9</td><td>0.540</td><td>50</td><td>27</td><td>42X21X14.5</td><td>JQ-02-117</td></tr>
+            <tr><td>HUB BOLT ASSY</td><td>BENZ</td><td>M22X175</td><td>BLACK</td><td>L/R</td><td>0.726</td><td>40</td><td>29</td><td>42X21X14.5</td><td>&nbsp;</td></tr>
+            <tr><td>HUB BOLT ASSY</td><td>REBER (14) UD6</td><td>&nbsp;</td><td>BLACK</td><td>L/R</td><td>0.740</td><td>50</td><td>37</td><td>42X21X14.5</td><td>&nbsp;</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <header class="section-header" style="margin-top: var(--space-12);">
+        <h2>Notas</h2>
+      </header>
+      <div class="data-table-wrapper">
+        <table class="data-table notes-table">
+          <tbody>
+            <tr><th>Capacidad Mecánica:</th><td>Pernos: Clase 10.9, resistencia mínima a la tracción 170,000 psi. Tuercas: Clase 10, totalmente templadas y revenidas para igualar la resistencia del perno</td></tr>
+            <tr><td colspan="2" class="notes-paragraph">Todos los detalles de embalaje se utilizan solo como referencia. No podemos listar todos nuestros productos en la tabla anterior ya que abrimos moldes todos los días. También producimos fijaciones de alta resistencia de clase 12.9 mediante forja.</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="section cta-band">
+    <div class="container text-center">
+      <h2>¿Necesita Pernos de Maza?</h2>
+      <p>Contáctenos con sus números de pieza y especificaciones. Disponibles Nissan, Hino, Isuzu, Mitsubishi, Benz y medidas personalizadas.</p>
+      <div class="cta-actions">
+        <a href="/es/contact" class="btn btn-primary btn-lg">Solicitar Cotización</a>
+        <a href="mailto:Jason@carelong.com.cn?subject=Product%20Inquiry%20-%20Carelong%20Website" class="btn btn-outline-white btn-lg">Envíenos un Correo</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const gallery = document.getElementById('productGallery');
+    if (!gallery) return;
+
+    const thumbs = Array.from(gallery.querySelectorAll('.thumb'));
+    const stageImgs = Array.from(gallery.querySelectorAll('.stage-img'));
+    const stages = Array.from(gallery.querySelectorAll('.gallery-stage'));
+    let current = 0;
+
+    function activate(idx) {
+      if (idx === current) return;
+      current = idx;
+      thumbs.forEach((t) => t.classList.toggle('is-active', Number(t.dataset.index) === current));
+      stageImgs.forEach((img) => {
+        const isActive = Number(img.dataset.index) === current;
+        img.classList.toggle('is-active', isActive);
+        if (isActive) img.style.transformOrigin = 'center center';
+      });
+      stages.forEach((s) => s.classList.remove('is-zooming'));
+    }
+
+    thumbs.forEach((t) => {
+      const idx = Number(t.dataset.index);
+      t.addEventListener('mouseenter', () => activate(idx));
+      t.addEventListener('focus', () => activate(idx));
+      t.addEventListener('click', () => activate(idx));
+    });
+
+    stages.forEach((stage) => {
+      stage.addEventListener('mouseenter', () => stage.classList.add('is-zooming'));
+      stage.addEventListener('mouseleave', () => {
+        stage.classList.remove('is-zooming');
+        const active = stage.querySelector('.stage-img.is-active');
+        if (active) {
+          active.style.transformOrigin = 'center center';
+        }
+      });
+      stage.addEventListener('mousemove', (e) => {
+        const active = stage.querySelector('.stage-img.is-active');
+        if (!active) return;
+        const rect = stage.getBoundingClientRect();
+        const x = ((e.clientX - rect.left) / rect.width) * 100;
+        const y = ((e.clientY - rect.top) / rect.height) * 100;
+        const cx = Math.max(0, Math.min(100, x));
+        const cy = Math.max(0, Math.min(100, y));
+        active.style.transformOrigin = cx + '% ' + cy + '%';
+      });
+    });
+  });
+</script>
+
+<style>
+.eyebrow { font-size: 0.8125rem; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; color: var(--color-secondary); margin-bottom: var(--space-3); }
+.product-overview { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-12); align-items: start; }
+
+.product-gallery { display: grid; grid-template-columns: 88px 1fr; gap: var(--space-4); align-items: start; }
+.gallery-thumbs { display: flex; flex-direction: column; gap: var(--space-2); max-height: 480px; overflow-y: auto; padding-right: 4px; }
+.thumb { all: unset; cursor: pointer; display: block; width: 88px; height: 88px; border-radius: var(--radius-md); border: 2px solid transparent; background: #fff; overflow: hidden; transition: border-color .2s ease, transform .18s ease, box-shadow .18s ease; }
+.thumb img { width: 100%; height: 100%; object-fit: contain; display: block; }
+.thumb:hover { transform: translateY(-1px); box-shadow: 0 4px 12px rgba(27,75,142,.18); }
+.thumb.is-active { border-color: var(--color-primary); box-shadow: 0 4px 12px rgba(27,75,142,.25); transform: translateY(-1px); }
+
+.gallery-stage { position: relative; background: #fff; border-radius: var(--radius-xl); box-shadow: var(--shadow-lg); overflow: hidden; aspect-ratio: 1 / 1; cursor: zoom-in; outline: none; }
+.stage-arrow[hidden] { display: none; }
+.stage-img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; padding: var(--space-4); opacity: 0; transition: opacity .25s ease; transform: scale(1); cursor: zoom-in; }
+.stage-img.is-active { opacity: 1; }
+.gallery-stage.is-zooming .stage-img.is-active { transform: scale(2); transition: transform .15s ease-out; }
+.zoom-hint { position: absolute; bottom: var(--space-3); right: var(--space-4); padding: 4px 10px; border-radius: 100px; background: rgba(15, 48, 96, 0.7); color: #fff; font-size: 0.75rem; font-weight: 500; letter-spacing: .5px; pointer-events: none; }
+
+.product-intro h2 { margin-bottom: var(--space-4); }
+.product-intro p { color: var(--color-text-light); line-height: 1.7; }
+.product-badges { display: flex; flex-wrap: wrap; gap: var(--space-2); margin: var(--space-6) 0; }
+.badge { display: inline-block; background: rgba(27, 75, 142, 0.08); color: var(--color-primary); padding: var(--space-1) var(--space-3); border-radius: 100px; font-size: 0.8125rem; font-weight: 600; }
+.product-actions { display: flex; gap: var(--space-4); flex-wrap: wrap; }
+
+.spec-table { display: flex; flex-direction: column; gap: var(--space-2); }
+.spec-table-grid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-2); }
+.spec-row { display: flex; justify-content: space-between; padding: var(--space-4) var(--space-6); background: var(--color-bg); border: 1px solid var(--color-border); border-radius: var(--radius-md); }
+.spec-table-grid .spec-row { flex-direction: column; gap: var(--space-1); }
+.spec-table-grid .spec-name { font-weight: 600; color: var(--color-text); font-size: 0.875rem; text-transform: lowercase; }
+.spec-table-grid .spec-value { color: var(--color-text); font-weight: 500; text-align: left; max-width: 100%; }
+.spec-name { font-weight: 600; color: var(--color-text); }
+.spec-value { color: var(--color-text-light); text-align: right; max-width: 60%; }
+
+/* Data tables */
+.data-table-wrapper { overflow-x: auto; border: 1px solid var(--color-border); border-radius: var(--radius-md); background: var(--color-bg); }
+.data-table { width: 100%; border-collapse: collapse; font-size: 0.875rem; }
+.data-table thead th { background: var(--color-primary); color: #fff; padding: var(--space-3) var(--space-4); text-align: left; font-weight: 600; white-space: normal; line-height: 1.4; }
+.data-table tbody td { padding: var(--space-3) var(--space-4); border-top: 1px solid var(--color-border); color: var(--color-text); word-wrap: break-word; }
+.data-table tbody tr:nth-child(even) td { background: rgba(27, 75, 142, 0.04); }
+.data-table tbody tr:hover td { background: rgba(27, 75, 142, 0.08); }
+.data-table tbody td:nth-child(n+3) { font-variant-numeric: tabular-nums; }
+
+/* 8-column Segment Bolt Specifications table - auto layout for natural alignment */
+.spec-table-8col { table-layout: auto; width: 100%; }
+.spec-table-8col thead th { vertical-align: middle; text-align: center; white-space: nowrap; }
+.spec-table-8col tbody td { vertical-align: middle; text-align: center; }
+.spec-table-8col tbody td:nth-child(1) { text-align: left; }  /* Part Name */
+.spec-table-8col tbody td:nth-child(2) { text-align: left; }  /* Part #/Model */
+
+/* Notes table */
+.notes-table { font-size: 0.9375rem; table-layout: auto; width: 100%; }
+.notes-table th { background: transparent; color: var(--color-text); padding: var(--space-3) var(--space-4); text-align: left; font-weight: 700; white-space: nowrap; vertical-align: top; word-wrap: break-word; border-top: 1px solid var(--color-border); }
+.notes-table td { padding: var(--space-3) var(--space-4); border-top: 1px solid var(--color-border); color: var(--color-text); vertical-align: top; }
+.notes-table tbody tr:nth-child(even) td { background: rgba(27, 75, 142, 0.04); }
+.notes-paragraph { font-style: italic; color: var(--color-text-light); line-height: 1.7; padding: var(--space-4) var(--space-4) !important; }
+.notes-table a { color: var(--color-primary); text-decoration: underline; }
+
+.cta-band { background: var(--color-primary); color: #fff; }
+.cta-band h2 { color: #fff; margin-bottom: var(--space-4); }
+.cta-band p { color: rgba(255,255,255,0.85); font-size: 1.125rem; margin-bottom: var(--space-6); }
+.cta-actions { display: flex; gap: var(--space-4); justify-content: center; flex-wrap: wrap; }
+
+@media (max-width: 768px) {
+  .product-overview { grid-template-columns: 1fr; }
+  .product-gallery { grid-template-columns: 72px 1fr; }
+  .thumb { width: 72px; height: 72px; }
+  .spec-row { flex-direction: column; gap: var(--space-1); }
+  .spec-value { text-align: left; max-width: 100%; }
+  .spec-table-grid { grid-template-columns: 1fr; }
+}
+</style>

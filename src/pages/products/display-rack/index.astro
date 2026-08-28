@@ -1,0 +1,164 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import Breadcrumb from '../../../components/Breadcrumb.astro';
+
+const subcategories = [
+  {
+    slug: 'supermarket-display-racks',
+    name: 'Supermarket Display Racks',
+    image: '/images/products/display-rack/supermarket-display-racks-01.webp',
+    description: 'Heavy-duty gondola shelving systems for supermarkets and grocery stores. Designed for high traffic and maximum product visibility.',
+    count: 5,
+  },
+  {
+    slug: 'wall-mounted-storage-racks',
+    name: 'Pegboard & Slatwall Display',
+    image: '/images/products/display-rack/wall-mounted-racks-01.webp',
+    description: 'Versatile pegboard and slatwall display panels with hooks, shelves, and accessories. Ideal for retail walls, workshops, and trade shows.',
+    count: 5,
+  },
+  {
+    slug: 'clothing-display-racks',
+    name: 'Clothing Display Racks',
+    image: '/images/products/display-rack/clothing-racks-01.webp',
+    description: 'Stylish garment display racks for boutiques, showrooms, and trade shows. Various styles including round racks, garment rails, and display stands.',
+    count: 5,
+  },
+  {
+    slug: 'wooden-display-racks',
+    name: 'Wooden Display Racks',
+    image: '/images/products/display-rack/wooden-racks-01.webp',
+    description: 'Elegant wooden display racks combining metal frames with wooden shelves. Perfect for boutiques, gift shops, and high-end retail environments.',
+    count: 5,
+  },
+  {
+    slug: 'newspaper-magazine-racks',
+    name: 'Display Tables & Stands',
+    image: '/images/products/display-rack/newspaper-racks-01.webp',
+    description: 'Freestanding display tables and stands for publications, brochures, and promotional merchandise. Ideal for bookstores, newsstands, libraries, and retail floors.',
+    count: 5,
+  },
+];
+---
+
+<BaseLayout
+  title="Display Fixture — Gondola, Slatwall & Retail Display Solutions | Carelong"
+  description="Custom display racks for supermarkets, retail stores, and trade shows. Including gondola shelving, pegboard and slatwall displays, clothing racks, wooden fixtures, and display tables."
+>
+  <Breadcrumb items={[
+    { label: 'Products', href: '/products' },
+    { label: 'Display Fixture' }
+  ]} />
+
+  <header class="page-header">
+    <div class="container">
+      <h1>Display Fixture</h1>
+      <p>Custom display solutions for retail, supermarkets, and commercial spaces.</p>
+    </div>
+  </header>
+
+  <section class="section">
+    <div class="container">
+      <header class="section-header">
+        <p class="eyebrow">Product Categories</p>
+        <h2>Display Fixture Solutions</h2>
+        <p class="section-desc">We manufacture a wide range of display racks for various applications. Select a category below to view our products.</p>
+      </header>
+
+      <div class="subcategory-grid">
+        {subcategories.map(cat => (
+          <a href={`/products/display-rack/${cat.slug}`} class="subcategory-card">
+            <div class="card-image">
+              <img src={cat.image} alt={cat.name} loading="lazy" />
+            </div>
+            <div class="card-body">
+              <span class="product-count">{cat.count} products</span>
+              <h3>{cat.name}</h3>
+              <p>{cat.description}</p>
+              <span class="btn btn-primary btn-sm">
+                View Products
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt">
+    <div class="container">
+      <header class="section-header">
+        <p class="eyebrow">Our Capabilities</p>
+        <h2>Why Choose Carelong Display Racks</h2>
+      </header>
+      <div class="features-grid">
+        <div class="feature-item">
+          <div class="feature-icon">🏭</div>
+          <h3>Custom Manufacturing</h3>
+          <p>OEM and ODM services. We manufacture to your specifications — dimensions, materials, finish, and load capacity.</p>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon">📐</div>
+          <h3>Design Support</h3>
+          <p>Our engineering team provides 3D drawings and structural optimization for your display needs.</p>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon">🎨</div>
+          <h3>Surface Finish Options</h3>
+          <p>Powder coating, chrome plating, painting, and more. Custom colors available to match your brand.</p>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon">📦</div>
+          <h3>Knock-Down Design</h3>
+          <p>Flat-pack shipping for cost-effective logistics. Easy assembly on-site with standard tools.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section cta-band">
+    <div class="container text-center">
+      <h2>Need a Custom Display Solution?</h2>
+      <p>Contact us with your specifications. We provide quotes within 24 hours.</p>
+      <div class="cta-actions">
+        <a href="/contact" class="btn btn-primary btn-lg">Request a Quote</a>
+        <a href="mailto:Jason@carelong.com.cn?subject=Display%20Rack%20Inquiry%20-%20Carelong%20Website" class="btn btn-outline-white btn-lg">Email Us</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+.eyebrow { font-size: 0.8125rem; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; color: var(--color-secondary); margin-bottom: var(--space-3); }
+.section-header { text-align: center; margin-bottom: var(--space-12); }
+.section-desc { color: var(--color-text-light); max-width: 640px; margin: var(--space-4) auto 0; }
+.subcategory-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-6); }
+.subcategory-card { background: #fff; border: 1px solid var(--color-border); border-radius: var(--radius-lg); overflow: hidden; text-decoration: none; color: inherit; transition: transform 0.2s, box-shadow 0.2s; }
+.subcategory-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
+.card-image { height: 200px; background: #fff; display: flex; align-items: center; justify-content: center; }
+.card-image img { max-width: 90%; max-height: 90%; object-fit: contain; }
+.card-body { padding: var(--space-6); }
+.product-count { display: inline-block; background: rgba(27, 75, 142, 0.08); color: var(--color-primary); padding: var(--space-1) var(--space-3); border-radius: 100px; font-size: 0.75rem; font-weight: 600; margin-bottom: var(--space-3); }
+.card-body h3 { font-size: 1.25rem; margin-bottom: var(--space-3); color: var(--color-text); }
+.card-body p { color: var(--color-text-light); font-size: 0.9375rem; line-height: 1.6; margin-bottom: var(--space-4); }
+.features-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--space-8); }
+.feature-item { text-align: center; }
+.feature-icon { font-size: 2.5rem; margin-bottom: var(--space-4); }
+.feature-item h3 { font-size: 1.125rem; margin-bottom: var(--space-3); }
+.feature-item p { color: var(--color-text-light); font-size: 0.9375rem; line-height: 1.6; }
+.cta-band { background: var(--color-primary); color: #fff; }
+.cta-band h2 { color: #fff; margin-bottom: var(--space-4); }
+.cta-band p { color: rgba(255,255,255,0.85); font-size: 1.125rem; margin-bottom: var(--space-6); }
+.cta-actions { display: flex; gap: var(--space-4); justify-content: center; flex-wrap: wrap; }
+@media (max-width: 1024px) {
+  .subcategory-grid { grid-template-columns: repeat(2, 1fr); }
+  .features-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 640px) {
+  .subcategory-grid { grid-template-columns: 1fr; }
+  .features-grid { grid-template-columns: 1fr; }
+}
+</style>

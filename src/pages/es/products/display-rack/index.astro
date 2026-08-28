@@ -1,0 +1,164 @@
+---
+import BaseLayout from '../../../../layouts/BaseLayout.astro';
+import Breadcrumb from '../../../../components/Breadcrumb.astro';
+
+const subcategorias = [
+  {
+    slug: 'supermarket-display-racks',
+    nombre: 'Exhibidores para Supermercados',
+    imagen: '/images/products/display-rack/supermarket-display-racks-01.webp',
+    descripcion: 'Sistemas de estanterías gondola de alta resistencia para supermercados y tiendas de comestibles. Diseñados para alto tráfico y máxima visibilidad de productos.',
+    cantidad: 5,
+  },
+  {
+    slug: 'wall-mounted-storage-racks',
+    nombre: 'Exhibidores de Pegboard y Slatwall',
+    imagen: '/images/products/display-rack/wall-mounted-racks-01.webp',
+    descripcion: 'Paneles de exhibición versátiles con ganchos, estantes y accesorios. Ideales para paredes comerciales, talleres y ferias.',
+    cantidad: 5,
+  },
+  {
+    slug: 'clothing-display-racks',
+    nombre: 'Exhibidores de Ropa',
+    imagen: '/images/products/display-rack/clothing-racks-01.webp',
+    descripcion: 'Exhibidores elegantes para boutiques, showrooms y ferias comerciales. Varios estilos incluyendo bastidores circulares y colgadores.',
+    cantidad: 5,
+  },
+  {
+    slug: 'wooden-display-racks',
+    nombre: 'Exhibidores de Madera',
+    imagen: '/images/products/display-rack/wooden-racks-01.webp',
+    descripcion: 'Exhibidores elegantes que combinan marcos metálicos con estantes de madera. Perfectos para boutiques y tiendas de regalos.',
+    cantidad: 5,
+  },
+  {
+    slug: 'newspaper-magazine-racks',
+    nombre: 'Mesas y Soportes de Exhibición',
+    imagen: '/images/products/display-rack/newspaper-racks-01.webp',
+    descripcion: 'Mesas y soportes de exhibición independientes para publicaciones, folletos y productos promocionales. Ideales para librerías, quioscos, bibliotecas y pisos de venta.',
+    cantidad: 5,
+  },
+];
+---
+
+<BaseLayout
+  title="Exhibidores — Gondola, Slatwall y Soluciones para Exhibiciones | Carelong"
+  description="Exhibidores personalizados para supermercados, tiendas minoristas y ferias comerciales. Incluye estanterías gondola, exhibidores de pegboard y slatwall, exhibidores de ropa, de madera, y mesas de exhibición."
+>
+  <Breadcrumb items={[
+    { label: 'Productos', href: '/es/products' },
+    { label: 'Exhibidores' }
+  ]} />
+
+  <header class="page-header">
+    <div class="container">
+      <h1>Exhibidores</h1>
+      <p>Soluciones de exhibición personalizadas para tiendas minoristas, supermercados y espacios comerciales.</p>
+    </div>
+  </header>
+
+  <section class="section">
+    <div class="container">
+      <header class="section-header">
+        <p class="eyebrow">Categorías de Productos</p>
+        <h2>Soluciones de Exhibidores</h2>
+        <p class="section-desc">Fabricamos una amplia gama de exhibidores para diversas aplicaciones. Seleccione una categoría abajo para ver nuestros productos.</p>
+      </header>
+
+      <div class="subcategory-grid">
+        {subcategorias.map(cat => (
+          <a href={`/es/products/display-rack/${cat.slug}`} class="subcategory-card">
+            <div class="card-image">
+              <img src={cat.imagen} alt={cat.nombre} loading="lazy" />
+            </div>
+            <div class="card-body">
+              <span class="product-count">{cat.cantidad} productos</span>
+              <h3>{cat.nombre}</h3>
+              <p>{cat.descripcion}</p>
+              <span class="btn btn-primary btn-sm">
+                Ver Productos
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt">
+    <div class="container">
+      <header class="section-header">
+        <p class="eyebrow">Nuestras Capacidades</p>
+        <h2>Por Qué Elegir Exhibidores Carelong</h2>
+      </header>
+      <div class="features-grid">
+        <div class="feature-item">
+          <div class="feature-icon">🏭</div>
+          <h3>Fabricación Personalizada</h3>
+          <p>Servicios OEM y ODM. Fabricamos según sus especificaciones — dimensiones, materiales, acabado y capacidad de carga.</p>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon">📐</div>
+          <h3>Soporte de Diseño</h3>
+          <p>Nuestro equipo de ingeniería proporciona dibujos 3D y optimización estructural para sus necesidades de exhibición.</p>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon">🎨</div>
+          <h3>Opciones de Acabado</h3>
+          <p>Pintura en polvo, cromado, pintura y más. Colores personalizados disponibles para combinar con su marca.</p>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon">📦</div>
+          <h3>Diseño Desmontable</h3>
+          <p>Envío en paquete plano para logística rentable. Fácil ensamblaje en sitio con herramientas estándar.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section cta-band">
+    <div class="container text-center">
+      <h2>¿Necesita una Solución de Exhibición Personalizada?</h2>
+      <p>Contáctenos con sus especificaciones. Proporcionamos cotizaciones en 24 horas.</p>
+      <div class="cta-actions">
+        <a href="/es/contact" class="btn btn-primary btn-lg">Solicitar Cotización</a>
+        <a href="mailto:Jason@carelong.com.cn?subject=Consulta%20Exhibidores%20-%20Carelong" class="btn btn-outline-white btn-lg">Envíenos un Correo</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+.eyebrow { font-size: 0.8125rem; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; color: var(--color-secondary); margin-bottom: var(--space-3); }
+.section-header { text-align: center; margin-bottom: var(--space-12); }
+.section-desc { color: var(--color-text-light); max-width: 640px; margin: var(--space-4) auto 0; }
+.subcategory-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-6); }
+.subcategory-card { background: #fff; border: 1px solid var(--color-border); border-radius: var(--radius-lg); overflow: hidden; text-decoration: none; color: inherit; transition: transform 0.2s, box-shadow 0.2s; }
+.subcategory-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
+.card-image { height: 200px; background: #fff; display: flex; align-items: center; justify-content: center; }
+.card-image img { max-width: 90%; max-height: 90%; object-fit: contain; }
+.card-body { padding: var(--space-6); }
+.product-count { display: inline-block; background: rgba(27, 75, 142, 0.08); color: var(--color-primary); padding: var(--space-1) var(--space-3); border-radius: 100px; font-size: 0.75rem; font-weight: 600; margin-bottom: var(--space-3); }
+.card-body h3 { font-size: 1.25rem; margin-bottom: var(--space-3); color: var(--color-text); }
+.card-body p { color: var(--color-text-light); font-size: 0.9375rem; line-height: 1.6; margin-bottom: var(--space-4); }
+.features-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--space-8); }
+.feature-item { text-align: center; }
+.feature-icon { font-size: 2.5rem; margin-bottom: var(--space-4); }
+.feature-item h3 { font-size: 1.125rem; margin-bottom: var(--space-3); }
+.feature-item p { color: var(--color-text-light); font-size: 0.9375rem; line-height: 1.6; }
+.cta-band { background: var(--color-primary); color: #fff; }
+.cta-band h2 { color: #fff; margin-bottom: var(--space-4); }
+.cta-band p { color: rgba(255,255,255,0.85); font-size: 1.125rem; margin-bottom: var(--space-6); }
+.cta-actions { display: flex; gap: var(--space-4); justify-content: center; flex-wrap: wrap; }
+@media (max-width: 1024px) {
+  .subcategory-grid { grid-template-columns: repeat(2, 1fr); }
+  .features-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 640px) {
+  .subcategory-grid { grid-template-columns: 1fr; }
+  .features-grid { grid-template-columns: 1fr; }
+}
+</style>

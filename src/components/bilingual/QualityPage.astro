@@ -1,0 +1,213 @@
+﻿---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import type { Lang } from '../../data/i18n/navigation';
+
+interface Props { lang: Lang; }
+const { lang } = Astro.props;
+const isEs = lang === 'es';
+const t = (en: string, es: string) => isEs ? es : en;
+---
+<BaseLayout lang={lang} title={t('Quality Control — ISO 9001 Certified Auto Parts Manufacturing Process | Carelong', 'Control de Calidad — Proceso de Fabricación Certificado ISO 9001 | Carelong')} description={t('Learn about Carelong\'s quality control system: ISO 9001 certified quality management, 100% inspection rate, multi-stage testing, and complete traceability for auto parts manufacturing.', 'Conozca el sistema de control de calidad de Carelong: sistema de gestión de calidad certificado ISO 9001, 100% de tasa de inspección, pruebas multifase y trazabilidad completa para la fabricación de autopartes.')}>
+  <header class="page-header">
+    <div class="container">
+      <h1>{t('Quality Control & Certifications', 'Control de Calidad y Certificaciones')}</h1>
+      <p>{t('Precision quality management from incoming materials to finished products', 'Gestión de calidad de precisión desde los materiales entrantes hasta los productos terminados')}</p>
+    </div>
+  </header>
+
+  <!-- QC Process Steps -->
+  <section class="section">
+    <div class="container">
+      <header class="section-header">
+        <p class="eyebrow">{t('Our Process', 'Nuestro Proceso')}</p>
+        <h2>{t('Multi-Stage Quality Control', 'Control de Calidad Multifase')}</h2>
+        <p>{t('Quality is embedded at every step of our manufacturing process — not just at the end.', 'La calidad está integrada en cada paso de nuestro proceso de fabricación — no solo al final.')}</p>
+      </header>
+      <div class="qc-steps">
+        <div class="qc-step">
+          <div class="qc-step-num">01</div>
+          <div class="qc-step-body">
+            <h3>{t('Incoming Material Inspection', 'Inspección de Materiales Entrantes')}</h3>
+            <p>{t('Under ISO 9001, we maintain comprehensive documentation including quality manuals, system procedures, and work instructions. Every incoming batch requires material chemistry verification and mill test certificates.', 'Bajo ISO 9001, mantenemos documentación completa incluyendo manuales de calidad, procedimientos del sistema e instrucciones de trabajo. Cada lote entrante requiere verificación de química del material y certificados de prueba de molino.')}</p>
+            <ul>
+              <li>{t('Material chemistry verification', 'Verificación de química del material')}</li>
+              <li>{t('Surface defect inspection', 'Inspección de defectos superficiales')}</li>
+              <li>{t('Hardness testing', 'Prueba de dureza')}</li>
+              <li>{t('Mill test certificates (MTC) required', 'Certificados de prueba de molino (MTC) requeridos')}</li>
+            </ul>
+          </div>
+        </div>
+        <div class="qc-step">
+          <div class="qc-step-num">02</div>
+          <div class="qc-step-body">
+            <h3>{t('In-Process Quality Checks', 'Controles de Calidad en Proceso')}</h3>
+            <p>{t('During production, operators perform regular self-inspection and supervisors conduct periodic audits. SPC (Statistical Process Control) monitors critical dimensions in real time.', 'Durante la producción, los operadores realizan autoinspección regular y los supervisores realizan auditorías periódicas. SPC (Control Estadístico de Proceso) monitorea dimensiones críticas en tiempo real.')}</p>
+            <ul>
+              <li>{t('Operator self-inspection at each stage', 'Autoinspección del operador en cada etapa')}</li>
+              <li>{t('SPC monitoring of key dimensions', 'Monitoreo SPC de dimensiones clave')}</li>
+              <li>{t('Equipment calibration verification', 'Verificación de calibración de equipos')}</li>
+              <li>{t('Batch process records maintained', 'Registros de proceso por lote mantenidos')}</li>
+            </ul>
+          </div>
+        </div>
+        <div class="qc-step">
+          <div class="qc-step-num">03</div>
+          <div class="qc-step-body">
+            <h3>{t('Heat Treatment Verification', 'Verificación de Tratamiento Térmico')}</h3>
+            <p>{t('Heat treatment is critical to achieving required hardness and strength. We monitor furnace temperatures, verify quenching parameters, and test sample parts from each batch.', 'El tratamiento térmico es crítico para lograr la dureza y resistencia requeridas. Monitoreamos temperaturas del horno, verificamos parámetros de revenido y probamos piezas de muestra de cada lote.')}</p>
+            <ul>
+              <li>{t('Temperature data logging', 'Registro de datos de temperatura')}</li>
+              <li>{t('Rockwell / Vickers hardness testing', 'Prueba de dureza Rockwell / Vickers')}</li>
+              <li>{t('Microstructure analysis (samples)', 'Análisis de microestructura (muestras)')}</li>
+              <li>{t('Batch heat treatment records', 'Registros de tratamiento térmico por lote')}</li>
+            </ul>
+          </div>
+        </div>
+        <div class="qc-step">
+          <div class="qc-step-num">04</div>
+          <div class="qc-step-body">
+            <h3>{t('Final Dimensional Inspection', 'Inspección Dimensional Final')}</h3>
+            <p>{t('Every finished part is measured against drawing specifications. Critical dimensions receive 100% inspection; others are sampled per AQL standards.', 'Cada pieza terminada se mide contra especificaciones del dibujo. Las dimensiones críticas reciben inspección del 100%; otras se muestrean según estándares AQL.')}</p>
+            <ul>
+              <li>{t('100% inspection on critical dimensions', '100% de inspección en dimensiones críticas')}</li>
+              <li>{t('AQL sampling on non-critical dims', 'Muestreo AQL en dims no críticas')}</li>
+              <li>{t('Thread gauge verification', 'Verificación de calibradores de rosca')}</li>
+              <li>{t('Visual inspection for surface defects', 'Inspección visual de defectos superficiales')}</li>
+            </ul>
+          </div>
+        </div>
+        <div class="qc-step">
+          <div class="qc-step-num">05</div>
+          <div class="qc-step-body">
+            <h3>{t('Functional Testing', 'Pruebas Funcionales')}</h3>
+            <p>{t('Selected samples undergo functional testing including torque testing, tensile testing, and fatigue life testing to verify real-world performance.', 'Muestras seleccionadas se someten a pruebas funcionales incluyendo prueba de torque, prueba de tracción y prueba de vida útil por fatiga para verificar el rendimiento en el mundo real.')}</p>
+            <ul>
+              <li>{t('Tensile and yield strength testing', 'Prueba de resistencia a la tracción y fluencia')}</li>
+              <li>{t('Proof load testing', 'Prueba de carga de prueba')}</li>
+              <li>{t('Fatigue life testing (samples)', 'Prueba de vida útil por fatiga (muestras)')}</li>
+              <li>{t('Salt spray corrosion testing', 'Prueba de corrosión por niebla salina')}</li>
+            </ul>
+          </div>
+        </div>
+        <div class="qc-step">
+          <div class="qc-step-num">06</div>
+          <div class="qc-step-body">
+            <h3>{t('Final Documentation & Traceability', 'Documentación Final y Trazabilidad')}</h3>
+            <p>{t('Every shipment includes full documentation: inspection reports, material certificates, heat treatment records, and dimensional data. Complete traceability from raw material lot to finished part.', 'Cada envío incluye documentación completa: informes de inspección, certificados de material, registros de tratamiento térmico y datos dimensionales. Trazabilidad completa desde el lote de materia prima hasta la pieza terminada.')}</p>
+            <ul>
+              <li>{t('Inspection reports per lot', 'Informes de inspección por lote')}</li>
+              <li>{t('Material certificates (MTC)', 'Certificados de material (MTC)')}</li>
+              <li>{t('Heat treatment charts', 'Gráficos de tratamiento térmico')}</li>
+              <li>{t('Full batch traceability', 'Trazabilidad completa del lote')}</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testing Equipment -->
+  <section class="section section-alt">
+    <div class="container">
+      <header class="section-header">
+        <p class="eyebrow">{t('Equipment', 'Equipos')}</p>
+        <h2>{t('Inspection & Testing Equipment', 'Equipos de Inspección y Pruebas')}</h2>
+      </header>
+      <div class="equipment-grid">
+        <div class="equipment-card">
+          <div class="equipment-icon">📐</div>
+          <h3>CMM</h3>
+          <p>{t('Coordinate Measuring Machine for precise dimensional verification of complex parts', 'Máquina de Medición por Coordenadas para verificación dimensional precisa de piezas complejas')}</p>
+        </div>
+        <div class="equipment-card">
+          <div class="equipment-icon">🔬</div>
+          <h3>{t('Optical Comparator', 'Comparador Óptico')}</h3>
+          <p>{t('Profile measurement for thread forms and complex contours', 'Medición de perfil para formas de rosca y contornos complejos')}</p>
+        </div>
+        <div class="equipment-card">
+          <div class="equipment-icon">⚡</div>
+          <h3>{t('Tensile Tester', 'Probador de Tracción')}</h3>
+          <p>{t('Universal testing machine for tensile strength, yield strength, and elongation', 'Máquina de prueba universal para resistencia a la tracción, límite de fluencia y elongación')}</p>
+        </div>
+        <div class="equipment-card">
+          <div class="equipment-icon">💎</div>
+          <h3>{t('Hardness Tester', 'Probador de Dureza')}</h3>
+          <p>{t('Rockwell and Vickers hardness testers for surface and core hardness', 'Probadores de dureza Rockwell y Vickers para dureza superficial y del núcleo')}</p>
+        </div>
+        <div class="equipment-card">
+          <div class="equipment-icon">🔍</div>
+          <h3>{t('Spectrometer', 'Espectrómetro')}</h3>
+          <p>{t('Optical emission spectrometer for precise chemical composition analysis', 'Espectrómetro de emisión óptica para análisis preciso de composición química')}</p>
+        </div>
+        <div class="equipment-card">
+          <div class="equipment-icon">🧪</div>
+          <h3>{t('Salt Spray Chamber', 'Cámara de Niebla Salina')}</h3>
+          <p>{t('Corrosion resistance testing for surface treatments and coatings', 'Pruebas de resistencia a la corrosión para tratamientos y recubrimientos superficiales')}</p>
+        </div>
+        <div class="equipment-card">
+          <div class="equipment-icon">🔩</div>
+          <h3>{t('Thread Gauge Sets', 'Juegos de Calibradores de Rosca')}</h3>
+          <p>{t('Go/No-Go gauges for thread verification per DIN, ISO, and ANSI standards', 'Calibradores Pasa/No Pasa para verificación de rosca según estándares DIN, ISO y ANSI')}</p>
+        </div>
+        <div class="equipment-card">
+          <div class="equipment-icon">📊</div>
+          <h3>{t('Profile Projector', 'Proyector de Perfiles')}</h3>
+          <p>{t('Optical profile measurement for complex part geometries', 'Medición óptica de perfil para geometrías complejas de piezas')}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Certifications -->
+  <section class="section">
+    <div class="container">
+      <header class="section-header">
+        <p class="eyebrow">{t('Certifications', 'Certificaciones')}</p>
+        <h2>{t('Quality Standards & Compliance', 'Estándares de Calidad y Cumplimiento')}</h2>
+      </header>
+      <div class="cert-grid">
+        <div class="cert-card">
+          <div class="cert-icon">🏅</div>
+          <h3>ISO 9001</h3>
+          <p>{t('Quality Management System — Certified by DNV', 'Sistema de Gestión de Calidad — Certificado por DNV')}</p>
+        </div>
+        <div class="cert-card">
+          <div class="cert-icon">📋</div>
+          <h3>{t('PPAP Support', 'Soporte PPAP')}</h3>
+          <p>{t('Production Part Approval Process for automotive OEMs', 'Proceso de Aprobación de Piezas de Producción para OEMs automotrices')}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+.page-header { background: linear-gradient(135deg, #0F3060 0%, #1E3A6E 100%); color: #fff; padding: var(--space-12) 0; text-align: center; }
+.page-header h1 { color: #fff; font-size: clamp(1.75rem, 4vw, 2.5rem); margin-bottom: var(--space-3); font-weight: 800; }
+.page-header p { font-size: clamp(1rem, 2.5vw, 1.125rem); color: rgba(255,255,255,0.85); margin: 0 auto; }
+.section-header { text-align: center; margin-bottom: var(--space-10); }
+.eyebrow { font-size: 0.8125rem; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; color: var(--color-secondary); margin-bottom: var(--space-3); }
+.qc-steps { display: flex; flex-direction: column; gap: var(--space-4); }
+.qc-step { display: flex; gap: var(--space-6); align-items: flex-start; padding: var(--space-6); border: 1px solid var(--color-border); border-radius: var(--radius-xl); background: var(--color-bg); }
+.qc-step-num { font-size: 2.5rem; font-weight: 800; color: var(--color-primary); opacity: 0.2; line-height: 1; flex-shrink: 0; min-width: 60px; }
+.qc-step-body h3 { font-size: 1.125rem; margin-bottom: var(--space-3); }
+.qc-step-body > p { color: var(--color-text-light); line-height: 1.7; margin-bottom: var(--space-4); font-size: 0.9375rem; }
+.qc-step-body ul { list-style: none; display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-2); }
+.qc-step-body li { font-size: 0.875rem; padding-left: var(--space-4); position: relative; color: var(--color-text); }
+.qc-step-body li::before { content: '✅'; position: absolute; left: 0; font-size: 0.75rem; top: 1px; }
+.equipment-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--space-4); }
+.equipment-card { background: var(--color-bg); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: var(--space-5); text-align: center; }
+.equipment-icon { font-size: 2rem; margin-bottom: var(--space-3); }
+.equipment-card h3 { font-size: 1rem; margin-bottom: var(--space-2); }
+.equipment-card p { font-size: 0.8125rem; color: var(--color-text-muted); margin: 0; }
+.cert-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--space-6); max-width: 600px; margin: 0 auto; }
+.cert-card { background: var(--color-bg); border: 1px solid var(--color-border); border-radius: var(--radius-xl); padding: var(--space-8); text-align: center; transition: all var(--transition-base); }
+.cert-card:hover { border-color: var(--color-primary); box-shadow: var(--shadow-md); }
+.cert-icon { font-size: 3rem; margin-bottom: var(--space-4); }
+.cert-card h3 { font-size: 1.25rem; color: var(--color-primary); margin-bottom: var(--space-2); }
+.cert-card p { font-size: 0.875rem; color: var(--color-text-muted); margin: 0; text-align: center; }
+@media (max-width: 1024px) { .equipment-grid { grid-template-columns: repeat(2, 1fr); } .cert-grid { grid-template-columns: repeat(2, 1fr); } .qc-step-body ul { grid-template-columns: 1fr; } }
+@media (max-width: 640px) { .equipment-grid { grid-template-columns: 1fr 1fr; } .cert-grid { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 480px) { .qc-step { flex-direction: column; } }
+</style>
+</BaseLayout>

@@ -1,0 +1,20 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+<BaseLayout lang="es" title="Página No Encontrada | Xiamen Carelong" noindex>
+  <section class="error-section">
+    <div class="container text-center">
+      <h1 class="error-code">404</h1>
+      <h2>Página No Encontrada</h2>
+      <p>La página que busca no existe o ha sido movida.</p>
+      <a href="/es" class="btn btn-primary">Ir al Inicio</a>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+.error-section { padding: var(--space-16) 0; text-align: center; }
+.error-code { font-size: 8rem; font-weight: 800; color: var(--color-primary); line-height: 1; margin-bottom: var(--space-4); }
+.error-section h2 { margin-bottom: var(--space-4); }
+.error-section p { font-size: 1.125rem; color: var(--color-text-muted); margin-bottom: var(--space-8); }
+</style>

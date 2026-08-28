@@ -1,0 +1,48 @@
+---
+/**
+ * Shared layout for bilingual inner pages (About, Contact, Products, etc.)
+ * Wraps page content with consistent header, page-hero, and structure.
+ */
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import type { Lang } from '../../data/i18n/navigation';
+
+interface Props {
+  lang: Lang;
+  title: string;
+  description?: string;
+  /** H1 heading text */
+  h1: Record<Lang, string>;
+  /** Subtitle under H1 */
+  subtitle?: Record<Lang, string>;
+}
+const { lang, title, description, h1, subtitle } = Astro.props;
+---
+<BaseLayout lang={lang} title={title} description={description}>
+  <header class="page-header">
+    <div class="container">
+      <h1>{h1[lang]}</h1>
+      {subtitle && <p>{subtitle[lang]}</p>}
+    </div>
+  </header>
+  <slot />
+</BaseLayout>
+
+<style>
+.page-header {
+  background: linear-gradient(135deg, #0F3060 0%, #1E3A6E 100%);
+  color: #fff;
+  padding: var(--space-12) 0;
+  text-align: center;
+}
+.page-header h1 {
+  color: #fff;
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  margin-bottom: var(--space-3);
+  font-weight: 800;
+}
+.page-header p {
+  font-size: clamp(1rem, 2.5vw, 1.125rem);
+  color: rgba(255,255,255,0.85);
+  margin: 0 auto;
+}
+</style>

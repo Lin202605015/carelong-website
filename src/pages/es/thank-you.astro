@@ -1,0 +1,24 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+<BaseLayout lang="es" title="Mensaje Enviado | Xiamen Carelong" noindex>
+  <section class="ty-section">
+    <div class="container text-center">
+      <div class="ty-icon">✅</div>
+      <h1>¡Mensaje Enviado!</h1>
+      <p>Gracias por contactar a Xiamen Carelong. Responderemos a su consulta en 24 horas.</p>
+      <p class="ty-contact">Si su consulta es urgente, contáctenos directamente:<br/>
+      <a href="tel:+865925185361">+86-592-5185361</a> | <a href="mailto:Jason@carelong.com.cn">Jason@carelong.com.cn</a></p>
+      <a href="/es" class="btn btn-primary">Volver al Inicio</a>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+.ty-section { padding: var(--space-16) 0; text-align: center; }
+.ty-icon { font-size: 5rem; margin-bottom: var(--space-6); }
+.ty-section h1 { color: var(--color-primary); margin-bottom: var(--space-4); }
+.ty-section p { font-size: 1.125rem; color: var(--color-text-muted); margin-bottom: var(--space-4); }
+.ty-contact { font-size: 0.9375rem !important; }
+.ty-contact a { color: var(--color-primary); }
+</style>

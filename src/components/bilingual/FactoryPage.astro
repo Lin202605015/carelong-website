@@ -1,0 +1,358 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import type { Lang } from '../../data/i18n/navigation';
+
+interface Props { lang: Lang; }
+const { lang } = Astro.props;
+const isEs = lang === 'es';
+const t = (en: string, es: string) => isEs ? es : en;
+---
+<BaseLayout lang={lang} title={t('Our Factory — Xiamen Carelong Manufacturing Facility Tour | Carelong', 'Nuestra Fábrica | Xiamen Carelong')} description={t('Visit Carelong\'s manufacturing facility in Xiamen, China. 10,000 sqm production area, 100+ employees, cold heading, hot forging, and CNC machining capabilities.', 'Visite nuestras instalaciones de fabricación en Xiamen, China. Más de 10,000 m² de área de producción, más de 100 empleados.')}>
+  <header class="page-header">
+    <div class="container">
+      <h1>{t('Visit Our Factory', 'Visite Nuestra Fábrica')}</h1>
+      <p>{t('You are cordially invited to tour our top-tier modern manufacturing base', 'Le invitamos cordialmente a visitar nuestra moderna base de fabricación de primera categoría')}</p>
+    </div>
+  </header>
+
+  <!-- About Our Facility -->
+  <section class="section">
+    <div class="container">
+      <div class="factory-intro">
+        <p class="eyebrow">{t('About Our Facility', 'Sobre Nuestras Instalaciones')}</p>
+        <h2>{t('Xiamen, Quanzhou, and Zhangzhou — Three Major Production Bases', 'Xiamen, Quanzhou y Zhangzhou — Tres Bases Principales de Producción')}</h2>
+        <p>{t(
+          'Our factories operate on advanced production equipment including intermediate-frequency heating forging assembly line, automatic multi-stage cold puncher, laser cutting machine, stamping machine, numerically controlled lathe, automatic heat treatment net furnace that is controlled by atmosphere microprocessor, imported precision mold processing center.',
+          'Nuestras fábricas operan con equipos de producción avanzados incluyendo línea de forjado con calentamiento de frecuencia intermedia, punzonadora automática multifase, máquina de corte láser, máquina de estampado, torno controlado numéricamente, horno de tratamiento térmico con microprocesador de atmósfera, centro de mecanizado de moldes de precisión importado.')}</p>
+
+        <p>{t(
+          'Strategically positioned near Xiamen Port, one of China\'s largest container ports, we offer efficient logistics and competitive shipping to clients worldwide. Our products are exported to North America, Europe, Southeast Asia, Taiwan and other areas.',
+          'Estratégicamente ubicados cerca del Puerto de Xiamen, uno de los puertos de contenedores más grandes de China, ofrecemos logística eficiente y envíos competitivos a clientes en todo el mundo. Nuestros productos se exportan a América del Norte, Europa, Sudeste de Asia, Taiwán y otras regiones.')}</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Workshop Hero Cards -->
+  <section class="section" style="padding-top:0;">
+    <div class="container">
+      <div class="workshop-hero-grid">
+
+        <!-- Card 1: Bolts and Nuts -->
+        <div class="workshop-hero-card">
+          <img src="/images/factory/factory-bolts-workshop.webp" alt="Bolts and Nuts Manufacturing Workshop" />
+          <div class="workshop-hero-overlay">
+            <div class="workshop-hero-content">
+              <p class="workshop-hero-label">{t('Cold Heading & Hot Forging', 'Embutición en Frío y Forjado en Caliente')}</p>
+              <h2 class="workshop-hero-title">{t('Bolts and Nuts Workshop', 'Taller de Pernos y Tuercas')}</h2>
+              <p class="workshop-hero-desc">{t('20+ cold headers and 30+ forging presses producing millions of precision fasteners every month.', 'Más de 20 punzonadoras en frío y más de 30 prensas de forjado produciendo millones de sujetadores de precisión cada mes.')}</p>
+              <div class="workshop-hero-actions">
+                <a href="/products/bolts-and-nuts" class="btn btn-primary btn-sm">{t('View Products', 'Ver Productos')}</a>
+                <button class="btn btn-outline-white btn-sm workshop-expand-btn" data-target="tab-bolts">{t('About This Workshop', 'Sobre Este Taller')}</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 2: Display Racks -->
+        <div class="workshop-hero-card">
+          <img src="/images/factory/factory-display-workshop.webp" alt="Display Rack Workshop" />
+          <div class="workshop-hero-overlay">
+            <div class="workshop-hero-content">
+              <p class="workshop-hero-label">{t('Metal Fabrication & Assembly', 'Fabricación y Montaje de Metales')}</p>
+              <h2 class="workshop-hero-title">{t('Display Rack Workshop', 'Taller de Exhibidores')}</h2>
+              <p class="workshop-hero-desc">{t('Custom metal display racks, gondola shelving, and retail fixtures manufactured to your specifications.', 'Exhibidores metálicos personalizados, estanterías gondola y accesorios comerciales fabricados según sus especificaciones.')}</p>
+              <div class="workshop-hero-actions">
+                <a href="/products/display-rack" class="btn btn-primary btn-sm">{t('View Products', 'Ver Productos')}</a>
+                <button class="btn btn-outline-white btn-sm workshop-expand-btn" data-target="tab-display">{t('About This Workshop', 'Sobre Este Taller')}</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 3: Stamping -->
+        <div class="workshop-hero-card">
+          <img src="/images/factory/factory-stamping-workshop.webp" alt="Stamping Workshop" />
+          <div class="workshop-hero-overlay">
+            <div class="workshop-hero-content">
+              <p class="workshop-hero-label">{t('Stamping & Hot Forging', 'Estampado y Forjado en Caliente')}</p>
+              <h2 class="workshop-hero-title">{t('Stamping Workshop', 'Taller de Estampado')}</h2>
+              <p class="workshop-hero-desc">{t('30+ mechanical presses ranging from 160T to 2500T for heavy-duty stamping and forming operations.', 'Más de 30 prensas mecánicas de 160T a 2500T para operaciones pesadas de estampado y moldeo.')}</p>
+              <div class="workshop-hero-actions">
+                <a href="/products/stamping-parts" class="btn btn-primary btn-sm">{t('View Products', 'Ver Productos')}</a>
+                <button class="btn btn-outline-white btn-sm workshop-expand-btn" data-target="tab-stamping">{t('About This Workshop', 'Sobre Este Taller')}</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 4: CNC Machining -->
+        <div class="workshop-hero-card">
+          <img src="/images/factory/factory-cnc-workshop.webp" alt="CNC Machining Workshop" />
+          <div class="workshop-hero-overlay">
+            <div class="workshop-hero-content">
+              <p class="workshop-hero-label">{t('CNC Turning & Milling', 'Torneado y Fresado CNC')}</p>
+              <h2 class="workshop-hero-title">{t('CNC Machining Workshop', 'Taller de Mecanizado CNC')}</h2>
+              <p class="workshop-hero-desc">{t('80+ CNC machines for precision turning, milling, and multi-axis machining of complex components.', 'Más de 80 máquinas CNC para torneado de precisión, fresado y mecanizado multieje de componentes complejos.')}</p>
+              <div class="workshop-hero-actions">
+                <a href="/products/machining-parts" class="btn btn-primary btn-sm">{t('View Products', 'Ver Productos')}</a>
+                <button class="btn btn-outline-white btn-sm workshop-expand-btn" data-target="tab-cnc">{t('About This Workshop', 'Sobre Este Taller')}</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Photo Gallery -->
+  <section class="section section-alt">
+    <div class="container">
+      <header class="section-header" id="photo-gallery-header">
+        <p class="eyebrow">{t('Photo Gallery', 'Galería de Fotos')}</p>
+        <h2>{t('Inside Our Facility', 'Dentro de Nuestras Instalaciones')}</h2>
+      </header>
+      <div class="gallery-tabs" id="photo-gallery-tabs">
+        <button class="gallery-tab active" data-tab="bolts" id="tab-bolts">{t('Bolts and Nuts Workshop', 'Taller de Pernos y Tuercas')}</button>
+        <button class="gallery-tab" data-tab="display" id="tab-display">{t('Display Rack Workshop', 'Taller de Exhibidores')}</button>
+        <button class="gallery-tab" data-tab="stamping" id="tab-stamping">{t('Stamping Workshop', 'Taller de Estampado')}</button>
+        <button class="gallery-tab" data-tab="cnc" id="tab-cnc">{t('CNC Machining Workshop', 'Taller de Mecanizado CNC')}</button>
+      </div>
+      <div class="gallery-panels">
+        <div class="gallery-panel active" data-panel="bolts">
+          <div class="gallery-grid gallery-grid-3x2">
+            <div class="gallery-item"><img src="/images/factory/bolts-workshop-1.webp" alt="Bolts and Nuts Workshop 1" decoding="async" /></div>
+            <div class="gallery-item"><img src="/images/factory/bolts-workshop-2.webp" alt="Bolts and Nuts Workshop 2" decoding="async" /></div>
+            <div class="gallery-item"><img src="/images/factory/bolts-workshop-3.webp" alt="Bolts and Nuts Workshop 3" decoding="async" /></div>
+            <div class="gallery-item"><img src="/images/factory/bolts-workshop-4.webp" alt="Bolts and Nuts Workshop 4" decoding="async" /></div>
+            <div class="gallery-item"><img src="/images/factory/bolts-workshop-5.webp" alt="Bolts and Nuts Workshop 5" decoding="async" /></div>
+            <div class="gallery-item"><img src="/images/factory/bolts-workshop-6.webp" alt="Bolts and Nuts Workshop 6" decoding="async" /></div>
+          </div>
+        </div>
+        <div class="gallery-panel" data-panel="display">
+          <div class="gallery-grid gallery-grid-3x2">
+            <div class="gallery-item"><img src="/images/factory/display-workshop-1.webp" alt="Display Rack Workshop 1" loading="lazy" decoding="async" /></div>
+            <div class="gallery-item"><img src="/images/factory/display-workshop-2.webp" alt="Display Rack Workshop 2" loading="lazy" decoding="async" /></div>
+            <div class="gallery-item"><img src="/images/factory/display-workshop-3.webp" alt="Display Rack Workshop 3" loading="lazy" decoding="async" /></div>
+            <div class="gallery-item"><img src="/images/factory/display-workshop-4.webp" alt="Display Rack Workshop 4" loading="lazy" decoding="async" /></div>
+            <div class="gallery-item"><img src="/images/factory/display-workshop-5.webp" alt="Display Rack Workshop 5" loading="lazy" decoding="async" /></div>
+            <div class="gallery-item"><img src="/images/factory/display-workshop-6.webp" alt="Display Rack Workshop 6" loading="lazy" decoding="async" /></div>
+          </div>
+        </div>
+        <div class="gallery-panel" data-panel="stamping">
+          <div class="gallery-grid gallery-grid-3x2">
+            <div class="gallery-item"><img src="/images/factory/stamping-workshop-1.webp" alt="Stamping Workshop 1" loading="lazy" decoding="async" /></div>
+            <div class="gallery-item"><img src="/images/factory/stamping-workshop-2.webp" alt="Stamping Workshop 2" loading="lazy" decoding="async" /></div>
+            <div class="gallery-item"><img src="/images/factory/stamping-workshop-3.webp" alt="Stamping Workshop 3" loading="lazy" decoding="async" /></div>
+            <div class="gallery-item"><img src="/images/factory/stamping-workshop-4.webp" alt="Stamping Workshop 4" loading="lazy" decoding="async" /></div>
+            <div class="gallery-item"><img src="/images/factory/stamping-workshop-5.webp" alt="Stamping Workshop 5" loading="lazy" decoding="async" /></div>
+            <div class="gallery-item"><img src="/images/factory/stamping-workshop-6.webp" alt="Stamping Workshop 6" loading="lazy" decoding="async" /></div>
+          </div>
+        </div>
+        <div class="gallery-panel" data-panel="cnc">
+          <div class="gallery-grid gallery-grid-3x2">
+            <div class="gallery-item"><img src="/images/factory/cnc-workshop-1.webp" alt="CNC Machining 1" loading="lazy" decoding="async" /></div>
+            <div class="gallery-item"><img src="/images/factory/cnc-workshop-2.webp" alt="CNC Machining 2" loading="lazy" decoding="async" /></div>
+            <div class="gallery-item"><img src="/images/factory/cnc-workshop-3.webp" alt="CNC Machining 3" loading="lazy" decoding="async" /></div>
+            <div class="gallery-item"><img src="/images/factory/cnc-workshop-4.webp" alt="CNC Machining 4" loading="lazy" decoding="async" /></div>
+            <div class="gallery-item"><img src="/images/factory/cnc-workshop-5.webp" alt="CNC Machining 5" loading="lazy" decoding="async" /></div>
+            <div class="gallery-item"><img src="/images/factory/cnc-workshop-6.webp" alt="CNC Machining 6" loading="lazy" decoding="async" /></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Workshop Sections -->
+  <section class="section" id="workshop-anchor">
+    <div class="container">
+      <header class="section-header">
+        <p class="eyebrow">{t('Production Areas', 'Áreas de Producción')}</p>
+        <h2>{t('What You\'ll See', 'Lo Que Verá')}</h2>
+      </header>
+      <div class="workshop-cards">
+        <div class="workshop-card" id="cold-heading">
+          <div class="workshop-icon">⚙️</div>
+          <div class="workshop-content">
+            <h3>{t('Cold Heading Workshop', 'Taller de Embutición en Frío')}</h3>
+            <p>{t('Our largest production area houses 20+ cold heading machines producing millions of precision fasteners every month.', 'Nuestra área de producción más grande con más de 20 máquinas de embutición en frío produciendo millones de sujetadores de precisión cada mes.')}</p>
+            <ul>
+              <li>{t('20+ multi-station cold headers', 'Más de 20 punzonadoras multifase en frío')}</li>
+              <li>{t('Wire diameter: 2mm – 32mm', 'Diámetro de alambre: 2mm – 32mm')}</li>
+              <li>{t('Automated quality monitoring', 'Monitoreo de calidad automatizado')}</li>
+            </ul>
+            </div>
+        </div>
+        <div class="workshop-card" id="hot-forging">
+          <div class="workshop-icon">🔥</div>
+          <div class="workshop-content">
+            <h3>{t('Hot Forging Workshop', 'Taller de Forjado en Caliente')}</h3>
+            <p>{t('Our hot forging facility handles larger components that require the strength and versatility of hot forming.', 'Nuestra instalación de forjado en caliente maneja componentes más grandes que requieren la resistencia y versatilidad del forjado en caliente.')}</p>
+            <ul>
+              <li>{t('30+ forging presses (160–2500T)', 'Más de 30 prensas de forjado (160–2500T)')}</li>
+              <li>{t('Electric induction heating', 'Calentamiento por inducción eléctrica')}</li>
+              <li>{t('Automated temperature control', 'Control de temperatura automatizado')}</li>
+            </ul>
+            </div>
+        </div>
+        <div class="workshop-card" id="cnc-machining">
+          <div class="workshop-icon">🔧</div>
+          <div class="workshop-content">
+            <h3>{t('CNC Machining Center', 'Centro de Mecanizado CNC')}</h3>
+            <p>{t('Secondary operations and precision custom parts are handled in our CNC machining center.', 'Operaciones secundarias y piezas personalizadas de precisión se manejan en nuestro centro de mecanizado CNC.')}</p>
+            <ul>
+              <li>{t('80+ CNC machines', 'Más de 80 máquinas CNC')}</li>
+              <li>{t('4-axis machining capability', 'Capacidad de mecanizado de 4 ejes')}</li>
+              <li>{t('Complex part prototyping', 'Prototipado de piezas complejas')}</li>
+            </ul>
+            </div>
+        </div>
+        <div class="workshop-card">
+          <div class="workshop-icon">🧪</div>
+          <div class="workshop-content">
+            <h3>{t('Quality Control Laboratory', 'Laboratorio de Control de Calidad')}</h3>
+            <p>{t('Our QC lab is equipped with professional testing equipment for dimensional inspection, hardness testing, and tensile testing.', 'Nuestro laboratorio de QC está equipado con equipos profesionales de pruebas para inspección dimensional, prueba de dureza y prueba de tracción.')}</p>
+            <ul>
+              <li>{t('Coordinate measuring machines (CMM)', 'Máquinas de medición por coordenadas (CMM)')}</li>
+              <li>{t('Optical projectors', 'Proyectores ópticos')}</li>
+              <li>{t('Hardness testers (Rockwell, Vickers)', 'Probadores de dureza (Rockwell, Vickers)')}</li>
+            </ul>
+            </div>
+        </div>
+        <div class="workshop-card" id="surface-treatment">
+          <div class="workshop-icon">🎨</div>
+          <div class="workshop-content">
+            <h3>{t('Surface & Heat Treatment', 'Tratamiento Térmico y Superficial')}</h3>
+            <p>{t('On-site heat treatment and surface finishing ensure complete control over mechanical properties.', 'El tratamiento térmico y acabado superficial en planta aseguran control completo sobre las propiedades mecánicas.')}</p>
+            <ul>
+              <li>{t('Carburizing & quenching furnaces', 'Hornos de cementación y revenido')}</li>
+              <li>{t('Zinc plating & Dacromet lines', 'Líneas de galvanoplastia y Dacromet')}</li>
+              <li>{t('Induction hardening', 'Temple por inducción')}</li>
+            </ul>
+            </div>
+        </div>
+        <div class="workshop-card">
+          <div class="workshop-icon">📦</div>
+          <div class="workshop-content">
+            <h3>{t('Warehouse & Logistics', 'Almacén y Logística')}</h3>
+            <p>{t('Our organized warehouse and logistics team ensure efficient storage, picking, and worldwide shipment.', 'Nuestro almacén organizado y equipo de logística aseguran almacenamiento eficiente, selección y envío a todo el mundo.')}</p>
+            <ul>
+              <li>{t('5,000+ sqm warehouse space', 'Más de 5,000 m² de espacio de almacén')}</li>
+              <li>{t('ERP inventory management', 'Gestión de inventario ERP')}</li>
+              <li>{t('Export packaging capability', 'Capacidad de empaquetado para exportación')}</li>
+            </ul>
+            </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section cta-band">
+    <div class="container text-center">
+      <h2>{t('Interested in Visiting?', '¿Interesado en Visitarnos?')}</h2>
+      <p>{t('We welcome clients from around the world to visit our facility. Contact us to schedule your tour.', 'Damos la bienvenida a clientes de todo el mundo para visitar nuestras instalaciones. Contáctenos para programar su recorrido.')}</p>
+      <div class="cta-actions">
+        <a href={isEs ? '/es/contact' : '/contact'} class="btn btn-primary btn-lg">{t('Schedule a Visit', 'Programar una Visita')}</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+.page-header { background: linear-gradient(135deg, #0F3060 0%, #1E3A6E 100%); color: #fff; padding: var(--space-12) 0; text-align: center; }
+.page-header h1 { color: #fff; font-size: clamp(1.75rem, 4vw, 2.5rem); margin-bottom: var(--space-3); font-weight: 800; }
+.page-header p { font-size: clamp(1rem, 2.5vw, 1.125rem); color: rgba(255,255,255,0.85); margin: 0 auto; }
+.section-header { text-align: center; margin-bottom: var(--space-10); }
+.eyebrow { font-size: 0.8125rem; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; color: var(--color-secondary); margin-bottom: var(--space-3); }
+.factory-intro h2 { margin-bottom: var(--space-4); }
+.gallery-grid { display: grid; gap: var(--space-4); }
+.gallery-grid.gallery-grid-3x2 { grid-template-columns: repeat(3, 1fr); }
+@media (max-width: 768px) { .gallery-grid.gallery-grid-3x2 { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 480px) { .gallery-grid.gallery-grid-3x2 { grid-template-columns: 1fr; } }
+.gallery-tabs { display: flex; flex-wrap: wrap; gap: var(--space-3); justify-content: center; margin-bottom: var(--space-8); }
+.gallery-tab { padding: var(--space-3) var(--space-5); border: 1.5px solid var(--color-border); border-radius: var(--radius-md); background: transparent; color: var(--color-text); font-size: 0.9375rem; font-weight: 600; cursor: pointer; transition: all 0.2s; }
+.gallery-tab:hover { border-color: var(--color-primary); color: var(--color-primary); }
+.gallery-tab.active { background: var(--color-primary); border-color: var(--color-primary); color: #fff; }
+.gallery-panels { position: relative; }
+.gallery-panel { display: none; }
+.gallery-panel.active { display: block; animation: fadeInPanel 0.25s ease; }
+@keyframes fadeInPanel { from { opacity: 0.4; } to { opacity: 1; } }
+@media (max-width: 768px) { .gallery-tab { font-size: 0.8125rem; padding: var(--space-2) var(--space-3); } }
+
+/* Workshop Hero Cards */
+.workshop-hero-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--space-6); }
+.workshop-hero-card { position: relative; border-radius: var(--radius-xl); overflow: hidden; aspect-ratio: 16/9; box-shadow: var(--shadow-lg); }
+.workshop-hero-card img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.4s ease; }
+.workshop-hero-card:hover img { transform: scale(1.04); }
+.workshop-hero-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.3) 50%, rgba(0,0,0,0.1) 100%); display: flex; align-items: flex-end; }
+.workshop-hero-content { padding: var(--space-8); color: #fff; width: 100%; }
+.workshop-hero-label { font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; color: rgba(255,255,255,0.7); margin-bottom: var(--space-2); }
+.workshop-hero-title { font-size: clamp(1.125rem, 2.5vw, 1.5rem); font-weight: 800; color: #fff; margin-bottom: var(--space-2); line-height: 1.2; }
+.workshop-hero-desc { font-size: 0.875rem; color: rgba(255,255,255,0.8); line-height: 1.5; margin-bottom: var(--space-4); display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+.workshop-hero-actions { display: flex; gap: var(--space-3); flex-wrap: wrap; }
+.btn-outline-white { display: inline-flex; align-items: center; gap: 6px; padding: var(--space-2) var(--space-4); border: 1.5px solid rgba(255,255,255,0.7); border-radius: var(--radius-md); background: transparent; color: #fff; font-size: 0.875rem; font-weight: 600; text-decoration: none; transition: all 0.2s; cursor: pointer; }
+.btn-outline-white:hover { background: rgba(255,255,255,0.15); border-color: #fff; }
+.btn-outline-white:active { background: rgba(255,255,255,0.25); }
+@media (max-width: 768px) {
+  .workshop-hero-grid { grid-template-columns: 1fr; }
+  .workshop-hero-card { aspect-ratio: 4/3; }
+  .workshop-hero-desc { -webkit-line-clamp: 3; }
+}
+.gallery-item { border-radius: var(--radius-lg); overflow: hidden; aspect-ratio: 4/3; }
+.gallery-item img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.3s ease; }
+.gallery-item:hover img { transform: scale(1.05); }
+.workshop-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-6); }
+.workshop-card { background: var(--color-bg); border: 1px solid var(--color-border); border-radius: var(--radius-xl); padding: var(--space-6); display: flex; gap: var(--space-4); align-items: flex-start; transition: all var(--transition-base); }
+.workshop-card:hover { box-shadow: var(--shadow-lg); transform: translateY(-2px); border-color: var(--color-primary); }
+.workshop-icon { font-size: 2rem; flex-shrink: 0; }
+.workshop-content h3 { font-size: 1rem; margin-bottom: var(--space-2); }
+.workshop-content p { font-size: 0.875rem; color: var(--color-text-light); margin-bottom: var(--space-3); }
+.workshop-content ul { list-style: none; display: flex; flex-direction: column; gap: var(--space-1); }
+.workshop-content li { font-size: 0.8125rem; color: var(--color-text-muted); padding-left: var(--space-4); position: relative; }
+.workshop-content li::before { content: '✓'; position: absolute; left: 0; color: var(--color-primary); font-weight: 700; }
+.cta-band { background: var(--color-primary); color: #fff; }
+.cta-band h2 { color: #fff; margin-bottom: var(--space-4); }
+.cta-band p { color: rgba(255,255,255,0.85); font-size: 1.125rem; margin-bottom: var(--space-6); }
+.cta-actions { display: flex; gap: var(--space-4); justify-content: center; flex-wrap: wrap; }
+
+/* Workshop accordion */
+.workshop-card { cursor: default; }
+@media (max-width: 1024px) { .workshop-cards { grid-template-columns: repeat(2, 1fr); } .gallery-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 768px) { .gallery-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 640px) { .gallery-grid { grid-template-columns: 1fr; } .workshop-cards { grid-template-columns: 1fr; } }
+</style>
+
+<script>
+document.querySelectorAll('.workshop-expand-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const targetId = btn.getAttribute('data-target');
+    const galleryHeader = document.getElementById('photo-gallery-header');
+    const tabBtn = document.getElementById(targetId);
+    if (!galleryHeader || !tabBtn) return;
+    const headerRect = galleryHeader.getBoundingClientRect();
+    const offset = window.scrollY + headerRect.top - 80;
+    window.scrollTo({ top: offset, behavior: 'smooth' });
+    setTimeout(() => tabBtn.click(), 300);
+  });
+});
+document.querySelectorAll('.gallery-tab').forEach(tab => {
+  tab.addEventListener('click', () => {
+    const target = tab.getAttribute('data-tab');
+    document.querySelectorAll('.gallery-tab').forEach(t => t.classList.remove('active'));
+    document.querySelectorAll('.gallery-panel').forEach(p => p.classList.remove('active'));
+    tab.classList.add('active');
+    const panel = document.querySelector('.gallery-panel[data-panel="' + target + '"]');
+    if (panel) {
+      panel.classList.add('active');
+      // Force Chrome to load images in newly visible panel
+      panel.querySelectorAll('img').forEach(img => {
+        if (img.loading === 'lazy' && !img.complete) {
+          img.loading = 'eager';
+        }
+      });
+    }
+  });
+});
+</script>
+</BaseLayout>

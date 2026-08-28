@@ -1,0 +1,75 @@
+=== TABLE ===
+Description  |     STYLE　 | Unit  | Net W.T.Kg/Unit | Qty./Ctn.  | Net W.T.Kgs/Ctn. | OEM No.  | Size For Nut 
+ | Bolt | Nut |  |  |  |  |  | 
+M14X1.5X40 | A | a | Set | 0.128 | 200 | 26 | 　 | 　
+M14X1.5X48 | A | a | Set | 0.128 | 200 | 26 | 110-32-11411/01803-01415 | 　
+M16X1.5X48 | A | a | Set | 0.176 | 160 | 28 | 　 | 　
+M16X1.5X54 | A | a | Set | 0.180 | 140 | 25 | 　 | 　
+M16X1.5X57 | A | b | Set | 0.196 | 140 | 27 | 130-32-05001 | 　
+M18X1.5X54 | A | a | Set | 0.240 | 100 | 24 | 　 | 　
+M18X1.5X55F | B | a | Set | 0.240 | 100 | 24 | 　 | 　
+M18X1.5X57 | A | a | Set | 0.246 | 100 | 25 | 2420P1513/2420T4443 | M18X1.5X22
+M18X1.5X57 | A | a | Set | 0.246 | 100 | 25 | 205-32-51210 | 　
+M18X1.5X57 | A | b | Set | 0.246 | 100 | 25 | 135-34-11211 | 　
+M18X1.5X58 | A | a | Set | 0.242 | 100 | 24 | 　 | 　
+M19X1.5X60 | A | b | Set | 0.310 | 80 | 25 | 150-32-21321 | 　
+M19X1.5X65 | A | b | Set | 0.320 | 80 | 26 | 156-32-11210 | 　
+M20X1.5X55 | A | a | Set | 0.310 | 80 | 25 | 14X-32-11210/154-32-11230 | 　
+M20X1.5X56 | A | a | Set | 0.320 | 80 | 26 | 　 | 　
+M20X1.5X56F | D | a | Set | 0.286 | 80 | 23 | 20Y-32-11210/154-32-11230 | 　
+M20X1.5X60 | 　 | 　 | Set | 0.320 | 80 | 26 | 2420Z1292/2420Z1293 | M20X1.5X27.5
+M20X1.5X60 | A | b | Set | 0.330 | 80 | 26 | 201-32-11210 | 　
+M20X1.5X63 | A | a | Set | 0.326 | 80 | 26 | 　 | 　
+M20X1.5X65 | A | a | Set | 0.328 | 80 | 26 | 　 | 　
+M20X1.5X65 | A | b | Set | 0.340 | 80 | 27 | 156-32-21321 | 　
+M22X56 | A | b | Set | 0.384 | 80 | 31 | 　 | 　
+M22X1.5X72 | A | a | Set | 0.470 | 60 | 28 | 　 | 　
+M24X1.5X75 | A | a | Set | 0.570 | 40 | 23 | 　 | 　
+M24X1.5X76.2 | A | a | Set | 0.570 | 40 | 23 | 175-32-11210/178-32-11220 | M24X1.5X24
+9/16"-18UNFX1 5/8" | A | a | Set | 0.128 | 200 | 26 | 4K7038/7K2017 | 9/16"-18UNFX3/4"
+9/16"-18UNFX1 13/16" | A | a | Set | 　 | 200 | 　 | T126931 | 9/16"-18UNFX3/4"
+9/16"-18UNFX1 7/8" | A | a | Set | 0.310 | 　 | 　 | 　 | 　
+9/16"-18UNFX1 7/8" | A | a | Set | 　 | 200 | 　 | R153099 | 9/16"-18UNFX3/4"
+9/16"-18UNFX1 15/16" | A | a | Set | 0.138 | 200 | 28 | 7H3596/7K2017 | 9/16"-18UNFX3/4"
+9/16"-18UNFX2 3/16" | A | a | Set | 　 | 160 | 　 | 616199C1 | 　
+9/16"-18UNFX2 1/2" | A | a | Set | 0.156 | 160 | 25 | 　 | 　
+5/8"-18UNFX1 7/8" | A | a | Set | 0.176 | 160 | 28 | 　 | 　
+5/8"-18UNFX2 3/32" | A | a | Set | 0.182 | 140 | 25 | 097282/1M1408 | 5/8"-18UNFX3/4"
+5/8"-18UNFX2 3/32" | A | a | Set | 0.182 | 140 | 25 | 7H3597/1M1408 | 5/8"-18UNFX3/4"
+5/8"-18UNFX2 1/8" | A | a | Set | 0.182 | 140 | 25 | R27166/1M1408 | 5/8"-18UNFX3/4"
+5/8"-18UNFX65 | A | a | Set | 0.200 | 130 | 26 | 　 | 　
+5/8"-18UNFX3" | A | a | Set | 0.210 | 120 | 25 | 　 | 　
+5/8"-18UNFX3 3/8" | A | a | Set | 0.220 | 100 | 22 | 5A4104/1M1408 | 5/8"-18UNFX3/4"
+3/4"-16UNFX2 1/8" | A | a | Set | 0.276 | 80 | 22 | 　 | 　
+3/4"-16UNFX2 5/32" | A | a | Set | 0.276 | 80 | 23 | 1S1859/1S1860 | 3/4"-16UNFX3/4"
+3/4"-16UNFX2 3/8" | A | a | Set | 　 | 80 | 　 | 7H3598/1S1860 | 3/4"-16UNFX3/4"
+3/4"-16UNFX2 13/32" | A | a | Set | 0.296 | 80 | 24 | 6V1792/1S1860 | 3/4"-16UNFX3/4"
+3/4"-16UNFX4" | A | a | Set | 0.326 | 60 | 20 | 5A7524/1S1860 | 3/4"-16UNFX3/4"
+3/4"-16UNFX4 1/8" | A | 　 | Pc. | 0.330 | 60 | 20 | 9S1838 | 　
+3/4"-16UNFX4 3/8" | A | 　 | Pc. | 0.330 | 60 | 20 | 2P9670 | 　
+7/8"-14UNFX2 21/32" | A | a | Set | 0.430 | 　 | 　 | 7H3599/2S2190 | 　 | 
+7/8"-14UNFX2 21/32" | A | a | Set | 0.424 | 60 | 25 | 7H3599/2S2140 | 　
+1"-14UNSX3" | A | a | Set | 0.656 | 　 | 　 | 9M7445/1S6421 | 　
+1"-14UNSX3 1/2" | A | a | Set | 0.780 | 30 | 23 | 9M7445/1S6421 | 　
+Notes:
+Mark: | 170
+Carton Size: | 33X19X12cm
+Surface Treatment: | Black, Zinc Plating, Trivalent Zinc Plating
+Machanism Capability: | Bolts:10.9 Class, minimum tensile strength 170,000 psi.Nuts:10 Class, fully hardened and tempered to match bolt strength 
+Bolts: | 10.9 Class, minimum tensile strength 170,000 psi.
+Nuts: | 10 Class, fully hardened and tempered to match bolt strength
+All packing details are used for reference purposes only. We can't list all of our products in above sheet since we are opening the mold every day. We also produce 12.9 class high tensile fasteners by forging.
+ 
+Buyer's Inquiry: | Customer can inquiry us by Sizes, OEM Numbers, Drawings and samples. Customer should advice us the quanity per shipment.
+Minimum Quantity: | 5000 Sets/Item for bigger than M18 items, 10,000 Sets for M14 & M16 items, USD5,000/Shipment
+Delivery: | 45-60 Days after receive buy's advanced payment or L/C according to quantity and items.
+Sample Policy: |  
+Payment: |  
+Packing: | Cartons on pallets.
+OEM orders are warm welcome.
+
+=== TABLE ===
+Bolts: | 10.9 Class, minimum tensile strength 170,000 psi.
+Nuts: | 10 Class, fully hardened and tempered to match bolt strength
+
+=== PARAGRAPHS ===

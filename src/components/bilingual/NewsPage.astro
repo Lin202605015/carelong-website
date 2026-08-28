@@ -1,0 +1,187 @@
+﻿---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import type { Lang } from '../../data/i18n/navigation';
+
+interface Props { lang: Lang; }
+const { lang } = Astro.props;
+const isEs = lang === 'es';
+const t = (en: string, es: string) => isEs ? es : en;
+---
+<BaseLayout lang={lang} title={t('Latest News — Industry Insights & Company Updates | Carelong', 'Noticias — Perspectivas de la Industria y Actualizaciones de la Empresa | Carelong')} description={t('Read the latest news from Carelong: industry insights, company updates, product releases, and manufacturing technology trends.', 'Lea las últimas noticias de Carelong: perspectivas de la industria, actualizaciones de la empresa, nuevos productos y tendencias de tecnología de fabricación.')}>
+  <header class="page-header">
+    <div class="container">
+      <h1>{t('News & Insights', 'Noticias y Perspectivas')}</h1>
+      <p>{t('Industry news, product updates, and manufacturing insights from Carelong', 'Noticias de la industria, actualizaciones de productos y perspectivas de fabricación de Carelong')}</p>
+    </div>
+  </header>
+
+  <section class="section">
+    <div class="container">
+      <div class="news-layout">
+        <main class="news-main">
+          <!-- Featured Post -->
+          <div class="featured-post">
+            <img src="/images/news/featured.webp" alt="Featured Article" style="height:360px;width:100%;object-fit:cover;border-radius:var(--radius-xl);margin-bottom:var(--space-6);" />
+            <div class="post-meta">
+              <span class="post-category">{t('Industry Insights', 'Perspectivas de la Industria')}</span>
+              <time datetime="2026-04-15">{isEs ? '15 de Abril, 2026' : 'April 15, 2026'}</time>
+            </div>
+            <h2 class="featured-title">
+              <a href="#">{t('The Future of Commercial Vehicle Fasteners: Trends Shaping the Auto Parts Industry in 2026', 'El Futuro de los Sujetadores para Vehículos Comerciales: Tendencias que Moldean la Industria en 2026')}</a>
+            </h2>
+            <p class="featured-excerpt">{t(
+              'As commercial vehicle technology advances, fastener requirements are evolving. Lightweight materials, higher strength grades, and new surface coating technologies are driving innovation in hub bolts, wheel studs, and suspension fasteners. We explore the key trends and what they mean for fleet operators and parts manufacturers alike.',
+              'A medida que avanza la tecnología de vehículos comerciales, los requisitos de sujetadores están evolucionando. Materiales ligeros, grados de mayor resistencia y nuevas tecnologías de recubrimiento están impulsando la innovación en pernos de cubo, espárragos de rueda y sujetadores de suspensión. Exploramos las tendencias clave y lo que significan para operadores de flotas y fabricantes de piezas.')}</p>
+          </div>
+
+          <div class="grid-2 posts-list">
+            <article class="post-card">
+              <img src="/images/news/hot-forging-press.webp" alt="Hot Forging Press" style="height:180px;width:100%;object-fit:cover;border-radius:var(--radius-md);margin-bottom:var(--space-4);" />
+              <div class="post-meta">
+                <span class="post-category">{t('Company News', 'Noticias de la Empresa')}</span>
+                <time datetime="2026-03-28">{isEs ? '28 de Marzo, 2026' : 'March 28, 2026'}</time>
+              </div>
+              <h3>{t('Carelong Expands Hot Forging Line with Two New 1000-Ton Presses', 'Carelong Amplía la Línea de Forjado en Caliente con Dos Nuevas Prensas de 1000 Toneladas')}</h3>
+              <p>{t('We\'ve added significant hot forging capacity to meet growing demand from European trailer manufacturers. The new presses enable us to produce larger components up to 5kg per piece.', 'Hemos agregado capacidad significativa de forjado en caliente para satisfacer la creciente demanda de fabricantes europeos de remolques. Las nuevas prensas nos permiten producir componentes más grandes de hasta 5 kg por pieza.')}</p>
+            </article>
+
+            <article class="post-card">
+              <img src="/images/news/hub-bolt-failure.webp" alt="Hub Bolt Failure" style="height:180px;width:100%;object-fit:cover;border-radius:var(--radius-md);margin-bottom:var(--space-4);" />
+              <div class="post-meta">
+                <span class="post-category">{t('Product Knowledge', 'Conocimiento del Producto')}</span>
+                <time datetime="2026-03-10">{isEs ? '10 de Marzo, 2026' : 'March 10, 2026'}</time>
+              </div>
+              <h3>{t('Understanding Hub Bolt Failure Modes and How to Prevent Them', 'Comprensión de los Modos de Falla de Pernos de Cubo y Cómo Prevenirlos')}</h3>
+              <p>{t('Wheel end failures can be costly and dangerous. This guide explains the common causes of hub bolt failures, how to inspect for early warning signs, and best practices for selection and installation.', 'Las fallas de extremo de rueda pueden ser costosas y peligrosas. Esta guía explica las causas comunes de fallas de pernos de cubo, cómo inspeccionar señales de advertencia temprana y las mejores prácticas para selección e instalación.')}</p>
+            </article>
+
+            <article class="post-card">
+              <img src="/images/news/cold-heading-vs-machining.webp" alt="Cold Heading vs Machining" style="height:180px;width:100%;object-fit:cover;border-radius:var(--radius-md);margin-bottom:var(--space-4);" />
+              <div class="post-meta">
+                <span class="post-category">{t('Industry Insights', 'Perspectivas de la Industria')}</span>
+                <time datetime="2026-02-20">{isEs ? '20 de Febrero, 2026' : 'February 20, 2026'}</time>
+              </div>
+              <h3>{t('Cold Heading vs. Machining: Choosing the Right Manufacturing Process', 'Embutición en Frío vs. Mecanizado: Elegir el Proceso de Fabricación Correcto')}</h3>
+              <p>{t('Not all fasteners are created equal. The manufacturing process significantly affects cost, strength, and performance. Learn when to choose cold heading and when machining is the better option.', 'No todos los sujetadores son iguales. El proceso de fabricación afecta significativamente el costo, la resistencia y el rendimiento. Aprenda cuándo elegir embutición en frío y cuándo el mecanizado es la mejor opción.')}</p>
+            </article>
+
+            <article class="post-card">
+              <img src="/images/news/production-record.webp" alt="Production Record" style="height:180px;width:100%;object-fit:cover;border-radius:var(--radius-md);margin-bottom:var(--space-4);" />
+              <div class="post-meta">
+                <span class="post-category">{t('Company News', 'Noticias de la Empresa')}</span>
+                <time datetime="2026-01-15">{isEs ? '15 de Enero, 2026' : 'January 15, 2026'}</time>
+              </div>
+              <h3>{t('Carelong Achieves Record Annual Production of 120 Million Parts in 2025', 'Carelong Alcanza Producción Anual Récord de 120 Millones de Piezas en 2025')}</h3>
+              <p>{t('Reflecting on a record year: we produced over 120 million auto parts in 2025, serving clients in 32 countries. Thank you to our team and partners for making this possible.', 'Reflexionando sobre un año récord: produjimos más de 120 millones de piezas de automóviles en 2025, sirviendo a clientes en 32 países. Gracias a nuestro equipo y socios por hacer esto posible.')}</p>
+            </article>
+          </div>
+        </main>
+
+        <!-- Sidebar -->
+        <aside class="news-sidebar">
+          <div class="sidebar-widget">
+            <h3>{t('Categories', 'Categorías')}</h3>
+            <ul class="category-list">
+              <li><a href="#">{t('Industry Insights', 'Perspectivas de la Industria')} <span>(12)</span></a></li>
+              <li><a href="#">{t('Company News', 'Noticias de la Empresa')} <span>(8)</span></a></li>
+              <li><a href="#">{t('Product Knowledge', 'Conocimiento del Producto')} <span>(15)</span></a></li>
+              <li><a href="#">{t('Manufacturing Technology', 'Tecnología de Fabricación')} <span>(6)</span></a></li>
+              <li><a href="#">{t('Quality & Standards', 'Calidad y Estándares')} <span>(4)</span></a></li>
+            </ul>
+          </div>
+
+          <div class="sidebar-widget">
+            <h3>{t('Popular Articles', 'Artículos Populares')}</h3>
+            <ul class="popular-list">
+              <li>
+                <span class="popular-num">01</span>
+                <div>
+                  <a href="#">{t('How to Select the Right King Pin Kit for Your Trailer Axle', 'Cómo Seleccionar el Juego de Perno Rey Correcto para su Eje de Remolque')}</a>
+                  <span class="popular-views">2.4k views</span>
+                </div>
+              </li>
+              <li>
+                <span class="popular-num">02</span>
+                <div>
+                  <a href="#">{t('Dacromet vs. Zinc Plating: Which Coating is Right for Your Parts?', 'Dacromet vs. Galvanoplastia de Zinc: ¿Qué Recubrimiento es el Correcto para sus Piezas?')}</a>
+                  <span class="popular-views">1.8k views</span>
+                </div>
+              </li>
+              <li>
+                <span class="popular-num">03</span>
+                <div>
+                  <a href="#">{t('Understanding ISO 9001 and Why It Matters for Auto Parts', 'Comprensión de ISO 9001 y Por Qué es Importante para Autopartes')}</a>
+                  <span class="popular-views">1.5k views</span>
+                </div>
+              </li>
+              <li>
+                <span class="popular-num">04</span>
+                <div>
+                  <a href="#">{t('Common Causes of Wheel End Failures and Prevention Tips', 'Causas Comunes de Fallas de Extremo de Rueda y Consejos de Prevención')}</a>
+                  <span class="popular-views">1.2k views</span>
+                </div>
+              </li>
+              <li>
+                <span class="popular-num">05</span>
+                <div>
+                  <a href="#">{t('A Complete Guide to Cold Heading Wire Materials', 'Una Guía Completa de Materiales de Alambre para Embutición en Frío')}</a>
+                  <span class="popular-views">980 views</span>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+          <div class="sidebar-widget sidebar-cta">
+            <h3>{t('Need a Quote?', '¿Necesita una Cotización?')}</h3>
+            <p>{t('Get a free quotation for your auto parts requirements. Response within 24 hours.', 'Obtenga una cotización gratuita para sus requisitos de autopartes. Respuesta en 24 horas.')}</p>
+            <a href={isEs ? '/es/contact' : '/contact'} class="btn btn-primary" style="width:100%;">{t('Contact Us', 'Contáctenos')}</a>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+.page-header { background: linear-gradient(135deg, #0F3060 0%, #1E3A6E 100%); color: #fff; padding: var(--space-12) 0; text-align: center; }
+.page-header h1 { color: #fff; font-size: clamp(1.75rem, 4vw, 2.5rem); margin-bottom: var(--space-3); font-weight: 800; }
+.page-header p { font-size: clamp(1rem, 2.5vw, 1.125rem); color: rgba(255,255,255,0.85); margin: 0 auto; }
+.post-meta { display: flex; align-items: center; gap: var(--space-3); margin-bottom: var(--space-3); font-size: 0.8125rem; color: var(--color-text-muted); }
+.post-category { background: rgba(27,75,142,0.08); color: var(--color-primary); padding: var(--space-1) var(--space-2); border-radius: 100px; font-weight: 600; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.5px; }
+time { color: var(--color-text-muted); }
+.news-layout { display: grid; grid-template-columns: 1fr 320px; gap: var(--space-12); align-items: start; }
+.featured-title { font-size: 1.75rem; margin-bottom: var(--space-4); line-height: 1.3; }
+.featured-title a { color: var(--color-text); text-decoration: none; }
+.featured-title a:hover { color: var(--color-primary); }
+.featured-excerpt { font-size: 1.0625rem; color: var(--color-text-light); line-height: 1.7; margin-bottom: var(--space-6); }
+.posts-list { margin-top: var(--space-8); }
+.post-card { border: 1px solid var(--color-border); border-radius: var(--radius-xl); overflow: hidden; background: var(--color-bg); transition: all var(--transition-base); }
+.post-card:hover { box-shadow: var(--shadow-lg); transform: translateY(-2px); border-color: var(--color-primary); }
+.post-card > * { padding: 0 var(--space-5); }
+.post-card > *:last-child { padding-bottom: var(--space-5); }
+.post-card > div:first-child { padding: 0; }
+.post-card h3 { font-size: 1rem; margin-bottom: var(--space-2); line-height: 1.4; }
+.post-card h3 a { color: var(--color-text); text-decoration: none; }
+.post-card h3 a:hover { color: var(--color-primary); }
+.post-card p { font-size: 0.875rem; color: var(--color-text-light); margin-bottom: var(--space-3); }
+.news-sidebar { display: flex; flex-direction: column; gap: var(--space-6); }
+.sidebar-widget { background: var(--color-bg-alt); border: 1px solid var(--color-border); border-radius: var(--radius-xl); padding: var(--space-6); }
+.sidebar-widget h3 { font-size: 1rem; margin-bottom: var(--space-4); padding-bottom: var(--space-3); border-bottom: 2px solid var(--color-primary); color: var(--color-primary); }
+.category-list { list-style: none; display: flex; flex-direction: column; }
+.category-list a { display: flex; justify-content: space-between; align-items: center; padding: var(--space-2) 0; font-size: 0.9375rem; color: var(--color-text); text-decoration: none; border-bottom: 1px solid var(--color-border); transition: all var(--transition-fast); }
+.category-list a:hover { color: var(--color-primary); padding-left: var(--space-2); }
+.category-list li:last-child a { border-bottom: none; }
+.category-list span { font-size: 0.8125rem; color: var(--color-text-muted); }
+.popular-list { list-style: none; display: flex; flex-direction: column; gap: var(--space-4); }
+.popular-list li { display: flex; gap: var(--space-3); align-items: flex-start; }
+.popular-num { font-size: 1.5rem; font-weight: 800; color: var(--color-primary); opacity: 0.2; line-height: 1; flex-shrink: 0; min-width: 24px; }
+.popular-list a { font-size: 0.875rem; color: var(--color-text); text-decoration: none; font-weight: 500; line-height: 1.4; display: block; margin-bottom: var(--space-1); }
+.popular-list a:hover { color: var(--color-primary); }
+.popular-views { font-size: 0.75rem; color: var(--color-text-muted); }
+.sidebar-cta { background: var(--color-primary); border-color: var(--color-primary); }
+.sidebar-cta h3 { color: #fff; border-bottom-color: rgba(255,255,255,0.3); }
+.sidebar-cta p { color: rgba(255,255,255,0.85); font-size: 0.875rem; margin-bottom: var(--space-4); }
+@media (max-width: 1024px) { .news-layout { grid-template-columns: 1fr; } .news-sidebar { flex-direction: row; flex-wrap: wrap; } .sidebar-widget { flex: 1; min-width: 280px; } }
+@media (max-width: 640px) { .posts-list { grid-template-columns: 1fr; } }
+</style>
+</BaseLayout>

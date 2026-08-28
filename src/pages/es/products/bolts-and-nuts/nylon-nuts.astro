@@ -1,0 +1,239 @@
+---
+import BaseLayout from '../../../../layouts/BaseLayout.astro';
+import Breadcrumb from '../../../../components/Breadcrumb.astro';
+
+const images = [
+  { src: '/images/products/bolts-and-nuts/nylon-nuts/nylon-nuts-01.webp', alt: 'Foto del producto Tuercas de Nylon' },
+  { src: '/images/products/bolts-and-nuts/nylon-nuts/nylon-nuts-02.webp', alt: 'Vista detallada de Tuercas de Nylon' },
+  { src: '/images/products/bolts-and-nuts/nylon-nuts/nylon-nuts-03.webp', alt: 'Sección transversal de Tuercas de Nylon' },
+  { src: '/images/products/bolts-and-nuts/nylon-nuts/nylon-nuts-04.webp', alt: 'Aplicación de Tuercas de Nylon' },
+  { src: '/images/products/bolts-and-nuts/nylon-nuts/nylon-nuts-05.webp', alt: 'Suministro al por mayor de Tuercas de Nylon' },
+];
+---
+
+<BaseLayout
+  lang="es"
+  title="Tuercas de Nylon — Fabricante de Tuercas Autoblocantes | Xiamen Carelong"
+  description="Fabricante de tuercas autoblocantes con inserto de nylon (tuercas de par de apriete prevalente). DIN 982, ISO 10511. M4-M24, grado 8/10, galvanizadas. Diseño autoblocante que previene el aflojamiento por vibración."
+>
+  <Breadcrumb items={[
+    { label: 'Productos', href: '/es/products' },
+    { label: 'Pernos y Tuercas', href: '/es/products/bolts-and-nuts' },
+    { label: 'Tuercas de Nylon' }
+  ]} />
+
+  <header class="page-header">
+    <div class="container">
+      <h1>Tuercas de Nylon</h1>
+      <p>Tuercas autoblocantes con inserto de nylon para conexiones roscadas resistentes a vibraciones</p>
+    </div>
+  </header>
+
+  <section class="section">
+    <div class="container">
+      <div class="product-overview">
+        <div class="product-gallery" id="productGallery">
+          <div class="gallery-thumbs" aria-label="Imágenes del producto">
+            {images.map((img, i) => (
+              <button type="button" class={`thumb ${i === 0 ? 'is-active' : ''}`} data-index={i} aria-label={`Ver imagen ${i + 1}`}>
+                <img src={img.src} alt={img.alt} loading="lazy" />
+              </button>
+            ))}
+          </div>
+          <div class="gallery-stage" id="galleryStage">
+            {images.map((img, i) => (
+              <img src={img.src} alt={img.alt} class={`stage-img ${i === 0 ? 'is-active' : ''}`} data-index={i} loading={i === 0 ? 'eager' : 'lazy'} />
+            ))}
+            <button type="button" class="stage-arrow stage-arrow-prev" aria-label="Imagen anterior" hidden>
+              <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M15 6l-6 6 6 6" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <button type="button" class="stage-arrow stage-arrow-next" aria-label="Imagen siguiente" hidden>
+              <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M9 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <div class="zoom-hint" aria-hidden="true">Pase el cursor para ampliar y mover</div>
+          </div>
+        </div>
+        <div class="product-intro">
+          <p class="eyebrow">Descripción del Producto</p>
+          <h2>Tuercas de Nylon</h2>
+          <p>Nuestras tuercas autoblocantes con inserto de nylon cuentan con un collar de nylon insertado en la parte superior de la tuerca que crea fricción contra las roscas del perno, proporcionando una acción autoblocante confiable sin necesidad de arandelas o adhesivos adicionales. Mantienen un rendimiento de bloqueo efectivo a través de ciclos de reutilización repetidos.</p>
+
+          <div class="product-badges">
+            <span class="badge">M4–M24</span>
+            <span class="badge">Grado 8/10</span>
+            <span class="badge">DIN 982 / ISO 10511</span>
+            <span class="badge">Autoblocante</span>
+          </div>
+
+          <div class="product-actions">
+            <a href="/es/contact" class="btn btn-primary btn-lg">Solicitar Cotización</a>
+            <a href="/es/products/bolts-and-nuts" class="btn btn-outline btn-lg">Volver a Pernos y Tuercas</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt">
+    <div class="container">
+      <header class="section-header">
+        <p class="eyebrow">Especificaciones</p>
+        <h2>Características Principales</h2>
+      </header>
+      <div class="spec-table spec-table-grid">
+        <div class="spec-row"><div class="spec-name">medida de rosca</div><div class="spec-value">M4 – M24</div></div>
+        <div class="spec-row"><div class="spec-name">grado de resistencia</div><div class="spec-value">Grado 8, Grado 10</div></div>
+        <div class="spec-row"><div class="spec-name">material</div><div class="spec-value">Cuerpo de Acero al Carbono, Inserto de Nylon 66</div></div>
+        <div class="spec-row"><div class="spec-name">tratamiento superficial</div><div class="spec-value">Galvanizado, Galvanizado en Caliente</div></div>
+        <div class="spec-row"><div class="spec-name">norma</div><div class="spec-value">DIN 982, ISO 10511, GB/T 889</div></div>
+        <div class="spec-row"><div class="spec-name">aplicación</div><div class="spec-value">Automoción, Maquinaria, Electrónica, Aeronáutica</div></div>
+      </div>
+
+      <header class="section-header" style="margin-top: var(--space-12);">
+        <h2>Especificaciones de Tuercas de Nylon</h2>
+      </header>
+      <div class="data-table-wrapper">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Medida</th>
+              <th>Paso</th>
+              <th>Grado</th>
+              <th>Material</th>
+              <th>Acabado</th>
+              <th>Norma</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>M4</td><td>0.7</td><td>8</td><td>Acero Carbono + Nylon</td><td>Galvanizado</td><td>DIN 982</td></tr>
+            <tr><td>M5</td><td>0.8</td><td>8</td><td>Acero Carbono + Nylon</td><td>Galvanizado</td><td>ISO 10511</td></tr>
+            <tr><td>M6</td><td>1.0</td><td>8</td><td>Acero Carbono + Nylon</td><td>Galvanizado</td><td>DIN 982</td></tr>
+            <tr><td>M8</td><td>1.25</td><td>10</td><td>Acero Carbono + Nylon</td><td>Galvanizado</td><td>ISO 10511</td></tr>
+            <tr><td>M10</td><td>1.5</td><td>10</td><td>Acero Carbono + Nylon</td><td>Galvanizado</td><td>DIN 982</td></tr>
+            <tr><td>M12</td><td>1.75</td><td>10</td><td>Acero Carbono + Nylon</td><td>Galvanizado</td><td>ISO 10511</td></tr>
+            <tr><td>M14</td><td>2.0</td><td>8</td><td>Acero Carbono + Nylon</td><td>Galv. en Caliente</td><td>DIN 982</td></tr>
+            <tr><td>M16</td><td>2.0</td><td>10</td><td>Acero Carbono + Nylon</td><td>Galvanizado</td><td>ISO 10511</td></tr>
+            <tr><td>M18</td><td>2.5</td><td>10</td><td>Acero Carbono + Nylon</td><td>Galvanizado</td><td>DIN 982</td></tr>
+            <tr><td>M20</td><td>2.5</td><td>10</td><td>Acero Carbono + Nylon</td><td>Galv. en Caliente</td><td>ISO 10511</td></tr>
+            <tr><td>M22</td><td>2.5</td><td>10</td><td>Acero Carbono + Nylon</td><td>Galvanizado</td><td>DIN 982</td></tr>
+            <tr><td>M24</td><td>3.0</td><td>10</td><td>Acero Carbono + Nylon</td><td>Galvanizado</td><td>ISO 10511</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <header class="section-header" style="margin-top: var(--space-12);">
+        <h2>Notas</h2>
+      </header>
+      <div class="data-table-wrapper">
+        <table class="data-table notes-table">
+          <tbody>
+            <tr><th>Marca:</th><td>8 o 10 (la marca corresponde al grado de resistencia)</td></tr>
+            <tr><th>Tratamiento Superficial:</th><td>Galvanizado, Galvanizado en Caliente disponibles</td></tr>
+            <tr><th>Rango de Temperatura:</th><td>Inserto de nylon efectivo desde -40°C hasta +120°C</td></tr>
+            <tr><th>Consulta del Comprador:</th><td>Por favor especifique la medida de rosca, paso, grado y tratamiento superficial requerido</td></tr>
+            <tr><th>Cantidad Mínima:</th><td>Varía según el tamaño — contáctenos para más detalles</td></tr>
+            <tr><th>Entrega:</th><td>30 Días</td></tr>
+            <tr><th>Embalaje:</th><td>Cartones de exportación estándar; embalaje personalizado disponible</td></tr>
+            <tr><td colspan="2" class="notes-paragraph">Tamaños y materiales personalizados disponibles. Los pedidos OEM son bienvenidos — contáctenos con sus especificaciones.</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="section cta-band">
+    <div class="container text-center">
+      <h2>¿Necesita Tuercas de Nylon?</h2>
+      <p>Contáctenos con sus especificaciones. Tamaños estándar y personalizados disponibles. Pedidos al por mayor bienvenidos.</p>
+      <div class="cta-actions">
+        <a href="/es/contact" class="btn btn-primary btn-lg">Solicitar Cotización</a>
+        <a href="mailto:Jason@carelong.com.cn?subject=Product%20Inquiry%20-%20Carelong%20Website" class="btn btn-outline-white btn-lg">Envíenos un Correo</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const gallery = document.getElementById('productGallery');
+    if (!gallery) return;
+    const thumbs = Array.from(gallery.querySelectorAll('.thumb'));
+    const stageImgs = Array.from(gallery.querySelectorAll('.stage-img'));
+    const stages = Array.from(gallery.querySelectorAll('.gallery-stage'));
+    let current = 0;
+    function activate(idx) {
+      if (idx === current) return;
+      current = idx;
+      thumbs.forEach((t) => t.classList.toggle('is-active', Number(t.dataset.index) === current));
+      stageImgs.forEach((img) => {
+        const isActive = Number(img.dataset.index) === current;
+        img.classList.toggle('is-active', isActive);
+        if (isActive) img.style.transformOrigin = 'center center';
+      });
+      stages.forEach((s) => s.classList.remove('is-zooming'));
+    }
+    thumbs.forEach((t) => {
+      const idx = Number(t.dataset.index);
+      t.addEventListener('mouseenter', () => activate(idx));
+      t.addEventListener('focus', () => activate(idx));
+      t.addEventListener('click', () => activate(idx));
+    });
+    stages.forEach((stage) => {
+      stage.addEventListener('mouseenter', () => stage.classList.add('is-zooming'));
+      stage.addEventListener('mouseleave', () => {
+        stage.classList.remove('is-zooming');
+        const active = stage.querySelector('.stage-img.is-active');
+        if (active) active.style.transformOrigin = 'center center';
+      });
+      stage.addEventListener('mousemove', (e) => {
+        const active = stage.querySelector('.stage-img.is-active');
+        if (!active) return;
+        const rect = stage.getBoundingClientRect();
+        const x = ((e.clientX - rect.left) / rect.width) * 100;
+        const y = ((e.clientY - rect.top) / rect.height) * 100;
+        active.style.transformOrigin = Math.max(0, Math.min(100, x)) + '% ' + Math.max(0, Math.min(100, y)) + '%';
+      });
+    });
+  });
+</script>
+
+<style>
+.eyebrow { font-size: 0.8125rem; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; color: var(--color-secondary); margin-bottom: var(--space-3); }
+.product-overview { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-12); align-items: start; }
+.product-gallery { display: grid; grid-template-columns: 88px 1fr; gap: var(--space-4); align-items: start; }
+.gallery-thumbs { display: flex; flex-direction: column; gap: var(--space-2); max-height: 480px; overflow-y: auto; padding-right: 4px; }
+.thumb { all: unset; cursor: pointer; display: block; width: 88px; height: 88px; border-radius: var(--radius-md); border: 2px solid transparent; background: #fff; overflow: hidden; transition: border-color .2s ease, transform .18s ease, box-shadow .18s ease; }
+.thumb img { width: 100%; height: 100%; object-fit: contain; display: block; }
+.thumb:hover { transform: translateY(-1px); box-shadow: 0 4px 12px rgba(27,75,142,.18); }
+.thumb.is-active { border-color: var(--color-primary); box-shadow: 0 4px 12px rgba(27,75,142,.25); transform: translateY(-1px); }
+.gallery-stage { position: relative; background: #fff; border-radius: var(--radius-xl); box-shadow: var(--shadow-lg); overflow: hidden; aspect-ratio: 1 / 1; cursor: zoom-in; outline: none; }
+.stage-img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; padding: var(--space-4); opacity: 0; transition: opacity .25s ease; transform: scale(1); }
+.stage-img.is-active { opacity: 1; }
+.gallery-stage.is-zooming .stage-img.is-active { transform: scale(2); transition: transform .15s ease-out; }
+.zoom-hint { position: absolute; bottom: var(--space-3); right: var(--space-4); padding: 4px 10px; border-radius: 100px; background: rgba(15,48,96,.7); color: #fff; font-size: .75rem; font-weight: 500; pointer-events: none; }
+.product-intro h2 { margin-bottom: var(--space-4); }
+.product-intro p { color: var(--color-text-light); line-height: 1.7; }
+.product-badges { display: flex; flex-wrap: wrap; gap: var(--space-2); margin: var(--space-6) 0; }
+.badge { display: inline-block; background: rgba(27,75,142,.08); color: var(--color-primary); padding: var(--space-1) var(--space-3); border-radius: 100px; font-size: .8125rem; font-weight: 600; }
+.product-actions { display: flex; gap: var(--space-4); flex-wrap: wrap; }
+.spec-table-grid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-2); }
+.spec-row { display: flex; flex-direction: column; gap: var(--space-1); padding: var(--space-4) var(--space-6); background: var(--color-bg); border: 1px solid var(--color-border); border-radius: var(--radius-md); }
+.spec-name { font-weight: 600; color: var(--color-text); font-size: .875rem; }
+.spec-value { color: var(--color-text); font-weight: 500; }
+.data-table { width: 100%; border-collapse: collapse; font-size: .875rem; }
+.data-table th { background: var(--color-primary); color: #fff; padding: var(--space-3) var(--space-4); text-align: center; white-space: nowrap; }
+.data-table td { padding: var(--space-2) var(--space-4); text-align: center; border-bottom: 1px solid var(--color-border); }
+.data-table tr:nth-child(even) td { background: rgba(27,75,142,.04); }
+.data-table tr:hover td { background: rgba(27,75,142,.08); }
+.notes-table { width: 100%; border-collapse: collapse; }
+.notes-table th { text-align: left; padding: var(--space-2) var(--space-4); font-weight: 700; color: var(--color-text); white-space: nowrap; width: 30%; }
+.notes-table td { text-align: left; padding: var(--space-2) var(--space-4); color: var(--color-text-light); }
+.notes-paragraph { font-style: italic; color: var(--color-text-light) !important; }
+.cta-band { background: var(--color-primary); color: #fff; padding: var(--space-16) 0; }
+.cta-band h2 { color: #fff; margin-bottom: var(--space-4); }
+.cta-band p { color: rgba(255,255,255,.85); margin-bottom: var(--space-8); font-size: 1.0625rem; }
+.cta-actions { display: flex; gap: var(--space-4); justify-content: center; flex-wrap: wrap; }
+.cta-band .btn-primary { background: #fff; color: var(--color-primary); }
+.cta-band .btn-primary:hover { background: rgba(255,255,255,.9); }
+@media (max-width: 768px) { .product-overview { grid-template-columns: 1fr; } .spec-table-grid { grid-template-columns: 1fr; } }
+</style>

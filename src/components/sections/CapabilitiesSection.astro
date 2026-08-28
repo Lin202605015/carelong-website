@@ -1,0 +1,263 @@
+---
+const capabilities = [
+  {
+    icon: '🔩',
+    title: 'Cold Heading',
+    desc: 'Precision cold forming for high-strength fasteners with tight tolerances and excellent surface finish.',
+  },
+  {
+    icon: '🔥',
+    title: 'Hot Forging',
+    desc: 'Heat treatment and forging for heavy-duty components with superior mechanical properties.',
+  },
+  {
+    icon: '⚙️',
+    title: 'Machining',
+    desc: 'CNC machining for secondary operations including threading, drilling, and finishing.',
+  },
+  {
+    icon: '🔬',
+    title: 'Quality Testing',
+    desc: 'Comprehensive testing including hardness, torque, metallurgical analysis, and dimensional inspection.',
+  },
+];
+
+const stats = [
+  { value: '15+', label: 'Years' },
+  { value: '500+', label: 'Products' },
+  { value: '50+', label: 'Countries' },
+  { value: '98%', label: 'Satisfaction' },
+];
+---
+
+<section class="capabilities">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label">Our Capabilities</span>
+      <h2 class="section-title">Manufacturing Excellence</h2>
+      <p class="section-desc">
+        From raw material to finished product, we control every step of the manufacturing process.
+      </p>
+    </div>
+
+    <div class="capability-grid">
+      {capabilities.map((cap) => (
+        <div class="capability-card">
+          <div class="cap-icon">{cap.icon}</div>
+          <h3 class="cap-title">{cap.title}</h3>
+          <p class="cap-desc">{cap.desc}</p>
+        </div>
+      ))}
+    </div>
+
+    <div class="stats-bar">
+      {stats.map((stat, index) => (
+        <>
+          <div class="stat-item">
+            <span class="stat-value">{stat.value}</span>
+            <span class="stat-label">{stat.label}</span>
+          </div>
+          {index < stats.length - 1 && <div class="stat-divider"></div>}
+        </>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .capabilities {
+    padding: 5rem 0;
+    background-color: #ffffff;
+    font-family: 'Inter', 'Noto Sans SC', system-ui, sans-serif;
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    width: 100%;
+  }
+
+  /* Section Header */
+  .section-header {
+    text-align: center;
+    margin-bottom: 3.5rem;
+  }
+
+  .section-label {
+    display: inline-block;
+    font-size: 0.8125rem;
+    font-weight: 600;
+    color: #e85a1f;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 0.75rem;
+  }
+
+  .section-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #1a2332;
+    margin-bottom: 1rem;
+    letter-spacing: -0.02em;
+  }
+
+  .section-desc {
+    font-size: 1.0625rem;
+    color: #6b7280;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
+  }
+
+  /* Capability Grid */
+  .capability-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+    margin-bottom: 4rem;
+  }
+
+  /* Capability Card */
+  .capability-card {
+    padding: 2rem 1.5rem;
+    background-color: #f8f9fb;
+    border: 1px solid #e8eaed;
+    border-radius: 8px;
+    text-align: center;
+    transition: all 0.3s ease;
+  }
+
+  .capability-card:hover {
+    border-color: #e85a1f;
+    box-shadow: 0 8px 30px rgba(232,90,31,0.1);
+    transform: translateY(-4px);
+  }
+
+  .cap-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1.25rem;
+    display: block;
+  }
+
+  .cap-title {
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: #1a2332;
+    margin-bottom: 0.75rem;
+  }
+
+  .cap-desc {
+    font-size: 0.875rem;
+    color: #6b7280;
+    line-height: 1.6;
+  }
+
+  /* Stats Bar */
+  .stats-bar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2.5rem 0;
+    background: linear-gradient(135deg, #1a2332 0%, #243044 100%);
+    border-radius: 12px;
+    gap: 1rem;
+  }
+
+  .stat-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.375rem;
+    padding: 0 2rem;
+  }
+
+  .stat-value {
+    font-size: 2.25rem;
+    font-weight: 800;
+    color: #e85a1f;
+    line-height: 1;
+  }
+
+  .stat-label {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: rgba(255,255,255,0.6);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .stat-divider {
+    width: 1px;
+    height: 60px;
+    background: rgba(255,255,255,0.1);
+  }
+
+  /* Responsive */
+  @media (max-width: 900px) {
+    .capability-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.25rem;
+    }
+
+    .capabilities {
+      padding: 4rem 0;
+    }
+
+    .stats-bar {
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      padding: 2rem;
+    }
+
+    .stat-item {
+      padding: 0 1.25rem;
+    }
+
+    .stat-value {
+      font-size: 1.875rem;
+    }
+
+    .stat-divider {
+      display: none;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .capability-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .capabilities {
+      padding: 3rem 0;
+    }
+
+    .section-title {
+      font-size: 1.5rem;
+    }
+
+    .section-desc {
+      font-size: 0.9375rem;
+    }
+
+    .capability-card {
+      padding: 1.5rem 1.25rem;
+    }
+
+    .stats-bar {
+      padding: 1.5rem 1rem;
+    }
+
+    .stat-item {
+      padding: 0 1rem;
+    }
+
+    .stat-value {
+      font-size: 1.5rem;
+    }
+
+    .stat-label {
+      font-size: 0.75rem;
+    }
+  }
+</style>

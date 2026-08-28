@@ -1,0 +1,157 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+
+const subcategories = [
+  {
+    slug: 'hub-bolts',
+    name: 'Hub Bolts',
+    image: '/images/products/bolts-and-nuts/hub-bolts/hub-bolt -(1).webp',
+    description: 'High tensile hub bolts for automotive and heavy equipment applications. Available in various sizes and specifications.',
+    count: 10,
+  },
+  {
+    slug: 'plow-bolts',
+    name: 'Plow Bolts',
+    image: '/images/products/bolts-and-nuts/plow-bolts/plow-bolt-01.webp',
+    description: 'Plow bolts for construction machinery undercarriage. Durable and reliable for heavy-duty applications.',
+    count: 8,
+  },
+  {
+    slug: 'track-bolts',
+    name: 'Track Bolts',
+    image: '/images/products/bolts-and-nuts/track-bolts/track-bolt-01.webp',
+    description: 'Track link bolts for excavators and bulldozers. High strength 10.9 and 12.9 class.',
+    count: 12,
+  },
+  {
+    slug: 'segment-bolts',
+    name: 'Segment Bolts',
+    image: '/images/products/bolts-and-nuts/segment-bolts/segment-bolt-01.webp',
+    description: 'Segment bolts for heavy equipment undercarriage. Precision manufactured to OEM specifications.',
+    count: 8,
+  },
+];
+---
+
+<BaseLayout
+  title="Bolts and Nuts — Manufacturer & Exporter | Carelong"
+  description="Manufacturer of quality bolts and nuts. Hub bolts, plow bolts, track bolts, segment bolts, flange nuts, hex nuts, nylon nuts, BPW nuts, flanges, screws."
+>
+  <Breadcrumb items={[
+    { label: 'Products', href: '/products' },
+    { label: 'Bolts and Nuts' }
+  ]} />
+
+  <header class="page-header">
+    <div class="container">
+      <h1>Bolts and Nuts</h1>
+      <p>Quality bolts and nuts for automotive, construction, and industrial applications.</p>
+    </div>
+  </header>
+
+  <section class="section">
+    <div class="container">
+      <header class="section-header">
+        <p class="eyebrow">Product Categories</p>
+        <h2>Bolts and Nuts</h2>
+        <p class="section-desc">We manufacture a wide range of high tensile bolts and nuts for various applications. Select a category below to view our products.</p>
+      </header>
+
+      <div class="subcategory-grid">
+        {subcategories.map(cat => (
+          <a href={`/products/bolts-and-nuts/${cat.slug}`} class="subcategory-card">
+            <div class="card-image">
+              <img src={cat.image} alt={cat.name} loading="lazy" />
+            </div>
+            <div class="card-body">
+              <span class="product-count">{cat.count} products</span>
+              <h3>{cat.name}</h3>
+              <p>{cat.description}</p>
+              <span class="btn btn-primary btn-sm">
+                View Products
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt">
+    <div class="container">
+      <header class="section-header">
+        <p class="eyebrow">Our Capabilities</p>
+        <h2>Why Choose Carelong Bolts and Nuts</h2>
+      </header>
+      <div class="features-grid">
+        <div class="feature-item">
+          <div class="feature-icon">🏭</div>
+          <h3>Precision Manufacturing</h3>
+          <p>Cold heading and hot forging processes ensure superior mechanical properties and dimensional accuracy for every bolt and nut.</p>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon">🔬</div>
+          <h3>Quality Tested</h3>
+          <p>Every batch undergoes hardness testing, tensile testing, and dimensional inspection to meet international standards.</p>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon">📐</div>
+          <h3>Custom Specifications</h3>
+          <p>Custom sizes, materials, surface treatments, and packaging available. OEM and ODM services for specific requirements.</p>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon">🚚</div>
+          <h3>Reliable Delivery</h3>
+          <p>Established logistics partnerships ensure your orders arrive on time, every time — to North America, Europe, and beyond.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section cta-band">
+    <div class="container text-center">
+      <h2>Need Bolts and Nuts?</h2>
+      <p>Contact us for specifications, samples, and competitive pricing. OEM and custom sizes available.</p>
+      <div class="cta-actions">
+        <a href="/contact" class="btn btn-primary btn-lg">Request a Quote</a>
+        <a href="mailto:Jason@carelong.com.cn?subject=Product%20Inquiry%20-%20Carelong%20Website" class="btn btn-outline-white btn-lg">Email Us</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+.eyebrow { font-size: 0.8125rem; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; color: var(--color-secondary); margin-bottom: var(--space-3); }
+.section-header { text-align: center; margin-bottom: var(--space-12); }
+.section-desc { color: var(--color-text-light); max-width: 640px; margin: var(--space-4) auto 0; }
+.subcategory-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-6); }
+.subcategory-card { background: #fff; border: 1px solid var(--color-border); border-radius: var(--radius-lg); overflow: hidden; text-decoration: none; color: inherit; transition: transform 0.2s, box-shadow 0.2s; }
+.subcategory-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
+.card-image { height: 200px; background: #fff; display: flex; align-items: center; justify-content: center; }
+.card-image img { max-width: 90%; max-height: 90%; object-fit: contain; }
+.card-body { padding: var(--space-6); }
+.product-count { display: inline-block; background: rgba(27, 75, 142, 0.08); color: var(--color-primary); padding: var(--space-1) var(--space-3); border-radius: 100px; font-size: 0.75rem; font-weight: 600; margin-bottom: var(--space-3); }
+.card-body h3 { font-size: 1.25rem; margin-bottom: var(--space-3); color: var(--color-text); }
+.card-body p { color: var(--color-text-light); font-size: 0.9375rem; line-height: 1.6; margin-bottom: var(--space-4); }
+.features-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--space-8); }
+.feature-item { text-align: center; }
+.feature-icon { font-size: 2.5rem; margin-bottom: var(--space-4); }
+.feature-item h3 { font-size: 1.125rem; margin-bottom: var(--space-3); }
+.feature-item p { color: var(--color-text-light); font-size: 0.9375rem; line-height: 1.6; }
+.cta-band { background: var(--color-primary); color: #fff; }
+.cta-band h2 { color: #fff; margin-bottom: var(--space-4); }
+.cta-band p { color: rgba(255,255,255,0.85); font-size: 1.125rem; margin-bottom: var(--space-6); }
+.cta-actions { display: flex; gap: var(--space-4); justify-content: center; flex-wrap: wrap; }
+@media (max-width: 1024px) {
+  .subcategory-grid { grid-template-columns: repeat(2, 1fr); }
+  .features-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 640px) {
+  .subcategory-grid { grid-template-columns: 1fr; }
+  .features-grid { grid-template-columns: 1fr; }
+}
+</style>

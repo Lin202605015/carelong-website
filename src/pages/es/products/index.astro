@@ -1,0 +1,466 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import Breadcrumb from '../../../components/Breadcrumb.astro';
+
+interface ProductCategory {
+  slug: string;
+  name: string;
+  image: string;
+  description: string;
+  count: number;
+  filter: string;
+}
+
+const categories: ProductCategory[] = [
+  // Bolts and Nuts - 5 subcategories
+  {
+    slug: 'bolts-and-nuts/hub-bolts',
+    name: 'Pernos de Maza',
+    image: '/images/products/bolts-and-nuts/hub-bolts/hub-bolt -(1).webp',
+    description: 'Pernos de maza de alta resistencia para aplicaciones automotrices y de equipo pesado. Disponibles en varios tamaños y especificaciones.',
+    count: 5,
+    filter: 'fasteners',
+  },
+  {
+    slug: 'bolts-and-nuts/plow-bolts',
+    name: 'Pernos de Arado',
+    image: '/images/products/bolts-and-nuts/plow-bolts/plow-bolt-01.webp',
+    description: 'Pernos de arado para tren de rodaje de maquinaria de construcción. Duraderos y fiables para aplicaciones de servicio pesado.',
+    count: 5,
+    filter: 'fasteners',
+  },
+  {
+    slug: 'bolts-and-nuts/track-bolts',
+    name: 'Pernos de Oruga',
+    image: '/images/products/bolts-and-nuts/track-bolts/track-bolt-01.webp',
+    description: 'Pernos de eslabón de cadena para excavadoras y bulldozers. Alta resistencia clase 10.9 y 12.9.',
+    count: 5,
+    filter: 'fasteners',
+  },
+  {
+    slug: 'bolts-and-nuts/segment-bolts',
+    name: 'Pernos de Segmento',
+    image: '/images/products/bolts-and-nuts/segment-bolts/segment-bolt-01.webp',
+    description: 'Pernos de segmento para tren de rodaje de equipo pesado. Fabricados con precisión según especificaciones OEM.',
+    count: 5,
+    filter: 'fasteners',
+  },
+  {
+    slug: 'bolts-and-nuts/hex-nuts',
+    name: 'Tuercas Hexagonales',
+    image: '/images/products/bolts-and-nuts/hex-nuts/hex-nuts-01.webp',
+    description: 'Tuercas hexagonales estándar en acero al carbono y acero aleado. M6-M36, Grado 8/10, galvanizadas y acabado negro. DIN 934, ISO 4032.',
+    count: 5,
+    filter: 'fasteners',
+  },
+  {
+    slug: 'bolts-and-nuts/flange-nuts',
+    name: 'Tuercas de Brida',
+    image: '/images/products/bolts-and-nuts/flange-nuts/flange-nuts-01.webp',
+    description: 'Tuercas de brida hexagonal y tuercas de brida dentadas con base de arandela integrada. DIN 6923, ISO 4161. Acero al carbono y aleado.',
+    count: 5,
+    filter: 'fasteners',
+  },
+  {
+    slug: 'bolts-and-nuts/nylon-nuts',
+    name: 'Tuercas de Nylon',
+    image: '/images/products/bolts-and-nuts/nylon-nuts/nylon-nuts-01.webp',
+    description: 'Tuercas autoblocantes con inserto de nylon (tuercas de par de apriete prevalente). DIN 982, ISO 10511. M4-M24, Grado 8/10.',
+    count: 5,
+    filter: 'fasteners',
+  },
+  {
+    slug: 'bolts-and-nuts/wheel-nuts',
+    name: 'Tuercas de Rueda',
+    image: '/images/products/bolts-and-nuts/wheel-nuts/wheel-nuts-01.webp',
+    description: 'Tuercas de rueda para camiones, remolques y vehículos comerciales. M18-M27, rosca derecha e izquierda. Compatibles con BPW, SAF, Meritor.',
+    count: 5,
+    filter: 'fasteners',
+  },
+  {
+    slug: 'bolts-and-nuts/slotted-nuts',
+    name: 'Tuercas Ranuradas',
+    image: '/images/products/bolts-and-nuts/slotted-nuts/slotted-nuts-01.webp',
+    description: 'Tuercas casquillo y tuercas hexagonales ranuradas para bloqueo con pasador de horquilla. DIN 935, ISO 4037. M6-M36, Grado 8/10.',
+    count: 5,
+    filter: 'fasteners',
+  },
+    // Display Fixture - 5 subcategories
+  {
+    slug: 'display-rack/supermarket-display-racks',
+    name: 'Estanterías para Supermercados',
+    image: '/images/products/display-rack/supermarket-display-racks-01.webp',
+    description: 'Sistemas de estanterías tipo góndola de alta resistencia para supermercados y tiendas de comestibles. Diseñados para alto tráfico y máxima visibilidad del producto.',
+    count: 5,
+    filter: 'parts',
+  },
+  {
+    slug: 'display-rack/wall-mounted-storage-racks',
+    name: 'Expositores de Pegboard y Slatwall',
+    image: '/images/products/display-rack/pegboard-slatwall-01.webp',
+    description: 'Paneles versátiles de pegboard y slatwall con ganchos, estanterías y accesorios. Ideales para paredes comerciales, talleres y ferias.',
+    count: 5,
+    filter: 'parts',
+  },
+  {
+    slug: 'display-rack/clothing-display-racks',
+    name: 'Expositores de Ropa',
+    image: '/images/products/display-rack/clothing-racks-01.webp',
+    description: 'Elegantes expositores de prendas para boutiques, showrooms y ferias. Varios estilos incluyendo racks redondos, rieles de ropa y stands de exhibición.',
+    count: 5,
+    filter: 'parts',
+  },
+  {
+    slug: 'display-rack/wooden-display-racks',
+    name: 'Expositores de Madera',
+    image: '/images/products/display-rack/wooden-racks-01.webp',
+    description: 'Elegantes expositores de madera que combinan marcos metálicos con estanterías de madera. Perfectos para boutiques, tiendas de regalos y entornos comerciales de gama alta.',
+    count: 5,
+    filter: 'parts',
+  },
+  {
+    slug: 'display-rack/newspaper-magazine-racks',
+    name: 'Mesas y Stands de Exhibición',
+    image: '/images/products/display-rack/newspaper-racks-01.webp',
+    description: 'Mesas y stands de exhibición independientes para publicaciones, folletos y mercancía promocional. Ideales para librerías, quioscos, bibliotecas y pisos comerciales.',
+    count: 5,
+    filter: 'parts',
+  },
+  // Other product categories
+  {
+    slug: 'stamping-parts',
+    name: 'Piezas Estampadas',
+    image: '/images/products/stamping-parts/stamping-parts-01.webp',
+    description: 'Piezas de estampado de metal de precisión para aplicaciones automotrices e industriales. Estampado con troquel progresivo con tolerancias ajustadas y alta consistencia.',
+    count: 8,
+    filter: 'parts',
+  },
+  {
+    slug: 'die-casting-parts',
+    name: 'Piezas de Fundición a Presión',
+    image: '/images/products/die-casting-parts/die-casting-parts-01.webp',
+    description: 'Componentes de fundición a presión de aluminio y zinc con mecanizado CNC para geometrías complejas que requieren alta precisión dimensional.',
+    count: 16,
+    filter: 'parts',
+  },
+  {
+    slug: 'forging-parts',
+    name: 'Piezas Forjadas',
+    image: '/images/products/forging-parts/forging-parts-01.webp',
+    description: 'Componentes forjados en caliente con flujo de grano superior. Nos especializamos en clase de alta resistencia 10.9 y 12.9 utilizando materiales S40Cr y ML20MnTiB.',
+    count: 12,
+    filter: 'fasteners',
+  },
+  {
+    slug: 'machining-parts',
+    name: 'Piezas Mecanizadas',
+    image: '/images/products/machining-parts/machining-parts-01.webp',
+    description: 'Piezas torneadas y fresadas CNC de precisión en acero, acero inoxidable, aluminio y latón. Capacidades multi-eje para geometrías complejas.',
+    count: 8,
+    filter: 'parts',
+  },
+  {
+    slug: 'welding-parts',
+    name: 'Piezas Soldadas',
+    image: '/images/products/welding-parts/welding-parts-01.webp',
+    description: 'Fabricación de soldadura personalizada que incluye MIG, TIG y soldadura por puntos. Conjuntos a partir de componentes estampados, mecanizados y forjados.',
+    count: 12,
+    filter: 'parts',
+  },
+  {
+    slug: 'plastic-rubber-parts',
+    name: 'Piezas de Plástico y Caucho',
+    image: '/images/products/plastic-rubber-parts/plastic-rubber-parts-01.webp',
+    description: 'Componentes de plástico y caucho moldeados por inyección, incluyendo sellos, ojetes, bujes y piezas moldeadas a medida.',
+    count: 12,
+    filter: 'parts',
+  },
+  {
+    slug: 'tooling-and-moulds',
+    name: 'Utillaje y Moldes',
+    image: '/images/products/tooling-and-moulds/tooling-and-moulds-01.webp',
+    description: 'Diseño y fabricación de utillaje personalizado para estampado en frío, embutido, fundición a presión y moldeo por inyección.',
+    count: 4,
+    filter: 'tooling',
+  },
+  {
+    slug: 'heavy-equipment-parts',
+    name: 'Piezas de Equipo Pesado',
+    image: '/images/products/heavy-equipment-parts/heavy-equipment-parts-01.webp',
+    description: 'Repuestos de tren de rodaje para Caterpillar, Komatsu y otra maquinaria de construcción pesada. Cadenas de oruga, rodillos, tensores y piezas personalizadas.',
+    count: 12,
+    filter: 'heavy',
+  },
+  {
+    slug: 'auto-parts',
+    name: 'Autopartes',
+    image: '/images/products/auto-parts/auto-parts-1.webp',
+    description: 'Sujetadores y componentes automotrices para Hino, Mitsubishi Fuso, Benz, Volvo, Nissan y Suzuki. Pernos de rueda, pernos de maza, pernos en U y espárragos de rueda.',
+    count: 12,
+    filter: 'fasteners',
+  },
+  {
+    slug: 'other-parts',
+    name: 'Otras Piezas',
+    image: '/images/products/other-parts/other-parts-01.webp',
+    description: 'Componentes mecánicos personalizados según sus especificaciones. Aceptamos consultas para piezas no estándar, componentes prototipo y artículos especiales.',
+    count: 4,
+    filter: 'parts',
+  },
+];
+---
+
+<BaseLayout
+  lang="es"
+  title="Nuestros Productos — Fabricante de Pernos, Tuercas, Piezas Forjadas y Autopartes"
+  description="Explore nuestra gama completa de productos: Pernos y Tuercas, Piezas Estampadas, Piezas de Fundición a Presión, Piezas Forjadas, Piezas Mecanizadas y más. Fabricación OEM y personalizada disponible."
+>
+  <Breadcrumb items={[{ label: 'Productos' }]} />
+
+  <header class="page-header">
+    <div class="container">
+      <h1>Nuestras Categorías de Productos</h1>
+      <p>Piezas forjadas de calidad y sujetadores automotrices de alta resistencia para mercados globales</p>
+    </div>
+  </header>
+
+
+
+  <!-- Products Grid -->
+  <section class="section">
+    <div class="container">
+      <div class="products-grid">
+        {categories.map(cat => (
+          <a href={`/es/products/${cat.slug}`} class="product-cat-card" data-category={cat.filter}>
+            <div class="product-cat-image">
+              <img src={cat.image} alt={cat.name} />
+            </div>
+            <div class="product-cat-body">
+              <div class="product-cat-meta">
+                <span class="product-count">{cat.count} productos</span>
+              </div>
+              <h2>{cat.name}</h2>
+              <p>{cat.description}</p>
+              <span class="btn btn-primary btn-sm">
+                Ver Productos
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Custom Products CTA -->
+  <section class="section section-alt">
+    <div class="container">
+      <div class="custom-cta">
+        <div class="custom-cta-text">
+          <p class="eyebrow">Fabricación Personalizada</p>
+          <h2>¿No Encuentra lo que Necesita?</h2>
+          <p>
+            Nos especializamos en piezas OEM personalizadas. Envíenos sus especificaciones — material, dimensiones, tratamiento superficial, cantidad — y le proporcionaremos una cotización competitiva en 24 horas.
+          </p>
+          <ul class="custom-cta-features">
+            <li>✓ Tamaños y especificaciones de rosca personalizados</li>
+            <li>✓ Materiales y tratamientos superficiales personalizados</li>
+            <li>✓ Producción de prototipos y muestras disponible</li>
+            <li>✓ Consulta técnica gratuita</li>
+          </ul>
+        </div>
+        <div class="custom-cta-action">
+          <a href="/es/contact" class="btn btn-primary btn-lg">Solicitar Cotización Personalizada</a>
+          <p class="cta-subtext">O envíenos un correo a <a href="mailto:Jason@carelong.com.cn?subject=Product%20Inquiry%20-%20Carelong%20Website">Jason@carelong.com.cn</a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+.eyebrow {
+  font-size: 0.8125rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--color-secondary);
+  margin-bottom: var(--space-3);
+}
+
+/* Filter Bar */
+.filter-bar {
+  background: var(--color-bg-alt);
+  border-bottom: 1px solid var(--color-border);
+  padding: var(--space-4) 0;
+  position: sticky;
+  top: 60px;
+  z-index: 10;
+}
+
+.filter-inner {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  flex-wrap: wrap;
+}
+
+.filter-label {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--color-text-light);
+}
+
+.filter-buttons {
+  display: flex;
+  gap: var(--space-2);
+  flex-wrap: wrap;
+}
+
+.filter-btn {
+  padding: var(--space-2) var(--space-4);
+  border: 1px solid var(--color-border-dark);
+  border-radius: 100px;
+  background: var(--color-bg);
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--color-text);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+  background: var(--color-primary);
+  color: #fff;
+  border-color: var(--color-primary);
+}
+
+/* Products Grid */
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-8);
+}
+
+.product-cat-card {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  background: var(--color-bg);
+  transition: all var(--transition-base);
+}
+
+.product-cat-card:hover {
+  box-shadow: var(--shadow-xl);
+  transform: translateY(-4px);
+  border-color: var(--color-primary);
+}
+
+.product-cat-image {
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 220px;
+  overflow: hidden;
+}
+
+.product-cat-image img {
+  max-height: 100%;
+  max-width: 100%;
+  object-fit: contain;
+}
+
+.product-cat-body {
+  padding: var(--space-6);
+}
+
+.product-cat-meta {
+  margin-bottom: var(--space-2);
+}
+
+.product-count {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--color-primary);
+  background: rgba(27, 75, 142, 0.08);
+  padding: var(--space-1) var(--space-2);
+  border-radius: 100px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.product-cat-body h2 {
+  font-size: 1.25rem;
+  margin-bottom: var(--space-2);
+}
+
+.product-cat-body p {
+  color: var(--color-text-light);
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  margin-bottom: var(--space-4);
+}
+
+.btn-sm {
+  padding: var(--space-2) var(--space-4);
+  font-size: 0.875rem;
+}
+
+/* Custom CTA */
+.custom-cta {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: var(--space-12);
+  align-items: center;
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  padding: var(--space-12);
+}
+
+.custom-cta-features {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  margin-top: var(--space-4);
+}
+
+.custom-cta-features li {
+  font-size: 0.9375rem;
+  color: var(--color-text-light);
+}
+
+.custom-cta-action {
+  text-align: center;
+  flex-shrink: 0;
+}
+
+.cta-subtext {
+  font-size: 0.8125rem;
+  color: var(--color-text-muted);
+  margin-top: var(--space-3);
+  margin-bottom: 0;
+}
+
+@media (max-width: 1024px) {
+  .products-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 768px) {
+  .custom-cta { grid-template-columns: 1fr; text-align: center; }
+  .custom-cta-features { align-items: center; }
+  .custom-cta-features li { text-align: center; }
+}
+
+@media (max-width: 640px) {
+  .products-grid { grid-template-columns: 1fr; }
+}
+</style>

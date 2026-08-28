@@ -1,0 +1,296 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro';
+import Breadcrumb from '@components/Breadcrumb.astro';
+
+const images = [
+  { src: '/images/products/bolts-and-nuts/plow-bolts/plow-bolt-01.webp', alt: 'Plow Bolts product photo' },
+  { src: '/images/products/bolts-and-nuts/plow-bolts/plow-bolt-02.webp', alt: 'Plow Bolts detail view' },
+  { src: '/images/products/bolts-and-nuts/plow-bolts/plow-bolt-03.webp', alt: 'Plow Bolts application' },
+  { src: '/images/products/bolts-and-nuts/plow-bolts/plow-bolt-04.webp', alt: 'Plow Bolts detail' },
+  { src: '/images/products/bolts-and-nuts/plow-bolts/plow-bolt-05.webp', alt: 'Plow Bolts application scene' },
+];
+---
+
+<BaseLayout
+  title="Plow Bolts — Countersunk Head Bolts for Agricultural & Construction Machinery | Carelong"
+  description="Manufacturer of plow bolts with flat countersunk head. Grade 8.8/10.9, high-grade steel. OEM service for agricultural implements and earthmoving equipment."
+>
+  <Breadcrumb items={[
+    { label: 'Products', href: '/products' },
+    { label: 'Bolts and Nuts', href: '/products/bolts-and-nuts' },
+    { label: 'Plow Bolts' }
+  ]} />
+
+  <header class="page-header">
+    <div class="container">
+      <h1>Plow Bolts</h1>
+      <p>Countersunk head bolts for agricultural and earthmoving equipment</p>
+    </div>
+  </header>
+
+  <section class="section">
+    <div class="container">
+      <div class="product-overview">
+        <div class="product-gallery" id="productGallery">
+          <div class="gallery-thumbs" aria-label="Product images">
+            {images.map((img, i) => (
+              <button
+                type="button"
+                class={`thumb ${i === 0 ? 'is-active' : ''}`}
+                data-index={i}
+                aria-label={`View image ${i + 1}`}
+              >
+                <img src={img.src} alt={img.alt} loading="lazy" />
+              </button>
+            ))}
+          </div>
+          <div class="gallery-stage" id="galleryStage">
+            {images.map((img, i) => (
+              <img
+                src={img.src}
+                alt={img.alt}
+                class={`stage-img ${i === 0 ? 'is-active' : ''}`}
+                data-index={i}
+                loading={i === 0 ? 'eager' : 'lazy'}
+              />
+            ))}
+            <button type="button" class="stage-arrow stage-arrow-prev" aria-label="Previous image" hidden>
+              <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M15 6l-6 6 6 6" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <button type="button" class="stage-arrow stage-arrow-next" aria-label="Next image" hidden>
+              <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M9 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <div class="zoom-hint" aria-hidden="true">Hover to zoom & move</div>
+          </div>
+        </div>
+        <div class="product-intro">
+          <p class="eyebrow">Product Overview</p>
+          <h2>Plow Bolts</h2>
+          <p>Plow bolts feature a flat countersunk head that sits flush with the surface, ideal for agricultural implements and earthmoving equipment where protruding heads would cause interference. Manufactured from high-grade steel with heat treatment for durability.</p>
+
+          <div class="product-badges">
+            <span class="badge">Countersunk Head</span>
+            <span class="badge">Grade 8.8/10.9</span>
+            <span class="badge">DIN 608</span>
+          </div>
+
+          <div class="product-actions">
+            <a href="/contact" class="btn btn-primary btn-lg">Request a Quote</a>
+            <a href="/products/bolts-and-nuts" class="btn btn-outline btn-lg">Back to Bolts & Nuts</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt">
+    <div class="container">
+      <header class="section-header">
+        <p class="eyebrow">Specifications</p>
+        <h2>Key attributes</h2>
+      </header>
+      <div class="spec-table spec-table-grid">
+        <div class="spec-row"><div class="spec-name">head type</div><div class="spec-value">Flat Countersunk Head (DIN 608)</div></div>
+        <div class="spec-row"><div class="spec-name">thread type</div><div class="spec-value">UNC 5/8"–1 1/4"</div></div>
+        <div class="spec-row"><div class="spec-name">strength grade</div><div class="spec-value">8.8, 10.9</div></div>
+        <div class="spec-row"><div class="spec-name">material</div><div class="spec-value">Carbon Steel 45#, Alloy Steel 40Cr</div></div>
+        <div class="spec-row"><div class="spec-name">surface treatment</div><div class="spec-value">Black</div></div>
+        <div class="spec-row"><div class="spec-name">application</div><div class="spec-value">Plows, Scrapers, Blades, Agricultural implements</div></div>
+      </div>
+
+      <header class="section-header" style="margin-top: var(--space-12);">
+        <h2>Plow Bolt Specifications</h2>
+      </header>
+      <div class="data-table-wrapper">
+        <table class="data-table spec-table-8col">
+          <thead>
+            <tr>
+              <th>Description</th>
+              <th>Net WT.Kg./Set</th>
+              <th>Sets/Ctn.</th>
+              <th>N.W.Kg/Ctn.</th>
+              <th>OEM No.</th>
+              <th>Size For Hex Nut</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>5/8"-11UNCX2"</td><td>0.134</td><td>180</td><td>24</td><td>4F3654/4K0367</td><td>5/8"-11UNCX35/64"</td></tr>
+            <tr><td>5/8"-11UNCX2 1/4"</td><td>0.140</td><td>180</td><td>25</td><td>3F5108/1D4720(4K0367)</td><td>5/8"-11UNCX35/64"</td></tr>
+            <tr><td>5/8"-11UNCX2 1/2"</td><td>0.140</td><td>180</td><td>25</td><td>&nbsp;</td><td>5/8"-11UNCX35/64"</td></tr>
+            <tr><td>5/8"-11UNCX3"</td><td>0.160</td><td>160</td><td>20</td><td>4F3658/1D4720(4K0367)</td><td>5/8"-11UNCX35/64"</td></tr>
+            <tr><td>5/8"-11UNCX3 1/2"</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>5/8"-11UNCX35/64"</td></tr>
+            <tr><td>3/4"-10UNCX2 1/4"</td><td>0.196</td><td>120</td><td>24</td><td>4F 7827/2J 3506(1B4331)</td><td>3/4"-10UNCX41/64"</td></tr>
+            <tr><td>3/4"-10UNCX2 1/2"</td><td>0.206</td><td>120</td><td>26</td><td>5J4773/2J3506</td><td>3/4"-10UNCX41/64"</td></tr>
+            <tr><td>3/4"-10UNCX2 3/4"</td><td>0.216</td><td>120</td><td>26</td><td>5J4771/2J3506</td><td>3/4"-10UNCX41/64"</td></tr>
+            <tr><td>3/4"-10UNCX3"</td><td>0.226</td><td>100</td><td>23</td><td>1J6762/2J3506</td><td>3/4"-10UNCX41/64"</td></tr>
+            <tr><td>3/4"-10UNCX3 1/4"</td><td>0.236</td><td>&nbsp;</td><td>&nbsp;</td><td>1J6762/2J3506 (1B4331)</td><td>3/4"-10UNCX41/64"</td></tr>
+            <tr><td>3/4"-10UNCX3 1/2"</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>3/4"-10UNCX41/64"</td></tr>
+            <tr><td>3/4"-10UNCX4 1/2"</td><td>0.326</td><td>80</td><td>26</td><td>4F 0253/2J 3506</td><td>3/4"-10UNCX41/64"</td></tr>
+            <tr><td>7/8"-9UNCX2 3/4"</td><td>0.320</td><td>80</td><td>26</td><td>6P0196/2J3505</td><td>&nbsp;</td></tr>
+            <tr><td>7/8"-9UNCX3"</td><td>0.338</td><td>80</td><td>27</td><td>5J2409/2J3505 (1B4332)</td><td>7/8"-9UNCX3/4"</td></tr>
+            <tr><td>7/8"-9UNCX3 1/2"</td><td>0.370</td><td>60</td><td>22</td><td>2J2548/2J3505 (1B4332)</td><td>7/8"-9UNCX3/4"</td></tr>
+            <tr><td>1"-8UNCX3"</td><td>0.470</td><td>50</td><td>24</td><td>4F4042/2J3507</td><td>1"-8UNCX38X21</td></tr>
+            <tr><td>1"-8UNCX3 1/4"</td><td>0.490</td><td>50</td><td>25</td><td>4J9058/1B4333(2J3507)</td><td>1"-8UNCX38X21</td></tr>
+            <tr><td>1"-8UNCX3 1/2"</td><td>0.510</td><td>60</td><td>31</td><td>4J9058/1B4333(2J3507)</td><td>1"-8UNCX38X21</td></tr>
+            <tr><td>1"-8UNCX3 3/4"</td><td>0.546</td><td>40</td><td>22</td><td>8J2928/1B4333(2J3507)</td><td>1"-8UNCX38X21</td></tr>
+            <tr><td>1"-8UNCX4"</td><td>0.566</td><td>40</td><td>23</td><td>5P8136</td><td>1"-8UNCX38X21</td></tr>
+            <tr><td>1 1/4"-7UNCX3 3/4"</td><td>0.946</td><td>30</td><td>28</td><td>6V6535/3K9770</td><td>&nbsp;</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <header class="section-header" style="margin-top: var(--space-12);">
+        <h2>Notes</h2>
+      </header>
+      <div class="data-table-wrapper">
+        <table class="data-table notes-table">
+          <tbody>
+            <tr><th>Mark:</th><td>170</td></tr>
+            <tr><th>Surface Treatment:</th><td>Black</td></tr>
+            <tr><th>Carton Size:</th><td>33X19X12cm</td></tr>
+            <tr><th>Machanism Capability:</th><td>Bolts: 10.9 Class, minimum tensile strength 170,000 psi. Nuts: 10 Class, fully hardened and tempered to match bolt strength</td></tr>
+            <tr><td colspan="2" class="notes-paragraph">All packing details are used for reference purposes only. We can't list all of our products in above sheet since we are opening the mold every day. We also produce 12.9 class high tensile fasteners by forging.</td></tr>
+            <tr><th>Buyer's Inquiry:</th><td>Customer can inquiry us by Sizes, OEM Numbers, Drawings and samples. Customer should advice us the quantity per shipment.</td></tr>
+                        <tr><th>Delivery:</th><td>35 Days after receive buy's advanced payment or L/C according to quantity and items.</td></tr>
+            <tr><th>Packing:</th><td>Cartons on pallets.</td></tr>
+            <tr><td colspan="2" class="notes-paragraph">OEM orders are warm welcome.</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="section cta-band">
+    <div class="container text-center">
+      <h2>Need Plow Bolts?</h2>
+      <p>Contact us with your specifications and OEM numbers. Custom sizes and grades available.</p>
+      <div class="cta-actions">
+        <a href="/contact" class="btn btn-primary btn-lg">Request a Quote</a>
+        <a href="mailto:Jason@carelong.com.cn?subject=Product%20Inquiry%20-%20Carelong%20Website" class="btn btn-outline-white btn-lg">Email Us</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const gallery = document.getElementById('productGallery');
+    if (!gallery) return;
+
+    const thumbs = Array.from(gallery.querySelectorAll('.thumb'));
+    const stageImgs = Array.from(gallery.querySelectorAll('.stage-img'));
+    const stages = Array.from(gallery.querySelectorAll('.gallery-stage'));
+    let current = 0;
+
+    function activate(idx) {
+      if (idx === current) return;
+      current = idx;
+      thumbs.forEach((t) => t.classList.toggle('is-active', Number(t.dataset.index) === current));
+      stageImgs.forEach((img) => {
+        const isActive = Number(img.dataset.index) === current;
+        img.classList.toggle('is-active', isActive);
+        if (isActive) img.style.transformOrigin = 'center center';
+      });
+      stages.forEach((s) => s.classList.remove('is-zooming'));
+    }
+
+    thumbs.forEach((t) => {
+      const idx = Number(t.dataset.index);
+      t.addEventListener('mouseenter', () => activate(idx));
+      t.addEventListener('focus', () => activate(idx));
+      t.addEventListener('click', () => activate(idx));
+    });
+
+    stages.forEach((stage) => {
+      stage.addEventListener('mouseenter', () => stage.classList.add('is-zooming'));
+      stage.addEventListener('mouseleave', () => {
+        stage.classList.remove('is-zooming');
+        const active = stage.querySelector('.stage-img.is-active');
+        if (active) {
+          active.style.transformOrigin = 'center center';
+        }
+      });
+      stage.addEventListener('mousemove', (e) => {
+        const active = stage.querySelector('.stage-img.is-active');
+        if (!active) return;
+        const rect = stage.getBoundingClientRect();
+        const x = ((e.clientX - rect.left) / rect.width) * 100;
+        const y = ((e.clientY - rect.top) / rect.height) * 100;
+        const cx = Math.max(0, Math.min(100, x));
+        const cy = Math.max(0, Math.min(100, y));
+        active.style.transformOrigin = cx + '% ' + cy + '%';
+      });
+    });
+  });
+</script>
+
+<style>
+.eyebrow { font-size: 0.8125rem; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; color: var(--color-secondary); margin-bottom: var(--space-3); }
+.product-overview { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-12); align-items: start; }
+
+.product-gallery { display: grid; grid-template-columns: 88px 1fr; gap: var(--space-4); align-items: start; }
+.gallery-thumbs { display: flex; flex-direction: column; gap: var(--space-2); max-height: 480px; overflow-y: auto; padding-right: 4px; }
+.thumb { all: unset; cursor: pointer; display: block; width: 88px; height: 88px; border-radius: var(--radius-md); border: 2px solid transparent; background: #fff; overflow: hidden; transition: border-color .2s ease, transform .18s ease, box-shadow .18s ease; }
+.thumb img { width: 100%; height: 100%; object-fit: contain; display: block; }
+.thumb:hover { transform: translateY(-1px); box-shadow: 0 4px 12px rgba(27,75,142,.18); }
+.thumb.is-active { border-color: var(--color-primary); box-shadow: 0 4px 12px rgba(27,75,142,.25); transform: translateY(-1px); }
+
+.gallery-stage { position: relative; background: #fff; border-radius: var(--radius-xl); box-shadow: var(--shadow-lg); overflow: hidden; aspect-ratio: 1 / 1; cursor: zoom-in; outline: none; }
+.stage-arrow[hidden] { display: none; }
+.stage-img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; padding: var(--space-4); opacity: 0; transition: opacity .25s ease; transform: scale(1); cursor: zoom-in; }
+.stage-img.is-active { opacity: 1; }
+.gallery-stage.is-zooming .stage-img.is-active { transform: scale(2); transition: transform .15s ease-out; }
+.zoom-hint { position: absolute; bottom: var(--space-3); right: var(--space-4); padding: 4px 10px; border-radius: 100px; background: rgba(15, 48, 96, 0.7); color: #fff; font-size: 0.75rem; font-weight: 500; letter-spacing: .5px; pointer-events: none; }
+
+.product-intro h2 { margin-bottom: var(--space-4); }
+.product-intro p { color: var(--color-text-light); line-height: 1.7; }
+.product-badges { display: flex; flex-wrap: wrap; gap: var(--space-2); margin: var(--space-6) 0; }
+.badge { display: inline-block; background: rgba(27, 75, 142, 0.08); color: var(--color-primary); padding: var(--space-1) var(--space-3); border-radius: 100px; font-size: 0.8125rem; font-weight: 600; }
+.product-actions { display: flex; gap: var(--space-4); flex-wrap: wrap; }
+
+.spec-table { display: flex; flex-direction: column; gap: var(--space-2); }
+.spec-table-grid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-2); }
+.spec-row { display: flex; justify-content: space-between; padding: var(--space-4) var(--space-6); background: var(--color-bg); border: 1px solid var(--color-border); border-radius: var(--radius-md); }
+.spec-table-grid .spec-row { flex-direction: column; gap: var(--space-1); }
+.spec-table-grid .spec-name { font-weight: 600; color: var(--color-text); font-size: 0.875rem; text-transform: lowercase; }
+.spec-table-grid .spec-value { color: var(--color-text); font-weight: 500; text-align: left; max-width: 100%; }
+.spec-name { font-weight: 600; color: var(--color-text); }
+.spec-value { color: var(--color-text-light); text-align: right; max-width: 60%; }
+
+/* Data tables */
+.data-table-wrapper { overflow-x: auto; border: 1px solid var(--color-border); border-radius: var(--radius-md); background: var(--color-bg); }
+.data-table { width: 100%; border-collapse: collapse; font-size: 0.875rem; }
+.data-table thead th { background: var(--color-primary); color: #fff; padding: var(--space-3) var(--space-4); text-align: left; font-weight: 600; white-space: normal; line-height: 1.4; }
+.data-table tbody td { padding: var(--space-3) var(--space-4); border-top: 1px solid var(--color-border); color: var(--color-text); word-wrap: break-word; }
+.data-table tbody tr:nth-child(even) td { background: rgba(27, 75, 142, 0.04); }
+.data-table tbody tr:hover td { background: rgba(27, 75, 142, 0.08); }
+.data-table tbody td:nth-child(n+3) { font-variant-numeric: tabular-nums; }
+
+/* 8-column Segment Bolt Specifications table - auto layout for natural alignment */
+.spec-table-8col { table-layout: auto; width: 100%; }
+.spec-table-8col thead th { vertical-align: middle; text-align: center; white-space: nowrap; }
+.spec-table-8col tbody td { vertical-align: middle; text-align: center; }
+.spec-table-8col tbody td:nth-child(1) { text-align: left; }  /* Description */
+
+/* Notes table */
+.notes-table { font-size: 0.9375rem; table-layout: auto; width: 100%; }
+.notes-table th { background: transparent; color: var(--color-text); padding: var(--space-3) var(--space-4); text-align: left; font-weight: 700; white-space: nowrap; vertical-align: top; word-wrap: break-word; border-top: 1px solid var(--color-border); }
+.notes-table td { padding: var(--space-3) var(--space-4); border-top: 1px solid var(--color-border); color: var(--color-text); vertical-align: top; }
+.notes-table tbody tr:nth-child(even) td { background: rgba(27, 75, 142, 0.04); }
+.notes-paragraph { font-style: italic; color: var(--color-text-light); line-height: 1.7; padding: var(--space-4) var(--space-4) !important; }
+.notes-table a { color: var(--color-primary); text-decoration: underline; }
+
+.cta-band { background: var(--color-primary); color: #fff; }
+.cta-band h2 { color: #fff; margin-bottom: var(--space-4); }
+.cta-band p { color: rgba(255,255,255,0.85); font-size: 1.125rem; margin-bottom: var(--space-6); }
+.cta-actions { display: flex; gap: var(--space-4); justify-content: center; flex-wrap: wrap; }
+
+@media (max-width: 768px) {
+  .product-overview { grid-template-columns: 1fr; }
+  .product-gallery { grid-template-columns: 72px 1fr; }
+  .thumb { width: 72px; height: 72px; }
+  .spec-row { flex-direction: column; gap: var(--space-1); }
+  .spec-value { text-align: left; max-width: 100%; }
+  .spec-table-grid { grid-template-columns: 1fr; }
+}
+</style>

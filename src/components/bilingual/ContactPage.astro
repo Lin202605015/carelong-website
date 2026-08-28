@@ -1,0 +1,294 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { contact } from '../../data/i18n/translations';
+import type { Lang } from '../../data/i18n/navigation';
+
+interface Props { lang: Lang; }
+const { lang } = Astro.props;
+const t = contact;
+const isEs = lang === 'es';
+
+const localBusinessSchema = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "@id": "https://carelong.com.cn/#localbusiness",
+  "name": "Xiamen Carelong Co., Ltd.",
+  "alternateName": "Carelong",
+  "url": "https://carelong.com.cn",
+  "logo": "https://carelong.com.cn/images/logo.png",
+  "image": "https://carelong.com.cn/images/og-image.jpg",
+  "description": "ISO 9001 certified manufacturer of high tensile fasteners and auto parts since 2005, based in Xiamen, China.",
+  "telephone": "+86-592-5185361",
+  "email": "Jason@carelong.com.cn",
+  "foundingDate": "2005",
+  "priceRange": "$$",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "24/D, Hong Xiang Building, No.258, South Hubin Road",
+    "addressLocality": "Xiamen",
+    "addressRegion": "Fujian",
+    "postalCode": "361004",
+    "addressCountry": "CN"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 24.4798,
+    "longitude": 118.0894
+  },
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],
+      "opens": "08:30",
+      "closes": "18:00"
+    }
+  ],
+  "sameAs": [],
+  "parentOrganization": { "@id": "https://carelong.com.cn/#organization" }
+};
+---
+<BaseLayout lang={lang} title={t.pageTitle[lang]} description={t.pageDesc[lang]}>
+  <!-- Page Header -->
+  <header class="page-header">
+    <div class="container">
+      <h1>{t.header.h1[lang]}</h1>
+      <p>{t.header.subtitle[lang]}</p>
+    </div>
+  </header>
+
+  <section class="section">
+    <div class="container">
+      <div class="contact-grid">
+        <!-- Contact Form -->
+        <div class="contact-form-wrapper">
+          <h2>{isEs ? 'Envíenos un Mensaje' : 'Send Us a Message'}</h2>
+          <form
+            id="contact-form"
+            action="https://formsubmit.co/jason@carelong.com.cn"
+            method="POST"
+            enctype="application/x-www-form-urlencoded"
+          >
+            <!-- FormSubmit Configuration -->
+            <input type="hidden" name="_subject" value={isEs
+              ? 'Nueva consulta de Carelong - Página web'
+              : 'New inquiry from Carelong website'} />
+            <input type="hidden" name="_captcha" value="false" />
+            <input type="hidden" name="_template" value="table" />
+            <input type="hidden" name="_next" value={isEs
+              ? 'https://carelong.com.cn/es/thank-you'
+              : 'https://carelong.com.cn/thank-you'} />
+
+            <div class="form-group">
+              <label for="name">{t.form.name[lang]} *</label>
+              <input type="text" id="name" name="name" required placeholder={isEs ? 'Su nombre completo' : 'Your full name'} />
+            </div>
+
+            <div class="form-group">
+              <label for="email">{t.form.email[lang]} *</label>
+              <input type="email" id="email" name="email" required placeholder={isEs ? 'su@email.com' : 'your@email.com'} />
+            </div>
+
+            <div class="form-group">
+              <label for="company">{t.form.company[lang]}</label>
+              <input type="text" id="company" name="company" placeholder={isEs ? 'Nombre de su empresa' : 'Your company name'} />
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="country">{t.form.country[lang]}</label>
+                <input type="text" id="country" name="country" placeholder={isEs ? 'País' : 'Country'} />
+              </div>
+              <div class="form-group">
+                <label for="phone">{t.form.phone[lang]}</label>
+                <input type="tel" id="phone" name="phone" placeholder="+1 234 567 8900" />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="qty">{isEs ? 'Cantidad Estimada' : 'Estimated Quantity'}</label>
+              <input type="text" id="qty" name="estimated_quantity" placeholder={isEs ? 'ej., 10,000 piezas' : 'e.g., 10,000 pieces'} />
+            </div>
+
+            <div class="form-group">
+              <label for="product">{t.form.product[lang]}</label>
+              <select id="product" name="product">
+                <option value="">-- {isEs ? 'Seleccionar producto' : 'Select a product'} --</option>
+                <option value="Bolts and Nuts">{isEs ? 'Pernos y Tuercas' : 'Bolts and Nuts'}</option>
+                <option value="Stamping Parts">{isEs ? 'Piezas Estampadas' : 'Stamping Parts'}</option>
+                <option value="Die Casting Parts">{isEs ? 'Piezas de Fundición' : 'Die Casting Parts'}</option>
+                <option value="Forging Parts">{isEs ? 'Piezas Forjadas' : 'Forging Parts'}</option>
+                <option value="Machining Parts">{isEs ? 'Piezas Mecanizadas' : 'Machining Parts'}</option>
+                <option value="Welding Parts">{isEs ? 'Piezas Soldadas' : 'Welding Parts'}</option>
+                <option value="Plastic and Rubber Parts">{isEs ? 'Piezas de Plástico y Caucho' : 'Plastic and Rubber Parts'}</option>
+                <option value="Heavy Equipment Parts">{isEs ? 'Piezas para Maquinaria Pesada' : 'Heavy Equipment Parts'}</option>
+                <option value="Auto Parts">{isEs ? 'Autopartes' : 'Auto Parts'}</option>
+                <option value="Other">{isEs ? 'Otros' : 'Other'}</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="message">{t.form.message[lang]} *</label>
+              <textarea id="message" name="message" rows="5" required
+                placeholder={t.form.messagePlaceholder[lang]}></textarea>
+            </div>
+
+            <div class="form-consent">
+              <label class="checkbox-label">
+                <input type="checkbox" name="consent" required />
+                <span>{isEs
+                  ? 'Acepto que mi información sea almacenada y utilizada para responder a esta consulta. *'
+                  : 'I agree to have my information stored and used for the purpose of responding to this inquiry. *'}
+                </span>
+              </label>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-lg form-submit">
+              {t.form.submit[lang]}
+            </button>
+          </form>
+        </div>
+
+        <!-- Contact Info -->
+        <div class="contact-info">
+          <h2>{t.info.title[lang]}</h2>
+          <div class="contact-card">
+            <h3>{t.info.person[lang]}</h3>
+            <p class="contact-role">{t.info.role[lang]}</p>
+            <hr />
+            <div class="contact-detail">
+              <span class="contact-icon">📞</span>
+              <div>
+                <strong>{t.info.tel[lang]}</strong><br/>
+                <a href="tel:+865925185361">+86-592-5185361</a><br/>
+                <a href="tel:+865925185363">+86-592-5185363</a>
+              </div>
+            </div>
+            <div class="contact-detail">
+              <span class="contact-icon">✉️</span>
+              <div>
+                <strong>{t.info.emailLabel[lang]}</strong><br/>
+                <a href="mailto:Jason@carelong.com.cn">Jason@carelong.com.cn</a>
+              </div>
+            </div>
+            <div class="contact-detail">
+              <span class="contact-icon">📍</span>
+              <div>
+                <strong>{t.info.addressLabel[lang]}</strong><br/>
+                24/D, HONGXIANG BUILDING, NO.258<br/>
+                SOUTH HUBIN ROAD, XIAMEN, CHINA
+              </div>
+            </div>
+            <div class="contact-detail">
+              <span class="contact-icon">🕐</span>
+              <div>
+                <strong>{t.info.hours[lang]}</strong><br/>
+                {t.info.hoursValue[lang]}
+              </div>
+            </div>
+            <hr />
+            <div class="contact-apps">
+              <a href="https://wa.me/8615959526388" target="_blank" rel="noopener" class="app-link">
+                <span>💬</span> WhatsApp
+              </a>
+              <a href="javascript:void(0)" class="app-link" title="WeChat ID: jasoncarelong">
+                <span>💬</span> WeChat
+              </a>
+              <a href="https://www.linkedin.com/company/xiamen-carelong" target="_blank" rel="noopener" class="app-link">
+                <span>💼</span> LinkedIn
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LocalBusiness Schema (JSON-LD) -->
+  <script type="application/ld+json" set:html={JSON.stringify(localBusinessSchema)} />
+</BaseLayout>
+
+<style>
+.page-header {
+  background: linear-gradient(135deg, #0F3060 0%, #1E3A6E 100%);
+  color: #fff; padding: var(--space-12) 0; text-align: center;
+}
+.page-header h1 { color: #fff; font-size: clamp(1.75rem, 4vw, 2.5rem); margin-bottom: var(--space-3); font-weight: 800; }
+.page-header p { font-size: clamp(1rem, 2.5vw, 1.125rem); color: rgba(255,255,255,0.85); margin: 0 auto; }
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: var(--space-12);
+  align-items: start;
+}
+.contact-form-wrapper h2,
+.contact-info h2 {
+  font-size: 1.5rem; margin-bottom: var(--space-6);
+}
+.form-group { margin-bottom: var(--space-4); }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-4); }
+.form-group label {
+  display: block; font-weight: 600; font-size: 0.9rem;
+  color: var(--color-text); margin-bottom: var(--space-2);
+}
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: var(--space-3) var(--space-4);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  font-size: 1rem;
+  background: #fff;
+  transition: border-color 0.2s;
+  box-sizing: border-box;
+}
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(15, 48, 96, 0.1);
+}
+.form-submit { width: 100%; margin-top: var(--space-2); }
+.form-consent { margin-bottom: var(--space-4); }
+.checkbox-label {
+  display: flex; align-items: flex-start; gap: var(--space-3);
+  cursor: pointer; font-size: 0.875rem; color: var(--color-text-light);
+}
+.checkbox-label input[type="checkbox"] {
+  width: 18px; height: 18px; flex-shrink: 0; margin-top: 2px;
+  cursor: pointer; accent-color: var(--color-primary);
+}
+
+.contact-card {
+  background: var(--color-bg-alt);
+  border-radius: var(--radius-lg);
+  padding: var(--space-8);
+  border: 1px solid var(--color-border);
+}
+.contact-card h3 { margin-bottom: 0; font-size: 1.25rem; }
+.contact-role { color: var(--color-text-muted); margin-bottom: var(--space-4); }
+.contact-card hr { border: none; border-top: 1px solid var(--color-border); margin: var(--space-4) 0; }
+.contact-detail {
+  display: flex; gap: var(--space-3); align-items: flex-start;
+  margin-bottom: var(--space-4);
+}
+.contact-icon { font-size: 1.25rem; flex-shrink: 0; margin-top: 2px; }
+.contact-detail strong { display: block; margin-bottom: 2px; }
+.contact-detail a { color: var(--color-primary); text-decoration: none; }
+.contact-detail a:hover { text-decoration: underline; }
+.contact-apps {
+  display: flex; gap: var(--space-4); flex-wrap: wrap;
+}
+.app-link {
+  display: flex; align-items: center; gap: 6px;
+  color: var(--color-primary); text-decoration: none; font-weight: 600;
+}
+.app-link:hover { text-decoration: underline; }
+
+@media (max-width: 900px) {
+  .contact-grid { grid-template-columns: 1fr; }
+  .form-row { grid-template-columns: 1fr; }
+}
+</style>

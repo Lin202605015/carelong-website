@@ -1,0 +1,256 @@
+---
+import { siteConfig } from '../data/site';
+import { getLocalizedPath, getLangFromPath } from '../utils/i18n';
+
+const pathname = Astro.url.pathname;
+const lang: 'en' | 'es' = getLangFromPath(pathname);
+const l = lang === 'es' ? {
+  desc: 'Fabricante profesional de pernos de cubo, kits de perno maestro, piezas de encabezado en frío, pernos en U y componentes de forja en caliente para automoción desde 2005.',
+  quickLinks: 'Enlaces Rápidos',
+  about: 'Sobre Nosotros',
+  products: 'Productos',
+  capabilities: 'Capacidades',
+  factory: 'Fábrica',
+  quality: 'Calidad',
+  contact: 'Contacto',
+  productsTitle: 'Productos',
+  boltsAndNuts: 'Pernos y Tuercas',
+  stampingParts: 'Piezas Estampadas',
+  dieCastingParts: 'Piezas de Fundición a Presión',
+  forgingParts: 'Piezas Forjadas',
+  machiningParts: 'Piezas Mecanizadas',
+  displayRack: 'Exhibidores',
+  viewAll: 'Ver Todos los Productos',
+  contactUs: 'Contáctenos',
+  exportManager: 'Gerente de Exportación',
+  rights: 'Todos los derechos reservados.',
+  powered: 'Xiamen, China',
+  productInquirySubject: 'Consulta de Producto - Sitio Web Carelong',
+  homeAria: 'Carelong - Inicio',
+} : {
+  desc: 'Professional manufacturer of hub bolts, king pin kits, cold heading parts, U-bolts, and hot forging auto components since 2005.',
+  quickLinks: 'Quick Links',
+  about: 'About Us',
+  products: 'Products',
+  capabilities: 'Capabilities',
+  factory: 'Factory',
+  quality: 'Quality',
+  contact: 'Contact',
+  productsTitle: 'Products',
+  boltsAndNuts: 'Bolts and Nuts',
+  stampingParts: 'Stamping Parts',
+  dieCastingParts: 'Die Casting Parts',
+  forgingParts: 'Forging Parts',
+  machiningParts: 'Machining Parts',
+  displayRack: 'Display Fixture',
+  viewAll: 'View All Products',
+  contactUs: 'Contact Us',
+  exportManager: 'Export Manager',
+  rights: 'All rights reserved.',
+  powered: 'Xiamen, China',
+  productInquirySubject: 'Product Inquiry - Carelong Website',
+  homeAria: 'Carelong - Home',
+};
+
+const prefix = lang === 'es' ? '/es' : '';
+---
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-col footer-brand">
+        <a href={getLocalizedPath('/', lang)} class="footer-logo" aria-label={l.homeAria}>
+          <img src="/images/logo.png" alt="Carelong" class="footer-logo-img" loading="lazy" />
+          <span class="footer-logo-name">Carelong</span>
+        </a>
+        <p class="footer-desc">{l.desc}</p>
+        <p class="footer-established">Est. {siteConfig.established}</p>
+      </div>
+
+      <div class="footer-col">
+        <h3>{l.quickLinks}</h3>
+        <ul class="footer-links">
+          <li><a href={getLocalizedPath('/about', lang)}>{l.about}</a></li>
+          <li><a href={getLocalizedPath('/products', lang)}>{l.products}</a></li>
+          <li><a href={getLocalizedPath('/capabilities', lang)}>{l.capabilities}</a></li>
+          <li><a href={getLocalizedPath('/factory', lang)}>{l.factory}</a></li>
+          <li><a href={getLocalizedPath('/quality', lang)}>{l.quality}</a></li>
+          <li><a href={getLocalizedPath('/contact', lang)}>{l.contact}</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h3>{l.productsTitle}</h3>
+        <ul class="footer-links">
+          <li><a href={getLocalizedPath('/products/bolts-and-nuts', lang)}>{l.boltsAndNuts}</a></li>
+          <li><a href={getLocalizedPath('/products/stamping-parts', lang)}>{l.stampingParts}</a></li>
+          <li><a href={getLocalizedPath('/products/die-casting-parts', lang)}>{l.dieCastingParts}</a></li>
+          <li><a href={getLocalizedPath('/products/forging-parts', lang)}>{l.forgingParts}</a></li>
+          <li><a href={getLocalizedPath('/products/machining-parts', lang)}>{l.machiningParts}</a></li>
+          <li><a href={getLocalizedPath('/products/display-rack', lang)}>{l.displayRack}</a></li>
+          <li><a href={getLocalizedPath('/products', lang)}>{l.viewAll}</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h3>{l.contactUs}</h3>
+        <address class="footer-contact">
+          <p>
+            <strong>Jason Lin</strong><br/>
+            {l.exportManager}
+          </p>
+          <p>
+            <a href={`tel:${siteConfig.contact.tel.replace(/\s/g, '')}`}>{siteConfig.contact.tel}</a>
+          </p>
+          <p>
+            <a href={`mailto:${siteConfig.contact.email}?subject=${encodeURIComponent(l.productInquirySubject)}`}>{siteConfig.contact.email}</a>
+          </p>
+          <p class="footer-address">{siteConfig.contact.address}</p>
+        </address>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p class="footer-copy">© {new Date().getFullYear()} {siteConfig.name}. {l.rights}</p>
+      <p class="footer-powered">{l.powered}</p>
+    </div>
+  </div>
+</footer>
+
+<style>
+.site-footer {
+  background: var(--color-bg-dark);
+  color: #D1D5DB;
+  padding: var(--space-16) 0 var(--space-8);
+  margin-top: 0;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr 1.2fr;
+  gap: var(--space-12);
+  margin-bottom: var(--space-12);
+}
+
+.footer-logo {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  margin-bottom: var(--space-4);
+  text-decoration: none;
+  color: inherit;
+}
+
+.footer-logo:hover {
+  opacity: 0.9;
+}
+
+.footer-logo-img {
+  height: 40px;
+  width: auto;
+  object-fit: contain;
+}
+
+.footer-logo-name {
+  font-weight: 700;
+  font-size: 1.125rem;
+  color: #fff;
+}
+
+.footer-desc {
+  font-size: 0.875rem;
+  line-height: 1.7;
+  margin-bottom: var(--space-2);
+}
+
+.footer-established {
+  font-size: 0.8125rem;
+  color: var(--color-text-muted);
+}
+
+.footer-col h3 {
+  font-size: 0.9375rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: var(--space-4);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.footer-links {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.footer-links a {
+  color: #9CA3AF;
+  font-size: 0.9375rem;
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+.footer-links a:hover {
+  color: #fff;
+}
+
+.footer-contact {
+  font-style: normal;
+  font-size: 0.875rem;
+  line-height: 1.8;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.footer-contact a {
+  color: #9CA3AF;
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+.footer-contact a:hover { color: #fff; }
+
+.footer-address {
+  margin-top: var(--space-2);
+  color: #9CA3AF;
+  font-size: 0.8125rem;
+  line-height: 1.6;
+}
+
+.footer-bottom {
+  border-top: 1px solid #374151;
+  padding-top: var(--space-6);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.footer-copy,
+.footer-powered {
+  font-size: 0.8125rem;
+  color: #6B7280;
+  margin: 0;
+}
+
+@media (max-width: 1024px) {
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-8);
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+</style>

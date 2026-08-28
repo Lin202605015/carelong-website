@@ -1,0 +1,582 @@
+---
+/**
+ * Shared home page template for both English and Spanish.
+ * Set lang="en" for English, lang="es" for Spanish.
+ */
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { home } from '../../data/i18n/translations';
+import type { Lang } from '../../data/i18n/navigation';
+
+interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+const h = home; // shorthand
+
+// Product card data
+const productCards = [
+  {
+    href: '/products/bolts-and-nuts',
+    img: '/images/products/bolts-and-nuts/hub-bolts/hub-bolt -(1).webp',
+    nameEn: 'Bolts and Nuts',
+    nameEs: 'Pernos y Tuercas',
+    descEn: 'Hub bolts, plow bolts, track link bolts, segment bolts, hex nuts, flange nuts. High tensile 10.9 and 12.9 class.',
+    descEs: 'Pernos de rueda, pernos de arado, pernos de enlace de oruga, pernos de segmento, tuercas hexagonales, tuercas de brida. Alta resistencia clase 10.9 y 12.9.',
+  },
+  {
+    href: '/products/display-rack',
+    img: '/images/products/display-rack/supermarket-display-racks-01.webp',
+    nameEn: 'Display Rack',
+    nameEs: 'Exhibidores',
+    descEn: 'Custom display racks for supermarkets, retail stores, and trade shows — gondola shelving, pegboard, slatwall, and display tables.',
+    descEs: 'Exhibidores personalizados para supermercados, tiendas minoristas y ferias comerciales: estanterías gondola, pegboard, slatwall y mesas de exhibición.',
+  },
+  {
+    href: '/products/stamping-parts',
+    img: '/images/products/stamping-parts/stamping-parts-01.webp',
+    nameEn: 'Stamping Parts',
+    nameEs: 'Piezas Estampadas',
+    descEn: 'Precision metal stamping parts. Progressive die stamping with tight tolerances and high consistency.',
+    descEs: 'Piezas metálicas de estampado de precisión. Estampado progresivo con tolerancias ajustadas y alta consistencia.',
+  },
+  {
+    href: '/products/die-casting-parts',
+    img: '/images/products/die-casting-parts/die-casting-parts-01.webp',
+    nameEn: 'Die Casting Parts',
+    nameEs: 'Piezas de Fundición',
+    descEn: 'Aluminum and zinc die casting with CNC machining. Complex geometries with high accuracy.',
+    descEs: 'Fundición de aluminio y zinc con mecanizado CNC. Geometrías complejas con alta precisión.',
+  },
+  {
+    href: '/products/forging-parts',
+    img: '/images/products/forging-parts/forging-parts-01.webp',
+    nameEn: 'Forging Parts',
+    nameEs: 'Piezas Forjadas',
+    descEn: 'Hot forged components with superior grain flow. S40Cr and ML20MnTiB materials for 10.9 and 12.9 class.',
+    descEs: 'Componentes forjados en caliente con flujo de grano superior. Materiales S40Cr y ML20MnTiB para clase 10.9 y 12.9.',
+  },
+  {
+    href: '/products/machining-parts',
+    img: '/images/products/machining-parts/machining-parts-01.webp',
+    nameEn: 'Machining Parts',
+    nameEs: 'Piezas Mecanizadas',
+    descEn: 'Precision CNC machined parts with tight tolerances. Custom machining per drawing or sample.',
+    descEs: 'Piezas mecanizadas CNC de precisión con tolerancias ajustadas. Mecanizado personalizado según dibujo o muestra.',
+  },
+  {
+    href: '/products/welding-parts',
+    img: '/images/products/welding-parts/welding-parts-01.webp',
+    nameEn: 'Welding Parts',
+    nameEs: 'Piezas Soldadas',
+    descEn: 'Custom welding parts and fabricated components. MIG, TIG, and arc welding services.',
+    descEs: 'Piezas soldadas personalizadas y componentes fabricados. Servicios de soldadura MIG, TIG y de arco.',
+  },
+  {
+    href: '/products/plastic-rubber-parts',
+    img: '/images/products/plastic-rubber-parts/plastic-rubber-parts-01.webp',
+    nameEn: 'Plastic and Rubber Parts',
+    nameEs: 'Piezas de Plástico y Caucho',
+    descEn: 'Injection molded plastic parts and molded rubber components for automotive applications.',
+    descEs: 'Piezas de plástico moldeadas por inyección y componentes de caucho moldeado para aplicaciones automotrices.',
+  },
+  {
+    href: '/products/tooling-and-moulds',
+    img: '/images/products/tooling-and-moulds/tooling-and-moulds-01.webp',
+    nameEn: 'Tooling and Moulds',
+    nameEs: 'Herramentales y Moldes',
+    descEn: 'Custom tooling and mould design and fabrication. Progressive dies, stamping moulds, and forging dies.',
+    descEs: 'Diseño y fabricación de herramentales y moldes personalizados. Dados progresivos, moldes de estampado y dados de forja.',
+  },
+  {
+    href: '/products/heavy-equipment-parts',
+    img: '/images/products/heavy-equipment-parts/heavy-equipment-parts-01.webp',
+    nameEn: 'Heavy Equipment Parts',
+    nameEs: 'Piezas para Maquinaria Pesada',
+    descEn: 'Undercarriage parts for CAT, Komatsu. Track chains, rollers, idlers, sprockets.',
+    descEs: 'Piezas de tren de rodamiento para CAT, Komatsu. Cadenas de oruga, rodillos, poleas tensoras, ruedas dentadas.',
+  },
+  {
+    href: '/products/auto-parts',
+    img: '/images/products/auto-parts/auto-parts-1.webp',
+    nameEn: 'Auto Parts',
+    nameEs: 'Autopartes',
+    descEn: 'Automotive replacement parts and components for various vehicle makes and models.',
+    descEs: 'Piezas de repuesto automotrices y componentes para diversas marcas y modelos de vehículos.',
+  },
+  {
+    href: '/products/other-parts',
+    img: '/images/products/other-parts/other-parts-01.webp',
+    nameEn: 'Other Parts',
+    nameEs: 'Otras Piezas',
+    descEn: 'Custom and specialty parts to your specifications. Sourcing and assembly services available on demand.',
+    descEs: 'Piezas personalizadas y especiales según sus especificaciones. Servicios de sourcing y ensamble disponibles bajo demanda.',
+  },
+];
+---
+<BaseLayout
+  lang={lang}
+  title={lang === 'en'
+    ? 'High Tensile Fasteners & Auto Parts Manufacturer | Xiamen Carelong'
+    : 'Fabricante de Pernos de Alta Resistencia y Autopartes | Xiamen Carelong'}
+  description={lang === 'en'
+    ? 'Xiamen Carelong is a professional manufacturer and exporter of high tensile fasteners and auto parts since 2005. ISO 9001 certified, exporting hub bolts, forging parts, stamping parts worldwide.'
+    : 'Xiamen Carelong es un fabricante y exportador profesional de sujetadores de alta resistencia y autopartes desde 2005. Certificado ISO 9001, exportando pernos de rueda, piezas forjadas, piezas estampadas a todo el mundo.'}
+>
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container hero-content">
+      <div class="hero-text">
+        <p class="hero-label">{h.hero.label[lang]}</p>
+        <h1 class="hero-title">{h.hero.title[lang]}</h1>
+        <p class="hero-desc" set:html={h.hero.description[lang]}></p>
+        <div class="hero-actions">
+          <a href={lang === 'es' ? '/es/products' : '/products'} class="btn btn-white btn-lg">{h.hero.ctaProducts[lang]}</a>
+          <a href={lang === 'es' ? '/es/contact' : '/contact'} class="btn btn-outline-white btn-lg">{h.hero.ctaQuote[lang]}</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Preview -->
+  <section class="section section-alt">
+    <div class="container">
+      <div class="about-preview-grid">
+        <div class="about-preview-text">
+          <p class="section-eyebrow">{h.about.eyebrow[lang]}</p>
+          <h2>{h.about.title[lang]}</h2>
+          <p>{h.about.p1[lang]}</p>
+          <p>{h.about.p2[lang]}</p>
+          <div class="about-preview-stats">
+            <div class="stat-item">
+              <span class="stat-number">{h.stats.years[lang]}</span>
+              <span class="stat-label">{h.about.yearsLabel[lang]}</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-number">{h.stats.countries[lang]}</span>
+              <span class="stat-label">{h.about.countriesLabel[lang]}</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-number">{h.stats.clients[lang]}</span>
+              <span class="stat-label">{h.about.clientsLabel[lang]}</span>
+            </div>
+          </div>
+          <a href={lang === 'es' ? '/es/about' : '/about'} class="btn btn-primary">{h.about.cta[lang]}</a>
+        </div>
+        <div class="about-preview-image">
+          <div class="factory-carousel" id="factory-carousel">
+            <img src="/images/about/factory/1.webp" alt="Factory 1" class="carousel-slide active" />
+            <img src="/images/about/factory/2.webp" alt="Factory 2" class="carousel-slide" loading="lazy" />
+            <img src="/images/about/factory/3.webp" alt="Factory 3" class="carousel-slide" loading="lazy" />
+            <img src="/images/about/factory/4.webp" alt="Factory 4" class="carousel-slide" loading="lazy" />
+            <img src="/images/about/factory/5.webp" alt="Factory 5" class="carousel-slide" loading="lazy" />
+            <div class="carousel-dots">
+              <span class="carousel-dot active" data-index="0"></span>
+              <span class="carousel-dot" data-index="1"></span>
+              <span class="carousel-dot" data-index="2"></span>
+              <span class="carousel-dot" data-index="3"></span>
+              <span class="carousel-dot" data-index="4"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Product Showcase -->
+  <section class="section">
+    <div class="container">
+      <header class="section-header">
+        <p class="section-eyebrow">{h.products.eyebrow[lang]}</p>
+        <h2>{h.products.title[lang]}</h2>
+        <p>{h.products.subtitle[lang]}</p>
+      </header>
+      <div class="grid-3 products-grid">
+        {productCards.map(card => (
+          <a href={`${lang === 'es' ? '/es' : ''}${card.href}`} class="product-card">
+            <img src={card.img} alt={lang === 'en' ? card.nameEn : card.nameEs} loading="lazy" style="height: 200px; width:100%; object-fit: contain; margin-bottom: var(--space-4); background: #fff;" />
+            <h3>{lang === 'en' ? card.nameEn : card.nameEs}</h3>
+            <p>{lang === 'en' ? card.descEn : card.descEs}</p>
+            <span class="btn btn-primary" style="margin-top: var(--space-4);">
+              {lang === 'en' ? 'View Products →' : 'Ver Productos →'}
+            </span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Capabilities Section -->
+  <section class="section section-dark">
+    <div class="container">
+      <header class="section-header">
+        <p class="section-eyebrow-light">{h.capabilities.eyebrow[lang]}</p>
+        <h2>{h.capabilities.title[lang]}</h2>
+        <p>{h.capabilities.subtitle[lang]}</p>
+      </header>
+      <div class="grid-4 capabilities-grid">
+        <div class="capability-item">
+          <span class="capability-icon">⚙️</span>
+          <h3>{h.capabilities.coldHeading.title[lang]}</h3>
+          <p>{h.capabilities.coldHeading.desc[lang]}</p>
+        </div>
+        <div class="capability-item">
+          <span class="capability-icon">🔥</span>
+          <h3>{h.capabilities.hotForging.title[lang]}</h3>
+          <p>{h.capabilities.hotForging.desc[lang]}</p>
+        </div>
+        <div class="capability-item">
+          <span class="capability-icon">🔧</span>
+          <h3>{h.capabilities.machining.title[lang]}</h3>
+          <p>{h.capabilities.machining.desc[lang]}</p>
+        </div>
+        <div class="capability-item">
+          <span class="capability-icon">✅</span>
+          <h3>{h.capabilities.quality.title[lang]}</h3>
+          <p>{h.capabilities.quality.desc[lang]}</p>
+        </div>
+      </div>
+      <div class="text-center mt-8">
+        <a href={lang === 'es' ? '/es/capabilities' : '/capabilities'} class="btn btn-primary btn-lg">{h.capabilities.cta[lang]}</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="section cta-section">
+    <div class="container text-center">
+      <h2>{h.cta.title[lang]}</h2>
+      <p>{h.cta.body[lang]}</p>
+      <div class="cta-actions">
+        <a href={lang === 'es' ? '/es/contact' : '/contact'} class="btn btn-primary btn-lg">{h.cta.quoteBtn[lang]}</a>
+        <a href={lang === 'es' ? '/es/products' : '/products'} class="btn btn-primary btn-lg">{h.cta.browseBtn[lang]}</a>
+      </div>
+      <p class="cta-contact">
+        {h.cta.orCall[lang]} <a href="tel:+865925185361">+86-592-5185361</a> — {h.cta.contactPerson[lang]}
+      </p>
+    </div>
+  </section>
+
+<script>
+const carousel = document.getElementById('factory-carousel');
+if (carousel) {
+  const slides = carousel.querySelectorAll('.carousel-slide');
+  const dots = carousel.querySelectorAll('.carousel-dot');
+  let current = 0;
+  let timer = setInterval(next, 3500);
+
+  function show(index: number) {
+    slides.forEach((s: Element) => s.classList.remove('active'));
+    dots.forEach((d: Element) => d.classList.remove('active'));
+    slides[index].classList.add('active');
+    dots[index].classList.add('active');
+    current = index;
+  }
+
+  function next() {
+    show((current + 1) % slides.length);
+  }
+
+  dots.forEach((dot: Element, i: number) => {
+    dot.addEventListener('click', () => {
+      clearInterval(timer);
+      show(i);
+      timer = setInterval(next, 3500);
+    });
+  });
+}
+</script>
+</BaseLayout>
+
+<style>
+/* Hero */
+.hero {
+  position: relative;
+  color: #fff;
+  padding: 0;
+  overflow: hidden;
+  min-height: auto;
+  display: flex;
+  align-items: center;
+  background: linear-gradient(135deg, #0F3060 0%, #1E40AF 100%);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-12);
+}
+
+.hero-text {
+  max-width: 100%;
+  padding: var(--space-8) var(--space-10);
+  border-radius: var(--radius-xl, 16px);
+  position: relative;
+  z-index: 1;
+}
+
+.hero-label {
+  display: inline-block;
+  background: rgba(217, 119, 6, 0.2);
+  border: 1px solid rgba(217, 119, 6, 0.4);
+  color: #FCD34D;
+  padding: var(--space-1) var(--space-3);
+  border-radius: 100px;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  margin-bottom: var(--space-4);
+}
+
+.hero-title {
+  font-size: clamp(1.4rem, 3.6vw, 2.5rem);
+  color: #fff;
+  margin-bottom: var(--space-6);
+  line-height: 1.2;
+  white-space: nowrap;
+  max-width: 100%;
+}
+
+@media (max-width: 1100px) {
+  .hero-title { white-space: normal; }
+}
+
+.hero-desc {
+  font-size: clamp(1rem, 2.5vw, 1.125rem);
+  color: rgba(255,255,255,0.85);
+  margin-bottom: var(--space-8);
+  line-height: 1.7;
+}
+
+.hero-desc :global(.iso-cert) {
+  color: #ffffff;
+  font-weight: 700;
+}
+
+.hero-actions {
+  display: flex;
+  gap: var(--space-4);
+  flex-wrap: wrap;
+}
+
+/* About Preview */
+.about-preview-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-12);
+  align-items: center;
+}
+
+.section-eyebrow {
+  font-size: 0.8125rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--color-secondary);
+  margin-bottom: var(--space-3);
+}
+
+.section-eyebrow-light {
+  font-size: 0.8125rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: rgba(255,255,255,0.6);
+  margin-bottom: var(--space-3);
+}
+
+.about-preview-text h2 { margin-bottom: var(--space-4); }
+
+.about-preview-stats {
+  display: flex;
+  gap: var(--space-8);
+  margin: var(--space-6) 0;
+  padding: var(--space-6) 0;
+  border-top: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.stat-number {
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--color-primary);
+  line-height: 1;
+  margin-bottom: var(--space-1);
+}
+
+.stat-label {
+  font-size: 0.875rem;
+  color: var(--color-text-muted);
+}
+
+/* Product Cards */
+.products-grid { margin-top: 0; }
+
+.product-card {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  padding: var(--space-4);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  transition: all 0.3s ease;
+}
+
+.product-card:hover {
+  border-color: var(--color-primary);
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-4px);
+}
+
+.product-card h3 {
+  font-size: 1.125rem;
+  margin-bottom: var(--space-2);
+}
+
+.product-card p { font-size: 0.9375rem; color: var(--color-text-light); }
+
+/* Capabilities */
+.capabilities-grid { margin-bottom: var(--space-12); }
+
+.capability-item {
+  text-align: center;
+  padding: var(--space-6);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: var(--radius-lg);
+  background: rgba(255,255,255,0.05);
+  transition: all var(--transition-base);
+}
+
+.capability-item:hover {
+  background: rgba(255,255,255,0.1);
+  border-color: rgba(255,255,255,0.2);
+}
+
+.capability-icon {
+  font-size: 2.5rem;
+  display: block;
+  margin-bottom: var(--space-4);
+}
+
+.capability-item h3 {
+  color: #fff;
+  font-size: 1.125rem;
+  margin-bottom: var(--space-2);
+}
+
+.capability-item p { color: #9CA3AF; font-size: 0.875rem; }
+
+/* CTA */
+.cta-section {
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+  color: #fff;
+  padding: var(--space-16) 0;
+}
+
+.cta-section h2 { color: #fff; margin-bottom: var(--space-4); }
+.cta-section p { font-size: 1.125rem; color: rgba(255,255,255,0.85); margin-bottom: var(--space-6); }
+
+.cta-actions {
+  display: flex;
+  gap: var(--space-4);
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: var(--space-6);
+}
+
+.cta-contact {
+  font-size: 0.9375rem !important;
+  color: rgba(255,255,255,0.7) !important;
+  margin: 0 !important;
+}
+
+.cta-contact a { color: #FCD34D; }
+
+@media (max-width: 768px) {
+  .about-preview-grid { grid-template-columns: 1fr; }
+
+  .hero-content {
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: var(--space-6);
+    padding: var(--space-8) 0;
+  }
+
+  .hero-text {
+    max-width: 100%;
+    padding: var(--space-4) var(--space-5);
+  }
+
+  .hero-label {
+    font-size: 0.75rem;
+    margin-bottom: var(--space-3);
+  }
+
+  .hero-title {
+    font-size: clamp(1.25rem, 5vw, 1.5rem);
+    white-space: normal;
+    line-height: 1.3;
+  }
+
+  .hero-desc { font-size: 0.95rem; }
+
+  .hero-actions {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .hero-actions .btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-title { font-size: 1.2rem; line-height: 1.3; }
+  .hero-text { padding: var(--space-3) var(--space-4); }
+  .hero-label { font-size: 0.7rem; padding: 0.25rem 0.75rem; }
+}
+
+/* Factory Carousel */
+.factory-carousel {
+  position: relative;
+  width: 100%;
+  height: 400px;
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+}
+.carousel-slide {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 0.6s ease;
+}
+.carousel-slide.active { opacity: 1; }
+.carousel-dots {
+  position: absolute;
+  bottom: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 8px;
+}
+.carousel-dot {
+  width: 10px; height: 10px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.5);
+  cursor: pointer;
+  transition: background 0.3s;
+}
+.carousel-dot.active { background: #fff; }
+</style>

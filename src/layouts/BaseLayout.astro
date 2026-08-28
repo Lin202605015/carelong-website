@@ -1,0 +1,194 @@
+---
+interface Props {
+  title: string;
+  description?: string;
+  canonical?: string;
+  noindex?: boolean;
+  breadcrumbs?: Array<{ label: string; href?: string }>;
+  lang?: 'en' | 'es';
+}
+
+const {
+  title,
+  description,
+  canonical,
+  noindex,
+  breadcrumbs,
+  lang = 'en',
+} = Astro.props;
+import { siteConfig } from '../data/site';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import '../styles/global.css';
+
+const siteTitle = title.includes(' | ') ? title : `${title} | ${siteConfig.name}`;
+const metaDescription = description || siteConfig.description;
+const canonicalURL = canonical ? new URL(canonical, siteConfig.url) : new URL(Astro.url.pathname, siteConfig.url);
+
+// Auto-generate BreadcrumbList from URL pathname when no `breadcrumbs` prop is provided.
+const pathSegments = Astro.url.pathname.split('/').filter(Boolean);
+const isEsPath = pathSegments[0] === 'es';
+const segs = isEsPath ? pathSegments.slice(1) : pathSegments;
+const bcLabels: Record<string, Record<string, string>> = {
+  en: {
+    'about': 'About Us',
+    'quality': 'Quality Control',
+    'capabilities': 'Manufacturing Capabilities',
+    'contact': 'Contact Us',
+    'faq': 'FAQ',
+    'products': 'Products',
+    'bolts-and-nuts': 'Bolts and Nuts',
+    'hub-bolts': 'Hub Bolts',
+    'plow-bolts': 'Plow Bolts',
+    'track-bolts': 'Track Bolts',
+    'segment-bolts': 'Segment Bolts',
+    'nuts': 'Nuts',
+    'stamping-parts': 'Stamping Parts',
+    'die-casting-parts': 'Die Casting Parts',
+    'forging-parts': 'Forging Parts',
+    'machining-parts': 'Machining Parts',
+    'welding-parts': 'Welding Parts',
+    'plastic-rubber-parts': 'Plastic and Rubber Parts',
+    'heavy-equipment-parts': 'Heavy Equipment Parts',
+    'auto-parts': 'Auto Parts',
+    'tooling-and-moulds': 'Tooling and Moulds',
+    'other-parts': 'Other Parts',
+  },
+  es: {
+    'about': 'Sobre Nosotros',
+    'quality': 'Control de Calidad',
+    'capabilities': 'Capacidades de Fabricación',
+    'contact': 'Contáctenos',
+    'faq': 'Preguntas Frecuentes',
+    'products': 'Productos',
+    'bolts-and-nuts': 'Pernos y Tuercas',
+    'hub-bolts': 'Pernos de Rueda',
+    'plow-bolts': 'Pernos de Arado',
+    'track-bolts': 'Pernos de Oruga',
+    'segment-bolts': 'Pernos de Segmento',
+    'nuts': 'Tuercas',
+    'stamping-parts': 'Piezas Estampadas',
+    'die-casting-parts': 'Piezas Fundidas',
+    'forging-parts': 'Piezas Forjadas',
+    'machining-parts': 'Piezas Mecanizadas',
+    'welding-parts': 'Piezas Soldadas',
+    'plastic-rubber-parts': 'Piezas de Plástico y Caucho',
+    'heavy-equipment-parts': 'Repuestos de Maquinaria Pesada',
+    'auto-parts': 'Autopartes',
+    'tooling-and-moulds': 'Herramentales y Moldes',
+    'other-parts': 'Otras Piezas',
+  }
+};
+const autoBreadcrumbs = segs.map((seg, i) => {
+  const prefix = isEsPath ? '/es' : '';
+  const href = prefix + '/' + segs.slice(0, i + 1).join('/');
+  const label = (bcLabels[isEsPath ? 'es' : 'en'][seg] || seg.replace(/-/g, ' '));
+  return { label, href };
+});
+const finalBreadcrumbs = (breadcrumbs !== undefined) ? breadcrumbs : autoBreadcrumbs;
+const hasBreadcrumbs = Array.isArray(finalBreadcrumbs) && finalBreadcrumbs.length > 0;
+---
+<!DOCTYPE html>
+<html lang={lang}>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content={metaDescription} />
+  <title>{siteTitle}</title>
+  <link rel="canonical" href={canonicalURL} />
+  <link rel="sitemap" href="/sitemap.xml" />
+  <meta name="generator" content={Astro.generator} />
+  {noindex && <meta name="robots" content="noindex" />}
+
+  <!-- Google tag (gtag.js) - GA4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-8B17FN8LEV"></script>
+  <script is:inline>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-8B17FN8LEV', {
+      'page_hostname': window.location.hostname,
+      'page_location': window.location.href,
+    });
+  </script>
+  <meta property="og:title" content={siteTitle} />
+  <meta property="og:description" content={metaDescription} />
+  <meta property="og:url" content={canonicalURL} />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta property="og:image" content="https://carelong.com.cn/images/og-image.jpg" />
+  <meta property="og:site_name" content="Xiamen Carelong" />
+  <link rel="icon" type="image/png" href="/images/logo.png" />
+
+  <!-- Alternate language links -->
+  <link rel="alternate" hreflang="en" href={canonical ? canonical : `https://carelong.com.cn${Astro.url.pathname.replace(/^\/es\//, '/')}`} />
+  <link rel="alternate" hreflang="es" href={canonical ? (lang === 'en' ? `https://carelong.com.cn/es${Astro.url.pathname.replace(/^\/(es)?\//, '/')}` : canonical) : `https://carelong.com.cn/es${Astro.url.pathname.replace(/^\/(es)?\//, '/')}`} />
+  <link rel="alternate" hreflang="x-default" href={canonical ? canonical : `https://carelong.com.cn${Astro.url.pathname.replace(/^\/es\//, '/')}`} />
+  
+  <!-- Global Schema.org: Organization + Website -->
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://carelong.com.cn/#organization",
+        "name": "Xiamen Carelong Co., Ltd.",
+        "alternateName": "Carelong",
+        "url": "https://carelong.com.cn",
+        "logo": "https://carelong.com.cn/images/logo.png",
+        "description": siteConfig.description,
+        "foundingDate": "2005",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "24/D, Hong Xiang Building, No.258, South Hubin Road",
+          "addressLocality": "Xiamen",
+          "addressCountry": "CN"
+        },
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "telephone": "+86-592-5185361",
+          "email": "Jason@carelong.com.cn",
+          "contactType": "sales",
+          "availableLanguage": ["English", "Chinese"]
+        },
+        "sameAs": []
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://carelong.com.cn/#website",
+        "url": "https://carelong.com.cn",
+        "name": "Xiamen Carelong",
+        "publisher": { "@id": "https://carelong.com.cn/#organization" }
+      },
+      {
+        "@type": "WebPage",
+        "@id": canonicalURL.toString() + "#webpage",
+        "url": canonicalURL.toString(),
+        "name": siteTitle,
+        "description": metaDescription,
+        "isPartOf": { "@id": "https://carelong.com.cn/#website" }
+      },
+      ...(hasBreadcrumbs ? [{
+        "@type": "BreadcrumbList",
+        "@id": canonicalURL.toString() + "#breadcrumb",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": isEsPath ? "Inicio" : "Home", "item": isEsPath ? "https://carelong.com.cn/es" : "https://carelong.com.cn" },
+          ...finalBreadcrumbs.map((b, i) => ({
+            "@type": "ListItem",
+            "position": i + 2,
+            "name": b.label,
+            ...(b.href ? { "item": "https://carelong.com.cn" + b.href } : {})
+          }))
+        ]
+      }] : [])
+    ]
+  })} />
+</head>
+<body>
+  <Header />
+  <main>
+    <slot />
+  </main>
+  <Footer />
+</body>
+</html>

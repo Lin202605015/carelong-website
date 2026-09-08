@@ -1,0 +1,98 @@
+---
+import ArticlePage from '../../components/bilingual/ArticlePage.astro';
+---
+<ArticlePage
+  lang="en"
+  title="Cold Heading vs. Machining: Choosing the Right Manufacturing Process"
+  description="Compare cold heading and CNC machining for fastener production — cost, strength, speed, and when to choose each process for optimal results."
+  category="Industry Insights"
+  date="2026-02-20"
+  dateDisplay="February 20, 2026"
+  image="/images/news/cold-heading-vs-machining-v2.webp"
+  imageAlt="Cold heading versus CNC machining comparison"
+  breadcrumbLabel="Cold Heading vs. Machining"
+>
+<p>When manufacturing metal parts — especially fasteners — the choice between cold heading and machining fundamentally affects cost, strength, lead time, and production volume. Understanding the strengths and limitations of each process helps procurement teams and design engineers make informed decisions.</p>
+
+<h2>What is Cold Heading?</h2>
+<p>Cold heading is a high-speed forging process that shapes metal wire at room temperature. A blank is fed into a die, and one or more punches strike the end to form the desired shape — typically a bolt head, nut body, or specialized fastener geometry.</p>
+<p>The process relies on the plasticity of the material. Because no heat is added (hence "cold"), the metal's grain structure flows with the die shape, producing a part with continuous, uninterrupted grain flow.</p>
+
+<h2>What is CNC Machining?</h2>
+<p>CNC machining removes material from a larger blank or bar stock to create the final shape. Turning, milling, and drilling operations cut away excess material, leaving the finished geometry.</p>
+<p>Machining is versatile — nearly any shape that can be designed can be machined. However, the cutting process interrupts the grain structure, and material is wasted as chips.</p>
+
+<h2>Key Comparison</h2>
+<table>
+  <thead>
+    <tr><th>Factor</th><th>Cold Heading</th><th>CNC Machining</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>Production Speed</td><td>100-400 parts/minute</td><td>1-20 parts/minute</td></tr>
+    <tr><td>Material Yield</td><td>~95% (minimal waste)</td><td>30-70% (chips removed)</td></tr>
+    <tr><td>Part Strength</td><td>Superior (work-hardened, continuous grain)</td><td>Good (but grain structure interrupted)</td></tr>
+    <tr><td>Surface Finish</td><td>Excellent (die-finished)</td><td>Good (depends on operation)</td></tr>
+    <tr><td>Tooling Cost</td><td>High (custom dies required)</td><td>Low (standard cutting tools)</td></tr>
+    <tr><td>Setup Time</td><td>Long (die changeover)</td><td>Short (program change)</td></tr>
+    <tr><td>Volume Sweet Spot</td><td>10,000+ pieces</td><td>1-10,000 pieces</td></tr>
+    <tr><td>Geometry Flexibility</td><td>Limited to heading-able shapes</td><td>Nearly unlimited</td></tr>
+    <tr><td>Tolerance</td><td>±0.05mm typical</td><td>±0.01mm or better</td></tr>
+  </tbody>
+</table>
+
+<h2>When to Choose Cold Heading</h2>
+<p>Cold heading is the clear winner for high-volume production of standard and near-standard fastener shapes:</p>
+<ul>
+  <li><strong>Standard bolts and screws</strong> — hex bolts, flange bolts, hub bolts at volumes above 10,000 units</li>
+  <li><strong>Nuts</strong> — hex nuts, flange nuts, nylon insert nuts — all economically produced by cold heading</li>
+  <li><strong>Rivets and pins</strong> — simple geometries in high quantities</li>
+  <li><strong>Parts requiring high strength</strong> — the work-hardening effect increases yield strength by 20-40% compared to the raw material</li>
+</ul>
+<p><strong>Advantages:</strong> lowest unit cost at volume, superior mechanical properties, minimal material waste, excellent surface finish, high production rate.</p>
+<p><strong>Limitations:</strong> high initial tooling investment ($3,000-$15,000 per die set), limited to relatively simple axially-symmetric shapes, material must have good cold-formability (low carbon and low alloy steels work best).</p>
+
+<h2>When to Choose CNC Machining</h2>
+<p>Machining is preferred for:</p>
+<ul>
+  <li><strong>Low to medium volumes</strong> — typically under 5,000-10,000 pieces where tooling cost can't be amortized</li>
+  <li><strong>Complex geometries</strong> — parts with asymmetrical features, cross-drilled holes, or multi-axis features</li>
+  <li><strong>Tight tolerances</strong> — when ±0.01mm or better is required</li>
+  <li><strong>Prototyping and development</strong> — quick turnaround without die investment</li>
+  <li><strong>Hard materials</strong> — hardened steel or exotic alloys that cannot be cold headed</li>
+  <li><strong>Large parts</strong> — cold heading is typically limited to parts under 200mm length; larger parts require machining or hot forging</li>
+</ul>
+
+<h2>The Hybrid Approach: When Both Processes Work Together</h2>
+<p>Many parts benefit from a hybrid manufacturing approach:</p>
+<ul>
+  <li><strong>Cold head the blank</strong> to create the basic shape (head, shoulder, body) at high speed and low cost</li>
+  <li><strong>CNC machine the secondary features</strong> — cross-drilled holes, milled flats, threaded holes, or precision surfaces</li>
+</ul>
+<p>This approach is common for specialized fasteners like:</p>
+<ul>
+  <li>Hub bolts with cross-drilled grease passages</li>
+  <li>Wheel nuts with internal thread features</li>
+  <li>Segment bolts with specialized locking features</li>
+</ul>
+
+<h2>Cost Comparison Example</h2>
+<p>Consider a standard M16 hub bolt, production volume 50,000 pieces:</p>
+<table>
+  <thead>
+    <tr><th>Cost Factor</th><th>Cold Heading</th><th>CNC Machining</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>Tooling</td><td>$8,000 (one-time)</td><td>$500 (fixture)</td></tr>
+    <tr><td>Material per part</td><td>$0.08 (near-net shape)</td><td>$0.22 (bar stock + chips)</td></tr>
+    <tr><td>Machine time per part</td><td>0.3 seconds</td><td>45 seconds</td></tr>
+    <tr><td>Unit cost (excl. tooling)</td><td>$0.12</td><td>$1.85</td></tr>
+    <tr><td>Total (50k pcs)</td><td>$14,000</td><td>$93,000</td></tr>
+  </tbody>
+</table>
+<p>The cold heading tooling investment is recovered after approximately 4,600 pieces. Beyond that, every additional part saves $1.73 compared to machining.</p>
+
+<blockquote>At Carelong, we operate 20+ cold headers and 80+ CNC machines, giving us the flexibility to recommend the most cost-effective process for each part. We help customers optimize designs for cold heading wherever possible, while using CNC machining for features that require it. Contact us to discuss your project.</blockquote>
+
+<h2>Talk to Our Engineering Team</h2>
+<p>Not sure which process is right for your parts? <a href="/contact">Contact our engineering team</a> for a free manufacturing consultation. We'll review your drawings, recommend the optimal process, and provide a detailed quotation within 24 hours.</p>
+</ArticlePage>

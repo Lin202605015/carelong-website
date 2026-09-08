@@ -3,17 +3,17 @@ import BaseLayout from '@layouts/BaseLayout.astro';
 import Breadcrumb from '@components/Breadcrumb.astro';
 
 const images = [
-  { src: '/images/products/bolts-and-nuts/slotted-nuts/slotted-nuts-01.webp', alt: 'Slotted Nuts product photo' },
-  { src: '/images/products/bolts-and-nuts/slotted-nuts/slotted-nuts-02.webp', alt: 'Slotted Nuts detail view' },
-  { src: '/images/products/bolts-and-nuts/slotted-nuts/slotted-nuts-03.webp', alt: 'Slotted Nuts application' },
-  { src: '/images/products/bolts-and-nuts/slotted-nuts/slotted-nuts-04.webp', alt: 'Slotted Nuts cross-section' },
-  { src: '/images/products/bolts-and-nuts/slotted-nuts/slotted-nuts-05.webp', alt: 'Slotted Nuts bulk supply' },
+  { src: '/images/products/bolts-and-nuts/slotted-nuts/slotted-nuts-01-v2.webp', alt: 'Slotted Nuts product photo' },
+  { src: '/images/products/bolts-and-nuts/slotted-nuts/slotted-nuts-02-v2.webp', alt: 'Slotted Nuts detail view' },
+  { src: '/images/products/bolts-and-nuts/slotted-nuts/slotted-nuts-03-v2.webp', alt: 'Slotted Nuts application' },
+  { src: '/images/products/bolts-and-nuts/slotted-nuts/slotted-nuts-04-v2.webp', alt: 'Slotted Nuts cross-section' },
+  { src: '/images/products/bolts-and-nuts/slotted-nuts/slotted-nuts-05-v2.webp', alt: 'Slotted Nuts bulk supply' },
 ];
 ---
 
 <BaseLayout
   title="Slotted Nuts — Castle Nuts & Slotted Hex Nuts Manufacturer | Xiamen Carelong"
-  description="Manufacturer of castle nuts (slotted nuts) and slotted hex nuts. DIN 935, ISO 4037 standard. M6-M36, Grade 8/10, zinc plated and hot-dip galvanized. Used with cotter pins for secure locking."
+  description="Manufacturer of castle nuts (slotted nuts) and slotted hex nuts. DIN 935, ISO 7035 standard. M6-M36, Grade 8/10, zinc plated and hot-dip galvanized. Used with cotter pins for secure locking."
 >
   <Breadcrumb items={[
     { label: 'Products', href: '/products' },
@@ -60,7 +60,7 @@ const images = [
           <div class="product-badges">
             <span class="badge">M6–M36</span>
             <span class="badge">Grade 8/10</span>
-            <span class="badge">DIN 935 / ISO 4037</span>
+            <span class="badge">DIN 935 / ISO 7035</span>
             <span class="badge">Cotter Pin Locking</span>
           </div>
 
@@ -84,7 +84,7 @@ const images = [
         <div class="spec-row"><div class="spec-name">strength grade</div><div class="spec-value">Grade 8, Grade 10</div></div>
         <div class="spec-row"><div class="spec-name">material</div><div class="spec-value">Carbon Steel 45#, Alloy Steel 40Cr</div></div>
         <div class="spec-row"><div class="spec-name">surface treatment</div><div class="spec-value">Zinc Plated, Hot-Dip Galvanized, Black Oxide</div></div>
-        <div class="spec-row"><div class="spec-name">standard</div><div class="spec-value">DIN 935, ISO 4037, GB/T 6179</div></div>
+        <div class="spec-row"><div class="spec-name">standard</div><div class="spec-value">DIN 935, ISO 7035, GB/T 6179</div></div>
         <div class="spec-row"><div class="spec-name">application</div><div class="spec-value">Agricultural Machinery, Construction Equipment, Automotive</div></div>
       </div>
 
@@ -106,18 +106,18 @@ const images = [
           <tbody>
             <tr><td>M6</td><td>1.0</td><td>8</td><td>Carbon Steel</td><td>Zinc Plated</td><td>DIN 935</td></tr>
             <tr><td>M8</td><td>1.25</td><td>8</td><td>Carbon Steel</td><td>Zinc Plated</td><td>DIN 935</td></tr>
-            <tr><td>M10</td><td>1.5</td><td>10</td><td>Alloy Steel</td><td>Zinc Plated</td><td>ISO 4037</td></tr>
-            <tr><td>M12</td><td>1.75</td><td>10</td><td>Alloy Steel</td><td>Zinc Plated</td><td>ISO 4037</td></tr>
+            <tr><td>M10</td><td>1.5</td><td>10</td><td>Alloy Steel</td><td>Zinc Plated</td><td>ISO 7035</td></tr>
+            <tr><td>M12</td><td>1.75</td><td>10</td><td>Alloy Steel</td><td>Zinc Plated</td><td>ISO 7035</td></tr>
             <tr><td>M14</td><td>2.0</td><td>8</td><td>Carbon Steel</td><td>Black Oxide</td><td>DIN 935</td></tr>
-            <tr><td>M16</td><td>2.0</td><td>10</td><td>Alloy Steel</td><td>Hot-Dip Galv.</td><td>ISO 4037</td></tr>
+            <tr><td>M16</td><td>2.0</td><td>10</td><td>Alloy Steel</td><td>Hot-Dip Galv.</td><td>ISO 7035</td></tr>
             <tr><td>M18</td><td>2.5</td><td>10</td><td>Alloy Steel</td><td>Zinc Plated</td><td>DIN 935</td></tr>
-            <tr><td>M20</td><td>2.5</td><td>10</td><td>Alloy Steel</td><td>Zinc Plated</td><td>ISO 4037</td></tr>
+            <tr><td>M20</td><td>2.5</td><td>10</td><td>Alloy Steel</td><td>Zinc Plated</td><td>ISO 7035</td></tr>
             <tr><td>M22</td><td>2.5</td><td>10</td><td>Alloy Steel</td><td>Hot-Dip Galv.</td><td>DIN 935</td></tr>
-            <tr><td>M24</td><td>3.0</td><td>10</td><td>Alloy Steel</td><td>Zinc Plated</td><td>ISO 4037</td></tr>
+            <tr><td>M24</td><td>3.0</td><td>10</td><td>Alloy Steel</td><td>Zinc Plated</td><td>ISO 7035</td></tr>
             <tr><td>M27</td><td>3.0</td><td>10</td><td>Alloy Steel</td><td>Hot-Dip Galv.</td><td>DIN 935</td></tr>
-            <tr><td>M30</td><td>3.5</td><td>10</td><td>Alloy Steel</td><td>Zinc Plated</td><td>ISO 4037</td></tr>
+            <tr><td>M30</td><td>3.5</td><td>10</td><td>Alloy Steel</td><td>Zinc Plated</td><td>ISO 7035</td></tr>
             <tr><td>M33</td><td>3.5</td><td>8</td><td>Carbon Steel</td><td>Black Oxide</td><td>DIN 935</td></tr>
-            <tr><td>M36</td><td>4.0</td><td>10</td><td>Alloy Steel</td><td>Zinc Plated</td><td>ISO 4037</td></tr>
+            <tr><td>M36</td><td>4.0</td><td>10</td><td>Alloy Steel</td><td>Zinc Plated</td><td>ISO 7035</td></tr>
           </tbody>
         </table>
       </div>
@@ -130,10 +130,9 @@ const images = [
           <tbody>
             <tr><th>Mark:</th><td>8 or 10 (Class/Mark corresponds to strength grade)</td></tr>
             <tr><th>Surface Treatment:</th><td>Zinc Plated, Black Oxide, Hot-Dip Galvanized available</td></tr>
-            <tr><th>Carton Size:</th><td>25X20X12 cm (standard pack)</td></tr>
-            <tr><th>Buyer's Inquiry:</th><td>Please specify thread size, pitch, grade, material, and surface treatment required</td></tr>
+                        <tr><th>Buyer's Inquiry:</th><td>Please specify thread size, pitch, grade, material, and surface treatment required</td></tr>
             <tr><th>Minimum Quantity:</th><td>Varies by size — contact us for details</td></tr>
-            <tr><th>Delivery:</th><td>30 Days</td></tr>
+            <tr><th>Delivery:</th><td>35 Days</td></tr>
             <tr><th>Packing:</th><td>Standard export cartons; customized packing available</td></tr>
             <tr><td colspan="2" class="notes-paragraph">Custom sizes and materials are available. OEM orders are welcome — contact us with your specifications.</td></tr>
           </tbody>

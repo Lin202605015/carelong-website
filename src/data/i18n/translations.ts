@@ -35,7 +35,7 @@ export const ui = {
     heavyEquipment: { en: 'Heavy Equipment Parts',   es: 'Piezas para Maquinaria Pesada' },
     autoParts:      { en: 'Auto Parts',              es: 'Autopartes' },
     otherParts:     { en: 'Other Parts',             es: 'Otras Piezas' },
-    displayRack:    { en: 'Display Fixture',           es: 'Exhibidores' },
+    displayRack:    { en: 'Display Racks',           es: 'Exhibidores' },
   },
   common: {
     learnMore:    { en: 'Learn More',           es: 'Más Información' },

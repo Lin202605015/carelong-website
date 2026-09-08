@@ -17,7 +17,21 @@ export default defineConfig({
   },
   site: 'https://carelong.com.cn',
   output: 'server',
-  adapter: vercel(),
+  redirects: {
+    '/products/display-rack/newspaper-display-racks': '/products/display-rack/newspaper-magazine-racks',
+    '/products/display-rack/wall-mounted-display-racks': '/products/display-rack/wall-mounted-storage-racks',
+    '/es/products/display-rack/newspaper-display-racks': '/es/products/display-rack/newspaper-magazine-racks',
+    '/es/products/display-rack/wall-mounted-display-racks': '/es/products/display-rack/wall-mounted-storage-racks',
+  },
+  adapter: vercel({
+    isr: {
+      // Cache all SSR pages at Vercel Edge for 10 minutes (600s).
+      // First visit: SSR → cache. Subsequent visits: served from edge cache (no cold start).
+      // After 600s: background revalidation. Contact form / API routes are excluded.
+      expiration: 600,
+      exclude: ['/contact', '/api/'],
+    },
+  }),
   integrations: [
     sitemap({
       filter: (page) => !page.includes('/admin/') && !page.includes('/thank-you/') && !page.includes('/banking/'),

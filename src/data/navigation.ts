@@ -27,7 +27,7 @@ export const navigation: NavItem[] = [
         ],
       },
       { 
-        label: 'Display Fixture', 
+        label: 'Display Racks', 
         href: '/products/display-rack',
         children: [
           { label: 'Supermarket Display Racks', href: '/products/display-rack/supermarket-display-racks' },

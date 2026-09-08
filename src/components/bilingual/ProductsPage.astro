@@ -1,0 +1,426 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import type { Lang } from '../../data/i18n/navigation';
+
+interface Props { lang: Lang; }
+const { lang } = Astro.props;
+const isEs = lang === 'es';
+
+interface ProductCategory {
+  slug: string;
+  nameEn: string;
+  nameEs: string;
+  image: string;
+  descriptionEn: string;
+  descriptionEs: string;
+  count: number;
+}
+
+const categories: ProductCategory[] = [
+  {
+    slug: 'bolts-and-nuts/hub-bolts',
+    nameEn: 'Hub Bolts',
+    nameEs: 'Pernos de Rueda',
+    image: '/images/products/bolts-and-nuts/hub-bolts/hub-bolt -(1)-v2.webp',
+    descriptionEn: 'High tensile hub bolts for automotive and heavy equipment applications. Available in various sizes and specifications.',
+    descriptionEs: 'Pernos de rueda de alta resistencia para aplicaciones automotrices y de equipos pesados. Disponibles en varios tamaños y especificaciones.',
+    count: 10,
+  },
+  {
+    slug: 'bolts-and-nuts/plow-bolts',
+    nameEn: 'Plow Bolts',
+    nameEs: 'Pernos de Arado',
+    image: '/images/products/bolts-and-nuts/plow-bolts/plow-bolt-01-v2.webp',
+    descriptionEn: 'Plow bolts for construction machinery undercarriage. Durable and reliable for heavy-duty applications.',
+    descriptionEs: 'Pernos de arado para el tren de rodamiento de maquinaria de construcción. Duraderos y confiables para aplicaciones de servicio pesado.',
+    count: 8,
+  },
+  {
+    slug: 'bolts-and-nuts/track-bolts',
+    nameEn: 'Track Bolts',
+    nameEs: 'Pernos de Oruga',
+    image: '/images/products/bolts-and-nuts/track-bolts/track-bolt-01-v2.webp',
+    descriptionEn: 'Track link bolts for excavators and bulldozers. High strength 10.9 and 12.9 class.',
+    descriptionEs: 'Pernos de enlace de oruga para excavadoras y topadoras. Clase de alta resistencia 10.9 y 12.9.',
+    count: 12,
+  },
+  {
+    slug: 'bolts-and-nuts/segment-bolts',
+    nameEn: 'Segment Bolts',
+    nameEs: 'Pernos de Segmento',
+    image: '/images/products/bolts-and-nuts/segment-bolts/segment-bolt-01-v2.webp',
+    descriptionEn: 'Segment bolts for heavy equipment undercarriage. Precision manufactured to OEM specifications.',
+    descriptionEs: 'Pernos de segmento para el tren de rodamiento de equipos pesados. Fabricados con precisión según especificaciones OEM.',
+    count: 8,
+  },
+  {
+    slug: 'display-rack/supermarket-display-racks',
+    nameEn: 'Supermarket Display Racks',
+    nameEs: 'Exhibidores para Supermercados',
+    image: '/images/products/display-rack/supermarket-display-racks-01-v2.webp',
+    descriptionEn: 'Heavy-duty gondola shelving systems for supermarkets and grocery stores. Designed for high traffic and maximum product visibility.',
+    descriptionEs: 'Sistemas de estanterías gondola de alta resistencia para supermercados y tiendas de comestibles. Diseñados para alto tráfico y máxima visibilidad de productos.',
+    count: 5,
+  },
+  {
+    slug: 'display-rack/wall-mounted-storage-racks',
+    nameEn: 'Pegboard & Slatwall Display',
+    nameEs: 'Exhibidores de Pegboard y Slatwall',
+    image: '/images/products/display-rack/pegboard-slatwall-01-v2.webp',
+    descriptionEn: 'Versatile pegboard and slatwall display panels with hooks, shelves, and accessories. Ideal for retail walls, workshops, and trade shows.',
+    descriptionEs: 'Paneles de exhibición versátiles de pegboard y slatwall con ganchos, estantes y accesorios. Ideales para paredes comerciales, talleres y ferias.',
+    count: 5,
+  },
+  {
+    slug: 'display-rack/clothing-display-racks',
+    nameEn: 'Clothing Display Racks',
+    nameEs: 'Exhibidores de Ropa',
+    image: '/images/products/display-rack/clothing-racks-01-v2.webp',
+    descriptionEn: 'Stylish garment display racks for boutiques, showrooms, and trade shows. Various styles including round racks, garment rails, and display stands.',
+    descriptionEs: 'Exhibidores elegantes para prendas de vestir para boutiques, showrooms y ferias comerciales. Varios estilos incluyendo bastidores circulares, colgadores y soportes de exhibición.',
+    count: 5,
+  },
+  {
+    slug: 'display-rack/wooden-display-racks',
+    nameEn: 'Wooden Display Racks',
+    nameEs: 'Exhibidores de Madera',
+    image: '/images/products/display-rack/wooden-racks-01-v2.webp',
+    descriptionEn: 'Elegant wooden display racks combining metal frames with wooden shelves. Perfect for boutiques, gift shops, and high-end retail environments.',
+    descriptionEs: 'Exhibidores elegantes de madera con marcos metálicos y estantes de madera. Perfectos para boutiques, tiendas de regalos y entornos comerciales de alta gama.',
+    count: 5,
+  },
+  {
+    slug: 'display-rack/newspaper-magazine-racks',
+    nameEn: 'Display Tables & Stands',
+    nameEs: 'Mesas y Soportes de Exhibición',
+    image: '/images/products/display-rack/newspaper-racks-01-v2.webp',
+    descriptionEn: 'Freestanding display tables and stands for publications, brochures, and promotional merchandise. Ideal for bookstores, newsstands, libraries, and retail floors.',
+    descriptionEs: 'Mesas y soportes de exhibición independientes para publicaciones, folletos y productos promocionales. Ideales para librerías, quioscos, bibliotecas y pisos comerciales.',
+    count: 5,
+  },
+  {
+    slug: 'stamping-parts',
+    nameEn: 'Stamping Parts',
+    nameEs: 'Piezas Estampadas',
+    image: '/images/products/stamping-parts/stamping-parts-01-v2.webp',
+    descriptionEn: 'Precision metal stamping parts for automotive and industrial applications. Progressive die stamping with tight tolerances and high consistency.',
+    descriptionEs: 'Piezas de estampado metálico de precisión para aplicaciones automotrices e industriales. Estampado con matriz progresiva con tolerancias estrictas y alta consistencia.',
+    count: 12,
+  },
+  {
+    slug: 'die-casting-parts',
+    nameEn: 'Die Casting Parts',
+    nameEs: 'Piezas de Fundición',
+    image: '/images/products/die-casting-parts/die-casting-parts-01-v2.webp',
+    descriptionEn: 'Aluminum and zinc die casting components with CNC machining for complex geometries requiring high dimensional accuracy.',
+    descriptionEs: 'Componentes de fundición a presión de aluminio y zinc con mecanizado CNC para geometrías complejas que requieren alta precisión dimensional.',
+    count: 8,
+  },
+  {
+    slug: 'forging-parts',
+    nameEn: 'Forging Parts',
+    nameEs: 'Piezas Forjadas',
+    image: '/images/products/forging-parts/forging-parts-01-v2.webp',
+    descriptionEn: 'Hot forged components with superior grain flow. We specialize in high tensile 10.9 and 12.9 class using S40Cr and ML20MnTiB materials.',
+    descriptionEs: 'Componentes forjados en caliente con flujo de grano superior. Nos especializamos en clase 10.9 y 12.9 de alta resistencia usando materiales S40Cr y ML20MnTiB.',
+    count: 20,
+  },
+  {
+    slug: 'machining-parts',
+    nameEn: 'Machining Parts',
+    nameEs: 'Piezas Mecanizadas',
+    image: '/images/products/machining-parts/machining-parts-01-v2.webp',
+    descriptionEn: 'Precision CNC turned and milled parts from steel, stainless steel, aluminum, and brass. Multi-axis capabilities for complex geometries.',
+    descriptionEs: 'Piezas torneadas y fresadas CNC de precisión en acero, acero inoxidable, aluminio y latón. Capacidades multieje para geometrías complejas.',
+    count: 15,
+  },
+  {
+    slug: 'welding-parts',
+    nameEn: 'Welding Parts',
+    nameEs: 'Piezas Soldadas',
+    image: '/images/products/welding-parts/welding-parts-01-v2.webp',
+    descriptionEn: 'Custom welding fabrication including MIG, TIG, and spot welding. Assemblies from stamped, machined, and forged components.',
+    descriptionEs: 'Fabricación de soldadura personalizada que incluye MIG, TIG y soldadura por puntos. Conjuntos de componentes estampados, mecanizados y forjados.',
+    count: 10,
+  },
+  {
+    slug: 'plastic-rubber-parts',
+    nameEn: 'Plastic and Rubber Parts',
+    nameEs: 'Piezas de Plástico y Caucho',
+    image: '/images/products/plastic-rubber-parts/plastic-rubber-parts-01-v2.webp',
+    descriptionEn: 'Injection molded plastic and rubber components including seals, grommets, bushings, and custom molded parts.',
+    descriptionEs: 'Componentes de plástico y caucho moldeados por inyección, incluyendo sellos, arandelas, bujes y piezas moldeadas personalizadas.',
+    count: 8,
+  },
+  {
+    slug: 'tooling-and-moulds',
+    nameEn: 'Tooling and Moulds',
+    nameEs: 'Herramientas y Moldes',
+    image: '/images/products/tooling-and-moulds/tooling-and-moulds-01-v2.webp',
+    descriptionEn: 'Custom tooling design and manufacturing for cold heading, stamping, die casting, and injection molding applications.',
+    descriptionEs: 'Diseño y fabricación de herramientas personalizadas para aplicaciones de embutición en frío, estampado, fundición a presión y moldeo por inyección.',
+    count: 6,
+  },
+  {
+    slug: 'heavy-equipment-parts',
+    nameEn: 'Heavy Equipment Parts',
+    nameEs: 'Piezas para Maquinaria Pesada',
+    image: '/images/products/heavy-equipment-parts/heavy-equipment-parts-01-v2.webp',
+    descriptionEn: 'Undercarriage spare parts for Caterpillar, Komatsu, and other heavy construction machinery. Track chains, rollers, idlers, and custom parts.',
+    descriptionEs: 'Piezas de repuesto de tren de rodamiento para Caterpillar, Komatsu y otra maquinaria pesada de construcción. Cadenas de oruga, rodillos, poleas tensoras y piezas personalizadas.',
+    count: 16,
+  },
+  {
+    slug: 'auto-parts',
+    nameEn: 'Auto Parts',
+    nameEs: 'Autopartes',
+    image: '/images/products/auto-parts/auto-parts-1-v2.webp',
+    descriptionEn: 'Automotive fasteners and components for Hino, Mitsubishi Fuso, Benz, Volvo, Nissan, and Suzuki. Wheel bolts, hub bolts, U-bolts, and wheel studs.',
+    descriptionEs: 'Sujetadores y componentes automotrices para Hino, Mitsubishi Fuso, Benz, Volvo, Nissan y Suzuki. Pernos de rueda, pernos de cubo, U-pernos y espárragos de rueda.',
+    count: 18,
+  },
+  {
+    slug: 'other-parts',
+    nameEn: 'Other Parts',
+    nameEs: 'Otras Piezas',
+    image: '/images/products/other-parts/other-parts-01-v2.webp',
+    descriptionEn: 'Custom mechanical components per your specifications. We welcome inquiries for non-standard parts, prototype components, and specialty items.',
+    descriptionEs: 'Componentes mecánicos personalizados según sus especificaciones. Acceptamos consultas para piezas no estándar, componentes de prototipo y artículos especiales.',
+    count: 5,
+  },
+];
+
+const countLabel = isEs ? 'productos' : 'products';
+
+// Spanish uses /es/products/{slug} flat structure for bolts-and-nuts subcategories
+const getProductHref = (slug: string) => {
+  if (isEs) {
+    // Spanish: /es/products/{slug} (flat, not nested under bolts-and-nuts)
+    return `/es/products/${slug}`;
+  }
+  // English: /products/{slug}
+  return `/products/${slug}`;
+};
+---
+
+<BaseLayout
+  lang={lang}
+  title={isEs ? 'Nuestros Productos — Pernos de Alta Resistencia y Autopartes' : 'Our Product Categories — Bolts, Nuts, Forging & Auto Parts'}
+  description={isEs
+    ? 'Explore nuestra gama completa de sujetadores de alta resistencia, piezas forjadas y autopartes para mercados globales.'
+    : 'Browse our full range of products including Bolts and Nuts, Stamping Parts, Die Casting Parts, Forging Parts, Machining Parts, and more. OEM and custom manufacturing available.'}
+>
+  <header class="page-header">
+    <div class="container">
+      <h1>{isEs ? 'Nuestras Categorías de Productos' : 'Our Product Categories'}</h1>
+      <p>{isEs
+        ? 'Piezas de forja de calidad y sujetadores automotrices de alta resistencia para mercados globales'
+        : 'Quality forging parts and high tensile auto fasteners for global markets'}</p>
+    </div>
+  </header>
+
+  <!-- Products Grid -->
+  <section class="section">
+    <div class="container">
+      <div class="products-grid">
+        {categories.map(cat => (
+          <a href={getProductHref(cat.slug)} class="product-cat-card">
+            <div class="product-cat-image">
+              <img src={cat.image} alt={isEs ? cat.nameEs : cat.nameEn} />
+            </div>
+            <div class="product-cat-body">
+              <div class="product-cat-meta">
+                <span class="product-count">{cat.count} {countLabel}</span>
+              </div>
+              <h2>{isEs ? cat.nameEs : cat.nameEn}</h2>
+              <p>{isEs ? cat.descriptionEs : cat.descriptionEn}</p>
+              <span class="btn btn-primary btn-sm">
+                {isEs ? 'Ver Productos' : 'View Products'}
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Custom Products CTA -->
+  <section class="section section-alt">
+    <div class="container">
+      <div class="custom-cta">
+        <div class="custom-cta-text">
+          <p class="eyebrow">{isEs ? 'Fabricación Personalizada' : 'Custom Manufacturing'}</p>
+          <h2>{isEs ? '¿No encontró lo que necesita?' : "Don't See What You Need?"}</h2>
+          <p>{isEs
+            ? 'Nos especializamos en piezas OEM personalizadas. Envíenos sus especificaciones — material, dimensiones, tratamiento superficial, cantidad — y le proporcionaremos una cotización competitiva en 24 horas.'
+            : 'We specialize in custom OEM parts. Send us your specifications — material, dimensions, surface treatment, quantity — and we\'ll provide a competitive quote within 24 hours.'}</p>
+          <ul class="custom-cta-features">
+            <li>{isEs ? '✓ Tamaños y especificaciones de rosca personalizados' : '✓ Custom sizes and thread specifications'}</li>
+            <li>{isEs ? '✓ Materiales y tratamientos superficiales personalizados' : '✓ Custom materials and surface treatments'}</li>
+            <li>{isEs ? '✓ Producción de prototipos y muestras disponible' : '✓ Prototype and sample production available'}</li>
+            <li>{isEs ? '✓ Consulta técnica gratuita' : '✓ Free technical consultation'}</li>
+          </ul>
+        </div>
+        <div class="custom-cta-action">
+          <a href={`/${lang}/contact`} class="btn btn-primary btn-lg">{isEs ? 'Solicitar Cotización Personalizada' : 'Request Custom Quote'}</a>
+          <p class="cta-subtext">{isEs
+            ? 'O envíenos un correo a '
+            : 'Or email us at '}<a href="mailto:Jason@carelong.com.cn?subject=Product%20Inquiry%20-%20Carelong%20Website">Jason@carelong.com.cn</a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+.eyebrow {
+  font-size: 0.8125rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--color-secondary);
+  margin-bottom: var(--space-3);
+}
+
+.page-header { background: linear-gradient(135deg, #0F3060 0%, #1E3A6E 100%); color: #fff; padding: var(--space-12) 0; text-align: center; }
+.page-header h1 { color: #fff; font-size: clamp(1.75rem, 4vw, 2.5rem); margin-bottom: var(--space-3); font-weight: 800; }
+.page-header p { font-size: clamp(1rem, 2.5vw, 1.125rem); color: rgba(255,255,255,0.85); margin: 0 auto; }
+
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-8);
+}
+
+.product-cat-card {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  background: var(--color-bg);
+  transition: all var(--transition-base);
+}
+
+.product-cat-card:hover {
+  box-shadow: var(--shadow-xl);
+  transform: translateY(-4px);
+  border-color: var(--color-primary);
+}
+
+.product-cat-image {
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 220px;
+  overflow: hidden;
+}
+
+.product-cat-image img {
+  max-height: 100%;
+  max-width: 100%;
+  object-fit: contain;
+}
+
+.product-cat-body {
+  padding: var(--space-6);
+}
+
+.product-cat-meta {
+  margin-bottom: var(--space-2);
+}
+
+.product-count {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--color-primary);
+  background: rgba(27, 75, 142, 0.08);
+  padding: var(--space-1) var(--space-2);
+  border-radius: 100px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.product-cat-body h2 {
+  font-size: 1.25rem;
+  margin-bottom: var(--space-2);
+  color: var(--color-text);
+}
+
+.product-cat-body p {
+  color: var(--color-text-light);
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  margin-bottom: var(--space-4);
+}
+
+.btn-sm {
+  padding: var(--space-2) var(--space-4);
+  font-size: 0.875rem;
+}
+
+/* Custom CTA */
+.custom-cta {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: var(--space-12);
+  align-items: center;
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  padding: var(--space-12);
+}
+
+.custom-cta-features {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  margin-top: var(--space-4);
+}
+
+.custom-cta-features li {
+  font-size: 0.9375rem;
+  color: var(--color-text-light);
+}
+
+.custom-cta-action {
+  text-align: center;
+  flex-shrink: 0;
+}
+
+.cta-subtext {
+  font-size: 0.8125rem;
+  color: var(--color-text-muted);
+  margin-top: var(--space-3);
+  margin-bottom: 0;
+}
+
+.cta-subtext a {
+  color: var(--color-primary);
+  text-decoration: none;
+}
+
+.cta-subtext a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 1024px) {
+  .products-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 768px) {
+  .custom-cta { grid-template-columns: 1fr; text-align: center; }
+  .custom-cta-features { align-items: center; }
+  .custom-cta-features li { text-align: center; }
+}
+
+@media (max-width: 640px) {
+  .products-grid { grid-template-columns: 1fr; }
+}
+</style>

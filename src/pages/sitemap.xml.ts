@@ -11,7 +11,13 @@ const pages = [
   { url: '/contact/', lastmod: '2026-07-03', priority: '0.9', changefreq: 'monthly' },
   { url: '/factory/', lastmod: '2026-07-03', priority: '0.8', changefreq: 'monthly' },
   { url: '/quality/', lastmod: '2026-07-03', priority: '0.8', changefreq: 'monthly' },
-  { url: '/news/', lastmod: '2026-07-03', priority: '0.7', changefreq: 'weekly' },
+  { url: '/news/', lastmod: '2026-09-03', priority: '0.7', changefreq: 'weekly' },
+  // News articles EN
+  { url: '/news/future-of-commercial-vehicle-fasteners/', lastmod: '2026-09-03', priority: '0.6', changefreq: 'monthly' },
+  { url: '/news/hot-forging-line-expansion/', lastmod: '2026-09-03', priority: '0.6', changefreq: 'monthly' },
+  { url: '/news/hub-bolt-failure-prevention/', lastmod: '2026-09-03', priority: '0.6', changefreq: 'monthly' },
+  { url: '/news/cold-heading-vs-machining/', lastmod: '2026-09-03', priority: '0.6', changefreq: 'monthly' },
+  { url: '/news/record-annual-production-2025/', lastmod: '2026-09-03', priority: '0.6', changefreq: 'monthly' },
   { url: '/faq/', lastmod: '2026-07-03', priority: '0.7', changefreq: 'monthly' },
   // Product category pages
   { url: '/products/', lastmod: '2026-07-03', priority: '0.9', changefreq: 'weekly' },
@@ -35,6 +41,13 @@ const pages = [
   { url: '/products/auto-parts/', lastmod: '2026-07-03', priority: '0.8', changefreq: 'monthly' },
   { url: '/products/other-parts/', lastmod: '2026-07-03', priority: '0.8', changefreq: 'monthly' },
   { url: '/products/tooling-and-moulds/', lastmod: '2026-07-03', priority: '0.8', changefreq: 'monthly' },
+  // Display Rack
+  { url: '/products/display-rack/', lastmod: '2026-07-03', priority: '0.8', changefreq: 'monthly' },
+  { url: '/products/display-rack/supermarket-display-racks/', lastmod: '2026-07-03', priority: '0.8', changefreq: 'monthly' },
+  { url: '/products/display-rack/wall-mounted-storage-racks/', lastmod: '2026-07-03', priority: '0.8', changefreq: 'monthly' },
+  { url: '/products/display-rack/clothing-display-racks/', lastmod: '2026-07-03', priority: '0.8', changefreq: 'monthly' },
+  { url: '/products/display-rack/wooden-display-racks/', lastmod: '2026-07-03', priority: '0.8', changefreq: 'monthly' },
+  { url: '/products/display-rack/newspaper-magazine-racks/', lastmod: '2026-07-03', priority: '0.8', changefreq: 'monthly' },
   // Spanish pages
   { url: '/es/', lastmod: '2026-07-03', priority: '1.0', changefreq: 'weekly' },
   { url: '/es/about/', lastmod: '2026-07-03', priority: '0.9', changefreq: 'monthly' },
@@ -42,7 +55,13 @@ const pages = [
   { url: '/es/contact/', lastmod: '2026-07-03', priority: '0.9', changefreq: 'monthly' },
   { url: '/es/factory/', lastmod: '2026-07-03', priority: '0.8', changefreq: 'monthly' },
   { url: '/es/quality/', lastmod: '2026-07-03', priority: '0.8', changefreq: 'monthly' },
-  { url: '/es/news/', lastmod: '2026-07-03', priority: '0.7', changefreq: 'weekly' },
+  { url: '/es/news/', lastmod: '2026-09-03', priority: '0.7', changefreq: 'weekly' },
+  // News articles ES
+  { url: '/es/news/future-of-commercial-vehicle-fasteners/', lastmod: '2026-09-03', priority: '0.6', changefreq: 'monthly' },
+  { url: '/es/news/hot-forging-line-expansion/', lastmod: '2026-09-03', priority: '0.6', changefreq: 'monthly' },
+  { url: '/es/news/hub-bolt-failure-prevention/', lastmod: '2026-09-03', priority: '0.6', changefreq: 'monthly' },
+  { url: '/es/news/cold-heading-vs-machining/', lastmod: '2026-09-03', priority: '0.6', changefreq: 'monthly' },
+  { url: '/es/news/record-annual-production-2025/', lastmod: '2026-09-03', priority: '0.6', changefreq: 'monthly' },
   { url: '/es/faq/', lastmod: '2026-07-03', priority: '0.7', changefreq: 'monthly' },
   { url: '/es/products/', lastmod: '2026-07-03', priority: '0.9', changefreq: 'weekly' },
   { url: '/es/products/bolts-and-nuts/', lastmod: '2026-07-03', priority: '0.9', changefreq: 'weekly' },
@@ -65,6 +84,13 @@ const pages = [
   { url: '/es/products/auto-parts/', lastmod: '2026-07-03', priority: '0.8', changefreq: 'monthly' },
   { url: '/es/products/other-parts/', lastmod: '2026-07-03', priority: '0.8', changefreq: 'monthly' },
   { url: '/es/products/tooling-and-moulds/', lastmod: '2026-07-03', priority: '0.8', changefreq: 'monthly' },
+  // Display Rack ES
+  { url: '/es/products/display-rack/', lastmod: '2026-07-03', priority: '0.8', changefreq: 'monthly' },
+  { url: '/es/products/display-rack/supermarket-display-racks/', lastmod: '2026-07-03', priority: '0.8', changefreq: 'monthly' },
+  { url: '/es/products/display-rack/wall-mounted-storage-racks/', lastmod: '2026-07-03', priority: '0.8', changefreq: 'monthly' },
+  { url: '/es/products/display-rack/clothing-display-racks/', lastmod: '2026-07-03', priority: '0.8', changefreq: 'monthly' },
+  { url: '/es/products/display-rack/wooden-display-racks/', lastmod: '2026-07-03', priority: '0.8', changefreq: 'monthly' },
+  { url: '/es/products/display-rack/newspaper-magazine-racks/', lastmod: '2026-07-03', priority: '0.8', changefreq: 'monthly' },
 ];
 
 export const GET: APIRoute = () => {

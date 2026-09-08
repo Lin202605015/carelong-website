@@ -3,11 +3,11 @@ import BaseLayout from '@layouts/BaseLayout.astro';
 import Breadcrumb from '@components/Breadcrumb.astro';
 
 const images = [
-  { src: '/images/products/bolts-and-nuts/flange-nuts/flange-nuts-01.webp', alt: 'Flange Nuts product photo' },
-  { src: '/images/products/bolts-and-nuts/flange-nuts/flange-nuts-02.webp', alt: 'Flange Nuts detail view' },
-  { src: '/images/products/bolts-and-nuts/flange-nuts/flange-nuts-03.webp', alt: 'Flange Nuts application' },
-  { src: '/images/products/bolts-and-nuts/flange-nuts/flange-nuts-04.webp', alt: 'Flange Nuts comparison' },
-  { src: '/images/products/bolts-and-nuts/flange-nuts/flange-nuts-05.webp', alt: 'Flange Nuts bulk supply' },
+  { src: '/images/products/bolts-and-nuts/flange-nuts/flange-nuts-01-v2.webp', alt: 'Flange Nuts product photo' },
+  { src: '/images/products/bolts-and-nuts/flange-nuts/flange-nuts-02-v2.webp', alt: 'Flange Nuts detail view' },
+  { src: '/images/products/bolts-and-nuts/flange-nuts/flange-nuts-03-v2.webp', alt: 'Flange Nuts application' },
+  { src: '/images/products/bolts-and-nuts/flange-nuts/flange-nuts-04-v2.webp', alt: 'Flange Nuts comparison' },
+  { src: '/images/products/bolts-and-nuts/flange-nuts/flange-nuts-05-v2.webp', alt: 'Flange Nuts bulk supply' },
 ];
 ---
 
@@ -58,7 +58,7 @@ const images = [
           <p>Our flange nuts feature an integrated washer base that distributes the load over a larger surface area, preventing damage to the mating material and providing superior resistance to loosening under vibration. Available in both hex and serrated versions for different application requirements.</p>
 
           <div class="product-badges">
-            <span class="badge">M6–M24</span>
+            <span class="badge">M6–M20</span>
             <span class="badge">Grade 8/10</span>
             <span class="badge">DIN 6923 / ISO 4161</span>
             <span class="badge">Carbon & Alloy Steel</span>
@@ -80,7 +80,7 @@ const images = [
         <h2>Key Attributes</h2>
       </header>
       <div class="spec-table spec-table-grid">
-        <div class="spec-row"><div class="spec-name">thread size</div><div class="spec-value">M6 – M24</div></div>
+        <div class="spec-row"><div class="spec-name">thread size</div><div class="spec-value">M6 – M20</div></div>
         <div class="spec-row"><div class="spec-name">strength grade</div><div class="spec-value">Grade 8, Grade 10</div></div>
         <div class="spec-row"><div class="spec-name">material</div><div class="spec-value">Carbon Steel, Alloy Steel 40Cr</div></div>
         <div class="spec-row"><div class="spec-name">surface treatment</div><div class="spec-value">Zinc Plated, Hot-Dip Galvanized, Dacromet</div></div>
@@ -107,15 +107,13 @@ const images = [
           <tbody>
             <tr><td>M6</td><td>1.0</td><td>8</td><td>Carbon Steel</td><td>Zinc Plated</td><td>Serrated</td><td>DIN 6923</td></tr>
             <tr><td>M8</td><td>1.25</td><td>10</td><td>Carbon Steel</td><td>Zinc Plated</td><td>Serrated</td><td>DIN 6923</td></tr>
-            <tr><td>M10</td><td>1.5</td><td>10</td><td>Alloy Steel</td><td>Zinc Plated</td><td>Hex</td><td>ISO 4161</td></tr>
-            <tr><td>M12</td><td>1.75</td><td>10</td><td>Alloy Steel</td><td>Hot-Dip Galv.</td><td>Hex</td><td>ISO 4161</td></tr>
+            <tr><td>M10</td><td>1.5</td><td>10</td><td>Alloy Steel</td><td>Zinc Plated</td><td>Smooth</td><td>ISO 4161</td></tr>
+            <tr><td>M12</td><td>1.75</td><td>10</td><td>Alloy Steel</td><td>Hot-Dip Galv.</td><td>Smooth</td><td>ISO 4161</td></tr>
             <tr><td>M14</td><td>2.0</td><td>8</td><td>Carbon Steel</td><td>Zinc Plated</td><td>Serrated</td><td>DIN 6923</td></tr>
-            <tr><td>M16</td><td>2.0</td><td>10</td><td>Alloy Steel</td><td>Hot-Dip Galv.</td><td>Hex</td><td>ISO 4161</td></tr>
-            <tr><td>M18</td><td>2.5</td><td>10</td><td>Alloy Steel</td><td>Zinc Plated</td><td>Hex</td><td>ISO 4161</td></tr>
-            <tr><td>M20</td><td>2.5</td><td>10</td><td>Alloy Steel</td><td>Dacromet</td><td>Hex</td><td>DIN 6923</td></tr>
-            <tr><td>M22</td><td>2.5</td><td>10</td><td>Alloy Steel</td><td>Hot-Dip Galv.</td><td>Hex</td><td>ISO 4161</td></tr>
-            <tr><td>M24</td><td>3.0</td><td>10</td><td>Alloy Steel</td><td>Zinc Plated</td><td>Hex</td><td>ISO 4161</td></tr>
-          </tbody>
+            <tr><td>M16</td><td>2.0</td><td>10</td><td>Alloy Steel</td><td>Hot-Dip Galv.</td><td>Smooth</td><td>ISO 4161</td></tr>
+            <tr><td>M18</td><td>2.5</td><td>10</td><td>Alloy Steel</td><td>Zinc Plated</td><td>Smooth</td><td>ISO 4161</td></tr>
+            <tr><td>M20</td><td>2.5</td><td>10</td><td>Alloy Steel</td><td>Dacromet</td><td>Smooth</td><td>DIN 6923</td></tr>
+                                  </tbody>
         </table>
       </div>
 
@@ -127,10 +125,9 @@ const images = [
           <tbody>
             <tr><th>Mark:</th><td>8 or 10 (Class/Mark corresponds to strength grade)</td></tr>
             <tr><th>Surface Treatment:</th><td>Zinc Plated, Hot-Dip Galvanized, Dacromet coating available</td></tr>
-            <tr><th>Carton Size:</th><td>25X20X12 cm (standard pack)</td></tr>
-            <tr><th>Buyer's Inquiry:</th><td>Please specify thread size, pitch, grade, flange type, and surface treatment required</td></tr>
+                        <tr><th>Buyer's Inquiry:</th><td>Please specify thread size, pitch, grade, flange type, and surface treatment required</td></tr>
             <tr><th>Minimum Quantity:</th><td>Varies by size — contact us for details</td></tr>
-            <tr><th>Delivery:</th><td>30 Days</td></tr>
+            <tr><th>Delivery:</th><td>35 Days</td></tr>
             <tr><th>Packing:</th><td>Standard export cartons; customized packing available</td></tr>
             <tr><td colspan="2" class="notes-paragraph">Custom sizes and materials are available. OEM orders are welcome — contact us with your specifications.</td></tr>
           </tbody>

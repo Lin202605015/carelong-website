@@ -3,11 +3,11 @@ import BaseLayout from '@layouts/BaseLayout.astro';
 import Breadcrumb from '@components/Breadcrumb.astro';
 
 const images = [
-  { src: '/images/products/bolts-and-nuts/wheel-nuts/wheel-nuts-01.webp', alt: 'Wheel Nuts product photo' },
-  { src: '/images/products/bolts-and-nuts/wheel-nuts/wheel-nuts-02.webp', alt: 'Wheel Nuts detail view' },
-  { src: '/images/products/bolts-and-nuts/wheel-nuts/wheel-nuts-03.webp', alt: 'Wheel Nuts application' },
-  { src: '/images/products/bolts-and-nuts/wheel-nuts/wheel-nuts-04.webp', alt: 'Wheel Nuts comparison' },
-  { src: '/images/products/bolts-and-nuts/wheel-nuts/wheel-nuts-05.webp', alt: 'Wheel Nuts bulk supply' },
+  { src: '/images/products/bolts-and-nuts/wheel-nuts/wheel-nuts-01-v2.webp', alt: 'Wheel Nuts product photo' },
+  { src: '/images/products/bolts-and-nuts/wheel-nuts/wheel-nuts-02-v2.webp', alt: 'Wheel Nuts detail view' },
+  { src: '/images/products/bolts-and-nuts/wheel-nuts/wheel-nuts-03-v2.webp', alt: 'Wheel Nuts application' },
+  { src: '/images/products/bolts-and-nuts/wheel-nuts/wheel-nuts-04-v2.webp', alt: 'Wheel Nuts comparison' },
+  { src: '/images/products/bolts-and-nuts/wheel-nuts/wheel-nuts-05-v2.webp', alt: 'Wheel Nuts bulk supply' },
 ];
 ---
 
@@ -59,7 +59,7 @@ const images = [
 
           <div class="product-badges">
             <span class="badge">M18–M27</span>
-            <span class="badge">Grade 10.9/12.9</span>
+            <span class="badge">Class 10/12</span>
             <span class="badge">RH & LH Thread</span>
             <span class="badge">OEM Service</span>
           </div>
@@ -81,7 +81,7 @@ const images = [
       </header>
       <div class="spec-table spec-table-grid">
         <div class="spec-row"><div class="spec-name">thread size</div><div class="spec-value">M18 – M27</div></div>
-        <div class="spec-row"><div class="spec-name">strength grade</div><div class="spec-value">Grade 10.9, Grade 12.9</div></div>
+        <div class="spec-row"><div class="spec-name">strength grade</div><div class="spec-value">Class 10, Class 12</div></div>
         <div class="spec-row"><div class="spec-name">material</div><div class="spec-value">Hardened Carbon Steel, Alloy Steel 40Cr</div></div>
         <div class="spec-row"><div class="spec-name">surface treatment</div><div class="spec-value">Zinc Plated, Hot-Dip Galvanized, Dacromet</div></div>
         <div class="spec-row"><div class="spec-name">thread direction</div><div class="spec-value">Right-Hand (RH) & Left-Hand (LH)</div></div>
@@ -100,21 +100,21 @@ const images = [
               <th>Grade</th>
               <th>Material</th>
               <th>Surface</th>
-              <th>Thread</th>
+              <th>Thread Direction</th>
               <th>OEM Compatible</th>
             </tr>
           </thead>
           <tbody>
-            <tr><td>M18</td><td>1.5</td><td>10.9</td><td>Hardened Steel</td><td>Zinc Plated</td><td>RH</td><td>BPW / SAF</td></tr>
-            <tr><td>M20</td><td>1.5</td><td>10.9</td><td>Hardened Steel</td><td>Hot-Dip Galv.</td><td>RH</td><td>Meritor</td></tr>
-            <tr><td>M22</td><td>1.5</td><td>10.9</td><td>Alloy Steel 40Cr</td><td>Zinc Plated</td><td>RH</td><td>BPW / SAF</td></tr>
-            <tr><td>M24</td><td>1.5 / 2.0</td><td>12.9</td><td>Alloy Steel 40Cr</td><td>Zinc Plated</td><td>RH</td><td>SAF / Meritor</td></tr>
-            <tr><td>M27</td><td>2.0</td><td>12.9</td><td>Alloy Steel 40Cr</td><td>Dacromet</td><td>RH</td><td>Trailers</td></tr>
-            <tr><td>M22</td><td>1.5</td><td>10.9</td><td>Alloy Steel 40Cr</td><td>Zinc Plated</td><td>LH</td><td>BPW / SAF</td></tr>
-            <tr><td>M24</td><td>1.5</td><td>10.9</td><td>Alloy Steel 40Cr</td><td>Hot-Dip Galv.</td><td>LH</td><td>Meritor</td></tr>
-            <tr><td>M18</td><td>1.5</td><td>10.9</td><td>Hardened Steel</td><td>Zinc Plated</td><td>RH</td><td>Construction</td></tr>
-            <tr><td>M20</td><td>1.5</td><td>12.9</td><td>Alloy Steel 40Cr</td><td>Dacromet</td><td>RH</td><td>Buses</td></tr>
-            <tr><td>M22</td><td>1.5</td><td>12.9</td><td>Alloy Steel 40Cr</td><td>Hot-Dip Galv.</td><td>RH</td><td>Custom OEM</td></tr>
+            <tr><td>M18</td><td>1.5</td><td>10</td><td>Hardened Steel</td><td>Zinc Plated</td><td>RH</td><td>BPW / SAF</td></tr>
+            <tr><td>M20</td><td>1.5</td><td>10</td><td>Hardened Steel</td><td>Hot-Dip Galv.</td><td>RH</td><td>Meritor</td></tr>
+            <tr><td>M22</td><td>1.5</td><td>10</td><td>Alloy Steel 40Cr</td><td>Zinc Plated</td><td>RH</td><td>BPW / SAF</td></tr>
+            <tr><td>M24</td><td>1.5 / 2.0</td><td>12</td><td>Alloy Steel 40Cr</td><td>Zinc Plated</td><td>RH</td><td>SAF / Meritor</td></tr>
+            <tr><td>M27</td><td>2.0</td><td>12</td><td>Alloy Steel 40Cr</td><td>Dacromet</td><td>RH</td><td>Trailers</td></tr>
+            <tr><td>M22</td><td>1.5</td><td>10</td><td>Alloy Steel 40Cr</td><td>Zinc Plated</td><td>LH</td><td>BPW / SAF</td></tr>
+            <tr><td>M24</td><td>1.5</td><td>10</td><td>Alloy Steel 40Cr</td><td>Hot-Dip Galv.</td><td>LH</td><td>Meritor</td></tr>
+            <tr><td>M18</td><td>1.5</td><td>10</td><td>Hardened Steel</td><td>Zinc Plated</td><td>RH</td><td>Construction</td></tr>
+            <tr><td>M20</td><td>1.5</td><td>12</td><td>Alloy Steel 40Cr</td><td>Dacromet</td><td>RH</td><td>Buses</td></tr>
+            <tr><td>M22</td><td>1.5</td><td>12</td><td>Alloy Steel 40Cr</td><td>Hot-Dip Galv.</td><td>RH</td><td>Custom OEM</td></tr>
           </tbody>
         </table>
       </div>
@@ -125,12 +125,11 @@ const images = [
       <div class="data-table-wrapper">
         <table class="data-table notes-table">
           <tbody>
-            <tr><th>Mark:</th><td>10.9 or 12.9 (Class/Mark corresponds to strength grade)</td></tr>
+            <tr><th>Mark:</th><td>10 or 12 (Class/Mark corresponds to strength grade)</td></tr>
             <tr><th>Surface Treatment:</th><td>Zinc Plated, Hot-Dip Galvanized, Dacromet available</td></tr>
-            <tr><th>Carton Size:</th><td>30X25X20 cm (standard pack)</td></tr>
-            <tr><th>Buyer's Inquiry:</th><td>Please specify thread size, pitch, grade, thread direction (RH/LH), and compatible vehicle/axle brand</td></tr>
+                        <tr><th>Buyer's Inquiry:</th><td>Please specify thread size, pitch, grade, thread direction (RH/LH), and compatible vehicle/axle brand</td></tr>
             <tr><th>Minimum Quantity:</th><td>Varies by size — contact us for details</td></tr>
-            <tr><th>Delivery:</th><td>30 Days</td></tr>
+            <tr><th>Delivery:</th><td>35 Days</td></tr>
             <tr><th>Packing:</th><td>Standard export cartons; customized packing available</td></tr>
             <tr><td colspan="2" class="notes-paragraph">Custom thread specifications and OEM packaging are available. Contact us with your part numbers or vehicle specifications.</td></tr>
           </tbody>

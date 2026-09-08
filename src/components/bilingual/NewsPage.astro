@@ -1,4 +1,4 @@
----
+﻿---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import type { Lang } from '../../data/i18n/navigation';
 
@@ -21,13 +21,13 @@ const t = (en: string, es: string) => isEs ? es : en;
         <main class="news-main">
           <!-- Featured Post -->
           <div class="featured-post">
-            <img src="/images/news/featured.webp" alt="Featured Article" style="height:360px;width:100%;object-fit:cover;border-radius:var(--radius-xl);margin-bottom:var(--space-6);" />
+            <img src="/images/news/featured-v2.webp" alt="Featured Article" style="height:360px;width:100%;object-fit:cover;border-radius:var(--radius-xl);margin-bottom:var(--space-6);" />
             <div class="post-meta">
               <span class="post-category">{t('Industry Insights', 'Perspectivas de la Industria')}</span>
               <time datetime="2026-04-15">{isEs ? '15 de Abril, 2026' : 'April 15, 2026'}</time>
             </div>
             <h2 class="featured-title">
-              <a href="#">{t('The Future of Commercial Vehicle Fasteners: Trends Shaping the Auto Parts Industry in 2026', 'El Futuro de los Sujetadores para Vehículos Comerciales: Tendencias que Moldean la Industria en 2026')}</a>
+              <a href={isEs ? '/es/news/future-of-commercial-vehicle-fasteners' : '/news/future-of-commercial-vehicle-fasteners'}>{t('The Future of Commercial Vehicle Fasteners: Trends Shaping the Auto Parts Industry in 2026', 'El Futuro de los Sujetadores para Vehículos Comerciales: Tendencias que Moldean la Industria en 2026')}</a>
             </h2>
             <p class="featured-excerpt">{t(
               'As commercial vehicle technology advances, fastener requirements are evolving. Lightweight materials, higher strength grades, and new surface coating technologies are driving innovation in hub bolts, wheel studs, and suspension fasteners. We explore the key trends and what they mean for fleet operators and parts manufacturers alike.',
@@ -36,42 +36,42 @@ const t = (en: string, es: string) => isEs ? es : en;
 
           <div class="grid-2 posts-list">
             <article class="post-card">
-              <img src="/images/news/hot-forging-press.webp" alt="Hot Forging Press" style="height:180px;width:100%;object-fit:cover;border-radius:var(--radius-md);margin-bottom:var(--space-4);" />
+              <img src="/images/news/hot-forging-press-v2.webp" alt="Hot Forging Press" style="height:180px;width:100%;object-fit:cover;border-radius:var(--radius-md);margin-bottom:var(--space-4);" />
               <div class="post-meta">
                 <span class="post-category">{t('Company News', 'Noticias de la Empresa')}</span>
                 <time datetime="2026-03-28">{isEs ? '28 de Marzo, 2026' : 'March 28, 2026'}</time>
               </div>
-              <h3>{t('Carelong Expands Hot Forging Line with Two New 1000-Ton Presses', 'Carelong Amplía la Línea de Forjado en Caliente con Dos Nuevas Prensas de 1000 Toneladas')}</h3>
+              <h3><a href={isEs ? '/es/news/hot-forging-line-expansion' : '/news/hot-forging-line-expansion'}>{t('Carelong Expands Hot Forging Line with Two New 1000-Ton Presses', 'Carelong Amplía la Línea de Forjado en Caliente con Dos Nuevas Prensas de 1000 Toneladas')}</a></h3>
               <p>{t('We\'ve added significant hot forging capacity to meet growing demand from European trailer manufacturers. The new presses enable us to produce larger components up to 5kg per piece.', 'Hemos agregado capacidad significativa de forjado en caliente para satisfacer la creciente demanda de fabricantes europeos de remolques. Las nuevas prensas nos permiten producir componentes más grandes de hasta 5 kg por pieza.')}</p>
             </article>
 
             <article class="post-card">
-              <img src="/images/news/hub-bolt-failure.webp" alt="Hub Bolt Failure" style="height:180px;width:100%;object-fit:cover;border-radius:var(--radius-md);margin-bottom:var(--space-4);" />
+              <img src="/images/news/hub-bolt-failure-v2.webp" alt="Hub Bolt Failure" style="height:180px;width:100%;object-fit:cover;border-radius:var(--radius-md);margin-bottom:var(--space-4);" />
               <div class="post-meta">
                 <span class="post-category">{t('Product Knowledge', 'Conocimiento del Producto')}</span>
                 <time datetime="2026-03-10">{isEs ? '10 de Marzo, 2026' : 'March 10, 2026'}</time>
               </div>
-              <h3>{t('Understanding Hub Bolt Failure Modes and How to Prevent Them', 'Comprensión de los Modos de Falla de Pernos de Cubo y Cómo Prevenirlos')}</h3>
+              <h3><a href={isEs ? '/es/news/hub-bolt-failure-prevention' : '/news/hub-bolt-failure-prevention'}>{t('Understanding Hub Bolt Failure Modes and How to Prevent Them', 'Comprensión de los Modos de Falla de Pernos de Cubo y Cómo Prevenirlos')}</a></h3>
               <p>{t('Wheel end failures can be costly and dangerous. This guide explains the common causes of hub bolt failures, how to inspect for early warning signs, and best practices for selection and installation.', 'Las fallas de extremo de rueda pueden ser costosas y peligrosas. Esta guía explica las causas comunes de fallas de pernos de cubo, cómo inspeccionar señales de advertencia temprana y las mejores prácticas para selección e instalación.')}</p>
             </article>
 
             <article class="post-card">
-              <img src="/images/news/cold-heading-vs-machining.webp" alt="Cold Heading vs Machining" style="height:180px;width:100%;object-fit:cover;border-radius:var(--radius-md);margin-bottom:var(--space-4);" />
+              <img src="/images/news/cold-heading-vs-machining-v2.webp" alt="Cold Heading vs Machining" style="height:180px;width:100%;object-fit:cover;border-radius:var(--radius-md);margin-bottom:var(--space-4);" />
               <div class="post-meta">
                 <span class="post-category">{t('Industry Insights', 'Perspectivas de la Industria')}</span>
                 <time datetime="2026-02-20">{isEs ? '20 de Febrero, 2026' : 'February 20, 2026'}</time>
               </div>
-              <h3>{t('Cold Heading vs. Machining: Choosing the Right Manufacturing Process', 'Embutición en Frío vs. Mecanizado: Elegir el Proceso de Fabricación Correcto')}</h3>
+              <h3><a href={isEs ? '/es/news/cold-heading-vs-machining' : '/news/cold-heading-vs-machining'}>{t('Cold Heading vs. Machining: Choosing the Right Manufacturing Process', 'Embutición en Frío vs. Mecanizado: Elegir el Proceso de Fabricación Correcto')}</a></h3>
               <p>{t('Not all fasteners are created equal. The manufacturing process significantly affects cost, strength, and performance. Learn when to choose cold heading and when machining is the better option.', 'No todos los sujetadores son iguales. El proceso de fabricación afecta significativamente el costo, la resistencia y el rendimiento. Aprenda cuándo elegir embutición en frío y cuándo el mecanizado es la mejor opción.')}</p>
             </article>
 
             <article class="post-card">
-              <img src="/images/news/production-record.webp" alt="Production Record" style="height:180px;width:100%;object-fit:cover;border-radius:var(--radius-md);margin-bottom:var(--space-4);" />
+              <img src="/images/news/production-record-v2.webp" alt="Production Record" style="height:180px;width:100%;object-fit:cover;border-radius:var(--radius-md);margin-bottom:var(--space-4);" />
               <div class="post-meta">
                 <span class="post-category">{t('Company News', 'Noticias de la Empresa')}</span>
                 <time datetime="2026-01-15">{isEs ? '15 de Enero, 2026' : 'January 15, 2026'}</time>
               </div>
-              <h3>{t('Carelong Achieves Record Annual Production of 120 Million Parts in 2025', 'Carelong Alcanza Producción Anual Récord de 120 Millones de Piezas en 2025')}</h3>
+              <h3><a href={isEs ? '/es/news/record-annual-production-2025' : '/news/record-annual-production-2025'}>{t('Carelong Achieves Record Annual Production of 120 Million Parts in 2025', 'Carelong Alcanza Producción Anual Récord de 120 Millones de Piezas en 2025')}</a></h3>
               <p>{t('Reflecting on a record year: we produced over 120 million auto parts in 2025, serving clients in 32 countries. Thank you to our team and partners for making this possible.', 'Reflexionando sobre un año récord: produjimos más de 120 millones de piezas de automóviles en 2025, sirviendo a clientes en 32 países. Gracias a nuestro equipo y socios por hacer esto posible.')}</p>
             </article>
           </div>
@@ -82,50 +82,48 @@ const t = (en: string, es: string) => isEs ? es : en;
           <div class="sidebar-widget">
             <h3>{t('Categories', 'Categorías')}</h3>
             <ul class="category-list">
-              <li><a href="#">{t('Industry Insights', 'Perspectivas de la Industria')} <span>(12)</span></a></li>
-              <li><a href="#">{t('Company News', 'Noticias de la Empresa')} <span>(8)</span></a></li>
-              <li><a href="#">{t('Product Knowledge', 'Conocimiento del Producto')} <span>(15)</span></a></li>
-              <li><a href="#">{t('Manufacturing Technology', 'Tecnología de Fabricación')} <span>(6)</span></a></li>
-              <li><a href="#">{t('Quality & Standards', 'Calidad y Estándares')} <span>(4)</span></a></li>
+              <li><a href={isEs ? '/es/news/future-of-commercial-vehicle-fasteners' : '/news/future-of-commercial-vehicle-fasteners'}>{t('Industry Insights', 'Perspectivas de la Industria')} <span>(2)</span></a></li>
+              <li><a href={isEs ? '/es/news/hot-forging-line-expansion' : '/news/hot-forging-line-expansion'}>{t('Company News', 'Noticias de la Empresa')} <span>(2)</span></a></li>
+              <li><a href={isEs ? '/es/news/hub-bolt-failure-prevention' : '/news/hub-bolt-failure-prevention'}>{t('Product Knowledge', 'Conocimiento del Producto')} <span>(1)</span></a></li>
             </ul>
           </div>
 
           <div class="sidebar-widget">
-            <h3>{t('Popular Articles', 'Artículos Populares')}</h3>
+            <h3>{t('All Articles', 'Todos los Artículos')}</h3>
             <ul class="popular-list">
               <li>
                 <span class="popular-num">01</span>
                 <div>
-                  <a href="#">{t('How to Select the Right King Pin Kit for Your Trailer Axle', 'Cómo Seleccionar el Juego de Perno Rey Correcto para su Eje de Remolque')}</a>
-                  <span class="popular-views">2.4k views</span>
+                  <a href={isEs ? '/es/news/future-of-commercial-vehicle-fasteners' : '/news/future-of-commercial-vehicle-fasteners'}>{t('The Future of Commercial Vehicle Fasteners: Trends Shaping the Auto Parts Industry in 2026', 'El Futuro de los Sujetadores para Vehículos Comerciales: Tendencias que Moldean la Industria en 2026')}</a>
+                  <span class="popular-date">{isEs ? '15 de Abril, 2026' : 'April 15, 2026'}</span>
                 </div>
               </li>
               <li>
                 <span class="popular-num">02</span>
                 <div>
-                  <a href="#">{t('Dacromet vs. Zinc Plating: Which Coating is Right for Your Parts?', 'Dacromet vs. Galvanoplastia de Zinc: ¿Qué Recubrimiento es el Correcto para sus Piezas?')}</a>
-                  <span class="popular-views">1.8k views</span>
+                  <a href={isEs ? '/es/news/hot-forging-line-expansion' : '/news/hot-forging-line-expansion'}>{t('Carelong Expands Hot Forging Line with Two New 1000-Ton Presses', 'Carelong Amplía la Línea de Forjado en Caliente con Dos Nuevas Prensas de 1000 Toneladas')}</a>
+                  <span class="popular-date">{isEs ? '28 de Marzo, 2026' : 'March 28, 2026'}</span>
                 </div>
               </li>
               <li>
                 <span class="popular-num">03</span>
                 <div>
-                  <a href="#">{t('Understanding ISO 9001 and Why It Matters for Auto Parts', 'Comprensión de ISO 9001 y Por Qué es Importante para Autopartes')}</a>
-                  <span class="popular-views">1.5k views</span>
+                  <a href={isEs ? '/es/news/hub-bolt-failure-prevention' : '/news/hub-bolt-failure-prevention'}>{t('Understanding Hub Bolt Failure Modes and How to Prevent Them', 'Comprensión de los Modos de Falla de Pernos de Cubo y Cómo Prevenirlos')}</a>
+                  <span class="popular-date">{isEs ? '10 de Marzo, 2026' : 'March 10, 2026'}</span>
                 </div>
               </li>
               <li>
                 <span class="popular-num">04</span>
                 <div>
-                  <a href="#">{t('Common Causes of Wheel End Failures and Prevention Tips', 'Causas Comunes de Fallas de Extremo de Rueda y Consejos de Prevención')}</a>
-                  <span class="popular-views">1.2k views</span>
+                  <a href={isEs ? '/es/news/cold-heading-vs-machining' : '/news/cold-heading-vs-machining'}>{t('Cold Heading vs. Machining: Choosing the Right Manufacturing Process', 'Embutición en Frío vs. Mecanizado: Elegir el Proceso de Fabricación Correcto')}</a>
+                  <span class="popular-date">{isEs ? '20 de Febrero, 2026' : 'February 20, 2026'}</span>
                 </div>
               </li>
               <li>
                 <span class="popular-num">05</span>
                 <div>
-                  <a href="#">{t('A Complete Guide to Cold Heading Wire Materials', 'Una Guía Completa de Materiales de Alambre para Embutición en Frío')}</a>
-                  <span class="popular-views">980 views</span>
+                  <a href={isEs ? '/es/news/record-annual-production-2025' : '/news/record-annual-production-2025'}>{t('Carelong Achieves Record Annual Production of 120 Million Parts in 2025', 'Carelong Alcanza Producción Anual Récord de 120 Millones de Piezas en 2025')}</a>
+                  <span class="popular-date">{isEs ? '15 de Enero, 2026' : 'January 15, 2026'}</span>
                 </div>
               </li>
             </ul>
@@ -178,6 +176,7 @@ time { color: var(--color-text-muted); }
 .popular-list a { font-size: 0.875rem; color: var(--color-text); text-decoration: none; font-weight: 500; line-height: 1.4; display: block; margin-bottom: var(--space-1); }
 .popular-list a:hover { color: var(--color-primary); }
 .popular-views { font-size: 0.75rem; color: var(--color-text-muted); }
+.popular-date { font-size: 0.75rem; color: var(--color-text-muted); }
 .sidebar-cta { background: var(--color-primary); border-color: var(--color-primary); }
 .sidebar-cta h3 { color: #fff; border-bottom-color: rgba(255,255,255,0.3); }
 .sidebar-cta p { color: rgba(255,255,255,0.85); font-size: 0.875rem; margin-bottom: var(--space-4); }

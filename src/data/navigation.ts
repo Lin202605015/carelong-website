@@ -54,6 +54,5 @@ export const navigation: NavItem[] = [
   { label: 'Quality Control', href: '/quality' },
   { label: 'News', href: '/news' },
   { label: 'FAQ', href: '/faq' },
-  { label: 'Banking', href: '/banking' },
   { label: 'Contact Us', href: '/contact' },
 ];

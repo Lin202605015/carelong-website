@@ -1,54 +1,24 @@
 ---
-// /thank-you - 表单提交成功页
+import BaseLayout from '../layouts/BaseLayout.astro';
 ---
+<BaseLayout lang="en" title="Message Sent | Xiamen Carelong" noindex>
+  <section class="ty-section">
+    <div class="container text-center">
+      <div class="ty-icon">✅</div>
+      <h1>Message Sent!</h1>
+      <p>Thank you for contacting Xiamen Carelong. We will respond to your inquiry within 24 hours.</p>
+      <p class="ty-contact">If your inquiry is urgent, contact us directly:<br/>
+      <a href="tel:+865925185361">+86-592-5185361</a> | <a href="mailto:Jason@carelong.com.cn">Jason@carelong.com.cn</a></p>
+      <a href="/" class="btn btn-primary">Back to Home</a>
+    </div>
+  </section>
+</BaseLayout>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Thank You | Carelong</title>
-  <meta name="robots" content="noindex">
-  <style>
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background: #f5f7fa;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 100vh;
-      margin: 0;
-    }
-    .card {
-      background: white;
-      border-radius: 16px;
-      padding: 60px 48px;
-      text-align: center;
-      max-width: 480px;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
-    }
-    .icon { font-size: 64px; margin-bottom: 20px; }
-    h1 { color: #0F3060; font-size: 28px; margin-bottom: 12px; }
-    p { color: #666; font-size: 16px; line-height: 1.6; margin-bottom: 24px; }
-    .btn {
-      display: inline-block;
-      padding: 12px 32px;
-      background: #0F3060;
-      color: white;
-      border-radius: 8px;
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 15px;
-    }
-    .btn:hover { background: #1a4a8a; }
-  </style>
-</head>
-<body>
-  <div class="card">
-    <div class="icon">✅</div>
-    <h1>Thank You!</h1>
-    <p>Your message has been sent successfully. We'll get back to you within 24 hours.</p>
-    <a href="/" class="btn">← Back to Home</a>
-  </div>
-</body>
-</html>
+<style>
+.ty-section { padding: var(--space-16) 0; text-align: center; }
+.ty-icon { font-size: 5rem; margin-bottom: var(--space-6); }
+.ty-section h1 { color: var(--color-primary); margin-bottom: var(--space-4); }
+.ty-section p { font-size: 1.125rem; color: var(--color-text-muted); margin-bottom: var(--space-4); }
+.ty-contact { font-size: 0.9375rem !important; }
+.ty-contact a { color: var(--color-primary); }
+</style>

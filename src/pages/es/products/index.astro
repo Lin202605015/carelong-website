@@ -228,7 +228,26 @@ const categories: ProductCategory[] = [
 
   <!-- Products Grid -->
   <section class="section">
-    <div class="container">
+    <div class="container products-layout">
+      <aside class="product-sidebar">
+        <nav class="product-nav" aria-label="Product categories">
+          <p class="product-nav-title">Categorías de Productos</p>
+          <ul>
+            <li><a href="/es/products/bolts-and-nuts">Pernos y Tuercas</a></li>
+            <li><a href="/es/products/display-rack">Expositores y Estanterías</a></li>
+            <li><a href="/es/products/stamping-parts">Piezas Estampadas</a></li>
+            <li><a href="/es/products/die-casting-parts">Piezas de Fundición a Presión</a></li>
+            <li><a href="/es/products/forging-parts">Piezas Forjadas</a></li>
+            <li><a href="/es/products/machining-parts">Piezas Mecanizadas</a></li>
+            <li><a href="/es/products/welding-parts">Piezas Soldadas</a></li>
+            <li><a href="/es/products/plastic-rubber-parts">Piezas de Plástico y Caucho</a></li>
+            <li><a href="/es/products/tooling-and-moulds">Utillaje y Moldes</a></li>
+            <li><a href="/es/products/heavy-equipment-parts">Piezas de Equipo Pesado</a></li>
+            <li><a href="/es/products/auto-parts">Autopartes</a></li>
+            <li><a href="/es/products/other-parts">Otras Piezas</a></li>
+          </ul>
+        </nav>
+      </aside>
       <div class="products-grid">
         {categories.map(cat => (
           <a href={`/es/products/${cat.slug}`} class="product-cat-card" data-category={cat.filter}>
@@ -290,8 +309,70 @@ const categories: ProductCategory[] = [
   margin-bottom: var(--space-3);
 }
 
+/* Product Sidebar (sticky floating nav) */
+.products-layout {
+  display: grid;
+  grid-template-columns: 230px 1fr;
+  gap: var(--space-8);
+  align-items: start;
+}
+
+.product-sidebar {
+  position: sticky;
+  top: 84px;
+  align-self: start;
+}
+
+.product-nav {
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: 16px;
+  padding: 1.25rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+}
+
+.product-nav-title {
+  font-size: 0.8125rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--color-text-light);
+  margin: 0 0 var(--space-3);
+}
+
+.product-nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.product-nav a {
+  display: block;
+  padding: 0.5rem 0.75rem;
+  border-radius: 8px;
+  color: var(--color-text);
+  text-decoration: none;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.product-nav a:hover {
+  background: rgba(27, 75, 142, 0.08);
+  color: var(--color-primary);
+}
+
+.product-nav a.active {
+  background: var(--color-primary);
+  color: #fff;
+}
+
 /* Filter Bar */
 .filter-bar {
+
   background: var(--color-bg-alt);
   border-bottom: 1px solid var(--color-border);
   padding: var(--space-4) 0;
@@ -451,8 +532,11 @@ const categories: ProductCategory[] = [
 }
 
 @media (max-width: 1024px) {
+  .products-layout { grid-template-columns: 1fr; }
+  .product-sidebar { position: static; margin-bottom: var(--space-6); }
   .products-grid { grid-template-columns: repeat(2, 1fr); }
 }
+
 
 @media (max-width: 768px) {
   .custom-cta { grid-template-columns: 1fr; text-align: center; }

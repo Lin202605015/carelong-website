@@ -227,8 +227,7 @@ const categories: ProductCategory[] = [
 
 
   <!-- Products Grid -->
-  <section class="section">
-    <div class="container products-layout">
+  <section class="section products-section">
       <aside class="product-sidebar">
         <nav class="product-nav" aria-label="Product categories">
           <p class="product-nav-title">Categorías de Productos</p>
@@ -248,6 +247,7 @@ const categories: ProductCategory[] = [
           </ul>
         </nav>
       </aside>
+    <div class="container">
       <div class="products-grid">
         {categories.map(cat => (
           <a href={`/es/products/${cat.slug}`} class="product-cat-card" data-category={cat.filter}>
@@ -310,11 +310,17 @@ const categories: ProductCategory[] = [
 }
 
 /* Product Sidebar (sticky floating nav) */
-.products-layout {
+.products-section {
   display: grid;
   grid-template-columns: 230px 1fr;
   gap: var(--space-8);
   align-items: start;
+}
+
+.products-section > .container {
+  max-width: none;
+  margin: 0;
+  width: 100%;
 }
 
 .product-sidebar {
@@ -532,9 +538,29 @@ const categories: ProductCategory[] = [
 }
 
 @media (max-width: 1024px) {
-  .products-layout { grid-template-columns: 1fr; }
+  .products-section { grid-template-columns: 1fr; }
   .product-sidebar { position: static; margin-bottom: var(--space-6); }
   .products-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (min-width: 1536px) {
+  .products-section {
+    display: flex;
+    gap: var(--space-8);
+    align-items: flex-start;
+    padding-left: var(--space-8);
+    padding-right: var(--space-8);
+  }
+  .product-sidebar {
+    position: sticky;
+    top: 84px;
+    flex: 0 0 230px;
+  }
+  .products-section > .container {
+    flex: 0 1 var(--container-max);
+    max-width: var(--container-max);
+    margin: 0;
+  }
 }
 
 

@@ -315,6 +315,10 @@ const categories: ProductCategory[] = [
   grid-template-columns: 230px 1fr;
   gap: var(--space-8);
   align-items: start;
+  max-width: calc(230px + var(--space-8) + var(--container-max) + 2 * var(--space-6));
+  margin: 0 auto;
+  padding-left: var(--space-6);
+  padding-right: var(--space-6);
 }
 
 .products-section > .container {
@@ -543,25 +547,6 @@ const categories: ProductCategory[] = [
   .products-grid { grid-template-columns: repeat(2, 1fr); }
 }
 
-@media (min-width: 1536px) {
-  .products-section {
-    display: flex;
-    gap: var(--space-8);
-    align-items: flex-start;
-    padding-left: var(--space-8);
-    padding-right: var(--space-8);
-  }
-  .product-sidebar {
-    position: sticky;
-    top: 84px;
-    flex: 0 0 230px;
-  }
-  .products-section > .container {
-    flex: 0 1 var(--container-max);
-    max-width: var(--container-max);
-    margin: 0;
-  }
-}
 
 
 @media (max-width: 768px) {

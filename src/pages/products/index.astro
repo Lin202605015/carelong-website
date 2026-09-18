@@ -418,6 +418,52 @@ const categories: ProductCategory[] = [
 
 ];
 
+const groupLabels = {
+  'bolts-and-nuts': 'Bolts and Nuts',
+  'display-rack': 'Display Racks',
+  'stamping-parts': 'Stamping Parts',
+  'die-casting-parts': 'Die Casting Parts',
+  'forging-parts': 'Forging Parts',
+  'machining-parts': 'Machining Parts',
+  'welding-parts': 'Welding Parts',
+  'plastic-rubber-parts': 'Plastic and Rubber Parts',
+  'tooling-and-moulds': 'Tooling and Moulds',
+  'heavy-equipment-parts': 'Heavy Equipment Parts',
+  'auto-parts': 'Auto Parts',
+  'other-parts': 'Other Parts',
+};
+
+const navPrefix = '';
+
+// Sidebar nav: derive top-level groups + their subcategories (Option C)
+const groupOrder = [
+  'bolts-and-nuts',
+  'display-rack',
+  'stamping-parts',
+  'die-casting-parts',
+  'forging-parts',
+  'machining-parts',
+  'welding-parts',
+  'plastic-rubber-parts',
+  'tooling-and-moulds',
+  'heavy-equipment-parts',
+  'auto-parts',
+  'other-parts'
+];
+
+const byParent: Record<string, ProductCategory[]> = {};
+for (const c of categories) {
+  const parent = c.slug.includes('/') ? c.slug.split('/')[0] : c.slug;
+  if (!byParent[parent]) byParent[parent] = [];
+  byParent[parent].push(c);
+}
+
+const navGroups = groupOrder.map(slug => ({
+  slug,
+  name: groupLabels[slug] ?? slug,
+  children: (byParent[slug] ?? []).filter(c => c.slug !== slug)
+}));
+
 ---
 
 
@@ -456,22 +502,28 @@ const categories: ProductCategory[] = [
 
   <section class="section products-section">
 
-    <aside class="product-sidebar">
+        <aside class="product-sidebar">
         <nav class="product-nav" aria-label="Product categories">
           <p class="product-nav-title">Product Categories</p>
           <ul>
-            <li><a href="/products/bolts-and-nuts">Bolts and Nuts</a></li>
-            <li><a href="/products/display-rack">Display Racks</a></li>
-            <li><a href="/products/stamping-parts">Stamping Parts</a></li>
-            <li><a href="/products/die-casting-parts">Die Casting Parts</a></li>
-            <li><a href="/products/forging-parts">Forging Parts</a></li>
-            <li><a href="/products/machining-parts">Machining Parts</a></li>
-            <li><a href="/products/welding-parts">Welding Parts</a></li>
-            <li><a href="/products/plastic-rubber-parts">Plastic and Rubber Parts</a></li>
-            <li><a href="/products/tooling-and-moulds">Tooling and Moulds</a></li>
-            <li><a href="/products/heavy-equipment-parts">Heavy Equipment Parts</a></li>
-            <li><a href="/products/auto-parts">Auto Parts</a></li>
-            <li><a href="/products/other-parts">Other Parts</a></li>
+            {navGroups.map(g => (
+              g.children.length > 0 ? (
+                <li class="nav-group">
+                  <div class="nav-group-head">
+                    <a href={`/products/${g.slug}`} class="nav-link">{g.name}</a>
+                    <span class="nav-count">{g.children.length}</span>
+                    <button class="nav-toggle" type="button" aria-expanded="false" aria-label={`Toggle ${g.name} subcategories`}>▸</button>
+                  </div>
+                  <ul class="nav-sublist">
+                    {g.children.map(ch => (
+                      <li><a href={`/products/${ch.slug}`} class="nav-sublink">{ch.name}</a></li>
+                    ))}
+                  </ul>
+                </li>
+              ) : (
+                <li><a href={`/products/${g.slug}`} class="nav-link">{g.name}</a></li>
+              )
+            ))}
           </ul>
         </nav>
       </aside>
@@ -576,6 +628,17 @@ const categories: ProductCategory[] = [
 
   </section>
 
+<script>
+  document.querySelectorAll('.product-nav .nav-toggle').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var group = btn.closest('.nav-group');
+      var isOpen = group.classList.toggle('open');
+      btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    });
+  });
+</script>
+
+
 </BaseLayout>
 
 
@@ -641,7 +704,7 @@ const categories: ProductCategory[] = [
   margin: 0 0 var(--space-3);
 }
 
-.product-nav ul {
+.product-nav > ul {
   list-style: none;
   margin: 0;
   padding: 0;
@@ -670,6 +733,89 @@ const categories: ProductCategory[] = [
   background: var(--color-primary);
   color: #fff;
 }
+/* Expandable groups (Option C: subcategory tree with count badge) */
+.product-nav .nav-group-head {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.product-nav .nav-link {
+  flex: 1;
+  display: block;
+  padding: 0.5rem 0.75rem;
+  border-radius: 8px;
+  color: var(--color-text);
+  text-decoration: none;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.product-nav .nav-link:hover {
+  background: rgba(27, 75, 142, 0.08);
+  color: var(--color-primary);
+}
+
+.product-nav .nav-count {
+  flex-shrink: 0;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  background: rgba(27, 75, 142, 0.08);
+  padding: 0.1rem 0.45rem;
+  border-radius: 100px;
+  min-width: 1.4rem;
+  text-align: center;
+}
+
+.product-nav .nav-toggle {
+  flex-shrink: 0;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  font-size: 0.7rem;
+  line-height: 1;
+  color: var(--color-text-light);
+  padding: 0.35rem;
+  border-radius: 6px;
+  transition: transform 0.15s ease, background 0.15s ease;
+}
+
+.product-nav .nav-toggle:hover {
+  background: rgba(27, 75, 142, 0.08);
+}
+
+.product-nav .nav-group.open .nav-toggle {
+  transform: rotate(90deg);
+}
+
+.product-nav .nav-sublist {
+  list-style: none;
+  margin: 0;
+  padding: 0 0 0 0.5rem;
+  display: none;
+}
+
+.product-nav .nav-group.open .nav-sublist {
+  display: block;
+}
+
+.product-nav .nav-sublink {
+  display: block;
+  padding: 0.4rem 0.75rem 0.4rem 1.25rem;
+  border-radius: 8px;
+  color: var(--color-text-light);
+  text-decoration: none;
+  font-size: 0.875rem;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.product-nav .nav-sublink:hover {
+  background: rgba(27, 75, 142, 0.08);
+  color: var(--color-primary);
+}
+
 
 /* Filter Bar */
 .filter-bar {

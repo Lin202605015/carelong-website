@@ -136,6 +136,37 @@ const subcategories = [
 
 ];
 
+const navGroups = [
+  { slug: 'bolts-and-nuts', name: 'Bolts and Nuts', children: [
+    { slug: 'bolts-and-nuts/hub-bolts', name: 'Hub Bolts' },
+    { slug: 'bolts-and-nuts/plow-bolts', name: 'Plow Bolts' },
+    { slug: 'bolts-and-nuts/track-bolts', name: 'Track Bolts' },
+    { slug: 'bolts-and-nuts/segment-bolts', name: 'Segment Bolts' },
+    { slug: 'bolts-and-nuts/hex-nuts', name: 'Hex Nuts' },
+    { slug: 'bolts-and-nuts/flange-nuts', name: 'Flange Nuts' },
+    { slug: 'bolts-and-nuts/nylon-nuts', name: 'Nylon Nuts' },
+    { slug: 'bolts-and-nuts/wheel-nuts', name: 'Wheel Nuts' },
+    { slug: 'bolts-and-nuts/slotted-nuts', name: 'Slotted Nuts' },
+  ]},
+  { slug: 'display-rack', name: 'Display Racks', children: [
+    { slug: 'display-rack/supermarket-display-racks', name: 'Supermarket Display Racks' },
+    { slug: 'display-rack/wall-mounted-storage-racks', name: 'Pegboard & Slatwall Display' },
+    { slug: 'display-rack/clothing-display-racks', name: 'Clothing Display Racks' },
+    { slug: 'display-rack/wooden-display-racks', name: 'Wooden Display Racks' },
+    { slug: 'display-rack/newspaper-magazine-racks', name: 'Display Tables & Stands' },
+  ]},
+  { slug: 'stamping-parts', name: 'Stamping Parts', children: [] },
+  { slug: 'die-casting-parts', name: 'Die Casting Parts', children: [] },
+  { slug: 'forging-parts', name: 'Forging Parts', children: [] },
+  { slug: 'machining-parts', name: 'Machining Parts', children: [] },
+  { slug: 'welding-parts', name: 'Welding Parts', children: [] },
+  { slug: 'plastic-rubber-parts', name: 'Plastic and Rubber Parts', children: [] },
+  { slug: 'tooling-and-moulds', name: 'Tooling and Moulds', children: [] },
+  { slug: 'heavy-equipment-parts', name: 'Heavy Equipment Parts', children: [] },
+  { slug: 'auto-parts', name: 'Auto Parts', children: [] },
+  { slug: 'other-parts', name: 'Other Parts', children: [] },
+];
+
 ---
 
 
@@ -172,7 +203,32 @@ const subcategories = [
 
 
 
-  <section class="section">
+  <section class="section products-section">
+        <aside class="product-sidebar">
+        <nav class="product-nav" aria-label="Product categories">
+          <p class="product-nav-title">Product Categories</p>
+          <ul>
+            {navGroups.map(g => (
+              g.children.length > 0 ? (
+                <li class="nav-group">
+                  <div class="nav-group-head">
+                    <a href={`/products/${g.slug}`} class="nav-link">{g.name}</a>
+                    <span class="nav-count">{g.children.length}</span>
+                    <button class="nav-toggle" type="button" aria-expanded="false" aria-label={`Toggle ${g.name} subcategories`}>▸</button>
+                  </div>
+                  <ul class="nav-sublist">
+                    {g.children.map(ch => (
+                      <li><a href={`/products/${ch.slug}`} class="nav-sublink">{ch.name}</a></li>
+                    ))}
+                  </ul>
+                </li>
+              ) : (
+                <li><a href={`/products/${g.slug}`} class="nav-link">{g.name}</a></li>
+              )
+            ))}
+          </ul>
+        </nav>
+      </aside>
 
     <div class="container">
 
@@ -316,11 +372,180 @@ const subcategories = [
 
   </section>
 
+<script>
+  document.querySelectorAll('.product-nav .nav-toggle').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var group = btn.closest('.nav-group');
+      var isOpen = group.classList.toggle('open');
+      btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    });
+  });
+</script>
+
 </BaseLayout>
 
 
 
 <style>
+
+
+/* Product Sidebar (sticky floating nav) — same as /products */
+.products-section {
+  display: grid;
+  grid-template-columns: 230px 1fr;
+  gap: var(--space-8);
+  align-items: start;
+  max-width: calc(230px + var(--space-8) + var(--container-max) + 2 * var(--space-6));
+  margin: 0 auto;
+  padding-left: var(--space-6);
+  padding-right: var(--space-6);
+}
+
+.products-section > .container {
+  max-width: none;
+  margin: 0;
+  width: 100%;
+}
+
+.product-sidebar {
+  position: sticky;
+  top: 84px;
+  align-self: start;
+}
+
+.product-nav {
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: 16px;
+  padding: 1.25rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+}
+
+.product-nav-title {
+  font-size: 0.8125rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--color-text-light);
+  margin: 0 0 var(--space-3);
+}
+
+.product-nav > ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.product-nav a {
+  display: block;
+  padding: 0.5rem 0.75rem;
+  border-radius: 8px;
+  color: var(--color-text);
+  text-decoration: none;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.product-nav a:hover {
+  background: rgba(27, 75, 142, 0.08);
+  color: var(--color-primary);
+}
+
+.product-nav a.active {
+  background: var(--color-primary);
+  color: #fff;
+}
+
+.product-nav .nav-group-head {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.product-nav .nav-link {
+  flex: 1;
+  display: block;
+  padding: 0.5rem 0.75rem;
+  border-radius: 8px;
+  color: var(--color-text);
+  text-decoration: none;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.product-nav .nav-link:hover {
+  background: rgba(27, 75, 142, 0.08);
+  color: var(--color-primary);
+}
+
+.product-nav .nav-count {
+  flex-shrink: 0;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  background: rgba(27, 75, 142, 0.08);
+  padding: 0.1rem 0.45rem;
+  border-radius: 100px;
+  min-width: 1.4rem;
+  text-align: center;
+}
+
+.product-nav .nav-toggle {
+  flex-shrink: 0;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  font-size: 0.7rem;
+  line-height: 1;
+  color: var(--color-text-light);
+  padding: 0.35rem;
+  border-radius: 6px;
+  transition: transform 0.15s ease, background 0.15s ease;
+}
+
+.product-nav .nav-toggle:hover {
+  background: rgba(27, 75, 142, 0.08);
+}
+
+.product-nav .nav-group.open .nav-toggle {
+  transform: rotate(90deg);
+}
+
+.product-nav .nav-sublist {
+  list-style: none;
+  margin: 0;
+  padding: 0 0 0 0.5rem;
+  display: none;
+}
+
+.product-nav .nav-group.open .nav-sublist {
+  display: block;
+}
+
+.product-nav .nav-sublink {
+  display: block;
+  padding: 0.4rem 0.75rem 0.4rem 1.25rem;
+  border-radius: 8px;
+  color: var(--color-text-light);
+  text-decoration: none;
+  font-size: 0.875rem;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.product-nav .nav-sublink:hover {
+  background: rgba(27, 75, 142, 0.08);
+  color: var(--color-primary);
+}
+
+@media (max-width: 1024px) {
+  .products-section { grid-template-columns: 1fr; }
+  .product-sidebar { position: static; margin-bottom: var(--space-6); }
+}
 
 .eyebrow { font-size: 0.8125rem; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; color: var(--color-secondary); margin-bottom: var(--space-3); }
 

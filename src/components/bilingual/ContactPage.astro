@@ -80,8 +80,8 @@ const localBusinessSchema = {
 
             <!-- Anti-spam: honeypot trap (hidden off-screen; real users never see/fill it, bots do) -->
             <div style="position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);" aria-hidden="true">
-              <label for="company_website">Company Website</label>
-              <input type="text" id="company_website" name="company_website" tabindex="-1" autocomplete="off" />
+              <label for="_honey">Company Website</label>
+              <input type="text" id="_honey" name="_honey" tabindex="-1" autocomplete="off" />
             </div>
             <!-- Anti-spam: silently drop submissions from disposable/temporary email domains -->
             <input type="hidden" name="_blacklist" value="mailinator.com,tempmail.com,tempmail.net,guerrillamail.com,yopmail.com,10minutemail.com,throwawaymail.com,trashmail.com,getnada.com,sharklasers.com,dispostable.com,fakeinbox.com,maildrop.cc,emailondeck.com,mohmal.com,tempsmail.com,guerrillamailblock.com,mailnesia.com" />

@@ -73,17 +73,17 @@ const navGroups = [
 
 const productSchema = {
   "@context": "https://schema.org",
-  "@graph": subcategories.map(cat => ({
+  "@graph": subcategorias.map(cat => ({
     "@type": "Product",
-    "name": cat.name,
-    "description": cat.description,
-    "image": "https://carelong.com.cn" + cat.image,
+    "name": cat.nombre,
+    "description": cat.descripcion,
+    "image": "https://carelong.com.cn" + cat.imagen,
     "url": "https://carelong.com.cn/es/products/display-rack/" + cat.slug,
     "category": "Display Racks",
     "brand": { "@type": "Brand", "name": "Carelong" }
   }))
 };
-const productSchemaJson = JSON.stringify(productSchema).replace(/</g, '\u003c');
+const productSchemaJson = JSON.stringify(productSchema).replace(/</g, '<');
 ---
 
 <BaseLayout lang="es"

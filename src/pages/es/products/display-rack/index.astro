@@ -70,6 +70,20 @@ const navGroups = [
   { slug: 'auto-parts', name: 'Autopartes', children: [] },
   { slug: 'other-parts', name: 'Otras Piezas', children: [] },
 ];
+
+const productSchema = {
+  "@context": "https://schema.org",
+  "@graph": subcategories.map(cat => ({
+    "@type": "Product",
+    "name": cat.name,
+    "description": cat.description,
+    "image": "https://carelong.com.cn" + cat.image,
+    "url": "https://carelong.com.cn/es/products/display-rack/" + cat.slug,
+    "category": "Display Racks",
+    "brand": { "@type": "Brand", "name": "Carelong" }
+  }))
+};
+const productSchemaJson = JSON.stringify(productSchema).replace(/</g, '\u003c');
 ---
 
 <BaseLayout lang="es"
@@ -195,6 +209,7 @@ const navGroups = [
   });
 </script>
 
+<script type="application/ld+json" is:inline set:html={productSchemaJson}></script>
 </BaseLayout>
 
 <style>

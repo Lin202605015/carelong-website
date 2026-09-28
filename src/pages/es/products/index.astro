@@ -255,6 +255,19 @@ const navGroups = groupOrder.map(slug => ({
   children: (byParent[slug] ?? []).filter(c => c.slug !== slug)
 }));
 
+
+const productSchema = {
+  "@context": "https://schema.org",
+  "@graph": categories.map(cat => ({
+    "@type": "Product",
+    "name": cat.name,
+    "description": cat.description,
+    "image": "https://carelong.com.cn" + cat.image,
+    "url": "https://carelong.com.cn/es/products/" + cat.slug,
+    "brand": { "@type": "Brand", "name": "Carelong" }
+  }))
+};
+const productSchemaJson = JSON.stringify(productSchema).replace(/</g, '\u003c');
 ---
 
 <BaseLayout
@@ -361,6 +374,7 @@ const navGroups = groupOrder.map(slug => ({
 </script>
 
 
+<script type="application/ld+json" is:inline set:html={productSchemaJson}></script>
 <style>
 .eyebrow {
   font-size: 0.8125rem;

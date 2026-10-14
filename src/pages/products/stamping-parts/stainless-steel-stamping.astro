@@ -1,0 +1,39 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro';
+import Breadcrumb from '@components/Breadcrumb.astro';
+---
+
+<BaseLayout
+  title="Stainless Steel Stamping — SUS304/316/430 Stamped Parts | Carelong"
+  description="Stainless steel stamping parts in SUS304, SUS316 and SUS430. Corrosion-resistant brackets, shims, clips and deep-drawn components for food, medical and outdoor use."
+>
+  <Breadcrumb items={[
+    { label: 'Products', href: '/products' },
+    { label: 'Stamping Parts', href: '/products/stamping-parts' },
+    { label: 'Stainless Steel Stamping' }
+  ]} />
+
+  <header class="page-header">
+    <div class="container">
+      <h1>Stainless Steel Stamping</h1>
+      <p>Stainless steel stamped parts — SUS304 / 316 / 430</p>
+    </div>
+  </header>
+
+  <section class="section">
+    <div class="container">
+      <p class="eyebrow">Product Overview</p>
+      <h2>Stainless Steel Stamping</h2>
+      <p>We produce stainless steel stamping parts in SUS304, SUS316 and SUS430. These corrosion-resistant components serve food equipment, medical devices and outdoor hardware where durability and cleanliness matter.</p>
+
+      <div class="image-placeholder" style="border:2px dashed #cbd5e1; border-radius:12px; padding:48px 24px; text-align:center; color:#64748b; background:#f8fafc; margin:24px 0;">
+        Images coming soon — to be uploaded
+      </div>
+
+      <div class="product-actions">
+        <a href="/contact" class="btn btn-primary btn-lg">Request a Quote</a>
+        <a href="/products/stamping-parts" class="btn btn-outline btn-lg">Back to Stamping Parts</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

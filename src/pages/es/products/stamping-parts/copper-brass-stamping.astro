@@ -1,0 +1,39 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro';
+import Breadcrumb from '@components/Breadcrumb.astro';
+---
+
+<BaseLayout
+  title="Estampado de Cobre / Latón — Piezas Estampadas Conductoras | Carelong"
+  description="Piezas de estampado de cobre y latón con excelente conductividad eléctrica y térmica. Terminales, conectores, calces y contactos para electricidad y fontanería."
+>
+  <Breadcrumb items={[
+    { label: 'Productos', href: '/products' },
+    { label: 'Piezas Estampadas', href: '/products/stamping-parts' },
+    { label: 'Estampado de Cobre / Latón' }
+  ]} />
+
+  <header class="page-header">
+    <div class="container">
+      <h1>Estampado de Cobre / Latón</h1>
+      <p>Piezas estampadas de cobre y latón</p>
+    </div>
+  </header>
+
+  <section class="section">
+    <div class="container">
+      <p class="eyebrow">Product Overview</p>
+      <h2>Estampado de Cobre / Latón</h2>
+      <p>Producimos componentes de estampado de cobre y latón apreciados por su conductividad y resistencia a la corrosión. Las piezas típicas son terminales, conectores, calces y contactos para ensambles eléctricos, electrónicos y de fontanería.</p>
+
+      <div class="image-placeholder" style="border:2px dashed #cbd5e1; border-radius:12px; padding:48px 24px; text-align:center; color:#64748b; background:#f8fafc; margin:24px 0;">
+        Images coming soon — to be uploaded
+      </div>
+
+      <div class="product-actions">
+        <a href="/contact" class="btn btn-primary btn-lg">Request a Quote</a>
+        <a href="/products/stamping-parts" class="btn btn-outline btn-lg">Volver a Piezas Estampadas</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

@@ -1,0 +1,39 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro';
+import Breadcrumb from '@components/Breadcrumb.astro';
+---
+
+<BaseLayout
+  title="Aluminum Alloy Stamping — Lightweight Stamped Parts | Carelong"
+  description="Aluminum alloy stamping parts for lightweight, corrosion-resistant applications. Custom blanks, heat-sinks, brackets and enclosures for electronics and automotive."
+>
+  <Breadcrumb items={[
+    { label: 'Products', href: '/products' },
+    { label: 'Stamping Parts', href: '/products/stamping-parts' },
+    { label: 'Aluminum Alloy Stamping' }
+  ]} />
+
+  <header class="page-header">
+    <div class="container">
+      <h1>Aluminum Alloy Stamping</h1>
+      <p>Lightweight aluminum alloy stamped parts</p>
+    </div>
+  </header>
+
+  <section class="section">
+    <div class="container">
+      <p class="eyebrow">Product Overview</p>
+      <h2>Aluminum Alloy Stamping</h2>
+      <p>We manufacture aluminum alloy stamping components that combine light weight with corrosion resistance. Common parts include heat-sinks, brackets, enclosures and structural clips for electronics and automotive lightweighting.</p>
+
+      <div class="image-placeholder" style="border:2px dashed #cbd5e1; border-radius:12px; padding:48px 24px; text-align:center; color:#64748b; background:#f8fafc; margin:24px 0;">
+        Images coming soon — to be uploaded
+      </div>
+
+      <div class="product-actions">
+        <a href="/contact" class="btn btn-primary btn-lg">Request a Quote</a>
+        <a href="/products/stamping-parts" class="btn btn-outline btn-lg">Back to Stamping Parts</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

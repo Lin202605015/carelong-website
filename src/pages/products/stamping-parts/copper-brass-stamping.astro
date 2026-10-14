@@ -1,0 +1,39 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro';
+import Breadcrumb from '@components/Breadcrumb.astro';
+---
+
+<BaseLayout
+  title="Copper / Brass Stamping — Conductive Stamped Parts | Carelong"
+  description="Copper and brass stamping parts with excellent electrical and thermal conductivity. Terminals, connectors, shims and contacts for electrical and plumbing use."
+>
+  <Breadcrumb items={[
+    { label: 'Products', href: '/products' },
+    { label: 'Stamping Parts', href: '/products/stamping-parts' },
+    { label: 'Copper / Brass Stamping' }
+  ]} />
+
+  <header class="page-header">
+    <div class="container">
+      <h1>Copper / Brass Stamping</h1>
+      <p>Copper and brass stamped parts</p>
+    </div>
+  </header>
+
+  <section class="section">
+    <div class="container">
+      <p class="eyebrow">Product Overview</p>
+      <h2>Copper / Brass Stamping</h2>
+      <p>We produce copper and brass stamping components valued for conductivity and corrosion resistance. Typical parts are terminals, connectors, shims and contacts used in electrical, electronics and plumbing assemblies.</p>
+
+      <div class="image-placeholder" style="border:2px dashed #cbd5e1; border-radius:12px; padding:48px 24px; text-align:center; color:#64748b; background:#f8fafc; margin:24px 0;">
+        Images coming soon — to be uploaded
+      </div>
+
+      <div class="product-actions">
+        <a href="/contact" class="btn btn-primary btn-lg">Request a Quote</a>
+        <a href="/products/stamping-parts" class="btn btn-outline btn-lg">Back to Stamping Parts</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

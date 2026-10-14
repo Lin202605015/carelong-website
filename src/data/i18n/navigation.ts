@@ -87,11 +87,11 @@ export const navigation: NavItem[] = [
         href: '/products/stamping-parts',
         children: [
           {
-            label: { en: 'Carbon Steel Stamping (SPCC, DC01, High-Strength)', es: 'Estampado de Acero al Carbono (SPCC, DC01, Alta Resistencia)' },
+            label: { en: 'Carbon Steel Stamping', es: 'Estampado de Acero al Carbono' },
             href: '/products/stamping-parts/carbon-steel-stamping',
           },
           {
-            label: { en: 'Stainless Steel Stamping (SUS304/316/430)', es: 'Estampado de Acero Inoxidable (SUS304/316/430)' },
+            label: { en: 'Stainless Steel Stamping', es: 'Estampado de Acero Inoxidable' },
             href: '/products/stamping-parts/stainless-steel-stamping',
           },
           {

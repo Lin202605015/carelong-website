@@ -10,6 +10,15 @@ const images = [
   { src: '/images/products/stamping-parts/stainless-steel-stamping/stainless-05.webp', alt: 'Producto estampado de acero inoxidable' },
   { src: '/images/products/stamping-parts/stainless-steel-stamping/stainless-06.webp', alt: 'Aplicación de estampado de acero inoxidable' },
 ];
+
+const attributes = [
+  { label: 'Material', value: 'SUS304 / SUS316 / SUS430' },
+  { label: 'Rango de espesor', value: '0.1 – 6.0 mm' },
+  { label: 'Procesos', value: 'Corte, punzonado, doblado, embutido' },
+  { label: 'Tratamiento superficial', value: 'Pasivación, electropulido, recubrimiento en polvo' },
+  { label: 'Sistema de calidad', value: 'ISO 9001, IATF 16949' },
+  { label: 'Aplicaciones', value: 'Alimentación, médico, marino, automotriz, electrónica' },
+];
 ---
 
 <BaseLayout
@@ -82,60 +91,16 @@ const images = [
   <section class="section section-alt">
     <div class="container">
       <header class="section-header">
-        <p class="eyebrow">Productos y Aplicaciones</p>
-        <h2>Qué Fabricamos</h2>
+        <p class="eyebrow">Especificaciones</p>
+        <h2>Atributos Clave</h2>
       </header>
-
-      <div class="app-grid">
-        <div class="app-col">
-          <h3>Piezas típicas</h3>
-          <ul class="feat-list">
-            <li>Ménsulas, calces y separadores</li>
-            <li>Clips, fijaciones y arandelas de retención</li>
-            <li>Carcasas y recintos embutidos</li>
-            <li>Tapas, cubiertas y carcasas</li>
-            <li>Trims decorativos y placas de identificación</li>
-            <li>Geometrías estampadas a medida según plano</li>
-          </ul>
-        </div>
-        <div class="app-col">
-          <h3>Industrias atendidas</h3>
-          <ul class="feat-list">
-            <li>Equipos de procesamiento de alimentos</li>
-            <li>Dispositivos médicos y farmacéuticos</li>
-            <li>Hardware de exterior y marino</li>
-            <li>Electrodomésticos domésticos y comerciales</li>
-            <li>Recintos electrónicos</li>
-            <li>Trims y componentes automotrices</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="container">
-      <header class="section-header">
-        <p class="eyebrow">Acabado y Calidad</p>
-        <h2>Acabado y Verificación</h2>
-      </header>
-      <div class="proc-grid">
-        <div class="proc-card">
-          <h3>Pasivación</h3>
-          <p>Según ASTM A967, la pasivación elimina el hierro libre y restaura la capa de óxido de cromo, maximizando la resistencia a la corrosión. Estándar para piezas de alimentación, médicas y marinas.</p>
-        </div>
-        <div class="proc-card">
-          <h3>Electropulido</h3>
-          <p>Alisa la superficie y elimina rebabas para un acabado brillante y fácil de esterilizar, usado en aplicaciones médicas y farmacéuticas.</p>
-        </div>
-        <div class="proc-card">
-          <h3>Pulido y Recubrimiento</h3>
-          <p>Pulido satinado o espejo para apariencia, más recubrimiento en polvo donde se requiere color o protección adicional.</p>
-        </div>
-        <div class="proc-card">
-          <h3>Sistema de Calidad</h3>
-          <p>Fabricado bajo un sistema de gestión de calidad ISO 9001; nuestra fábrica también está certificada IATF 16949 para suministro de grado automotriz. Certificados de material (MTR) y verificación XRF respaldan cada envío.</p>
-        </div>
+      <div class="attr-grid">
+        {attributes.map((attr) => (
+          <div class="attr-card">
+            <p class="attr-label">{attr.label}</p>
+            <p class="attr-value">{attr.value}</p>
+          </div>
+        ))}
       </div>
     </div>
   </section>
@@ -227,16 +192,10 @@ const images = [
 .product-intro p { color: var(--color-text-light); line-height: 1.7; }
 .product-actions { display: flex; gap: var(--space-4); flex-wrap: wrap; }
 
-.proc-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--space-4); margin-top: var(--space-8); }
-.proc-card { background: var(--color-bg); border: 1px solid var(--color-border); border-radius: var(--radius-md); padding: var(--space-6); }
-.proc-card h3 { font-size: 1.0625rem; color: var(--color-primary); margin-bottom: var(--space-3); }
-.proc-card p { color: var(--color-text-light); line-height: 1.7; font-size: 0.9375rem; }
-
-.app-grid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-8); margin-top: var(--space-8); }
-.app-col h3 { font-size: 1.0625rem; color: var(--color-primary); margin-bottom: var(--space-4); }
-.feat-list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: var(--space-3); }
-.feat-list li { position: relative; padding-left: 28px; color: var(--color-text-light); line-height: 1.6; }
-.feat-list li::before { content: ""; position: absolute; left: 0; top: 7px; width: 16px; height: 16px; border-radius: 50%; background: var(--color-primary); -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='white' d='M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z'/%3E%3C/svg%3E") center/12px no-repeat; mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='white' d='M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z'/%3E%3C/svg%3E") center/12px no-repeat; }
+.attr-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--space-4); margin-top: var(--space-8); }
+.attr-card { background: var(--color-bg); border: 1px solid var(--color-border); border-radius: var(--radius-md); padding: var(--space-5) var(--space-6); }
+.attr-label { font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; color: var(--color-text-light); margin-bottom: var(--space-2); }
+.attr-value { font-size: 1.0625rem; color: var(--color-text); line-height: 1.5; }
 
 .cta-band { background: var(--color-primary); color: #fff; }
 .cta-band h2 { color: #fff; margin-bottom: var(--space-4); }
@@ -247,7 +206,6 @@ const images = [
   .product-overview { grid-template-columns: 1fr; }
   .product-gallery { grid-template-columns: 72px 1fr; }
   .thumb { width: 72px; height: 72px; }
-  .proc-grid { grid-template-columns: 1fr; }
-  .app-grid { grid-template-columns: 1fr; gap: var(--space-6); }
+  .attr-grid { grid-template-columns: 1fr; }
 }
 </style>

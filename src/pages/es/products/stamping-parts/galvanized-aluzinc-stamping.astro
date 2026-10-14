@@ -1,0 +1,39 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro';
+import Breadcrumb from '@components/Breadcrumb.astro';
+---
+
+<BaseLayout
+  title="Estampado de Chapa Galvanizada y Aluzinc — Piezas Estampadas Recubiertas | Carelong"
+  description="Piezas de estampado de chapa galvanizada y Aluzinc (55% Al-Zn) con superior resistencia a la corrosión. Soportes, paneles y cajas para construcción y exterior."
+>
+  <Breadcrumb items={[
+    { label: 'Productos', href: '/products' },
+    { label: 'Piezas Estampadas', href: '/products/stamping-parts' },
+    { label: 'Estampado de Chapa Galvanizada y Aluzinc' }
+  ]} />
+
+  <header class="page-header">
+    <div class="container">
+      <h1>Estampado de Chapa Galvanizada y Aluzinc</h1>
+      <p>Estampado de chapa galvanizada y Aluzinc recubierta</p>
+    </div>
+  </header>
+
+  <section class="section">
+    <div class="container">
+      <p class="eyebrow">Product Overview</p>
+      <h2>Estampado de Chapa Galvanizada y Aluzinc</h2>
+      <p>Estampamos chapa de acero galvanizada y Aluzinc (55% aluminio-zinc) en soportes, paneles y cajas que resisten el óxido en ambientes agresivos. Ideales para construcción, HVAC y equipos de exterior.</p>
+
+      <div class="image-placeholder" style="border:2px dashed #cbd5e1; border-radius:12px; padding:48px 24px; text-align:center; color:#64748b; background:#f8fafc; margin:24px 0;">
+        Images coming soon — to be uploaded
+      </div>
+
+      <div class="product-actions">
+        <a href="/contact" class="btn btn-primary btn-lg">Request a Quote</a>
+        <a href="/products/stamping-parts" class="btn btn-outline btn-lg">Volver a Piezas Estampadas</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

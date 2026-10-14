@@ -1,0 +1,39 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro';
+import Breadcrumb from '@components/Breadcrumb.astro';
+---
+
+<BaseLayout
+  title="Estampado de Acero Inoxidable — Piezas Estampadas SUS304/316/430 | Carelong"
+  description="Piezas de estampado de acero inoxidable en SUS304, SUS316 y SUS430. Soportes, calces, clips y componentes embutidos resistentes a la corrosión para alimentación, médico y exterior."
+>
+  <Breadcrumb items={[
+    { label: 'Productos', href: '/products' },
+    { label: 'Piezas Estampadas', href: '/products/stamping-parts' },
+    { label: 'Estampado de Acero Inoxidable' }
+  ]} />
+
+  <header class="page-header">
+    <div class="container">
+      <h1>Estampado de Acero Inoxidable</h1>
+      <p>Piezas estampadas de acero inoxidable — SUS304 / 316 / 430</p>
+    </div>
+  </header>
+
+  <section class="section">
+    <div class="container">
+      <p class="eyebrow">Product Overview</p>
+      <h2>Estampado de Acero Inoxidable</h2>
+      <p>Producimos piezas de estampado de acero inoxidable en SUS304, SUS316 y SUS430. Estos componentes resistentes a la corrosión sirven a equipos de alimentación, dispositivos médicos y hardware de exterior donde importan durabilidad e higiene.</p>
+
+      <div class="image-placeholder" style="border:2px dashed #cbd5e1; border-radius:12px; padding:48px 24px; text-align:center; color:#64748b; background:#f8fafc; margin:24px 0;">
+        Images coming soon — to be uploaded
+      </div>
+
+      <div class="product-actions">
+        <a href="/contact" class="btn btn-primary btn-lg">Request a Quote</a>
+        <a href="/products/stamping-parts" class="btn btn-outline btn-lg">Volver a Piezas Estampadas</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

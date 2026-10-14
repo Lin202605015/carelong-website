@@ -68,69 +68,12 @@ const images = [
         <div class="product-intro">
           <p class="eyebrow">Product Overview</p>
           <h2>Stainless Steel Stamping</h2>
-          <p>We produce stainless steel stamping parts in SUS304, SUS316 and SUS430. These corrosion-resistant components serve food equipment, medical devices and outdoor hardware where durability and cleanliness matter. Parts are made to your drawings or samples, from prototyping through volume production.</p>
+          <p>We produce corrosion-resistant stamped parts in SUS304, SUS316 and SUS430 to your drawing or sample, from prototype to volume production.</p>
 
           <div class="product-actions">
             <a href="/contact" class="btn btn-primary btn-lg">Request a Quote</a>
             <a href="/products/stamping-parts" class="btn btn-outline btn-lg">Back to Stamping Parts</a>
           </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section section-alt">
-    <div class="container">
-      <header class="section-header">
-        <p class="eyebrow">Manufacturing</p>
-        <h2>How We Stamping Stainless Steel</h2>
-        <p class="section-lead">Stainless steel is harder and work-hardens faster than mild steel, so stamping demands sharper tooling, tighter die clearances and careful springback control. We run the full set of operations to turn flat coil or sheet into finished components.</p>
-      </header>
-
-      <div class="proc-grid">
-        <div class="proc-card">
-          <h3>Blanking &amp; Piercing</h3>
-          <p>Cutting the part outline and punching holes, slots and cutouts. Stainless needs sharp, wear-resistant tooling and tight die clearance (about 5–10% of material thickness) to keep edges clean and burr-free.</p>
-        </div>
-        <div class="proc-card">
-          <h3>Bending &amp; Forming</h3>
-          <p>Forming angles, channels, boxes and U-shapes. Stainless has higher yield strength and more springback (roughly 2–5° for 304), so we over-bend and bottom out to hold the target geometry.</p>
-        </div>
-        <div class="proc-card">
-          <h3>Deep Drawing</h3>
-          <p>Forming cups, shells and housings. Austenitic 304 and 316 offer the ductility for deep draws (draw ratios of 2:1 and above); polished dies and heavy extreme-pressure lubricants prevent galling.</p>
-        </div>
-        <div class="proc-card">
-          <h3>Embossing &amp; Coining</h3>
-          <p>Adding logos, stiffening ribs or surface textures. Stainless's strength yields crisp, durable relief features without distorting the surrounding material.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="container">
-      <header class="section-header">
-        <p class="eyebrow">Materials</p>
-        <h2>Grade Selection: 304, 316 and 430</h2>
-        <p class="section-lead">The right grade matches the part's service environment. We work with the three grades most common in stamped stainless components.</p>
-      </header>
-
-      <div class="mat-grid">
-        <div class="mat-card">
-          <div class="mat-head"><span class="mat-grade">SUS304</span><span class="mat-tag tag-aust">Austenitic</span></div>
-          <p>18% chromium / 8% nickel. Excellent all-round corrosion resistance, formability and weldability; non-magnetic in the annealed state. The general-purpose choice for food and industrial parts.</p>
-          <p class="mat-best"><strong>Best for:</strong> food equipment, kitchen appliances, general industrial components.</p>
-        </div>
-        <div class="mat-card">
-          <div class="mat-head"><span class="mat-grade">SUS316</span><span class="mat-tag tag-aust">Austenitic +Mo</span></div>
-          <p>Adds 2–3% molybdenum for superior resistance to chlorides, salt spray and chemicals (PREN about 23–25). The grade for aggressive and outdoor environments.</p>
-          <p class="mat-best"><strong>Best for:</strong> marine, chemical, pharmaceutical and outdoor hardware.</p>
-        </div>
-        <div class="mat-card">
-          <div class="mat-head"><span class="mat-grade">SUS430</span><span class="mat-tag tag-fer">Ferritic</span></div>
-          <p>Ferritic, nickel-free and magnetic. A lower-cost option with good polishability for indoor, decorative and appliance use. Less suitable for humid, saline or deep-drawn applications.</p>
-          <p class="mat-best"><strong>Best for:</strong> appliance panels, decorative trim, interior fixtures.</p>
         </div>
       </div>
     </div>
@@ -263,7 +206,6 @@ const images = [
 
 <style>
 .eyebrow { font-size: 0.8125rem; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; color: var(--color-secondary); margin-bottom: var(--space-3); }
-.section-lead { color: var(--color-text-light); line-height: 1.7; max-width: 60ch; margin-top: var(--space-3); }
 
 .product-overview { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-12); align-items: start; }
 
@@ -285,21 +227,10 @@ const images = [
 .product-intro p { color: var(--color-text-light); line-height: 1.7; }
 .product-actions { display: flex; gap: var(--space-4); flex-wrap: wrap; }
 
-/* process / material / application grids */
 .proc-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--space-4); margin-top: var(--space-8); }
 .proc-card { background: var(--color-bg); border: 1px solid var(--color-border); border-radius: var(--radius-md); padding: var(--space-6); }
 .proc-card h3 { font-size: 1.0625rem; color: var(--color-primary); margin-bottom: var(--space-3); }
 .proc-card p { color: var(--color-text-light); line-height: 1.7; font-size: 0.9375rem; }
-
-.mat-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-4); margin-top: var(--space-8); }
-.mat-card { background: var(--color-bg); border: 1px solid var(--color-border); border-radius: var(--radius-md); padding: var(--space-6); display: flex; flex-direction: column; gap: var(--space-3); }
-.mat-head { display: flex; align-items: center; justify-content: space-between; gap: var(--space-2); }
-.mat-grade { font-weight: 700; font-size: 1.125rem; color: var(--color-text); }
-.mat-tag { font-size: 0.75rem; font-weight: 600; padding: 2px 10px; border-radius: 100px; white-space: nowrap; }
-.tag-aust { background: rgba(27,75,142,.1); color: var(--color-primary); }
-.tag-fer { background: rgba(80,80,80,.1); color: #555; }
-.mat-card p { color: var(--color-text-light); line-height: 1.7; font-size: 0.9375rem; }
-.mat-best { margin-top: auto; font-size: 0.875rem; color: var(--color-text); }
 
 .app-grid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-8); margin-top: var(--space-8); }
 .app-col h3 { font-size: 1.0625rem; color: var(--color-primary); margin-bottom: var(--space-4); }
@@ -317,7 +248,6 @@ const images = [
   .product-gallery { grid-template-columns: 72px 1fr; }
   .thumb { width: 72px; height: 72px; }
   .proc-grid { grid-template-columns: 1fr; }
-  .mat-grid { grid-template-columns: 1fr; }
   .app-grid { grid-template-columns: 1fr; gap: var(--space-6); }
 }
 </style>

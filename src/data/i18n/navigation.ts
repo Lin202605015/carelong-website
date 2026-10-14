@@ -85,6 +85,28 @@ export const navigation: NavItem[] = [
       {
         label: { en: 'Stamping Parts', es: 'Piezas Estampadas' },
         href: '/products/stamping-parts',
+        children: [
+          {
+            label: { en: 'Carbon Steel Stamping (SPCC, DC01, High-Strength)', es: 'Estampado de Acero al Carbono (SPCC, DC01, Alta Resistencia)' },
+            href: '/products/stamping-parts/carbon-steel-stamping',
+          },
+          {
+            label: { en: 'Stainless Steel Stamping (SUS304/316/430)', es: 'Estampado de Acero Inoxidable (SUS304/316/430)' },
+            href: '/products/stamping-parts/stainless-steel-stamping',
+          },
+          {
+            label: { en: 'Aluminum Alloy Stamping', es: 'Estampado de Aleación de Aluminio' },
+            href: '/products/stamping-parts/aluminum-alloy-stamping',
+          },
+          {
+            label: { en: 'Copper / Brass Stamping', es: 'Estampado de Cobre / Latón' },
+            href: '/products/stamping-parts/copper-brass-stamping',
+          },
+          {
+            label: { en: 'Galvanized & Aluzinc Stamping', es: 'Estampado de Chapa Galvanizada y Aluzinc' },
+            href: '/products/stamping-parts/galvanized-aluzinc-stamping',
+          },
+        ],
       },
       {
         label: { en: 'Die Casting Parts', es: 'Piezas de Fundición' },

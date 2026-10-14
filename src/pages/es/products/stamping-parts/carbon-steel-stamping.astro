@@ -1,0 +1,39 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro';
+import Breadcrumb from '@components/Breadcrumb.astro';
+---
+
+<BaseLayout
+  title="Estampado de Acero al Carbono — Piezas Estampadas (SPCC, DC01, Alta Resistencia) | Carelong"
+  description="Piezas de estampado de acero al carbono de precisión: SPCC, DC01, acero de alta resistencia. Corte, punzonado, plegado y embutición a medida para automoción, electrodomésticos e industria."
+>
+  <Breadcrumb items={[
+    { label: 'Productos', href: '/products' },
+    { label: 'Piezas Estampadas', href: '/products/stamping-parts' },
+    { label: 'Estampado de Acero al Carbono' }
+  ]} />
+
+  <header class="page-header">
+    <div class="container">
+      <h1>Estampado de Acero al Carbono</h1>
+      <p>Piezas estampadas de acero al carbono — SPCC, DC01, alta resistencia</p>
+    </div>
+  </header>
+
+  <section class="section">
+    <div class="container">
+      <p class="eyebrow">Product Overview</p>
+      <h2>Estampado de Acero al Carbono</h2>
+      <p>Fabricamos componentes de estampado de acero al carbono a medida en grados SPCC, DC01 y acero de alta resistencia. Nuestras líneas de estampado producen blanks, soportes, clips y carcassas embutidas de alta tolerancia con calidad constante para producción en volumen.</p>
+
+      <div class="image-placeholder" style="border:2px dashed #cbd5e1; border-radius:12px; padding:48px 24px; text-align:center; color:#64748b; background:#f8fafc; margin:24px 0;">
+        Images coming soon — to be uploaded
+      </div>
+
+      <div class="product-actions">
+        <a href="/contact" class="btn btn-primary btn-lg">Request a Quote</a>
+        <a href="/products/stamping-parts" class="btn btn-outline btn-lg">Volver a Piezas Estampadas</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

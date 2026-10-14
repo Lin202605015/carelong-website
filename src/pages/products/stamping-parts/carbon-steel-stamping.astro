@@ -1,0 +1,39 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro';
+import Breadcrumb from '@components/Breadcrumb.astro';
+---
+
+<BaseLayout
+  title="Carbon Steel Stamping — Custom Stamped Parts (SPCC, DC01, High-Strength) | Carelong"
+  description="Precision carbon steel stamping parts: SPCC, DC01, high-strength steel. Custom blanking, piercing, bending and deep drawing for automotive, appliance and industrial applications."
+>
+  <Breadcrumb items={[
+    { label: 'Products', href: '/products' },
+    { label: 'Stamping Parts', href: '/products/stamping-parts' },
+    { label: 'Carbon Steel Stamping' }
+  ]} />
+
+  <header class="page-header">
+    <div class="container">
+      <h1>Carbon Steel Stamping</h1>
+      <p>Custom carbon steel stamped parts — SPCC, DC01, high-strength steel</p>
+    </div>
+  </header>
+
+  <section class="section">
+    <div class="container">
+      <p class="eyebrow">Product Overview</p>
+      <h2>Carbon Steel Stamping</h2>
+      <p>We manufacture custom carbon steel stamping components in SPCC, DC01 and high-strength steel grades. Our stamping lines deliver tight-tolerance blanks, brackets, clips and deep-drawn shells with consistent quality for high-volume production.</p>
+
+      <div class="image-placeholder" style="border:2px dashed #cbd5e1; border-radius:12px; padding:48px 24px; text-align:center; color:#64748b; background:#f8fafc; margin:24px 0;">
+        Images coming soon — to be uploaded
+      </div>
+
+      <div class="product-actions">
+        <a href="/contact" class="btn btn-primary btn-lg">Request a Quote</a>
+        <a href="/products/stamping-parts" class="btn btn-outline btn-lg">Back to Stamping Parts</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

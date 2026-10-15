@@ -1,138 +1,532 @@
-﻿---
-import BaseLayout from '../../layouts/BaseLayout.astro';
-import Breadcrumb from '../../components/Breadcrumb.astro';
 ---
 
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+import Breadcrumb from '../../components/Breadcrumb.astro';
+
+
+
+const subcategories = [
+  {
+    slug: 'stainless-steel-stamping',
+    name: 'Stainless Steel Stamping',
+    image: '/images/products/stamping-parts/stainless-steel-stamping/stainless-01.webp',
+    description: 'Corrosion-resistant stainless steel stamping in SUS304, SUS316 and SUS430. Progressive die, deep drawing and bending for automotive, electronics and food equipment.',
+    count: 5,
+  },
+  {
+    slug: 'carbon-steel-stamping',
+    name: 'Carbon Steel Stamping',
+    image: '/images/products/stamping-parts/carbon-steel-stamping/carbon-01.webp',
+    description: 'High-strength carbon steel stamping in SPCC, DC01 and high-tensile grades. Brackets, supports and structural parts for automotive, construction and machinery.',
+    count: 5,
+  },
+  {
+    slug: 'aluminum-alloy-stamping',
+    name: 'Aluminum Alloy Stamping',
+    image: '/images/products/stamping-parts/aluminum-alloy-stamping/alum-01.webp',
+    description: 'Lightweight aluminum alloy stamping in 6061, 6063 and 5052. Heatsinks, enclosures and brackets for electronics, LED, automotive and solar.',
+    count: 5,
+  },
+  {
+    slug: 'copper-brass-stamping',
+    name: 'Copper / Brass Stamping',
+    image: '/images/products/stamping-parts/copper-brass-stamping/copper-01.webp',
+    description: 'Conductive copper and brass stamping in C11000, C26000 and C27000. Terminals, connectors, contacts and decorative trim for electrical and plumbing.',
+    count: 5,
+  },
+  {
+    slug: 'galvanized-aluzinc-stamping',
+    name: 'Galvanized & Aluzinc Stamping',
+    image: '/images/products/stamping-parts/galvanized-aluzinc-stamping/galv-01.webp',
+    description: 'Corrosion-resistant galvanized and Galvalume (55 percent Al-Zn) coated sheet stamping. Brackets, panels and enclosures for construction, HVAC and outdoor use.',
+    count: 5,
+  },
+];
+
+const navGroups = [
+  { slug: 'bolts-and-nuts', name: 'Bolts and Nuts', children: [
+    { slug: 'bolts-and-nuts/hub-bolts', name: 'Hub Bolts' },
+    { slug: 'bolts-and-nuts/plow-bolts', name: 'Plow Bolts' },
+    { slug: 'bolts-and-nuts/track-bolts', name: 'Track Bolts' },
+    { slug: 'bolts-and-nuts/segment-bolts', name: 'Segment Bolts' },
+    { slug: 'bolts-and-nuts/hex-nuts', name: 'Hex Nuts' },
+    { slug: 'bolts-and-nuts/flange-nuts', name: 'Flange Nuts' },
+    { slug: 'bolts-and-nuts/nylon-nuts', name: 'Nylon Nuts' },
+    { slug: 'bolts-and-nuts/wheel-nuts', name: 'Wheel Nuts' },
+    { slug: 'bolts-and-nuts/slotted-nuts', name: 'Slotted Nuts' },
+  ]},
+  { slug: 'display-rack', name: 'Display Racks', children: [
+    { slug: 'display-rack/supermarket-display-racks', name: 'Supermarket Display Racks' },
+    { slug: 'display-rack/wall-mounted-storage-racks', name: 'Pegboard & Slatwall Display' },
+    { slug: 'display-rack/clothing-display-racks', name: 'Clothing Display Racks' },
+    { slug: 'display-rack/wooden-display-racks', name: 'Wooden Display Racks' },
+    { slug: 'display-rack/newspaper-magazine-racks', name: 'Display Tables & Stands' },
+  ]},
+  { slug: 'stamping-parts', name: 'Stamping Parts', children: [{ slug: 'stamping-parts/stainless-steel-stamping', name: 'Stainless Steel Stamping' }, { slug: 'stamping-parts/carbon-steel-stamping', name: 'Carbon Steel Stamping' }, { slug: 'stamping-parts/aluminum-alloy-stamping', name: 'Aluminum Alloy Stamping' }, { slug: 'stamping-parts/copper-brass-stamping', name: 'Copper / Brass Stamping' }, { slug: 'stamping-parts/galvanized-aluzinc-stamping', name: 'Galvanized & Aluzinc Stamping' }] },
+  { slug: 'die-casting-parts', name: 'Die Casting Parts', children: [] },
+  { slug: 'forging-parts', name: 'Forging Parts', children: [] },
+  { slug: 'machining-parts', name: 'Machining Parts', children: [] },
+  { slug: 'welding-parts', name: 'Welding Parts', children: [] },
+  { slug: 'plastic-rubber-parts', name: 'Plastic and Rubber Parts', children: [] },
+  { slug: 'tooling-and-moulds', name: 'Tooling and Moulds', children: [] },
+  { slug: 'heavy-equipment-parts', name: 'Heavy Equipment Parts', children: [] },
+  { slug: 'auto-parts', name: 'Auto Parts', children: [] },
+  { slug: 'other-parts', name: 'Other Parts', children: [] },
+];
+
+
+const productSchema = {
+  "@context": "https://schema.org",
+  "@graph": subcategories.map(cat => ({
+    "@type": "Product",
+    "name": cat.name,
+    "description": cat.description,
+    "image": "https://carelong.com.cn" + cat.image,
+    "url": "https://carelong.com.cn/products/stamping-parts/" + cat.slug,
+    "category": "Stamping Parts",
+    "brand": { "@type": "Brand", "name": "Carelong" }
+  }))
+};
+const productSchemaJson = JSON.stringify(productSchema).replace(/</g, '\u003c');
+---
+
+
+
 <BaseLayout
-  title="Stamping Parts —Manufacturer & Exporter | Carelong"
-  description="Custom stamping parts manufacturer. Stainless steel, carbon steel stamping. CNC punching, bending, stretching for automotive and industrial applications."
+
+  title="Stamping Parts — Custom Metal Stamping Manufacturer | Carelong"
+
+  description="Custom metal stamping parts manufacturer. Stainless steel, carbon steel, aluminum, copper/brass and galvanized/Aluzinc stamping for automotive, electronics and industrial applications."
+
 >
+
   <Breadcrumb items={[
+
     { label: 'Products', href: '/products' },
+
     { label: 'Stamping Parts' }
+
   ]} />
 
+
+
   <header class="page-header">
+
     <div class="container">
+
       <h1>Stamping Parts</h1>
-      <p>Custom stamping parts manufacturer.</p>
+
+      <p>Custom metal stamping parts manufacturer.</p>
+
     </div>
+
   </header>
 
-  <section class="section">
+
+
+  <section class="section products-section">
+        <aside class="product-sidebar">
+        <nav class="product-nav" aria-label="Product categories">
+          <p class="product-nav-title">Product Categories</p>
+          <ul>
+            {navGroups.map(g => (
+              g.children.length > 0 ? (
+                <li class="nav-group">
+                  <div class="nav-group-head">
+                    <a href={`/products/${g.slug}`} class="nav-link">{g.name}</a>
+                    <span class="nav-count">{g.children.length}</span>
+                    <button class="nav-toggle" type="button" aria-expanded="false" aria-label={`Toggle ${g.name} subcategories`}>▸</button>
+                  </div>
+                  <ul class="nav-sublist">
+                    {g.children.map(ch => (
+                      <li><a href={`/products/${ch.slug}`} class="nav-sublink">{ch.name}</a></li>
+                    ))}
+                  </ul>
+                </li>
+              ) : (
+                <li><a href={`/products/${g.slug}`} class="nav-link">{g.name}</a></li>
+              )
+            ))}
+          </ul>
+        </nav>
+      </aside>
+
     <div class="container">
-      <div class="product-overview">
-        <div class="product-image" style="background: #fff; border-radius: var(--radius-xl); box-shadow: var(--shadow-lg); display:flex; align-items:center; justify-content:center; height: 400px; overflow:hidden;">
-          <img src="/images/products/stamping-parts/stamping-parts-01-v2.webp" alt="Stamping Parts" style="max-height: 100%; max-width: 100%; object-fit: contain;" />
-        </div>
-        <div class="product-intro">
-          <p class="eyebrow">Product Overview</p>
-          <h2>Stamping Parts</h2>
-          <p>Custom stamping parts manufacturer. Stainless steel, carbon steel stamping. CNC punching, bending, stretching for automotive and industrial applications.</p>
 
-          <div class="product-badges">
-            <span class="badge">Precision Stamping</span>
-            <span class="badge">Stainless Steel</span>
-            <span class="badge">Progressive Die</span>
-            <span class="badge">Custom Design</span>
-          </div>
+      <header class="section-header">
 
-          <div class="product-actions">
-            <a href="/contact" class="btn btn-primary btn-lg">Request a Quote</a>
-            <a href="/products" class="btn btn-primary btn-lg">All Products</a>
-          </div>
-        </div>
+        <p class="eyebrow">Product Categories</p>
+
+        <h2>Stamping Parts</h2>
+
+        <p class="section-desc">We produce custom metal stamping parts across stainless steel, carbon steel, aluminum, copper/brass and coated sheet. Select a category below to view our capabilities.</p>
+
+      </header>
+
+
+
+      <div class="subcategory-grid">
+
+        {subcategories.map(cat => (
+
+          <a href={`/products/stamping-parts/${cat.slug}`} class="subcategory-card">
+
+            <div class="card-image">
+
+              <img src={cat.image} alt={cat.name} loading="lazy" />
+
+            </div>
+
+            <div class="card-body">
+
+              <span class="product-count">{cat.count} products</span>
+
+              <h3>{cat.name}</h3>
+
+              <p>{cat.description}</p>
+
+              <span class="btn btn-primary btn-sm">
+
+                View Products
+
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+
+                  <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+
+                </svg>
+
+              </span>
+
+            </div>
+
+          </a>
+
+        ))}
+
       </div>
+
     </div>
+
   </section>
+
+
 
   <section class="section section-alt">
+
     <div class="container">
+
       <header class="section-header">
-        <p class="eyebrow">Specifications</p>
-        <h2>Technical Specifications</h2>
+
+        <p class="eyebrow">Our Capabilities</p>
+
+        <h2>Why Choose Carelong Stamping</h2>
+
       </header>
-      <div class="spec-table">
-        <div class="spec-row">
-          <div class="spec-name">Process</div>
-          <div class="spec-value">Progressive stamping, deep drawing, punching, bending</div>
+
+      <div class="features-grid">
+
+        <div class="feature-item">
+
+          <div class="feature-icon">🏭</div>
+
+          <h3>Precision Stamping</h3>
+
+          <p>Progressive dies, deep drawing, punching and bending with tolerances down to plus or minus 0.05 mm for consistent, high-volume output.</p>
+
         </div>
-        <div class="spec-row">
-          <div class="spec-name">Material</div>
-          <div class="spec-value">Stainless steel, carbon steel, aluminum, copper</div>
+
+        <div class="feature-item">
+
+          <div class="feature-icon">🔬</div>
+
+          <h3>Multi-Material</h3>
+
+          <p>Stainless steel, carbon steel, aluminum, copper/brass and galvanized/Aluzinc coated sheet, matched to your application.</p>
+
         </div>
-        <div class="spec-row">
-          <div class="spec-name">Thickness</div>
-          <div class="spec-value">0.1mm —6mm</div>
+
+        <div class="feature-item">
+
+          <div class="feature-icon">📐</div>
+
+          <h3>Custom Design</h3>
+
+          <p>Parts made to your drawings or samples, from prototyping through mass production, with plating, anodizing and powder coating available.</p>
+
         </div>
-        <div class="spec-row">
-          <div class="spec-name">Tolerance</div>
-          <div class="spec-value">±0.05mm</div>
+
+        <div class="feature-item">
+
+          <div class="feature-icon">🚚</div>
+
+          <h3>Reliable Delivery</h3>
+
+          <p>Established logistics partnerships ensure your orders arrive on time, every time — to North America, Europe, and beyond.</p>
+
         </div>
-        <div class="spec-row">
-          <div class="spec-name">Surface Treatment</div>
-          <div class="spec-value">Zinc plating, nickel plating, anodizing, powder coating</div>
-        </div>
-        <div class="spec-row">
-          <div class="spec-name">Application</div>
-          <div class="spec-value">Automotive, electronics, appliances, industrial equipment</div>
-        </div>
+
       </div>
+
     </div>
+
   </section>
 
-  <section class="section">
-    <div class="container">
-      <header class="section-header">
-        <p class="eyebrow">Product Gallery</p>
-        <h2>Stamping Parts Photos</h2>
-      </header>
-            <div class="gallery-grid">
-  <div class="gallery-item"><img src="/images/products/stamping-parts/stamping-parts-02-v2.webp" alt="stamping parts 02" loading="lazy" /></div>
-  <div class="gallery-item"><img src="/images/products/stamping-parts/stamping-parts-03-v2.webp" alt="stamping parts 03" loading="lazy" /></div>
-  <div class="gallery-item"><img src="/images/products/stamping-parts/stamping-parts-04-v2.webp" alt="stamping parts 04" loading="lazy" /></div>
-  <div class="gallery-item"><img src="/images/products/stamping-parts/stamping-parts-05-v2.webp" alt="stamping parts 05" loading="lazy" /></div>
-  <div class="gallery-item"><img src="/images/products/stamping-parts/stamping-parts-06-v2.webp" alt="stamping parts 06" loading="lazy" /></div>
-  <div class="gallery-item"><img src="/images/products/stamping-parts/stamping-parts-07-v2.webp" alt="stamping parts 07" loading="lazy" /></div>
-  <div class="gallery-item"><img src="/images/products/stamping-parts/stamping-parts-09-v2.webp" alt="stamping parts 09" loading="lazy" /></div>
-  <div class="gallery-item"><img src="/images/products/stamping-parts/stamping-parts-10-v2.webp" alt="stamping parts 10" loading="lazy" /></div>
-</div>
-</section>
-<section class="section cta-band">
+
+
+  <section class="section cta-band">
+
     <div class="container text-center">
+
       <h2>Need Stamping Parts?</h2>
-      <p>Contact us for specifications and pricing. OEM and custom sizes available.</p>
+
+      <p>Contact us for specifications, samples, and competitive pricing. OEM and custom designs available.</p>
+
       <div class="cta-actions">
+
         <a href="/contact" class="btn btn-primary btn-lg">Request a Quote</a>
+
         <a href="mailto:Jason@carelong.com.cn?subject=Product%20Inquiry%20-%20Carelong%20Website" class="btn btn-outline-white btn-lg">Email Us</a>
+
       </div>
+
     </div>
+
   </section>
+
+<script>
+  document.querySelectorAll('.product-nav .nav-toggle').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var group = btn.closest('.nav-group');
+      var isOpen = group.classList.toggle('open');
+      btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    });
+  });
+</script>
+
+<script type="application/ld+json" is:inline set:html={productSchemaJson}></script>
 </BaseLayout>
 
+
+
 <style>
-.eyebrow { font-size: 0.8125rem; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; color: var(--color-secondary); margin-bottom: var(--space-3); }
-.product-overview { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-12); align-items: center; }
-.product-intro h2 { margin-bottom: var(--space-4); }
-.product-intro p { color: var(--color-text-light); }
-.product-badges { display: flex; flex-wrap: wrap; gap: var(--space-2); margin: var(--space-6) 0; }
-.badge { display: inline-block; background: rgba(27, 75, 142, 0.08); color: var(--color-primary); padding: var(--space-1) var(--space-3); border-radius: 100px; font-size: 0.8125rem; font-weight: 600; }
-.product-actions { display: flex; gap: var(--space-4); flex-wrap: wrap; }
-.spec-table { display: flex; flex-direction: column; gap: var(--space-2); }
-.spec-row { display: flex; justify-content: space-between; padding: var(--space-4) var(--space-6); background: var(--color-bg); border: 1px solid var(--color-border); border-radius: var(--radius-md); }
-.spec-name { font-weight: 600; color: var(--color-text); }
-.spec-value { color: var(--color-text-light); text-align: right; }
-.gallery-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--space-4); }
-.gallery-item { background: #fff; border: 1px solid var(--color-border); border-radius: var(--radius-lg); overflow: hidden; aspect-ratio: 1/1; display: flex; align-items: center; justify-content: center; }
-.gallery-item img { max-width: 100%; max-height: 100%; object-fit: contain; display: block; }
-.cta-band { background: var(--color-primary); color: #fff; }
-.cta-band h2 { color: #fff; margin-bottom: var(--space-4); }
-.cta-band p { color: rgba(255,255,255,0.85); font-size: 1.125rem; margin-bottom: var(--space-6); }
-.cta-actions { display: flex; gap: var(--space-4); justify-content: center; flex-wrap: wrap; }
-@media (max-width: 768px) {
-  .product-overview { grid-template-columns: 1fr; }
-  .gallery-grid { grid-template-columns: repeat(2, 1fr); }
-  .spec-row { flex-direction: column; gap: var(--space-1); }
-  .spec-value { text-align: left; }
+
+
+/* Product Sidebar (sticky floating nav) — same as /products */
+.products-section {
+  display: grid;
+  grid-template-columns: 230px 1fr;
+  gap: var(--space-8);
+  align-items: start;
+  max-width: calc(230px + var(--space-8) + var(--container-max) + 2 * var(--space-6));
+  margin: 0 auto;
+  padding-left: var(--space-6);
+  padding-right: var(--space-6);
 }
+
+.products-section > .container {
+  max-width: none;
+  margin: 0;
+  width: 100%;
+}
+
+.product-sidebar {
+  position: sticky;
+  top: 84px;
+  align-self: start;
+}
+
+.product-nav {
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: 16px;
+  padding: 1.25rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+}
+
+.product-nav-title {
+  font-size: 0.8125rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--color-text-light);
+  margin: 0 0 var(--space-3);
+}
+
+.product-nav > ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.product-nav a {
+  display: block;
+  padding: 0.5rem 0.75rem;
+  border-radius: 8px;
+  color: var(--color-text);
+  text-decoration: none;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.product-nav a:hover {
+  background: rgba(27, 75, 142, 0.08);
+  color: var(--color-primary);
+}
+
+.product-nav a.active {
+  background: var(--color-primary);
+  color: #fff;
+}
+
+.product-nav .nav-group-head {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.product-nav .nav-link {
+  flex: 1;
+  display: block;
+  padding: 0.5rem 0.75rem;
+  border-radius: 8px;
+  color: var(--color-text);
+  text-decoration: none;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.product-nav .nav-link:hover {
+  background: rgba(27, 75, 142, 0.08);
+  color: var(--color-primary);
+}
+
+.product-nav .nav-count {
+  flex-shrink: 0;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  background: rgba(27, 75, 142, 0.08);
+  padding: 0.1rem 0.45rem;
+  border-radius: 100px;
+  min-width: 1.4rem;
+  text-align: center;
+}
+
+.product-nav .nav-toggle {
+  flex-shrink: 0;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  font-size: 0.7rem;
+  line-height: 1;
+  color: var(--color-text-light);
+  padding: 0.35rem;
+  border-radius: 6px;
+  transition: transform 0.15s ease, background 0.15s ease;
+}
+
+.product-nav .nav-toggle:hover {
+  background: rgba(27, 75, 142, 0.08);
+}
+
+.product-nav .nav-group.open .nav-toggle {
+  transform: rotate(90deg);
+}
+
+.product-nav .nav-sublist {
+  list-style: none;
+  margin: 0;
+  padding: 0 0 0 0.5rem;
+  display: none;
+}
+
+.product-nav .nav-group.open .nav-sublist {
+  display: block;
+}
+
+.product-nav .nav-sublink {
+  display: block;
+  padding: 0.4rem 0.75rem 0.4rem 1.25rem;
+  border-radius: 8px;
+  color: var(--color-text-light);
+  text-decoration: none;
+  font-size: 0.875rem;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.product-nav .nav-sublink:hover {
+  background: rgba(27, 75, 142, 0.08);
+  color: var(--color-primary);
+}
+
+@media (max-width: 1024px) {
+  .products-section { grid-template-columns: 1fr; }
+  .product-sidebar { position: static; margin-bottom: var(--space-6); }
+}
+
+.eyebrow { font-size: 0.8125rem; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; color: var(--color-secondary); margin-bottom: var(--space-3); }
+
+.section-header { text-align: center; margin-bottom: var(--space-12); }
+
+.section-desc { color: var(--color-text-light); max-width: 640px; margin: var(--space-4) auto 0; }
+
+.subcategory-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-6); }
+
+.subcategory-card { background: #fff; border: 1px solid var(--color-border); border-radius: var(--radius-lg); overflow: hidden; text-decoration: none; color: inherit; transition: transform 0.2s, box-shadow 0.2s; }
+
+.subcategory-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
+
+.card-image { height: 200px; background: #fff; display: flex; align-items: center; justify-content: center; }
+
+.card-image img { max-width: 90%; max-height: 90%; object-fit: contain; }
+
+.card-body { padding: var(--space-6); }
+
+.product-count { display: inline-block; background: rgba(27, 75, 142, 0.08); color: var(--color-primary); padding: var(--space-1) var(--space-3); border-radius: 100px; font-size: 0.75rem; font-weight: 600; margin-bottom: var(--space-3); }
+
+.card-body h3 { font-size: 1.25rem; margin-bottom: var(--space-3); color: var(--color-text); }
+
+.card-body p { color: var(--color-text-light); font-size: 0.9375rem; line-height: 1.6; margin-bottom: var(--space-4); }
+
+.features-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--space-8); }
+
+.feature-item { text-align: center; }
+
+.feature-icon { font-size: 2.5rem; margin-bottom: var(--space-4); }
+
+.feature-item h3 { font-size: 1.125rem; margin-bottom: var(--space-3); }
+
+.feature-item p { color: var(--color-text-light); font-size: 0.9375rem; line-height: 1.6; }
+
+.cta-band { background: var(--color-primary); color: #fff; }
+
+.cta-band h2 { color: #fff; margin-bottom: var(--space-4); }
+
+.cta-band p { color: rgba(255,255,255,0.85); font-size: 1.125rem; margin-bottom: var(--space-6); }
+
+.cta-actions { display: flex; gap: var(--space-4); justify-content: center; flex-wrap: wrap; }
+
+@media (max-width: 1024px) {
+
+  .subcategory-grid { grid-template-columns: repeat(2, 1fr); }
+
+  .features-grid { grid-template-columns: repeat(2, 1fr); }
+
+}
+
+@media (max-width: 640px) {
+
+  .subcategory-grid { grid-template-columns: 1fr; }
+
+  .features-grid { grid-template-columns: 1fr; }
+
+}
+
 </style>
+

@@ -22,7 +22,17 @@ import Footer from '../components/Footer.astro';
 import '../styles/global.css';
 
 const siteTitle = title.includes(' | ') ? title : `${title} | ${siteConfig.name}`;
-const metaDescription = description || siteConfig.description;
+
+// Trim meta description to <=155 chars at a word boundary.
+// Google truncates longer snippets in SERPs anyway, so pre-trimming keeps the
+// displayed snippet clean (no mid-word cut). Applies to both EN and ES.
+function trimMeta(d: string, max = 155): string {
+  if (!d || d.length <= max) return d;
+  const cut = d.slice(0, max);
+  const lastSpace = cut.lastIndexOf(' ');
+  return lastSpace > 0 ? cut.slice(0, lastSpace) : cut;
+}
+const metaDescription = trimMeta(description || siteConfig.description);
 const canonicalURL = canonical ? new URL(canonical, siteConfig.url) : new URL(Astro.url.pathname, siteConfig.url);
 
 // Auto-generate BreadcrumbList from URL pathname when no `breadcrumbs` prop is provided.

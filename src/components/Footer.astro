@@ -27,6 +27,15 @@ const l = lang === 'es' ? {
   powered: 'Xiamen, China',
   productInquirySubject: 'Consulta de Producto - Sitio Web Carelong',
   homeAria: 'Carelong - Inicio',
+  deptTitle: 'Contactos por Departamento',
+  deptSub: 'Contacta directamente al equipo adecuado',
+  dept1: 'Sujetadores y Piezas Estándar',
+  dept2: 'Estampado y Conformado de Metal',
+  dept3: 'Mecanizado CNC y a Medida',
+  dept4: 'Fundición, Forja y Soldadura',
+  dept5: 'Piezas de Plástico y Caucho',
+  dept6: 'Exhibidores Comerciales',
+  deptBadge: 'Retail',
 } : {
   desc: 'Professional manufacturer of hub bolts, king pin kits, cold heading parts, U-bolts, and hot forging auto components since 2005.',
   quickLinks: 'Quick Links',
@@ -50,9 +59,27 @@ const l = lang === 'es' ? {
   powered: 'Xiamen, China',
   productInquirySubject: 'Product Inquiry - Carelong Website',
   homeAria: 'Carelong - Home',
+  deptTitle: 'Department Contacts',
+  deptSub: 'Reach the right team directly',
+  dept1: 'Fasteners & Standard Parts',
+  dept2: 'Metal Stamping & Forming',
+  dept3: 'CNC Machining & Custom Parts',
+  dept4: 'Casting, Forging & Welding',
+  dept5: 'Plastic & Rubber Parts',
+  dept6: 'Retail Display Racks',
+  deptBadge: 'Retail',
 };
 
 const prefix = lang === 'es' ? '/es' : '';
+
+const departments = [
+  { name: l.dept1, email: 'maxim@carelong.com.cn' },
+  { name: l.dept2, email: 'julia@carelong.com.cn' },
+  { name: l.dept3, email: 'cnc@carelong.com.cn' },
+  { name: l.dept4, email: 'forming@carelong.com.cn' },
+  { name: l.dept5, email: 'plastic@carelong.com.cn' },
+  { name: l.dept6, email: 'retail@carelong.com.cn', badge: l.deptBadge },
+];
 ---
 
 <footer class="site-footer">
@@ -108,6 +135,21 @@ const prefix = lang === 'es' ? '/es' : '';
           <p class="footer-address">{siteConfig.contact.address}</p>
         </address>
       </div>
+
+      <div class="footer-col footer-depts">
+        <h3>{l.deptTitle}</h3>
+        <p class="footer-dept-sub">{l.deptSub}</p>
+        <ul class="footer-dept-grid">
+          {departments.map((d) => (
+            <li>
+              <span class="footer-dept-name">
+                {d.name}{d.badge && <span class="footer-dept-badge">{d.badge}</span>}
+              </span>
+              <a href={`mailto:${d.email}`}>{d.email}</a>
+            </li>
+          ))}
+        </ul>
+      </div>
     </div>
 
     <div class="footer-bottom">
@@ -125,10 +167,15 @@ const prefix = lang === 'es' ? '/es' : '';
   margin-top: 0;
 }
 
+/* 内容区加宽：吃掉两侧大片留白，让 footer 铺满可用宽度 */
+.site-footer .container {
+  max-width: min(1600px, 96vw);
+}
+
 .footer-grid {
   display: grid;
-  grid-template-columns: 1.5fr 1fr 1fr 1.2fr;
-  gap: var(--space-12);
+  grid-template-columns: 1.35fr 0.7fr 0.85fr 1fr 1.9fr;
+  gap: var(--space-8);
   margin-bottom: var(--space-12);
 }
 
@@ -219,6 +266,66 @@ const prefix = lang === 'es' ? '/es' : '';
   line-height: 1.6;
 }
 
+/* ---- Department Contacts column ---- */
+.footer-depts {
+  border-left: 1px solid #24405e;
+  padding-left: var(--space-6);
+}
+
+.footer-dept-sub {
+  font-size: 0.75rem;
+  color: #6B7280;
+  line-height: 1.45;
+  margin: calc(var(--space-2) * -1) 0 var(--space-4);
+}
+
+.footer-dept-grid {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-3) var(--space-6);
+}
+
+.footer-dept-grid li {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  min-width: 0;
+}
+
+.footer-dept-name {
+  color: #E5E7EB;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  line-height: 1.35;
+}
+
+.footer-dept-badge {
+  display: inline-block;
+  font-size: 0.625rem;
+  font-weight: 600;
+  color: #9CA3AF;
+  background: #24405e;
+  border-radius: 4px;
+  padding: 0 5px;
+  margin-left: 5px;
+  letter-spacing: 0.3px;
+  vertical-align: 1px;
+}
+
+.footer-dept-grid a {
+  color: #8AB4E8;
+  font-size: 0.75rem;
+  text-decoration: none;
+  line-height: 1.4;
+  overflow-wrap: anywhere;
+}
+
+.footer-dept-grid a:hover {
+  color: #fff;
+  text-decoration: underline;
+}
+
 .footer-bottom {
   border-top: 1px solid #374151;
   padding-top: var(--space-6);
@@ -240,12 +347,25 @@ const prefix = lang === 'es' ? '/es' : '';
   .footer-grid {
     grid-template-columns: 1fr 1fr;
   }
+
+  .footer-depts {
+    grid-column: 1 / -1;
+    border-left: none;
+    padding-left: 0;
+    border-top: 1px solid #24405e;
+    padding-top: var(--space-6);
+  }
 }
 
 @media (max-width: 640px) {
   .footer-grid {
     grid-template-columns: 1fr;
     gap: var(--space-8);
+  }
+
+  .footer-dept-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-3);
   }
 
   .footer-bottom {

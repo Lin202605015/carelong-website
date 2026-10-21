@@ -35,7 +35,6 @@ const l = lang === 'es' ? {
   dept4: 'Fundición, Forja y Soldadura',
   dept5: 'Piezas de Plástico y Caucho',
   dept6: 'Exhibidores Comerciales',
-  deptBadge: 'Retail',
 } : {
   desc: 'Professional manufacturer of hub bolts, king pin kits, cold heading parts, U-bolts, and hot forging auto components since 2005.',
   quickLinks: 'Quick Links',
@@ -67,7 +66,6 @@ const l = lang === 'es' ? {
   dept4: 'Casting, Forging & Welding',
   dept5: 'Plastic & Rubber Parts',
   dept6: 'Retail Display Racks',
-  deptBadge: 'Retail',
 };
 
 const prefix = lang === 'es' ? '/es' : '';
@@ -78,7 +76,7 @@ const departments = [
   { name: l.dept3, email: 'cnc@carelong.com.cn' },
   { name: l.dept4, email: 'forming@carelong.com.cn' },
   { name: l.dept5, email: 'plastic@carelong.com.cn' },
-  { name: l.dept6, email: 'retail@carelong.com.cn', badge: l.deptBadge },
+  { name: l.dept6, email: 'retail@carelong.com.cn' },
 ];
 ---
 
@@ -143,7 +141,7 @@ const departments = [
           {departments.map((d) => (
             <li>
               <span class="footer-dept-name">
-                {d.name}{d.badge && <span class="footer-dept-badge">{d.badge}</span>}
+                {d.name}
               </span>
               <a href={`mailto:${d.email}`}>{d.email}</a>
             </li>
@@ -298,19 +296,6 @@ const departments = [
   font-size: 0.8125rem;
   font-weight: 500;
   line-height: 1.35;
-}
-
-.footer-dept-badge {
-  display: inline-block;
-  font-size: 0.625rem;
-  font-weight: 600;
-  color: #9CA3AF;
-  background: #24405e;
-  border-radius: 4px;
-  padding: 0 5px;
-  margin-left: 5px;
-  letter-spacing: 0.3px;
-  vertical-align: 1px;
 }
 
 .footer-dept-grid a {

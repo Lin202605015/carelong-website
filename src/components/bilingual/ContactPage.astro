@@ -8,6 +8,15 @@ const { lang } = Astro.props;
 const t = contact;
 const isEs = lang === 'es';
 
+const departments = [
+  { name: isEs ? 'Sujetadores y Piezas Estándar' : 'Fasteners & Standard Parts', email: 'maxim@carelong.com.cn' },
+  { name: isEs ? 'Estampado y Conformado de Metal' : 'Metal Stamping & Forming', email: 'julia@carelong.com.cn' },
+  { name: isEs ? 'Mecanizado CNC y a Medida' : 'CNC Machining & Custom Parts', email: 'cnc@carelong.com.cn' },
+  { name: isEs ? 'Fundición, Forja y Soldadura' : 'Casting, Forging & Welding', email: 'forming@carelong.com.cn' },
+  { name: isEs ? 'Piezas de Plástico y Caucho' : 'Plastic & Rubber Parts', email: 'plastic@carelong.com.cn' },
+  { name: isEs ? 'Exhibidores Comerciales' : 'Retail Display Racks', email: 'retail@carelong.com.cn', badge: 'Retail' },
+];
+
 const localBusinessSchema = {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
@@ -206,6 +215,21 @@ const localBusinessSchema = {
               </a>
             </div>
           </div>
+
+          <div class="contact-card dept-card">
+            <h3>{isEs ? 'Contactos por Departamento' : 'Department Contacts'}</h3>
+            <p class="dept-sub">{isEs ? 'Contacta directamente al equipo adecuado' : 'Reach the right team directly'}</p>
+            <ul class="dept-list">
+              {departments.map((d) => (
+                <li>
+                  <span class="dept-name">
+                    {d.name}{d.badge && <span class="dept-badge">{d.badge}</span>}
+                  </span>
+                  <a href={`mailto:${d.email}`}>{d.email}</a>
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
       </div>
     </div>
@@ -293,6 +317,49 @@ const localBusinessSchema = {
   display: flex; align-items: center; gap: 6px;
   color: var(--color-primary); text-decoration: none; font-weight: 600;
 }
+/* ---- Department Contacts card ---- */
+.dept-card { margin-top: var(--space-6); }
+.dept-sub {
+  color: var(--color-text-muted);
+  font-size: 0.8125rem;
+  line-height: 1.5;
+  margin: var(--space-2) 0 var(--space-4);
+}
+.dept-list { list-style: none; padding: 0; margin: 0; }
+.dept-list li {
+  padding: var(--space-3) 0;
+  border-top: 1px solid var(--color-border);
+}
+.dept-list li:first-child { border-top: none; padding-top: 0; }
+.dept-list li:last-child { padding-bottom: 0; }
+.dept-name {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--color-text);
+  line-height: 1.4;
+  margin-bottom: 2px;
+}
+.dept-badge {
+  display: inline-block;
+  font-size: 0.6875rem;
+  font-weight: 600;
+  color: var(--color-text-muted);
+  background: var(--color-bg-alt);
+  border: 1px solid var(--color-border);
+  border-radius: 4px;
+  padding: 0 5px;
+  margin-left: 5px;
+  vertical-align: 1px;
+}
+.dept-list a {
+  color: var(--color-primary);
+  font-size: 0.875rem;
+  text-decoration: none;
+  overflow-wrap: anywhere;
+}
+.dept-list a:hover { text-decoration: underline; }
+
 .app-link:hover { text-decoration: underline; }
 
 @media (max-width: 900px) {

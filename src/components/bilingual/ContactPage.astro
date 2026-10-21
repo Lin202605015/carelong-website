@@ -14,7 +14,7 @@ const departments = [
   { name: isEs ? 'Mecanizado CNC y a Medida' : 'CNC Machining & Custom Parts', email: 'cnc@carelong.com.cn' },
   { name: isEs ? 'Fundición, Forja y Soldadura' : 'Casting, Forging & Welding', email: 'forming@carelong.com.cn' },
   { name: isEs ? 'Piezas de Plástico y Caucho' : 'Plastic & Rubber Parts', email: 'plastic@carelong.com.cn' },
-  { name: isEs ? 'Exhibidores Comerciales' : 'Retail Display Racks', email: 'retail@carelong.com.cn', badge: 'Retail' },
+  { name: isEs ? 'Exhibidores Comerciales' : 'Retail Display Racks', email: 'retail@carelong.com.cn' },
 ];
 
 const localBusinessSchema = {
@@ -223,7 +223,7 @@ const localBusinessSchema = {
               {departments.map((d) => (
                 <li>
                   <span class="dept-name">
-                    {d.name}{d.badge && <span class="dept-badge">{d.badge}</span>}
+                    {d.name}
                   </span>
                   <a href={`mailto:${d.email}`}>{d.email}</a>
                 </li>
@@ -339,18 +339,6 @@ const localBusinessSchema = {
   color: var(--color-text);
   line-height: 1.4;
   margin-bottom: 2px;
-}
-.dept-badge {
-  display: inline-block;
-  font-size: 0.6875rem;
-  font-weight: 600;
-  color: var(--color-text-muted);
-  background: var(--color-bg-alt);
-  border: 1px solid var(--color-border);
-  border-radius: 4px;
-  padding: 0 5px;
-  margin-left: 5px;
-  vertical-align: 1px;
 }
 .dept-list a {
   color: var(--color-primary);

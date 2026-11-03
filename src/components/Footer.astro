@@ -143,9 +143,9 @@ const departments = [
   margin-top: 0;
 }
 
-/* 内容区加宽：吃掉两侧大片留白，让 footer 铺满可用宽度 */
+/* 容器宽度与全站顶部内容一致（--container-max: 1200px），两侧留白对齐 */
 .site-footer .container {
-  max-width: min(1600px, 96vw);
+  max-width: var(--container-max);
 }
 
 .footer-grid {

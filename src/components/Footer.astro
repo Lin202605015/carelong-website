@@ -27,8 +27,6 @@ const l = lang === 'es' ? {
   powered: 'Xiamen, China',
   productInquirySubject: 'Consulta de Producto - Sitio Web Carelong',
   homeAria: 'Carelong - Inicio',
-  deptTitle: 'Contactos por Departamento',
-  deptSub: 'Contacta directamente al equipo adecuado',
   dept1: 'Sujetadores y Piezas de Forja',
   dept2: 'Piezas de Estampado Metálico',
   dept3: 'Piezas Mecanizadas',
@@ -58,8 +56,6 @@ const l = lang === 'es' ? {
   powered: 'Xiamen, China',
   productInquirySubject: 'Product Inquiry - Carelong Website',
   homeAria: 'Carelong - Home',
-  deptTitle: 'Department Contacts',
-  deptSub: 'Reach the right team directly',
   dept1: 'Fasteners & Forging Parts',
   dept2: 'Metal Stamping Parts',
   dept3: 'Machining Parts',
@@ -117,26 +113,8 @@ const departments = [
         </ul>
       </div>
 
-      <div class="footer-col">
+      <div class="footer-col footer-contact-col">
         <h3>{l.contactUs}</h3>
-        <address class="footer-contact">
-          <p>
-            <strong>Jason Lin</strong><br/>
-            {l.exportManager}
-          </p>
-          <p>
-            <a href={`tel:${siteConfig.contact.tel.replace(/\s/g, '')}`}>{siteConfig.contact.tel}</a>
-          </p>
-          <p>
-            <a href={`mailto:${siteConfig.contact.email}?subject=${encodeURIComponent(l.productInquirySubject)}`}>{siteConfig.contact.email}</a>
-          </p>
-          <p class="footer-address">{siteConfig.contact.address}</p>
-        </address>
-      </div>
-
-      <div class="footer-col footer-depts">
-        <h3>{l.deptTitle}</h3>
-        <p class="footer-dept-sub">{l.deptSub}</p>
         <ul class="footer-dept-grid">
           {departments.map((d) => (
             <li>
@@ -172,7 +150,8 @@ const departments = [
 
 .footer-grid {
   display: grid;
-  grid-template-columns: 1.35fr 0.7fr 0.85fr 1fr 1.9fr;
+  /* Department Contacts 栏合并进 Contact Us：原 1.9fr 宽度由 Contact Us 吸收，总宽不变 */
+  grid-template-columns: 1.35fr 0.7fr 0.85fr 2.9fr;
   gap: var(--space-8);
   margin-bottom: var(--space-12);
 }
@@ -240,43 +219,7 @@ const departments = [
   color: #fff;
 }
 
-.footer-contact {
-  font-style: normal;
-  font-size: 0.875rem;
-  line-height: 1.8;
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-1);
-}
-
-.footer-contact a {
-  color: #9CA3AF;
-  text-decoration: none;
-  transition: color var(--transition-fast);
-}
-
-.footer-contact a:hover { color: #fff; }
-
-.footer-address {
-  margin-top: var(--space-2);
-  color: #9CA3AF;
-  font-size: 0.8125rem;
-  line-height: 1.6;
-}
-
-/* ---- Department Contacts column ---- */
-.footer-depts {
-  border-left: 1px solid #24405e;
-  padding-left: var(--space-6);
-}
-
-.footer-dept-sub {
-  font-size: 0.75rem;
-  color: #6B7280;
-  line-height: 1.45;
-  margin: calc(var(--space-2) * -1) 0 var(--space-4);
-}
-
+/* ---- Contact Us column now holds the 6 department contacts ---- */
 .footer-dept-grid {
   list-style: none;
   display: grid;
@@ -331,14 +274,6 @@ const departments = [
 @media (max-width: 1024px) {
   .footer-grid {
     grid-template-columns: 1fr 1fr;
-  }
-
-  .footer-depts {
-    grid-column: 1 / -1;
-    border-left: none;
-    padding-left: 0;
-    border-top: 1px solid #24405e;
-    padding-top: var(--space-6);
   }
 }
 

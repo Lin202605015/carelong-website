@@ -150,8 +150,8 @@ const departments = [
 
 .footer-grid {
   display: grid;
-  /* Department Contacts 栏合并进 Contact Us：原 1.9fr 宽度由 Contact Us 吸收，总宽不变 */
-  grid-template-columns: 1.35fr 0.7fr 0.85fr 2.9fr;
+  /* Contact Us 单列竖直排列 6 部门，列宽恢复正常 1fr（取消上一版加宽的右栏） */
+  grid-template-columns: 1.35fr 0.7fr 0.85fr 1fr;
   gap: var(--space-8);
   margin-bottom: var(--space-12);
 }
@@ -223,8 +223,8 @@ const departments = [
 .footer-dept-grid {
   list-style: none;
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: var(--space-3) var(--space-6);
+  grid-template-columns: 1fr;
+  gap: var(--space-3);
 }
 
 .footer-dept-grid li {

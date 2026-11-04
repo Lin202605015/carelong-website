@@ -87,54 +87,90 @@ const images = [
 
   <section class="section section-alt">
     <div class="container">
-      <header class="section-header">
-        <p class="eyebrow">Especificaciones</p>
-        <h2>Características Principales</h2>
-      </header>
-      <div class="spec-table spec-table-grid">
-        <div class="spec-row"><div class="spec-name">tipo de rosca</div><div class="spec-value">Perfil de rosca personalizado según especificación OEM</div></div>
-        <div class="spec-row"><div class="spec-name">grado de resistencia</div><div class="spec-value">10.9, 12.9</div></div>
-        <div class="spec-row"><div class="spec-name">material</div><div class="spec-value">Acero Aleado 42CrMo, 40Cr</div></div>
-        <div class="spec-row"><div class="spec-name">tratamiento superficial</div><div class="spec-value">Galvanizado, Dacromet, Fosfatado</div></div>
-        <div class="spec-row"><div class="spec-name">marcas compatibles</div><div class="spec-value">CAT, Komatsu, Hitachi, Kobelco, Volvo</div></div>
-        <div class="spec-row"><div class="spec-name">aplicación</div><div class="spec-value">Segmentos de piñón, Transmisión final, Tren de rodaje</div></div>
-      </div>
+      
 
       <header class="section-header" style="margin-top: var(--space-12);">
         <h2>Especificaciones de Pernos de Segmento</h2>
       </header>
-      <div class="data-table-wrapper">
-        <table class="data-table spec-table-8col">
+      <div class="data-table-wrapper spec-xl-wrap">
+<table class="data-table spec-table-xl">
+          
           <thead>
-            <tr>
-              <th rowspan="2">Descripción</th>
-              <th colspan="2">ESTILO</th>
-              <th rowspan="2">Peso Neto Kg/Juego</th>
-              <th rowspan="2">Juegos/Caja</th>
-              <th rowspan="2">Peso Neto Kgs/Caja</th>
-              <th rowspan="2">N.º OEM</th>
-              <th rowspan="2">Medida para Tuercas</th>
-            </tr>
-            <tr>
-              <th>Perno</th>
-              <th>Tuerca</th>
-            </tr>
+            <tr><th>Nombre de Pieza</th><th>Descripción</th><th>N.º OEM</th><th>Modelo</th><th>Peso<br>(Kg/Pc)</th></tr>
           </thead>
           <tbody>
-            <tr><td>5/8"-18UNFX1 27/32"</td><td>C</td><td>b</td><td>0.158</td><td>180</td><td>28</td><td>3S8182/7H 3607</td><td>5/8"-18UNFX3/4"</td></tr>
-            <tr><td>5/8"-18UNFX1 7/8"</td><td>C</td><td>b</td><td>0.248</td><td>100</td><td>25</td><td>1171616/1171617</td><td>&nbsp;</td></tr>
-            <tr><td>5/8"-18UNFX2 7/64"</td><td>C</td><td>b</td><td>0.159</td><td>180</td><td>29</td><td>6V0937/7H3607</td><td>5/8"-18UNFX3/4"</td></tr>
-            <tr><td>3/4"-16UNFX1 5/16"</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>180</td><td>28</td><td>&nbsp;</td><td>&nbsp;</td></tr>
-            <tr><td>3/4"-16UNFX1 15/16"</td><td>F</td><td>b</td><td>0.248</td><td>100</td><td>25</td><td>1171617/7H 3608</td><td>3/4"-16UNFX3/4"</td></tr>
-            <tr><td>3/4"-16UNFX2 5/16"</td><td>C</td><td>b</td><td>0.272</td><td>100</td><td>27</td><td>3S0336/7H3608</td><td>3/4"-16UNFX3/4"</td></tr>
-            <tr><td>3/4"-16UNFX2 5/16"</td><td>B</td><td>b</td><td>0.272</td><td>100</td><td>27</td><td>/7H3608</td><td>3/4"-16UNFX3/4"</td></tr>
-            <tr><td>3/4"-16UNFX2 13/32"</td><td>&nbsp;</td><td>&nbsp;</td><td>0.276</td><td>&nbsp;</td><td>&nbsp;</td><td>3S0336/7H3608</td><td>3/4"-16UNFX3/4"</td></tr>
-            <tr><td>7/8"-14UNFX65</td><td>&nbsp;</td><td>&nbsp;</td><td>0.452</td><td>&nbsp;</td><td>&nbsp;</td><td>9S2727/7H3609</td><td>&nbsp;</td></tr>
-            <tr><td>M18X1.5X61</td><td>G</td><td>b</td><td>0.234</td><td>100</td><td>23</td><td>131-27-42230</td><td>&nbsp;</td></tr>
-            <tr><td>M22X1.5X70</td><td>G</td><td>b</td><td>0.436</td><td>50</td><td>22</td><td>154-27-12320/01803-02228</td><td>M22X1.5X28</td></tr>
-            <tr><td>M22X1.5X73</td><td>&nbsp;</td><td>&nbsp;</td><td>0.470</td><td>&nbsp;</td><td>&nbsp;</td><td>154-27-12181/01803-02228</td><td>M22X1.5X28</td></tr>
-            <tr><td>M24X1.5X80</td><td>GF</td><td>b</td><td>0.692</td><td>35</td><td>24</td><td>178-27-11150/01803-02430</td><td>M24X1.5X30</td></tr>
-            <tr><td>M24X1.5X90</td><td>&nbsp;</td><td>&nbsp;</td><td>0.726</td><td>&nbsp;</td><td>&nbsp;</td><td>195-27-12632/01803-02430</td><td>M24X1.5X30</td></tr>
+            <tr><td>Segment Bolt</td><td>1/2&quot;-UNFX38</td><td>9W9265</td><td>D3</td><td>&nbsp;</td></tr>
+            <tr><td>Hex Nut</td><td>&nbsp;</td><td>8H5724</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+            <tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+            <tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+            <tr><td>Segment Bolt</td><td>5/8&quot;-18UNFX41</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+            <tr><td>Hex Segment Bolt</td><td>5/8&quot;-18UNFX47</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+            <tr><td>Hex Segment Bolt</td><td>5/8&quot;-18UNFX49</td><td>3S8182</td><td>D6,D5,D6C</td><td>&nbsp;</td></tr>
+            <tr><td>Hex Segment Bolt</td><td>5/8&quot;-18UNFX49</td><td>1171616</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+            <tr><td>Hex Segment Bolt</td><td>5/8&quot;-18UNFX54</td><td>6V0937</td><td>D5,D6H</td><td>0.13</td></tr>
+            <tr><td>Hex Nut</td><td>5/8&quot;-18UNFX23.5X18.5</td><td>7H3607</td><td>&nbsp;</td><td>0.039</td></tr>
+            <tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+            <tr><td>Segment Bolt</td><td>3/4&quot;-16UNFX33</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+            <tr><td>D Head Segment Bolt</td><td>3/4&quot;-16UNFX49</td><td>1171617</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+            <tr><td>Hex Segment Bolt</td><td>3/4&quot;-16UNFX57</td><td>3S0336</td><td>D7,D7E,571,572E</td><td>&nbsp;</td></tr>
+            <tr><td>Hex Segment Bolt</td><td>3/4&quot;-16UNFX57</td><td>3S0336</td><td>D7,D7E,571,572E</td><td>&nbsp;</td></tr>
+            <tr><td>Hex Segment Bolt</td><td>3/4&quot;-16UNFX59</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+            <tr><td>Segment Bolt</td><td>3/4&quot;-16UNFX61</td><td>3S0336</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+            <tr><td>Hex Segment Bolt</td><td>3/4&quot;-16UNFX64</td><td>5P7665</td><td>&nbsp;</td><td>0.215</td></tr>
+            <tr><td>Segment Bolt</td><td>3/4&quot;-16UNFX67</td><td>5P4130</td><td>D8L,D7H,D8N</td><td>0.222</td></tr>
+            <tr><td>Segment Bolt</td><td>3/4&quot;-16UNFX86</td><td>3S0336</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+            <tr><td>Hex Nut</td><td>3/4&quot;-16UNFX28X20.5</td><td>7H3608</td><td>&nbsp;</td><td>0.064</td></tr>
+            <tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+            <tr><td>Hex Segment Bolt</td><td>7/8&quot;-14UNFX65</td><td>9S2727</td><td>D8K</td><td>0.361</td></tr>
+            <tr><td>Hex Segment Bolt</td><td>7/8&quot;-14UNFX76</td><td>7T1248</td><td>&nbsp;</td><td>0.343</td></tr>
+            <tr><td>Hex Segment Bolt</td><td>7/8&quot;-14UNFX81</td><td>9W8328</td><td>D9H,D9N,D9L</td><td>0.362</td></tr>
+            <tr><td>Hex Nut</td><td>7/8&quot;-14UNFX33X22.5</td><td>7H3609</td><td>&nbsp;</td><td>0.096</td></tr>
+            <tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+            <tr><td>HEX SEGMENT BOLT &amp; NUTS</td><td>1&quot;-14UNSX72</td><td>9S2728</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+            <tr><td>HEX SEGMENT BOLT &amp; NUTS</td><td>1&quot;-14UNSX77</td><td>5P0233</td><td>D9H</td><td>0.466</td></tr>
+            <tr><td>HEX SEGMENT BOLT &amp; NUTS</td><td>1&quot;-14UNSX92</td><td>5P5422</td><td>D10N</td><td>0.54</td></tr>
+            <tr><td>Hex Nut</td><td>1&quot;-14UNSX38X25</td><td>2M5656</td><td>&nbsp;</td><td>0.148</td></tr>
+            <tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+            <tr><td>Hex Head</td><td>1 1/8&quot;-12UNFX105</td><td>7T1243</td><td>&nbsp;</td><td>0.722</td></tr>
+            <tr><td>Hex Nut</td><td>1 1/8&quot;-12UNFX43X25.4</td><td>3S1356</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+            <tr><td>Hex Nut</td><td>&nbsp;</td><td>195-71-52340</td><td>&nbsp;</td><td>0.23</td></tr>
+            <tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+            <tr><td>Segment Bolt</td><td>M18X1.5X60</td><td>09203-11860</td><td>D55S,D7S,D45</td><td>&nbsp;</td></tr>
+            <tr><td>Segment Bolt</td><td>M18X1.5X61</td><td>131-27-42230</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+            <tr><td>Hex Nut</td><td>M18X1.5X27X21</td><td>01803-01824</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+            <tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+            <tr><td>Segment Bolt</td><td>M20X2.5X45</td><td>7X2562</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+            <tr><td>Segment Bolt</td><td>M22X3.0X60</td><td>7X2575</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+            <tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+            <tr><td>Square Head Segment Bolt</td><td>M22X1.5X70</td><td>154-27-12320</td><td>D65P-8</td><td>0.326</td></tr>
+            <tr><td>Square Head Segment Bolt</td><td>M22X1.5X71</td><td>155-27-12181</td><td>D75S,D80,D80P</td><td>&nbsp;</td></tr>
+            <tr><td>Square Head Segment Bolt</td><td>M22X1.5X73</td><td>154-27-12181</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+            <tr><td>HEX NUT</td><td>M22X1.5X32X24</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+            <tr><td>HEX NUT</td><td>M22X1.5X32X27</td><td>01803-02228</td><td>&nbsp;</td><td>0.108</td></tr>
+            <tr><td>HEX NUT</td><td>M22X1.5X32X27</td><td>154-27-12130</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+            <tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+            <tr><td>D Head Segment Bolt</td><td>M24X1.5X80</td><td>178-27-11150</td><td>D155</td><td>0.491</td></tr>
+            <tr><td>D Head Segment Bolt</td><td>M24X1.5X90</td><td>195-27-12632</td><td>D355,D355A-3,D155</td><td>&nbsp;</td></tr>
+            <tr><td>D Head Segment Bolt</td><td>M24X1.5X92</td><td>195-27-31640</td><td>&nbsp;</td><td>0.55</td></tr>
+            <tr><td>HEX NUT</td><td>M24X1.5X36X30</td><td>01803-02430</td><td>&nbsp;</td><td>0.155</td></tr>
+            <tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+            <tr><td>D Head Segment Bolt</td><td>M26X1.5X93</td><td>195-27-31641</td><td>D355A-1/3/5</td><td>0.582</td></tr>
+            <tr><td>HEX NUT</td><td>M26X1.5X41X32</td><td>195-27-31871</td><td>&nbsp;</td><td>0.233</td></tr>
+            <tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+            <tr><td>D HEAD </td><td>M27X2.0X95</td><td>195-27-33130</td><td>&nbsp;</td><td>0.669</td></tr>
+            <tr><td>HEX NUT</td><td>M27X2.0X41X32</td><td>195-27-33120</td><td>&nbsp;</td><td>0.224</td></tr>
+            <tr><td>&nbsp;</td><td>M27X2.0X</td><td>195-27-33141</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+            <tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+            <tr><td>&nbsp;</td><td>&nbsp;</td><td>20Y-27-11560</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+            <tr><td>&nbsp;</td><td>&nbsp;</td><td>20Y-27-11561</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+            <tr><td>&nbsp;</td><td>&nbsp;</td><td>01010-52050</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+            <tr><td>&nbsp;</td><td>&nbsp;</td><td>207-27-51310</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+            <tr><td>&nbsp;</td><td>&nbsp;</td><td>207-27-51311</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+            <tr><td>&nbsp;</td><td>&nbsp;</td><td>01010-82265</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+            <tr><td>&nbsp;</td><td>&nbsp;</td><td>195-27-31640</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+            <tr><td>&nbsp;</td><td>&nbsp;</td><td>01010-82470</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+            <tr><td>&nbsp;</td><td>&nbsp;</td><td>09208-12495</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+            <tr><td>&nbsp;</td><td>&nbsp;</td><td>01010-82475</td><td>&nbsp;</td><td>&nbsp;</td></tr>
           </tbody>
         </table>
       </div>
@@ -273,6 +309,11 @@ const images = [
 .spec-table-8col tbody td:nth-child(1) { text-align: left; }  /* Description */
 
 /* Notes table */
+.spec-xl-wrap { max-height: 68vh; overflow: auto; }
+.spec-table-xl { table-layout: auto; width: 100%; font-size: 0.8125rem; }
+.spec-table-xl th, .spec-table-xl td { word-break: break-word; overflow-wrap: anywhere; }
+.spec-table-xl thead th { position: sticky; top: 0; z-index: 2; box-shadow: 0 2px 5px rgba(0,0,0,.18); }
+.data-table thead th, .data-table tbody th, .data-table tbody td, .notes-table th, .notes-table td, .spec-table-xl th, .spec-table-xl td { font-size: 0.875rem; font-weight: 400; }
 .notes-table { font-size: 0.9375rem; table-layout: auto; width: 100%; }
 .notes-table th { background: transparent; color: var(--color-text); padding: var(--space-3) var(--space-4); text-align: left; font-weight: 700; white-space: nowrap; vertical-align: top; word-wrap: break-word; border-top: 1px solid var(--color-border); }
 .notes-table td { padding: var(--space-3) var(--space-4); border-top: 1px solid var(--color-border); color: var(--color-text); vertical-align: top; }

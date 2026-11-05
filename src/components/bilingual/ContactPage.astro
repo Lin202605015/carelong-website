@@ -217,6 +217,73 @@ const localBusinessSchema = {
 
   <!-- LocalBusiness Schema (JSON-LD) -->
   <script type="application/ld+json" set:html={JSON.stringify(localBusinessSchema)} />
+
+<script>
+  (function () {
+    var form = document.getElementById('contact-form');
+    if (!form) return;
+    var btn = form.querySelector('.form-submit');
+    var nextEl = form.querySelector('input[name="_next"]');
+    var next = nextEl ? nextEl.value : '/thank-you';
+    var orig = btn ? btn.textContent : '';
+    var isEs = document.documentElement.lang === 'es';
+
+    function buildMailto() {
+      var data = new FormData(form);
+      var to = 'Jason@carelong.com.cn';
+      var subj = data.get('_subject') || 'Inquiry from Carelong website';
+      var keys = ['name','email','company','country','phone','estimated_quantity','product','message'];
+      var lines = [];
+      keys.forEach(function (k) {
+        var v = data.get(k);
+        if (v) lines.push(k.charAt(0).toUpperCase() + k.slice(1).replace('_', ' ') + ': ' + v);
+      });
+      return 'mailto:' + to + '?subject=' + encodeURIComponent(subj) + '&body=' + encodeURIComponent(lines.join('\n\n'));
+    }
+
+    function showFallback() {
+      var msg = isEs
+        ? 'Nuestro servicio de formulario no está disponible temporalmente. Por favor, envíenos un correo directamente (sus datos ya están completados) o inténtelo de nuevo en un momento.'
+        : 'Our form service is temporarily unavailable. Please email us directly (your details are pre-filled), or try again in a moment.';
+      var box = document.getElementById('form-fallback');
+      if (!box) {
+        box = document.createElement('div');
+        box.id = 'form-fallback';
+        box.className = 'form-fallback';
+        form.parentNode.insertBefore(box, form);
+      }
+      box.innerHTML = '<p class="ff-msg"></p>' +
+        '<p class="ff-actions"><a class="btn btn-primary" href="' + buildMailto() + '">' +
+        (isEs ? 'Envíenos un correo directo' : 'Email us directly') + '</a> ' +
+        '<button type="button" class="btn" id="ff-retry">' +
+        (isEs ? 'Reintentar' : 'Try again') + '</button></p>';
+      box.querySelector('.ff-msg').textContent = msg;
+      var retry = document.getElementById('ff-retry');
+      if (retry) retry.addEventListener('click', function () {
+        if (box.parentNode) box.parentNode.removeChild(box);
+        if (btn) { btn.disabled = false; btn.textContent = orig; }
+      });
+    }
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      if (btn) { btn.disabled = true; btn.textContent = isEs ? 'Enviando…' : 'Sending…'; }
+      var fd = new FormData(form);
+      fetch('/api/contact', {
+        method: 'POST',
+        body: new URLSearchParams(fd),
+        headers: { 'Accept': 'application/json' }
+      }).then(function (res) {
+        if (res.ok) { window.location.href = next; }
+        else { throw new Error('status ' + res.status); }
+      }).catch(function () {
+        if (btn) { btn.disabled = false; btn.textContent = orig; }
+        showFallback();
+      });
+    });
+  })();
+</script>
+
 </BaseLayout>
 
 <style>
@@ -340,4 +407,22 @@ const localBusinessSchema = {
   .contact-grid { grid-template-columns: 1fr; }
   .form-row { grid-template-columns: 1fr; }
 }
+
+.form-fallback {
+  margin-bottom: var(--space-6);
+  padding: var(--space-5);
+  border: 1px solid #e0a800;
+  background: #fff8e6;
+  border-radius: var(--radius-md);
+}
+.form-fallback .ff-msg { margin: 0 0 var(--space-3); color: #7a5b00; font-size: 0.95rem; line-height: 1.5; }
+.form-fallback .ff-actions { display: flex; gap: var(--space-3); flex-wrap: wrap; margin: 0; }
+.form-fallback .btn {
+  display: inline-block; padding: var(--space-3) var(--space-5);
+  border-radius: var(--radius-md); text-decoration: none; cursor: pointer;
+  border: 1px solid transparent; font-weight: 600; font-size: 0.95rem;
+}
+.form-fallback .btn-primary { background: var(--color-primary); color: #fff; }
+.form-fallback .btn:not(.btn-primary) { background: #fff; border-color: var(--color-border); color: var(--color-text); }
+
 </style>

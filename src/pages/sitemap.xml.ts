@@ -96,16 +96,20 @@ const pages = [
 export const GET: APIRoute = () => {
   const today = new Date().toISOString().split('T')[0];
 
+  // Strip trailing slashes (except root) so <loc>/hreflang match the
+  // canonical URLs the site actually serves (Vercel 308-redirects /x/ -> /x).
+  const norm = (u: string): string => (u.length > 1 && u.endsWith('/') ? u.slice(0, -1) : u);
+
   const urlSet = pages
     .map(
       (page) => `  <url>
-    <loc>${BASE_URL}${page.url}</loc>
+    <loc>${BASE_URL}${norm(page.url)}</loc>
     <lastmod>${page.lastmod}</lastmod>
     <changefreq>${page.changefreq}</changefreq>
     <priority>${page.priority}</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="${BASE_URL}${page.url.replace('/es/', '/')}" />
-    <xhtml:link rel="alternate" hreflang="es" href="${BASE_URL}/es${page.url.replace('/es/', '/')}" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="${BASE_URL}${page.url.replace('/es/', '/')}" />
+    <xhtml:link rel="alternate" hreflang="en" href="${BASE_URL}${norm(page.url.replace('/es/', '/'))}" />
+    <xhtml:link rel="alternate" hreflang="es" href="${BASE_URL}${norm('/es' + page.url.replace('/es/', '/'))}" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="${BASE_URL}${norm(page.url.replace('/es/', '/'))}" />
   </url>`
     )
     .join('\n');

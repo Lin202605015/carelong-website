@@ -269,7 +269,7 @@ const localBusinessSchema = {
       e.preventDefault();
       if (btn) { btn.disabled = true; btn.textContent = isEs ? 'Enviando…' : 'Sending…'; }
       var fd = new FormData(form);
-      fetch('/api/contact', {
+      fetch(form.action, {
         method: 'POST',
         body: new URLSearchParams(fd),
         headers: { 'Accept': 'application/json' }

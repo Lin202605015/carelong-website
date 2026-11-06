@@ -62,9 +62,10 @@ async function postToWeb3(bodyStr: string, withOrigin: boolean): Promise<any> {
 
 async function handle(request: Request): Promise<Response> {
   const f = fieldsFromUrl(request.url);
+  const debug = new URL(request.url).searchParams.get('debug');
 
   // Debug mode: report exactly what Web3Forms returns when called FROM Vercel.
-  if (f['debug'] === '1') {
+  if (debug === '1') {
     const bodyStr = buildBody(f);
     const a = await postToWeb3(bodyStr, true);
     const b = await postToWeb3(bodyStr, false);

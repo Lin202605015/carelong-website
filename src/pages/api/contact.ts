@@ -1,10 +1,9 @@
 import type { APIRoute } from 'astro';
 
 // Contact form receiver.
-// IMPORTANT: the live form submits via GET (method="GET") so the data travels in the
-// URL query string. We deliberately do NOT read the POST body — reading request body
-// on this Vercel/Node function caused FUNCTION_INVOCATION_FAILED (post body read hangs).
-// Query-string data is read instead, which works reliably.
+// The live form submits via GET (method="GET") so data travels in the URL query string.
+// We deliberately do NOT read the POST body — reading request body on this Vercel/Node
+// function caused FUNCTION_INVOCATION_FAILED. Query-string data is read instead.
 
 const WEB3FORMS_KEY = '592a39ae-63a6-41a0-8070-fdd7e4fbd559';
 const FIELDS = [
@@ -22,7 +21,7 @@ function fieldsFromUrl(url: string): Record<string, string> {
   return out;
 }
 
-function forwardAndRedirect(request: Request): Promise<Response> {
+async function handle(request: Request): Promise<Response> {
   try {
     const f = fieldsFromUrl(request.url);
     const body = new URLSearchParams();
@@ -33,32 +32,39 @@ function forwardAndRedirect(request: Request): Promise<Response> {
     for (const k of FIELDS) {
       if (f[k] !== undefined) body.set(k, f[k]);
     }
-    // Forward to Web3Forms from the server (best-effort; user still gets thank-you)
-    fetch('https://api.web3forms.com/submit', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/x-www-form-urlencoded',
-        'Accept': 'application/json',
-        'Origin': 'https://carelong.com.cn',
-        'User-Agent':
-          'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 ' +
-          '(KHTML, like Gecko) Chrome/120.0 Safari/537.36',
-      },
-      body: body.toString(),
-    }).catch(() => {});
+
+    // Forward to Web3Forms from the server. Wait (with an 8s cap) so the email is
+    // actually delivered before we redirect the user.
+    const ctrl = new AbortController();
+    const timer = setTimeout(() => ctrl.abort(), 8000);
+    try {
+      await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded',
+          'Accept': 'application/json',
+          'Origin': 'https://carelong.com.cn',
+          'User-Agent':
+            'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 ' +
+            '(KHTML, like Gecko) Chrome/120.0 Safari/537.36',
+        },
+        body: body.toString(),
+        signal: ctrl.signal,
+      });
+    } catch {
+      // timeout or network error — user still gets the thank-you page
+    } finally {
+      clearTimeout(timer);
+    }
 
     const ref = request.headers.get('referer') || '';
     const thanks = ref.includes('/es/') ? '/es/thank-you' : '/thank-you';
-    return Promise.resolve(
-      new Response(null, { status: 302, headers: { Location: thanks } })
-    );
+    return new Response(null, { status: 302, headers: { Location: thanks } });
   } catch (e: unknown) {
     const msg = e instanceof Error ? e.stack || e.message : String(e);
-    return Promise.resolve(
-      new Response('ERR: ' + msg, { status: 200, headers: { 'Content-Type': 'text/plain' } })
-    );
+    return new Response('ERR: ' + msg, { status: 200, headers: { 'Content-Type': 'text/plain' } });
   }
 }
 
-export const GET: APIRoute = async ({ request }) => forwardAndRedirect(request);
-export const POST: APIRoute = async ({ request }) => forwardAndRedirect(request);
+export const GET: APIRoute = async ({ request }) => handle(request);
+export const POST: APIRoute = async ({ request }) => handle(request);

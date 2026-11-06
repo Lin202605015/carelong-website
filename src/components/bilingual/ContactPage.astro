@@ -52,7 +52,7 @@ const localBusinessSchema = {
       "closes": "18:00"
     }
   ],
-  "sameAs": ["https://www.linkedin.com/company/xiamen-carelong"],
+  "sameAs": [],
   "parentOrganization": { "@id": "https://carelong.com.cn/#organization" }
 };
 ---
@@ -83,7 +83,7 @@ const localBusinessSchema = {
               ? 'Nueva consulta de Carelong - Página web'
               : 'New inquiry from Carelong website'} />
             <input type="hidden" name="from_name" value="Carelong Website" />
-            <input type="hidden" name="redirect" value={isEs
+            <input type="hidden" name="next_url" value={isEs
               ? 'https://carelong.com.cn/es/thank-you'
               : 'https://carelong.com.cn/thank-you'} />
 
@@ -218,7 +218,7 @@ const localBusinessSchema = {
     var form = document.getElementById('contact-form');
     if (!form) return;
     var btn = form.querySelector('.form-submit');
-    var nextEl = form.querySelector('input[name="redirect"]');
+    var nextEl = form.querySelector('input[name="next_url"]');
     var next = nextEl ? nextEl.value : '/thank-you';
     var orig = btn ? btn.textContent : '';
     var isEs = document.documentElement.lang === 'es';
@@ -272,7 +272,9 @@ const localBusinessSchema = {
         headers: { 'Accept': 'application/json' },
         signal: ctrl.signal
       }).then(function (res) {
-        if (res.ok) { window.location.href = next; }
+        // Web3Forms returns 200 (JSON) when no `redirect` field is sent,
+        // or 303 (redirect) when one is present. Both mean success -> go to thank-you.
+        if (res.ok || res.status === 303) { window.location.href = next; }
         else { throw new Error('status ' + res.status); }
       }).catch(function () {
         if (btn) { btn.disabled = false; btn.textContent = orig; }

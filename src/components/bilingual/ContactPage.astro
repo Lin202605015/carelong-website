@@ -73,27 +73,22 @@ const localBusinessSchema = {
           <h2>{isEs ? 'Envíenos un Mensaje' : 'Send Us a Message'}</h2>
           <form
             id="contact-form"
-            action="https://formsubmit.co/jason@carelong.com.cn"
+            action="https://api.web3forms.com/submit"
             method="POST"
             enctype="application/x-www-form-urlencoded"
           >
-            <!-- FormSubmit Configuration -->
-            <input type="hidden" name="_subject" value={isEs
+            <!-- Web3Forms Configuration -->
+            <input type="hidden" name="access_key" value="592a39ae-63a6-41a0-8070-fdd7e4fbd559" />
+            <input type="hidden" name="subject" value={isEs
               ? 'Nueva consulta de Carelong - Página web'
               : 'New inquiry from Carelong website'} />
-            <input type="hidden" name="_captcha" value="false" />
-            <input type="hidden" name="_template" value="table" />
-            <input type="hidden" name="_next" value={isEs
+            <input type="hidden" name="from_name" value="Carelong Website" />
+            <input type="hidden" name="redirect" value={isEs
               ? 'https://carelong.com.cn/es/thank-you'
               : 'https://carelong.com.cn/thank-you'} />
 
-            <!-- Anti-spam: honeypot trap (hidden off-screen; real users never see/fill it, bots do) -->
-            <div style="position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);" aria-hidden="true">
-              <label for="_honey">Company Website</label>
-              <input type="text" id="_honey" name="_honey" tabindex="-1" autocomplete="off" />
-            </div>
-            <!-- Anti-spam: silently drop submissions from disposable/temporary email domains -->
-            <input type="hidden" name="_blacklist" value="mailinator.com,tempmail.com,tempmail.net,guerrillamail.com,yopmail.com,10minutemail.com,throwawaymail.com,trashmail.com,getnada.com,sharklasers.com,dispostable.com,fakeinbox.com,maildrop.cc,emailondeck.com,mohmal.com,tempsmail.com,guerrillamailblock.com,mailnesia.com" />
+            <!-- Anti-spam: honeypot trap (hidden checkbox; bots auto-check it and get blocked) -->
+            <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true" />
 
             <div class="form-group">
               <label for="name">{t.form.name[lang]} *</label>
@@ -223,7 +218,7 @@ const localBusinessSchema = {
     var form = document.getElementById('contact-form');
     if (!form) return;
     var btn = form.querySelector('.form-submit');
-    var nextEl = form.querySelector('input[name="_next"]');
+    var nextEl = form.querySelector('input[name="redirect"]');
     var next = nextEl ? nextEl.value : '/thank-you';
     var orig = btn ? btn.textContent : '';
     var isEs = document.documentElement.lang === 'es';
@@ -231,7 +226,7 @@ const localBusinessSchema = {
     function buildMailto() {
       var data = new FormData(form);
       var to = 'Jason@carelong.com.cn';
-      var subj = data.get('_subject') || 'Inquiry from Carelong website';
+      var subj = data.get('subject') || 'Inquiry from Carelong website';
       var keys = ['name','email','company','country','phone','estimated_quantity','product','message'];
       var lines = [];
       keys.forEach(function (k) {

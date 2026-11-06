@@ -5,8 +5,15 @@ export const GET: APIRoute = () => {
 User-agent: *
 Allow: /
 
+# Allow AI search crawlers (ChatGPT / OpenAI)
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: GPTBot
+Allow: /
+
 # Sitemap
-Sitemap: https://www.carelong.com.cn/sitemap-index.xml
+Sitemap: https://carelong.com.cn/sitemap.xml
 
 # Crawl-delay for polite bots
 Crawl-delay: 10

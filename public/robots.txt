@@ -1,5 +1,13 @@
 User-agent: *
 Allow: /
+
+# Allow AI search crawlers (ChatGPT / OpenAI)
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: GPTBot
+Allow: /
+
 Disallow: /admin/
 Disallow: /thank-you/
 

@@ -157,6 +157,33 @@ const localBusinessSchema = {
               {t.form.submit[lang]}
             </button>
           </form>
+          <!--
+            Deliver the inquiry to Web3Forms from the VISITOR'S BROWSER.
+            A real browser request carries Origin: https://carelong.com.cn and passes
+            Web3Forms' Cloudflare check; a server-side fetch from Vercel's datacenter IP
+            is challenged (403 "Just a moment") and never delivers.
+            This is strictly fire-and-forget: no preventDefault, no await, no UI blocking.
+            The form still submits natively via GET -> /api/contact -> 302 -> thank-you,
+            so the redirect stays instant even if this script fails entirely.
+          -->
+          <script is:inline>
+            document.addEventListener('submit', function (e) {
+              var f = e.target;
+              if (!f || f.id !== 'contact-form') return;
+              try {
+                var fd = new FormData(f);
+                var url = 'https://api.web3forms.com/submit';
+                var sent = false;
+                if (navigator.sendBeacon) {
+                  try { sent = navigator.sendBeacon(url, fd); } catch (x) {}
+                }
+                if (!sent) {
+                  fetch(url, { method: 'POST', body: fd, keepalive: true })
+                    .catch(function () {});
+                }
+              } catch (err) { /* never block the redirect */ }
+            }, true);
+          </script>
         </div>
 
         <!-- Contact Info -->

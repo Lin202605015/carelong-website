@@ -186,17 +186,17 @@ const images = [
 
       <div class="spec-table spec-table-grid">
 
-        <div class="spec-row"><div class="spec-name">medida de rosca</div><div class="spec-value">M18–M42</div></div>
+        <div class="spec-row"><div class="spec-name">Números OEM</div><div class="spec-value">621 números de referencia cruzada</div></div>
 
-        <div class="spec-row"><div class="spec-name">grado de resistencia</div><div class="spec-value">10.9, 12.9</div></div>
+        <div class="spec-row"><div class="spec-name">Marcas de vehículos</div><div class="spec-value">37 marcas de camiones, remolques y ejes</div></div>
 
-        <div class="spec-row"><div class="spec-name">material</div><div class="spec-value">Acero Aleado 40Cr, 42CrMo</div></div>
+        <div class="spec-row"><div class="spec-name">Tipos de pernos</div><div class="spec-value">7 configuraciones de cabeza / espárrago</div></div>
 
-        <div class="spec-row"><div class="spec-name">tratamiento superficial</div><div class="spec-value">Negro, Galvanizado</div></div>
+        <div class="spec-row"><div class="spec-name">Mayor cobertura</div><div class="spec-value">Iveco (89), Mercedes-Benz (79), MAN (73)</div></div>
 
-        <div class="spec-row"><div class="spec-name">vehículos compatibles</div><div class="spec-value">Nissan, Hino, Isuzu, Mitsubishi, Benz</div></div>
+        <div class="spec-row"><div class="spec-name">También incluidas</div><div class="spec-value">Volvo, Renault, DAF, Scania, Hino, Isuzu, BPW, SAF y 26 más</div></div>
 
-        <div class="spec-row"><div class="spec-name">aplicación</div><div class="spec-value">Mazas de rueda, Camiones, Maquinaria de construcción</div></div>
+        <div class="spec-row"><div class="spec-name">Nota de pedido</div><div class="spec-value">Confirme las dimensiones con plano o muestra antes de pedir</div></div>
 
       </div>
 
@@ -204,140 +204,1755 @@ const images = [
 
       <header class="section-header" style="margin-top: var(--space-12);">
 
+        <p class="eyebrow">Referencia cruzada OEM</p>
+
         <h2>Especificaciones de Pernos de Maza</h2>
 
       </header>
 
-      <div class="data-table-wrapper">
+      <div class="oem-app" id="oemApp"
+        data-all="Expandir todo" data-collapse="Contraer todo"
+        data-count="Mostrando __N__ de 37 marcas · 621 números OEM" data-none="Ninguna marca o número OEM coincide con la búsqueda.">
 
-        <table class="data-table spec-table-8col">
+        <div class="oem-chips">
 
-          <thead>
+          <span class="badge">Perno de rueda de cabeza redonda estriada &middot; 130</span>
 
-            <tr>
+          <span class="badge">Perno de rueda de cabeza D (lados planos) &middot; 128</span>
 
-              <th>Nombre de Pieza</th>
+          <span class="badge">Espárrago de rueda de doble rosca &middot; 68</span>
 
-              <th>N.º Pieza/Modelo</th>
+          <span class="badge">Perno de rueda de cabeza T / rectangular &middot; 48</span>
 
-              <th>Medida</th>
+          <span class="badge">Perno de rueda &middot; 111</span>
 
-              <th>Trat. Sup.</th>
+          <span class="badge">Perno de rueda de cabeza hexagonal &middot; 3</span>
 
-              <th>Marca</th>
+          <span class="badge">Conjunto de perno de rueda (perno + tuerca) &middot; 133</span>
 
-              <th>Peso Neto Kgs./Juego</th>
+        </div>
 
-              <th>Juegos/Caja</th>
+        <div class="oem-toolbar">
 
-              <th>Peso Neto Kgs./Caja</th>
+          <input id="oemSearch" class="oem-search" type="search" autocomplete="off" placeholder="Buscar marca o número OEM..." />
 
-              <th>Tamaño Caja</th>
+          <button id="oemExpandAll" class="oem-btn" type="button">Expandir todo</button>
 
-              <th>N.º OEM</th>
+        </div>
 
-            </tr>
+        <div class="oem-head" aria-hidden="true">
 
-          </thead>
+          <span>Marca de vehículo</span><span>N.º OEM</span><span>Tipos de perno / espárrago</span><span></span>
 
-          <tbody>
+        </div>
 
-            <tr><td>HUB BOLT ASSY</td><td>8008-444</td><td>&nbsp;</td><td>BLACK</td><td>L/R</td><td>0.632</td><td>50</td><td>32</td><td>30X25X19</td><td>&nbsp;</td></tr>
+        <div class="oem-list" id="oemList">
 
-            <tr><td>HUB BOLT ASSY</td><td>8008-465</td><td>&nbsp;</td><td>BLACK</td><td>L/R</td><td>0.496</td><td>50</td><td>25</td><td>30X25X19</td><td>&nbsp;</td></tr>
+          <details class="oem-item">
 
-            <tr><td>HUB BOLT ASSY</td><td>8008-466</td><td>&nbsp;</td><td>BLACK</td><td>L/R</td><td>0.624</td><td>50</td><td>31</td><td>30X25X19</td><td>&nbsp;</td></tr>
+            <summary class="oem-summary">
 
-            <tr><td>HUB BOLT ASSY</td><td>NISSAN</td><td>M18X68</td><td>ZINC</td><td>L/R</td><td>0.390</td><td>50</td><td>20</td><td>42X21X14.5</td><td>&nbsp;</td></tr>
+              <span class="oem-brand">Iveco</span>
+              <span class="oem-num">89</span>
+              <span class="oem-types">5</span>
+              <span class="oem-action"><span class="oem-view">Ver números</span><span class="oem-hide">Ocultar</span></span>
 
-            <tr><td>HUB BOLT ASSY</td><td>NISSAN</td><td>M18X68</td><td>ZINC</td><td>L/R</td><td>0.390</td><td>50</td><td>20</td><td>42X21X14.5</td><td>&nbsp;</td></tr>
+            </summary>
 
-            <tr><td>HUB BOLT ASSY</td><td>NISSAN</td><td>M18X68</td><td>ZINC</td><td>L/R</td><td>0.310</td><td>50</td><td>16</td><td>42X21X14.5</td><td>&nbsp;</td></tr>
+            <div class="oem-detail">
 
-            <tr><td>HUB BOLT ASSY</td><td>NISSAN</td><td>M18X68</td><td>ZINC</td><td>L/R</td><td>0.310</td><td>50</td><td>16</td><td>42X21X14.5</td><td>&nbsp;</td></tr>
+              <div class="oem-group">
 
-            <tr><td>HUB BOLT ASSY(RH)(FR)</td><td>NISSAN FRONT</td><td>&nbsp;</td><td>BLACK</td><td>L/R</td><td>0.605</td><td>40</td><td>24</td><td>30X25X19</td><td>&nbsp;</td></tr>
+                <h4>Perno de rueda de cabeza redonda estriada <span class="oem-cnt">&middot; 7 números OEM</span></h4>
 
-            <tr><td>HUB BOLT ASSY(LH)(FR)</td><td>NISSAN FRONT</td><td>&nbsp;</td><td>BLACK</td><td>L/R</td><td>0.605</td><td>40</td><td>24</td><td>30X25X19</td><td>&nbsp;</td></tr>
+                <div class="oem-lines">
+                  <span>2477764</span>
+                  <span>7161200 7161201</span>
+                  <span>7161552 7168347</span>
+                  <span>8527732 9980725</span>
+                </div>
 
-            <tr><td>HUB BOLT ASSY REAR</td><td>NISSAN FRONT</td><td>M24X102</td><td>ZINC</td><td>L/R</td><td>0.610</td><td>50</td><td>31</td><td>42X21X14.5</td><td>&nbsp;</td></tr>
+              </div>
 
-            <tr><td>HUB BOLT ASSY(RH)</td><td>NISSAN REAR</td><td>&nbsp;</td><td>BLACK</td><td>L/R</td><td>0.740</td><td>40</td><td>30</td><td>30X25X19</td><td>&nbsp;</td></tr>
+              <div class="oem-group">
 
-            <tr><td>HUB BOLT ASSY(LH)(REAR)</td><td>NISSAN REAR</td><td>&nbsp;</td><td>BLACK</td><td>L/R</td><td>0.740</td><td>40</td><td>30</td><td>30X25X19</td><td>&nbsp;</td></tr>
+                <h4>Perno de rueda de cabeza D (lados planos) <span class="oem-cnt">&middot; 59 números OEM</span></h4>
 
-            <tr><td>HUB BOLT ASSY REAR</td><td>NISSAN REAR</td><td>M20X83</td><td>BLACK</td><td>L/R</td><td>0.610</td><td>50</td><td>31</td><td>42X21X14.5</td><td>&nbsp;</td></tr>
+                <div class="oem-lines">
+                  <span>0716 8333 4211 7455</span>
+                  <span>4211 7457</span>
+                  <span>865557 02443720</span>
+                  <span>2475863 2475869</span>
+                  <span>02475869</span>
+                  <span>2475870 02476077</span>
+                  <span>2478620 4517528 4564398 7160357</span>
+                  <span>7163380</span>
+                  <span>7168257 7168330</span>
+                  <span>7168346 07168580</span>
+                  <span>7168585</span>
+                  <span>7168838 007168838</span>
+                  <span>7168849 7168855 7168925 7170510</span>
+                  <span>7171530</span>
+                  <span>42014521 42061641</span>
+                  <span>42064818 42064819</span>
+                  <span>42064821</span>
+                  <span>42064822 42064826</span>
+                  <span>42064829 42064831 042101338 42101338</span>
+                  <span>42101367</span>
+                  <span>42116737 42117309</span>
+                  <span>042117433 42117433</span>
+                  <span>42117434</span>
+                  <span>42117435 42117437</span>
+                  <span>42117448 42117451 42117452 42117463</span>
+                  <span>42117465</span>
+                  <span>42119082 42119444</span>
+                  <span>42127252 042127260</span>
+                  <span>042127262</span>
+                  <span>42127265 46390477</span>
+                  <span>46390478</span>
+                </div>
 
-            <tr><td>HUB BOLT ASSY REAR</td><td>NISSAN REAR</td><td>M22X102</td><td>ZINC</td><td>L/R</td><td>0.730</td><td>50</td><td>37</td><td>42X21X14.5</td><td>&nbsp;</td></tr>
+              </div>
 
-            <tr><td>HUB BOLT ASSY REAR</td><td>NISSAN N/S CWD30 REAR</td><td>M22X102</td><td>ZINC</td><td>L/R</td><td>0.740</td><td>50</td><td>37</td><td>42X21X14.5</td><td>&nbsp;</td></tr>
+              <div class="oem-group">
 
-            <tr><td>HUB BOLT ASSY REAR</td><td>NISSAN GENERAL REAR</td><td>M22X102</td><td>ZINC</td><td>L/R</td><td>0.720</td><td>50</td><td>36</td><td>42X21X14.5</td><td>&nbsp;</td></tr>
+                <h4>Espárrago de rueda de doble rosca <span class="oem-cnt">&middot; 2 números OEM</span></h4>
 
-            <tr><td>HUB BOLT ASSY FRONT</td><td>HINO KT FRONT</td><td>&nbsp;</td><td>BLACK</td><td>L/R</td><td>0.540</td><td>40</td><td>22</td><td>30X25X19</td><td>&nbsp;</td></tr>
+                <div class="oem-lines">
+                  <span>93800663 93816209</span>
+                </div>
 
-            <tr><td>HUB BOLT ASSY REAR</td><td>HINO KT REAR</td><td>&nbsp;</td><td>BLACK</td><td>L/R</td><td>0.630</td><td>40</td><td>25</td><td>30X25X19</td><td>&nbsp;</td></tr>
+              </div>
 
-            <tr><td>HUB BOLT ASSY REAR</td><td>HINO ZM REAR</td><td>&nbsp;</td><td>BLACK</td><td>L/R</td><td>0.680</td><td>40</td><td>27</td><td>30X25X19</td><td>&nbsp;</td></tr>
+              <div class="oem-group">
 
-            <tr><td>HUB BOLT ASSY REAR</td><td>HINO MG REAR</td><td>&nbsp;</td><td>BLACK</td><td>L/R</td><td>0.630</td><td>40</td><td>25</td><td>30X25X19</td><td>&nbsp;</td></tr>
+                <h4>Perno de rueda de cabeza T / rectangular <span class="oem-cnt">&middot; 1 números OEM</span></h4>
 
-            <tr><td>HUB BOLT ASSY FRONT</td><td>HINO ZM FRONT</td><td>&nbsp;</td><td>BLACK</td><td>L/R</td><td>0.570</td><td>40</td><td>23</td><td>30X25X19</td><td>&nbsp;</td></tr>
+                <div class="oem-lines">
+                  <span>42026106</span>
+                </div>
 
-            <tr><td>HUB BOLT ASSY FRONT</td><td>HINO HM FRONT</td><td>&nbsp;</td><td>BLACK</td><td>L/R</td><td>0.590</td><td>40</td><td>24</td><td>30X25X19</td><td>&nbsp;</td></tr>
+              </div>
 
-            <tr><td>HUB BOLT ASSY REAR</td><td>HINO REAR</td><td>M22X98</td><td>BLACK</td><td>L/R</td><td>0.680</td><td>50</td><td>34</td><td>42X21X14.5</td><td>&nbsp;</td></tr>
+              <div class="oem-group">
 
-            <tr><td>HUB BOLT ASSY REAR</td><td>HINO REAR</td><td>M20X85</td><td>BLACK</td><td>L/R</td><td>0.630</td><td>50</td><td>32</td><td>42X21X14.5</td><td>&nbsp;</td></tr>
+                <h4>Perno de rueda <span class="oem-cnt">&middot; 20 números OEM</span></h4>
 
-            <tr><td>HUB BOLT ASSY FRONT</td><td>HINO FRONT</td><td>M20X85</td><td>BLACK</td><td>L/R</td><td>0.530</td><td>50</td><td>27</td><td>42X21X14.5</td><td>&nbsp;</td></tr>
+                <div class="oem-lines">
+                  <span>4211 7444 4211 7445</span>
+                  <span>4211 7446</span>
+                  <span>4211 7447 4211 7449 4211 7453</span>
+                  <span>4211 7454</span>
+                  <span>4211 7456 4211 7458 4211 7459</span>
+                  <span>4211 7461</span>
+                  <span>2476077 02477764 7168333</span>
+                  <span>7168340</span>
+                  <span>7168465 7168580 7170204</span>
+                  <span>8441412</span>
+                  <span>422117451</span>
+                </div>
 
-            <tr><td>HUB BOLT ASSY REAR</td><td>ISUZU JUMBO REAR</td><td>&nbsp;</td><td>BLACK</td><td>L/R</td><td>0.680</td><td>40</td><td>27</td><td>30X25X19</td><td>&nbsp;</td></tr>
+              </div>
 
-            <tr><td>HUB BOLT ASSY REAR</td><td>ISUZU JCM REAR</td><td>&nbsp;</td><td>BLACK</td><td>L/R</td><td>0.660</td><td>40</td><td>26</td><td>30X25X19</td><td>&nbsp;</td></tr>
+            </div>
 
-            <tr><td>HUB BOLT ASSY FRONT</td><td>ISUZU RK FRONT</td><td>&nbsp;</td><td>BLACK</td><td>L/R</td><td>0.570</td><td>40</td><td>23</td><td>30X25X19</td><td>&nbsp;</td></tr>
+          </details>
 
-            <tr><td>HUB BOLT ASSY REAR</td><td>ISUZU RK REAR</td><td>&nbsp;</td><td>BLACK</td><td>L/R</td><td>0.680</td><td>40</td><td>27</td><td>30X25X19</td><td>&nbsp;</td></tr>
+          <details class="oem-item">
 
-            <tr><td>HUB BOLT ASSY REAR</td><td>FUSO 527 FRONT</td><td>&nbsp;</td><td>BLACK</td><td>L/R</td><td>0.550</td><td>40</td><td>22</td><td>30X25X19</td><td>&nbsp;</td></tr>
+            <summary class="oem-summary">
 
-            <tr><td>HUB BOLT ASSY REAR</td><td>FUSO REAR</td><td>&nbsp;</td><td>BLACK</td><td>L/R</td><td>0.630</td><td>40</td><td>25</td><td>30X25X19</td><td>&nbsp;</td></tr>
+              <span class="oem-brand">Mercedes-Benz</span>
+              <span class="oem-num">79</span>
+              <span class="oem-types">7</span>
+              <span class="oem-action"><span class="oem-view">Ver números</span><span class="oem-hide">Ocultar</span></span>
 
-            <tr><td>HUB BOLT ASSY REAR</td><td>Mitsubishi 527 REAR</td><td>&nbsp;</td><td>BLACK</td><td>L/R</td><td>0.640</td><td>40</td><td>26</td><td>30X25X20</td><td>&nbsp;</td></tr>
+            </summary>
 
-            <tr><td>HUB BOLT ASSY LH FRONT</td><td>GE FRONT</td><td>M30X110</td><td>BLACK</td><td>L/R</td><td>0.830</td><td>35</td><td>29</td><td>33X19X12</td><td>40210-90129B</td></tr>
+            <div class="oem-detail">
 
-            <tr><td>HUB BOLT ASSY RH FRONT</td><td>GE FRONT</td><td>M30X110</td><td>BLACK</td><td>L/R</td><td>0.830</td><td>35</td><td>29</td><td>33X19X12</td><td>40211-90127B</td></tr>
+              <div class="oem-group">
 
-            <tr><td>HUB BOLT ASSY FRONT</td><td>GE FRONT</td><td>M30X116</td><td>BLACK</td><td>L/R</td><td>0.850</td><td>30</td><td>26</td><td>42X21X14.5</td><td>&nbsp;</td></tr>
+                <h4>Perno de rueda de cabeza redonda estriada <span class="oem-cnt">&middot; 4 números OEM</span></h4>
 
-            <tr><td>HUB BOLT ASSY LH REAR</td><td>GE REAR</td><td>M30X130</td><td>BLACK</td><td>170</td><td>0.930</td><td>35</td><td>33</td><td>33X19X12</td><td>43210-90129B</td></tr>
+                <div class="oem-lines">
+                  <span>338 401 5071 3274020271 3274020371 3524020071</span>
+                </div>
 
-            <tr><td>HUB BOLT ASSY RH REAR</td><td>GE REAR</td><td>M30X130</td><td>BLACK</td><td>170</td><td>0.930</td><td>35</td><td>33</td><td>33X19X12</td><td>43211-90129B</td></tr>
+              </div>
 
-            <tr><td>HUB BOLT ASSY LH REAR</td><td>GE REAR</td><td>M30X148</td><td>BLACK</td><td>170</td><td>1.040</td><td>30</td><td>33</td><td>42X21X14.5</td><td>&nbsp;</td></tr>
+              <div class="oem-group">
 
-            <tr><td>HUB BOLT ASSY RH REAR</td><td>GE REAR</td><td>M30X148</td><td>BLACK</td><td>170</td><td>1.040</td><td>30</td><td>33</td><td>42X21X14.5</td><td>&nbsp;</td></tr>
+                <h4>Perno de rueda de cabeza D (lados planos) <span class="oem-cnt">&middot; 16 números OEM</span></h4>
 
-            <tr><td>HUB BOLT ASSY</td><td>BENZ</td><td>M22X98</td><td>BLACK</td><td>12.9</td><td>0.500</td><td>50</td><td>25</td><td>42X21X14.5</td><td>&nbsp;</td></tr>
+                <div class="oem-lines">
+                  <span>000 401 4171</span>
+                  <span>81 45501 0085 305 401 0071</span>
+                  <span>312 402 1071 317 401 0371</span>
+                  <span>317 401 0471 327 401 0271</span>
+                  <span>327 401 0471 352 402 0171</span>
+                  <span>376 401 0071 381 401 0171</span>
+                  <span>381 401 0271 389 401 0071</span>
+                  <span>A3814010771 A9424010271</span>
+                  <span>A9424010371</span>
+                </div>
 
-            <tr><td>HUB BOLT ASSY</td><td>BENZ</td><td>M22X140</td><td>BLACK</td><td>12.9</td><td>0.640</td><td>50</td><td>32</td><td>42X21X14.5</td><td>&nbsp;</td></tr>
+              </div>
 
-            <tr><td>HUB BOLT ASSY</td><td>BENZ</td><td>M22X130</td><td>BLACK</td><td>12.9</td><td>0.630</td><td>50</td><td>32</td><td>42X21X14.5</td><td>&nbsp;</td></tr>
+              <div class="oem-group">
 
-            <tr><td>HUB BOLT ASSY</td><td>BENZ</td><td>M22X112</td><td>BLACK</td><td>12.9</td><td>0.540</td><td>50</td><td>27</td><td>42X21X14.5</td><td>&nbsp;</td></tr>
+                <h4>Espárrago de rueda de doble rosca <span class="oem-cnt">&middot; 1 números OEM</span></h4>
 
-            <tr><td>HUB BOLT ASSY</td><td>BENZ</td><td>M22X175</td><td>BLACK</td><td>L/R</td><td>0.726</td><td>40</td><td>29</td><td>42X21X14.5</td><td>&nbsp;</td></tr>
+                <div class="oem-lines">
+                  <span>304 401 0271</span>
+                </div>
 
-            <tr><td>HUB BOLT ASSY</td><td>REBER (14) UD6</td><td>&nbsp;</td><td>BLACK</td><td>L/R</td><td>0.740</td><td>50</td><td>37</td><td>42X21X14.5</td><td>&nbsp;</td></tr>
+              </div>
 
-          </tbody>
+              <div class="oem-group">
 
-        </table>
+                <h4>Perno de rueda de cabeza T / rectangular <span class="oem-cnt">&middot; 16 números OEM</span></h4>
+
+                <div class="oem-lines">
+                  <span>000 401 3971 000 401 6871</span>
+                  <span>315 401 0070</span>
+                  <span>315 402 0170 317 402 0170 335 401 0070</span>
+                  <span>346 401 5270</span>
+                  <span>346 401 5370 346 402 5070 363 402 0170</span>
+                  <span>387 401 0470</span>
+                  <span>387 402 0170 387 402 0270 387 402 0470</span>
+                  <span>623 401 0270</span>
+                  <span>675 402 0071</span>
+                </div>
+
+              </div>
+
+              <div class="oem-group">
+
+                <h4>Perno de rueda de cabeza hexagonal <span class="oem-cnt">&middot; 2 números OEM</span></h4>
+
+                <div class="oem-lines">
+                  <span>601.401.0270 901.401.0070</span>
+                </div>
+
+              </div>
+
+              <div class="oem-group">
+
+                <h4>Conjunto de perno de rueda (perno + tuerca) <span class="oem-cnt">&middot; 28 números OEM</span></h4>
+
+                <div class="oem-lines">
+                  <span>000 401 4171S</span>
+                  <span>305 401 0071S</span>
+                  <span>317 401 0371S 317 401 0471S</span>
+                  <span>317 402 0571S1 327 401 0271S 327 401 0371S</span>
+                  <span>327 401 0471S</span>
+                  <span>327 402 0471S1 346 401 0071S2</span>
+                  <span>376 401 0071S 381 401 0171S 381 401 0271S</span>
+                  <span>381 401 0371S1</span>
+                  <span>381 401 0771S 381 401 0771S2</span>
+                  <span>381 401 0771S6 389 401 0071S 389 401 0171S1</span>
+                  <span>942 401 0271S</span>
+                  <span>942 401 0271S1 942 401 0371S</span>
+                  <span>659112451 659112454 659112455</span>
+                  <span>659112612</span>
+                  <span>3814010571 3814011471</span>
+                </div>
+
+              </div>
+
+              <div class="oem-group">
+
+                <h4>Perno de rueda <span class="oem-cnt">&middot; 12 números OEM</span></h4>
+
+                <div class="oem-lines">
+                  <span>000 401 2371 000 401 2471</span>
+                  <span>000 401 3771 81 45501 0083 309 402 0271</span>
+                  <span>381 401 0371 381 401 0671 381 401 0871</span>
+                  <span>381 401 0971 381 401 1371 381.401.0471</span>
+                  <span>381.401.1171</span>
+                </div>
+
+              </div>
+
+            </div>
+
+          </details>
+
+          <details class="oem-item">
+
+            <summary class="oem-summary">
+
+              <span class="oem-brand">MAN</span>
+              <span class="oem-num">73</span>
+              <span class="oem-types">4</span>
+              <span class="oem-action"><span class="oem-view">Ver números</span><span class="oem-hide">Ocultar</span></span>
+
+            </summary>
+
+            <div class="oem-detail">
+
+              <div class="oem-group">
+
+                <h4>Perno de rueda de cabeza D (lados planos) <span class="oem-cnt">&middot; 23 números OEM</span></h4>
+
+                <div class="oem-lines">
+                  <span>64.45501.0018 81.44301.0172</span>
+                  <span>81.45501.0058</span>
+                  <span>81.45501.0067 81.45501.0076 81.45501.0082 81.45501.0114</span>
+                  <span>81.45501.0116</span>
+                  <span>81.45501.0123 81.45501.0129 81.45501.0133 81.45501.0134</span>
+                  <span>81.45501.0141</span>
+                  <span>81.45501.0152 81.45501.0154 81.45501.0159 81.45501.0164</span>
+                  <span>81.45501.0171</span>
+                  <span>81.45501.0181 81.45501.0187 81.45501.0202 81.45501.0204</span>
+                  <span>81.45501.0209</span>
+                </div>
+
+              </div>
+
+              <div class="oem-group">
+
+                <h4>Perno de rueda de cabeza T / rectangular <span class="oem-cnt">&middot; 9 números OEM</span></h4>
+
+                <div class="oem-lines">
+                  <span>81.45422.0008 81.45422.0023 81.45422.0025 81.45422.0028 81.45422.0031 81.45422.0033 81.45422.0037 81.45422.0046 81.45422.0049</span>
+                </div>
+
+              </div>
+
+              <div class="oem-group">
+
+                <h4>Conjunto de perno de rueda (perno + tuerca) <span class="oem-cnt">&middot; 21 números OEM</span></h4>
+
+                <div class="oem-lines">
+                  <span>64.45501.0018S 64.45501.0018S1</span>
+                  <span>81.44301.0172S1 81.45501.0067S2</span>
+                  <span>81.45501.0078 81.45501.0078S1 81.45501.0079</span>
+                  <span>81.45501.0079S1 81.45501.0082S2</span>
+                  <span>81.45501.0116S1 81.45501.0129S1 81.45501.0136</span>
+                  <span>81.45501.0136S1 81.45501.0141S2</span>
+                  <span>81.45501.0152S1 81.45501.0159S1 81.45501.0171S1</span>
+                  <span>81.45501.0181S1 81.45501.0187S1</span>
+                  <span>81.45501.0202S1 81.45501.0209S1</span>
+                </div>
+
+              </div>
+
+              <div class="oem-group">
+
+                <h4>Perno de rueda <span class="oem-cnt">&middot; 20 números OEM</span></h4>
+
+                <div class="oem-lines">
+                  <span>06.11222.0416 81 45501 0045</span>
+                  <span>81 45501 0081</span>
+                  <span>81.45422.0060 81.45501.0080 81.45501.0083</span>
+                  <span>81.45501.0085</span>
+                  <span>81.45501.0094 81.45501.0099 81.45501.0132</span>
+                  <span>81.45501.0134 S3</span>
+                  <span>81.45501.0139 81.45501.0139 S1 81.45501.0141 S1</span>
+                  <span>81.45501.0141 S3</span>
+                  <span>81.45501.0142 81.45501.0176 81.45503.0026</span>
+                  <span>81.45503.0027</span>
+                  <span>231 B 30</span>
+                </div>
+
+              </div>
+
+            </div>
+
+          </details>
+
+          <details class="oem-item">
+
+            <summary class="oem-summary">
+
+              <span class="oem-brand">Volvo</span>
+              <span class="oem-num">62</span>
+              <span class="oem-types">5</span>
+              <span class="oem-action"><span class="oem-view">Ver números</span><span class="oem-hide">Ocultar</span></span>
+
+            </summary>
+
+            <div class="oem-detail">
+
+              <div class="oem-group">
+
+                <h4>Perno de rueda de cabeza redonda estriada <span class="oem-cnt">&middot; 24 números OEM</span></h4>
+
+                <div class="oem-lines">
+                  <span>158.9009-8 1543082-3</span>
+                  <span>1573081</span>
+                  <span>1573081-5 1573082 1573082-3 1589009</span>
+                  <span>3112593</span>
+                  <span>3118981 3963997 6852474-3 8152104</span>
+                  <span>8396230</span>
+                  <span>8398432 20515514 20515515 20515517</span>
+                  <span>20515518</span>
+                  <span>20515519 20524942 20553560 20723513</span>
+                  <span>21147687</span>
+                  <span>25372586</span>
+                </div>
+
+              </div>
+
+              <div class="oem-group">
+
+                <h4>Espárrago de rueda de doble rosca <span class="oem-cnt">&middot; 13 números OEM</span></h4>
+
+                <div class="oem-lines">
+                  <span>192.121-2 0192121-2</span>
+                  <span>0192122-0 426956 476822</span>
+                  <span>837771 861634 863694</span>
+                  <span>0941385-7 0943404-4 0943405-1</span>
+                  <span>0943406-9 3171328</span>
+                </div>
+
+              </div>
+
+              <div class="oem-group">
+
+                <h4>Perno de rueda de cabeza T / rectangular <span class="oem-cnt">&middot; 17 números OEM</span></h4>
+
+                <div class="oem-lines">
+                  <span>0362164</span>
+                  <span>362514 1577424</span>
+                  <span>1581604 1608293</span>
+                  <span>659112500 659112501</span>
+                  <span>659112503 659112504</span>
+                  <span>659112506 659112509</span>
+                  <span>659112611 659112612</span>
+                  <span>659112613 659112614</span>
+                  <span>659112615 659112616</span>
+                </div>
+
+              </div>
+
+              <div class="oem-group">
+
+                <h4>Conjunto de perno de rueda (perno + tuerca) <span class="oem-cnt">&middot; 7 números OEM</span></h4>
+
+                <div class="oem-lines">
+                  <span>1573083 1589010 20515515S1 20515518S1 20723513S1 21147687S1 25372586S1</span>
+                </div>
+
+              </div>
+
+              <div class="oem-group">
+
+                <h4>Perno de rueda <span class="oem-cnt">&middot; 1 números OEM</span></h4>
+
+                <div class="oem-lines">
+                  <span>157.081-3</span>
+                </div>
+
+              </div>
+
+            </div>
+
+          </details>
+
+          <details class="oem-item">
+
+            <summary class="oem-summary">
+
+              <span class="oem-brand">Renault</span>
+              <span class="oem-num">62</span>
+              <span class="oem-types">5</span>
+              <span class="oem-action"><span class="oem-view">Ver números</span><span class="oem-hide">Ocultar</span></span>
+
+            </summary>
+
+            <div class="oem-detail">
+
+              <div class="oem-group">
+
+                <h4>Perno de rueda de cabeza redonda estriada <span class="oem-cnt">&middot; 30 números OEM</span></h4>
+
+                <div class="oem-lines">
+                  <span>5.000.545161 190.221</span>
+                  <span>0003156050</span>
+                  <span>21323312 0021623013</span>
+                  <span>0021623307 0021623312 5000029513</span>
+                  <span>5000471836</span>
+                  <span>5000471855 5000471860</span>
+                  <span>5000543465 5000545223 5000556773</span>
+                  <span>5000604165</span>
+                  <span>5000605522 5000653117</span>
+                  <span>5000786926 5000788677 5010241839</span>
+                  <span>5010262934</span>
+                  <span>5010566244 7420515514</span>
+                  <span>7420515515 7420515517 7420515518</span>
+                  <span>7420515519</span>
+                  <span>7420524942 7420553560</span>
+                  <span>7421147687</span>
+                </div>
+
+              </div>
+
+              <div class="oem-group">
+
+                <h4>Perno de rueda de cabeza D (lados planos) <span class="oem-cnt">&middot; 10 números OEM</span></h4>
+
+                <div class="oem-lines">
+                  <span>0000190220</span>
+                  <span>0000190221 1530054101</span>
+                  <span>5000190220 5000190221</span>
+                  <span>5000737601 5010319141</span>
+                  <span>5010439317 5010439406</span>
+                  <span>7423685490</span>
+                </div>
+
+              </div>
+
+              <div class="oem-group">
+
+                <h4>Espárrago de rueda de doble rosca <span class="oem-cnt">&middot; 2 números OEM</span></h4>
+
+                <div class="oem-lines">
+                  <span>406.460.7918 7403171328</span>
+                </div>
+
+              </div>
+
+              <div class="oem-group">
+
+                <h4>Conjunto de perno de rueda (perno + tuerca) <span class="oem-cnt">&middot; 11 números OEM</span></h4>
+
+                <div class="oem-lines">
+                  <span>0000190220S 1530054101S</span>
+                  <span>5000190220S 5010439317S 5010439406S</span>
+                  <span>7420515514S 7420515515S1 7420515518S1</span>
+                  <span>7421147687S1 7423685490S 7424076067</span>
+                </div>
+
+              </div>
+
+              <div class="oem-group">
+
+                <h4>Perno de rueda <span class="oem-cnt">&middot; 9 números OEM</span></h4>
+
+                <div class="oem-lines">
+                  <span>5.000.351162</span>
+                  <span>5.000.351167 5.000.547960</span>
+                  <span>50.102.418.92 190.513</span>
+                  <span>406.460.8267 500.065.4139</span>
+                  <span>611490580 5010319140</span>
+                </div>
+
+              </div>
+
+            </div>
+
+          </details>
+
+          <details class="oem-item">
+
+            <summary class="oem-summary">
+
+              <span class="oem-brand">DAF</span>
+              <span class="oem-num">50</span>
+              <span class="oem-types">3</span>
+              <span class="oem-action"><span class="oem-view">Ver números</span><span class="oem-hide">Ocultar</span></span>
+
+            </summary>
+
+            <div class="oem-detail">
+
+              <div class="oem-group">
+
+                <h4>Perno de rueda de cabeza redonda estriada <span class="oem-cnt">&middot; 29 números OEM</span></h4>
+
+                <div class="oem-lines">
+                  <span>620.646 620.647</span>
+                  <span>0637.428</span>
+                  <span>0643.382 1241.957</span>
+                  <span>0099717 0099720 0099721</span>
+                  <span>0099730</span>
+                  <span>0099731 620646</span>
+                  <span>0620646 620647 0620647</span>
+                  <span>0620648</span>
+                  <span>0620649 0890763</span>
+                  <span>1308038 1309190 1309191</span>
+                  <span>1337020</span>
+                  <span>1356736 1373007</span>
+                  <span>1400065 1400082 1400267</span>
+                  <span>1405569</span>
+                  <span>1703948 2118265</span>
+                </div>
+
+              </div>
+
+              <div class="oem-group">
+
+                <h4>Espárrago de rueda de doble rosca <span class="oem-cnt">&middot; 4 números OEM</span></h4>
+
+                <div class="oem-lines">
+                  <span>191.175 217.266 259.931 1019.357</span>
+                </div>
+
+              </div>
+
+              <div class="oem-group">
+
+                <h4>Conjunto de perno de rueda (perno + tuerca) <span class="oem-cnt">&middot; 17 números OEM</span></h4>
+
+                <div class="oem-lines">
+                  <span>0099717S1 0099720S1</span>
+                  <span>0099721S1 0099730S1 0099731S1 0620646S1</span>
+                  <span>0620649S1 0890763S1 1308038S1 1309190S1</span>
+                  <span>1309191S1 1337020S1 1356736S1 1400082S1</span>
+                  <span>1402420S1 1405569S1 1703948S1</span>
+                </div>
+
+              </div>
+
+            </div>
+
+          </details>
+
+          <details class="oem-item">
+
+            <summary class="oem-summary">
+
+              <span class="oem-brand">Scania</span>
+              <span class="oem-num">47</span>
+              <span class="oem-types">6</span>
+              <span class="oem-action"><span class="oem-view">Ver números</span><span class="oem-hide">Ocultar</span></span>
+
+            </summary>
+
+            <div class="oem-detail">
+
+              <div class="oem-group">
+
+                <h4>Perno de rueda de cabeza redonda estriada <span class="oem-cnt">&middot; 11 números OEM</span></h4>
+
+                <div class="oem-lines">
+                  <span>1421005 1528655</span>
+                  <span>1528712 1847739 1868665</span>
+                  <span>1868668 2285275 2285279</span>
+                  <span>2285280 2285282 3787100</span>
+                </div>
+
+              </div>
+
+              <div class="oem-group">
+
+                <h4>Perno de rueda de cabeza D (lados planos) <span class="oem-cnt">&middot; 17 números OEM</span></h4>
+
+                <div class="oem-lines">
+                  <span>272853</span>
+                  <span>290062</span>
+                  <span>295953 332912 337559</span>
+                  <span>0337559</span>
+                  <span>337560 337561 397266</span>
+                  <span>1368690</span>
+                  <span>1368691 1368692 1368693</span>
+                  <span>1368694</span>
+                  <span>1368695 1411980 1420775</span>
+                </div>
+
+              </div>
+
+              <div class="oem-group">
+
+                <h4>Espárrago de rueda de doble rosca <span class="oem-cnt">&middot; 3 números OEM</span></h4>
+
+                <div class="oem-lines">
+                  <span>123250 176815 1340934</span>
+                </div>
+
+              </div>
+
+              <div class="oem-group">
+
+                <h4>Perno de rueda de cabeza T / rectangular <span class="oem-cnt">&middot; 4 números OEM</span></h4>
+
+                <div class="oem-lines">
+                  <span>130960 0228632 0289535 0293493</span>
+                </div>
+
+              </div>
+
+              <div class="oem-group">
+
+                <h4>Conjunto de perno de rueda (perno + tuerca) <span class="oem-cnt">&middot; 6 números OEM</span></h4>
+
+                <div class="oem-lines">
+                  <span>272853S1</span>
+                  <span>332912S1 337560S1</span>
+                  <span>1368691S1 1368694S1</span>
+                  <span>1368695S1</span>
+                </div>
+
+              </div>
+
+              <div class="oem-group">
+
+                <h4>Perno de rueda <span class="oem-cnt">&middot; 6 números OEM</span></h4>
+
+                <div class="oem-lines">
+                  <span>123.294-R</span>
+                  <span>132.602 272.853-3</span>
+                  <span>290.062-9 295.953-4</span>
+                  <span>397.266</span>
+                </div>
+
+              </div>
+
+            </div>
+
+          </details>
+
+          <details class="oem-item">
+
+            <summary class="oem-summary">
+
+              <span class="oem-brand">Fruehauf</span>
+              <span class="oem-num">18</span>
+              <span class="oem-types">3</span>
+              <span class="oem-action"><span class="oem-view">Ver números</span><span class="oem-hide">Ocultar</span></span>
+
+            </summary>
+
+            <div class="oem-detail">
+
+              <div class="oem-group">
+
+                <h4>Perno de rueda de cabeza redonda estriada <span class="oem-cnt">&middot; 7 números OEM</span></h4>
+
+                <div class="oem-lines">
+                  <span>21.420 21.421 A15613 A20630 A-FA0230 MO 69123 MO 69131</span>
+                </div>
+
+              </div>
+
+              <div class="oem-group">
+
+                <h4>Espárrago de rueda de doble rosca <span class="oem-cnt">&middot; 3 números OEM</span></h4>
+
+                <div class="oem-lines">
+                  <span>21.412 21.414 21414</span>
+                </div>
+
+              </div>
+
+              <div class="oem-group">
+
+                <h4>Perno de rueda <span class="oem-cnt">&middot; 8 números OEM</span></h4>
+
+                <div class="oem-lines">
+                  <span>21.302</span>
+                  <span>21.503 993.99.070</span>
+                  <span>993.9907 994.59.072</span>
+                  <span>14027 A15613- M006891</span>
+                  <span>M003133</span>
+                </div>
+
+              </div>
+
+            </div>
+
+          </details>
+
+          <details class="oem-item">
+
+            <summary class="oem-summary">
+
+              <span class="oem-brand">Hino</span>
+              <span class="oem-num">16</span>
+              <span class="oem-types">3</span>
+              <span class="oem-action"><span class="oem-view">Ver números</span><span class="oem-hide">Ocultar</span></span>
+
+            </summary>
+
+            <div class="oem-detail">
+
+              <div class="oem-group">
+
+                <h4>Perno de rueda de cabeza redonda estriada <span class="oem-cnt">&middot; 2 números OEM</span></h4>
+
+                <div class="oem-lines">
+                  <span>9094202071 9094202072</span>
+                </div>
+
+              </div>
+
+              <div class="oem-group">
+
+                <h4>Espárrago de rueda de doble rosca <span class="oem-cnt">&middot; 1 números OEM</span></h4>
+
+                <div class="oem-lines">
+                  <span>9004-26101</span>
+                </div>
+
+              </div>
+
+              <div class="oem-group">
+
+                <h4>Conjunto de perno de rueda (perno + tuerca) <span class="oem-cnt">&middot; 13 números OEM</span></h4>
+
+                <div class="oem-lines">
+                  <span>404-21105 404-21106</span>
+                  <span>04042-1035 04042-1036 04042-1041</span>
+                  <span>04042-1042 04043-1037 04043-1038</span>
+                  <span>04043-1071 04043-1072 9004-26101S</span>
+                  <span>42632-55031S 90942-02072S</span>
+                </div>
+
+              </div>
+
+            </div>
+
+          </details>
+
+          <details class="oem-item">
+
+            <summary class="oem-summary">
+
+              <span class="oem-brand">Mitsubishi</span>
+              <span class="oem-num">15</span>
+              <span class="oem-types">3</span>
+              <span class="oem-action"><span class="oem-view">Ver números</span><span class="oem-hide">Ocultar</span></span>
+
+            </summary>
+
+            <div class="oem-detail">
+
+              <div class="oem-group">
+
+                <h4>Espárrago de rueda de doble rosca <span class="oem-cnt">&middot; 1 números OEM</span></h4>
+
+                <div class="oem-lines">
+                  <span>MC-802141</span>
+                </div>
+
+              </div>
+
+              <div class="oem-group">
+
+                <h4>Conjunto de perno de rueda (perno + tuerca) <span class="oem-cnt">&middot; 12 números OEM</span></h4>
+
+                <div class="oem-lines">
+                  <span>40210-90129B</span>
+                  <span>MB-301509 MB-301529 MB-308672</span>
+                  <span>MB-308673 MB-633778 MB 584750 MC-869237 MC-869238</span>
+                  <span>MC-891568 MC-891569 MT-119331</span>
+                  <span>MT-119332</span>
+                </div>
+
+              </div>
+
+              <div class="oem-group">
+
+                <h4>Perno de rueda <span class="oem-cnt">&middot; 2 números OEM</span></h4>
+
+                <div class="oem-lines">
+                  <span>MB-584750 MB-633778</span>
+                </div>
+
+              </div>
+
+            </div>
+
+          </details>
+
+          <details class="oem-item">
+
+            <summary class="oem-summary">
+
+              <span class="oem-brand">Pegaso</span>
+              <span class="oem-num">11</span>
+              <span class="oem-types">3</span>
+              <span class="oem-action"><span class="oem-view">Ver números</span><span class="oem-hide">Ocultar</span></span>
+
+            </summary>
+
+            <div class="oem-detail">
+
+              <div class="oem-group">
+
+                <h4>Perno de rueda de cabeza redonda estriada <span class="oem-cnt">&middot; 6 números OEM</span></h4>
+
+                <div class="oem-lines">
+                  <span>914.294 716712 716853 717112 717235 718893</span>
+                </div>
+
+              </div>
+
+              <div class="oem-group">
+
+                <h4>Espárrago de rueda de doble rosca <span class="oem-cnt">&middot; 3 números OEM</span></h4>
+
+                <div class="oem-lines">
+                  <span>524714 542679 712838</span>
+                </div>
+
+              </div>
+
+              <div class="oem-group">
+
+                <h4>Perno de rueda <span class="oem-cnt">&middot; 2 números OEM</span></h4>
+
+                <div class="oem-lines">
+                  <span>917.898 717062</span>
+                </div>
+
+              </div>
+
+            </div>
+
+          </details>
+
+          <details class="oem-item">
+
+            <summary class="oem-summary">
+
+              <span class="oem-brand">SAF</span>
+              <span class="oem-num">10</span>
+              <span class="oem-types">2</span>
+              <span class="oem-action"><span class="oem-view">Ver números</span><span class="oem-hide">Ocultar</span></span>
+
+            </summary>
+
+            <div class="oem-detail">
+
+              <div class="oem-group">
+
+                <h4>Perno de rueda de cabeza redonda estriada <span class="oem-cnt">&middot; 2 números OEM</span></h4>
+
+                <div class="oem-lines">
+                  <span>1.303.111.810 1.303.1074.11</span>
+                </div>
+
+              </div>
+
+              <div class="oem-group">
+
+                <h4>Espárrago de rueda de doble rosca <span class="oem-cnt">&middot; 8 números OEM</span></h4>
+
+                <div class="oem-lines">
+                  <span>1.303.1008.10</span>
+                  <span>1.303.1008.11 1.303.1013.10</span>
+                  <span>1.303.1028.10 1.303.1028.11</span>
+                  <span>1.303.1040.11 1.303.1045.11</span>
+                  <span>1.303.1075.11</span>
+                </div>
+
+              </div>
+
+            </div>
+
+          </details>
+
+          <details class="oem-item">
+
+            <summary class="oem-summary">
+
+              <span class="oem-brand">Toyota</span>
+              <span class="oem-num">9</span>
+              <span class="oem-types">2</span>
+              <span class="oem-action"><span class="oem-view">Ver números</span><span class="oem-hide">Ocultar</span></span>
+
+            </summary>
+
+            <div class="oem-detail">
+
+              <div class="oem-group">
+
+                <h4>Perno de rueda de cabeza redonda estriada <span class="oem-cnt">&middot; 2 números OEM</span></h4>
+
+                <div class="oem-lines">
+                  <span>90942-02071 90942-02072</span>
+                </div>
+
+              </div>
+
+              <div class="oem-group">
+
+                <h4>Conjunto de perno de rueda (perno + tuerca) <span class="oem-cnt">&middot; 7 números OEM</span></h4>
+
+                <div class="oem-lines">
+                  <span>90942-02024 90942-02025 90942-02028 90942-02029 90942-02037 90942-02045 90942-02046</span>
+                </div>
+
+              </div>
+
+            </div>
+
+          </details>
+
+          <details class="oem-item">
+
+            <summary class="oem-summary">
+
+              <span class="oem-brand">Isuzu</span>
+              <span class="oem-num">9</span>
+              <span class="oem-types">3</span>
+              <span class="oem-action"><span class="oem-view">Ver números</span><span class="oem-hide">Ocultar</span></span>
+
+            </summary>
+
+            <div class="oem-detail">
+
+              <div class="oem-group">
+
+                <h4>Perno de rueda de cabeza redonda estriada <span class="oem-cnt">&middot; 2 números OEM</span></h4>
+
+                <div class="oem-lines">
+                  <span>8971264880 8971264890</span>
+                </div>
+
+              </div>
+
+              <div class="oem-group">
+
+                <h4>Espárrago de rueda de doble rosca <span class="oem-cnt">&middot; 5 números OEM</span></h4>
+
+                <div class="oem-lines">
+                  <span>1423370101 8943834362 8943834372 8973598050 8973598060</span>
+                </div>
+
+              </div>
+
+              <div class="oem-group">
+
+                <h4>Conjunto de perno de rueda (perno + tuerca) <span class="oem-cnt">&middot; 2 números OEM</span></h4>
+
+                <div class="oem-lines">
+                  <span>8-94223-200-0 9-42331-601-0</span>
+                </div>
+
+              </div>
+
+            </div>
+
+          </details>
+
+          <details class="oem-item">
+
+            <summary class="oem-summary">
+
+              <span class="oem-brand">BPW</span>
+              <span class="oem-num">8</span>
+              <span class="oem-types">2</span>
+              <span class="oem-action"><span class="oem-view">Ver números</span><span class="oem-hide">Ocultar</span></span>
+
+            </summary>
+
+            <div class="oem-detail">
+
+              <div class="oem-group">
+
+                <h4>Espárrago de rueda de doble rosca <span class="oem-cnt">&middot; 7 números OEM</span></h4>
+
+                <div class="oem-lines">
+                  <span>03.296.13.11.0</span>
+                  <span>03.296.13.090 03.296.13.170</span>
+                  <span>03.296.23.05.0 03.296.23.15.0</span>
+                  <span>03.296.23.170 03.296.33.11.0</span>
+                </div>
+
+              </div>
+
+              <div class="oem-group">
+
+                <h4>Perno de rueda <span class="oem-cnt">&middot; 1 números OEM</span></h4>
+
+                <div class="oem-lines">
+                  <span>326004060</span>
+                </div>
+
+              </div>
+
+            </div>
+
+          </details>
+
+          <details class="oem-item">
+
+            <summary class="oem-summary">
+
+              <span class="oem-brand">KAMAZ</span>
+              <span class="oem-num">8</span>
+              <span class="oem-types">1</span>
+              <span class="oem-action"><span class="oem-view">Ver números</span><span class="oem-hide">Ocultar</span></span>
+
+            </summary>
+
+            <div class="oem-detail">
+
+              <div class="oem-group">
+
+                <h4>Perno de rueda <span class="oem-cnt">&middot; 8 números OEM</span></h4>
+
+                <div class="oem-lines">
+                  <span>5297-3104071-10 6320-3104071 6520-3104071-10 43114-3103071 43118-3103071 53205-3103071 53205-3104071 53205-3104071-10</span>
+                </div>
+
+              </div>
+
+            </div>
+
+          </details>
+
+          <details class="oem-item">
+
+            <summary class="oem-summary">
+
+              <span class="oem-brand">Daihatsu</span>
+              <span class="oem-num">6</span>
+              <span class="oem-types">2</span>
+              <span class="oem-action"><span class="oem-view">Ver números</span><span class="oem-hide">Ocultar</span></span>
+
+            </summary>
+
+            <div class="oem-detail">
+
+              <div class="oem-group">
+
+                <h4>Conjunto de perno de rueda (perno + tuerca) <span class="oem-cnt">&middot; 2 números OEM</span></h4>
+
+                <div class="oem-lines">
+                  <span>90049-12010 90049-12014 90049-12011 90049-12015</span>
+                </div>
+
+              </div>
+
+              <div class="oem-group">
+
+                <h4>Perno de rueda <span class="oem-cnt">&middot; 4 números OEM</span></h4>
+
+                <div class="oem-lines">
+                  <span>90049-12010 90049-12011 90049-12014 90049-12015</span>
+                </div>
+
+              </div>
+
+            </div>
+
+          </details>
+
+          <details class="oem-item">
+
+            <summary class="oem-summary">
+
+              <span class="oem-brand">Freightliner</span>
+              <span class="oem-num">6</span>
+              <span class="oem-types">1</span>
+              <span class="oem-action"><span class="oem-view">Ver números</span><span class="oem-hide">Ocultar</span></span>
+
+            </summary>
+
+            <div class="oem-detail">
+
+              <div class="oem-group">
+
+                <h4>Espárrago de rueda de doble rosca <span class="oem-cnt">&middot; 6 números OEM</span></h4>
+
+                <div class="oem-lines">
+                  <span>CM 102292 CM 10001329 CM 10001330 CM 10001399 CM 10001400 CM 10018435</span>
+                </div>
+
+              </div>
+
+            </div>
+
+          </details>
+
+          <details class="oem-item">
+
+            <summary class="oem-summary">
+
+              <span class="oem-brand">MAZ</span>
+              <span class="oem-num">5</span>
+              <span class="oem-types">3</span>
+              <span class="oem-action"><span class="oem-view">Ver números</span><span class="oem-hide">Ocultar</span></span>
+
+            </summary>
+
+            <div class="oem-detail">
+
+              <div class="oem-group">
+
+                <h4>Perno de rueda de cabeza D (lados planos) <span class="oem-cnt">&middot; 3 números OEM</span></h4>
+
+                <div class="oem-lines">
+                  <span>9919-3104050 54321-3104050 54321-3104051</span>
+                </div>
+
+              </div>
+
+              <div class="oem-group">
+
+                <h4>Perno de rueda de cabeza T / rectangular <span class="oem-cnt">&middot; 1 números OEM</span></h4>
+
+                <div class="oem-lines">
+                  <span>5335-3104008</span>
+                </div>
+
+              </div>
+
+              <div class="oem-group">
+
+                <h4>Perno de rueda <span class="oem-cnt">&middot; 1 números OEM</span></h4>
+
+                <div class="oem-lines">
+                  <span>54321-3104052</span>
+                </div>
+
+              </div>
+
+            </div>
+
+          </details>
+
+          <details class="oem-item">
+
+            <summary class="oem-summary">
+
+              <span class="oem-brand">Suzuki</span>
+              <span class="oem-num">4</span>
+              <span class="oem-types">2</span>
+              <span class="oem-action"><span class="oem-view">Ver números</span><span class="oem-hide">Ocultar</span></span>
+
+            </summary>
+
+            <div class="oem-detail">
+
+              <div class="oem-group">
+
+                <h4>Conjunto de perno de rueda (perno + tuerca) <span class="oem-cnt">&middot; 2 números OEM</span></h4>
+
+                <div class="oem-lines">
+                  <span>09119-10049 09119-12011 09119-12012</span>
+                </div>
+
+              </div>
+
+              <div class="oem-group">
+
+                <h4>Perno de rueda <span class="oem-cnt">&middot; 2 números OEM</span></h4>
+
+                <div class="oem-lines">
+                  <span>09119-12011 09119-12012</span>
+                </div>
+
+              </div>
+
+            </div>
+
+          </details>
+
+          <details class="oem-item">
+
+            <summary class="oem-summary">
+
+              <span class="oem-brand">GAZ</span>
+              <span class="oem-num">4</span>
+              <span class="oem-types">1</span>
+              <span class="oem-action"><span class="oem-view">Ver números</span><span class="oem-hide">Ocultar</span></span>
+
+            </summary>
+
+            <div class="oem-detail">
+
+              <div class="oem-group">
+
+                <h4>Perno de rueda <span class="oem-cnt">&middot; 4 números OEM</span></h4>
+
+                <div class="oem-lines">
+                  <span>20-3103008-Б 51-3103008-В1 51-3103009-В1 51-3105015-Д</span>
+                </div>
+
+              </div>
+
+            </div>
+
+          </details>
+
+          <details class="oem-item">
+
+            <summary class="oem-summary">
+
+              <span class="oem-brand">Kia</span>
+              <span class="oem-num">3</span>
+              <span class="oem-types">1</span>
+              <span class="oem-action"><span class="oem-view">Ver números</span><span class="oem-hide">Ocultar</span></span>
+
+            </summary>
+
+            <div class="oem-detail">
+
+              <div class="oem-group">
+
+                <h4>Conjunto de perno de rueda (perno + tuerca) <span class="oem-cnt">&middot; 3 números OEM</span></h4>
+
+                <div class="oem-lines">
+                  <span>0K01126113 OK710-26-113A OK710-26-114A</span>
+                </div>
+
+              </div>
+
+            </div>
+
+          </details>
+
+          <details class="oem-item">
+
+            <summary class="oem-summary">
+
+              <span class="oem-brand">Caterpillar</span>
+              <span class="oem-num">3</span>
+              <span class="oem-types">2</span>
+              <span class="oem-action"><span class="oem-view">Ver números</span><span class="oem-hide">Ocultar</span></span>
+
+            </summary>
+
+            <div class="oem-detail">
+
+              <div class="oem-group">
+
+                <h4>Perno de rueda de cabeza redonda estriada <span class="oem-cnt">&middot; 1 números OEM</span></h4>
+
+                <div class="oem-lines">
+                  <span>1V3323</span>
+                </div>
+
+              </div>
+
+              <div class="oem-group">
+
+                <h4>Perno de rueda <span class="oem-cnt">&middot; 2 números OEM</span></h4>
+
+                <div class="oem-lines">
+                  <span>3K1865 3V4247</span>
+                </div>
+
+              </div>
+
+            </div>
+
+          </details>
+
+          <details class="oem-item">
+
+            <summary class="oem-summary">
+
+              <span class="oem-brand">Magirus</span>
+              <span class="oem-num">3</span>
+              <span class="oem-types">1</span>
+              <span class="oem-action"><span class="oem-view">Ver números</span><span class="oem-hide">Ocultar</span></span>
+
+            </summary>
+
+            <div class="oem-detail">
+
+              <div class="oem-group">
+
+                <h4>Perno de rueda <span class="oem-cnt">&middot; 3 números OEM</span></h4>
+
+                <div class="oem-lines">
+                  <span>52.890 0342 4731 52894</span>
+                </div>
+
+              </div>
+
+            </div>
+
+          </details>
+
+          <details class="oem-item">
+
+            <summary class="oem-summary">
+
+              <span class="oem-brand">Volkswagen</span>
+              <span class="oem-num">3</span>
+              <span class="oem-types">1</span>
+              <span class="oem-action"><span class="oem-view">Ver números</span><span class="oem-hide">Ocultar</span></span>
+
+            </summary>
+
+            <div class="oem-detail">
+
+              <div class="oem-group">
+
+                <h4>Perno de rueda <span class="oem-cnt">&middot; 3 números OEM</span></h4>
+
+                <div class="oem-lines">
+                  <span>321601139 2116011391 ZBA601139A</span>
+                </div>
+
+              </div>
+
+            </div>
+
+          </details>
+
+          <details class="oem-item">
+
+            <summary class="oem-summary">
+
+              <span class="oem-brand">Nissan</span>
+              <span class="oem-num">2</span>
+              <span class="oem-types">1</span>
+              <span class="oem-action"><span class="oem-view">Ver números</span><span class="oem-hide">Ocultar</span></span>
+
+            </summary>
+
+            <div class="oem-detail">
+
+              <div class="oem-group">
+
+                <h4>Conjunto de perno de rueda (perno + tuerca) <span class="oem-cnt">&middot; 2 números OEM</span></h4>
+
+                <div class="oem-lines">
+                  <span>40222-18000 40222-A0800</span>
+                </div>
+
+              </div>
+
+            </div>
+
+          </details>
+
+          <details class="oem-item">
+
+            <summary class="oem-summary">
+
+              <span class="oem-brand">Mack</span>
+              <span class="oem-num">2</span>
+              <span class="oem-types">1</span>
+              <span class="oem-action"><span class="oem-view">Ver números</span><span class="oem-hide">Ocultar</span></span>
+
+            </summary>
+
+            <div class="oem-detail">
+
+              <div class="oem-group">
+
+                <h4>Espárrago de rueda de doble rosca <span class="oem-cnt">&middot; 2 números OEM</span></h4>
+
+                <div class="oem-lines">
+                  <span>18AX64 741310001331</span>
+                </div>
+
+              </div>
+
+            </div>
+
+          </details>
+
+          <details class="oem-item">
+
+            <summary class="oem-summary">
+
+              <span class="oem-brand">Barreiros</span>
+              <span class="oem-num">2</span>
+              <span class="oem-types">2</span>
+              <span class="oem-action"><span class="oem-view">Ver números</span><span class="oem-hide">Ocultar</span></span>
+
+            </summary>
+
+            <div class="oem-detail">
+
+              <div class="oem-group">
+
+                <h4>Espárrago de rueda de doble rosca <span class="oem-cnt">&middot; 1 números OEM</span></h4>
+
+                <div class="oem-lines">
+                  <span>406.460.7918</span>
+                </div>
+
+              </div>
+
+              <div class="oem-group">
+
+                <h4>Perno de rueda <span class="oem-cnt">&middot; 1 números OEM</span></h4>
+
+                <div class="oem-lines">
+                  <span>406.460.8267</span>
+                </div>
+
+              </div>
+
+            </div>
+
+          </details>
+
+          <details class="oem-item">
+
+            <summary class="oem-summary">
+
+              <span class="oem-brand">Euclid</span>
+              <span class="oem-num">2</span>
+              <span class="oem-types">1</span>
+              <span class="oem-action"><span class="oem-view">Ver números</span><span class="oem-hide">Ocultar</span></span>
+
+            </summary>
+
+            <div class="oem-detail">
+
+              <div class="oem-group">
+
+                <h4>Espárrago de rueda de doble rosca <span class="oem-cnt">&middot; 2 números OEM</span></h4>
+
+                <div class="oem-lines">
+                  <span>E5561L E-5561R</span>
+                </div>
+
+              </div>
+
+            </div>
+
+          </details>
+
+          <details class="oem-item">
+
+            <summary class="oem-summary">
+
+              <span class="oem-brand">Ford</span>
+              <span class="oem-num">2</span>
+              <span class="oem-types">2</span>
+              <span class="oem-action"><span class="oem-view">Ver números</span><span class="oem-hide">Ocultar</span></span>
+
+            </summary>
+
+            <div class="oem-detail">
+
+              <div class="oem-group">
+
+                <h4>Perno de rueda de cabeza redonda estriada <span class="oem-cnt">&middot; 1 números OEM</span></h4>
+
+                <div class="oem-lines">
+                  <span>850B-1107-BB</span>
+                </div>
+
+              </div>
+
+              <div class="oem-group">
+
+                <h4>Perno de rueda <span class="oem-cnt">&middot; 1 números OEM</span></h4>
+
+                <div class="oem-lines">
+                  <span>BC 8A1107 A</span>
+                </div>
+
+              </div>
+
+            </div>
+
+          </details>
+
+          <details class="oem-item">
+
+            <summary class="oem-summary">
+
+              <span class="oem-brand">GM</span>
+              <span class="oem-num">2</span>
+              <span class="oem-types">2</span>
+              <span class="oem-action"><span class="oem-view">Ver números</span><span class="oem-hide">Ocultar</span></span>
+
+            </summary>
+
+            <div class="oem-detail">
+
+              <div class="oem-group">
+
+                <h4>Perno de rueda de cabeza redonda estriada <span class="oem-cnt">&middot; 1 números OEM</span></h4>
+
+                <div class="oem-lines">
+                  <span>94631717</span>
+                </div>
+
+              </div>
+
+              <div class="oem-group">
+
+                <h4>Perno de rueda <span class="oem-cnt">&middot; 1 números OEM</span></h4>
+
+                <div class="oem-lines">
+                  <span>3775682</span>
+                </div>
+
+              </div>
+
+            </div>
+
+          </details>
+
+          <details class="oem-item">
+
+            <summary class="oem-summary">
+
+              <span class="oem-brand">ConMet</span>
+              <span class="oem-num">1</span>
+              <span class="oem-types">1</span>
+              <span class="oem-action"><span class="oem-view">Ver números</span><span class="oem-hide">Ocultar</span></span>
+
+            </summary>
+
+            <div class="oem-detail">
+
+              <div class="oem-group">
+
+                <h4>Espárrago de rueda de doble rosca <span class="oem-cnt">&middot; 1 números OEM</span></h4>
+
+                <div class="oem-lines">
+                  <span>102292</span>
+                </div>
+
+              </div>
+
+            </div>
+
+          </details>
+
+          <details class="oem-item">
+
+            <summary class="oem-summary">
+
+              <span class="oem-brand">Kenworth</span>
+              <span class="oem-num">1</span>
+              <span class="oem-types">1</span>
+              <span class="oem-action"><span class="oem-view">Ver números</span><span class="oem-hide">Ocultar</span></span>
+
+            </summary>
+
+            <div class="oem-detail">
+
+              <div class="oem-group">
+
+                <h4>Espárrago de rueda de doble rosca <span class="oem-cnt">&middot; 1 números OEM</span></h4>
+
+                <div class="oem-lines">
+                  <span>10001331</span>
+                </div>
+
+              </div>
+
+            </div>
+
+          </details>
+
+          <details class="oem-item">
+
+            <summary class="oem-summary">
+
+              <span class="oem-brand">International</span>
+              <span class="oem-num">1</span>
+              <span class="oem-types">1</span>
+              <span class="oem-action"><span class="oem-view">Ver números</span><span class="oem-hide">Ocultar</span></span>
+
+            </summary>
+
+            <div class="oem-detail">
+
+              <div class="oem-group">
+
+                <h4>Espárrago de rueda de doble rosca <span class="oem-cnt">&middot; 1 números OEM</span></h4>
+
+                <div class="oem-lines">
+                  <span>2588662C1</span>
+                </div>
+
+              </div>
+
+            </div>
+
+          </details>
+
+          <details class="oem-item">
+
+            <summary class="oem-summary">
+
+              <span class="oem-brand">Peterbilt</span>
+              <span class="oem-num">1</span>
+              <span class="oem-types">1</span>
+              <span class="oem-action"><span class="oem-view">Ver números</span><span class="oem-hide">Ocultar</span></span>
+
+            </summary>
+
+            <div class="oem-detail">
+
+              <div class="oem-group">
+
+                <h4>Espárrago de rueda de doble rosca <span class="oem-cnt">&middot; 1 números OEM</span></h4>
+
+                <div class="oem-lines">
+                  <span>SZAR003R</span>
+                </div>
+
+              </div>
+
+            </div>
+
+          </details>
+
+          <details class="oem-item">
+
+            <summary class="oem-summary">
+
+              <span class="oem-brand">Perlini</span>
+              <span class="oem-num">1</span>
+              <span class="oem-types">1</span>
+              <span class="oem-action"><span class="oem-view">Ver números</span><span class="oem-hide">Ocultar</span></span>
+
+            </summary>
+
+            <div class="oem-detail">
+
+              <div class="oem-group">
+
+                <h4>Perno de rueda de cabeza redonda estriada <span class="oem-cnt">&middot; 1 números OEM</span></h4>
+
+                <div class="oem-lines">
+                  <span>12098</span>
+                </div>
+
+              </div>
+
+            </div>
+
+          </details>
+
+          <details class="oem-item">
+
+            <summary class="oem-summary">
+
+              <span class="oem-brand">Fiat</span>
+              <span class="oem-num">1</span>
+              <span class="oem-types">1</span>
+              <span class="oem-action"><span class="oem-view">Ver números</span><span class="oem-hide">Ocultar</span></span>
+
+            </summary>
+
+            <div class="oem-detail">
+
+              <div class="oem-group">
+
+                <h4>Perno de rueda de cabeza hexagonal <span class="oem-cnt">&middot; 1 números OEM</span></h4>
+
+                <div class="oem-lines">
+                  <span>7509408</span>
+                </div>
+
+              </div>
+
+            </div>
+
+          </details>
+
+        </div>
+
+        <p class="oem-empty" id="oemEmpty" hidden>Ninguna marca o número OEM coincide con la búsqueda.</p>
+
+        <p class="oem-count" id="oemCount">Mostrando 37 de 37 marcas · 621 números OEM</p>
+
+        <div class="oem-disclaimer">Los números OEM y las marcas de vehículos se citan solo como referencia e identificación. Todas las marcas registradas pertenecen a sus respectivos propietarios. Confirme las dimensiones con su plano o muestra antes de realizar el pedido.</div>
 
       </div>
-
 
 
       <header class="section-header" style="margin-top: var(--space-12);">
@@ -636,5 +2251,98 @@ const images = [
 
 }
 
+
+/* OEM cross-reference (Hub Bolt Specifications) */
+.oem-app { margin-top: var(--space-4); }
+.oem-chips { display: flex; flex-wrap: wrap; gap: var(--space-2); margin-bottom: var(--space-5); }
+.oem-toolbar { display: flex; gap: var(--space-3); align-items: center; margin-bottom: var(--space-4); }
+.oem-search { flex: 1; min-width: 200px; padding: 10px 14px; font-size: 0.9rem; color: var(--color-text); background: #fff; border: 1px solid var(--color-border); border-radius: var(--radius-md); outline: none; }
+.oem-search:focus { border-color: var(--color-primary); box-shadow: 0 0 0 3px rgba(27, 75, 142, 0.1); }
+.oem-btn { background: var(--color-primary); color: #fff; border: 0; border-radius: var(--radius-md); padding: 10px 16px; font-size: 0.875rem; font-weight: 600; cursor: pointer; white-space: nowrap; }
+.oem-btn:hover { background: var(--color-primary-dark, #143a70); }
+.oem-head, .oem-summary { display: grid; grid-template-columns: minmax(150px, 1.7fr) minmax(90px, 0.7fr) minmax(120px, 1fr) 128px; gap: var(--space-3); align-items: center; padding: var(--space-3) var(--space-4); }
+.oem-head { background: var(--color-primary); color: #fff; font-size: 0.8125rem; font-weight: 600; border-radius: var(--radius-md) var(--radius-md) 0 0; }
+.oem-list { border: 1px solid var(--color-border); border-top: 0; border-radius: 0 0 var(--radius-md) var(--radius-md); background: var(--color-bg); overflow: hidden; }
+.oem-item { border-top: 1px solid var(--color-border); }
+.oem-item:first-child { border-top: 0; }
+.oem-item[hidden] { display: none !important; }
+.oem-item:nth-child(even) > .oem-summary { background: rgba(27, 75, 142, 0.04); }
+.oem-item > .oem-summary:hover { background: rgba(27, 75, 142, 0.08); }
+.oem-summary { list-style: none; cursor: pointer; font-size: 0.875rem; }
+.oem-summary::-webkit-details-marker { display: none; }
+.oem-summary::marker { content: ''; }
+.oem-brand { font-weight: 700; color: var(--color-text); }
+.oem-num { font-variant-numeric: tabular-nums; font-weight: 700; color: var(--color-primary); }
+.oem-types { font-variant-numeric: tabular-nums; color: var(--color-text-light); }
+.oem-action { text-align: right; font-size: 0.8125rem; font-weight: 600; color: var(--color-primary); }
+.oem-item[open] > .oem-summary .oem-view { display: none; }
+.oem-item:not([open]) > .oem-summary .oem-hide { display: none; }
+.oem-detail { padding: var(--space-4) var(--space-5); border-top: 1px solid var(--color-border); background: #fff; }
+.oem-group { margin-bottom: var(--space-4); }
+.oem-group:last-child { margin-bottom: 0; }
+.oem-group h4 { margin: 0 0 var(--space-2); font-size: 0.875rem; font-weight: 700; color: var(--color-primary); }
+.oem-cnt { font-weight: 400; font-size: 0.8125rem; color: var(--color-text-light); }
+.oem-lines span { display: inline-block; margin: 0 4px 5px 0; padding: 1px 7px; border: 1px solid var(--color-border); border-radius: 4px; background: rgba(27, 75, 142, 0.06); font-family: ui-monospace, SFMono-Regular, Consolas, monospace; font-size: 0.8125rem; color: var(--color-text); white-space: nowrap; }
+.oem-lines span.hit { background: #ffe9a8; border-color: #f0c44a; }
+.oem-count { margin: var(--space-3) 0 0; font-size: 0.8125rem; color: var(--color-text-light); }
+.oem-empty { margin: var(--space-4) 0; padding: var(--space-5); text-align: center; color: var(--color-text-light); font-size: 0.9rem; border: 1px dashed var(--color-border); border-radius: var(--radius-md); }
+.oem-empty[hidden] { display: none; }
+.oem-disclaimer { margin-top: var(--space-4); padding: var(--space-3) var(--space-4); background: #fff8ec; border-left: 3px solid #e0a33a; border-radius: 4px; font-size: 0.8125rem; color: #6b5326; line-height: 1.6; }
+@media (max-width: 768px) {
+  .oem-head, .oem-summary { grid-template-columns: 1fr auto 110px; gap: var(--space-2); padding: var(--space-3); }
+  .oem-head > span:nth-child(3), .oem-types { display: none; }
+  .oem-toolbar { flex-direction: column; align-items: stretch; }
+  .oem-detail { padding: var(--space-3); }
+  .oem-chips { gap: var(--space-1); }
+}
+
 </style>
 
+<script>
+  (() => {
+    const app = document.getElementById('oemApp');
+    if (!app) return;
+    const search = document.getElementById('oemSearch');
+    const list = document.getElementById('oemList');
+    const items = Array.from(list.querySelectorAll('.oem-item'));
+    const countEl = document.getElementById('oemCount');
+    const emptyEl = document.getElementById('oemEmpty');
+    const allBtn = document.getElementById('oemExpandAll');
+
+    const labels = {
+      all: app.dataset.all,
+      collapse: app.dataset.collapse,
+      count: app.dataset.count,
+      none: app.dataset.none
+    };
+    const haystacks = items.map((it) => it.textContent.toLowerCase());
+
+    function render() {
+      const q = (search.value || '').trim().toLowerCase();
+      let shown = 0;
+      items.forEach((it, i) => {
+        const match = !q || haystacks[i].includes(q);
+        it.hidden = !match;
+        if (!match) return;
+        shown++;
+        if (q) it.open = true;
+        it.querySelectorAll('.oem-lines span').forEach((s) => {
+          s.classList.toggle('hit', !!q && s.textContent.toLowerCase().includes(q));
+        });
+      });
+      countEl.textContent = labels.count.replace('__N__', String(shown));
+      emptyEl.hidden = shown !== 0;
+    }
+
+    search.addEventListener('input', render);
+
+    let allOpen = false;
+    allBtn.addEventListener('click', () => {
+      allOpen = !allOpen;
+      items.forEach((it) => { if (!it.hidden) it.open = allOpen; });
+      allBtn.textContent = allOpen ? labels.collapse : labels.all;
+    });
+
+    render();
+  })();
+</script>

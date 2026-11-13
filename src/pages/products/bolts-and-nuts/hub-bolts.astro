@@ -209,57 +209,74 @@ const images = [
       </header>
 
       <div class="oem-app" id="oemApp"
-        data-all="Expand all" data-collapse="Collapse all"
         data-count="Showing __N__ of 37 brands · 621 OEM numbers" data-none="No brand or OEM number matches your search.">
 
-        <div class="oem-chips">
+        <h3 class="oem-subhead">Bolt &amp; stud types</h3>
 
-          <span class="badge">Round Head Knurled Wheel Bolt &middot; 130</span>
+        <div class="oem-types-strip">
 
-          <span class="badge">D-Head Wheel Bolt (flat-sided head) &middot; 128</span>
+          <div class="oem-type-card">
+            <img src="/images/products/bolts-and-nuts/hub-bolts/oem-type-round-head-knurled.webp" alt="Round Head Knurled Wheel Bolt - drawing" width="800" height="211" loading="lazy" />
+            <span class="oem-type-name">Round Head Knurled Wheel Bolt</span>
+            <span class="oem-type-qty">130 OEM numbers</span>
+          </div>
 
-          <span class="badge">Double-End Wheel Stud &middot; 68</span>
+          <div class="oem-type-card">
+            <img src="/images/products/bolts-and-nuts/hub-bolts/oem-type-d-head.webp" alt="D-Head Wheel Bolt (flat-sided head) - drawing" width="800" height="211" loading="lazy" />
+            <span class="oem-type-name">D-Head Wheel Bolt (flat-sided head)</span>
+            <span class="oem-type-qty">128 OEM numbers</span>
+          </div>
 
-          <span class="badge">T-Head / Rectangular Head Wheel Bolt &middot; 48</span>
+          <div class="oem-type-card">
+            <img src="/images/products/bolts-and-nuts/hub-bolts/oem-type-double-end-stud.webp" alt="Double-End Wheel Stud - drawing" width="800" height="215" loading="lazy" />
+            <span class="oem-type-name">Double-End Wheel Stud</span>
+            <span class="oem-type-qty">68 OEM numbers</span>
+          </div>
 
-          <span class="badge">Wheel Bolt &middot; 111</span>
+          <div class="oem-type-card">
+            <img src="/images/products/bolts-and-nuts/hub-bolts/oem-type-t-head-rect.webp" alt="T-Head / Rectangular Head Wheel Bolt - drawing" width="800" height="199" loading="lazy" />
+            <span class="oem-type-name">T-Head / Rectangular Head Wheel Bolt</span>
+            <span class="oem-type-qty">48 OEM numbers</span>
+          </div>
 
-          <span class="badge">Hex Head Wheel Bolt &middot; 3</span>
+          <div class="oem-type-card">
+            <img src="/images/products/bolts-and-nuts/hub-bolts/oem-type-wheel-bolt.webp" alt="Wheel Bolt - drawing" width="800" height="199" loading="lazy" />
+            <span class="oem-type-name">Wheel Bolt</span>
+            <span class="oem-type-qty">111 OEM numbers</span>
+          </div>
 
-          <span class="badge">Wheel Bolt Assembly (bolt + nut) &middot; 133</span>
+          <div class="oem-type-card">
+            <img src="/images/products/bolts-and-nuts/hub-bolts/oem-type-hex-head.webp" alt="Hex Head Wheel Bolt - drawing" width="800" height="178" loading="lazy" />
+            <span class="oem-type-name">Hex Head Wheel Bolt</span>
+            <span class="oem-type-qty">3 OEM numbers</span>
+          </div>
+
+          <div class="oem-type-card">
+            <img src="/images/products/bolts-and-nuts/hub-bolts/oem-type-bolt-nut-assembly.webp" alt="Wheel Bolt Assembly (bolt + nut) - drawing" width="800" height="207" loading="lazy" />
+            <span class="oem-type-name">Wheel Bolt Assembly (bolt + nut)</span>
+            <span class="oem-type-qty">133 OEM numbers</span>
+          </div>
 
         </div>
 
         <div class="oem-toolbar">
 
           <input id="oemSearch" class="oem-search" type="search" autocomplete="off" placeholder="Search brand or OEM number..." />
-
-          <button id="oemExpandAll" class="oem-btn" type="button">Expand all</button>
-
-        </div>
-
-        <div class="oem-head" aria-hidden="true">
-
-          <span>Vehicle brand</span><span>OEM numbers</span><span>Bolt / stud types</span><span></span>
+          <span class="oem-scroll-hint">Scroll up / down to browse all 37 brands</span>
 
         </div>
 
-        <div class="oem-list" id="oemList">
+        <div class="oem-scroll" id="oemScroll" tabindex="0">
 
-          <details class="oem-item">
+          <div class="oem-brand">
 
-            <summary class="oem-summary">
+            <div class="oem-brand-head"><strong>Iveco</strong><span>89 OEM numbers &middot; 5 types</span></div>
 
-              <span class="oem-brand">Iveco</span>
-              <span class="oem-num">89</span>
-              <span class="oem-types">5</span>
-              <span class="oem-action"><span class="oem-view">View numbers</span><span class="oem-hide">Hide</span></span>
+            <div class="oem-group">
 
-            </summary>
+              <div class="oem-group-fig"><img src="/images/products/bolts-and-nuts/hub-bolts/oem-type-round-head-knurled.webp" alt="Round Head Knurled Wheel Bolt - drawing" width="800" height="211" loading="lazy" /></div>
 
-            <div class="oem-detail">
-
-              <div class="oem-group">
+              <div class="oem-group-body">
 
                 <h4>Round Head Knurled Wheel Bolt <span class="oem-cnt">&middot; 7 OEM numbers</span></h4>
 
@@ -272,7 +289,13 @@ const images = [
 
               </div>
 
-              <div class="oem-group">
+            </div>
+
+            <div class="oem-group">
+
+              <div class="oem-group-fig"><img src="/images/products/bolts-and-nuts/hub-bolts/oem-type-d-head.webp" alt="D-Head Wheel Bolt (flat-sided head) - drawing" width="800" height="211" loading="lazy" /></div>
+
+              <div class="oem-group-body">
 
                 <h4>D-Head Wheel Bolt (flat-sided head) <span class="oem-cnt">&middot; 59 OEM numbers</span></h4>
 
@@ -312,7 +335,13 @@ const images = [
 
               </div>
 
-              <div class="oem-group">
+            </div>
+
+            <div class="oem-group">
+
+              <div class="oem-group-fig"><img src="/images/products/bolts-and-nuts/hub-bolts/oem-type-double-end-stud.webp" alt="Double-End Wheel Stud - drawing" width="800" height="215" loading="lazy" /></div>
+
+              <div class="oem-group-body">
 
                 <h4>Double-End Wheel Stud <span class="oem-cnt">&middot; 2 OEM numbers</span></h4>
 
@@ -322,7 +351,13 @@ const images = [
 
               </div>
 
-              <div class="oem-group">
+            </div>
+
+            <div class="oem-group">
+
+              <div class="oem-group-fig"><img src="/images/products/bolts-and-nuts/hub-bolts/oem-type-t-head-rect.webp" alt="T-Head / Rectangular Head Wheel Bolt - drawing" width="800" height="199" loading="lazy" /></div>
+
+              <div class="oem-group-body">
 
                 <h4>T-Head / Rectangular Head Wheel Bolt <span class="oem-cnt">&middot; 1 OEM numbers</span></h4>
 
@@ -332,7 +367,13 @@ const images = [
 
               </div>
 
-              <div class="oem-group">
+            </div>
+
+            <div class="oem-group">
+
+              <div class="oem-group-fig"><img src="/images/products/bolts-and-nuts/hub-bolts/oem-type-wheel-bolt.webp" alt="Wheel Bolt - drawing" width="800" height="199" loading="lazy" /></div>
+
+              <div class="oem-group-body">
 
                 <h4>Wheel Bolt <span class="oem-cnt">&middot; 20 OEM numbers</span></h4>
 
@@ -354,22 +395,17 @@ const images = [
 
             </div>
 
-          </details>
+          </div>
 
-          <details class="oem-item">
+          <div class="oem-brand">
 
-            <summary class="oem-summary">
+            <div class="oem-brand-head"><strong>Mercedes-Benz</strong><span>79 OEM numbers &middot; 7 types</span></div>
 
-              <span class="oem-brand">Mercedes-Benz</span>
-              <span class="oem-num">79</span>
-              <span class="oem-types">7</span>
-              <span class="oem-action"><span class="oem-view">View numbers</span><span class="oem-hide">Hide</span></span>
+            <div class="oem-group">
 
-            </summary>
+              <div class="oem-group-fig"><img src="/images/products/bolts-and-nuts/hub-bolts/oem-type-round-head-knurled.webp" alt="Round Head Knurled Wheel Bolt - drawing" width="800" height="211" loading="lazy" /></div>
 
-            <div class="oem-detail">
-
-              <div class="oem-group">
+              <div class="oem-group-body">
 
                 <h4>Round Head Knurled Wheel Bolt <span class="oem-cnt">&middot; 4 OEM numbers</span></h4>
 
@@ -379,7 +415,13 @@ const images = [
 
               </div>
 
-              <div class="oem-group">
+            </div>
+
+            <div class="oem-group">
+
+              <div class="oem-group-fig"><img src="/images/products/bolts-and-nuts/hub-bolts/oem-type-d-head.webp" alt="D-Head Wheel Bolt (flat-sided head) - drawing" width="800" height="211" loading="lazy" /></div>
+
+              <div class="oem-group-body">
 
                 <h4>D-Head Wheel Bolt (flat-sided head) <span class="oem-cnt">&middot; 16 OEM numbers</span></h4>
 
@@ -397,7 +439,13 @@ const images = [
 
               </div>
 
-              <div class="oem-group">
+            </div>
+
+            <div class="oem-group">
+
+              <div class="oem-group-fig"><img src="/images/products/bolts-and-nuts/hub-bolts/oem-type-double-end-stud.webp" alt="Double-End Wheel Stud - drawing" width="800" height="215" loading="lazy" /></div>
+
+              <div class="oem-group-body">
 
                 <h4>Double-End Wheel Stud <span class="oem-cnt">&middot; 1 OEM numbers</span></h4>
 
@@ -407,7 +455,13 @@ const images = [
 
               </div>
 
-              <div class="oem-group">
+            </div>
+
+            <div class="oem-group">
+
+              <div class="oem-group-fig"><img src="/images/products/bolts-and-nuts/hub-bolts/oem-type-t-head-rect.webp" alt="T-Head / Rectangular Head Wheel Bolt - drawing" width="800" height="199" loading="lazy" /></div>
+
+              <div class="oem-group-body">
 
                 <h4>T-Head / Rectangular Head Wheel Bolt <span class="oem-cnt">&middot; 16 OEM numbers</span></h4>
 
@@ -425,7 +479,13 @@ const images = [
 
               </div>
 
-              <div class="oem-group">
+            </div>
+
+            <div class="oem-group">
+
+              <div class="oem-group-fig"><img src="/images/products/bolts-and-nuts/hub-bolts/oem-type-hex-head.webp" alt="Hex Head Wheel Bolt - drawing" width="800" height="178" loading="lazy" /></div>
+
+              <div class="oem-group-body">
 
                 <h4>Hex Head Wheel Bolt <span class="oem-cnt">&middot; 2 OEM numbers</span></h4>
 
@@ -435,7 +495,13 @@ const images = [
 
               </div>
 
-              <div class="oem-group">
+            </div>
+
+            <div class="oem-group">
+
+              <div class="oem-group-fig"><img src="/images/products/bolts-and-nuts/hub-bolts/oem-type-bolt-nut-assembly.webp" alt="Wheel Bolt Assembly (bolt + nut) - drawing" width="800" height="207" loading="lazy" /></div>
+
+              <div class="oem-group-body">
 
                 <h4>Wheel Bolt Assembly (bolt + nut) <span class="oem-cnt">&middot; 28 OEM numbers</span></h4>
 
@@ -459,7 +525,13 @@ const images = [
 
               </div>
 
-              <div class="oem-group">
+            </div>
+
+            <div class="oem-group">
+
+              <div class="oem-group-fig"><img src="/images/products/bolts-and-nuts/hub-bolts/oem-type-wheel-bolt.webp" alt="Wheel Bolt - drawing" width="800" height="199" loading="lazy" /></div>
+
+              <div class="oem-group-body">
 
                 <h4>Wheel Bolt <span class="oem-cnt">&middot; 12 OEM numbers</span></h4>
 
@@ -475,22 +547,17 @@ const images = [
 
             </div>
 
-          </details>
+          </div>
 
-          <details class="oem-item">
+          <div class="oem-brand">
 
-            <summary class="oem-summary">
+            <div class="oem-brand-head"><strong>MAN</strong><span>73 OEM numbers &middot; 4 types</span></div>
 
-              <span class="oem-brand">MAN</span>
-              <span class="oem-num">73</span>
-              <span class="oem-types">4</span>
-              <span class="oem-action"><span class="oem-view">View numbers</span><span class="oem-hide">Hide</span></span>
+            <div class="oem-group">
 
-            </summary>
+              <div class="oem-group-fig"><img src="/images/products/bolts-and-nuts/hub-bolts/oem-type-d-head.webp" alt="D-Head Wheel Bolt (flat-sided head) - drawing" width="800" height="211" loading="lazy" /></div>
 
-            <div class="oem-detail">
-
-              <div class="oem-group">
+              <div class="oem-group-body">
 
                 <h4>D-Head Wheel Bolt (flat-sided head) <span class="oem-cnt">&middot; 23 OEM numbers</span></h4>
 
@@ -509,7 +576,13 @@ const images = [
 
               </div>
 
-              <div class="oem-group">
+            </div>
+
+            <div class="oem-group">
+
+              <div class="oem-group-fig"><img src="/images/products/bolts-and-nuts/hub-bolts/oem-type-t-head-rect.webp" alt="T-Head / Rectangular Head Wheel Bolt - drawing" width="800" height="199" loading="lazy" /></div>
+
+              <div class="oem-group-body">
 
                 <h4>T-Head / Rectangular Head Wheel Bolt <span class="oem-cnt">&middot; 9 OEM numbers</span></h4>
 
@@ -519,7 +592,13 @@ const images = [
 
               </div>
 
-              <div class="oem-group">
+            </div>
+
+            <div class="oem-group">
+
+              <div class="oem-group-fig"><img src="/images/products/bolts-and-nuts/hub-bolts/oem-type-bolt-nut-assembly.webp" alt="Wheel Bolt Assembly (bolt + nut) - drawing" width="800" height="207" loading="lazy" /></div>
+
+              <div class="oem-group-body">
 
                 <h4>Wheel Bolt Assembly (bolt + nut) <span class="oem-cnt">&middot; 21 OEM numbers</span></h4>
 
@@ -537,7 +616,13 @@ const images = [
 
               </div>
 
-              <div class="oem-group">
+            </div>
+
+            <div class="oem-group">
+
+              <div class="oem-group-fig"><img src="/images/products/bolts-and-nuts/hub-bolts/oem-type-wheel-bolt.webp" alt="Wheel Bolt - drawing" width="800" height="199" loading="lazy" /></div>
+
+              <div class="oem-group-body">
 
                 <h4>Wheel Bolt <span class="oem-cnt">&middot; 20 OEM numbers</span></h4>
 
@@ -559,22 +644,17 @@ const images = [
 
             </div>
 
-          </details>
+          </div>
 
-          <details class="oem-item">
+          <div class="oem-brand">
 
-            <summary class="oem-summary">
+            <div class="oem-brand-head"><strong>Volvo</strong><span>62 OEM numbers &middot; 5 types</span></div>
 
-              <span class="oem-brand">Volvo</span>
-              <span class="oem-num">62</span>
-              <span class="oem-types">5</span>
-              <span class="oem-action"><span class="oem-view">View numbers</span><span class="oem-hide">Hide</span></span>
+            <div class="oem-group">
 
-            </summary>
+              <div class="oem-group-fig"><img src="/images/products/bolts-and-nuts/hub-bolts/oem-type-round-head-knurled.webp" alt="Round Head Knurled Wheel Bolt - drawing" width="800" height="211" loading="lazy" /></div>
 
-            <div class="oem-detail">
-
-              <div class="oem-group">
+              <div class="oem-group-body">
 
                 <h4>Round Head Knurled Wheel Bolt <span class="oem-cnt">&middot; 24 OEM numbers</span></h4>
 
@@ -594,7 +674,13 @@ const images = [
 
               </div>
 
-              <div class="oem-group">
+            </div>
+
+            <div class="oem-group">
+
+              <div class="oem-group-fig"><img src="/images/products/bolts-and-nuts/hub-bolts/oem-type-double-end-stud.webp" alt="Double-End Wheel Stud - drawing" width="800" height="215" loading="lazy" /></div>
+
+              <div class="oem-group-body">
 
                 <h4>Double-End Wheel Stud <span class="oem-cnt">&middot; 13 OEM numbers</span></h4>
 
@@ -608,7 +694,13 @@ const images = [
 
               </div>
 
-              <div class="oem-group">
+            </div>
+
+            <div class="oem-group">
+
+              <div class="oem-group-fig"><img src="/images/products/bolts-and-nuts/hub-bolts/oem-type-t-head-rect.webp" alt="T-Head / Rectangular Head Wheel Bolt - drawing" width="800" height="199" loading="lazy" /></div>
+
+              <div class="oem-group-body">
 
                 <h4>T-Head / Rectangular Head Wheel Bolt <span class="oem-cnt">&middot; 17 OEM numbers</span></h4>
 
@@ -626,7 +718,13 @@ const images = [
 
               </div>
 
-              <div class="oem-group">
+            </div>
+
+            <div class="oem-group">
+
+              <div class="oem-group-fig"><img src="/images/products/bolts-and-nuts/hub-bolts/oem-type-bolt-nut-assembly.webp" alt="Wheel Bolt Assembly (bolt + nut) - drawing" width="800" height="207" loading="lazy" /></div>
+
+              <div class="oem-group-body">
 
                 <h4>Wheel Bolt Assembly (bolt + nut) <span class="oem-cnt">&middot; 7 OEM numbers</span></h4>
 
@@ -636,7 +734,13 @@ const images = [
 
               </div>
 
-              <div class="oem-group">
+            </div>
+
+            <div class="oem-group">
+
+              <div class="oem-group-fig"><img src="/images/products/bolts-and-nuts/hub-bolts/oem-type-wheel-bolt.webp" alt="Wheel Bolt - drawing" width="800" height="199" loading="lazy" /></div>
+
+              <div class="oem-group-body">
 
                 <h4>Wheel Bolt <span class="oem-cnt">&middot; 1 OEM numbers</span></h4>
 
@@ -648,22 +752,17 @@ const images = [
 
             </div>
 
-          </details>
+          </div>
 
-          <details class="oem-item">
+          <div class="oem-brand">
 
-            <summary class="oem-summary">
+            <div class="oem-brand-head"><strong>Renault</strong><span>62 OEM numbers &middot; 5 types</span></div>
 
-              <span class="oem-brand">Renault</span>
-              <span class="oem-num">62</span>
-              <span class="oem-types">5</span>
-              <span class="oem-action"><span class="oem-view">View numbers</span><span class="oem-hide">Hide</span></span>
+            <div class="oem-group">
 
-            </summary>
+              <div class="oem-group-fig"><img src="/images/products/bolts-and-nuts/hub-bolts/oem-type-round-head-knurled.webp" alt="Round Head Knurled Wheel Bolt - drawing" width="800" height="211" loading="lazy" /></div>
 
-            <div class="oem-detail">
-
-              <div class="oem-group">
+              <div class="oem-group-body">
 
                 <h4>Round Head Knurled Wheel Bolt <span class="oem-cnt">&middot; 30 OEM numbers</span></h4>
 
@@ -688,7 +787,13 @@ const images = [
 
               </div>
 
-              <div class="oem-group">
+            </div>
+
+            <div class="oem-group">
+
+              <div class="oem-group-fig"><img src="/images/products/bolts-and-nuts/hub-bolts/oem-type-d-head.webp" alt="D-Head Wheel Bolt (flat-sided head) - drawing" width="800" height="211" loading="lazy" /></div>
+
+              <div class="oem-group-body">
 
                 <h4>D-Head Wheel Bolt (flat-sided head) <span class="oem-cnt">&middot; 10 OEM numbers</span></h4>
 
@@ -703,7 +808,13 @@ const images = [
 
               </div>
 
-              <div class="oem-group">
+            </div>
+
+            <div class="oem-group">
+
+              <div class="oem-group-fig"><img src="/images/products/bolts-and-nuts/hub-bolts/oem-type-double-end-stud.webp" alt="Double-End Wheel Stud - drawing" width="800" height="215" loading="lazy" /></div>
+
+              <div class="oem-group-body">
 
                 <h4>Double-End Wheel Stud <span class="oem-cnt">&middot; 2 OEM numbers</span></h4>
 
@@ -713,7 +824,13 @@ const images = [
 
               </div>
 
-              <div class="oem-group">
+            </div>
+
+            <div class="oem-group">
+
+              <div class="oem-group-fig"><img src="/images/products/bolts-and-nuts/hub-bolts/oem-type-bolt-nut-assembly.webp" alt="Wheel Bolt Assembly (bolt + nut) - drawing" width="800" height="207" loading="lazy" /></div>
+
+              <div class="oem-group-body">
 
                 <h4>Wheel Bolt Assembly (bolt + nut) <span class="oem-cnt">&middot; 11 OEM numbers</span></h4>
 
@@ -726,7 +843,13 @@ const images = [
 
               </div>
 
-              <div class="oem-group">
+            </div>
+
+            <div class="oem-group">
+
+              <div class="oem-group-fig"><img src="/images/products/bolts-and-nuts/hub-bolts/oem-type-wheel-bolt.webp" alt="Wheel Bolt - drawing" width="800" height="199" loading="lazy" /></div>
+
+              <div class="oem-group-body">
 
                 <h4>Wheel Bolt <span class="oem-cnt">&middot; 9 OEM numbers</span></h4>
 
@@ -742,22 +865,17 @@ const images = [
 
             </div>
 
-          </details>
+          </div>
 
-          <details class="oem-item">
+          <div class="oem-brand">
 
-            <summary class="oem-summary">
+            <div class="oem-brand-head"><strong>DAF</strong><span>50 OEM numbers &middot; 3 types</span></div>
 
-              <span class="oem-brand">DAF</span>
-              <span class="oem-num">50</span>
-              <span class="oem-types">3</span>
-              <span class="oem-action"><span class="oem-view">View numbers</span><span class="oem-hide">Hide</span></span>
+            <div class="oem-group">
 
-            </summary>
+              <div class="oem-group-fig"><img src="/images/products/bolts-and-nuts/hub-bolts/oem-type-round-head-knurled.webp" alt="Round Head Knurled Wheel Bolt - drawing" width="800" height="211" loading="lazy" /></div>
 
-            <div class="oem-detail">
-
-              <div class="oem-group">
+              <div class="oem-group-body">
 
                 <h4>Round Head Knurled Wheel Bolt <span class="oem-cnt">&middot; 29 OEM numbers</span></h4>
 
@@ -781,7 +899,13 @@ const images = [
 
               </div>
 
-              <div class="oem-group">
+            </div>
+
+            <div class="oem-group">
+
+              <div class="oem-group-fig"><img src="/images/products/bolts-and-nuts/hub-bolts/oem-type-double-end-stud.webp" alt="Double-End Wheel Stud - drawing" width="800" height="215" loading="lazy" /></div>
+
+              <div class="oem-group-body">
 
                 <h4>Double-End Wheel Stud <span class="oem-cnt">&middot; 4 OEM numbers</span></h4>
 
@@ -791,7 +915,13 @@ const images = [
 
               </div>
 
-              <div class="oem-group">
+            </div>
+
+            <div class="oem-group">
+
+              <div class="oem-group-fig"><img src="/images/products/bolts-and-nuts/hub-bolts/oem-type-bolt-nut-assembly.webp" alt="Wheel Bolt Assembly (bolt + nut) - drawing" width="800" height="207" loading="lazy" /></div>
+
+              <div class="oem-group-body">
 
                 <h4>Wheel Bolt Assembly (bolt + nut) <span class="oem-cnt">&middot; 17 OEM numbers</span></h4>
 
@@ -807,22 +937,17 @@ const images = [
 
             </div>
 
-          </details>
+          </div>
 
-          <details class="oem-item">
+          <div class="oem-brand">
 
-            <summary class="oem-summary">
+            <div class="oem-brand-head"><strong>Scania</strong><span>47 OEM numbers &middot; 6 types</span></div>
 
-              <span class="oem-brand">Scania</span>
-              <span class="oem-num">47</span>
-              <span class="oem-types">6</span>
-              <span class="oem-action"><span class="oem-view">View numbers</span><span class="oem-hide">Hide</span></span>
+            <div class="oem-group">
 
-            </summary>
+              <div class="oem-group-fig"><img src="/images/products/bolts-and-nuts/hub-bolts/oem-type-round-head-knurled.webp" alt="Round Head Knurled Wheel Bolt - drawing" width="800" height="211" loading="lazy" /></div>
 
-            <div class="oem-detail">
-
-              <div class="oem-group">
+              <div class="oem-group-body">
 
                 <h4>Round Head Knurled Wheel Bolt <span class="oem-cnt">&middot; 11 OEM numbers</span></h4>
 
@@ -835,7 +960,13 @@ const images = [
 
               </div>
 
-              <div class="oem-group">
+            </div>
+
+            <div class="oem-group">
+
+              <div class="oem-group-fig"><img src="/images/products/bolts-and-nuts/hub-bolts/oem-type-d-head.webp" alt="D-Head Wheel Bolt (flat-sided head) - drawing" width="800" height="211" loading="lazy" /></div>
+
+              <div class="oem-group-body">
 
                 <h4>D-Head Wheel Bolt (flat-sided head) <span class="oem-cnt">&middot; 17 OEM numbers</span></h4>
 
@@ -853,7 +984,13 @@ const images = [
 
               </div>
 
-              <div class="oem-group">
+            </div>
+
+            <div class="oem-group">
+
+              <div class="oem-group-fig"><img src="/images/products/bolts-and-nuts/hub-bolts/oem-type-double-end-stud.webp" alt="Double-End Wheel Stud - drawing" width="800" height="215" loading="lazy" /></div>
+
+              <div class="oem-group-body">
 
                 <h4>Double-End Wheel Stud <span class="oem-cnt">&middot; 3 OEM numbers</span></h4>
 
@@ -863,7 +1000,13 @@ const images = [
 
               </div>
 
-              <div class="oem-group">
+            </div>
+
+            <div class="oem-group">
+
+              <div class="oem-group-fig"><img src="/images/products/bolts-and-nuts/hub-bolts/oem-type-t-head-rect.webp" alt="T-Head / Rectangular Head Wheel Bolt - drawing" width="800" height="199" loading="lazy" /></div>
+
+              <div class="oem-group-body">
 
                 <h4>T-Head / Rectangular Head Wheel Bolt <span class="oem-cnt">&middot; 4 OEM numbers</span></h4>
 
@@ -873,7 +1016,13 @@ const images = [
 
               </div>
 
-              <div class="oem-group">
+            </div>
+
+            <div class="oem-group">
+
+              <div class="oem-group-fig"><img src="/images/products/bolts-and-nuts/hub-bolts/oem-type-bolt-nut-assembly.webp" alt="Wheel Bolt Assembly (bolt + nut) - drawing" width="800" height="207" loading="lazy" /></div>
+
+              <div class="oem-group-body">
 
                 <h4>Wheel Bolt Assembly (bolt + nut) <span class="oem-cnt">&middot; 6 OEM numbers</span></h4>
 
@@ -886,7 +1035,13 @@ const images = [
 
               </div>
 
-              <div class="oem-group">
+            </div>
+
+            <div class="oem-group">
+
+              <div class="oem-group-fig"><img src="/images/products/bolts-and-nuts/hub-bolts/oem-type-wheel-bolt.webp" alt="Wheel Bolt - drawing" width="800" height="199" loading="lazy" /></div>
+
+              <div class="oem-group-body">
 
                 <h4>Wheel Bolt <span class="oem-cnt">&middot; 6 OEM numbers</span></h4>
 
@@ -901,22 +1056,17 @@ const images = [
 
             </div>
 
-          </details>
+          </div>
 
-          <details class="oem-item">
+          <div class="oem-brand">
 
-            <summary class="oem-summary">
+            <div class="oem-brand-head"><strong>Fruehauf</strong><span>18 OEM numbers &middot; 3 types</span></div>
 
-              <span class="oem-brand">Fruehauf</span>
-              <span class="oem-num">18</span>
-              <span class="oem-types">3</span>
-              <span class="oem-action"><span class="oem-view">View numbers</span><span class="oem-hide">Hide</span></span>
+            <div class="oem-group">
 
-            </summary>
+              <div class="oem-group-fig"><img src="/images/products/bolts-and-nuts/hub-bolts/oem-type-round-head-knurled.webp" alt="Round Head Knurled Wheel Bolt - drawing" width="800" height="211" loading="lazy" /></div>
 
-            <div class="oem-detail">
-
-              <div class="oem-group">
+              <div class="oem-group-body">
 
                 <h4>Round Head Knurled Wheel Bolt <span class="oem-cnt">&middot; 7 OEM numbers</span></h4>
 
@@ -926,7 +1076,13 @@ const images = [
 
               </div>
 
-              <div class="oem-group">
+            </div>
+
+            <div class="oem-group">
+
+              <div class="oem-group-fig"><img src="/images/products/bolts-and-nuts/hub-bolts/oem-type-double-end-stud.webp" alt="Double-End Wheel Stud - drawing" width="800" height="215" loading="lazy" /></div>
+
+              <div class="oem-group-body">
 
                 <h4>Double-End Wheel Stud <span class="oem-cnt">&middot; 3 OEM numbers</span></h4>
 
@@ -936,7 +1092,13 @@ const images = [
 
               </div>
 
-              <div class="oem-group">
+            </div>
+
+            <div class="oem-group">
+
+              <div class="oem-group-fig"><img src="/images/products/bolts-and-nuts/hub-bolts/oem-type-wheel-bolt.webp" alt="Wheel Bolt - drawing" width="800" height="199" loading="lazy" /></div>
+
+              <div class="oem-group-body">
 
                 <h4>Wheel Bolt <span class="oem-cnt">&middot; 8 OEM numbers</span></h4>
 
@@ -952,22 +1114,17 @@ const images = [
 
             </div>
 
-          </details>
+          </div>
 
-          <details class="oem-item">
+          <div class="oem-brand">
 
-            <summary class="oem-summary">
+            <div class="oem-brand-head"><strong>Hino</strong><span>16 OEM numbers &middot; 3 types</span></div>
 
-              <span class="oem-brand">Hino</span>
-              <span class="oem-num">16</span>
-              <span class="oem-types">3</span>
-              <span class="oem-action"><span class="oem-view">View numbers</span><span class="oem-hide">Hide</span></span>
+            <div class="oem-group">
 
-            </summary>
+              <div class="oem-group-fig"><img src="/images/products/bolts-and-nuts/hub-bolts/oem-type-round-head-knurled.webp" alt="Round Head Knurled Wheel Bolt - drawing" width="800" height="211" loading="lazy" /></div>
 
-            <div class="oem-detail">
-
-              <div class="oem-group">
+              <div class="oem-group-body">
 
                 <h4>Round Head Knurled Wheel Bolt <span class="oem-cnt">&middot; 2 OEM numbers</span></h4>
 
@@ -977,7 +1134,13 @@ const images = [
 
               </div>
 
-              <div class="oem-group">
+            </div>
+
+            <div class="oem-group">
+
+              <div class="oem-group-fig"><img src="/images/products/bolts-and-nuts/hub-bolts/oem-type-double-end-stud.webp" alt="Double-End Wheel Stud - drawing" width="800" height="215" loading="lazy" /></div>
+
+              <div class="oem-group-body">
 
                 <h4>Double-End Wheel Stud <span class="oem-cnt">&middot; 1 OEM numbers</span></h4>
 
@@ -987,7 +1150,13 @@ const images = [
 
               </div>
 
-              <div class="oem-group">
+            </div>
+
+            <div class="oem-group">
+
+              <div class="oem-group-fig"><img src="/images/products/bolts-and-nuts/hub-bolts/oem-type-bolt-nut-assembly.webp" alt="Wheel Bolt Assembly (bolt + nut) - drawing" width="800" height="207" loading="lazy" /></div>
+
+              <div class="oem-group-body">
 
                 <h4>Wheel Bolt Assembly (bolt + nut) <span class="oem-cnt">&middot; 13 OEM numbers</span></h4>
 
@@ -1003,22 +1172,17 @@ const images = [
 
             </div>
 
-          </details>
+          </div>
 
-          <details class="oem-item">
+          <div class="oem-brand">
 
-            <summary class="oem-summary">
+            <div class="oem-brand-head"><strong>Mitsubishi</strong><span>15 OEM numbers &middot; 3 types</span></div>
 
-              <span class="oem-brand">Mitsubishi</span>
-              <span class="oem-num">15</span>
-              <span class="oem-types">3</span>
-              <span class="oem-action"><span class="oem-view">View numbers</span><span class="oem-hide">Hide</span></span>
+            <div class="oem-group">
 
-            </summary>
+              <div class="oem-group-fig"><img src="/images/products/bolts-and-nuts/hub-bolts/oem-type-double-end-stud.webp" alt="Double-End Wheel Stud - drawing" width="800" height="215" loading="lazy" /></div>
 
-            <div class="oem-detail">
-
-              <div class="oem-group">
+              <div class="oem-group-body">
 
                 <h4>Double-End Wheel Stud <span class="oem-cnt">&middot; 1 OEM numbers</span></h4>
 
@@ -1028,7 +1192,13 @@ const images = [
 
               </div>
 
-              <div class="oem-group">
+            </div>
+
+            <div class="oem-group">
+
+              <div class="oem-group-fig"><img src="/images/products/bolts-and-nuts/hub-bolts/oem-type-bolt-nut-assembly.webp" alt="Wheel Bolt Assembly (bolt + nut) - drawing" width="800" height="207" loading="lazy" /></div>
+
+              <div class="oem-group-body">
 
                 <h4>Wheel Bolt Assembly (bolt + nut) <span class="oem-cnt">&middot; 12 OEM numbers</span></h4>
 
@@ -1042,7 +1212,13 @@ const images = [
 
               </div>
 
-              <div class="oem-group">
+            </div>
+
+            <div class="oem-group">
+
+              <div class="oem-group-fig"><img src="/images/products/bolts-and-nuts/hub-bolts/oem-type-wheel-bolt.webp" alt="Wheel Bolt - drawing" width="800" height="199" loading="lazy" /></div>
+
+              <div class="oem-group-body">
 
                 <h4>Wheel Bolt <span class="oem-cnt">&middot; 2 OEM numbers</span></h4>
 
@@ -1054,22 +1230,17 @@ const images = [
 
             </div>
 
-          </details>
+          </div>
 
-          <details class="oem-item">
+          <div class="oem-brand">
 
-            <summary class="oem-summary">
+            <div class="oem-brand-head"><strong>Pegaso</strong><span>11 OEM numbers &middot; 3 types</span></div>
 
-              <span class="oem-brand">Pegaso</span>
-              <span class="oem-num">11</span>
-              <span class="oem-types">3</span>
-              <span class="oem-action"><span class="oem-view">View numbers</span><span class="oem-hide">Hide</span></span>
+            <div class="oem-group">
 
-            </summary>
+              <div class="oem-group-fig"><img src="/images/products/bolts-and-nuts/hub-bolts/oem-type-round-head-knurled.webp" alt="Round Head Knurled Wheel Bolt - drawing" width="800" height="211" loading="lazy" /></div>
 
-            <div class="oem-detail">
-
-              <div class="oem-group">
+              <div class="oem-group-body">
 
                 <h4>Round Head Knurled Wheel Bolt <span class="oem-cnt">&middot; 6 OEM numbers</span></h4>
 
@@ -1079,7 +1250,13 @@ const images = [
 
               </div>
 
-              <div class="oem-group">
+            </div>
+
+            <div class="oem-group">
+
+              <div class="oem-group-fig"><img src="/images/products/bolts-and-nuts/hub-bolts/oem-type-double-end-stud.webp" alt="Double-End Wheel Stud - drawing" width="800" height="215" loading="lazy" /></div>
+
+              <div class="oem-group-body">
 
                 <h4>Double-End Wheel Stud <span class="oem-cnt">&middot; 3 OEM numbers</span></h4>
 
@@ -1089,7 +1266,13 @@ const images = [
 
               </div>
 
-              <div class="oem-group">
+            </div>
+
+            <div class="oem-group">
+
+              <div class="oem-group-fig"><img src="/images/products/bolts-and-nuts/hub-bolts/oem-type-wheel-bolt.webp" alt="Wheel Bolt - drawing" width="800" height="199" loading="lazy" /></div>
+
+              <div class="oem-group-body">
 
                 <h4>Wheel Bolt <span class="oem-cnt">&middot; 2 OEM numbers</span></h4>
 
@@ -1101,22 +1284,17 @@ const images = [
 
             </div>
 
-          </details>
+          </div>
 
-          <details class="oem-item">
+          <div class="oem-brand">
 
-            <summary class="oem-summary">
+            <div class="oem-brand-head"><strong>SAF</strong><span>10 OEM numbers &middot; 2 types</span></div>
 
-              <span class="oem-brand">SAF</span>
-              <span class="oem-num">10</span>
-              <span class="oem-types">2</span>
-              <span class="oem-action"><span class="oem-view">View numbers</span><span class="oem-hide">Hide</span></span>
+            <div class="oem-group">
 
-            </summary>
+              <div class="oem-group-fig"><img src="/images/products/bolts-and-nuts/hub-bolts/oem-type-round-head-knurled.webp" alt="Round Head Knurled Wheel Bolt - drawing" width="800" height="211" loading="lazy" /></div>
 
-            <div class="oem-detail">
-
-              <div class="oem-group">
+              <div class="oem-group-body">
 
                 <h4>Round Head Knurled Wheel Bolt <span class="oem-cnt">&middot; 2 OEM numbers</span></h4>
 
@@ -1126,7 +1304,13 @@ const images = [
 
               </div>
 
-              <div class="oem-group">
+            </div>
+
+            <div class="oem-group">
+
+              <div class="oem-group-fig"><img src="/images/products/bolts-and-nuts/hub-bolts/oem-type-double-end-stud.webp" alt="Double-End Wheel Stud - drawing" width="800" height="215" loading="lazy" /></div>
+
+              <div class="oem-group-body">
 
                 <h4>Double-End Wheel Stud <span class="oem-cnt">&middot; 8 OEM numbers</span></h4>
 
@@ -1142,22 +1326,17 @@ const images = [
 
             </div>
 
-          </details>
+          </div>
 
-          <details class="oem-item">
+          <div class="oem-brand">
 
-            <summary class="oem-summary">
+            <div class="oem-brand-head"><strong>Toyota</strong><span>9 OEM numbers &middot; 2 types</span></div>
 
-              <span class="oem-brand">Toyota</span>
-              <span class="oem-num">9</span>
-              <span class="oem-types">2</span>
-              <span class="oem-action"><span class="oem-view">View numbers</span><span class="oem-hide">Hide</span></span>
+            <div class="oem-group">
 
-            </summary>
+              <div class="oem-group-fig"><img src="/images/products/bolts-and-nuts/hub-bolts/oem-type-round-head-knurled.webp" alt="Round Head Knurled Wheel Bolt - drawing" width="800" height="211" loading="lazy" /></div>
 
-            <div class="oem-detail">
-
-              <div class="oem-group">
+              <div class="oem-group-body">
 
                 <h4>Round Head Knurled Wheel Bolt <span class="oem-cnt">&middot; 2 OEM numbers</span></h4>
 
@@ -1167,7 +1346,13 @@ const images = [
 
               </div>
 
-              <div class="oem-group">
+            </div>
+
+            <div class="oem-group">
+
+              <div class="oem-group-fig"><img src="/images/products/bolts-and-nuts/hub-bolts/oem-type-bolt-nut-assembly.webp" alt="Wheel Bolt Assembly (bolt + nut) - drawing" width="800" height="207" loading="lazy" /></div>
+
+              <div class="oem-group-body">
 
                 <h4>Wheel Bolt Assembly (bolt + nut) <span class="oem-cnt">&middot; 7 OEM numbers</span></h4>
 
@@ -1179,22 +1364,17 @@ const images = [
 
             </div>
 
-          </details>
+          </div>
 
-          <details class="oem-item">
+          <div class="oem-brand">
 
-            <summary class="oem-summary">
+            <div class="oem-brand-head"><strong>Isuzu</strong><span>9 OEM numbers &middot; 3 types</span></div>
 
-              <span class="oem-brand">Isuzu</span>
-              <span class="oem-num">9</span>
-              <span class="oem-types">3</span>
-              <span class="oem-action"><span class="oem-view">View numbers</span><span class="oem-hide">Hide</span></span>
+            <div class="oem-group">
 
-            </summary>
+              <div class="oem-group-fig"><img src="/images/products/bolts-and-nuts/hub-bolts/oem-type-round-head-knurled.webp" alt="Round Head Knurled Wheel Bolt - drawing" width="800" height="211" loading="lazy" /></div>
 
-            <div class="oem-detail">
-
-              <div class="oem-group">
+              <div class="oem-group-body">
 
                 <h4>Round Head Knurled Wheel Bolt <span class="oem-cnt">&middot; 2 OEM numbers</span></h4>
 
@@ -1204,7 +1384,13 @@ const images = [
 
               </div>
 
-              <div class="oem-group">
+            </div>
+
+            <div class="oem-group">
+
+              <div class="oem-group-fig"><img src="/images/products/bolts-and-nuts/hub-bolts/oem-type-double-end-stud.webp" alt="Double-End Wheel Stud - drawing" width="800" height="215" loading="lazy" /></div>
+
+              <div class="oem-group-body">
 
                 <h4>Double-End Wheel Stud <span class="oem-cnt">&middot; 5 OEM numbers</span></h4>
 
@@ -1214,7 +1400,13 @@ const images = [
 
               </div>
 
-              <div class="oem-group">
+            </div>
+
+            <div class="oem-group">
+
+              <div class="oem-group-fig"><img src="/images/products/bolts-and-nuts/hub-bolts/oem-type-bolt-nut-assembly.webp" alt="Wheel Bolt Assembly (bolt + nut) - drawing" width="800" height="207" loading="lazy" /></div>
+
+              <div class="oem-group-body">
 
                 <h4>Wheel Bolt Assembly (bolt + nut) <span class="oem-cnt">&middot; 2 OEM numbers</span></h4>
 
@@ -1226,22 +1418,17 @@ const images = [
 
             </div>
 
-          </details>
+          </div>
 
-          <details class="oem-item">
+          <div class="oem-brand">
 
-            <summary class="oem-summary">
+            <div class="oem-brand-head"><strong>BPW</strong><span>8 OEM numbers &middot; 2 types</span></div>
 
-              <span class="oem-brand">BPW</span>
-              <span class="oem-num">8</span>
-              <span class="oem-types">2</span>
-              <span class="oem-action"><span class="oem-view">View numbers</span><span class="oem-hide">Hide</span></span>
+            <div class="oem-group">
 
-            </summary>
+              <div class="oem-group-fig"><img src="/images/products/bolts-and-nuts/hub-bolts/oem-type-double-end-stud.webp" alt="Double-End Wheel Stud - drawing" width="800" height="215" loading="lazy" /></div>
 
-            <div class="oem-detail">
-
-              <div class="oem-group">
+              <div class="oem-group-body">
 
                 <h4>Double-End Wheel Stud <span class="oem-cnt">&middot; 7 OEM numbers</span></h4>
 
@@ -1254,7 +1441,13 @@ const images = [
 
               </div>
 
-              <div class="oem-group">
+            </div>
+
+            <div class="oem-group">
+
+              <div class="oem-group-fig"><img src="/images/products/bolts-and-nuts/hub-bolts/oem-type-wheel-bolt.webp" alt="Wheel Bolt - drawing" width="800" height="199" loading="lazy" /></div>
+
+              <div class="oem-group-body">
 
                 <h4>Wheel Bolt <span class="oem-cnt">&middot; 1 OEM numbers</span></h4>
 
@@ -1266,22 +1459,17 @@ const images = [
 
             </div>
 
-          </details>
+          </div>
 
-          <details class="oem-item">
+          <div class="oem-brand">
 
-            <summary class="oem-summary">
+            <div class="oem-brand-head"><strong>KAMAZ</strong><span>8 OEM numbers &middot; 1 types</span></div>
 
-              <span class="oem-brand">KAMAZ</span>
-              <span class="oem-num">8</span>
-              <span class="oem-types">1</span>
-              <span class="oem-action"><span class="oem-view">View numbers</span><span class="oem-hide">Hide</span></span>
+            <div class="oem-group">
 
-            </summary>
+              <div class="oem-group-fig"><img src="/images/products/bolts-and-nuts/hub-bolts/oem-type-wheel-bolt.webp" alt="Wheel Bolt - drawing" width="800" height="199" loading="lazy" /></div>
 
-            <div class="oem-detail">
-
-              <div class="oem-group">
+              <div class="oem-group-body">
 
                 <h4>Wheel Bolt <span class="oem-cnt">&middot; 8 OEM numbers</span></h4>
 
@@ -1293,22 +1481,17 @@ const images = [
 
             </div>
 
-          </details>
+          </div>
 
-          <details class="oem-item">
+          <div class="oem-brand">
 
-            <summary class="oem-summary">
+            <div class="oem-brand-head"><strong>Daihatsu</strong><span>6 OEM numbers &middot; 2 types</span></div>
 
-              <span class="oem-brand">Daihatsu</span>
-              <span class="oem-num">6</span>
-              <span class="oem-types">2</span>
-              <span class="oem-action"><span class="oem-view">View numbers</span><span class="oem-hide">Hide</span></span>
+            <div class="oem-group">
 
-            </summary>
+              <div class="oem-group-fig"><img src="/images/products/bolts-and-nuts/hub-bolts/oem-type-bolt-nut-assembly.webp" alt="Wheel Bolt Assembly (bolt + nut) - drawing" width="800" height="207" loading="lazy" /></div>
 
-            <div class="oem-detail">
-
-              <div class="oem-group">
+              <div class="oem-group-body">
 
                 <h4>Wheel Bolt Assembly (bolt + nut) <span class="oem-cnt">&middot; 2 OEM numbers</span></h4>
 
@@ -1318,7 +1501,13 @@ const images = [
 
               </div>
 
-              <div class="oem-group">
+            </div>
+
+            <div class="oem-group">
+
+              <div class="oem-group-fig"><img src="/images/products/bolts-and-nuts/hub-bolts/oem-type-wheel-bolt.webp" alt="Wheel Bolt - drawing" width="800" height="199" loading="lazy" /></div>
+
+              <div class="oem-group-body">
 
                 <h4>Wheel Bolt <span class="oem-cnt">&middot; 4 OEM numbers</span></h4>
 
@@ -1330,22 +1519,17 @@ const images = [
 
             </div>
 
-          </details>
+          </div>
 
-          <details class="oem-item">
+          <div class="oem-brand">
 
-            <summary class="oem-summary">
+            <div class="oem-brand-head"><strong>Freightliner</strong><span>6 OEM numbers &middot; 1 types</span></div>
 
-              <span class="oem-brand">Freightliner</span>
-              <span class="oem-num">6</span>
-              <span class="oem-types">1</span>
-              <span class="oem-action"><span class="oem-view">View numbers</span><span class="oem-hide">Hide</span></span>
+            <div class="oem-group">
 
-            </summary>
+              <div class="oem-group-fig"><img src="/images/products/bolts-and-nuts/hub-bolts/oem-type-double-end-stud.webp" alt="Double-End Wheel Stud - drawing" width="800" height="215" loading="lazy" /></div>
 
-            <div class="oem-detail">
-
-              <div class="oem-group">
+              <div class="oem-group-body">
 
                 <h4>Double-End Wheel Stud <span class="oem-cnt">&middot; 6 OEM numbers</span></h4>
 
@@ -1357,22 +1541,17 @@ const images = [
 
             </div>
 
-          </details>
+          </div>
 
-          <details class="oem-item">
+          <div class="oem-brand">
 
-            <summary class="oem-summary">
+            <div class="oem-brand-head"><strong>MAZ</strong><span>5 OEM numbers &middot; 3 types</span></div>
 
-              <span class="oem-brand">MAZ</span>
-              <span class="oem-num">5</span>
-              <span class="oem-types">3</span>
-              <span class="oem-action"><span class="oem-view">View numbers</span><span class="oem-hide">Hide</span></span>
+            <div class="oem-group">
 
-            </summary>
+              <div class="oem-group-fig"><img src="/images/products/bolts-and-nuts/hub-bolts/oem-type-d-head.webp" alt="D-Head Wheel Bolt (flat-sided head) - drawing" width="800" height="211" loading="lazy" /></div>
 
-            <div class="oem-detail">
-
-              <div class="oem-group">
+              <div class="oem-group-body">
 
                 <h4>D-Head Wheel Bolt (flat-sided head) <span class="oem-cnt">&middot; 3 OEM numbers</span></h4>
 
@@ -1382,7 +1561,13 @@ const images = [
 
               </div>
 
-              <div class="oem-group">
+            </div>
+
+            <div class="oem-group">
+
+              <div class="oem-group-fig"><img src="/images/products/bolts-and-nuts/hub-bolts/oem-type-t-head-rect.webp" alt="T-Head / Rectangular Head Wheel Bolt - drawing" width="800" height="199" loading="lazy" /></div>
+
+              <div class="oem-group-body">
 
                 <h4>T-Head / Rectangular Head Wheel Bolt <span class="oem-cnt">&middot; 1 OEM numbers</span></h4>
 
@@ -1392,7 +1577,13 @@ const images = [
 
               </div>
 
-              <div class="oem-group">
+            </div>
+
+            <div class="oem-group">
+
+              <div class="oem-group-fig"><img src="/images/products/bolts-and-nuts/hub-bolts/oem-type-wheel-bolt.webp" alt="Wheel Bolt - drawing" width="800" height="199" loading="lazy" /></div>
+
+              <div class="oem-group-body">
 
                 <h4>Wheel Bolt <span class="oem-cnt">&middot; 1 OEM numbers</span></h4>
 
@@ -1404,22 +1595,17 @@ const images = [
 
             </div>
 
-          </details>
+          </div>
 
-          <details class="oem-item">
+          <div class="oem-brand">
 
-            <summary class="oem-summary">
+            <div class="oem-brand-head"><strong>Suzuki</strong><span>4 OEM numbers &middot; 2 types</span></div>
 
-              <span class="oem-brand">Suzuki</span>
-              <span class="oem-num">4</span>
-              <span class="oem-types">2</span>
-              <span class="oem-action"><span class="oem-view">View numbers</span><span class="oem-hide">Hide</span></span>
+            <div class="oem-group">
 
-            </summary>
+              <div class="oem-group-fig"><img src="/images/products/bolts-and-nuts/hub-bolts/oem-type-bolt-nut-assembly.webp" alt="Wheel Bolt Assembly (bolt + nut) - drawing" width="800" height="207" loading="lazy" /></div>
 
-            <div class="oem-detail">
-
-              <div class="oem-group">
+              <div class="oem-group-body">
 
                 <h4>Wheel Bolt Assembly (bolt + nut) <span class="oem-cnt">&middot; 2 OEM numbers</span></h4>
 
@@ -1429,7 +1615,13 @@ const images = [
 
               </div>
 
-              <div class="oem-group">
+            </div>
+
+            <div class="oem-group">
+
+              <div class="oem-group-fig"><img src="/images/products/bolts-and-nuts/hub-bolts/oem-type-wheel-bolt.webp" alt="Wheel Bolt - drawing" width="800" height="199" loading="lazy" /></div>
+
+              <div class="oem-group-body">
 
                 <h4>Wheel Bolt <span class="oem-cnt">&middot; 2 OEM numbers</span></h4>
 
@@ -1441,22 +1633,17 @@ const images = [
 
             </div>
 
-          </details>
+          </div>
 
-          <details class="oem-item">
+          <div class="oem-brand">
 
-            <summary class="oem-summary">
+            <div class="oem-brand-head"><strong>GAZ</strong><span>4 OEM numbers &middot; 1 types</span></div>
 
-              <span class="oem-brand">GAZ</span>
-              <span class="oem-num">4</span>
-              <span class="oem-types">1</span>
-              <span class="oem-action"><span class="oem-view">View numbers</span><span class="oem-hide">Hide</span></span>
+            <div class="oem-group">
 
-            </summary>
+              <div class="oem-group-fig"><img src="/images/products/bolts-and-nuts/hub-bolts/oem-type-wheel-bolt.webp" alt="Wheel Bolt - drawing" width="800" height="199" loading="lazy" /></div>
 
-            <div class="oem-detail">
-
-              <div class="oem-group">
+              <div class="oem-group-body">
 
                 <h4>Wheel Bolt <span class="oem-cnt">&middot; 4 OEM numbers</span></h4>
 
@@ -1468,22 +1655,17 @@ const images = [
 
             </div>
 
-          </details>
+          </div>
 
-          <details class="oem-item">
+          <div class="oem-brand">
 
-            <summary class="oem-summary">
+            <div class="oem-brand-head"><strong>Kia</strong><span>3 OEM numbers &middot; 1 types</span></div>
 
-              <span class="oem-brand">Kia</span>
-              <span class="oem-num">3</span>
-              <span class="oem-types">1</span>
-              <span class="oem-action"><span class="oem-view">View numbers</span><span class="oem-hide">Hide</span></span>
+            <div class="oem-group">
 
-            </summary>
+              <div class="oem-group-fig"><img src="/images/products/bolts-and-nuts/hub-bolts/oem-type-bolt-nut-assembly.webp" alt="Wheel Bolt Assembly (bolt + nut) - drawing" width="800" height="207" loading="lazy" /></div>
 
-            <div class="oem-detail">
-
-              <div class="oem-group">
+              <div class="oem-group-body">
 
                 <h4>Wheel Bolt Assembly (bolt + nut) <span class="oem-cnt">&middot; 3 OEM numbers</span></h4>
 
@@ -1495,22 +1677,17 @@ const images = [
 
             </div>
 
-          </details>
+          </div>
 
-          <details class="oem-item">
+          <div class="oem-brand">
 
-            <summary class="oem-summary">
+            <div class="oem-brand-head"><strong>Caterpillar</strong><span>3 OEM numbers &middot; 2 types</span></div>
 
-              <span class="oem-brand">Caterpillar</span>
-              <span class="oem-num">3</span>
-              <span class="oem-types">2</span>
-              <span class="oem-action"><span class="oem-view">View numbers</span><span class="oem-hide">Hide</span></span>
+            <div class="oem-group">
 
-            </summary>
+              <div class="oem-group-fig"><img src="/images/products/bolts-and-nuts/hub-bolts/oem-type-round-head-knurled.webp" alt="Round Head Knurled Wheel Bolt - drawing" width="800" height="211" loading="lazy" /></div>
 
-            <div class="oem-detail">
-
-              <div class="oem-group">
+              <div class="oem-group-body">
 
                 <h4>Round Head Knurled Wheel Bolt <span class="oem-cnt">&middot; 1 OEM numbers</span></h4>
 
@@ -1520,7 +1697,13 @@ const images = [
 
               </div>
 
-              <div class="oem-group">
+            </div>
+
+            <div class="oem-group">
+
+              <div class="oem-group-fig"><img src="/images/products/bolts-and-nuts/hub-bolts/oem-type-wheel-bolt.webp" alt="Wheel Bolt - drawing" width="800" height="199" loading="lazy" /></div>
+
+              <div class="oem-group-body">
 
                 <h4>Wheel Bolt <span class="oem-cnt">&middot; 2 OEM numbers</span></h4>
 
@@ -1532,22 +1715,17 @@ const images = [
 
             </div>
 
-          </details>
+          </div>
 
-          <details class="oem-item">
+          <div class="oem-brand">
 
-            <summary class="oem-summary">
+            <div class="oem-brand-head"><strong>Magirus</strong><span>3 OEM numbers &middot; 1 types</span></div>
 
-              <span class="oem-brand">Magirus</span>
-              <span class="oem-num">3</span>
-              <span class="oem-types">1</span>
-              <span class="oem-action"><span class="oem-view">View numbers</span><span class="oem-hide">Hide</span></span>
+            <div class="oem-group">
 
-            </summary>
+              <div class="oem-group-fig"><img src="/images/products/bolts-and-nuts/hub-bolts/oem-type-wheel-bolt.webp" alt="Wheel Bolt - drawing" width="800" height="199" loading="lazy" /></div>
 
-            <div class="oem-detail">
-
-              <div class="oem-group">
+              <div class="oem-group-body">
 
                 <h4>Wheel Bolt <span class="oem-cnt">&middot; 3 OEM numbers</span></h4>
 
@@ -1559,22 +1737,17 @@ const images = [
 
             </div>
 
-          </details>
+          </div>
 
-          <details class="oem-item">
+          <div class="oem-brand">
 
-            <summary class="oem-summary">
+            <div class="oem-brand-head"><strong>Volkswagen</strong><span>3 OEM numbers &middot; 1 types</span></div>
 
-              <span class="oem-brand">Volkswagen</span>
-              <span class="oem-num">3</span>
-              <span class="oem-types">1</span>
-              <span class="oem-action"><span class="oem-view">View numbers</span><span class="oem-hide">Hide</span></span>
+            <div class="oem-group">
 
-            </summary>
+              <div class="oem-group-fig"><img src="/images/products/bolts-and-nuts/hub-bolts/oem-type-wheel-bolt.webp" alt="Wheel Bolt - drawing" width="800" height="199" loading="lazy" /></div>
 
-            <div class="oem-detail">
-
-              <div class="oem-group">
+              <div class="oem-group-body">
 
                 <h4>Wheel Bolt <span class="oem-cnt">&middot; 3 OEM numbers</span></h4>
 
@@ -1586,22 +1759,17 @@ const images = [
 
             </div>
 
-          </details>
+          </div>
 
-          <details class="oem-item">
+          <div class="oem-brand">
 
-            <summary class="oem-summary">
+            <div class="oem-brand-head"><strong>Nissan</strong><span>2 OEM numbers &middot; 1 types</span></div>
 
-              <span class="oem-brand">Nissan</span>
-              <span class="oem-num">2</span>
-              <span class="oem-types">1</span>
-              <span class="oem-action"><span class="oem-view">View numbers</span><span class="oem-hide">Hide</span></span>
+            <div class="oem-group">
 
-            </summary>
+              <div class="oem-group-fig"><img src="/images/products/bolts-and-nuts/hub-bolts/oem-type-bolt-nut-assembly.webp" alt="Wheel Bolt Assembly (bolt + nut) - drawing" width="800" height="207" loading="lazy" /></div>
 
-            <div class="oem-detail">
-
-              <div class="oem-group">
+              <div class="oem-group-body">
 
                 <h4>Wheel Bolt Assembly (bolt + nut) <span class="oem-cnt">&middot; 2 OEM numbers</span></h4>
 
@@ -1613,22 +1781,17 @@ const images = [
 
             </div>
 
-          </details>
+          </div>
 
-          <details class="oem-item">
+          <div class="oem-brand">
 
-            <summary class="oem-summary">
+            <div class="oem-brand-head"><strong>Mack</strong><span>2 OEM numbers &middot; 1 types</span></div>
 
-              <span class="oem-brand">Mack</span>
-              <span class="oem-num">2</span>
-              <span class="oem-types">1</span>
-              <span class="oem-action"><span class="oem-view">View numbers</span><span class="oem-hide">Hide</span></span>
+            <div class="oem-group">
 
-            </summary>
+              <div class="oem-group-fig"><img src="/images/products/bolts-and-nuts/hub-bolts/oem-type-double-end-stud.webp" alt="Double-End Wheel Stud - drawing" width="800" height="215" loading="lazy" /></div>
 
-            <div class="oem-detail">
-
-              <div class="oem-group">
+              <div class="oem-group-body">
 
                 <h4>Double-End Wheel Stud <span class="oem-cnt">&middot; 2 OEM numbers</span></h4>
 
@@ -1640,22 +1803,17 @@ const images = [
 
             </div>
 
-          </details>
+          </div>
 
-          <details class="oem-item">
+          <div class="oem-brand">
 
-            <summary class="oem-summary">
+            <div class="oem-brand-head"><strong>Barreiros</strong><span>2 OEM numbers &middot; 2 types</span></div>
 
-              <span class="oem-brand">Barreiros</span>
-              <span class="oem-num">2</span>
-              <span class="oem-types">2</span>
-              <span class="oem-action"><span class="oem-view">View numbers</span><span class="oem-hide">Hide</span></span>
+            <div class="oem-group">
 
-            </summary>
+              <div class="oem-group-fig"><img src="/images/products/bolts-and-nuts/hub-bolts/oem-type-double-end-stud.webp" alt="Double-End Wheel Stud - drawing" width="800" height="215" loading="lazy" /></div>
 
-            <div class="oem-detail">
-
-              <div class="oem-group">
+              <div class="oem-group-body">
 
                 <h4>Double-End Wheel Stud <span class="oem-cnt">&middot; 1 OEM numbers</span></h4>
 
@@ -1665,7 +1823,13 @@ const images = [
 
               </div>
 
-              <div class="oem-group">
+            </div>
+
+            <div class="oem-group">
+
+              <div class="oem-group-fig"><img src="/images/products/bolts-and-nuts/hub-bolts/oem-type-wheel-bolt.webp" alt="Wheel Bolt - drawing" width="800" height="199" loading="lazy" /></div>
+
+              <div class="oem-group-body">
 
                 <h4>Wheel Bolt <span class="oem-cnt">&middot; 1 OEM numbers</span></h4>
 
@@ -1677,22 +1841,17 @@ const images = [
 
             </div>
 
-          </details>
+          </div>
 
-          <details class="oem-item">
+          <div class="oem-brand">
 
-            <summary class="oem-summary">
+            <div class="oem-brand-head"><strong>Euclid</strong><span>2 OEM numbers &middot; 1 types</span></div>
 
-              <span class="oem-brand">Euclid</span>
-              <span class="oem-num">2</span>
-              <span class="oem-types">1</span>
-              <span class="oem-action"><span class="oem-view">View numbers</span><span class="oem-hide">Hide</span></span>
+            <div class="oem-group">
 
-            </summary>
+              <div class="oem-group-fig"><img src="/images/products/bolts-and-nuts/hub-bolts/oem-type-double-end-stud.webp" alt="Double-End Wheel Stud - drawing" width="800" height="215" loading="lazy" /></div>
 
-            <div class="oem-detail">
-
-              <div class="oem-group">
+              <div class="oem-group-body">
 
                 <h4>Double-End Wheel Stud <span class="oem-cnt">&middot; 2 OEM numbers</span></h4>
 
@@ -1704,22 +1863,17 @@ const images = [
 
             </div>
 
-          </details>
+          </div>
 
-          <details class="oem-item">
+          <div class="oem-brand">
 
-            <summary class="oem-summary">
+            <div class="oem-brand-head"><strong>Ford</strong><span>2 OEM numbers &middot; 2 types</span></div>
 
-              <span class="oem-brand">Ford</span>
-              <span class="oem-num">2</span>
-              <span class="oem-types">2</span>
-              <span class="oem-action"><span class="oem-view">View numbers</span><span class="oem-hide">Hide</span></span>
+            <div class="oem-group">
 
-            </summary>
+              <div class="oem-group-fig"><img src="/images/products/bolts-and-nuts/hub-bolts/oem-type-round-head-knurled.webp" alt="Round Head Knurled Wheel Bolt - drawing" width="800" height="211" loading="lazy" /></div>
 
-            <div class="oem-detail">
-
-              <div class="oem-group">
+              <div class="oem-group-body">
 
                 <h4>Round Head Knurled Wheel Bolt <span class="oem-cnt">&middot; 1 OEM numbers</span></h4>
 
@@ -1729,7 +1883,13 @@ const images = [
 
               </div>
 
-              <div class="oem-group">
+            </div>
+
+            <div class="oem-group">
+
+              <div class="oem-group-fig"><img src="/images/products/bolts-and-nuts/hub-bolts/oem-type-wheel-bolt.webp" alt="Wheel Bolt - drawing" width="800" height="199" loading="lazy" /></div>
+
+              <div class="oem-group-body">
 
                 <h4>Wheel Bolt <span class="oem-cnt">&middot; 1 OEM numbers</span></h4>
 
@@ -1741,22 +1901,17 @@ const images = [
 
             </div>
 
-          </details>
+          </div>
 
-          <details class="oem-item">
+          <div class="oem-brand">
 
-            <summary class="oem-summary">
+            <div class="oem-brand-head"><strong>GM</strong><span>2 OEM numbers &middot; 2 types</span></div>
 
-              <span class="oem-brand">GM</span>
-              <span class="oem-num">2</span>
-              <span class="oem-types">2</span>
-              <span class="oem-action"><span class="oem-view">View numbers</span><span class="oem-hide">Hide</span></span>
+            <div class="oem-group">
 
-            </summary>
+              <div class="oem-group-fig"><img src="/images/products/bolts-and-nuts/hub-bolts/oem-type-round-head-knurled.webp" alt="Round Head Knurled Wheel Bolt - drawing" width="800" height="211" loading="lazy" /></div>
 
-            <div class="oem-detail">
-
-              <div class="oem-group">
+              <div class="oem-group-body">
 
                 <h4>Round Head Knurled Wheel Bolt <span class="oem-cnt">&middot; 1 OEM numbers</span></h4>
 
@@ -1766,7 +1921,13 @@ const images = [
 
               </div>
 
-              <div class="oem-group">
+            </div>
+
+            <div class="oem-group">
+
+              <div class="oem-group-fig"><img src="/images/products/bolts-and-nuts/hub-bolts/oem-type-wheel-bolt.webp" alt="Wheel Bolt - drawing" width="800" height="199" loading="lazy" /></div>
+
+              <div class="oem-group-body">
 
                 <h4>Wheel Bolt <span class="oem-cnt">&middot; 1 OEM numbers</span></h4>
 
@@ -1778,22 +1939,17 @@ const images = [
 
             </div>
 
-          </details>
+          </div>
 
-          <details class="oem-item">
+          <div class="oem-brand">
 
-            <summary class="oem-summary">
+            <div class="oem-brand-head"><strong>ConMet</strong><span>1 OEM numbers &middot; 1 types</span></div>
 
-              <span class="oem-brand">ConMet</span>
-              <span class="oem-num">1</span>
-              <span class="oem-types">1</span>
-              <span class="oem-action"><span class="oem-view">View numbers</span><span class="oem-hide">Hide</span></span>
+            <div class="oem-group">
 
-            </summary>
+              <div class="oem-group-fig"><img src="/images/products/bolts-and-nuts/hub-bolts/oem-type-double-end-stud.webp" alt="Double-End Wheel Stud - drawing" width="800" height="215" loading="lazy" /></div>
 
-            <div class="oem-detail">
-
-              <div class="oem-group">
+              <div class="oem-group-body">
 
                 <h4>Double-End Wheel Stud <span class="oem-cnt">&middot; 1 OEM numbers</span></h4>
 
@@ -1805,22 +1961,17 @@ const images = [
 
             </div>
 
-          </details>
+          </div>
 
-          <details class="oem-item">
+          <div class="oem-brand">
 
-            <summary class="oem-summary">
+            <div class="oem-brand-head"><strong>Kenworth</strong><span>1 OEM numbers &middot; 1 types</span></div>
 
-              <span class="oem-brand">Kenworth</span>
-              <span class="oem-num">1</span>
-              <span class="oem-types">1</span>
-              <span class="oem-action"><span class="oem-view">View numbers</span><span class="oem-hide">Hide</span></span>
+            <div class="oem-group">
 
-            </summary>
+              <div class="oem-group-fig"><img src="/images/products/bolts-and-nuts/hub-bolts/oem-type-double-end-stud.webp" alt="Double-End Wheel Stud - drawing" width="800" height="215" loading="lazy" /></div>
 
-            <div class="oem-detail">
-
-              <div class="oem-group">
+              <div class="oem-group-body">
 
                 <h4>Double-End Wheel Stud <span class="oem-cnt">&middot; 1 OEM numbers</span></h4>
 
@@ -1832,22 +1983,17 @@ const images = [
 
             </div>
 
-          </details>
+          </div>
 
-          <details class="oem-item">
+          <div class="oem-brand">
 
-            <summary class="oem-summary">
+            <div class="oem-brand-head"><strong>International</strong><span>1 OEM numbers &middot; 1 types</span></div>
 
-              <span class="oem-brand">International</span>
-              <span class="oem-num">1</span>
-              <span class="oem-types">1</span>
-              <span class="oem-action"><span class="oem-view">View numbers</span><span class="oem-hide">Hide</span></span>
+            <div class="oem-group">
 
-            </summary>
+              <div class="oem-group-fig"><img src="/images/products/bolts-and-nuts/hub-bolts/oem-type-double-end-stud.webp" alt="Double-End Wheel Stud - drawing" width="800" height="215" loading="lazy" /></div>
 
-            <div class="oem-detail">
-
-              <div class="oem-group">
+              <div class="oem-group-body">
 
                 <h4>Double-End Wheel Stud <span class="oem-cnt">&middot; 1 OEM numbers</span></h4>
 
@@ -1859,22 +2005,17 @@ const images = [
 
             </div>
 
-          </details>
+          </div>
 
-          <details class="oem-item">
+          <div class="oem-brand">
 
-            <summary class="oem-summary">
+            <div class="oem-brand-head"><strong>Peterbilt</strong><span>1 OEM numbers &middot; 1 types</span></div>
 
-              <span class="oem-brand">Peterbilt</span>
-              <span class="oem-num">1</span>
-              <span class="oem-types">1</span>
-              <span class="oem-action"><span class="oem-view">View numbers</span><span class="oem-hide">Hide</span></span>
+            <div class="oem-group">
 
-            </summary>
+              <div class="oem-group-fig"><img src="/images/products/bolts-and-nuts/hub-bolts/oem-type-double-end-stud.webp" alt="Double-End Wheel Stud - drawing" width="800" height="215" loading="lazy" /></div>
 
-            <div class="oem-detail">
-
-              <div class="oem-group">
+              <div class="oem-group-body">
 
                 <h4>Double-End Wheel Stud <span class="oem-cnt">&middot; 1 OEM numbers</span></h4>
 
@@ -1886,22 +2027,17 @@ const images = [
 
             </div>
 
-          </details>
+          </div>
 
-          <details class="oem-item">
+          <div class="oem-brand">
 
-            <summary class="oem-summary">
+            <div class="oem-brand-head"><strong>Perlini</strong><span>1 OEM numbers &middot; 1 types</span></div>
 
-              <span class="oem-brand">Perlini</span>
-              <span class="oem-num">1</span>
-              <span class="oem-types">1</span>
-              <span class="oem-action"><span class="oem-view">View numbers</span><span class="oem-hide">Hide</span></span>
+            <div class="oem-group">
 
-            </summary>
+              <div class="oem-group-fig"><img src="/images/products/bolts-and-nuts/hub-bolts/oem-type-round-head-knurled.webp" alt="Round Head Knurled Wheel Bolt - drawing" width="800" height="211" loading="lazy" /></div>
 
-            <div class="oem-detail">
-
-              <div class="oem-group">
+              <div class="oem-group-body">
 
                 <h4>Round Head Knurled Wheel Bolt <span class="oem-cnt">&middot; 1 OEM numbers</span></h4>
 
@@ -1913,22 +2049,17 @@ const images = [
 
             </div>
 
-          </details>
+          </div>
 
-          <details class="oem-item">
+          <div class="oem-brand">
 
-            <summary class="oem-summary">
+            <div class="oem-brand-head"><strong>Fiat</strong><span>1 OEM numbers &middot; 1 types</span></div>
 
-              <span class="oem-brand">Fiat</span>
-              <span class="oem-num">1</span>
-              <span class="oem-types">1</span>
-              <span class="oem-action"><span class="oem-view">View numbers</span><span class="oem-hide">Hide</span></span>
+            <div class="oem-group">
 
-            </summary>
+              <div class="oem-group-fig"><img src="/images/products/bolts-and-nuts/hub-bolts/oem-type-hex-head.webp" alt="Hex Head Wheel Bolt - drawing" width="800" height="178" loading="lazy" /></div>
 
-            <div class="oem-detail">
-
-              <div class="oem-group">
+              <div class="oem-group-body">
 
                 <h4>Hex Head Wheel Bolt <span class="oem-cnt">&middot; 1 OEM numbers</span></h4>
 
@@ -1940,7 +2071,7 @@ const images = [
 
             </div>
 
-          </details>
+          </div>
 
         </div>
 
@@ -2250,97 +2381,83 @@ const images = [
 }
 
 
-/* OEM cross-reference (Hub Bolt Specifications) */
+
+/* OEM cross-reference (Hub Bolt Specifications) - images + scrollable content */
 .oem-app { margin-top: var(--space-4); }
-.oem-chips { display: flex; flex-wrap: wrap; gap: var(--space-2); margin-bottom: var(--space-5); }
-.oem-toolbar { display: flex; gap: var(--space-3); align-items: center; margin-bottom: var(--space-4); }
-.oem-search { flex: 1; min-width: 200px; padding: 10px 14px; font-size: 0.9rem; color: var(--color-text); background: #fff; border: 1px solid var(--color-border); border-radius: var(--radius-md); outline: none; }
+.oem-subhead { margin: 0 0 var(--space-3); font-size: 1rem; font-weight: 700; color: var(--color-primary); }
+.oem-types-strip { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: var(--space-2); margin-bottom: var(--space-5); }
+.oem-type-card { padding: 8px 6px; border: 1px solid var(--color-border); border-radius: var(--radius-md); background: var(--color-bg); text-align: center; }
+.oem-type-card img { display: block; width: 100%; height: 40px; object-fit: contain; }
+.oem-type-name { display: block; margin-top: 4px; font-size: 0.72rem; font-weight: 600; line-height: 1.3; color: var(--color-text); }
+.oem-type-qty { display: block; font-size: 0.68rem; color: var(--color-text-light); }
+.oem-toolbar { display: flex; gap: var(--space-3); align-items: center; flex-wrap: wrap; margin-bottom: var(--space-3); }
+.oem-search { flex: 1; min-width: 220px; padding: 10px 14px; font-size: 0.9rem; color: var(--color-text); background: #fff; border: 1px solid var(--color-border); border-radius: var(--radius-md); outline: none; }
 .oem-search:focus { border-color: var(--color-primary); box-shadow: 0 0 0 3px rgba(27, 75, 142, 0.1); }
-.oem-btn { background: var(--color-primary); color: #fff; border: 0; border-radius: var(--radius-md); padding: 10px 16px; font-size: 0.875rem; font-weight: 600; cursor: pointer; white-space: nowrap; }
-.oem-btn:hover { background: var(--color-primary-dark, #143a70); }
-.oem-head, .oem-summary { display: grid; grid-template-columns: minmax(150px, 1.7fr) minmax(90px, 0.7fr) minmax(120px, 1fr) 128px; gap: var(--space-3); align-items: center; padding: var(--space-3) var(--space-4); }
-.oem-head { background: var(--color-primary); color: #fff; font-size: 0.8125rem; font-weight: 600; border-radius: var(--radius-md) var(--radius-md) 0 0; }
-.oem-list { border: 1px solid var(--color-border); border-top: 0; border-radius: 0 0 var(--radius-md) var(--radius-md); background: var(--color-bg); overflow: hidden; }
-.oem-item { border-top: 1px solid var(--color-border); }
-.oem-item:first-child { border-top: 0; }
-.oem-item[hidden] { display: none !important; }
-.oem-item:nth-child(even) > .oem-summary { background: rgba(27, 75, 142, 0.04); }
-.oem-item > .oem-summary:hover { background: rgba(27, 75, 142, 0.08); }
-.oem-summary { list-style: none; cursor: pointer; font-size: 0.875rem; }
-.oem-summary::-webkit-details-marker { display: none; }
-.oem-summary::marker { content: ''; }
-.oem-brand { font-weight: 700; color: var(--color-text); }
-.oem-num { font-variant-numeric: tabular-nums; font-weight: 700; color: var(--color-primary); }
-.oem-types { font-variant-numeric: tabular-nums; color: var(--color-text-light); }
-.oem-action { text-align: right; font-size: 0.8125rem; font-weight: 600; color: var(--color-primary); }
-.oem-item[open] > .oem-summary .oem-view { display: none; }
-.oem-item:not([open]) > .oem-summary .oem-hide { display: none; }
-.oem-detail { padding: var(--space-4) var(--space-5); border-top: 1px solid var(--color-border); background: #fff; }
-.oem-group { margin-bottom: var(--space-4); }
-.oem-group:last-child { margin-bottom: 0; }
-.oem-group h4 { margin: 0 0 var(--space-2); font-size: 0.875rem; font-weight: 700; color: var(--color-primary); }
-.oem-cnt { font-weight: 400; font-size: 0.8125rem; color: var(--color-text-light); }
+.oem-scroll-hint { font-size: 0.8rem; color: var(--color-text-light); white-space: nowrap; }
+.oem-scroll { max-height: 620px; overflow-y: auto; overscroll-behavior: contain; padding: var(--space-4); border: 1px solid var(--color-border); border-radius: var(--radius-md); background: var(--color-bg); scrollbar-color: rgba(27,75,142,.35) transparent; }
+.oem-scroll::-webkit-scrollbar { width: 10px; }
+.oem-scroll::-webkit-scrollbar-track { background: transparent; }
+.oem-scroll::-webkit-scrollbar-thumb { background: rgba(27,75,142,.32); border-radius: 10px; border: 2px solid var(--color-bg); }
+.oem-scroll:focus-visible { outline: 2px solid var(--color-primary); outline-offset: 2px; }
+.oem-brand { margin-bottom: var(--space-5); }
+.oem-brand:last-child { margin-bottom: 0; }
+.oem-brand[hidden] { display: none !important; }
+.oem-brand-head { position: sticky; top: 0; z-index: 2; display: flex; justify-content: space-between; align-items: center; gap: var(--space-3); padding: 9px 14px; border-radius: 6px; background: var(--color-primary); color: #fff; font-size: 0.9375rem; }
+.oem-brand-head span { font-size: 0.78rem; opacity: 0.85; }
+.oem-group { display: grid; grid-template-columns: 190px 1fr; gap: var(--space-4); align-items: center; margin-top: 8px; padding: var(--space-3) var(--space-4); border: 1px solid var(--color-border); border-radius: var(--radius-md); background: #fff; }
+.oem-group-fig img { display: block; width: 100%; height: auto; max-height: 66px; object-fit: contain; }
+.oem-group-body h4 { margin: 0 0 8px; font-size: 0.9rem; font-weight: 700; color: var(--color-primary); }
+.oem-cnt { font-weight: 400; font-size: 0.8rem; color: var(--color-text-light); }
 .oem-lines span { display: inline-block; margin: 0 4px 5px 0; padding: 1px 7px; border: 1px solid var(--color-border); border-radius: 4px; background: rgba(27, 75, 142, 0.06); font-family: ui-monospace, SFMono-Regular, Consolas, monospace; font-size: 0.8125rem; color: var(--color-text); white-space: nowrap; }
 .oem-lines span.hit { background: #ffe9a8; border-color: #f0c44a; }
 .oem-count { margin: var(--space-3) 0 0; font-size: 0.8125rem; color: var(--color-text-light); }
 .oem-empty { margin: var(--space-4) 0; padding: var(--space-5); text-align: center; color: var(--color-text-light); font-size: 0.9rem; border: 1px dashed var(--color-border); border-radius: var(--radius-md); }
 .oem-empty[hidden] { display: none; }
 .oem-disclaimer { margin-top: var(--space-4); padding: var(--space-3) var(--space-4); background: #fff8ec; border-left: 3px solid #e0a33a; border-radius: 4px; font-size: 0.8125rem; color: #6b5326; line-height: 1.6; }
+@media (max-width: 900px) {
+  .oem-types-strip { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+}
 @media (max-width: 768px) {
-  .oem-head, .oem-summary { grid-template-columns: 1fr auto 110px; gap: var(--space-2); padding: var(--space-3); }
-  .oem-head > span:nth-child(3), .oem-types { display: none; }
-  .oem-toolbar { flex-direction: column; align-items: stretch; }
-  .oem-detail { padding: var(--space-3); }
-  .oem-chips { gap: var(--space-1); }
+  .oem-types-strip { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .oem-group { grid-template-columns: 1fr; gap: var(--space-2); padding: var(--space-3); }
+  .oem-scroll { max-height: 480px; padding: var(--space-2); }
+  .oem-scroll-hint { white-space: normal; }
+  .oem-brand-head { font-size: 0.875rem; }
 }
 
 </style>
+
 
 <script>
   (() => {
     const app = document.getElementById('oemApp');
     if (!app) return;
     const search = document.getElementById('oemSearch');
-    const list = document.getElementById('oemList');
-    const items = Array.from(list.querySelectorAll('.oem-item'));
+    const scroller = document.getElementById('oemScroll');
+    const brands = Array.from(scroller.querySelectorAll('.oem-brand'));
     const countEl = document.getElementById('oemCount');
     const emptyEl = document.getElementById('oemEmpty');
-    const allBtn = document.getElementById('oemExpandAll');
-
-    const labels = {
-      all: app.dataset.all,
-      collapse: app.dataset.collapse,
-      count: app.dataset.count,
-      none: app.dataset.none
-    };
-    const haystacks = items.map((it) => it.textContent.toLowerCase());
+    const tmpl = app.dataset.count;
+    const haystacks = brands.map((b) => b.textContent.toLowerCase());
 
     function render() {
       const q = (search.value || '').trim().toLowerCase();
       let shown = 0;
-      items.forEach((it, i) => {
+      brands.forEach((b, i) => {
         const match = !q || haystacks[i].includes(q);
-        it.hidden = !match;
+        b.hidden = !match;
         if (!match) return;
         shown++;
-        if (q) it.open = true;
-        it.querySelectorAll('.oem-lines span').forEach((s) => {
+        b.querySelectorAll('.oem-lines span').forEach((s) => {
           s.classList.toggle('hit', !!q && s.textContent.toLowerCase().includes(q));
         });
       });
-      countEl.textContent = labels.count.replace('__N__', String(shown));
+      countEl.textContent = tmpl.replace('__N__', String(shown));
       emptyEl.hidden = shown !== 0;
+      if (q) scroller.scrollTop = 0;
     }
 
     search.addEventListener('input', render);
-
-    let allOpen = false;
-    allBtn.addEventListener('click', () => {
-      allOpen = !allOpen;
-      items.forEach((it) => { if (!it.hidden) it.open = allOpen; });
-      allBtn.textContent = allOpen ? labels.collapse : labels.all;
-    });
-
     render();
   })();
 </script>

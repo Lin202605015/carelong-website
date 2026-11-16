@@ -5,6 +5,7 @@ export const siteConfig = {
   url: 'https://carelong.com.cn',
   description: 'Xiamen Carelong - ISO 9001 certified manufacturer of high tensile fasteners, hub bolts, wheel bolts, and auto parts since 2005. Exporting to North America, Europe, Southeast Asia.',
   descriptionCn: '厦门凯龙汽车零部件有限公司是一家专业生产和出口高强度紧固件及汽车零部件的制造商，自2005年起通过ISO 9001认证，出口全球。',
+  descriptionEs: 'Xiamen Carelong es un fabricante certificado ISO 9001 de pernos de alta resistencia, pernos de cubo, pernos de rueda y autopartes desde 2005. Exportamos a América del Norte, Europa y el Sudeste de Asia.',
   keywords: ['hub bolt manufacturer', 'forging parts supplier', 'cold heading auto parts', 'track bolt and nut', 'plow bolt', 'segment bolt', 'U bolt manufacturer', 'auto parts OEM china', 'wheel bolts', 'heavy equipment parts'],
   contact: {
     address: '24/D, HONGXIANG BUILDING, NO.258 SOUTH HUBIN ROAD, XIAMEN, CHINA',

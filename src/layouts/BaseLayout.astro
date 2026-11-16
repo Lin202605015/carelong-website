@@ -146,7 +146,7 @@ const hasBreadcrumbs = Array.isArray(finalBreadcrumbs) && finalBreadcrumbs.lengt
         "alternateName": "Carelong",
         "url": "https://carelong.com.cn",
         "logo": "https://carelong.com.cn/images/logo.png",
-        "description": siteConfig.description,
+        "description": lang === 'es' ? siteConfig.descriptionEs : siteConfig.description,
         "foundingDate": "2005",
         "address": {
           "@type": "PostalAddress",
@@ -159,7 +159,7 @@ const hasBreadcrumbs = Array.isArray(finalBreadcrumbs) && finalBreadcrumbs.lengt
           "telephone": "+86-592-5185361",
           "email": "Jason@carelong.com.cn",
           "contactType": "sales",
-          "availableLanguage": ["English", "Chinese"]
+          "availableLanguage": ["English", "Chinese", "Spanish"]
         },
         "sameAs": ["https://www.linkedin.com/company/xiamen-carelong", "https://www.youtube.com/channel/UCF-M01Bbz0waIdaphthC29w"]
       },

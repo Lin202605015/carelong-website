@@ -39,7 +39,7 @@ const t = (en: string, es: string) => isEs ? es : en;
 
         <!-- Card 1: Bolts and Nuts -->
         <div class="workshop-hero-card">
-          <img src="/images/factory/factory-bolts-workshop-v2.webp" alt="Bolts and Nuts Manufacturing Workshop" width="901" height="664" decoding="async" />
+          <img src="/images/factory/factory-bolts-workshop-v2.webp" alt={t('Bolts and Nuts Manufacturing Workshop', 'Taller de Fabricación de Pernos y Tuercas')} width="901" height="664" decoding="async" />
           <div class="workshop-hero-overlay">
             <div class="workshop-hero-content">
               <p class="workshop-hero-label">{t('Cold Heading & Hot Forging', 'Embutición en Frío y Forjado en Caliente')}</p>
@@ -55,7 +55,7 @@ const t = (en: string, es: string) => isEs ? es : en;
 
         <!-- Card 2: Display Racks -->
         <div class="workshop-hero-card">
-          <img src="/images/factory/factory-display-workshop-v2.webp" alt="Display Rack Workshop" width="901" height="601" decoding="async" />
+          <img src="/images/factory/factory-display-workshop-v2.webp" alt={t('Display Rack Workshop', 'Taller de Exhibidores')} width="901" height="601" decoding="async" />
           <div class="workshop-hero-overlay">
             <div class="workshop-hero-content">
               <p class="workshop-hero-label">{t('Metal Fabrication & Assembly', 'Fabricación y Montaje de Metales')}</p>
@@ -71,7 +71,7 @@ const t = (en: string, es: string) => isEs ? es : en;
 
         <!-- Card 3: Stamping -->
         <div class="workshop-hero-card">
-          <img src="/images/factory/factory-stamping-workshop-v2.webp" alt="Stamping Workshop" width="901" height="632" decoding="async" />
+          <img src="/images/factory/factory-stamping-workshop-v2.webp" alt={t('Stamping Workshop', 'Taller de Estampado')} width="901" height="632" decoding="async" />
           <div class="workshop-hero-overlay">
             <div class="workshop-hero-content">
               <p class="workshop-hero-label">{t('Stamping & Hot Forging', 'Estampado y Forjado en Caliente')}</p>
@@ -87,7 +87,7 @@ const t = (en: string, es: string) => isEs ? es : en;
 
         <!-- Card 4: CNC Machining -->
         <div class="workshop-hero-card">
-          <img src="/images/factory/factory-cnc-workshop-v2.webp" alt="CNC Machining Workshop" width="884" height="672" decoding="async" />
+          <img src="/images/factory/factory-cnc-workshop-v2.webp" alt={t('CNC Machining Workshop', 'Taller de Mecanizado CNC')} width="884" height="672" decoding="async" />
           <div class="workshop-hero-overlay">
             <div class="workshop-hero-content">
               <p class="workshop-hero-label">{t('CNC Turning & Milling', 'Torneado y Fresado CNC')}</p>
@@ -121,42 +121,42 @@ const t = (en: string, es: string) => isEs ? es : en;
       <div class="gallery-panels">
         <div class="gallery-panel active" data-panel="bolts">
           <div class="gallery-grid gallery-grid-3x2">
-            <div class="gallery-item"><img src="/images/factory/bolts-workshop-1-v2.webp" alt="Bolts and Nuts Workshop 1" decoding="async" width="901" height="599" loading="lazy" /></div>
-            <div class="gallery-item"><img src="/images/factory/bolts-workshop-2-v2.webp" alt="Bolts and Nuts Workshop 2" decoding="async" width="901" height="599" loading="lazy" /></div>
-            <div class="gallery-item"><img src="/images/factory/bolts-workshop-3-v2.webp" alt="Bolts and Nuts Workshop 3" decoding="async" width="866" height="556" loading="lazy" /></div>
-            <div class="gallery-item"><img src="/images/factory/bolts-workshop-4-v2.webp" alt="Bolts and Nuts Workshop 4" decoding="async" width="901" height="599" loading="lazy" /></div>
-            <div class="gallery-item"><img src="/images/factory/bolts-workshop-5-v2.webp" alt="Bolts and Nuts Workshop 5" decoding="async" width="901" height="599" loading="lazy" /></div>
-            <div class="gallery-item"><img src="/images/factory/bolts-workshop-6-v2.webp" alt="Bolts and Nuts Workshop 6" decoding="async" width="901" height="599" loading="lazy" /></div>
+            <div class="gallery-item"><img src="/images/factory/bolts-workshop-1-v2.webp" alt={t('Bolts and Nuts Workshop 1', 'Taller de Pernos y Tuercas 1')} decoding="async" width="901" height="599" loading="lazy" /></div>
+            <div class="gallery-item"><img src="/images/factory/bolts-workshop-2-v2.webp" alt={t('Bolts and Nuts Workshop 2', 'Taller de Pernos y Tuercas 2')} decoding="async" width="901" height="599" loading="lazy" /></div>
+            <div class="gallery-item"><img src="/images/factory/bolts-workshop-3-v2.webp" alt={t('Bolts and Nuts Workshop 3', 'Taller de Pernos y Tuercas 3')} decoding="async" width="866" height="556" loading="lazy" /></div>
+            <div class="gallery-item"><img src="/images/factory/bolts-workshop-4-v2.webp" alt={t('Bolts and Nuts Workshop 4', 'Taller de Pernos y Tuercas 4')} decoding="async" width="901" height="599" loading="lazy" /></div>
+            <div class="gallery-item"><img src="/images/factory/bolts-workshop-5-v2.webp" alt={t('Bolts and Nuts Workshop 5', 'Taller de Pernos y Tuercas 5')} decoding="async" width="901" height="599" loading="lazy" /></div>
+            <div class="gallery-item"><img src="/images/factory/bolts-workshop-6-v2.webp" alt={t('Bolts and Nuts Workshop 6', 'Taller de Pernos y Tuercas 6')} decoding="async" width="901" height="599" loading="lazy" /></div>
           </div>
         </div>
         <div class="gallery-panel" data-panel="display">
           <div class="gallery-grid gallery-grid-3x2">
-            <div class="gallery-item"><img src="/images/factory/display-workshop-1-v2.webp" alt="Display Rack Workshop 1" loading="lazy" decoding="async" width="901" height="446" /></div>
-            <div class="gallery-item"><img src="/images/factory/display-workshop-2-v2.webp" alt="Display Rack Workshop 2" loading="lazy" decoding="async" width="901" height="507" /></div>
-            <div class="gallery-item"><img src="/images/factory/display-workshop-3-v2.webp" alt="Display Rack Workshop 3" loading="lazy" decoding="async" width="901" height="437" /></div>
-            <div class="gallery-item"><img src="/images/factory/display-workshop-4-v2.webp" alt="Display Rack Workshop 4" loading="lazy" decoding="async" width="901" height="507" /></div>
-            <div class="gallery-item"><img src="/images/factory/display-workshop-5-v2.webp" alt="Display Rack Workshop 5" loading="lazy" decoding="async" width="901" height="507" /></div>
-            <div class="gallery-item"><img src="/images/factory/display-workshop-6-v2.webp" alt="Display Rack Workshop 6" loading="lazy" decoding="async" width="901" height="446" /></div>
+            <div class="gallery-item"><img src="/images/factory/display-workshop-1-v2.webp" alt={t('Display Rack Workshop 1', 'Taller de Exhibidores 1')} loading="lazy" decoding="async" width="901" height="446" /></div>
+            <div class="gallery-item"><img src="/images/factory/display-workshop-2-v2.webp" alt={t('Display Rack Workshop 2', 'Taller de Exhibidores 2')} loading="lazy" decoding="async" width="901" height="507" /></div>
+            <div class="gallery-item"><img src="/images/factory/display-workshop-3-v2.webp" alt={t('Display Rack Workshop 3', 'Taller de Exhibidores 3')} loading="lazy" decoding="async" width="901" height="437" /></div>
+            <div class="gallery-item"><img src="/images/factory/display-workshop-4-v2.webp" alt={t('Display Rack Workshop 4', 'Taller de Exhibidores 4')} loading="lazy" decoding="async" width="901" height="507" /></div>
+            <div class="gallery-item"><img src="/images/factory/display-workshop-5-v2.webp" alt={t('Display Rack Workshop 5', 'Taller de Exhibidores 5')} loading="lazy" decoding="async" width="901" height="507" /></div>
+            <div class="gallery-item"><img src="/images/factory/display-workshop-6-v2.webp" alt={t('Display Rack Workshop 6', 'Taller de Exhibidores 6')} loading="lazy" decoding="async" width="901" height="446" /></div>
           </div>
         </div>
         <div class="gallery-panel" data-panel="stamping">
           <div class="gallery-grid gallery-grid-3x2">
-            <div class="gallery-item"><img src="/images/factory/stamping-workshop-1-v2.webp" alt="Stamping Workshop 1" loading="lazy" decoding="async" width="676" height="901" /></div>
-            <div class="gallery-item"><img src="/images/factory/stamping-workshop-2-v2.webp" alt="Stamping Workshop 2" loading="lazy" decoding="async" width="676" height="901" /></div>
-            <div class="gallery-item"><img src="/images/factory/stamping-workshop-3-v2.webp" alt="Stamping Workshop 3" loading="lazy" decoding="async" width="676" height="901" /></div>
-            <div class="gallery-item"><img src="/images/factory/stamping-workshop-4-v2.webp" alt="Stamping Workshop 4" loading="lazy" decoding="async" width="676" height="901" /></div>
-            <div class="gallery-item"><img src="/images/factory/stamping-workshop-5-v2.webp" alt="Stamping Workshop 5" loading="lazy" decoding="async" width="676" height="901" /></div>
-            <div class="gallery-item"><img src="/images/factory/stamping-workshop-6-v2.webp" alt="Stamping Workshop 6" loading="lazy" decoding="async" width="507" height="901" /></div>
+            <div class="gallery-item"><img src="/images/factory/stamping-workshop-1-v2.webp" alt={t('Stamping Workshop 1', 'Taller de Estampado 1')} loading="lazy" decoding="async" width="676" height="901" /></div>
+            <div class="gallery-item"><img src="/images/factory/stamping-workshop-2-v2.webp" alt={t('Stamping Workshop 2', 'Taller de Estampado 2')} loading="lazy" decoding="async" width="676" height="901" /></div>
+            <div class="gallery-item"><img src="/images/factory/stamping-workshop-3-v2.webp" alt={t('Stamping Workshop 3', 'Taller de Estampado 3')} loading="lazy" decoding="async" width="676" height="901" /></div>
+            <div class="gallery-item"><img src="/images/factory/stamping-workshop-4-v2.webp" alt={t('Stamping Workshop 4', 'Taller de Estampado 4')} loading="lazy" decoding="async" width="676" height="901" /></div>
+            <div class="gallery-item"><img src="/images/factory/stamping-workshop-5-v2.webp" alt={t('Stamping Workshop 5', 'Taller de Estampado 5')} loading="lazy" decoding="async" width="676" height="901" /></div>
+            <div class="gallery-item"><img src="/images/factory/stamping-workshop-6-v2.webp" alt={t('Stamping Workshop 6', 'Taller de Estampado 6')} loading="lazy" decoding="async" width="507" height="901" /></div>
           </div>
         </div>
         <div class="gallery-panel" data-panel="cnc">
           <div class="gallery-grid gallery-grid-3x2">
-            <div class="gallery-item"><img src="/images/factory/cnc-workshop-1-v2.webp" alt="CNC Machining 1" loading="lazy" decoding="async" width="901" height="630" /></div>
-            <div class="gallery-item"><img src="/images/factory/cnc-workshop-2-v2.webp" alt="CNC Machining 2" loading="lazy" decoding="async" width="901" height="507" /></div>
-            <div class="gallery-item"><img src="/images/factory/cnc-workshop-3-v2.webp" alt="CNC Machining 3" loading="lazy" decoding="async" width="901" height="507" /></div>
-            <div class="gallery-item"><img src="/images/factory/cnc-workshop-4-v2.webp" alt="CNC Machining 4" loading="lazy" decoding="async" width="901" height="393" /></div>
-            <div class="gallery-item"><img src="/images/factory/cnc-workshop-5-v2.webp" alt="CNC Machining 5" loading="lazy" decoding="async" width="901" height="507" /></div>
-            <div class="gallery-item"><img src="/images/factory/cnc-workshop-6-v2.webp" alt="CNC Machining 6" loading="lazy" decoding="async" width="901" height="418" /></div>
+            <div class="gallery-item"><img src="/images/factory/cnc-workshop-1-v2.webp" alt={t('CNC Machining 1', 'Mecanizado CNC 1')} loading="lazy" decoding="async" width="901" height="630" /></div>
+            <div class="gallery-item"><img src="/images/factory/cnc-workshop-2-v2.webp" alt={t('CNC Machining 2', 'Mecanizado CNC 2')} loading="lazy" decoding="async" width="901" height="507" /></div>
+            <div class="gallery-item"><img src="/images/factory/cnc-workshop-3-v2.webp" alt={t('CNC Machining 3', 'Mecanizado CNC 3')} loading="lazy" decoding="async" width="901" height="507" /></div>
+            <div class="gallery-item"><img src="/images/factory/cnc-workshop-4-v2.webp" alt={t('CNC Machining 4', 'Mecanizado CNC 4')} loading="lazy" decoding="async" width="901" height="393" /></div>
+            <div class="gallery-item"><img src="/images/factory/cnc-workshop-5-v2.webp" alt={t('CNC Machining 5', 'Mecanizado CNC 5')} loading="lazy" decoding="async" width="901" height="507" /></div>
+            <div class="gallery-item"><img src="/images/factory/cnc-workshop-6-v2.webp" alt={t('CNC Machining 6', 'Mecanizado CNC 6')} loading="lazy" decoding="async" width="901" height="418" /></div>
           </div>
         </div>
       </div>

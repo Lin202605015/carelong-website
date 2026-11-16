@@ -12,7 +12,7 @@ const currentPath = pathname.replace(/^\/(es)?\//, '/'); // strip lang prefix
 <header class="site-header">
   <div class="container header-inner">
     <a href="/" class="logo" aria-label={siteConfig.name + " - Home"}>
-      <img src="/images/logo.png" alt="Xiamen Carelong Co., Ltd. - Professional Auto Parts Manufacturer" class="logo-img" />
+      <img src="/images/logo.png" alt={currentLang === 'es' ? 'Xiamen Carelong Co., Ltd. - Fabricante Profesional de Autopartes' : 'Xiamen Carelong Co., Ltd. - Professional Auto Parts Manufacturer'} class="logo-img" />
     </a>
     <nav class="main-nav" aria-label="Main navigation">
       <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">

@@ -97,6 +97,43 @@ const autoBreadcrumbs = segs.map((seg, i) => {
 });
 const finalBreadcrumbs = (breadcrumbs !== undefined) ? breadcrumbs : autoBreadcrumbs;
 const hasBreadcrumbs = Array.isArray(finalBreadcrumbs) && finalBreadcrumbs.length > 0;
+
+// Product Schema lookup: auto-add Product JSON-LD for product detail pages (EN/ES share this map).
+const PRODUCT_SCHEMA: Record<string, { en: string; es: string; img: string }> = {
+  'bolts-and-nuts/hub-bolts': { en: 'Hub Bolts', es: 'Pernos de Maza', img: '/images/products/bolts-and-nuts/hub-bolts/hub-bolt-01-v2.webp' },
+  'bolts-and-nuts/plow-bolts': { en: 'Plow Bolts', es: 'Pernos de Arado', img: '/images/products/bolts-and-nuts/plow-bolts/plow-bolt-01-v2.webp' },
+  'bolts-and-nuts/track-bolts': { en: 'Track Bolts', es: 'Pernos de Oruga', img: '/images/products/bolts-and-nuts/track-bolts/track-bolt-01-v2.webp' },
+  'bolts-and-nuts/segment-bolts': { en: 'Segment Bolts', es: 'Pernos de Segmento', img: '/images/products/bolts-and-nuts/segment-bolts/segment-bolt-01-v2.webp' },
+  'bolts-and-nuts/hex-nuts': { en: 'Hex Nuts', es: 'Tuercas Hexagonales', img: '/images/products/bolts-and-nuts/hex-nuts/hex-nuts-01-v2.webp' },
+  'bolts-and-nuts/flange-nuts': { en: 'Flange Nuts', es: 'Tuercas de Brida', img: '/images/products/bolts-and-nuts/flange-nuts/flange-nuts-01-v2.webp' },
+  'bolts-and-nuts/nylon-nuts': { en: 'Nylon Nuts', es: 'Tuercas de Nylon', img: '/images/products/bolts-and-nuts/nylon-nuts/nylon-nuts-01-v2.webp' },
+  'bolts-and-nuts/wheel-nuts': { en: 'Wheel Nuts', es: 'Tuercas de Rueda', img: '/images/products/bolts-and-nuts/wheel-nuts/wheel-nuts-01-v2.webp' },
+  'bolts-and-nuts/slotted-nuts': { en: 'Slotted Nuts', es: 'Tuercas Ranuradas', img: '/images/products/bolts-and-nuts/slotted-nuts/slotted-nuts-01-v2.webp' },
+  'die-casting-parts': { en: 'Die Casting Parts', es: 'Piezas de Fundición a Presión', img: '/images/products/die-casting-parts/die-casting-parts-01-v2.webp' },
+  'forging-parts': { en: 'Forging Parts', es: 'Piezas Forjadas', img: '/images/products/forging-parts/forging-parts-01-v2.webp' },
+  'machining-parts': { en: 'Machining Parts', es: 'Piezas Mecanizadas', img: '/images/products/machining-parts/machining-parts-01-v2.webp' },
+  'welding-parts': { en: 'Welding Parts', es: 'Piezas Soldadas', img: '/images/products/welding-parts/welding-parts-01-v2.webp' },
+  'plastic-rubber-parts': { en: 'Plastic & Rubber Parts', es: 'Piezas de Plástico y Caucho', img: '/images/products/plastic-rubber-parts/plastic-rubber-parts-01-v2.webp' },
+  'heavy-equipment-parts': { en: 'Heavy Equipment Parts', es: 'Piezas de Equipo Pesado', img: '/images/products/heavy-equipment-parts/heavy-equipment-parts-01-v2.webp' },
+  'auto-parts': { en: 'Auto Parts', es: 'Autopartes', img: '/images/products/auto-parts/auto-parts-1-v2.webp' },
+  'other-parts': { en: 'Other Parts', es: 'Otras Piezas', img: '/images/products/other-parts/other-parts-01-v2.webp' },
+  'tooling-and-moulds': { en: 'Tooling & Moulds', es: 'Utillaje y Moldes', img: '/images/products/tooling-and-moulds/tooling-and-moulds-01-v2.webp' },
+  'display-rack/supermarket-display-racks': { en: 'Supermarket Display Racks', es: 'Exhibidores para Supermercados', img: '/images/products/display-rack/supermarket-display-racks-01-v2.webp' },
+  'display-rack/wall-mounted-storage-racks': { en: 'Pegboard & Slatwall Display Racks', es: 'Exhibidores de Pegboard y Slatwall', img: '/images/products/display-rack/wall-mounted-racks-01-v2.webp' },
+  'display-rack/clothing-display-racks': { en: 'Clothing Display Racks', es: 'Exhibidores de Ropa', img: '/images/products/display-rack/clothing-racks-01-v2.webp' },
+  'display-rack/wooden-display-racks': { en: 'Wooden Display Racks', es: 'Exhibidores de Madera', img: '/images/products/display-rack/wooden-racks-01-v2.webp' },
+  'display-rack/newspaper-magazine-racks': { en: 'Display Tables & Stands', es: 'Mesas y Soportes de Exhibición', img: '/images/products/display-rack/newspaper-racks-01-v2.webp' },
+};
+
+// Resolve current product detail page (exclude /products index & 3 category pages which already have Product schema).
+const productKey = (() => {
+  const parts = Astro.url.pathname.split('/').filter(Boolean);
+  const p = parts[0] === 'es' ? parts.slice(1) : parts;
+  if (p[0] !== 'products' || p.length < 2) return null;
+  const slug = p.slice(1).join('/');
+  return Object.prototype.hasOwnProperty.call(PRODUCT_SCHEMA, slug) ? slug : null;
+})();
+const productInfo = productKey ? PRODUCT_SCHEMA[productKey] : null;
 ---
 <!DOCTYPE html>
 <html lang={lang}>
@@ -190,6 +227,15 @@ const hasBreadcrumbs = Array.isArray(finalBreadcrumbs) && finalBreadcrumbs.lengt
             ...(b.href ? { "item": "https://carelong.com.cn" + b.href } : {})
           }))
         ]
+      }] : []),
+      ...(productInfo ? [{
+        "@type": "Product",
+        "@id": canonicalURL.toString() + "#product",
+        "name": isEsPath ? productInfo.es : productInfo.en,
+        "image": new URL(productInfo.img, siteConfig.url).href,
+        "brand": { "@id": "https://carelong.com.cn/#organization" },
+        "manufacturer": { "@id": "https://carelong.com.cn/#organization" },
+        "url": canonicalURL.toString()
       }] : [])
     ]
   })} />

@@ -72,6 +72,10 @@ export const navigation: NavItem[] = [
         ],
       },
       {
+        label: { en: 'Track Bushing and Track Pin', es: 'Buje y Pasador de Oruga' },
+        href: '/products/track-bushing-and-track-pin',
+      },
+      {
         label: { en: 'Display Racks', es: 'Exhibidores' },
         href: '/products/display-rack',
         children: [

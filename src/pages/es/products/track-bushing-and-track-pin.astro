@@ -1,112 +1,159 @@
----
-import BaseLayout from '../../../layouts/BaseLayout.astro';
-import Breadcrumb from '../../../components/Breadcrumb.astro';
----
-
-<BaseLayout
-  title="Buje y Pasador de Oruga — Piezas de Tren de Rodaje | Carelong"
-  description="Bujes y pasadores de oruga para excavadoras y buldóceres. Acero aleado tratado térmicamente, repuestos OEM para CAT, Komatsu y más."
->
-  <Breadcrumb items={[
-    { label: 'Productos', href: '/es/products' },
-    { label: 'Buje y Pasador de Oruga' }
-  ]} />
-
-  <header class="page-header">
-    <div class="container">
-      <h1>Buje y Pasador de Oruga</h1>
-      <p>Pasadores y bujes de tren de rodaje para excavadoras y buldóceres.</p>
-    </div>
-  </header>
-
-  <section class="section">
-    <div class="container">
-      <div class="product-overview">
-        <div class="product-image" style="background: #fff; border-radius: var(--radius-xl); box-shadow: var(--shadow-lg); display:flex; align-items:center; justify-content:center; height: 400px; overflow:hidden;">
-          <img src="/images/products/track-bushing-and-track-pin/track-bushing-and-track-pin-main.webp" alt="Pasador y Buje de Oruga" style="max-height: 100%; max-width: 100%; object-fit: contain;" />
-        </div>
-        <div class="product-intro">
-          <p class="eyebrow">Descripción del Producto</p>
-          <h2>Buje y Pasador de Oruga</h2>
-          <p>Los pasadores y bujes de oruga son piezas clave de conexión en la cadena del tren de rodaje de excavadoras y buldóceres. Suministramos pasadores y bujes de acero aleado tratado térmicamente con repuestos OEM y medidas personalizadas.</p>
-
-          <div class="product-badges">
-            <span class="badge">Pasadores de Oruga</span>
-            <span class="badge">Bujes de Oruga</span>
-            <span class="badge">Acero Aleado Tratado</span>
-            <span class="badge">Servicio OEM</span>
-          </div>
-
-          <div class="product-actions">
-            <a href="/es/contact" class="btn btn-primary btn-lg">Solicitar Cotización</a>
-            <a href="/es/products" class="btn btn-primary btn-lg">Todos los Productos</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section section-alt">
-    <div class="container">
-      <header class="section-header">
-        <p class="eyebrow">Especificaciones</p>
-        <h2>Especificaciones Técnicas</h2>
-      </header>
-      <div class="spec-table">
-        <div class="spec-row">
-          <div class="spec-name">Producto</div>
-          <div class="spec-value">Pasadores y bujes de oruga para tren de rodaje de orugas</div>
-        </div>
-        <div class="spec-row">
-          <div class="spec-name">Material</div>
-          <div class="spec-value">Acero aleado tratado térmicamente</div>
-        </div>
-        <div class="spec-row">
-          <div class="spec-name">Tratamiento Térmico</div>
-          <div class="spec-value">Endurecido por inducción / temple completo</div>
-        </div>
-        <div class="spec-row">
-          <div class="spec-name">Marcas Compatibles</div>
-          <div class="spec-value">CAT, Komatsu, Hitachi, Volvo, Hyundai</div>
-        </div>
-        <div class="spec-row">
-          <div class="spec-name">Aplicación</div>
-          <div class="spec-value">Excavadoras, buldóceres, cargadores de orugas</div>
-        </div>
-        <div class="spec-row">
-          <div class="spec-name">Servicio</div>
-          <div class="spec-value">Repuestos OEM y medidas personalizadas disponibles</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="container">
-      <header class="section-header">
-        <p class="eyebrow">Galería de Productos</p>
-        <h2>Fotos de Pasadores y Bujes de Oruga</h2>
-      </header>
-      <div class="gallery-grid">
-        <div class="gallery-item"><img src="/images/products/track-bushing-and-track-pin/track-bushing-and-track-pin-main.webp" alt="pasador de oruga" loading="lazy" /></div>
-        <div class="gallery-item"><img src="/images/products/heavy-equipment-parts/heavy-equipment-parts-22-v2.webp" alt="buje de oruga" loading="lazy" /></div>
-        <div class="gallery-item"><img src="/images/products/heavy-equipment-parts/heavy-equipment-parts-18-v2.webp" alt="juego de pasador y buje de oruga" loading="lazy" /></div>
-      </div>
-    </div>
-  </section>
-  <section class="section cta-band">
-    <div class="container text-center">
-      <h2>¿Necesita Pasadores y Bujes de Oruga?</h2>
-      <p>Contáctenos para especificaciones y precios. Disponibles servicios OEM y medidas personalizadas.</p>
-      <div class="cta-actions">
-        <a href="/es/contact" class="btn btn-primary btn-lg">Solicitar Cotización</a>
-        <a href="mailto:Jason@carelong.com.cn?subject=Product%20Inquiry%20-%20Carelong%20Website" class="btn btn-outline-white btn-lg">Envíenos un Correo</a>
-      </div>
-    </div>
-  </section>
-</BaseLayout>
-
-<style>
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import Breadcrumb from '../../../components/Breadcrumb.astro';
+---
+
+<BaseLayout
+  title="Buje y Pasador de Oruga — Piezas de Tren de Rodaje | Carelong"
+  description="Bujes y pasadores de oruga para excavadoras y buldóceres. Acero aleado tratado térmicamente, repuestos OEM para CAT, Komatsu y más."
+>
+  <Breadcrumb items={[
+    { label: 'Productos', href: '/es/products' },
+    { label: 'Buje y Pasador de Oruga' }
+  ]} />
+
+  <header class="page-header">
+    <div class="container">
+      <h1>Buje y Pasador de Oruga</h1>
+      <p>Pasadores y bujes de tren de rodaje para excavadoras y buldóceres.</p>
+    </div>
+  </header>
+
+  <section class="section">
+    <div class="container">
+      <div class="product-overview">
+        <div class="product-image" style="background: #fff; border-radius: var(--radius-xl); box-shadow: var(--shadow-lg); display:flex; align-items:center; justify-content:center; height: 400px; overflow:hidden;">
+          <img src="/images/products/track-bushing-and-track-pin/track-bushing-and-track-pin-main.webp" alt="Pasador y Buje de Oruga" style="max-height: 100%; max-width: 100%; object-fit: contain;" />
+        </div>
+        <div class="product-intro">
+          <p class="eyebrow">Descripción del Producto</p>
+          <h2>Buje y Pasador de Oruga</h2>
+          <p>Los pasadores y bujes de oruga son piezas clave de conexión en la cadena del tren de rodaje de excavadoras y buldóceres. Suministramos pasadores y bujes de acero aleado tratado térmicamente con repuestos OEM y medidas personalizadas.</p>
+
+          <div class="product-badges">
+            <span class="badge">Pasadores de Oruga</span>
+            <span class="badge">Bujes de Oruga</span>
+            <span class="badge">Acero Aleado Tratado</span>
+            <span class="badge">Servicio OEM</span>
+          </div>
+
+          <div class="product-actions">
+            <a href="/es/contact" class="btn btn-primary btn-lg">Solicitar Cotización</a>
+            <a href="/es/products" class="btn btn-primary btn-lg">Todos los Productos</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt">
+    <div class="container">
+      <header class="section-header" style="margin-top: var(--space-12);">
+        <h2>Especificaciones de Buje y Pasador de Oruga</h2>
+      </header>
+      <div class="data-table-wrapper spec-xl-wrap">
+        <table class="data-table spec-table-xl">
+          <thead>
+            <tr><th>MODELO</th><th>OEM DE BUJE</th><th>TIPO DE BUJE</th><th>OEM DE PASADOR</th><th>TIPO DE PASADOR</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>PC60</td><td>8760-TB</td><td>B</td><td>8760-TP</td><td>A</td></tr>
+            <tr><td>PC100</td><td>87100-TB</td><td>B</td><td>87100-TP</td><td>A</td></tr>
+            <tr><td>SK100</td><td>39100-TB</td><td>B</td><td>39100-TP</td><td>A</td></tr>
+            <tr><td>EX100/120</td><td>74-TBW</td><td>B</td><td>74-TP</td><td>A</td></tr>
+            <tr><td>&nbsp;</td><td>X10M-TB</td><td>B</td><td>X10M-TP</td><td>A</td></tr>
+            <tr><td>D4D</td><td>74D-TBW</td><td>B</td><td>74D-TP</td><td>A</td></tr>
+            <tr><td>K907</td><td>76B-TB</td><td>B</td><td>76B-TP</td><td>A</td></tr>
+            <tr><td>HD880</td><td>950-TB</td><td>B</td><td>950-TP</td><td>A</td></tr>
+            <tr><td>EX200/SK200</td><td>75-TB</td><td>B</td><td>75-TP</td><td>A</td></tr>
+            <tr><td>EX200-2</td><td>1X220-TB</td><td>B</td><td>1X220-TP</td><td>A</td></tr>
+            <tr><td>PC200</td><td>87200-TB</td><td>B</td><td>87200-TP</td><td>A</td></tr>
+            <tr><td>SK220</td><td>39220-TB</td><td>B</td><td>39220-TP</td><td>A</td></tr>
+            <tr><td>&nbsp;</td><td>76C-TBW</td><td>B</td><td>76C-TP</td><td>A</td></tr>
+            <tr><td>EX300</td><td>1X300-TB</td><td>B</td><td>1X300-TP</td><td>A</td></tr>
+            <tr><td>PC300</td><td>87300-TB</td><td>B</td><td>87300-TP</td><td>A</td></tr>
+            <tr><td>&nbsp;</td><td>DH330-TB</td><td>B</td><td>DH330-TP</td><td>A</td></tr>
+            <tr><td>PC400</td><td>77F-TBW</td><td>B</td><td>77F-TP</td><td>A</td></tr>
+            <tr><td>PC60</td><td>8760-MB</td><td>B</td><td>8760-MP</td><td>C</td></tr>
+            <tr><td>PC100</td><td>87100-MB</td><td>B</td><td>87100-MP</td><td>C</td></tr>
+            <tr><td>SK100</td><td>39100-MB</td><td>B</td><td>39100-MP</td><td>C</td></tr>
+            <tr><td>EX100/120</td><td>74-MB</td><td>B</td><td>74-MP</td><td>C</td></tr>
+            <tr><td>&nbsp;</td><td>X10M-MB</td><td>B</td><td>X10M-MP</td><td>C</td></tr>
+            <tr><td>D4D</td><td>74D-MB</td><td>B</td><td>74D-MP</td><td>C</td></tr>
+            <tr><td>DH880</td><td>950-MB</td><td>B</td><td>950-MP</td><td>C</td></tr>
+            <tr><td>EX200/SK200</td><td>75-MB</td><td>B</td><td>75-MP</td><td>C</td></tr>
+            <tr><td>EX200-2</td><td>1X220-MB</td><td>B</td><td>1X220-MP</td><td>C</td></tr>
+            <tr><td>PC200</td><td>87200-MB</td><td>B</td><td>87200-MP</td><td>C</td></tr>
+            <tr><td>&nbsp;</td><td>76B-MB</td><td>B</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+            <tr><td>SK220</td><td>39220-MB</td><td>B</td><td>39220-MP</td><td>C</td></tr>
+            <tr><td>&nbsp;</td><td>76C-MB</td><td>B</td><td>76C-MP</td><td>C</td></tr>
+            <tr><td>EX300</td><td>1X300-MB</td><td>B</td><td>1X330-MP</td><td>C</td></tr>
+            <tr><td>PC300</td><td>87300-MB</td><td>B</td><td>87300-MP</td><td>C</td></tr>
+            <tr><td>&nbsp;</td><td>DH330-MB</td><td>B</td><td>DH330-MP</td><td>C</td></tr>
+            <tr><td>PC400</td><td>77F-MB</td><td>B</td><td>77F-MP</td><td>C</td></tr>
+            <tr><td>&nbsp;</td><td>73C-TB</td><td>D</td><td>73C-TP</td><td>A</td></tr>
+            <tr><td>&nbsp;</td><td>9603-TBW</td><td>D</td><td>9603-TP</td><td>A</td></tr>
+            <tr><td>&nbsp;</td><td>76D-TB</td><td>D</td><td>76D-TP</td><td>A</td></tr>
+            <tr><td>&nbsp;</td><td>965-TB</td><td>D</td><td>965-TP</td><td>A</td></tr>
+            <tr><td>&nbsp;</td><td>77G-TB</td><td>D</td><td>77G-TP</td><td>A</td></tr>
+            <tr><td>PC400</td><td>87400-TB</td><td>D</td><td>87400-TP</td><td>A</td></tr>
+            <tr><td>&nbsp;</td><td>985-TB</td><td>D</td><td>985-TP</td><td>A</td></tr>
+            <tr><td>&nbsp;</td><td>73C-MB</td><td>D</td><td>73C-MP</td><td>C</td></tr>
+            <tr><td>&nbsp;</td><td>9603-MB</td><td>D</td><td>9603-MP</td><td>C</td></tr>
+            <tr><td>PC400</td><td>87400-MB</td><td>D</td><td>87400-MP</td><td>C</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+  <section class="section">
+    <div class="container">
+      <header class="section-header">
+        <p class="eyebrow">Especificaciones</p>
+        <h2>Especificaciones Técnicas</h2>
+      </header>
+      <div class="spec-table">
+        <div class="spec-row">
+          <div class="spec-name">Producto</div>
+          <div class="spec-value">Pasadores y bujes de oruga para tren de rodaje de orugas</div>
+        </div>
+        <div class="spec-row">
+          <div class="spec-name">Material</div>
+          <div class="spec-value">Acero aleado tratado térmicamente</div>
+        </div>
+        <div class="spec-row">
+          <div class="spec-name">Tratamiento Térmico</div>
+          <div class="spec-value">Endurecido por inducción / temple completo</div>
+        </div>
+        <div class="spec-row">
+          <div class="spec-name">Marcas Compatibles</div>
+          <div class="spec-value">CAT, Komatsu, Hitachi, Volvo, Hyundai</div>
+        </div>
+        <div class="spec-row">
+          <div class="spec-name">Aplicación</div>
+          <div class="spec-value">Excavadoras, buldóceres, cargadores de orugas</div>
+        </div>
+        <div class="spec-row">
+          <div class="spec-name">Servicio</div>
+          <div class="spec-value">Repuestos OEM y medidas personalizadas disponibles</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section cta-band">
+    <div class="container text-center">
+      <h2>¿Necesita Pasadores y Bujes de Oruga?</h2>
+      <p>Contáctenos para especificaciones y precios. Disponibles servicios OEM y medidas personalizadas.</p>
+      <div class="cta-actions">
+        <a href="/es/contact" class="btn btn-primary btn-lg">Solicitar Cotización</a>
+        <a href="mailto:Jason@carelong.com.cn?subject=Product%20Inquiry%20-%20Carelong%20Website" class="btn btn-outline-white btn-lg">Envíenos un Correo</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
 .eyebrow { font-size: 0.8125rem; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; color: var(--color-secondary); margin-bottom: var(--space-3); }
 .product-overview { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-12); align-items: center; }
 .product-intro h2 { margin-bottom: var(--space-4); }
@@ -118,17 +165,23 @@ import Breadcrumb from '../../../components/Breadcrumb.astro';
 .spec-row { display: flex; justify-content: space-between; padding: var(--space-4) var(--space-6); background: var(--color-bg); border: 1px solid var(--color-border); border-radius: var(--radius-md); }
 .spec-name { font-weight: 600; color: var(--color-text); }
 .spec-value { color: var(--color-text-light); text-align: right; }
-.gallery-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-4); }
-.gallery-item { background: #fff; border: 1px solid var(--color-border); border-radius: var(--radius-lg); overflow: hidden; aspect-ratio: 1/1; display: flex; align-items: center; justify-content: center; }
-.gallery-item img { max-width: 100%; max-height: 100%; object-fit: contain; display: block; }
+.data-table-wrapper { overflow-x: auto; border: 1px solid var(--color-border); border-radius: var(--radius-md); background: var(--color-bg); }
+.data-table { width: 100%; border-collapse: collapse; font-size: 0.875rem; }
+.data-table thead th { background: var(--color-primary); color: #fff; padding: var(--space-3) var(--space-4); text-align: left; font-weight: 600; white-space: normal; line-height: 1.4; }
+.data-table tbody td { padding: var(--space-3) var(--space-4); border-top: 1px solid var(--color-border); color: var(--color-text); word-wrap: break-word; }
+.data-table tbody tr:nth-child(even) td { background: rgba(27, 75, 142, 0.04); }
+.data-table tbody tr:hover td { background: rgba(27, 75, 142, 0.08); }
+.spec-xl-wrap { max-height: 68vh; overflow: auto; }
+.spec-table-xl { table-layout: auto; width: 100%; font-size: 0.8125rem; }
+.spec-table-xl th, .spec-table-xl td { word-break: break-word; overflow-wrap: anywhere; font-size: 0.875rem; font-weight: 400; }
+.spec-table-xl thead th { position: sticky; top: 0; z-index: 2; box-shadow: 0 2px 5px rgba(0,0,0,.18); font-weight: 600; }
 .cta-band { background: var(--color-primary); color: #fff; }
 .cta-band h2 { color: #fff; margin-bottom: var(--space-4); }
 .cta-band p { color: rgba(255,255,255,0.85); font-size: 1.125rem; margin-bottom: var(--space-6); }
 .cta-actions { display: flex; gap: var(--space-4); justify-content: center; flex-wrap: wrap; }
 @media (max-width: 768px) {
   .product-overview { grid-template-columns: 1fr; }
-  .gallery-grid { grid-template-columns: repeat(2, 1fr); }
   .spec-row { flex-direction: column; gap: var(--space-1); }
   .spec-value { text-align: left; }
-}
-</style>
+}
+</style>

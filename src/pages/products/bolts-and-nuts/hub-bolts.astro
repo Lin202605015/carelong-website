@@ -1,2437 +1,2437 @@
----
-
-import BaseLayout from '@layouts/BaseLayout.astro';
-
-import Breadcrumb from '@components/Breadcrumb.astro';
-
-
-
-const images = [
-
-  { src: '/images/products/bolts-and-nuts/hub-bolts/hub-bolt-01-v2.webp', alt: 'Hub Bolts product photo' },
-
-  { src: '/images/products/bolts-and-nuts/hub-bolts/hub-bolt-02-v2.webp', alt: 'Hub Bolts detail view' },
-
-  { src: '/images/products/bolts-and-nuts/hub-bolts/hub-bolt-03-v2.webp', alt: 'Hub Bolts application' },
-
-  { src: '/images/products/bolts-and-nuts/hub-bolts/hub-bolt-04-v2.webp', alt: 'Hub Bolts detail' },
-
-  { src: '/images/products/bolts-and-nuts/hub-bolts/hub-bolt-05-v2.webp', alt: 'Hub Bolts application scene' },
-
-];
-
----
-
-
-
-<BaseLayout
-
-  title="Hub Bolts — Wheel Hub Bolt Kits for Automotive & Heavy Equipment | Carelong"
-
-  description="Manufacturer of wheel hub bolts and hub bolt assemblies. M18-M42, Grade 10.9/12.9, alloy steel 40Cr. OEM service for Nissan, Hino, Isuzu, Mitsubishi, Benz."
-
->
-
-  <Breadcrumb items={[
-
-    { label: 'Products', href: '/products' },
-
-    { label: 'Bolts and Nuts', href: '/products/bolts-and-nuts' },
-
-    { label: 'Hub Bolts' }
-
-  ]} />
-
-
-
-  <header class="page-header">
-
-    <div class="container">
-
-      <h1>Hub Bolts</h1>
-
-      <p>Wheel hub bolt kits for automotive and heavy equipment applications</p>
-
-    </div>
-
-  </header>
-
-
-
-  <section class="section">
-
-    <div class="container">
-
-      <div class="product-overview">
-
-        <div class="product-gallery" id="productGallery">
-
-          <div class="gallery-thumbs" aria-label="Product images">
-
-            {images.map((img, i) => (
-
-              <button
-
-                type="button"
-
-                class={`thumb ${i === 0 ? 'is-active' : ''}`}
-
-                data-index={i}
-
-                aria-label={`View image ${i + 1}`}
-
-              >
-
-                <img src={img.src} alt={img.alt} loading="lazy" />
-
-              </button>
-
-            ))}
-
-          </div>
-
-          <div class="gallery-stage" id="galleryStage">
-
-            {images.map((img, i) => (
-
-              <img
-
-                src={img.src}
-
-                alt={img.alt}
-
-                class={`stage-img ${i === 0 ? 'is-active' : ''}`}
-
-                data-index={i}
-
-                loading={i === 0 ? 'eager' : 'lazy'}
-
-              />
-
-            ))}
-
-            <button type="button" class="stage-arrow stage-arrow-prev" aria-label="Previous image" hidden>
-
-              <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M15 6l-6 6 6 6" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-
-            </button>
-
-            <button type="button" class="stage-arrow stage-arrow-next" aria-label="Next image" hidden>
-
-              <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M9 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-
-            </button>
-
-            <div class="zoom-hint" aria-hidden="true">Hover to zoom & move</div>
-
-          </div>
-
-        </div>
-
-        <div class="product-intro">
-
-          <p class="eyebrow">Product Overview</p>
-
-          <h2>Hub Bolts</h2>
-
-          <p>Our wheel hub bolts are precision-engineered for secure wheel attachment in automotive and heavy equipment applications. Made from premium alloy steel 40Cr with heat treatment, they offer superior tensile strength and fatigue resistance.</p>
-
-
-
-          <div class="product-badges">
-
-            <span class="badge">M18–M42</span>
-
-            <span class="badge">Grade 10.9/12.9</span>
-
-            <span class="badge">Alloy Steel 40Cr</span>
-
-            <span class="badge">OEM Service</span>
-
-          </div>
-
-
-
-          <div class="product-actions">
-
-            <a href="/contact" class="btn btn-primary btn-lg">Request a Quote</a>
-
-            <a href="/products/bolts-and-nuts" class="btn btn-outline btn-lg">Back to Bolts & Nuts</a>
-
-          </div>
-
-        </div>
-
-      </div>
-
-    </div>
-
-  </section>
-
-
-
-  <section class="section section-alt">
-
-    <div class="container">
-
-      <header class="section-header">
-
-        <p class="eyebrow">OEM cross-reference</p>
-
-        <h2>Hub Bolt Specifications</h2>
-
-      </header>
-
-      <div class="oem-app" id="oemApp"
-        data-count="Showing __N__ of 37 brands · 621 OEM numbers" data-none="No brand or OEM number matches your search.">
-
-        <h3 class="oem-subhead">Bolt &amp; stud types</h3>
-
-        <div class="oem-types-strip">
-
-          <div class="oem-type-card">
-            <img src="/images/products/bolts-and-nuts/hub-bolts/oem-type-round-head-knurled.webp" alt="Round Head Knurled Wheel Bolt - drawing" width="800" height="211" loading="lazy" />
-            <span class="oem-type-name">Round Head Knurled Wheel Bolt</span>
-            <span class="oem-type-qty">130 OEM numbers</span>
-          </div>
-
-          <div class="oem-type-card">
-            <img src="/images/products/bolts-and-nuts/hub-bolts/oem-type-d-head.webp" alt="D-Head Wheel Bolt (flat-sided head) - drawing" width="800" height="211" loading="lazy" />
-            <span class="oem-type-name">D-Head Wheel Bolt (flat-sided head)</span>
-            <span class="oem-type-qty">128 OEM numbers</span>
-          </div>
-
-          <div class="oem-type-card">
-            <img src="/images/products/bolts-and-nuts/hub-bolts/oem-type-double-end-stud.webp" alt="Double-End Wheel Stud - drawing" width="800" height="215" loading="lazy" />
-            <span class="oem-type-name">Double-End Wheel Stud</span>
-            <span class="oem-type-qty">68 OEM numbers</span>
-          </div>
-
-          <div class="oem-type-card">
-            <img src="/images/products/bolts-and-nuts/hub-bolts/oem-type-t-head-rect.webp" alt="T-Head / Rectangular Head Wheel Bolt - drawing" width="800" height="199" loading="lazy" />
-            <span class="oem-type-name">T-Head / Rectangular Head Wheel Bolt</span>
-            <span class="oem-type-qty">48 OEM numbers</span>
-          </div>
-
-          <div class="oem-type-card">
-            <img src="/images/products/bolts-and-nuts/hub-bolts/oem-type-wheel-bolt.webp" alt="Wheel Bolt - drawing" width="800" height="199" loading="lazy" />
-            <span class="oem-type-name">Wheel Bolt</span>
-            <span class="oem-type-qty">111 OEM numbers</span>
-          </div>
-
-          <div class="oem-type-card">
-            <img src="/images/products/bolts-and-nuts/hub-bolts/oem-type-hex-head.webp" alt="Hex Head Wheel Bolt - drawing" width="800" height="178" loading="lazy" />
-            <span class="oem-type-name">Hex Head Wheel Bolt</span>
-            <span class="oem-type-qty">3 OEM numbers</span>
-          </div>
-
-          <div class="oem-type-card">
-            <img src="/images/products/bolts-and-nuts/hub-bolts/oem-type-bolt-nut-assembly.webp" alt="Wheel Bolt Assembly (bolt + nut) - drawing" width="800" height="207" loading="lazy" />
-            <span class="oem-type-name">Wheel Bolt Assembly (bolt + nut)</span>
-            <span class="oem-type-qty">133 OEM numbers</span>
-          </div>
-
-        </div>
-
-        <div class="oem-toolbar">
-
-          <input id="oemSearch" class="oem-search" type="search" autocomplete="off" placeholder="Search brand or OEM number..." />
-          <span class="oem-scroll-hint">Scroll up / down to browse all 37 brands</span>
-
-        </div>
-
-        <div class="oem-scroll" id="oemScroll" tabindex="0">
-
-          <div class="oem-brand">
-
-            <div class="oem-brand-head"><strong>Iveco</strong><span>89 OEM numbers &middot; 5 types</span></div>
-
-            <div class="oem-group">
-
-              <div class="oem-group-fig"><img src="/images/products/bolts-and-nuts/hub-bolts/oem-type-round-head-knurled.webp" alt="Round Head Knurled Wheel Bolt - drawing" width="800" height="211" loading="lazy" /></div>
-
-              <div class="oem-group-body">
-
-                <h4>Round Head Knurled Wheel Bolt <span class="oem-cnt">&middot; 7 OEM numbers</span></h4>
-
-                <div class="oem-lines">
-                  <span>2477764</span>
-                  <span>7161200 7161201</span>
-                  <span>7161552 7168347</span>
-                  <span>8527732 9980725</span>
-                </div>
-
-              </div>
-
-            </div>
-
-            <div class="oem-group">
-
-              <div class="oem-group-fig"><img src="/images/products/bolts-and-nuts/hub-bolts/oem-type-d-head.webp" alt="D-Head Wheel Bolt (flat-sided head) - drawing" width="800" height="211" loading="lazy" /></div>
-
-              <div class="oem-group-body">
-
-                <h4>D-Head Wheel Bolt (flat-sided head) <span class="oem-cnt">&middot; 59 OEM numbers</span></h4>
-
-                <div class="oem-lines">
-                  <span>0716 8333 4211 7455</span>
-                  <span>4211 7457</span>
-                  <span>865557 02443720</span>
-                  <span>2475863 2475869</span>
-                  <span>02475869</span>
-                  <span>2475870 02476077</span>
-                  <span>2478620 4517528 4564398 7160357</span>
-                  <span>7163380</span>
-                  <span>7168257 7168330</span>
-                  <span>7168346 07168580</span>
-                  <span>7168585</span>
-                  <span>7168838 007168838</span>
-                  <span>7168849 7168855 7168925 7170510</span>
-                  <span>7171530</span>
-                  <span>42014521 42061641</span>
-                  <span>42064818 42064819</span>
-                  <span>42064821</span>
-                  <span>42064822 42064826</span>
-                  <span>42064829 42064831 042101338 42101338</span>
-                  <span>42101367</span>
-                  <span>42116737 42117309</span>
-                  <span>042117433 42117433</span>
-                  <span>42117434</span>
-                  <span>42117435 42117437</span>
-                  <span>42117448 42117451 42117452 42117463</span>
-                  <span>42117465</span>
-                  <span>42119082 42119444</span>
-                  <span>42127252 042127260</span>
-                  <span>042127262</span>
-                  <span>42127265 46390477</span>
-                  <span>46390478</span>
-                </div>
-
-              </div>
-
-            </div>
-
-            <div class="oem-group">
-
-              <div class="oem-group-fig"><img src="/images/products/bolts-and-nuts/hub-bolts/oem-type-double-end-stud.webp" alt="Double-End Wheel Stud - drawing" width="800" height="215" loading="lazy" /></div>
-
-              <div class="oem-group-body">
-
-                <h4>Double-End Wheel Stud <span class="oem-cnt">&middot; 2 OEM numbers</span></h4>
-
-                <div class="oem-lines">
-                  <span>93800663 93816209</span>
-                </div>
-
-              </div>
-
-            </div>
-
-            <div class="oem-group">
-
-              <div class="oem-group-fig"><img src="/images/products/bolts-and-nuts/hub-bolts/oem-type-t-head-rect.webp" alt="T-Head / Rectangular Head Wheel Bolt - drawing" width="800" height="199" loading="lazy" /></div>
-
-              <div class="oem-group-body">
-
-                <h4>T-Head / Rectangular Head Wheel Bolt <span class="oem-cnt">&middot; 1 OEM numbers</span></h4>
-
-                <div class="oem-lines">
-                  <span>42026106</span>
-                </div>
-
-              </div>
-
-            </div>
-
-            <div class="oem-group">
-
-              <div class="oem-group-fig"><img src="/images/products/bolts-and-nuts/hub-bolts/oem-type-wheel-bolt.webp" alt="Wheel Bolt - drawing" width="800" height="199" loading="lazy" /></div>
-
-              <div class="oem-group-body">
-
-                <h4>Wheel Bolt <span class="oem-cnt">&middot; 20 OEM numbers</span></h4>
-
-                <div class="oem-lines">
-                  <span>4211 7444 4211 7445</span>
-                  <span>4211 7446</span>
-                  <span>4211 7447 4211 7449 4211 7453</span>
-                  <span>4211 7454</span>
-                  <span>4211 7456 4211 7458 4211 7459</span>
-                  <span>4211 7461</span>
-                  <span>2476077 02477764 7168333</span>
-                  <span>7168340</span>
-                  <span>7168465 7168580 7170204</span>
-                  <span>8441412</span>
-                  <span>422117451</span>
-                </div>
-
-              </div>
-
-            </div>
-
-          </div>
-
-          <div class="oem-brand">
-
-            <div class="oem-brand-head"><strong>Mercedes-Benz</strong><span>79 OEM numbers &middot; 7 types</span></div>
-
-            <div class="oem-group">
-
-              <div class="oem-group-fig"><img src="/images/products/bolts-and-nuts/hub-bolts/oem-type-round-head-knurled.webp" alt="Round Head Knurled Wheel Bolt - drawing" width="800" height="211" loading="lazy" /></div>
-
-              <div class="oem-group-body">
-
-                <h4>Round Head Knurled Wheel Bolt <span class="oem-cnt">&middot; 4 OEM numbers</span></h4>
-
-                <div class="oem-lines">
-                  <span>338 401 5071 3274020271 3274020371 3524020071</span>
-                </div>
-
-              </div>
-
-            </div>
-
-            <div class="oem-group">
-
-              <div class="oem-group-fig"><img src="/images/products/bolts-and-nuts/hub-bolts/oem-type-d-head.webp" alt="D-Head Wheel Bolt (flat-sided head) - drawing" width="800" height="211" loading="lazy" /></div>
-
-              <div class="oem-group-body">
-
-                <h4>D-Head Wheel Bolt (flat-sided head) <span class="oem-cnt">&middot; 16 OEM numbers</span></h4>
-
-                <div class="oem-lines">
-                  <span>000 401 4171</span>
-                  <span>81 45501 0085 305 401 0071</span>
-                  <span>312 402 1071 317 401 0371</span>
-                  <span>317 401 0471 327 401 0271</span>
-                  <span>327 401 0471 352 402 0171</span>
-                  <span>376 401 0071 381 401 0171</span>
-                  <span>381 401 0271 389 401 0071</span>
-                  <span>A3814010771 A9424010271</span>
-                  <span>A9424010371</span>
-                </div>
-
-              </div>
-
-            </div>
-
-            <div class="oem-group">
-
-              <div class="oem-group-fig"><img src="/images/products/bolts-and-nuts/hub-bolts/oem-type-double-end-stud.webp" alt="Double-End Wheel Stud - drawing" width="800" height="215" loading="lazy" /></div>
-
-              <div class="oem-group-body">
-
-                <h4>Double-End Wheel Stud <span class="oem-cnt">&middot; 1 OEM numbers</span></h4>
-
-                <div class="oem-lines">
-                  <span>304 401 0271</span>
-                </div>
-
-              </div>
-
-            </div>
-
-            <div class="oem-group">
-
-              <div class="oem-group-fig"><img src="/images/products/bolts-and-nuts/hub-bolts/oem-type-t-head-rect.webp" alt="T-Head / Rectangular Head Wheel Bolt - drawing" width="800" height="199" loading="lazy" /></div>
-
-              <div class="oem-group-body">
-
-                <h4>T-Head / Rectangular Head Wheel Bolt <span class="oem-cnt">&middot; 16 OEM numbers</span></h4>
-
-                <div class="oem-lines">
-                  <span>000 401 3971 000 401 6871</span>
-                  <span>315 401 0070</span>
-                  <span>315 402 0170 317 402 0170 335 401 0070</span>
-                  <span>346 401 5270</span>
-                  <span>346 401 5370 346 402 5070 363 402 0170</span>
-                  <span>387 401 0470</span>
-                  <span>387 402 0170 387 402 0270 387 402 0470</span>
-                  <span>623 401 0270</span>
-                  <span>675 402 0071</span>
-                </div>
-
-              </div>
-
-            </div>
-
-            <div class="oem-group">
-
-              <div class="oem-group-fig"><img src="/images/products/bolts-and-nuts/hub-bolts/oem-type-hex-head.webp" alt="Hex Head Wheel Bolt - drawing" width="800" height="178" loading="lazy" /></div>
-
-              <div class="oem-group-body">
-
-                <h4>Hex Head Wheel Bolt <span class="oem-cnt">&middot; 2 OEM numbers</span></h4>
-
-                <div class="oem-lines">
-                  <span>601.401.0270 901.401.0070</span>
-                </div>
-
-              </div>
-
-            </div>
-
-            <div class="oem-group">
-
-              <div class="oem-group-fig"><img src="/images/products/bolts-and-nuts/hub-bolts/oem-type-bolt-nut-assembly.webp" alt="Wheel Bolt Assembly (bolt + nut) - drawing" width="800" height="207" loading="lazy" /></div>
-
-              <div class="oem-group-body">
-
-                <h4>Wheel Bolt Assembly (bolt + nut) <span class="oem-cnt">&middot; 28 OEM numbers</span></h4>
-
-                <div class="oem-lines">
-                  <span>000 401 4171S</span>
-                  <span>305 401 0071S</span>
-                  <span>317 401 0371S 317 401 0471S</span>
-                  <span>317 402 0571S1 327 401 0271S 327 401 0371S</span>
-                  <span>327 401 0471S</span>
-                  <span>327 402 0471S1 346 401 0071S2</span>
-                  <span>376 401 0071S 381 401 0171S 381 401 0271S</span>
-                  <span>381 401 0371S1</span>
-                  <span>381 401 0771S 381 401 0771S2</span>
-                  <span>381 401 0771S6 389 401 0071S 389 401 0171S1</span>
-                  <span>942 401 0271S</span>
-                  <span>942 401 0271S1 942 401 0371S</span>
-                  <span>659112451 659112454 659112455</span>
-                  <span>659112612</span>
-                  <span>3814010571 3814011471</span>
-                </div>
-
-              </div>
-
-            </div>
-
-            <div class="oem-group">
-
-              <div class="oem-group-fig"><img src="/images/products/bolts-and-nuts/hub-bolts/oem-type-wheel-bolt.webp" alt="Wheel Bolt - drawing" width="800" height="199" loading="lazy" /></div>
-
-              <div class="oem-group-body">
-
-                <h4>Wheel Bolt <span class="oem-cnt">&middot; 12 OEM numbers</span></h4>
-
-                <div class="oem-lines">
-                  <span>000 401 2371 000 401 2471</span>
-                  <span>000 401 3771 81 45501 0083 309 402 0271</span>
-                  <span>381 401 0371 381 401 0671 381 401 0871</span>
-                  <span>381 401 0971 381 401 1371 381.401.0471</span>
-                  <span>381.401.1171</span>
-                </div>
-
-              </div>
-
-            </div>
-
-          </div>
-
-          <div class="oem-brand">
-
-            <div class="oem-brand-head"><strong>MAN</strong><span>73 OEM numbers &middot; 4 types</span></div>
-
-            <div class="oem-group">
-
-              <div class="oem-group-fig"><img src="/images/products/bolts-and-nuts/hub-bolts/oem-type-d-head.webp" alt="D-Head Wheel Bolt (flat-sided head) - drawing" width="800" height="211" loading="lazy" /></div>
-
-              <div class="oem-group-body">
-
-                <h4>D-Head Wheel Bolt (flat-sided head) <span class="oem-cnt">&middot; 23 OEM numbers</span></h4>
-
-                <div class="oem-lines">
-                  <span>64.45501.0018 81.44301.0172</span>
-                  <span>81.45501.0058</span>
-                  <span>81.45501.0067 81.45501.0076 81.45501.0082 81.45501.0114</span>
-                  <span>81.45501.0116</span>
-                  <span>81.45501.0123 81.45501.0129 81.45501.0133 81.45501.0134</span>
-                  <span>81.45501.0141</span>
-                  <span>81.45501.0152 81.45501.0154 81.45501.0159 81.45501.0164</span>
-                  <span>81.45501.0171</span>
-                  <span>81.45501.0181 81.45501.0187 81.45501.0202 81.45501.0204</span>
-                  <span>81.45501.0209</span>
-                </div>
-
-              </div>
-
-            </div>
-
-            <div class="oem-group">
-
-              <div class="oem-group-fig"><img src="/images/products/bolts-and-nuts/hub-bolts/oem-type-t-head-rect.webp" alt="T-Head / Rectangular Head Wheel Bolt - drawing" width="800" height="199" loading="lazy" /></div>
-
-              <div class="oem-group-body">
-
-                <h4>T-Head / Rectangular Head Wheel Bolt <span class="oem-cnt">&middot; 9 OEM numbers</span></h4>
-
-                <div class="oem-lines">
-                  <span>81.45422.0008 81.45422.0023 81.45422.0025 81.45422.0028 81.45422.0031 81.45422.0033 81.45422.0037 81.45422.0046 81.45422.0049</span>
-                </div>
-
-              </div>
-
-            </div>
-
-            <div class="oem-group">
-
-              <div class="oem-group-fig"><img src="/images/products/bolts-and-nuts/hub-bolts/oem-type-bolt-nut-assembly.webp" alt="Wheel Bolt Assembly (bolt + nut) - drawing" width="800" height="207" loading="lazy" /></div>
-
-              <div class="oem-group-body">
-
-                <h4>Wheel Bolt Assembly (bolt + nut) <span class="oem-cnt">&middot; 21 OEM numbers</span></h4>
-
-                <div class="oem-lines">
-                  <span>64.45501.0018S 64.45501.0018S1</span>
-                  <span>81.44301.0172S1 81.45501.0067S2</span>
-                  <span>81.45501.0078 81.45501.0078S1 81.45501.0079</span>
-                  <span>81.45501.0079S1 81.45501.0082S2</span>
-                  <span>81.45501.0116S1 81.45501.0129S1 81.45501.0136</span>
-                  <span>81.45501.0136S1 81.45501.0141S2</span>
-                  <span>81.45501.0152S1 81.45501.0159S1 81.45501.0171S1</span>
-                  <span>81.45501.0181S1 81.45501.0187S1</span>
-                  <span>81.45501.0202S1 81.45501.0209S1</span>
-                </div>
-
-              </div>
-
-            </div>
-
-            <div class="oem-group">
-
-              <div class="oem-group-fig"><img src="/images/products/bolts-and-nuts/hub-bolts/oem-type-wheel-bolt.webp" alt="Wheel Bolt - drawing" width="800" height="199" loading="lazy" /></div>
-
-              <div class="oem-group-body">
-
-                <h4>Wheel Bolt <span class="oem-cnt">&middot; 20 OEM numbers</span></h4>
-
-                <div class="oem-lines">
-                  <span>06.11222.0416 81 45501 0045</span>
-                  <span>81 45501 0081</span>
-                  <span>81.45422.0060 81.45501.0080 81.45501.0083</span>
-                  <span>81.45501.0085</span>
-                  <span>81.45501.0094 81.45501.0099 81.45501.0132</span>
-                  <span>81.45501.0134 S3</span>
-                  <span>81.45501.0139 81.45501.0139 S1 81.45501.0141 S1</span>
-                  <span>81.45501.0141 S3</span>
-                  <span>81.45501.0142 81.45501.0176 81.45503.0026</span>
-                  <span>81.45503.0027</span>
-                  <span>231 B 30</span>
-                </div>
-
-              </div>
-
-            </div>
-
-          </div>
-
-          <div class="oem-brand">
-
-            <div class="oem-brand-head"><strong>Volvo</strong><span>62 OEM numbers &middot; 5 types</span></div>
-
-            <div class="oem-group">
-
-              <div class="oem-group-fig"><img src="/images/products/bolts-and-nuts/hub-bolts/oem-type-round-head-knurled.webp" alt="Round Head Knurled Wheel Bolt - drawing" width="800" height="211" loading="lazy" /></div>
-
-              <div class="oem-group-body">
-
-                <h4>Round Head Knurled Wheel Bolt <span class="oem-cnt">&middot; 24 OEM numbers</span></h4>
-
-                <div class="oem-lines">
-                  <span>158.9009-8 1543082-3</span>
-                  <span>1573081</span>
-                  <span>1573081-5 1573082 1573082-3 1589009</span>
-                  <span>3112593</span>
-                  <span>3118981 3963997 6852474-3 8152104</span>
-                  <span>8396230</span>
-                  <span>8398432 20515514 20515515 20515517</span>
-                  <span>20515518</span>
-                  <span>20515519 20524942 20553560 20723513</span>
-                  <span>21147687</span>
-                  <span>25372586</span>
-                </div>
-
-              </div>
-
-            </div>
-
-            <div class="oem-group">
-
-              <div class="oem-group-fig"><img src="/images/products/bolts-and-nuts/hub-bolts/oem-type-double-end-stud.webp" alt="Double-End Wheel Stud - drawing" width="800" height="215" loading="lazy" /></div>
-
-              <div class="oem-group-body">
-
-                <h4>Double-End Wheel Stud <span class="oem-cnt">&middot; 13 OEM numbers</span></h4>
-
-                <div class="oem-lines">
-                  <span>192.121-2 0192121-2</span>
-                  <span>0192122-0 426956 476822</span>
-                  <span>837771 861634 863694</span>
-                  <span>0941385-7 0943404-4 0943405-1</span>
-                  <span>0943406-9 3171328</span>
-                </div>
-
-              </div>
-
-            </div>
-
-            <div class="oem-group">
-
-              <div class="oem-group-fig"><img src="/images/products/bolts-and-nuts/hub-bolts/oem-type-t-head-rect.webp" alt="T-Head / Rectangular Head Wheel Bolt - drawing" width="800" height="199" loading="lazy" /></div>
-
-              <div class="oem-group-body">
-
-                <h4>T-Head / Rectangular Head Wheel Bolt <span class="oem-cnt">&middot; 17 OEM numbers</span></h4>
-
-                <div class="oem-lines">
-                  <span>0362164</span>
-                  <span>362514 1577424</span>
-                  <span>1581604 1608293</span>
-                  <span>659112500 659112501</span>
-                  <span>659112503 659112504</span>
-                  <span>659112506 659112509</span>
-                  <span>659112611 659112612</span>
-                  <span>659112613 659112614</span>
-                  <span>659112615 659112616</span>
-                </div>
-
-              </div>
-
-            </div>
-
-            <div class="oem-group">
-
-              <div class="oem-group-fig"><img src="/images/products/bolts-and-nuts/hub-bolts/oem-type-bolt-nut-assembly.webp" alt="Wheel Bolt Assembly (bolt + nut) - drawing" width="800" height="207" loading="lazy" /></div>
-
-              <div class="oem-group-body">
-
-                <h4>Wheel Bolt Assembly (bolt + nut) <span class="oem-cnt">&middot; 7 OEM numbers</span></h4>
-
-                <div class="oem-lines">
-                  <span>1573083 1589010 20515515S1 20515518S1 20723513S1 21147687S1 25372586S1</span>
-                </div>
-
-              </div>
-
-            </div>
-
-            <div class="oem-group">
-
-              <div class="oem-group-fig"><img src="/images/products/bolts-and-nuts/hub-bolts/oem-type-wheel-bolt.webp" alt="Wheel Bolt - drawing" width="800" height="199" loading="lazy" /></div>
-
-              <div class="oem-group-body">
-
-                <h4>Wheel Bolt <span class="oem-cnt">&middot; 1 OEM numbers</span></h4>
-
-                <div class="oem-lines">
-                  <span>157.081-3</span>
-                </div>
-
-              </div>
-
-            </div>
-
-          </div>
-
-          <div class="oem-brand">
-
-            <div class="oem-brand-head"><strong>Renault</strong><span>62 OEM numbers &middot; 5 types</span></div>
-
-            <div class="oem-group">
-
-              <div class="oem-group-fig"><img src="/images/products/bolts-and-nuts/hub-bolts/oem-type-round-head-knurled.webp" alt="Round Head Knurled Wheel Bolt - drawing" width="800" height="211" loading="lazy" /></div>
-
-              <div class="oem-group-body">
-
-                <h4>Round Head Knurled Wheel Bolt <span class="oem-cnt">&middot; 30 OEM numbers</span></h4>
-
-                <div class="oem-lines">
-                  <span>5.000.545161 190.221</span>
-                  <span>0003156050</span>
-                  <span>21323312 0021623013</span>
-                  <span>0021623307 0021623312 5000029513</span>
-                  <span>5000471836</span>
-                  <span>5000471855 5000471860</span>
-                  <span>5000543465 5000545223 5000556773</span>
-                  <span>5000604165</span>
-                  <span>5000605522 5000653117</span>
-                  <span>5000786926 5000788677 5010241839</span>
-                  <span>5010262934</span>
-                  <span>5010566244 7420515514</span>
-                  <span>7420515515 7420515517 7420515518</span>
-                  <span>7420515519</span>
-                  <span>7420524942 7420553560</span>
-                  <span>7421147687</span>
-                </div>
-
-              </div>
-
-            </div>
-
-            <div class="oem-group">
-
-              <div class="oem-group-fig"><img src="/images/products/bolts-and-nuts/hub-bolts/oem-type-d-head.webp" alt="D-Head Wheel Bolt (flat-sided head) - drawing" width="800" height="211" loading="lazy" /></div>
-
-              <div class="oem-group-body">
-
-                <h4>D-Head Wheel Bolt (flat-sided head) <span class="oem-cnt">&middot; 10 OEM numbers</span></h4>
-
-                <div class="oem-lines">
-                  <span>0000190220</span>
-                  <span>0000190221 1530054101</span>
-                  <span>5000190220 5000190221</span>
-                  <span>5000737601 5010319141</span>
-                  <span>5010439317 5010439406</span>
-                  <span>7423685490</span>
-                </div>
-
-              </div>
-
-            </div>
-
-            <div class="oem-group">
-
-              <div class="oem-group-fig"><img src="/images/products/bolts-and-nuts/hub-bolts/oem-type-double-end-stud.webp" alt="Double-End Wheel Stud - drawing" width="800" height="215" loading="lazy" /></div>
-
-              <div class="oem-group-body">
-
-                <h4>Double-End Wheel Stud <span class="oem-cnt">&middot; 2 OEM numbers</span></h4>
-
-                <div class="oem-lines">
-                  <span>406.460.7918 7403171328</span>
-                </div>
-
-              </div>
-
-            </div>
-
-            <div class="oem-group">
-
-              <div class="oem-group-fig"><img src="/images/products/bolts-and-nuts/hub-bolts/oem-type-bolt-nut-assembly.webp" alt="Wheel Bolt Assembly (bolt + nut) - drawing" width="800" height="207" loading="lazy" /></div>
-
-              <div class="oem-group-body">
-
-                <h4>Wheel Bolt Assembly (bolt + nut) <span class="oem-cnt">&middot; 11 OEM numbers</span></h4>
-
-                <div class="oem-lines">
-                  <span>0000190220S 1530054101S</span>
-                  <span>5000190220S 5010439317S 5010439406S</span>
-                  <span>7420515514S 7420515515S1 7420515518S1</span>
-                  <span>7421147687S1 7423685490S 7424076067</span>
-                </div>
-
-              </div>
-
-            </div>
-
-            <div class="oem-group">
-
-              <div class="oem-group-fig"><img src="/images/products/bolts-and-nuts/hub-bolts/oem-type-wheel-bolt.webp" alt="Wheel Bolt - drawing" width="800" height="199" loading="lazy" /></div>
-
-              <div class="oem-group-body">
-
-                <h4>Wheel Bolt <span class="oem-cnt">&middot; 9 OEM numbers</span></h4>
-
-                <div class="oem-lines">
-                  <span>5.000.351162</span>
-                  <span>5.000.351167 5.000.547960</span>
-                  <span>50.102.418.92 190.513</span>
-                  <span>406.460.8267 500.065.4139</span>
-                  <span>611490580 5010319140</span>
-                </div>
-
-              </div>
-
-            </div>
-
-          </div>
-
-          <div class="oem-brand">
-
-            <div class="oem-brand-head"><strong>DAF</strong><span>50 OEM numbers &middot; 3 types</span></div>
-
-            <div class="oem-group">
-
-              <div class="oem-group-fig"><img src="/images/products/bolts-and-nuts/hub-bolts/oem-type-round-head-knurled.webp" alt="Round Head Knurled Wheel Bolt - drawing" width="800" height="211" loading="lazy" /></div>
-
-              <div class="oem-group-body">
-
-                <h4>Round Head Knurled Wheel Bolt <span class="oem-cnt">&middot; 29 OEM numbers</span></h4>
-
-                <div class="oem-lines">
-                  <span>620.646 620.647</span>
-                  <span>0637.428</span>
-                  <span>0643.382 1241.957</span>
-                  <span>0099717 0099720 0099721</span>
-                  <span>0099730</span>
-                  <span>0099731 620646</span>
-                  <span>0620646 620647 0620647</span>
-                  <span>0620648</span>
-                  <span>0620649 0890763</span>
-                  <span>1308038 1309190 1309191</span>
-                  <span>1337020</span>
-                  <span>1356736 1373007</span>
-                  <span>1400065 1400082 1400267</span>
-                  <span>1405569</span>
-                  <span>1703948 2118265</span>
-                </div>
-
-              </div>
-
-            </div>
-
-            <div class="oem-group">
-
-              <div class="oem-group-fig"><img src="/images/products/bolts-and-nuts/hub-bolts/oem-type-double-end-stud.webp" alt="Double-End Wheel Stud - drawing" width="800" height="215" loading="lazy" /></div>
-
-              <div class="oem-group-body">
-
-                <h4>Double-End Wheel Stud <span class="oem-cnt">&middot; 4 OEM numbers</span></h4>
-
-                <div class="oem-lines">
-                  <span>191.175 217.266 259.931 1019.357</span>
-                </div>
-
-              </div>
-
-            </div>
-
-            <div class="oem-group">
-
-              <div class="oem-group-fig"><img src="/images/products/bolts-and-nuts/hub-bolts/oem-type-bolt-nut-assembly.webp" alt="Wheel Bolt Assembly (bolt + nut) - drawing" width="800" height="207" loading="lazy" /></div>
-
-              <div class="oem-group-body">
-
-                <h4>Wheel Bolt Assembly (bolt + nut) <span class="oem-cnt">&middot; 17 OEM numbers</span></h4>
-
-                <div class="oem-lines">
-                  <span>0099717S1 0099720S1</span>
-                  <span>0099721S1 0099730S1 0099731S1 0620646S1</span>
-                  <span>0620649S1 0890763S1 1308038S1 1309190S1</span>
-                  <span>1309191S1 1337020S1 1356736S1 1400082S1</span>
-                  <span>1402420S1 1405569S1 1703948S1</span>
-                </div>
-
-              </div>
-
-            </div>
-
-          </div>
-
-          <div class="oem-brand">
-
-            <div class="oem-brand-head"><strong>Scania</strong><span>47 OEM numbers &middot; 6 types</span></div>
-
-            <div class="oem-group">
-
-              <div class="oem-group-fig"><img src="/images/products/bolts-and-nuts/hub-bolts/oem-type-round-head-knurled.webp" alt="Round Head Knurled Wheel Bolt - drawing" width="800" height="211" loading="lazy" /></div>
-
-              <div class="oem-group-body">
-
-                <h4>Round Head Knurled Wheel Bolt <span class="oem-cnt">&middot; 11 OEM numbers</span></h4>
-
-                <div class="oem-lines">
-                  <span>1421005 1528655</span>
-                  <span>1528712 1847739 1868665</span>
-                  <span>1868668 2285275 2285279</span>
-                  <span>2285280 2285282 3787100</span>
-                </div>
-
-              </div>
-
-            </div>
-
-            <div class="oem-group">
-
-              <div class="oem-group-fig"><img src="/images/products/bolts-and-nuts/hub-bolts/oem-type-d-head.webp" alt="D-Head Wheel Bolt (flat-sided head) - drawing" width="800" height="211" loading="lazy" /></div>
-
-              <div class="oem-group-body">
-
-                <h4>D-Head Wheel Bolt (flat-sided head) <span class="oem-cnt">&middot; 17 OEM numbers</span></h4>
-
-                <div class="oem-lines">
-                  <span>272853</span>
-                  <span>290062</span>
-                  <span>295953 332912 337559</span>
-                  <span>0337559</span>
-                  <span>337560 337561 397266</span>
-                  <span>1368690</span>
-                  <span>1368691 1368692 1368693</span>
-                  <span>1368694</span>
-                  <span>1368695 1411980 1420775</span>
-                </div>
-
-              </div>
-
-            </div>
-
-            <div class="oem-group">
-
-              <div class="oem-group-fig"><img src="/images/products/bolts-and-nuts/hub-bolts/oem-type-double-end-stud.webp" alt="Double-End Wheel Stud - drawing" width="800" height="215" loading="lazy" /></div>
-
-              <div class="oem-group-body">
-
-                <h4>Double-End Wheel Stud <span class="oem-cnt">&middot; 3 OEM numbers</span></h4>
-
-                <div class="oem-lines">
-                  <span>123250 176815 1340934</span>
-                </div>
-
-              </div>
-
-            </div>
-
-            <div class="oem-group">
-
-              <div class="oem-group-fig"><img src="/images/products/bolts-and-nuts/hub-bolts/oem-type-t-head-rect.webp" alt="T-Head / Rectangular Head Wheel Bolt - drawing" width="800" height="199" loading="lazy" /></div>
-
-              <div class="oem-group-body">
-
-                <h4>T-Head / Rectangular Head Wheel Bolt <span class="oem-cnt">&middot; 4 OEM numbers</span></h4>
-
-                <div class="oem-lines">
-                  <span>130960 0228632 0289535 0293493</span>
-                </div>
-
-              </div>
-
-            </div>
-
-            <div class="oem-group">
-
-              <div class="oem-group-fig"><img src="/images/products/bolts-and-nuts/hub-bolts/oem-type-bolt-nut-assembly.webp" alt="Wheel Bolt Assembly (bolt + nut) - drawing" width="800" height="207" loading="lazy" /></div>
-
-              <div class="oem-group-body">
-
-                <h4>Wheel Bolt Assembly (bolt + nut) <span class="oem-cnt">&middot; 6 OEM numbers</span></h4>
-
-                <div class="oem-lines">
-                  <span>272853S1</span>
-                  <span>332912S1 337560S1</span>
-                  <span>1368691S1 1368694S1</span>
-                  <span>1368695S1</span>
-                </div>
-
-              </div>
-
-            </div>
-
-            <div class="oem-group">
-
-              <div class="oem-group-fig"><img src="/images/products/bolts-and-nuts/hub-bolts/oem-type-wheel-bolt.webp" alt="Wheel Bolt - drawing" width="800" height="199" loading="lazy" /></div>
-
-              <div class="oem-group-body">
-
-                <h4>Wheel Bolt <span class="oem-cnt">&middot; 6 OEM numbers</span></h4>
-
-                <div class="oem-lines">
-                  <span>123.294-R</span>
-                  <span>132.602 272.853-3</span>
-                  <span>290.062-9 295.953-4</span>
-                  <span>397.266</span>
-                </div>
-
-              </div>
-
-            </div>
-
-          </div>
-
-          <div class="oem-brand">
-
-            <div class="oem-brand-head"><strong>Fruehauf</strong><span>18 OEM numbers &middot; 3 types</span></div>
-
-            <div class="oem-group">
-
-              <div class="oem-group-fig"><img src="/images/products/bolts-and-nuts/hub-bolts/oem-type-round-head-knurled.webp" alt="Round Head Knurled Wheel Bolt - drawing" width="800" height="211" loading="lazy" /></div>
-
-              <div class="oem-group-body">
-
-                <h4>Round Head Knurled Wheel Bolt <span class="oem-cnt">&middot; 7 OEM numbers</span></h4>
-
-                <div class="oem-lines">
-                  <span>21.420 21.421 A15613 A20630 A-FA0230 MO 69123 MO 69131</span>
-                </div>
-
-              </div>
-
-            </div>
-
-            <div class="oem-group">
-
-              <div class="oem-group-fig"><img src="/images/products/bolts-and-nuts/hub-bolts/oem-type-double-end-stud.webp" alt="Double-End Wheel Stud - drawing" width="800" height="215" loading="lazy" /></div>
-
-              <div class="oem-group-body">
-
-                <h4>Double-End Wheel Stud <span class="oem-cnt">&middot; 3 OEM numbers</span></h4>
-
-                <div class="oem-lines">
-                  <span>21.412 21.414 21414</span>
-                </div>
-
-              </div>
-
-            </div>
-
-            <div class="oem-group">
-
-              <div class="oem-group-fig"><img src="/images/products/bolts-and-nuts/hub-bolts/oem-type-wheel-bolt.webp" alt="Wheel Bolt - drawing" width="800" height="199" loading="lazy" /></div>
-
-              <div class="oem-group-body">
-
-                <h4>Wheel Bolt <span class="oem-cnt">&middot; 8 OEM numbers</span></h4>
-
-                <div class="oem-lines">
-                  <span>21.302</span>
-                  <span>21.503 993.99.070</span>
-                  <span>993.9907 994.59.072</span>
-                  <span>14027 A15613- M006891</span>
-                  <span>M003133</span>
-                </div>
-
-              </div>
-
-            </div>
-
-          </div>
-
-          <div class="oem-brand">
-
-            <div class="oem-brand-head"><strong>Hino</strong><span>16 OEM numbers &middot; 3 types</span></div>
-
-            <div class="oem-group">
-
-              <div class="oem-group-fig"><img src="/images/products/bolts-and-nuts/hub-bolts/oem-type-round-head-knurled.webp" alt="Round Head Knurled Wheel Bolt - drawing" width="800" height="211" loading="lazy" /></div>
-
-              <div class="oem-group-body">
-
-                <h4>Round Head Knurled Wheel Bolt <span class="oem-cnt">&middot; 2 OEM numbers</span></h4>
-
-                <div class="oem-lines">
-                  <span>9094202071 9094202072</span>
-                </div>
-
-              </div>
-
-            </div>
-
-            <div class="oem-group">
-
-              <div class="oem-group-fig"><img src="/images/products/bolts-and-nuts/hub-bolts/oem-type-double-end-stud.webp" alt="Double-End Wheel Stud - drawing" width="800" height="215" loading="lazy" /></div>
-
-              <div class="oem-group-body">
-
-                <h4>Double-End Wheel Stud <span class="oem-cnt">&middot; 1 OEM numbers</span></h4>
-
-                <div class="oem-lines">
-                  <span>9004-26101</span>
-                </div>
-
-              </div>
-
-            </div>
-
-            <div class="oem-group">
-
-              <div class="oem-group-fig"><img src="/images/products/bolts-and-nuts/hub-bolts/oem-type-bolt-nut-assembly.webp" alt="Wheel Bolt Assembly (bolt + nut) - drawing" width="800" height="207" loading="lazy" /></div>
-
-              <div class="oem-group-body">
-
-                <h4>Wheel Bolt Assembly (bolt + nut) <span class="oem-cnt">&middot; 13 OEM numbers</span></h4>
-
-                <div class="oem-lines">
-                  <span>404-21105 404-21106</span>
-                  <span>04042-1035 04042-1036 04042-1041</span>
-                  <span>04042-1042 04043-1037 04043-1038</span>
-                  <span>04043-1071 04043-1072 9004-26101S</span>
-                  <span>42632-55031S 90942-02072S</span>
-                </div>
-
-              </div>
-
-            </div>
-
-          </div>
-
-          <div class="oem-brand">
-
-            <div class="oem-brand-head"><strong>Mitsubishi</strong><span>15 OEM numbers &middot; 3 types</span></div>
-
-            <div class="oem-group">
-
-              <div class="oem-group-fig"><img src="/images/products/bolts-and-nuts/hub-bolts/oem-type-double-end-stud.webp" alt="Double-End Wheel Stud - drawing" width="800" height="215" loading="lazy" /></div>
-
-              <div class="oem-group-body">
-
-                <h4>Double-End Wheel Stud <span class="oem-cnt">&middot; 1 OEM numbers</span></h4>
-
-                <div class="oem-lines">
-                  <span>MC-802141</span>
-                </div>
-
-              </div>
-
-            </div>
-
-            <div class="oem-group">
-
-              <div class="oem-group-fig"><img src="/images/products/bolts-and-nuts/hub-bolts/oem-type-bolt-nut-assembly.webp" alt="Wheel Bolt Assembly (bolt + nut) - drawing" width="800" height="207" loading="lazy" /></div>
-
-              <div class="oem-group-body">
-
-                <h4>Wheel Bolt Assembly (bolt + nut) <span class="oem-cnt">&middot; 12 OEM numbers</span></h4>
-
-                <div class="oem-lines">
-                  <span>40210-90129B</span>
-                  <span>MB-301509 MB-301529 MB-308672</span>
-                  <span>MB-308673 MB-633778 MB 584750 MC-869237 MC-869238</span>
-                  <span>MC-891568 MC-891569 MT-119331</span>
-                  <span>MT-119332</span>
-                </div>
-
-              </div>
-
-            </div>
-
-            <div class="oem-group">
-
-              <div class="oem-group-fig"><img src="/images/products/bolts-and-nuts/hub-bolts/oem-type-wheel-bolt.webp" alt="Wheel Bolt - drawing" width="800" height="199" loading="lazy" /></div>
-
-              <div class="oem-group-body">
-
-                <h4>Wheel Bolt <span class="oem-cnt">&middot; 2 OEM numbers</span></h4>
-
-                <div class="oem-lines">
-                  <span>MB-584750 MB-633778</span>
-                </div>
-
-              </div>
-
-            </div>
-
-          </div>
-
-          <div class="oem-brand">
-
-            <div class="oem-brand-head"><strong>Pegaso</strong><span>11 OEM numbers &middot; 3 types</span></div>
-
-            <div class="oem-group">
-
-              <div class="oem-group-fig"><img src="/images/products/bolts-and-nuts/hub-bolts/oem-type-round-head-knurled.webp" alt="Round Head Knurled Wheel Bolt - drawing" width="800" height="211" loading="lazy" /></div>
-
-              <div class="oem-group-body">
-
-                <h4>Round Head Knurled Wheel Bolt <span class="oem-cnt">&middot; 6 OEM numbers</span></h4>
-
-                <div class="oem-lines">
-                  <span>914.294 716712 716853 717112 717235 718893</span>
-                </div>
-
-              </div>
-
-            </div>
-
-            <div class="oem-group">
-
-              <div class="oem-group-fig"><img src="/images/products/bolts-and-nuts/hub-bolts/oem-type-double-end-stud.webp" alt="Double-End Wheel Stud - drawing" width="800" height="215" loading="lazy" /></div>
-
-              <div class="oem-group-body">
-
-                <h4>Double-End Wheel Stud <span class="oem-cnt">&middot; 3 OEM numbers</span></h4>
-
-                <div class="oem-lines">
-                  <span>524714 542679 712838</span>
-                </div>
-
-              </div>
-
-            </div>
-
-            <div class="oem-group">
-
-              <div class="oem-group-fig"><img src="/images/products/bolts-and-nuts/hub-bolts/oem-type-wheel-bolt.webp" alt="Wheel Bolt - drawing" width="800" height="199" loading="lazy" /></div>
-
-              <div class="oem-group-body">
-
-                <h4>Wheel Bolt <span class="oem-cnt">&middot; 2 OEM numbers</span></h4>
-
-                <div class="oem-lines">
-                  <span>917.898 717062</span>
-                </div>
-
-              </div>
-
-            </div>
-
-          </div>
-
-          <div class="oem-brand">
-
-            <div class="oem-brand-head"><strong>SAF</strong><span>10 OEM numbers &middot; 2 types</span></div>
-
-            <div class="oem-group">
-
-              <div class="oem-group-fig"><img src="/images/products/bolts-and-nuts/hub-bolts/oem-type-round-head-knurled.webp" alt="Round Head Knurled Wheel Bolt - drawing" width="800" height="211" loading="lazy" /></div>
-
-              <div class="oem-group-body">
-
-                <h4>Round Head Knurled Wheel Bolt <span class="oem-cnt">&middot; 2 OEM numbers</span></h4>
-
-                <div class="oem-lines">
-                  <span>1.303.111.810 1.303.1074.11</span>
-                </div>
-
-              </div>
-
-            </div>
-
-            <div class="oem-group">
-
-              <div class="oem-group-fig"><img src="/images/products/bolts-and-nuts/hub-bolts/oem-type-double-end-stud.webp" alt="Double-End Wheel Stud - drawing" width="800" height="215" loading="lazy" /></div>
-
-              <div class="oem-group-body">
-
-                <h4>Double-End Wheel Stud <span class="oem-cnt">&middot; 8 OEM numbers</span></h4>
-
-                <div class="oem-lines">
-                  <span>1.303.1008.10</span>
-                  <span>1.303.1008.11 1.303.1013.10</span>
-                  <span>1.303.1028.10 1.303.1028.11</span>
-                  <span>1.303.1040.11 1.303.1045.11</span>
-                  <span>1.303.1075.11</span>
-                </div>
-
-              </div>
-
-            </div>
-
-          </div>
-
-          <div class="oem-brand">
-
-            <div class="oem-brand-head"><strong>Toyota</strong><span>9 OEM numbers &middot; 2 types</span></div>
-
-            <div class="oem-group">
-
-              <div class="oem-group-fig"><img src="/images/products/bolts-and-nuts/hub-bolts/oem-type-round-head-knurled.webp" alt="Round Head Knurled Wheel Bolt - drawing" width="800" height="211" loading="lazy" /></div>
-
-              <div class="oem-group-body">
-
-                <h4>Round Head Knurled Wheel Bolt <span class="oem-cnt">&middot; 2 OEM numbers</span></h4>
-
-                <div class="oem-lines">
-                  <span>90942-02071 90942-02072</span>
-                </div>
-
-              </div>
-
-            </div>
-
-            <div class="oem-group">
-
-              <div class="oem-group-fig"><img src="/images/products/bolts-and-nuts/hub-bolts/oem-type-bolt-nut-assembly.webp" alt="Wheel Bolt Assembly (bolt + nut) - drawing" width="800" height="207" loading="lazy" /></div>
-
-              <div class="oem-group-body">
-
-                <h4>Wheel Bolt Assembly (bolt + nut) <span class="oem-cnt">&middot; 7 OEM numbers</span></h4>
-
-                <div class="oem-lines">
-                  <span>90942-02024 90942-02025 90942-02028 90942-02029 90942-02037 90942-02045 90942-02046</span>
-                </div>
-
-              </div>
-
-            </div>
-
-          </div>
-
-          <div class="oem-brand">
-
-            <div class="oem-brand-head"><strong>Isuzu</strong><span>9 OEM numbers &middot; 3 types</span></div>
-
-            <div class="oem-group">
-
-              <div class="oem-group-fig"><img src="/images/products/bolts-and-nuts/hub-bolts/oem-type-round-head-knurled.webp" alt="Round Head Knurled Wheel Bolt - drawing" width="800" height="211" loading="lazy" /></div>
-
-              <div class="oem-group-body">
-
-                <h4>Round Head Knurled Wheel Bolt <span class="oem-cnt">&middot; 2 OEM numbers</span></h4>
-
-                <div class="oem-lines">
-                  <span>8971264880 8971264890</span>
-                </div>
-
-              </div>
-
-            </div>
-
-            <div class="oem-group">
-
-              <div class="oem-group-fig"><img src="/images/products/bolts-and-nuts/hub-bolts/oem-type-double-end-stud.webp" alt="Double-End Wheel Stud - drawing" width="800" height="215" loading="lazy" /></div>
-
-              <div class="oem-group-body">
-
-                <h4>Double-End Wheel Stud <span class="oem-cnt">&middot; 5 OEM numbers</span></h4>
-
-                <div class="oem-lines">
-                  <span>1423370101 8943834362 8943834372 8973598050 8973598060</span>
-                </div>
-
-              </div>
-
-            </div>
-
-            <div class="oem-group">
-
-              <div class="oem-group-fig"><img src="/images/products/bolts-and-nuts/hub-bolts/oem-type-bolt-nut-assembly.webp" alt="Wheel Bolt Assembly (bolt + nut) - drawing" width="800" height="207" loading="lazy" /></div>
-
-              <div class="oem-group-body">
-
-                <h4>Wheel Bolt Assembly (bolt + nut) <span class="oem-cnt">&middot; 2 OEM numbers</span></h4>
-
-                <div class="oem-lines">
-                  <span>8-94223-200-0 9-42331-601-0</span>
-                </div>
-
-              </div>
-
-            </div>
-
-          </div>
-
-          <div class="oem-brand">
-
-            <div class="oem-brand-head"><strong>BPW</strong><span>8 OEM numbers &middot; 2 types</span></div>
-
-            <div class="oem-group">
-
-              <div class="oem-group-fig"><img src="/images/products/bolts-and-nuts/hub-bolts/oem-type-double-end-stud.webp" alt="Double-End Wheel Stud - drawing" width="800" height="215" loading="lazy" /></div>
-
-              <div class="oem-group-body">
-
-                <h4>Double-End Wheel Stud <span class="oem-cnt">&middot; 7 OEM numbers</span></h4>
-
-                <div class="oem-lines">
-                  <span>03.296.13.11.0</span>
-                  <span>03.296.13.090 03.296.13.170</span>
-                  <span>03.296.23.05.0 03.296.23.15.0</span>
-                  <span>03.296.23.170 03.296.33.11.0</span>
-                </div>
-
-              </div>
-
-            </div>
-
-            <div class="oem-group">
-
-              <div class="oem-group-fig"><img src="/images/products/bolts-and-nuts/hub-bolts/oem-type-wheel-bolt.webp" alt="Wheel Bolt - drawing" width="800" height="199" loading="lazy" /></div>
-
-              <div class="oem-group-body">
-
-                <h4>Wheel Bolt <span class="oem-cnt">&middot; 1 OEM numbers</span></h4>
-
-                <div class="oem-lines">
-                  <span>326004060</span>
-                </div>
-
-              </div>
-
-            </div>
-
-          </div>
-
-          <div class="oem-brand">
-
-            <div class="oem-brand-head"><strong>KAMAZ</strong><span>8 OEM numbers &middot; 1 types</span></div>
-
-            <div class="oem-group">
-
-              <div class="oem-group-fig"><img src="/images/products/bolts-and-nuts/hub-bolts/oem-type-wheel-bolt.webp" alt="Wheel Bolt - drawing" width="800" height="199" loading="lazy" /></div>
-
-              <div class="oem-group-body">
-
-                <h4>Wheel Bolt <span class="oem-cnt">&middot; 8 OEM numbers</span></h4>
-
-                <div class="oem-lines">
-                  <span>5297-3104071-10 6320-3104071 6520-3104071-10 43114-3103071 43118-3103071 53205-3103071 53205-3104071 53205-3104071-10</span>
-                </div>
-
-              </div>
-
-            </div>
-
-          </div>
-
-          <div class="oem-brand">
-
-            <div class="oem-brand-head"><strong>Daihatsu</strong><span>6 OEM numbers &middot; 2 types</span></div>
-
-            <div class="oem-group">
-
-              <div class="oem-group-fig"><img src="/images/products/bolts-and-nuts/hub-bolts/oem-type-bolt-nut-assembly.webp" alt="Wheel Bolt Assembly (bolt + nut) - drawing" width="800" height="207" loading="lazy" /></div>
-
-              <div class="oem-group-body">
-
-                <h4>Wheel Bolt Assembly (bolt + nut) <span class="oem-cnt">&middot; 2 OEM numbers</span></h4>
-
-                <div class="oem-lines">
-                  <span>90049-12010 90049-12014 90049-12011 90049-12015</span>
-                </div>
-
-              </div>
-
-            </div>
-
-            <div class="oem-group">
-
-              <div class="oem-group-fig"><img src="/images/products/bolts-and-nuts/hub-bolts/oem-type-wheel-bolt.webp" alt="Wheel Bolt - drawing" width="800" height="199" loading="lazy" /></div>
-
-              <div class="oem-group-body">
-
-                <h4>Wheel Bolt <span class="oem-cnt">&middot; 4 OEM numbers</span></h4>
-
-                <div class="oem-lines">
-                  <span>90049-12010 90049-12011 90049-12014 90049-12015</span>
-                </div>
-
-              </div>
-
-            </div>
-
-          </div>
-
-          <div class="oem-brand">
-
-            <div class="oem-brand-head"><strong>Freightliner</strong><span>6 OEM numbers &middot; 1 types</span></div>
-
-            <div class="oem-group">
-
-              <div class="oem-group-fig"><img src="/images/products/bolts-and-nuts/hub-bolts/oem-type-double-end-stud.webp" alt="Double-End Wheel Stud - drawing" width="800" height="215" loading="lazy" /></div>
-
-              <div class="oem-group-body">
-
-                <h4>Double-End Wheel Stud <span class="oem-cnt">&middot; 6 OEM numbers</span></h4>
-
-                <div class="oem-lines">
-                  <span>CM 102292 CM 10001329 CM 10001330 CM 10001399 CM 10001400 CM 10018435</span>
-                </div>
-
-              </div>
-
-            </div>
-
-          </div>
-
-          <div class="oem-brand">
-
-            <div class="oem-brand-head"><strong>MAZ</strong><span>5 OEM numbers &middot; 3 types</span></div>
-
-            <div class="oem-group">
-
-              <div class="oem-group-fig"><img src="/images/products/bolts-and-nuts/hub-bolts/oem-type-d-head.webp" alt="D-Head Wheel Bolt (flat-sided head) - drawing" width="800" height="211" loading="lazy" /></div>
-
-              <div class="oem-group-body">
-
-                <h4>D-Head Wheel Bolt (flat-sided head) <span class="oem-cnt">&middot; 3 OEM numbers</span></h4>
-
-                <div class="oem-lines">
-                  <span>9919-3104050 54321-3104050 54321-3104051</span>
-                </div>
-
-              </div>
-
-            </div>
-
-            <div class="oem-group">
-
-              <div class="oem-group-fig"><img src="/images/products/bolts-and-nuts/hub-bolts/oem-type-t-head-rect.webp" alt="T-Head / Rectangular Head Wheel Bolt - drawing" width="800" height="199" loading="lazy" /></div>
-
-              <div class="oem-group-body">
-
-                <h4>T-Head / Rectangular Head Wheel Bolt <span class="oem-cnt">&middot; 1 OEM numbers</span></h4>
-
-                <div class="oem-lines">
-                  <span>5335-3104008</span>
-                </div>
-
-              </div>
-
-            </div>
-
-            <div class="oem-group">
-
-              <div class="oem-group-fig"><img src="/images/products/bolts-and-nuts/hub-bolts/oem-type-wheel-bolt.webp" alt="Wheel Bolt - drawing" width="800" height="199" loading="lazy" /></div>
-
-              <div class="oem-group-body">
-
-                <h4>Wheel Bolt <span class="oem-cnt">&middot; 1 OEM numbers</span></h4>
-
-                <div class="oem-lines">
-                  <span>54321-3104052</span>
-                </div>
-
-              </div>
-
-            </div>
-
-          </div>
-
-          <div class="oem-brand">
-
-            <div class="oem-brand-head"><strong>Suzuki</strong><span>4 OEM numbers &middot; 2 types</span></div>
-
-            <div class="oem-group">
-
-              <div class="oem-group-fig"><img src="/images/products/bolts-and-nuts/hub-bolts/oem-type-bolt-nut-assembly.webp" alt="Wheel Bolt Assembly (bolt + nut) - drawing" width="800" height="207" loading="lazy" /></div>
-
-              <div class="oem-group-body">
-
-                <h4>Wheel Bolt Assembly (bolt + nut) <span class="oem-cnt">&middot; 2 OEM numbers</span></h4>
-
-                <div class="oem-lines">
-                  <span>09119-10049 09119-12011 09119-12012</span>
-                </div>
-
-              </div>
-
-            </div>
-
-            <div class="oem-group">
-
-              <div class="oem-group-fig"><img src="/images/products/bolts-and-nuts/hub-bolts/oem-type-wheel-bolt.webp" alt="Wheel Bolt - drawing" width="800" height="199" loading="lazy" /></div>
-
-              <div class="oem-group-body">
-
-                <h4>Wheel Bolt <span class="oem-cnt">&middot; 2 OEM numbers</span></h4>
-
-                <div class="oem-lines">
-                  <span>09119-12011 09119-12012</span>
-                </div>
-
-              </div>
-
-            </div>
-
-          </div>
-
-          <div class="oem-brand">
-
-            <div class="oem-brand-head"><strong>GAZ</strong><span>4 OEM numbers &middot; 1 types</span></div>
-
-            <div class="oem-group">
-
-              <div class="oem-group-fig"><img src="/images/products/bolts-and-nuts/hub-bolts/oem-type-wheel-bolt.webp" alt="Wheel Bolt - drawing" width="800" height="199" loading="lazy" /></div>
-
-              <div class="oem-group-body">
-
-                <h4>Wheel Bolt <span class="oem-cnt">&middot; 4 OEM numbers</span></h4>
-
-                <div class="oem-lines">
-                  <span>20-3103008-Б 51-3103008-В1 51-3103009-В1 51-3105015-Д</span>
-                </div>
-
-              </div>
-
-            </div>
-
-          </div>
-
-          <div class="oem-brand">
-
-            <div class="oem-brand-head"><strong>Kia</strong><span>3 OEM numbers &middot; 1 types</span></div>
-
-            <div class="oem-group">
-
-              <div class="oem-group-fig"><img src="/images/products/bolts-and-nuts/hub-bolts/oem-type-bolt-nut-assembly.webp" alt="Wheel Bolt Assembly (bolt + nut) - drawing" width="800" height="207" loading="lazy" /></div>
-
-              <div class="oem-group-body">
-
-                <h4>Wheel Bolt Assembly (bolt + nut) <span class="oem-cnt">&middot; 3 OEM numbers</span></h4>
-
-                <div class="oem-lines">
-                  <span>0K01126113 OK710-26-113A OK710-26-114A</span>
-                </div>
-
-              </div>
-
-            </div>
-
-          </div>
-
-          <div class="oem-brand">
-
-            <div class="oem-brand-head"><strong>Caterpillar</strong><span>3 OEM numbers &middot; 2 types</span></div>
-
-            <div class="oem-group">
-
-              <div class="oem-group-fig"><img src="/images/products/bolts-and-nuts/hub-bolts/oem-type-round-head-knurled.webp" alt="Round Head Knurled Wheel Bolt - drawing" width="800" height="211" loading="lazy" /></div>
-
-              <div class="oem-group-body">
-
-                <h4>Round Head Knurled Wheel Bolt <span class="oem-cnt">&middot; 1 OEM numbers</span></h4>
-
-                <div class="oem-lines">
-                  <span>1V3323</span>
-                </div>
-
-              </div>
-
-            </div>
-
-            <div class="oem-group">
-
-              <div class="oem-group-fig"><img src="/images/products/bolts-and-nuts/hub-bolts/oem-type-wheel-bolt.webp" alt="Wheel Bolt - drawing" width="800" height="199" loading="lazy" /></div>
-
-              <div class="oem-group-body">
-
-                <h4>Wheel Bolt <span class="oem-cnt">&middot; 2 OEM numbers</span></h4>
-
-                <div class="oem-lines">
-                  <span>3K1865 3V4247</span>
-                </div>
-
-              </div>
-
-            </div>
-
-          </div>
-
-          <div class="oem-brand">
-
-            <div class="oem-brand-head"><strong>Magirus</strong><span>3 OEM numbers &middot; 1 types</span></div>
-
-            <div class="oem-group">
-
-              <div class="oem-group-fig"><img src="/images/products/bolts-and-nuts/hub-bolts/oem-type-wheel-bolt.webp" alt="Wheel Bolt - drawing" width="800" height="199" loading="lazy" /></div>
-
-              <div class="oem-group-body">
-
-                <h4>Wheel Bolt <span class="oem-cnt">&middot; 3 OEM numbers</span></h4>
-
-                <div class="oem-lines">
-                  <span>52.890 0342 4731 52894</span>
-                </div>
-
-              </div>
-
-            </div>
-
-          </div>
-
-          <div class="oem-brand">
-
-            <div class="oem-brand-head"><strong>Volkswagen</strong><span>3 OEM numbers &middot; 1 types</span></div>
-
-            <div class="oem-group">
-
-              <div class="oem-group-fig"><img src="/images/products/bolts-and-nuts/hub-bolts/oem-type-wheel-bolt.webp" alt="Wheel Bolt - drawing" width="800" height="199" loading="lazy" /></div>
-
-              <div class="oem-group-body">
-
-                <h4>Wheel Bolt <span class="oem-cnt">&middot; 3 OEM numbers</span></h4>
-
-                <div class="oem-lines">
-                  <span>321601139 2116011391 ZBA601139A</span>
-                </div>
-
-              </div>
-
-            </div>
-
-          </div>
-
-          <div class="oem-brand">
-
-            <div class="oem-brand-head"><strong>Nissan</strong><span>2 OEM numbers &middot; 1 types</span></div>
-
-            <div class="oem-group">
-
-              <div class="oem-group-fig"><img src="/images/products/bolts-and-nuts/hub-bolts/oem-type-bolt-nut-assembly.webp" alt="Wheel Bolt Assembly (bolt + nut) - drawing" width="800" height="207" loading="lazy" /></div>
-
-              <div class="oem-group-body">
-
-                <h4>Wheel Bolt Assembly (bolt + nut) <span class="oem-cnt">&middot; 2 OEM numbers</span></h4>
-
-                <div class="oem-lines">
-                  <span>40222-18000 40222-A0800</span>
-                </div>
-
-              </div>
-
-            </div>
-
-          </div>
-
-          <div class="oem-brand">
-
-            <div class="oem-brand-head"><strong>Mack</strong><span>2 OEM numbers &middot; 1 types</span></div>
-
-            <div class="oem-group">
-
-              <div class="oem-group-fig"><img src="/images/products/bolts-and-nuts/hub-bolts/oem-type-double-end-stud.webp" alt="Double-End Wheel Stud - drawing" width="800" height="215" loading="lazy" /></div>
-
-              <div class="oem-group-body">
-
-                <h4>Double-End Wheel Stud <span class="oem-cnt">&middot; 2 OEM numbers</span></h4>
-
-                <div class="oem-lines">
-                  <span>18AX64 741310001331</span>
-                </div>
-
-              </div>
-
-            </div>
-
-          </div>
-
-          <div class="oem-brand">
-
-            <div class="oem-brand-head"><strong>Barreiros</strong><span>2 OEM numbers &middot; 2 types</span></div>
-
-            <div class="oem-group">
-
-              <div class="oem-group-fig"><img src="/images/products/bolts-and-nuts/hub-bolts/oem-type-double-end-stud.webp" alt="Double-End Wheel Stud - drawing" width="800" height="215" loading="lazy" /></div>
-
-              <div class="oem-group-body">
-
-                <h4>Double-End Wheel Stud <span class="oem-cnt">&middot; 1 OEM numbers</span></h4>
-
-                <div class="oem-lines">
-                  <span>406.460.7918</span>
-                </div>
-
-              </div>
-
-            </div>
-
-            <div class="oem-group">
-
-              <div class="oem-group-fig"><img src="/images/products/bolts-and-nuts/hub-bolts/oem-type-wheel-bolt.webp" alt="Wheel Bolt - drawing" width="800" height="199" loading="lazy" /></div>
-
-              <div class="oem-group-body">
-
-                <h4>Wheel Bolt <span class="oem-cnt">&middot; 1 OEM numbers</span></h4>
-
-                <div class="oem-lines">
-                  <span>406.460.8267</span>
-                </div>
-
-              </div>
-
-            </div>
-
-          </div>
-
-          <div class="oem-brand">
-
-            <div class="oem-brand-head"><strong>Euclid</strong><span>2 OEM numbers &middot; 1 types</span></div>
-
-            <div class="oem-group">
-
-              <div class="oem-group-fig"><img src="/images/products/bolts-and-nuts/hub-bolts/oem-type-double-end-stud.webp" alt="Double-End Wheel Stud - drawing" width="800" height="215" loading="lazy" /></div>
-
-              <div class="oem-group-body">
-
-                <h4>Double-End Wheel Stud <span class="oem-cnt">&middot; 2 OEM numbers</span></h4>
-
-                <div class="oem-lines">
-                  <span>E5561L E-5561R</span>
-                </div>
-
-              </div>
-
-            </div>
-
-          </div>
-
-          <div class="oem-brand">
-
-            <div class="oem-brand-head"><strong>Ford</strong><span>2 OEM numbers &middot; 2 types</span></div>
-
-            <div class="oem-group">
-
-              <div class="oem-group-fig"><img src="/images/products/bolts-and-nuts/hub-bolts/oem-type-round-head-knurled.webp" alt="Round Head Knurled Wheel Bolt - drawing" width="800" height="211" loading="lazy" /></div>
-
-              <div class="oem-group-body">
-
-                <h4>Round Head Knurled Wheel Bolt <span class="oem-cnt">&middot; 1 OEM numbers</span></h4>
-
-                <div class="oem-lines">
-                  <span>850B-1107-BB</span>
-                </div>
-
-              </div>
-
-            </div>
-
-            <div class="oem-group">
-
-              <div class="oem-group-fig"><img src="/images/products/bolts-and-nuts/hub-bolts/oem-type-wheel-bolt.webp" alt="Wheel Bolt - drawing" width="800" height="199" loading="lazy" /></div>
-
-              <div class="oem-group-body">
-
-                <h4>Wheel Bolt <span class="oem-cnt">&middot; 1 OEM numbers</span></h4>
-
-                <div class="oem-lines">
-                  <span>BC 8A1107 A</span>
-                </div>
-
-              </div>
-
-            </div>
-
-          </div>
-
-          <div class="oem-brand">
-
-            <div class="oem-brand-head"><strong>GM</strong><span>2 OEM numbers &middot; 2 types</span></div>
-
-            <div class="oem-group">
-
-              <div class="oem-group-fig"><img src="/images/products/bolts-and-nuts/hub-bolts/oem-type-round-head-knurled.webp" alt="Round Head Knurled Wheel Bolt - drawing" width="800" height="211" loading="lazy" /></div>
-
-              <div class="oem-group-body">
-
-                <h4>Round Head Knurled Wheel Bolt <span class="oem-cnt">&middot; 1 OEM numbers</span></h4>
-
-                <div class="oem-lines">
-                  <span>94631717</span>
-                </div>
-
-              </div>
-
-            </div>
-
-            <div class="oem-group">
-
-              <div class="oem-group-fig"><img src="/images/products/bolts-and-nuts/hub-bolts/oem-type-wheel-bolt.webp" alt="Wheel Bolt - drawing" width="800" height="199" loading="lazy" /></div>
-
-              <div class="oem-group-body">
-
-                <h4>Wheel Bolt <span class="oem-cnt">&middot; 1 OEM numbers</span></h4>
-
-                <div class="oem-lines">
-                  <span>3775682</span>
-                </div>
-
-              </div>
-
-            </div>
-
-          </div>
-
-          <div class="oem-brand">
-
-            <div class="oem-brand-head"><strong>ConMet</strong><span>1 OEM numbers &middot; 1 types</span></div>
-
-            <div class="oem-group">
-
-              <div class="oem-group-fig"><img src="/images/products/bolts-and-nuts/hub-bolts/oem-type-double-end-stud.webp" alt="Double-End Wheel Stud - drawing" width="800" height="215" loading="lazy" /></div>
-
-              <div class="oem-group-body">
-
-                <h4>Double-End Wheel Stud <span class="oem-cnt">&middot; 1 OEM numbers</span></h4>
-
-                <div class="oem-lines">
-                  <span>102292</span>
-                </div>
-
-              </div>
-
-            </div>
-
-          </div>
-
-          <div class="oem-brand">
-
-            <div class="oem-brand-head"><strong>Kenworth</strong><span>1 OEM numbers &middot; 1 types</span></div>
-
-            <div class="oem-group">
-
-              <div class="oem-group-fig"><img src="/images/products/bolts-and-nuts/hub-bolts/oem-type-double-end-stud.webp" alt="Double-End Wheel Stud - drawing" width="800" height="215" loading="lazy" /></div>
-
-              <div class="oem-group-body">
-
-                <h4>Double-End Wheel Stud <span class="oem-cnt">&middot; 1 OEM numbers</span></h4>
-
-                <div class="oem-lines">
-                  <span>10001331</span>
-                </div>
-
-              </div>
-
-            </div>
-
-          </div>
-
-          <div class="oem-brand">
-
-            <div class="oem-brand-head"><strong>International</strong><span>1 OEM numbers &middot; 1 types</span></div>
-
-            <div class="oem-group">
-
-              <div class="oem-group-fig"><img src="/images/products/bolts-and-nuts/hub-bolts/oem-type-double-end-stud.webp" alt="Double-End Wheel Stud - drawing" width="800" height="215" loading="lazy" /></div>
-
-              <div class="oem-group-body">
-
-                <h4>Double-End Wheel Stud <span class="oem-cnt">&middot; 1 OEM numbers</span></h4>
-
-                <div class="oem-lines">
-                  <span>2588662C1</span>
-                </div>
-
-              </div>
-
-            </div>
-
-          </div>
-
-          <div class="oem-brand">
-
-            <div class="oem-brand-head"><strong>Peterbilt</strong><span>1 OEM numbers &middot; 1 types</span></div>
-
-            <div class="oem-group">
-
-              <div class="oem-group-fig"><img src="/images/products/bolts-and-nuts/hub-bolts/oem-type-double-end-stud.webp" alt="Double-End Wheel Stud - drawing" width="800" height="215" loading="lazy" /></div>
-
-              <div class="oem-group-body">
-
-                <h4>Double-End Wheel Stud <span class="oem-cnt">&middot; 1 OEM numbers</span></h4>
-
-                <div class="oem-lines">
-                  <span>SZAR003R</span>
-                </div>
-
-              </div>
-
-            </div>
-
-          </div>
-
-          <div class="oem-brand">
-
-            <div class="oem-brand-head"><strong>Perlini</strong><span>1 OEM numbers &middot; 1 types</span></div>
-
-            <div class="oem-group">
-
-              <div class="oem-group-fig"><img src="/images/products/bolts-and-nuts/hub-bolts/oem-type-round-head-knurled.webp" alt="Round Head Knurled Wheel Bolt - drawing" width="800" height="211" loading="lazy" /></div>
-
-              <div class="oem-group-body">
-
-                <h4>Round Head Knurled Wheel Bolt <span class="oem-cnt">&middot; 1 OEM numbers</span></h4>
-
-                <div class="oem-lines">
-                  <span>12098</span>
-                </div>
-
-              </div>
-
-            </div>
-
-          </div>
-
-          <div class="oem-brand">
-
-            <div class="oem-brand-head"><strong>Fiat</strong><span>1 OEM numbers &middot; 1 types</span></div>
-
-            <div class="oem-group">
-
-              <div class="oem-group-fig"><img src="/images/products/bolts-and-nuts/hub-bolts/oem-type-hex-head.webp" alt="Hex Head Wheel Bolt - drawing" width="800" height="178" loading="lazy" /></div>
-
-              <div class="oem-group-body">
-
-                <h4>Hex Head Wheel Bolt <span class="oem-cnt">&middot; 1 OEM numbers</span></h4>
-
-                <div class="oem-lines">
-                  <span>7509408</span>
-                </div>
-
-              </div>
-
-            </div>
-
-          </div>
-
-        </div>
-
-        <p class="oem-empty" id="oemEmpty" hidden>No brand or OEM number matches your search.</p>
-
-        <p class="oem-count" id="oemCount">Showing 37 of 37 brands · 621 OEM numbers</p>
-
-        <div class="oem-disclaimer">OEM numbers and vehicle brand names are quoted for reference and identification only. All trademarks belong to their respective owners. Please confirm dimensions with your drawing or sample before ordering.</div>
-
-      </div>
-
-
-      <header class="section-header" style="margin-top: var(--space-12);">
-
-        <h2>Notes</h2>
-
-      </header>
-
-      <div class="data-table-wrapper">
-
-        <table class="data-table notes-table">
-
-          <tbody>
-
-            <tr><th>Machanism Capability:</th><td>Bolts: 10.9 Class, minimum tensile strength 170,000 psi. Nuts: 10 Class, fully hardened and tempered to match bolt strength</td></tr>
-
-            <tr><td colspan="2" class="notes-paragraph">All packing details are used for reference purposes only. We can't list all of our products in above sheet since we are opening the mold every day. We also produce 12.9 class high tensile fasteners by forging.</td></tr>
-
-          </tbody>
-
-        </table>
-
-      </div>
-
-    </div>
-
-  </section>
-
-
-
-  <section class="section cta-band">
-
-    <div class="container text-center">
-
-      <h2>Need Hub Bolts?</h2>
-
-      <p>Contact us with your part numbers and specifications. Nissan, Hino, Isuzu, Mitsubishi, Benz and custom sizes available.</p>
-
-      <div class="cta-actions">
-
-        <a href="/contact" class="btn btn-primary btn-lg">Request a Quote</a>
-
-        <a href="mailto:Jason@carelong.com.cn?subject=Product%20Inquiry%20-%20Carelong%20Website" class="btn btn-outline-white btn-lg">Email Us</a>
-
-      </div>
-
-    </div>
-
-  </section>
-
-</BaseLayout>
-
-
-
-<script>
-
-  document.addEventListener('DOMContentLoaded', () => {
-
-    const gallery = document.getElementById('productGallery');
-
-    if (!gallery) return;
-
-
-
-    const thumbs = Array.from(gallery.querySelectorAll('.thumb'));
-
-    const stageImgs = Array.from(gallery.querySelectorAll('.stage-img'));
-
-    const stages = Array.from(gallery.querySelectorAll('.gallery-stage'));
-
-    let current = 0;
-
-
-
-    function activate(idx) {
-
-      if (idx === current) return;
-
-      current = idx;
-
-      thumbs.forEach((t) => t.classList.toggle('is-active', Number(t.dataset.index) === current));
-
-      stageImgs.forEach((img) => {
-
-        const isActive = Number(img.dataset.index) === current;
-
-        img.classList.toggle('is-active', isActive);
-
-        if (isActive) img.style.transformOrigin = 'center center';
-
-      });
-
-      stages.forEach((s) => s.classList.remove('is-zooming'));
-
-    }
-
-
-
-    thumbs.forEach((t) => {
-
-      const idx = Number(t.dataset.index);
-
-      t.addEventListener('mouseenter', () => activate(idx));
-
-      t.addEventListener('focus', () => activate(idx));
-
-      t.addEventListener('click', () => activate(idx));
-
-    });
-
-
-
-    stages.forEach((stage) => {
-
-      stage.addEventListener('mouseenter', () => stage.classList.add('is-zooming'));
-
-      stage.addEventListener('mouseleave', () => {
-
-        stage.classList.remove('is-zooming');
-
-        const active = stage.querySelector('.stage-img.is-active');
-
-        if (active) {
-
-          active.style.transformOrigin = 'center center';
-
-        }
-
-      });
-
-      stage.addEventListener('mousemove', (e) => {
-
-        const active = stage.querySelector('.stage-img.is-active');
-
-        if (!active) return;
-
-        const rect = stage.getBoundingClientRect();
-
-        const x = ((e.clientX - rect.left) / rect.width) * 100;
-
-        const y = ((e.clientY - rect.top) / rect.height) * 100;
-
-        const cx = Math.max(0, Math.min(100, x));
-
-        const cy = Math.max(0, Math.min(100, y));
-
-        active.style.transformOrigin = cx + '% ' + cy + '%';
-
-      });
-
-    });
-
-  });
-
-</script>
-
-
-
-<style>
-
-.eyebrow { font-size: 0.8125rem; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; color: var(--color-secondary); margin-bottom: var(--space-3); }
-
-.product-overview { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-12); align-items: start; }
-
-
-
-.product-gallery { display: grid; grid-template-columns: 88px 1fr; gap: var(--space-4); align-items: start; }
-
-.gallery-thumbs { display: flex; flex-direction: column; gap: var(--space-2); max-height: 480px; overflow-y: auto; padding-right: 4px; }
-
-.thumb { all: unset; box-sizing: border-box; cursor: pointer; display: block; width: 100%; height: 88px; border-radius: var(--radius-md); border: 2px solid transparent; background: #fff; overflow: hidden; transition: border-color .2s ease, transform .18s ease, box-shadow .18s ease; }
-
-.thumb img { width: 100%; height: 100%; object-fit: contain; display: block; }
-
-.thumb:hover { transform: translateY(-1px); box-shadow: 0 4px 12px rgba(27,75,142,.18); }
-
-.thumb.is-active { border-color: var(--color-primary); box-shadow: 0 4px 12px rgba(27,75,142,.25); transform: translateY(-1px); }
-
-
-
-.gallery-stage { position: relative; background: #fff; border-radius: var(--radius-xl); box-shadow: var(--shadow-lg); overflow: hidden; aspect-ratio: 1 / 1; cursor: zoom-in; outline: none; }
-
-.stage-arrow[hidden] { display: none; }
-
-.stage-img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; padding: var(--space-4); opacity: 0; transition: opacity .25s ease; transform: scale(1); cursor: zoom-in; }
-
-.stage-img.is-active { opacity: 1; }
-
-.gallery-stage.is-zooming .stage-img.is-active { transform: scale(2); transition: transform .15s ease-out; }
-
-.zoom-hint { position: absolute; bottom: var(--space-3); right: var(--space-4); padding: 4px 10px; border-radius: 100px; background: rgba(15, 48, 96, 0.7); color: #fff; font-size: 0.75rem; font-weight: 500; letter-spacing: .5px; pointer-events: none; }
-
-
-
-.product-intro h2 { margin-bottom: var(--space-4); }
-
-.product-intro p { color: var(--color-text-light); line-height: 1.7; }
-
-.product-badges { display: flex; flex-wrap: wrap; gap: var(--space-2); margin: var(--space-6) 0; }
-
-.badge { display: inline-block; background: rgba(27, 75, 142, 0.08); color: var(--color-primary); padding: var(--space-1) var(--space-3); border-radius: 100px; font-size: 0.8125rem; font-weight: 600; }
-
-.product-actions { display: flex; gap: var(--space-4); flex-wrap: wrap; }
-
-
-
-.spec-table { display: flex; flex-direction: column; gap: var(--space-2); }
-
-.spec-table-grid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-2); }
-
-.spec-row { display: flex; justify-content: space-between; padding: var(--space-4) var(--space-6); background: var(--color-bg); border: 1px solid var(--color-border); border-radius: var(--radius-md); }
-
-.spec-table-grid .spec-row { flex-direction: column; gap: var(--space-1); }
-
-.spec-table-grid .spec-name { font-weight: 600; color: var(--color-text); font-size: 0.875rem; text-transform: lowercase; }
-
-.spec-table-grid .spec-value { color: var(--color-text); font-weight: 500; text-align: left; max-width: 100%; }
-
-.spec-name { font-weight: 600; color: var(--color-text); }
-
-.spec-value { color: var(--color-text-light); text-align: right; max-width: 60%; }
-
-
-
-/* Data tables */
-
-.data-table-wrapper { overflow-x: auto; border: 1px solid var(--color-border); border-radius: var(--radius-md); background: var(--color-bg); }
-
-.data-table { width: 100%; border-collapse: collapse; font-size: 0.875rem; }
-
-.data-table thead th { background: var(--color-primary); color: #fff; padding: var(--space-3) var(--space-4); text-align: left; font-weight: 600; white-space: normal; line-height: 1.4; }
-
-.data-table tbody td { padding: var(--space-3) var(--space-4); border-top: 1px solid var(--color-border); color: var(--color-text); word-wrap: break-word; }
-
-.data-table tbody tr:nth-child(even) td { background: rgba(27, 75, 142, 0.04); }
-
-.data-table tbody tr:hover td { background: rgba(27, 75, 142, 0.08); }
-
-.data-table tbody td:nth-child(n+3) { font-variant-numeric: tabular-nums; }
-
-
-
-/* 8-column Segment Bolt Specifications table - auto layout for natural alignment */
-
-.spec-table-8col { table-layout: auto; width: 100%; }
-
-.spec-table-8col thead th { vertical-align: middle; text-align: center; white-space: nowrap; }
-
-.spec-table-8col tbody td { vertical-align: middle; text-align: center; }
-
-.spec-table-8col tbody td:nth-child(1) { text-align: left; }  /* Part Name */
-
-.spec-table-8col tbody td:nth-child(2) { text-align: left; }  /* Part #/Model */
-
-
-
-/* Notes table */
-
-.notes-table { font-size: 0.9375rem; table-layout: auto; width: 100%; }
-
-.notes-table th { background: transparent; color: var(--color-text); padding: var(--space-3) var(--space-4); text-align: left; font-weight: 700; white-space: nowrap; vertical-align: top; word-wrap: break-word; border-top: 1px solid var(--color-border); }
-
-.notes-table td { padding: var(--space-3) var(--space-4); border-top: 1px solid var(--color-border); color: var(--color-text); vertical-align: top; }
-
-.notes-table tbody tr:nth-child(even) td { background: rgba(27, 75, 142, 0.04); }
-
-.notes-paragraph { font-style: italic; color: var(--color-text-light); line-height: 1.7; padding: var(--space-4) var(--space-4) !important; }
-
-.notes-table a { color: var(--color-primary); text-decoration: underline; }
-
-
-
-.cta-band { background: var(--color-primary); color: #fff; }
-
-.cta-band h2 { color: #fff; margin-bottom: var(--space-4); }
-
-.cta-band p { color: rgba(255,255,255,0.85); font-size: 1.125rem; margin-bottom: var(--space-6); }
-
-.cta-actions { display: flex; gap: var(--space-4); justify-content: center; flex-wrap: wrap; }
-
-
-
-@media (max-width: 768px) {
-
-  .product-overview { grid-template-columns: 1fr; }
-
-  .product-gallery { grid-template-columns: 72px 1fr; }
-
-  .thumb { width: 100%; height: 72px; }
-
-  .spec-row { flex-direction: column; gap: var(--space-1); }
-
-  .spec-value { text-align: left; max-width: 100%; }
-
-  .spec-table-grid { grid-template-columns: 1fr; }
-
-}
-
-
-
-/* OEM cross-reference (Hub Bolt Specifications) - images + scrollable content */
-.oem-app { margin-top: var(--space-4); }
-.oem-subhead { margin: 0 0 var(--space-3); font-size: 1rem; font-weight: 700; color: var(--color-primary); }
-.oem-types-strip { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: var(--space-2); margin-bottom: var(--space-5); }
-.oem-type-card { padding: 8px 6px; border: 1px solid var(--color-border); border-radius: var(--radius-md); background: var(--color-bg); text-align: center; }
-.oem-type-card img { display: block; width: 100%; height: 40px; object-fit: contain; }
-.oem-type-name { display: block; margin-top: 4px; font-size: 0.72rem; font-weight: 600; line-height: 1.3; color: var(--color-text); }
-.oem-type-qty { display: block; font-size: 0.68rem; color: var(--color-text-light); }
-.oem-toolbar { display: flex; gap: var(--space-3); align-items: center; flex-wrap: wrap; margin-bottom: var(--space-3); }
-.oem-search { flex: 1; min-width: 220px; padding: 10px 14px; font-size: 0.9rem; color: var(--color-text); background: #fff; border: 1px solid var(--color-border); border-radius: var(--radius-md); outline: none; }
-.oem-search:focus { border-color: var(--color-primary); box-shadow: 0 0 0 3px rgba(27, 75, 142, 0.1); }
-.oem-scroll-hint { font-size: 0.8rem; color: var(--color-text-light); white-space: nowrap; }
-.oem-scroll { max-height: 620px; overflow-y: auto; overscroll-behavior: contain; padding: var(--space-4); border: 1px solid var(--color-border); border-radius: var(--radius-md); background: var(--color-bg); scrollbar-color: rgba(27,75,142,.35) transparent; }
-.oem-scroll::-webkit-scrollbar { width: 10px; }
-.oem-scroll::-webkit-scrollbar-track { background: transparent; }
-.oem-scroll::-webkit-scrollbar-thumb { background: rgba(27,75,142,.32); border-radius: 10px; border: 2px solid var(--color-bg); }
-.oem-scroll:focus-visible { outline: 2px solid var(--color-primary); outline-offset: 2px; }
-.oem-brand { margin-bottom: var(--space-5); }
-.oem-brand:last-child { margin-bottom: 0; }
-.oem-brand[hidden] { display: none !important; }
-.oem-brand-head { position: sticky; top: 0; z-index: 2; display: flex; justify-content: space-between; align-items: center; gap: var(--space-3); padding: 9px 14px; border-radius: 6px; background: var(--color-primary); color: #fff; font-size: 0.9375rem; }
-.oem-brand-head span { font-size: 0.78rem; opacity: 0.85; }
-.oem-group { display: grid; grid-template-columns: 190px 1fr; gap: var(--space-4); align-items: center; margin-top: 8px; padding: var(--space-3) var(--space-4); border: 1px solid var(--color-border); border-radius: var(--radius-md); background: #fff; }
-.oem-group-fig img { display: block; width: 100%; height: auto; max-height: 66px; object-fit: contain; }
-.oem-group-body h4 { margin: 0 0 8px; font-size: 0.9rem; font-weight: 700; color: var(--color-primary); }
-.oem-cnt { font-weight: 400; font-size: 0.8rem; color: var(--color-text-light); }
-.oem-lines span { display: inline-block; margin: 0 4px 5px 0; padding: 1px 7px; border: 1px solid var(--color-border); border-radius: 4px; background: rgba(27, 75, 142, 0.06); font-family: ui-monospace, SFMono-Regular, Consolas, monospace; font-size: 0.8125rem; color: var(--color-text); white-space: nowrap; }
-.oem-lines span.hit { background: #ffe9a8; border-color: #f0c44a; }
-.oem-count { margin: var(--space-3) 0 0; font-size: 0.8125rem; color: var(--color-text-light); }
-.oem-empty { margin: var(--space-4) 0; padding: var(--space-5); text-align: center; color: var(--color-text-light); font-size: 0.9rem; border: 1px dashed var(--color-border); border-radius: var(--radius-md); }
-.oem-empty[hidden] { display: none; }
-.oem-disclaimer { margin-top: var(--space-4); padding: var(--space-3) var(--space-4); background: #fff8ec; border-left: 3px solid #e0a33a; border-radius: 4px; font-size: 0.8125rem; color: #6b5326; line-height: 1.6; }
-@media (max-width: 900px) {
-  .oem-types-strip { grid-template-columns: repeat(4, minmax(0, 1fr)); }
-}
-@media (max-width: 768px) {
-  .oem-types-strip { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .oem-group { grid-template-columns: 1fr; gap: var(--space-2); padding: var(--space-3); }
-  .oem-scroll { max-height: 480px; padding: var(--space-2); }
-  .oem-scroll-hint { white-space: normal; }
-  .oem-brand-head { font-size: 0.875rem; }
-}
-
-</style>
-
-
-<script>
-  (() => {
-    const app = document.getElementById('oemApp');
-    if (!app) return;
-    const search = document.getElementById('oemSearch');
-    const scroller = document.getElementById('oemScroll');
-    const brands = Array.from(scroller.querySelectorAll('.oem-brand'));
-    const countEl = document.getElementById('oemCount');
-    const emptyEl = document.getElementById('oemEmpty');
-    const tmpl = app.dataset.count;
-    const haystacks = brands.map((b) => b.textContent.toLowerCase());
-
-    function render() {
-      const q = (search.value || '').trim().toLowerCase();
-      let shown = 0;
-      brands.forEach((b, i) => {
-        const match = !q || haystacks[i].includes(q);
-        b.hidden = !match;
-        if (!match) return;
-        shown++;
-        b.querySelectorAll('.oem-lines span').forEach((s) => {
-          s.classList.toggle('hit', !!q && s.textContent.toLowerCase().includes(q));
-        });
-      });
-      countEl.textContent = tmpl.replace('__N__', String(shown));
-      emptyEl.hidden = shown !== 0;
-      if (q) scroller.scrollTop = 0;
-    }
-
-    search.addEventListener('input', render);
-    render();
-  })();
-</script>
+---
+
+import BaseLayout from '@layouts/BaseLayout.astro';
+
+import Breadcrumb from '@components/Breadcrumb.astro';
+
+
+
+const images = [
+
+  { src: '/images/products/bolts-and-nuts/hub-bolts/hub-bolt-01-v2.webp', alt: 'Hub Bolts product photo' },
+
+  { src: '/images/products/bolts-and-nuts/hub-bolts/hub-bolt-02-v2.webp', alt: 'Hub Bolts detail view' },
+
+  { src: '/images/products/bolts-and-nuts/hub-bolts/hub-bolt-03-v2.webp', alt: 'Hub Bolts application' },
+
+  { src: '/images/products/bolts-and-nuts/hub-bolts/hub-bolt-04-v2.webp', alt: 'Hub Bolts detail' },
+
+  { src: '/images/products/bolts-and-nuts/hub-bolts/hub-bolt-05-v2.webp', alt: 'Hub Bolts application scene' },
+
+];
+
+---
+
+
+
+<BaseLayout
+
+  title="Hub Bolts — Wheel Hub Bolt Kits for Automotive & Heavy Equipment | Carelong"
+
+  description="Manufacturer of wheel hub bolts and hub bolt assemblies. M18-M42, Grade 10.9/12.9, alloy steel 40Cr. OEM service for Nissan, Hino, Isuzu, Mitsubishi, Benz."
+
+>
+
+  <Breadcrumb items={[
+
+    { label: 'Products', href: '/products' },
+
+    { label: 'Bolts and Nuts', href: '/products/bolts-and-nuts' },
+
+    { label: 'Hub Bolts' }
+
+  ]} />
+
+
+
+  <header class="page-header">
+
+    <div class="container">
+
+      <h1>Hub Bolts</h1>
+
+      <p>Wheel hub bolt kits for automotive and heavy equipment applications</p>
+
+    </div>
+
+  </header>
+
+
+
+  <section class="section">
+
+    <div class="container">
+
+      <div class="product-overview">
+
+        <div class="product-gallery" id="productGallery">
+
+          <div class="gallery-thumbs" aria-label="Product images">
+
+            {images.map((img, i) => (
+
+              <button
+
+                type="button"
+
+                class={`thumb ${i === 0 ? 'is-active' : ''}`}
+
+                data-index={i}
+
+                aria-label={`View image ${i + 1}`}
+
+              >
+
+                <img src={img.src} alt={img.alt} loading="lazy" />
+
+              </button>
+
+            ))}
+
+          </div>
+
+          <div class="gallery-stage" id="galleryStage">
+
+            {images.map((img, i) => (
+
+              <img
+
+                src={img.src}
+
+                alt={img.alt}
+
+                class={`stage-img ${i === 0 ? 'is-active' : ''}`}
+
+                data-index={i}
+
+                loading={i === 0 ? 'eager' : 'lazy'}
+
+              />
+
+            ))}
+
+            <button type="button" class="stage-arrow stage-arrow-prev" aria-label="Previous image" hidden>
+
+              <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M15 6l-6 6 6 6" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+
+            </button>
+
+            <button type="button" class="stage-arrow stage-arrow-next" aria-label="Next image" hidden>
+
+              <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M9 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+
+            </button>
+
+            <div class="zoom-hint" aria-hidden="true">Hover to zoom & move</div>
+
+          </div>
+
+        </div>
+
+        <div class="product-intro">
+
+          <p class="eyebrow">Product Overview</p>
+
+          <h2>Hub Bolts</h2>
+
+          <p>Our wheel hub bolts are precision-engineered for secure wheel attachment in automotive and heavy equipment applications. Made from premium alloy steel 40Cr with heat treatment, they offer superior tensile strength and fatigue resistance.</p>
+
+
+
+          <div class="product-badges">
+
+            <span class="badge">M18–M42</span>
+
+            <span class="badge">Grade 10.9/12.9</span>
+
+            <span class="badge">Alloy Steel 40Cr</span>
+
+            <span class="badge">OEM Service</span>
+
+          </div>
+
+
+
+          <div class="product-actions">
+
+            <a href="/contact" class="btn btn-primary btn-lg">Request a Quote</a>
+
+            <a href="/products/bolts-and-nuts" class="btn btn-outline btn-lg">Back to Bolts & Nuts</a>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+
+  <section class="section section-alt">
+
+    <div class="container">
+
+      <header class="section-header">
+
+        <p class="eyebrow">OEM cross-reference</p>
+
+        <h2>Hub Bolt Specifications</h2>
+
+      </header>
+
+      <div class="oem-app" id="oemApp"
+        data-count="Showing __N__ of 37 brands · 621 OEM numbers" data-none="No brand or OEM number matches your search.">
+
+        <h3 class="oem-subhead">Bolt &amp; stud types</h3>
+
+        <div class="oem-types-strip">
+
+          <div class="oem-type-card">
+            <img src="/images/products/bolts-and-nuts/hub-bolts/oem-type-round-head-knurled.webp" alt="Round Head Knurled Wheel Bolt - drawing" width="800" height="211" loading="lazy" />
+            <span class="oem-type-name">Round Head Knurled Wheel Bolt</span>
+            <span class="oem-type-qty">130 OEM numbers</span>
+          </div>
+
+          <div class="oem-type-card">
+            <img src="/images/products/bolts-and-nuts/hub-bolts/oem-type-d-head.webp" alt="D-Head Wheel Bolt (flat-sided head) - drawing" width="800" height="211" loading="lazy" />
+            <span class="oem-type-name">D-Head Wheel Bolt (flat-sided head)</span>
+            <span class="oem-type-qty">128 OEM numbers</span>
+          </div>
+
+          <div class="oem-type-card">
+            <img src="/images/products/bolts-and-nuts/hub-bolts/oem-type-double-end-stud.webp" alt="Double-End Wheel Stud - drawing" width="800" height="215" loading="lazy" />
+            <span class="oem-type-name">Double-End Wheel Stud</span>
+            <span class="oem-type-qty">68 OEM numbers</span>
+          </div>
+
+          <div class="oem-type-card">
+            <img src="/images/products/bolts-and-nuts/hub-bolts/oem-type-t-head-rect.webp" alt="T-Head / Rectangular Head Wheel Bolt - drawing" width="800" height="199" loading="lazy" />
+            <span class="oem-type-name">T-Head / Rectangular Head Wheel Bolt</span>
+            <span class="oem-type-qty">48 OEM numbers</span>
+          </div>
+
+          <div class="oem-type-card">
+            <img src="/images/products/bolts-and-nuts/hub-bolts/oem-type-wheel-bolt.webp" alt="Wheel Bolt - drawing" width="800" height="199" loading="lazy" />
+            <span class="oem-type-name">Wheel Bolt</span>
+            <span class="oem-type-qty">111 OEM numbers</span>
+          </div>
+
+          <div class="oem-type-card">
+            <img src="/images/products/bolts-and-nuts/hub-bolts/oem-type-hex-head.webp" alt="Hex Head Wheel Bolt - drawing" width="800" height="178" loading="lazy" />
+            <span class="oem-type-name">Hex Head Wheel Bolt</span>
+            <span class="oem-type-qty">3 OEM numbers</span>
+          </div>
+
+          <div class="oem-type-card">
+            <img src="/images/products/bolts-and-nuts/hub-bolts/oem-type-bolt-nut-assembly.webp" alt="Wheel Bolt Assembly (bolt + nut) - drawing" width="800" height="207" loading="lazy" />
+            <span class="oem-type-name">Wheel Bolt Assembly (bolt + nut)</span>
+            <span class="oem-type-qty">133 OEM numbers</span>
+          </div>
+
+        </div>
+
+        <div class="oem-toolbar">
+
+          <input id="oemSearch" class="oem-search" type="search" autocomplete="off" placeholder="Search brand or OEM number..." />
+          <span class="oem-scroll-hint">Scroll up / down to browse all 37 brands</span>
+
+        </div>
+
+        <div class="oem-scroll" id="oemScroll" tabindex="0">
+
+          <div class="oem-brand">
+
+            <div class="oem-brand-head"><strong>Iveco</strong><span>89 OEM numbers &middot; 5 types</span></div>
+
+            <div class="oem-group">
+
+              <div class="oem-group-fig"><img src="/images/products/bolts-and-nuts/hub-bolts/oem-type-round-head-knurled.webp" alt="Round Head Knurled Wheel Bolt - drawing" width="800" height="211" loading="lazy" /></div>
+
+              <div class="oem-group-body">
+
+                <h4>Round Head Knurled Wheel Bolt <span class="oem-cnt">&middot; 7 OEM numbers</span></h4>
+
+                <div class="oem-lines">
+                  <span>2477764</span>
+                  <span>7161200 7161201</span>
+                  <span>7161552 7168347</span>
+                  <span>8527732 9980725</span>
+                </div>
+
+              </div>
+
+            </div>
+
+            <div class="oem-group">
+
+              <div class="oem-group-fig"><img src="/images/products/bolts-and-nuts/hub-bolts/oem-type-d-head.webp" alt="D-Head Wheel Bolt (flat-sided head) - drawing" width="800" height="211" loading="lazy" /></div>
+
+              <div class="oem-group-body">
+
+                <h4>D-Head Wheel Bolt (flat-sided head) <span class="oem-cnt">&middot; 59 OEM numbers</span></h4>
+
+                <div class="oem-lines">
+                  <span>0716 8333 4211 7455</span>
+                  <span>4211 7457</span>
+                  <span>865557 02443720</span>
+                  <span>2475863 2475869</span>
+                  <span>02475869</span>
+                  <span>2475870 02476077</span>
+                  <span>2478620 4517528 4564398 7160357</span>
+                  <span>7163380</span>
+                  <span>7168257 7168330</span>
+                  <span>7168346 07168580</span>
+                  <span>7168585</span>
+                  <span>7168838 007168838</span>
+                  <span>7168849 7168855 7168925 7170510</span>
+                  <span>7171530</span>
+                  <span>42014521 42061641</span>
+                  <span>42064818 42064819</span>
+                  <span>42064821</span>
+                  <span>42064822 42064826</span>
+                  <span>42064829 42064831 042101338 42101338</span>
+                  <span>42101367</span>
+                  <span>42116737 42117309</span>
+                  <span>042117433 42117433</span>
+                  <span>42117434</span>
+                  <span>42117435 42117437</span>
+                  <span>42117448 42117451 42117452 42117463</span>
+                  <span>42117465</span>
+                  <span>42119082 42119444</span>
+                  <span>42127252 042127260</span>
+                  <span>042127262</span>
+                  <span>42127265 46390477</span>
+                  <span>46390478</span>
+                </div>
+
+              </div>
+
+            </div>
+
+            <div class="oem-group">
+
+              <div class="oem-group-fig"><img src="/images/products/bolts-and-nuts/hub-bolts/oem-type-double-end-stud.webp" alt="Double-End Wheel Stud - drawing" width="800" height="215" loading="lazy" /></div>
+
+              <div class="oem-group-body">
+
+                <h4>Double-End Wheel Stud <span class="oem-cnt">&middot; 2 OEM numbers</span></h4>
+
+                <div class="oem-lines">
+                  <span>93800663 93816209</span>
+                </div>
+
+              </div>
+
+            </div>
+
+            <div class="oem-group">
+
+              <div class="oem-group-fig"><img src="/images/products/bolts-and-nuts/hub-bolts/oem-type-t-head-rect.webp" alt="T-Head / Rectangular Head Wheel Bolt - drawing" width="800" height="199" loading="lazy" /></div>
+
+              <div class="oem-group-body">
+
+                <h4>T-Head / Rectangular Head Wheel Bolt <span class="oem-cnt">&middot; 1 OEM numbers</span></h4>
+
+                <div class="oem-lines">
+                  <span>42026106</span>
+                </div>
+
+              </div>
+
+            </div>
+
+            <div class="oem-group">
+
+              <div class="oem-group-fig"><img src="/images/products/bolts-and-nuts/hub-bolts/oem-type-wheel-bolt.webp" alt="Wheel Bolt - drawing" width="800" height="199" loading="lazy" /></div>
+
+              <div class="oem-group-body">
+
+                <h4>Wheel Bolt <span class="oem-cnt">&middot; 20 OEM numbers</span></h4>
+
+                <div class="oem-lines">
+                  <span>4211 7444 4211 7445</span>
+                  <span>4211 7446</span>
+                  <span>4211 7447 4211 7449 4211 7453</span>
+                  <span>4211 7454</span>
+                  <span>4211 7456 4211 7458 4211 7459</span>
+                  <span>4211 7461</span>
+                  <span>2476077 02477764 7168333</span>
+                  <span>7168340</span>
+                  <span>7168465 7168580 7170204</span>
+                  <span>8441412</span>
+                  <span>422117451</span>
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+          <div class="oem-brand">
+
+            <div class="oem-brand-head"><strong>Mercedes-Benz</strong><span>79 OEM numbers &middot; 7 types</span></div>
+
+            <div class="oem-group">
+
+              <div class="oem-group-fig"><img src="/images/products/bolts-and-nuts/hub-bolts/oem-type-round-head-knurled.webp" alt="Round Head Knurled Wheel Bolt - drawing" width="800" height="211" loading="lazy" /></div>
+
+              <div class="oem-group-body">
+
+                <h4>Round Head Knurled Wheel Bolt <span class="oem-cnt">&middot; 4 OEM numbers</span></h4>
+
+                <div class="oem-lines">
+                  <span>338 401 5071 3274020271 3274020371 3524020071</span>
+                </div>
+
+              </div>
+
+            </div>
+
+            <div class="oem-group">
+
+              <div class="oem-group-fig"><img src="/images/products/bolts-and-nuts/hub-bolts/oem-type-d-head.webp" alt="D-Head Wheel Bolt (flat-sided head) - drawing" width="800" height="211" loading="lazy" /></div>
+
+              <div class="oem-group-body">
+
+                <h4>D-Head Wheel Bolt (flat-sided head) <span class="oem-cnt">&middot; 16 OEM numbers</span></h4>
+
+                <div class="oem-lines">
+                  <span>000 401 4171</span>
+                  <span>81 45501 0085 305 401 0071</span>
+                  <span>312 402 1071 317 401 0371</span>
+                  <span>317 401 0471 327 401 0271</span>
+                  <span>327 401 0471 352 402 0171</span>
+                  <span>376 401 0071 381 401 0171</span>
+                  <span>381 401 0271 389 401 0071</span>
+                  <span>A3814010771 A9424010271</span>
+                  <span>A9424010371</span>
+                </div>
+
+              </div>
+
+            </div>
+
+            <div class="oem-group">
+
+              <div class="oem-group-fig"><img src="/images/products/bolts-and-nuts/hub-bolts/oem-type-double-end-stud.webp" alt="Double-End Wheel Stud - drawing" width="800" height="215" loading="lazy" /></div>
+
+              <div class="oem-group-body">
+
+                <h4>Double-End Wheel Stud <span class="oem-cnt">&middot; 1 OEM numbers</span></h4>
+
+                <div class="oem-lines">
+                  <span>304 401 0271</span>
+                </div>
+
+              </div>
+
+            </div>
+
+            <div class="oem-group">
+
+              <div class="oem-group-fig"><img src="/images/products/bolts-and-nuts/hub-bolts/oem-type-t-head-rect.webp" alt="T-Head / Rectangular Head Wheel Bolt - drawing" width="800" height="199" loading="lazy" /></div>
+
+              <div class="oem-group-body">
+
+                <h4>T-Head / Rectangular Head Wheel Bolt <span class="oem-cnt">&middot; 16 OEM numbers</span></h4>
+
+                <div class="oem-lines">
+                  <span>000 401 3971 000 401 6871</span>
+                  <span>315 401 0070</span>
+                  <span>315 402 0170 317 402 0170 335 401 0070</span>
+                  <span>346 401 5270</span>
+                  <span>346 401 5370 346 402 5070 363 402 0170</span>
+                  <span>387 401 0470</span>
+                  <span>387 402 0170 387 402 0270 387 402 0470</span>
+                  <span>623 401 0270</span>
+                  <span>675 402 0071</span>
+                </div>
+
+              </div>
+
+            </div>
+
+            <div class="oem-group">
+
+              <div class="oem-group-fig"><img src="/images/products/bolts-and-nuts/hub-bolts/oem-type-hex-head.webp" alt="Hex Head Wheel Bolt - drawing" width="800" height="178" loading="lazy" /></div>
+
+              <div class="oem-group-body">
+
+                <h4>Hex Head Wheel Bolt <span class="oem-cnt">&middot; 2 OEM numbers</span></h4>
+
+                <div class="oem-lines">
+                  <span>601.401.0270 901.401.0070</span>
+                </div>
+
+              </div>
+
+            </div>
+
+            <div class="oem-group">
+
+              <div class="oem-group-fig"><img src="/images/products/bolts-and-nuts/hub-bolts/oem-type-bolt-nut-assembly.webp" alt="Wheel Bolt Assembly (bolt + nut) - drawing" width="800" height="207" loading="lazy" /></div>
+
+              <div class="oem-group-body">
+
+                <h4>Wheel Bolt Assembly (bolt + nut) <span class="oem-cnt">&middot; 28 OEM numbers</span></h4>
+
+                <div class="oem-lines">
+                  <span>000 401 4171S</span>
+                  <span>305 401 0071S</span>
+                  <span>317 401 0371S 317 401 0471S</span>
+                  <span>317 402 0571S1 327 401 0271S 327 401 0371S</span>
+                  <span>327 401 0471S</span>
+                  <span>327 402 0471S1 346 401 0071S2</span>
+                  <span>376 401 0071S 381 401 0171S 381 401 0271S</span>
+                  <span>381 401 0371S1</span>
+                  <span>381 401 0771S 381 401 0771S2</span>
+                  <span>381 401 0771S6 389 401 0071S 389 401 0171S1</span>
+                  <span>942 401 0271S</span>
+                  <span>942 401 0271S1 942 401 0371S</span>
+                  <span>659112451 659112454 659112455</span>
+                  <span>659112612</span>
+                  <span>3814010571 3814011471</span>
+                </div>
+
+              </div>
+
+            </div>
+
+            <div class="oem-group">
+
+              <div class="oem-group-fig"><img src="/images/products/bolts-and-nuts/hub-bolts/oem-type-wheel-bolt.webp" alt="Wheel Bolt - drawing" width="800" height="199" loading="lazy" /></div>
+
+              <div class="oem-group-body">
+
+                <h4>Wheel Bolt <span class="oem-cnt">&middot; 12 OEM numbers</span></h4>
+
+                <div class="oem-lines">
+                  <span>000 401 2371 000 401 2471</span>
+                  <span>000 401 3771 81 45501 0083 309 402 0271</span>
+                  <span>381 401 0371 381 401 0671 381 401 0871</span>
+                  <span>381 401 0971 381 401 1371 381.401.0471</span>
+                  <span>381.401.1171</span>
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+          <div class="oem-brand">
+
+            <div class="oem-brand-head"><strong>MAN</strong><span>73 OEM numbers &middot; 4 types</span></div>
+
+            <div class="oem-group">
+
+              <div class="oem-group-fig"><img src="/images/products/bolts-and-nuts/hub-bolts/oem-type-d-head.webp" alt="D-Head Wheel Bolt (flat-sided head) - drawing" width="800" height="211" loading="lazy" /></div>
+
+              <div class="oem-group-body">
+
+                <h4>D-Head Wheel Bolt (flat-sided head) <span class="oem-cnt">&middot; 23 OEM numbers</span></h4>
+
+                <div class="oem-lines">
+                  <span>64.45501.0018 81.44301.0172</span>
+                  <span>81.45501.0058</span>
+                  <span>81.45501.0067 81.45501.0076 81.45501.0082 81.45501.0114</span>
+                  <span>81.45501.0116</span>
+                  <span>81.45501.0123 81.45501.0129 81.45501.0133 81.45501.0134</span>
+                  <span>81.45501.0141</span>
+                  <span>81.45501.0152 81.45501.0154 81.45501.0159 81.45501.0164</span>
+                  <span>81.45501.0171</span>
+                  <span>81.45501.0181 81.45501.0187 81.45501.0202 81.45501.0204</span>
+                  <span>81.45501.0209</span>
+                </div>
+
+              </div>
+
+            </div>
+
+            <div class="oem-group">
+
+              <div class="oem-group-fig"><img src="/images/products/bolts-and-nuts/hub-bolts/oem-type-t-head-rect.webp" alt="T-Head / Rectangular Head Wheel Bolt - drawing" width="800" height="199" loading="lazy" /></div>
+
+              <div class="oem-group-body">
+
+                <h4>T-Head / Rectangular Head Wheel Bolt <span class="oem-cnt">&middot; 9 OEM numbers</span></h4>
+
+                <div class="oem-lines">
+                  <span>81.45422.0008 81.45422.0023 81.45422.0025 81.45422.0028 81.45422.0031 81.45422.0033 81.45422.0037 81.45422.0046 81.45422.0049</span>
+                </div>
+
+              </div>
+
+            </div>
+
+            <div class="oem-group">
+
+              <div class="oem-group-fig"><img src="/images/products/bolts-and-nuts/hub-bolts/oem-type-bolt-nut-assembly.webp" alt="Wheel Bolt Assembly (bolt + nut) - drawing" width="800" height="207" loading="lazy" /></div>
+
+              <div class="oem-group-body">
+
+                <h4>Wheel Bolt Assembly (bolt + nut) <span class="oem-cnt">&middot; 21 OEM numbers</span></h4>
+
+                <div class="oem-lines">
+                  <span>64.45501.0018S 64.45501.0018S1</span>
+                  <span>81.44301.0172S1 81.45501.0067S2</span>
+                  <span>81.45501.0078 81.45501.0078S1 81.45501.0079</span>
+                  <span>81.45501.0079S1 81.45501.0082S2</span>
+                  <span>81.45501.0116S1 81.45501.0129S1 81.45501.0136</span>
+                  <span>81.45501.0136S1 81.45501.0141S2</span>
+                  <span>81.45501.0152S1 81.45501.0159S1 81.45501.0171S1</span>
+                  <span>81.45501.0181S1 81.45501.0187S1</span>
+                  <span>81.45501.0202S1 81.45501.0209S1</span>
+                </div>
+
+              </div>
+
+            </div>
+
+            <div class="oem-group">
+
+              <div class="oem-group-fig"><img src="/images/products/bolts-and-nuts/hub-bolts/oem-type-wheel-bolt.webp" alt="Wheel Bolt - drawing" width="800" height="199" loading="lazy" /></div>
+
+              <div class="oem-group-body">
+
+                <h4>Wheel Bolt <span class="oem-cnt">&middot; 20 OEM numbers</span></h4>
+
+                <div class="oem-lines">
+                  <span>06.11222.0416 81 45501 0045</span>
+                  <span>81 45501 0081</span>
+                  <span>81.45422.0060 81.45501.0080 81.45501.0083</span>
+                  <span>81.45501.0085</span>
+                  <span>81.45501.0094 81.45501.0099 81.45501.0132</span>
+                  <span>81.45501.0134 S3</span>
+                  <span>81.45501.0139 81.45501.0139 S1 81.45501.0141 S1</span>
+                  <span>81.45501.0141 S3</span>
+                  <span>81.45501.0142 81.45501.0176 81.45503.0026</span>
+                  <span>81.45503.0027</span>
+                  <span>231 B 30</span>
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+          <div class="oem-brand">
+
+            <div class="oem-brand-head"><strong>Volvo</strong><span>62 OEM numbers &middot; 5 types</span></div>
+
+            <div class="oem-group">
+
+              <div class="oem-group-fig"><img src="/images/products/bolts-and-nuts/hub-bolts/oem-type-round-head-knurled.webp" alt="Round Head Knurled Wheel Bolt - drawing" width="800" height="211" loading="lazy" /></div>
+
+              <div class="oem-group-body">
+
+                <h4>Round Head Knurled Wheel Bolt <span class="oem-cnt">&middot; 24 OEM numbers</span></h4>
+
+                <div class="oem-lines">
+                  <span>158.9009-8 1543082-3</span>
+                  <span>1573081</span>
+                  <span>1573081-5 1573082 1573082-3 1589009</span>
+                  <span>3112593</span>
+                  <span>3118981 3963997 6852474-3 8152104</span>
+                  <span>8396230</span>
+                  <span>8398432 20515514 20515515 20515517</span>
+                  <span>20515518</span>
+                  <span>20515519 20524942 20553560 20723513</span>
+                  <span>21147687</span>
+                  <span>25372586</span>
+                </div>
+
+              </div>
+
+            </div>
+
+            <div class="oem-group">
+
+              <div class="oem-group-fig"><img src="/images/products/bolts-and-nuts/hub-bolts/oem-type-double-end-stud.webp" alt="Double-End Wheel Stud - drawing" width="800" height="215" loading="lazy" /></div>
+
+              <div class="oem-group-body">
+
+                <h4>Double-End Wheel Stud <span class="oem-cnt">&middot; 13 OEM numbers</span></h4>
+
+                <div class="oem-lines">
+                  <span>192.121-2 0192121-2</span>
+                  <span>0192122-0 426956 476822</span>
+                  <span>837771 861634 863694</span>
+                  <span>0941385-7 0943404-4 0943405-1</span>
+                  <span>0943406-9 3171328</span>
+                </div>
+
+              </div>
+
+            </div>
+
+            <div class="oem-group">
+
+              <div class="oem-group-fig"><img src="/images/products/bolts-and-nuts/hub-bolts/oem-type-t-head-rect.webp" alt="T-Head / Rectangular Head Wheel Bolt - drawing" width="800" height="199" loading="lazy" /></div>
+
+              <div class="oem-group-body">
+
+                <h4>T-Head / Rectangular Head Wheel Bolt <span class="oem-cnt">&middot; 17 OEM numbers</span></h4>
+
+                <div class="oem-lines">
+                  <span>0362164</span>
+                  <span>362514 1577424</span>
+                  <span>1581604 1608293</span>
+                  <span>659112500 659112501</span>
+                  <span>659112503 659112504</span>
+                  <span>659112506 659112509</span>
+                  <span>659112611 659112612</span>
+                  <span>659112613 659112614</span>
+                  <span>659112615 659112616</span>
+                </div>
+
+              </div>
+
+            </div>
+
+            <div class="oem-group">
+
+              <div class="oem-group-fig"><img src="/images/products/bolts-and-nuts/hub-bolts/oem-type-bolt-nut-assembly.webp" alt="Wheel Bolt Assembly (bolt + nut) - drawing" width="800" height="207" loading="lazy" /></div>
+
+              <div class="oem-group-body">
+
+                <h4>Wheel Bolt Assembly (bolt + nut) <span class="oem-cnt">&middot; 7 OEM numbers</span></h4>
+
+                <div class="oem-lines">
+                  <span>1573083 1589010 20515515S1 20515518S1 20723513S1 21147687S1 25372586S1</span>
+                </div>
+
+              </div>
+
+            </div>
+
+            <div class="oem-group">
+
+              <div class="oem-group-fig"><img src="/images/products/bolts-and-nuts/hub-bolts/oem-type-wheel-bolt.webp" alt="Wheel Bolt - drawing" width="800" height="199" loading="lazy" /></div>
+
+              <div class="oem-group-body">
+
+                <h4>Wheel Bolt <span class="oem-cnt">&middot; 1 OEM numbers</span></h4>
+
+                <div class="oem-lines">
+                  <span>157.081-3</span>
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+          <div class="oem-brand">
+
+            <div class="oem-brand-head"><strong>Renault</strong><span>62 OEM numbers &middot; 5 types</span></div>
+
+            <div class="oem-group">
+
+              <div class="oem-group-fig"><img src="/images/products/bolts-and-nuts/hub-bolts/oem-type-round-head-knurled.webp" alt="Round Head Knurled Wheel Bolt - drawing" width="800" height="211" loading="lazy" /></div>
+
+              <div class="oem-group-body">
+
+                <h4>Round Head Knurled Wheel Bolt <span class="oem-cnt">&middot; 30 OEM numbers</span></h4>
+
+                <div class="oem-lines">
+                  <span>5.000.545161 190.221</span>
+                  <span>0003156050</span>
+                  <span>21323312 0021623013</span>
+                  <span>0021623307 0021623312 5000029513</span>
+                  <span>5000471836</span>
+                  <span>5000471855 5000471860</span>
+                  <span>5000543465 5000545223 5000556773</span>
+                  <span>5000604165</span>
+                  <span>5000605522 5000653117</span>
+                  <span>5000786926 5000788677 5010241839</span>
+                  <span>5010262934</span>
+                  <span>5010566244 7420515514</span>
+                  <span>7420515515 7420515517 7420515518</span>
+                  <span>7420515519</span>
+                  <span>7420524942 7420553560</span>
+                  <span>7421147687</span>
+                </div>
+
+              </div>
+
+            </div>
+
+            <div class="oem-group">
+
+              <div class="oem-group-fig"><img src="/images/products/bolts-and-nuts/hub-bolts/oem-type-d-head.webp" alt="D-Head Wheel Bolt (flat-sided head) - drawing" width="800" height="211" loading="lazy" /></div>
+
+              <div class="oem-group-body">
+
+                <h4>D-Head Wheel Bolt (flat-sided head) <span class="oem-cnt">&middot; 10 OEM numbers</span></h4>
+
+                <div class="oem-lines">
+                  <span>0000190220</span>
+                  <span>0000190221 1530054101</span>
+                  <span>5000190220 5000190221</span>
+                  <span>5000737601 5010319141</span>
+                  <span>5010439317 5010439406</span>
+                  <span>7423685490</span>
+                </div>
+
+              </div>
+
+            </div>
+
+            <div class="oem-group">
+
+              <div class="oem-group-fig"><img src="/images/products/bolts-and-nuts/hub-bolts/oem-type-double-end-stud.webp" alt="Double-End Wheel Stud - drawing" width="800" height="215" loading="lazy" /></div>
+
+              <div class="oem-group-body">
+
+                <h4>Double-End Wheel Stud <span class="oem-cnt">&middot; 2 OEM numbers</span></h4>
+
+                <div class="oem-lines">
+                  <span>406.460.7918 7403171328</span>
+                </div>
+
+              </div>
+
+            </div>
+
+            <div class="oem-group">
+
+              <div class="oem-group-fig"><img src="/images/products/bolts-and-nuts/hub-bolts/oem-type-bolt-nut-assembly.webp" alt="Wheel Bolt Assembly (bolt + nut) - drawing" width="800" height="207" loading="lazy" /></div>
+
+              <div class="oem-group-body">
+
+                <h4>Wheel Bolt Assembly (bolt + nut) <span class="oem-cnt">&middot; 11 OEM numbers</span></h4>
+
+                <div class="oem-lines">
+                  <span>0000190220S 1530054101S</span>
+                  <span>5000190220S 5010439317S 5010439406S</span>
+                  <span>7420515514S 7420515515S1 7420515518S1</span>
+                  <span>7421147687S1 7423685490S 7424076067</span>
+                </div>
+
+              </div>
+
+            </div>
+
+            <div class="oem-group">
+
+              <div class="oem-group-fig"><img src="/images/products/bolts-and-nuts/hub-bolts/oem-type-wheel-bolt.webp" alt="Wheel Bolt - drawing" width="800" height="199" loading="lazy" /></div>
+
+              <div class="oem-group-body">
+
+                <h4>Wheel Bolt <span class="oem-cnt">&middot; 9 OEM numbers</span></h4>
+
+                <div class="oem-lines">
+                  <span>5.000.351162</span>
+                  <span>5.000.351167 5.000.547960</span>
+                  <span>50.102.418.92 190.513</span>
+                  <span>406.460.8267 500.065.4139</span>
+                  <span>611490580 5010319140</span>
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+          <div class="oem-brand">
+
+            <div class="oem-brand-head"><strong>DAF</strong><span>50 OEM numbers &middot; 3 types</span></div>
+
+            <div class="oem-group">
+
+              <div class="oem-group-fig"><img src="/images/products/bolts-and-nuts/hub-bolts/oem-type-round-head-knurled.webp" alt="Round Head Knurled Wheel Bolt - drawing" width="800" height="211" loading="lazy" /></div>
+
+              <div class="oem-group-body">
+
+                <h4>Round Head Knurled Wheel Bolt <span class="oem-cnt">&middot; 29 OEM numbers</span></h4>
+
+                <div class="oem-lines">
+                  <span>620.646 620.647</span>
+                  <span>0637.428</span>
+                  <span>0643.382 1241.957</span>
+                  <span>0099717 0099720 0099721</span>
+                  <span>0099730</span>
+                  <span>0099731 620646</span>
+                  <span>0620646 620647 0620647</span>
+                  <span>0620648</span>
+                  <span>0620649 0890763</span>
+                  <span>1308038 1309190 1309191</span>
+                  <span>1337020</span>
+                  <span>1356736 1373007</span>
+                  <span>1400065 1400082 1400267</span>
+                  <span>1405569</span>
+                  <span>1703948 2118265</span>
+                </div>
+
+              </div>
+
+            </div>
+
+            <div class="oem-group">
+
+              <div class="oem-group-fig"><img src="/images/products/bolts-and-nuts/hub-bolts/oem-type-double-end-stud.webp" alt="Double-End Wheel Stud - drawing" width="800" height="215" loading="lazy" /></div>
+
+              <div class="oem-group-body">
+
+                <h4>Double-End Wheel Stud <span class="oem-cnt">&middot; 4 OEM numbers</span></h4>
+
+                <div class="oem-lines">
+                  <span>191.175 217.266 259.931 1019.357</span>
+                </div>
+
+              </div>
+
+            </div>
+
+            <div class="oem-group">
+
+              <div class="oem-group-fig"><img src="/images/products/bolts-and-nuts/hub-bolts/oem-type-bolt-nut-assembly.webp" alt="Wheel Bolt Assembly (bolt + nut) - drawing" width="800" height="207" loading="lazy" /></div>
+
+              <div class="oem-group-body">
+
+                <h4>Wheel Bolt Assembly (bolt + nut) <span class="oem-cnt">&middot; 17 OEM numbers</span></h4>
+
+                <div class="oem-lines">
+                  <span>0099717S1 0099720S1</span>
+                  <span>0099721S1 0099730S1 0099731S1 0620646S1</span>
+                  <span>0620649S1 0890763S1 1308038S1 1309190S1</span>
+                  <span>1309191S1 1337020S1 1356736S1 1400082S1</span>
+                  <span>1402420S1 1405569S1 1703948S1</span>
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+          <div class="oem-brand">
+
+            <div class="oem-brand-head"><strong>Scania</strong><span>47 OEM numbers &middot; 6 types</span></div>
+
+            <div class="oem-group">
+
+              <div class="oem-group-fig"><img src="/images/products/bolts-and-nuts/hub-bolts/oem-type-round-head-knurled.webp" alt="Round Head Knurled Wheel Bolt - drawing" width="800" height="211" loading="lazy" /></div>
+
+              <div class="oem-group-body">
+
+                <h4>Round Head Knurled Wheel Bolt <span class="oem-cnt">&middot; 11 OEM numbers</span></h4>
+
+                <div class="oem-lines">
+                  <span>1421005 1528655</span>
+                  <span>1528712 1847739 1868665</span>
+                  <span>1868668 2285275 2285279</span>
+                  <span>2285280 2285282 3787100</span>
+                </div>
+
+              </div>
+
+            </div>
+
+            <div class="oem-group">
+
+              <div class="oem-group-fig"><img src="/images/products/bolts-and-nuts/hub-bolts/oem-type-d-head.webp" alt="D-Head Wheel Bolt (flat-sided head) - drawing" width="800" height="211" loading="lazy" /></div>
+
+              <div class="oem-group-body">
+
+                <h4>D-Head Wheel Bolt (flat-sided head) <span class="oem-cnt">&middot; 17 OEM numbers</span></h4>
+
+                <div class="oem-lines">
+                  <span>272853</span>
+                  <span>290062</span>
+                  <span>295953 332912 337559</span>
+                  <span>0337559</span>
+                  <span>337560 337561 397266</span>
+                  <span>1368690</span>
+                  <span>1368691 1368692 1368693</span>
+                  <span>1368694</span>
+                  <span>1368695 1411980 1420775</span>
+                </div>
+
+              </div>
+
+            </div>
+
+            <div class="oem-group">
+
+              <div class="oem-group-fig"><img src="/images/products/bolts-and-nuts/hub-bolts/oem-type-double-end-stud.webp" alt="Double-End Wheel Stud - drawing" width="800" height="215" loading="lazy" /></div>
+
+              <div class="oem-group-body">
+
+                <h4>Double-End Wheel Stud <span class="oem-cnt">&middot; 3 OEM numbers</span></h4>
+
+                <div class="oem-lines">
+                  <span>123250 176815 1340934</span>
+                </div>
+
+              </div>
+
+            </div>
+
+            <div class="oem-group">
+
+              <div class="oem-group-fig"><img src="/images/products/bolts-and-nuts/hub-bolts/oem-type-t-head-rect.webp" alt="T-Head / Rectangular Head Wheel Bolt - drawing" width="800" height="199" loading="lazy" /></div>
+
+              <div class="oem-group-body">
+
+                <h4>T-Head / Rectangular Head Wheel Bolt <span class="oem-cnt">&middot; 4 OEM numbers</span></h4>
+
+                <div class="oem-lines">
+                  <span>130960 0228632 0289535 0293493</span>
+                </div>
+
+              </div>
+
+            </div>
+
+            <div class="oem-group">
+
+              <div class="oem-group-fig"><img src="/images/products/bolts-and-nuts/hub-bolts/oem-type-bolt-nut-assembly.webp" alt="Wheel Bolt Assembly (bolt + nut) - drawing" width="800" height="207" loading="lazy" /></div>
+
+              <div class="oem-group-body">
+
+                <h4>Wheel Bolt Assembly (bolt + nut) <span class="oem-cnt">&middot; 6 OEM numbers</span></h4>
+
+                <div class="oem-lines">
+                  <span>272853S1</span>
+                  <span>332912S1 337560S1</span>
+                  <span>1368691S1 1368694S1</span>
+                  <span>1368695S1</span>
+                </div>
+
+              </div>
+
+            </div>
+
+            <div class="oem-group">
+
+              <div class="oem-group-fig"><img src="/images/products/bolts-and-nuts/hub-bolts/oem-type-wheel-bolt.webp" alt="Wheel Bolt - drawing" width="800" height="199" loading="lazy" /></div>
+
+              <div class="oem-group-body">
+
+                <h4>Wheel Bolt <span class="oem-cnt">&middot; 6 OEM numbers</span></h4>
+
+                <div class="oem-lines">
+                  <span>123.294-R</span>
+                  <span>132.602 272.853-3</span>
+                  <span>290.062-9 295.953-4</span>
+                  <span>397.266</span>
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+          <div class="oem-brand">
+
+            <div class="oem-brand-head"><strong>Fruehauf</strong><span>18 OEM numbers &middot; 3 types</span></div>
+
+            <div class="oem-group">
+
+              <div class="oem-group-fig"><img src="/images/products/bolts-and-nuts/hub-bolts/oem-type-round-head-knurled.webp" alt="Round Head Knurled Wheel Bolt - drawing" width="800" height="211" loading="lazy" /></div>
+
+              <div class="oem-group-body">
+
+                <h4>Round Head Knurled Wheel Bolt <span class="oem-cnt">&middot; 7 OEM numbers</span></h4>
+
+                <div class="oem-lines">
+                  <span>21.420 21.421 A15613 A20630 A-FA0230 MO 69123 MO 69131</span>
+                </div>
+
+              </div>
+
+            </div>
+
+            <div class="oem-group">
+
+              <div class="oem-group-fig"><img src="/images/products/bolts-and-nuts/hub-bolts/oem-type-double-end-stud.webp" alt="Double-End Wheel Stud - drawing" width="800" height="215" loading="lazy" /></div>
+
+              <div class="oem-group-body">
+
+                <h4>Double-End Wheel Stud <span class="oem-cnt">&middot; 3 OEM numbers</span></h4>
+
+                <div class="oem-lines">
+                  <span>21.412 21.414 21414</span>
+                </div>
+
+              </div>
+
+            </div>
+
+            <div class="oem-group">
+
+              <div class="oem-group-fig"><img src="/images/products/bolts-and-nuts/hub-bolts/oem-type-wheel-bolt.webp" alt="Wheel Bolt - drawing" width="800" height="199" loading="lazy" /></div>
+
+              <div class="oem-group-body">
+
+                <h4>Wheel Bolt <span class="oem-cnt">&middot; 8 OEM numbers</span></h4>
+
+                <div class="oem-lines">
+                  <span>21.302</span>
+                  <span>21.503 993.99.070</span>
+                  <span>993.9907 994.59.072</span>
+                  <span>14027 A15613- M006891</span>
+                  <span>M003133</span>
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+          <div class="oem-brand">
+
+            <div class="oem-brand-head"><strong>Hino</strong><span>16 OEM numbers &middot; 3 types</span></div>
+
+            <div class="oem-group">
+
+              <div class="oem-group-fig"><img src="/images/products/bolts-and-nuts/hub-bolts/oem-type-round-head-knurled.webp" alt="Round Head Knurled Wheel Bolt - drawing" width="800" height="211" loading="lazy" /></div>
+
+              <div class="oem-group-body">
+
+                <h4>Round Head Knurled Wheel Bolt <span class="oem-cnt">&middot; 2 OEM numbers</span></h4>
+
+                <div class="oem-lines">
+                  <span>9094202071 9094202072</span>
+                </div>
+
+              </div>
+
+            </div>
+
+            <div class="oem-group">
+
+              <div class="oem-group-fig"><img src="/images/products/bolts-and-nuts/hub-bolts/oem-type-double-end-stud.webp" alt="Double-End Wheel Stud - drawing" width="800" height="215" loading="lazy" /></div>
+
+              <div class="oem-group-body">
+
+                <h4>Double-End Wheel Stud <span class="oem-cnt">&middot; 1 OEM numbers</span></h4>
+
+                <div class="oem-lines">
+                  <span>9004-26101</span>
+                </div>
+
+              </div>
+
+            </div>
+
+            <div class="oem-group">
+
+              <div class="oem-group-fig"><img src="/images/products/bolts-and-nuts/hub-bolts/oem-type-bolt-nut-assembly.webp" alt="Wheel Bolt Assembly (bolt + nut) - drawing" width="800" height="207" loading="lazy" /></div>
+
+              <div class="oem-group-body">
+
+                <h4>Wheel Bolt Assembly (bolt + nut) <span class="oem-cnt">&middot; 13 OEM numbers</span></h4>
+
+                <div class="oem-lines">
+                  <span>404-21105 404-21106</span>
+                  <span>04042-1035 04042-1036 04042-1041</span>
+                  <span>04042-1042 04043-1037 04043-1038</span>
+                  <span>04043-1071 04043-1072 9004-26101S</span>
+                  <span>42632-55031S 90942-02072S</span>
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+          <div class="oem-brand">
+
+            <div class="oem-brand-head"><strong>Mitsubishi</strong><span>15 OEM numbers &middot; 3 types</span></div>
+
+            <div class="oem-group">
+
+              <div class="oem-group-fig"><img src="/images/products/bolts-and-nuts/hub-bolts/oem-type-double-end-stud.webp" alt="Double-End Wheel Stud - drawing" width="800" height="215" loading="lazy" /></div>
+
+              <div class="oem-group-body">
+
+                <h4>Double-End Wheel Stud <span class="oem-cnt">&middot; 1 OEM numbers</span></h4>
+
+                <div class="oem-lines">
+                  <span>MC-802141</span>
+                </div>
+
+              </div>
+
+            </div>
+
+            <div class="oem-group">
+
+              <div class="oem-group-fig"><img src="/images/products/bolts-and-nuts/hub-bolts/oem-type-bolt-nut-assembly.webp" alt="Wheel Bolt Assembly (bolt + nut) - drawing" width="800" height="207" loading="lazy" /></div>
+
+              <div class="oem-group-body">
+
+                <h4>Wheel Bolt Assembly (bolt + nut) <span class="oem-cnt">&middot; 12 OEM numbers</span></h4>
+
+                <div class="oem-lines">
+                  <span>40210-90129B</span>
+                  <span>MB-301509 MB-301529 MB-308672</span>
+                  <span>MB-308673 MB-633778 MB 584750 MC-869237 MC-869238</span>
+                  <span>MC-891568 MC-891569 MT-119331</span>
+                  <span>MT-119332</span>
+                </div>
+
+              </div>
+
+            </div>
+
+            <div class="oem-group">
+
+              <div class="oem-group-fig"><img src="/images/products/bolts-and-nuts/hub-bolts/oem-type-wheel-bolt.webp" alt="Wheel Bolt - drawing" width="800" height="199" loading="lazy" /></div>
+
+              <div class="oem-group-body">
+
+                <h4>Wheel Bolt <span class="oem-cnt">&middot; 2 OEM numbers</span></h4>
+
+                <div class="oem-lines">
+                  <span>MB-584750 MB-633778</span>
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+          <div class="oem-brand">
+
+            <div class="oem-brand-head"><strong>Pegaso</strong><span>11 OEM numbers &middot; 3 types</span></div>
+
+            <div class="oem-group">
+
+              <div class="oem-group-fig"><img src="/images/products/bolts-and-nuts/hub-bolts/oem-type-round-head-knurled.webp" alt="Round Head Knurled Wheel Bolt - drawing" width="800" height="211" loading="lazy" /></div>
+
+              <div class="oem-group-body">
+
+                <h4>Round Head Knurled Wheel Bolt <span class="oem-cnt">&middot; 6 OEM numbers</span></h4>
+
+                <div class="oem-lines">
+                  <span>914.294 716712 716853 717112 717235 718893</span>
+                </div>
+
+              </div>
+
+            </div>
+
+            <div class="oem-group">
+
+              <div class="oem-group-fig"><img src="/images/products/bolts-and-nuts/hub-bolts/oem-type-double-end-stud.webp" alt="Double-End Wheel Stud - drawing" width="800" height="215" loading="lazy" /></div>
+
+              <div class="oem-group-body">
+
+                <h4>Double-End Wheel Stud <span class="oem-cnt">&middot; 3 OEM numbers</span></h4>
+
+                <div class="oem-lines">
+                  <span>524714 542679 712838</span>
+                </div>
+
+              </div>
+
+            </div>
+
+            <div class="oem-group">
+
+              <div class="oem-group-fig"><img src="/images/products/bolts-and-nuts/hub-bolts/oem-type-wheel-bolt.webp" alt="Wheel Bolt - drawing" width="800" height="199" loading="lazy" /></div>
+
+              <div class="oem-group-body">
+
+                <h4>Wheel Bolt <span class="oem-cnt">&middot; 2 OEM numbers</span></h4>
+
+                <div class="oem-lines">
+                  <span>917.898 717062</span>
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+          <div class="oem-brand">
+
+            <div class="oem-brand-head"><strong>SAF</strong><span>10 OEM numbers &middot; 2 types</span></div>
+
+            <div class="oem-group">
+
+              <div class="oem-group-fig"><img src="/images/products/bolts-and-nuts/hub-bolts/oem-type-round-head-knurled.webp" alt="Round Head Knurled Wheel Bolt - drawing" width="800" height="211" loading="lazy" /></div>
+
+              <div class="oem-group-body">
+
+                <h4>Round Head Knurled Wheel Bolt <span class="oem-cnt">&middot; 2 OEM numbers</span></h4>
+
+                <div class="oem-lines">
+                  <span>1.303.111.810 1.303.1074.11</span>
+                </div>
+
+              </div>
+
+            </div>
+
+            <div class="oem-group">
+
+              <div class="oem-group-fig"><img src="/images/products/bolts-and-nuts/hub-bolts/oem-type-double-end-stud.webp" alt="Double-End Wheel Stud - drawing" width="800" height="215" loading="lazy" /></div>
+
+              <div class="oem-group-body">
+
+                <h4>Double-End Wheel Stud <span class="oem-cnt">&middot; 8 OEM numbers</span></h4>
+
+                <div class="oem-lines">
+                  <span>1.303.1008.10</span>
+                  <span>1.303.1008.11 1.303.1013.10</span>
+                  <span>1.303.1028.10 1.303.1028.11</span>
+                  <span>1.303.1040.11 1.303.1045.11</span>
+                  <span>1.303.1075.11</span>
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+          <div class="oem-brand">
+
+            <div class="oem-brand-head"><strong>Toyota</strong><span>9 OEM numbers &middot; 2 types</span></div>
+
+            <div class="oem-group">
+
+              <div class="oem-group-fig"><img src="/images/products/bolts-and-nuts/hub-bolts/oem-type-round-head-knurled.webp" alt="Round Head Knurled Wheel Bolt - drawing" width="800" height="211" loading="lazy" /></div>
+
+              <div class="oem-group-body">
+
+                <h4>Round Head Knurled Wheel Bolt <span class="oem-cnt">&middot; 2 OEM numbers</span></h4>
+
+                <div class="oem-lines">
+                  <span>90942-02071 90942-02072</span>
+                </div>
+
+              </div>
+
+            </div>
+
+            <div class="oem-group">
+
+              <div class="oem-group-fig"><img src="/images/products/bolts-and-nuts/hub-bolts/oem-type-bolt-nut-assembly.webp" alt="Wheel Bolt Assembly (bolt + nut) - drawing" width="800" height="207" loading="lazy" /></div>
+
+              <div class="oem-group-body">
+
+                <h4>Wheel Bolt Assembly (bolt + nut) <span class="oem-cnt">&middot; 7 OEM numbers</span></h4>
+
+                <div class="oem-lines">
+                  <span>90942-02024 90942-02025 90942-02028 90942-02029 90942-02037 90942-02045 90942-02046</span>
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+          <div class="oem-brand">
+
+            <div class="oem-brand-head"><strong>Isuzu</strong><span>9 OEM numbers &middot; 3 types</span></div>
+
+            <div class="oem-group">
+
+              <div class="oem-group-fig"><img src="/images/products/bolts-and-nuts/hub-bolts/oem-type-round-head-knurled.webp" alt="Round Head Knurled Wheel Bolt - drawing" width="800" height="211" loading="lazy" /></div>
+
+              <div class="oem-group-body">
+
+                <h4>Round Head Knurled Wheel Bolt <span class="oem-cnt">&middot; 2 OEM numbers</span></h4>
+
+                <div class="oem-lines">
+                  <span>8971264880 8971264890</span>
+                </div>
+
+              </div>
+
+            </div>
+
+            <div class="oem-group">
+
+              <div class="oem-group-fig"><img src="/images/products/bolts-and-nuts/hub-bolts/oem-type-double-end-stud.webp" alt="Double-End Wheel Stud - drawing" width="800" height="215" loading="lazy" /></div>
+
+              <div class="oem-group-body">
+
+                <h4>Double-End Wheel Stud <span class="oem-cnt">&middot; 5 OEM numbers</span></h4>
+
+                <div class="oem-lines">
+                  <span>1423370101 8943834362 8943834372 8973598050 8973598060</span>
+                </div>
+
+              </div>
+
+            </div>
+
+            <div class="oem-group">
+
+              <div class="oem-group-fig"><img src="/images/products/bolts-and-nuts/hub-bolts/oem-type-bolt-nut-assembly.webp" alt="Wheel Bolt Assembly (bolt + nut) - drawing" width="800" height="207" loading="lazy" /></div>
+
+              <div class="oem-group-body">
+
+                <h4>Wheel Bolt Assembly (bolt + nut) <span class="oem-cnt">&middot; 2 OEM numbers</span></h4>
+
+                <div class="oem-lines">
+                  <span>8-94223-200-0 9-42331-601-0</span>
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+          <div class="oem-brand">
+
+            <div class="oem-brand-head"><strong>BPW</strong><span>8 OEM numbers &middot; 2 types</span></div>
+
+            <div class="oem-group">
+
+              <div class="oem-group-fig"><img src="/images/products/bolts-and-nuts/hub-bolts/oem-type-double-end-stud.webp" alt="Double-End Wheel Stud - drawing" width="800" height="215" loading="lazy" /></div>
+
+              <div class="oem-group-body">
+
+                <h4>Double-End Wheel Stud <span class="oem-cnt">&middot; 7 OEM numbers</span></h4>
+
+                <div class="oem-lines">
+                  <span>03.296.13.11.0</span>
+                  <span>03.296.13.090 03.296.13.170</span>
+                  <span>03.296.23.05.0 03.296.23.15.0</span>
+                  <span>03.296.23.170 03.296.33.11.0</span>
+                </div>
+
+              </div>
+
+            </div>
+
+            <div class="oem-group">
+
+              <div class="oem-group-fig"><img src="/images/products/bolts-and-nuts/hub-bolts/oem-type-wheel-bolt.webp" alt="Wheel Bolt - drawing" width="800" height="199" loading="lazy" /></div>
+
+              <div class="oem-group-body">
+
+                <h4>Wheel Bolt <span class="oem-cnt">&middot; 1 OEM numbers</span></h4>
+
+                <div class="oem-lines">
+                  <span>326004060</span>
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+          <div class="oem-brand">
+
+            <div class="oem-brand-head"><strong>KAMAZ</strong><span>8 OEM numbers &middot; 1 types</span></div>
+
+            <div class="oem-group">
+
+              <div class="oem-group-fig"><img src="/images/products/bolts-and-nuts/hub-bolts/oem-type-wheel-bolt.webp" alt="Wheel Bolt - drawing" width="800" height="199" loading="lazy" /></div>
+
+              <div class="oem-group-body">
+
+                <h4>Wheel Bolt <span class="oem-cnt">&middot; 8 OEM numbers</span></h4>
+
+                <div class="oem-lines">
+                  <span>5297-3104071-10 6320-3104071 6520-3104071-10 43114-3103071 43118-3103071 53205-3103071 53205-3104071 53205-3104071-10</span>
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+          <div class="oem-brand">
+
+            <div class="oem-brand-head"><strong>Daihatsu</strong><span>6 OEM numbers &middot; 2 types</span></div>
+
+            <div class="oem-group">
+
+              <div class="oem-group-fig"><img src="/images/products/bolts-and-nuts/hub-bolts/oem-type-bolt-nut-assembly.webp" alt="Wheel Bolt Assembly (bolt + nut) - drawing" width="800" height="207" loading="lazy" /></div>
+
+              <div class="oem-group-body">
+
+                <h4>Wheel Bolt Assembly (bolt + nut) <span class="oem-cnt">&middot; 2 OEM numbers</span></h4>
+
+                <div class="oem-lines">
+                  <span>90049-12010 90049-12014 90049-12011 90049-12015</span>
+                </div>
+
+              </div>
+
+            </div>
+
+            <div class="oem-group">
+
+              <div class="oem-group-fig"><img src="/images/products/bolts-and-nuts/hub-bolts/oem-type-wheel-bolt.webp" alt="Wheel Bolt - drawing" width="800" height="199" loading="lazy" /></div>
+
+              <div class="oem-group-body">
+
+                <h4>Wheel Bolt <span class="oem-cnt">&middot; 4 OEM numbers</span></h4>
+
+                <div class="oem-lines">
+                  <span>90049-12010 90049-12011 90049-12014 90049-12015</span>
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+          <div class="oem-brand">
+
+            <div class="oem-brand-head"><strong>Freightliner</strong><span>6 OEM numbers &middot; 1 types</span></div>
+
+            <div class="oem-group">
+
+              <div class="oem-group-fig"><img src="/images/products/bolts-and-nuts/hub-bolts/oem-type-double-end-stud.webp" alt="Double-End Wheel Stud - drawing" width="800" height="215" loading="lazy" /></div>
+
+              <div class="oem-group-body">
+
+                <h4>Double-End Wheel Stud <span class="oem-cnt">&middot; 6 OEM numbers</span></h4>
+
+                <div class="oem-lines">
+                  <span>CM 102292 CM 10001329 CM 10001330 CM 10001399 CM 10001400 CM 10018435</span>
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+          <div class="oem-brand">
+
+            <div class="oem-brand-head"><strong>MAZ</strong><span>5 OEM numbers &middot; 3 types</span></div>
+
+            <div class="oem-group">
+
+              <div class="oem-group-fig"><img src="/images/products/bolts-and-nuts/hub-bolts/oem-type-d-head.webp" alt="D-Head Wheel Bolt (flat-sided head) - drawing" width="800" height="211" loading="lazy" /></div>
+
+              <div class="oem-group-body">
+
+                <h4>D-Head Wheel Bolt (flat-sided head) <span class="oem-cnt">&middot; 3 OEM numbers</span></h4>
+
+                <div class="oem-lines">
+                  <span>9919-3104050 54321-3104050 54321-3104051</span>
+                </div>
+
+              </div>
+
+            </div>
+
+            <div class="oem-group">
+
+              <div class="oem-group-fig"><img src="/images/products/bolts-and-nuts/hub-bolts/oem-type-t-head-rect.webp" alt="T-Head / Rectangular Head Wheel Bolt - drawing" width="800" height="199" loading="lazy" /></div>
+
+              <div class="oem-group-body">
+
+                <h4>T-Head / Rectangular Head Wheel Bolt <span class="oem-cnt">&middot; 1 OEM numbers</span></h4>
+
+                <div class="oem-lines">
+                  <span>5335-3104008</span>
+                </div>
+
+              </div>
+
+            </div>
+
+            <div class="oem-group">
+
+              <div class="oem-group-fig"><img src="/images/products/bolts-and-nuts/hub-bolts/oem-type-wheel-bolt.webp" alt="Wheel Bolt - drawing" width="800" height="199" loading="lazy" /></div>
+
+              <div class="oem-group-body">
+
+                <h4>Wheel Bolt <span class="oem-cnt">&middot; 1 OEM numbers</span></h4>
+
+                <div class="oem-lines">
+                  <span>54321-3104052</span>
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+          <div class="oem-brand">
+
+            <div class="oem-brand-head"><strong>Suzuki</strong><span>4 OEM numbers &middot; 2 types</span></div>
+
+            <div class="oem-group">
+
+              <div class="oem-group-fig"><img src="/images/products/bolts-and-nuts/hub-bolts/oem-type-bolt-nut-assembly.webp" alt="Wheel Bolt Assembly (bolt + nut) - drawing" width="800" height="207" loading="lazy" /></div>
+
+              <div class="oem-group-body">
+
+                <h4>Wheel Bolt Assembly (bolt + nut) <span class="oem-cnt">&middot; 2 OEM numbers</span></h4>
+
+                <div class="oem-lines">
+                  <span>09119-10049 09119-12011 09119-12012</span>
+                </div>
+
+              </div>
+
+            </div>
+
+            <div class="oem-group">
+
+              <div class="oem-group-fig"><img src="/images/products/bolts-and-nuts/hub-bolts/oem-type-wheel-bolt.webp" alt="Wheel Bolt - drawing" width="800" height="199" loading="lazy" /></div>
+
+              <div class="oem-group-body">
+
+                <h4>Wheel Bolt <span class="oem-cnt">&middot; 2 OEM numbers</span></h4>
+
+                <div class="oem-lines">
+                  <span>09119-12011 09119-12012</span>
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+          <div class="oem-brand">
+
+            <div class="oem-brand-head"><strong>GAZ</strong><span>4 OEM numbers &middot; 1 types</span></div>
+
+            <div class="oem-group">
+
+              <div class="oem-group-fig"><img src="/images/products/bolts-and-nuts/hub-bolts/oem-type-wheel-bolt.webp" alt="Wheel Bolt - drawing" width="800" height="199" loading="lazy" /></div>
+
+              <div class="oem-group-body">
+
+                <h4>Wheel Bolt <span class="oem-cnt">&middot; 4 OEM numbers</span></h4>
+
+                <div class="oem-lines">
+                  <span>20-3103008-Б 51-3103008-В1 51-3103009-В1 51-3105015-Д</span>
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+          <div class="oem-brand">
+
+            <div class="oem-brand-head"><strong>Kia</strong><span>3 OEM numbers &middot; 1 types</span></div>
+
+            <div class="oem-group">
+
+              <div class="oem-group-fig"><img src="/images/products/bolts-and-nuts/hub-bolts/oem-type-bolt-nut-assembly.webp" alt="Wheel Bolt Assembly (bolt + nut) - drawing" width="800" height="207" loading="lazy" /></div>
+
+              <div class="oem-group-body">
+
+                <h4>Wheel Bolt Assembly (bolt + nut) <span class="oem-cnt">&middot; 3 OEM numbers</span></h4>
+
+                <div class="oem-lines">
+                  <span>0K01126113 OK710-26-113A OK710-26-114A</span>
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+          <div class="oem-brand">
+
+            <div class="oem-brand-head"><strong>Caterpillar</strong><span>3 OEM numbers &middot; 2 types</span></div>
+
+            <div class="oem-group">
+
+              <div class="oem-group-fig"><img src="/images/products/bolts-and-nuts/hub-bolts/oem-type-round-head-knurled.webp" alt="Round Head Knurled Wheel Bolt - drawing" width="800" height="211" loading="lazy" /></div>
+
+              <div class="oem-group-body">
+
+                <h4>Round Head Knurled Wheel Bolt <span class="oem-cnt">&middot; 1 OEM numbers</span></h4>
+
+                <div class="oem-lines">
+                  <span>1V3323</span>
+                </div>
+
+              </div>
+
+            </div>
+
+            <div class="oem-group">
+
+              <div class="oem-group-fig"><img src="/images/products/bolts-and-nuts/hub-bolts/oem-type-wheel-bolt.webp" alt="Wheel Bolt - drawing" width="800" height="199" loading="lazy" /></div>
+
+              <div class="oem-group-body">
+
+                <h4>Wheel Bolt <span class="oem-cnt">&middot; 2 OEM numbers</span></h4>
+
+                <div class="oem-lines">
+                  <span>3K1865 3V4247</span>
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+          <div class="oem-brand">
+
+            <div class="oem-brand-head"><strong>Magirus</strong><span>3 OEM numbers &middot; 1 types</span></div>
+
+            <div class="oem-group">
+
+              <div class="oem-group-fig"><img src="/images/products/bolts-and-nuts/hub-bolts/oem-type-wheel-bolt.webp" alt="Wheel Bolt - drawing" width="800" height="199" loading="lazy" /></div>
+
+              <div class="oem-group-body">
+
+                <h4>Wheel Bolt <span class="oem-cnt">&middot; 3 OEM numbers</span></h4>
+
+                <div class="oem-lines">
+                  <span>52.890 0342 4731 52894</span>
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+          <div class="oem-brand">
+
+            <div class="oem-brand-head"><strong>Volkswagen</strong><span>3 OEM numbers &middot; 1 types</span></div>
+
+            <div class="oem-group">
+
+              <div class="oem-group-fig"><img src="/images/products/bolts-and-nuts/hub-bolts/oem-type-wheel-bolt.webp" alt="Wheel Bolt - drawing" width="800" height="199" loading="lazy" /></div>
+
+              <div class="oem-group-body">
+
+                <h4>Wheel Bolt <span class="oem-cnt">&middot; 3 OEM numbers</span></h4>
+
+                <div class="oem-lines">
+                  <span>321601139 2116011391 ZBA601139A</span>
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+          <div class="oem-brand">
+
+            <div class="oem-brand-head"><strong>Nissan</strong><span>2 OEM numbers &middot; 1 types</span></div>
+
+            <div class="oem-group">
+
+              <div class="oem-group-fig"><img src="/images/products/bolts-and-nuts/hub-bolts/oem-type-bolt-nut-assembly.webp" alt="Wheel Bolt Assembly (bolt + nut) - drawing" width="800" height="207" loading="lazy" /></div>
+
+              <div class="oem-group-body">
+
+                <h4>Wheel Bolt Assembly (bolt + nut) <span class="oem-cnt">&middot; 2 OEM numbers</span></h4>
+
+                <div class="oem-lines">
+                  <span>40222-18000 40222-A0800</span>
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+          <div class="oem-brand">
+
+            <div class="oem-brand-head"><strong>Mack</strong><span>2 OEM numbers &middot; 1 types</span></div>
+
+            <div class="oem-group">
+
+              <div class="oem-group-fig"><img src="/images/products/bolts-and-nuts/hub-bolts/oem-type-double-end-stud.webp" alt="Double-End Wheel Stud - drawing" width="800" height="215" loading="lazy" /></div>
+
+              <div class="oem-group-body">
+
+                <h4>Double-End Wheel Stud <span class="oem-cnt">&middot; 2 OEM numbers</span></h4>
+
+                <div class="oem-lines">
+                  <span>18AX64 741310001331</span>
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+          <div class="oem-brand">
+
+            <div class="oem-brand-head"><strong>Barreiros</strong><span>2 OEM numbers &middot; 2 types</span></div>
+
+            <div class="oem-group">
+
+              <div class="oem-group-fig"><img src="/images/products/bolts-and-nuts/hub-bolts/oem-type-double-end-stud.webp" alt="Double-End Wheel Stud - drawing" width="800" height="215" loading="lazy" /></div>
+
+              <div class="oem-group-body">
+
+                <h4>Double-End Wheel Stud <span class="oem-cnt">&middot; 1 OEM numbers</span></h4>
+
+                <div class="oem-lines">
+                  <span>406.460.7918</span>
+                </div>
+
+              </div>
+
+            </div>
+
+            <div class="oem-group">
+
+              <div class="oem-group-fig"><img src="/images/products/bolts-and-nuts/hub-bolts/oem-type-wheel-bolt.webp" alt="Wheel Bolt - drawing" width="800" height="199" loading="lazy" /></div>
+
+              <div class="oem-group-body">
+
+                <h4>Wheel Bolt <span class="oem-cnt">&middot; 1 OEM numbers</span></h4>
+
+                <div class="oem-lines">
+                  <span>406.460.8267</span>
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+          <div class="oem-brand">
+
+            <div class="oem-brand-head"><strong>Euclid</strong><span>2 OEM numbers &middot; 1 types</span></div>
+
+            <div class="oem-group">
+
+              <div class="oem-group-fig"><img src="/images/products/bolts-and-nuts/hub-bolts/oem-type-double-end-stud.webp" alt="Double-End Wheel Stud - drawing" width="800" height="215" loading="lazy" /></div>
+
+              <div class="oem-group-body">
+
+                <h4>Double-End Wheel Stud <span class="oem-cnt">&middot; 2 OEM numbers</span></h4>
+
+                <div class="oem-lines">
+                  <span>E5561L E-5561R</span>
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+          <div class="oem-brand">
+
+            <div class="oem-brand-head"><strong>Ford</strong><span>2 OEM numbers &middot; 2 types</span></div>
+
+            <div class="oem-group">
+
+              <div class="oem-group-fig"><img src="/images/products/bolts-and-nuts/hub-bolts/oem-type-round-head-knurled.webp" alt="Round Head Knurled Wheel Bolt - drawing" width="800" height="211" loading="lazy" /></div>
+
+              <div class="oem-group-body">
+
+                <h4>Round Head Knurled Wheel Bolt <span class="oem-cnt">&middot; 1 OEM numbers</span></h4>
+
+                <div class="oem-lines">
+                  <span>850B-1107-BB</span>
+                </div>
+
+              </div>
+
+            </div>
+
+            <div class="oem-group">
+
+              <div class="oem-group-fig"><img src="/images/products/bolts-and-nuts/hub-bolts/oem-type-wheel-bolt.webp" alt="Wheel Bolt - drawing" width="800" height="199" loading="lazy" /></div>
+
+              <div class="oem-group-body">
+
+                <h4>Wheel Bolt <span class="oem-cnt">&middot; 1 OEM numbers</span></h4>
+
+                <div class="oem-lines">
+                  <span>BC 8A1107 A</span>
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+          <div class="oem-brand">
+
+            <div class="oem-brand-head"><strong>GM</strong><span>2 OEM numbers &middot; 2 types</span></div>
+
+            <div class="oem-group">
+
+              <div class="oem-group-fig"><img src="/images/products/bolts-and-nuts/hub-bolts/oem-type-round-head-knurled.webp" alt="Round Head Knurled Wheel Bolt - drawing" width="800" height="211" loading="lazy" /></div>
+
+              <div class="oem-group-body">
+
+                <h4>Round Head Knurled Wheel Bolt <span class="oem-cnt">&middot; 1 OEM numbers</span></h4>
+
+                <div class="oem-lines">
+                  <span>94631717</span>
+                </div>
+
+              </div>
+
+            </div>
+
+            <div class="oem-group">
+
+              <div class="oem-group-fig"><img src="/images/products/bolts-and-nuts/hub-bolts/oem-type-wheel-bolt.webp" alt="Wheel Bolt - drawing" width="800" height="199" loading="lazy" /></div>
+
+              <div class="oem-group-body">
+
+                <h4>Wheel Bolt <span class="oem-cnt">&middot; 1 OEM numbers</span></h4>
+
+                <div class="oem-lines">
+                  <span>3775682</span>
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+          <div class="oem-brand">
+
+            <div class="oem-brand-head"><strong>ConMet</strong><span>1 OEM numbers &middot; 1 types</span></div>
+
+            <div class="oem-group">
+
+              <div class="oem-group-fig"><img src="/images/products/bolts-and-nuts/hub-bolts/oem-type-double-end-stud.webp" alt="Double-End Wheel Stud - drawing" width="800" height="215" loading="lazy" /></div>
+
+              <div class="oem-group-body">
+
+                <h4>Double-End Wheel Stud <span class="oem-cnt">&middot; 1 OEM numbers</span></h4>
+
+                <div class="oem-lines">
+                  <span>102292</span>
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+          <div class="oem-brand">
+
+            <div class="oem-brand-head"><strong>Kenworth</strong><span>1 OEM numbers &middot; 1 types</span></div>
+
+            <div class="oem-group">
+
+              <div class="oem-group-fig"><img src="/images/products/bolts-and-nuts/hub-bolts/oem-type-double-end-stud.webp" alt="Double-End Wheel Stud - drawing" width="800" height="215" loading="lazy" /></div>
+
+              <div class="oem-group-body">
+
+                <h4>Double-End Wheel Stud <span class="oem-cnt">&middot; 1 OEM numbers</span></h4>
+
+                <div class="oem-lines">
+                  <span>10001331</span>
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+          <div class="oem-brand">
+
+            <div class="oem-brand-head"><strong>International</strong><span>1 OEM numbers &middot; 1 types</span></div>
+
+            <div class="oem-group">
+
+              <div class="oem-group-fig"><img src="/images/products/bolts-and-nuts/hub-bolts/oem-type-double-end-stud.webp" alt="Double-End Wheel Stud - drawing" width="800" height="215" loading="lazy" /></div>
+
+              <div class="oem-group-body">
+
+                <h4>Double-End Wheel Stud <span class="oem-cnt">&middot; 1 OEM numbers</span></h4>
+
+                <div class="oem-lines">
+                  <span>2588662C1</span>
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+          <div class="oem-brand">
+
+            <div class="oem-brand-head"><strong>Peterbilt</strong><span>1 OEM numbers &middot; 1 types</span></div>
+
+            <div class="oem-group">
+
+              <div class="oem-group-fig"><img src="/images/products/bolts-and-nuts/hub-bolts/oem-type-double-end-stud.webp" alt="Double-End Wheel Stud - drawing" width="800" height="215" loading="lazy" /></div>
+
+              <div class="oem-group-body">
+
+                <h4>Double-End Wheel Stud <span class="oem-cnt">&middot; 1 OEM numbers</span></h4>
+
+                <div class="oem-lines">
+                  <span>SZAR003R</span>
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+          <div class="oem-brand">
+
+            <div class="oem-brand-head"><strong>Perlini</strong><span>1 OEM numbers &middot; 1 types</span></div>
+
+            <div class="oem-group">
+
+              <div class="oem-group-fig"><img src="/images/products/bolts-and-nuts/hub-bolts/oem-type-round-head-knurled.webp" alt="Round Head Knurled Wheel Bolt - drawing" width="800" height="211" loading="lazy" /></div>
+
+              <div class="oem-group-body">
+
+                <h4>Round Head Knurled Wheel Bolt <span class="oem-cnt">&middot; 1 OEM numbers</span></h4>
+
+                <div class="oem-lines">
+                  <span>12098</span>
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+          <div class="oem-brand">
+
+            <div class="oem-brand-head"><strong>Fiat</strong><span>1 OEM numbers &middot; 1 types</span></div>
+
+            <div class="oem-group">
+
+              <div class="oem-group-fig"><img src="/images/products/bolts-and-nuts/hub-bolts/oem-type-hex-head.webp" alt="Hex Head Wheel Bolt - drawing" width="800" height="178" loading="lazy" /></div>
+
+              <div class="oem-group-body">
+
+                <h4>Hex Head Wheel Bolt <span class="oem-cnt">&middot; 1 OEM numbers</span></h4>
+
+                <div class="oem-lines">
+                  <span>7509408</span>
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+        <p class="oem-empty" id="oemEmpty" hidden>No brand or OEM number matches your search.</p>
+
+        <p class="oem-count" id="oemCount">Showing 37 of 37 brands · 621 OEM numbers</p>
+
+        <div class="oem-disclaimer">OEM numbers and vehicle brand names are quoted for reference and identification only. All trademarks belong to their respective owners. Please confirm dimensions with your drawing or sample before ordering.</div>
+
+      </div>
+
+
+      <header class="section-header" style="margin-top: var(--space-12);">
+
+        <h2>Notes</h2>
+
+      </header>
+
+      <div class="data-table-wrapper">
+
+        <table class="data-table notes-table">
+
+          <tbody>
+
+            <tr><th>Mechanical Capability:</th><td>Bolts: 10.9 Class, minimum tensile strength 170,000 psi. Nuts: 10 Class, fully hardened and tempered to match bolt strength</td></tr>
+
+            <tr><td colspan="2" class="notes-paragraph">All packing details are used for reference purposes only. We can't list all of our products in above sheet since we are opening the mold every day. We also produce 12.9 class high tensile fasteners by forging.</td></tr>
+
+          </tbody>
+
+        </table>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+
+  <section class="section cta-band">
+
+    <div class="container text-center">
+
+      <h2>Need Hub Bolts?</h2>
+
+      <p>Contact us with your part numbers and specifications. Nissan, Hino, Isuzu, Mitsubishi, Benz and custom sizes available.</p>
+
+      <div class="cta-actions">
+
+        <a href="/contact" class="btn btn-primary btn-lg">Request a Quote</a>
+
+        <a href="mailto:Jason@carelong.com.cn?subject=Product%20Inquiry%20-%20Carelong%20Website" class="btn btn-outline-white btn-lg">Email Us</a>
+
+      </div>
+
+    </div>
+
+  </section>
+
+</BaseLayout>
+
+
+
+<script>
+
+  document.addEventListener('DOMContentLoaded', () => {
+
+    const gallery = document.getElementById('productGallery');
+
+    if (!gallery) return;
+
+
+
+    const thumbs = Array.from(gallery.querySelectorAll('.thumb'));
+
+    const stageImgs = Array.from(gallery.querySelectorAll('.stage-img'));
+
+    const stages = Array.from(gallery.querySelectorAll('.gallery-stage'));
+
+    let current = 0;
+
+
+
+    function activate(idx) {
+
+      if (idx === current) return;
+
+      current = idx;
+
+      thumbs.forEach((t) => t.classList.toggle('is-active', Number(t.dataset.index) === current));
+
+      stageImgs.forEach((img) => {
+
+        const isActive = Number(img.dataset.index) === current;
+
+        img.classList.toggle('is-active', isActive);
+
+        if (isActive) img.style.transformOrigin = 'center center';
+
+      });
+
+      stages.forEach((s) => s.classList.remove('is-zooming'));
+
+    }
+
+
+
+    thumbs.forEach((t) => {
+
+      const idx = Number(t.dataset.index);
+
+      t.addEventListener('mouseenter', () => activate(idx));
+
+      t.addEventListener('focus', () => activate(idx));
+
+      t.addEventListener('click', () => activate(idx));
+
+    });
+
+
+
+    stages.forEach((stage) => {
+
+      stage.addEventListener('mouseenter', () => stage.classList.add('is-zooming'));
+
+      stage.addEventListener('mouseleave', () => {
+
+        stage.classList.remove('is-zooming');
+
+        const active = stage.querySelector('.stage-img.is-active');
+
+        if (active) {
+
+          active.style.transformOrigin = 'center center';
+
+        }
+
+      });
+
+      stage.addEventListener('mousemove', (e) => {
+
+        const active = stage.querySelector('.stage-img.is-active');
+
+        if (!active) return;
+
+        const rect = stage.getBoundingClientRect();
+
+        const x = ((e.clientX - rect.left) / rect.width) * 100;
+
+        const y = ((e.clientY - rect.top) / rect.height) * 100;
+
+        const cx = Math.max(0, Math.min(100, x));
+
+        const cy = Math.max(0, Math.min(100, y));
+
+        active.style.transformOrigin = cx + '% ' + cy + '%';
+
+      });
+
+    });
+
+  });
+
+</script>
+
+
+
+<style>
+
+.eyebrow { font-size: 0.8125rem; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; color: var(--color-secondary); margin-bottom: var(--space-3); }
+
+.product-overview { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-12); align-items: start; }
+
+
+
+.product-gallery { display: grid; grid-template-columns: 88px 1fr; gap: var(--space-4); align-items: start; }
+
+.gallery-thumbs { display: flex; flex-direction: column; gap: var(--space-2); max-height: 480px; overflow-y: auto; padding-right: 4px; }
+
+.thumb { all: unset; box-sizing: border-box; cursor: pointer; display: block; width: 100%; height: 88px; border-radius: var(--radius-md); border: 2px solid transparent; background: #fff; overflow: hidden; transition: border-color .2s ease, transform .18s ease, box-shadow .18s ease; }
+
+.thumb img { width: 100%; height: 100%; object-fit: contain; display: block; }
+
+.thumb:hover { transform: translateY(-1px); box-shadow: 0 4px 12px rgba(27,75,142,.18); }
+
+.thumb.is-active { border-color: var(--color-primary); box-shadow: 0 4px 12px rgba(27,75,142,.25); transform: translateY(-1px); }
+
+
+
+.gallery-stage { position: relative; background: #fff; border-radius: var(--radius-xl); box-shadow: var(--shadow-lg); overflow: hidden; aspect-ratio: 1 / 1; cursor: zoom-in; outline: none; }
+
+.stage-arrow[hidden] { display: none; }
+
+.stage-img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; padding: var(--space-4); opacity: 0; transition: opacity .25s ease; transform: scale(1); cursor: zoom-in; }
+
+.stage-img.is-active { opacity: 1; }
+
+.gallery-stage.is-zooming .stage-img.is-active { transform: scale(2); transition: transform .15s ease-out; }
+
+.zoom-hint { position: absolute; bottom: var(--space-3); right: var(--space-4); padding: 4px 10px; border-radius: 100px; background: rgba(15, 48, 96, 0.7); color: #fff; font-size: 0.75rem; font-weight: 500; letter-spacing: .5px; pointer-events: none; }
+
+
+
+.product-intro h2 { margin-bottom: var(--space-4); }
+
+.product-intro p { color: var(--color-text-light); line-height: 1.7; }
+
+.product-badges { display: flex; flex-wrap: wrap; gap: var(--space-2); margin: var(--space-6) 0; }
+
+.badge { display: inline-block; background: rgba(27, 75, 142, 0.08); color: var(--color-primary); padding: var(--space-1) var(--space-3); border-radius: 100px; font-size: 0.8125rem; font-weight: 600; }
+
+.product-actions { display: flex; gap: var(--space-4); flex-wrap: wrap; }
+
+
+
+.spec-table { display: flex; flex-direction: column; gap: var(--space-2); }
+
+.spec-table-grid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-2); }
+
+.spec-row { display: flex; justify-content: space-between; padding: var(--space-4) var(--space-6); background: var(--color-bg); border: 1px solid var(--color-border); border-radius: var(--radius-md); }
+
+.spec-table-grid .spec-row { flex-direction: column; gap: var(--space-1); }
+
+.spec-table-grid .spec-name { font-weight: 600; color: var(--color-text); font-size: 0.875rem; text-transform: lowercase; }
+
+.spec-table-grid .spec-value { color: var(--color-text); font-weight: 500; text-align: left; max-width: 100%; }
+
+.spec-name { font-weight: 600; color: var(--color-text); }
+
+.spec-value { color: var(--color-text-light); text-align: right; max-width: 60%; }
+
+
+
+/* Data tables */
+
+.data-table-wrapper { overflow-x: auto; border: 1px solid var(--color-border); border-radius: var(--radius-md); background: var(--color-bg); }
+
+.data-table { width: 100%; border-collapse: collapse; font-size: 0.875rem; }
+
+.data-table thead th { background: var(--color-primary); color: #fff; padding: var(--space-3) var(--space-4); text-align: left; font-weight: 600; white-space: normal; line-height: 1.4; }
+
+.data-table tbody td { padding: var(--space-3) var(--space-4); border-top: 1px solid var(--color-border); color: var(--color-text); word-wrap: break-word; }
+
+.data-table tbody tr:nth-child(even) td { background: rgba(27, 75, 142, 0.04); }
+
+.data-table tbody tr:hover td { background: rgba(27, 75, 142, 0.08); }
+
+.data-table tbody td:nth-child(n+3) { font-variant-numeric: tabular-nums; }
+
+
+
+/* 8-column Segment Bolt Specifications table - auto layout for natural alignment */
+
+.spec-table-8col { table-layout: auto; width: 100%; }
+
+.spec-table-8col thead th { vertical-align: middle; text-align: center; white-space: nowrap; }
+
+.spec-table-8col tbody td { vertical-align: middle; text-align: center; }
+
+.spec-table-8col tbody td:nth-child(1) { text-align: left; }  /* Part Name */
+
+.spec-table-8col tbody td:nth-child(2) { text-align: left; }  /* Part #/Model */
+
+
+
+/* Notes table */
+
+.notes-table { font-size: 0.9375rem; table-layout: auto; width: 100%; }
+
+.notes-table th { background: transparent; color: var(--color-text); padding: var(--space-3) var(--space-4); text-align: left; font-weight: 700; white-space: nowrap; vertical-align: top; word-wrap: break-word; border-top: 1px solid var(--color-border); }
+
+.notes-table td { padding: var(--space-3) var(--space-4); border-top: 1px solid var(--color-border); color: var(--color-text); vertical-align: top; }
+
+.notes-table tbody tr:nth-child(even) td { background: rgba(27, 75, 142, 0.04); }
+
+.notes-paragraph { font-style: italic; color: var(--color-text-light); line-height: 1.7; padding: var(--space-4) var(--space-4) !important; }
+
+.notes-table a { color: var(--color-primary); text-decoration: underline; }
+
+
+
+.cta-band { background: var(--color-primary); color: #fff; }
+
+.cta-band h2 { color: #fff; margin-bottom: var(--space-4); }
+
+.cta-band p { color: rgba(255,255,255,0.85); font-size: 1.125rem; margin-bottom: var(--space-6); }
+
+.cta-actions { display: flex; gap: var(--space-4); justify-content: center; flex-wrap: wrap; }
+
+
+
+@media (max-width: 768px) {
+
+  .product-overview { grid-template-columns: 1fr; }
+
+  .product-gallery { grid-template-columns: 72px 1fr; }
+
+  .thumb { width: 100%; height: 72px; }
+
+  .spec-row { flex-direction: column; gap: var(--space-1); }
+
+  .spec-value { text-align: left; max-width: 100%; }
+
+  .spec-table-grid { grid-template-columns: 1fr; }
+
+}
+
+
+
+/* OEM cross-reference (Hub Bolt Specifications) - images + scrollable content */
+.oem-app { margin-top: var(--space-4); }
+.oem-subhead { margin: 0 0 var(--space-3); font-size: 1rem; font-weight: 700; color: var(--color-primary); }
+.oem-types-strip { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: var(--space-2); margin-bottom: var(--space-5); }
+.oem-type-card { padding: 8px 6px; border: 1px solid var(--color-border); border-radius: var(--radius-md); background: var(--color-bg); text-align: center; }
+.oem-type-card img { display: block; width: 100%; height: 40px; object-fit: contain; }
+.oem-type-name { display: block; margin-top: 4px; font-size: 0.72rem; font-weight: 600; line-height: 1.3; color: var(--color-text); }
+.oem-type-qty { display: block; font-size: 0.68rem; color: var(--color-text-light); }
+.oem-toolbar { display: flex; gap: var(--space-3); align-items: center; flex-wrap: wrap; margin-bottom: var(--space-3); }
+.oem-search { flex: 1; min-width: 220px; padding: 10px 14px; font-size: 0.9rem; color: var(--color-text); background: #fff; border: 1px solid var(--color-border); border-radius: var(--radius-md); outline: none; }
+.oem-search:focus { border-color: var(--color-primary); box-shadow: 0 0 0 3px rgba(27, 75, 142, 0.1); }
+.oem-scroll-hint { font-size: 0.8rem; color: var(--color-text-light); white-space: nowrap; }
+.oem-scroll { max-height: 620px; overflow-y: auto; overscroll-behavior: contain; padding: var(--space-4); border: 1px solid var(--color-border); border-radius: var(--radius-md); background: var(--color-bg); scrollbar-color: rgba(27,75,142,.35) transparent; }
+.oem-scroll::-webkit-scrollbar { width: 10px; }
+.oem-scroll::-webkit-scrollbar-track { background: transparent; }
+.oem-scroll::-webkit-scrollbar-thumb { background: rgba(27,75,142,.32); border-radius: 10px; border: 2px solid var(--color-bg); }
+.oem-scroll:focus-visible { outline: 2px solid var(--color-primary); outline-offset: 2px; }
+.oem-brand { margin-bottom: var(--space-5); }
+.oem-brand:last-child { margin-bottom: 0; }
+.oem-brand[hidden] { display: none !important; }
+.oem-brand-head { position: sticky; top: 0; z-index: 2; display: flex; justify-content: space-between; align-items: center; gap: var(--space-3); padding: 9px 14px; border-radius: 6px; background: var(--color-primary); color: #fff; font-size: 0.9375rem; }
+.oem-brand-head span { font-size: 0.78rem; opacity: 0.85; }
+.oem-group { display: grid; grid-template-columns: 190px 1fr; gap: var(--space-4); align-items: center; margin-top: 8px; padding: var(--space-3) var(--space-4); border: 1px solid var(--color-border); border-radius: var(--radius-md); background: #fff; }
+.oem-group-fig img { display: block; width: 100%; height: auto; max-height: 66px; object-fit: contain; }
+.oem-group-body h4 { margin: 0 0 8px; font-size: 0.9rem; font-weight: 700; color: var(--color-primary); }
+.oem-cnt { font-weight: 400; font-size: 0.8rem; color: var(--color-text-light); }
+.oem-lines span { display: inline-block; margin: 0 4px 5px 0; padding: 1px 7px; border: 1px solid var(--color-border); border-radius: 4px; background: rgba(27, 75, 142, 0.06); font-family: ui-monospace, SFMono-Regular, Consolas, monospace; font-size: 0.8125rem; color: var(--color-text); white-space: nowrap; }
+.oem-lines span.hit { background: #ffe9a8; border-color: #f0c44a; }
+.oem-count { margin: var(--space-3) 0 0; font-size: 0.8125rem; color: var(--color-text-light); }
+.oem-empty { margin: var(--space-4) 0; padding: var(--space-5); text-align: center; color: var(--color-text-light); font-size: 0.9rem; border: 1px dashed var(--color-border); border-radius: var(--radius-md); }
+.oem-empty[hidden] { display: none; }
+.oem-disclaimer { margin-top: var(--space-4); padding: var(--space-3) var(--space-4); background: #fff8ec; border-left: 3px solid #e0a33a; border-radius: 4px; font-size: 0.8125rem; color: #6b5326; line-height: 1.6; }
+@media (max-width: 900px) {
+  .oem-types-strip { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+}
+@media (max-width: 768px) {
+  .oem-types-strip { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .oem-group { grid-template-columns: 1fr; gap: var(--space-2); padding: var(--space-3); }
+  .oem-scroll { max-height: 480px; padding: var(--space-2); }
+  .oem-scroll-hint { white-space: normal; }
+  .oem-brand-head { font-size: 0.875rem; }
+}
+
+</style>
+
+
+<script>
+  (() => {
+    const app = document.getElementById('oemApp');
+    if (!app) return;
+    const search = document.getElementById('oemSearch');
+    const scroller = document.getElementById('oemScroll');
+    const brands = Array.from(scroller.querySelectorAll('.oem-brand'));
+    const countEl = document.getElementById('oemCount');
+    const emptyEl = document.getElementById('oemEmpty');
+    const tmpl = app.dataset.count;
+    const haystacks = brands.map((b) => b.textContent.toLowerCase());
+
+    function render() {
+      const q = (search.value || '').trim().toLowerCase();
+      let shown = 0;
+      brands.forEach((b, i) => {
+        const match = !q || haystacks[i].includes(q);
+        b.hidden = !match;
+        if (!match) return;
+        shown++;
+        b.querySelectorAll('.oem-lines span').forEach((s) => {
+          s.classList.toggle('hit', !!q && s.textContent.toLowerCase().includes(q));
+        });
+      });
+      countEl.textContent = tmpl.replace('__N__', String(shown));
+      emptyEl.hidden = shown !== 0;
+      if (q) scroller.scrollTop = 0;
+    }
+
+    search.addEventListener('input', render);
+    render();
+  })();
+</script>

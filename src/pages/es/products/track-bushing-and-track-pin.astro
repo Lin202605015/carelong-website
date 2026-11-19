@@ -51,6 +51,10 @@ import Breadcrumb from '../../../components/Breadcrumb.astro';
       <header class="section-header" style="margin-top: var(--space-12);">
         <h2>Especificaciones de Buje y Pasador de Oruga</h2>
       </header>
+      <figure class="spec-diagram">
+        <img src="/images/products/track-bushing-and-track-pin/tbp-types-diagram.webp" alt="Bujes y pasadores de oruga — dibujo dimensional de los tipos A, B, C, D" loading="lazy" />
+        <figcaption>Configuraciones disponibles — bujes tipos B / D, pasadores tipos A / C</figcaption>
+      </figure>
       <div class="data-table-wrapper spec-xl-wrap">
         <table class="data-table spec-table-xl">
           <thead>
@@ -165,6 +169,9 @@ import Breadcrumb from '../../../components/Breadcrumb.astro';
 .spec-row { display: flex; justify-content: space-between; padding: var(--space-4) var(--space-6); background: var(--color-bg); border: 1px solid var(--color-border); border-radius: var(--radius-md); }
 .spec-name { font-weight: 600; color: var(--color-text); }
 .spec-value { color: var(--color-text-light); text-align: right; }
+.spec-diagram { margin: 0 0 var(--space-6); background: #fff; border: 1px solid var(--color-border); border-radius: var(--radius-md); padding: var(--space-5); text-align: center; }
+.spec-diagram img { display: block; max-width: 100%; height: auto; margin: 0 auto; }
+.spec-diagram figcaption { margin-top: var(--space-3); font-size: 0.8125rem; color: var(--color-text-light); }
 .data-table-wrapper { overflow-x: auto; border: 1px solid var(--color-border); border-radius: var(--radius-md); background: var(--color-bg); }
 .data-table { width: 100%; border-collapse: collapse; font-size: 0.875rem; }
 .data-table thead th { background: var(--color-primary); color: #fff; padding: var(--space-3) var(--space-4); text-align: left; font-weight: 600; white-space: normal; line-height: 1.4; }

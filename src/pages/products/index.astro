@@ -1,4 +1,5 @@
 ---
+import { productImg } from '../../data/productImages';
 
 import BaseLayout from '../../layouts/BaseLayout.astro';
 
@@ -50,7 +51,7 @@ const categories: ProductCategory[] = [
 
     name: 'Plow Bolts',
 
-    image: '/images/products/bolts-and-nuts/plow-bolts/plow-bolt-01-v2.webp',
+    image: productImg('plowBolt'),
 
     description: 'Plow bolts for construction machinery undercarriage. Durable and reliable for heavy-duty applications.',
 
@@ -66,7 +67,7 @@ const categories: ProductCategory[] = [
 
     name: 'Track Bolts',
 
-    image: '/images/products/bolts-and-nuts/track-bolts/track-bolt-01-v2.webp',
+    image: productImg('trackBolt'),
 
     description: 'Track link bolts for excavators and bulldozers. High strength 10.9 and 12.9 class.',
 
@@ -82,7 +83,7 @@ const categories: ProductCategory[] = [
 
     name: 'Segment Bolts',
 
-    image: '/images/products/bolts-and-nuts/segment-bolts/segment-bolt-01-v2.webp',
+    image: productImg('segmentBolt'),
 
     description: 'Segment bolts for heavy equipment undercarriage. Precision manufactured to OEM specifications.',
 
@@ -98,7 +99,7 @@ const categories: ProductCategory[] = [
 
     name: 'Hex Nuts',
 
-    image: '/images/products/bolts-and-nuts/hex-nuts/hex-nuts-01-v2.webp',
+    image: productImg('hexNut'),
 
     description: 'Standard hexagonal nuts in carbon steel and alloy steel. M6–M36, Grade 8/10, zinc plated and black finish. DIN 934, ISO 4032 standard.',
 
@@ -114,7 +115,7 @@ const categories: ProductCategory[] = [
 
     name: 'Flange Nuts',
 
-    image: '/images/products/bolts-and-nuts/flange-nuts/flange-nuts-01-v2.webp',
+    image: productImg('flangeNut'),
 
     description: 'Hex flange nuts and serrated flange nuts with integrated washer base. DIN 6923, ISO 4161 standard. Carbon and alloy steel.',
 
@@ -130,7 +131,7 @@ const categories: ProductCategory[] = [
 
     name: 'Nylon Nuts',
 
-    image: '/images/products/bolts-and-nuts/nylon-nuts/nylon-nuts-01-v2.webp',
+    image: productImg('nylonNut'),
 
     description: 'Nylon insert lock nuts (prevailing torque nuts). DIN 982, ISO 10511. M4–M24, Grade 8/10. Self-locking design prevents loosening from vibration.',
 
@@ -146,7 +147,7 @@ const categories: ProductCategory[] = [
 
     name: 'Wheel Nuts',
 
-    image: '/images/products/bolts-and-nuts/wheel-nuts/wheel-nuts-01-v2.webp',
+    image: productImg('wheelNut'),
 
     description: 'Wheel lug nuts for trucks, trailers, and commercial vehicles. M18–M27, right-hand and left-hand thread. Compatible with BPW, SAF, Meritor.',
 
@@ -162,7 +163,7 @@ const categories: ProductCategory[] = [
 
     name: 'Slotted Nuts',
 
-    image: '/images/products/bolts-and-nuts/slotted-nuts/slotted-nuts-01-v2.webp',
+    image: productImg('slottedNut'),
 
     description: 'Castle nuts and slotted hex nuts for cotter pin locking. DIN 935, ISO 7035. M6–M36, Grade 8/10. Used in agricultural and construction machinery.',
 
@@ -180,7 +181,7 @@ const categories: ProductCategory[] = [
 
     name: 'Supermarket Display Racks',
 
-    image: '/images/products/display-rack/supermarket-display-racks-01-v2.webp',
+    image: productImg('supermarketRack'),
 
     description: 'Heavy-duty gondola shelving systems for supermarkets and grocery stores. Designed for high traffic and maximum product visibility.',
 
@@ -196,7 +197,7 @@ const categories: ProductCategory[] = [
 
     name: 'Pegboard & Slatwall Display',
 
-    image: '/images/products/display-rack/pegboard-slatwall-01-v2.webp',
+    image: productImg('pegboardRack'),
 
     description: 'Versatile pegboard and slatwall display panels with hooks, shelves, and accessories. Ideal for retail walls, workshops, and trade shows.',
 
@@ -212,7 +213,7 @@ const categories: ProductCategory[] = [
 
     name: 'Clothing Display Racks',
 
-    image: '/images/products/display-rack/clothing-racks-01-v2.webp',
+    image: productImg('clothingRack'),
 
     description: 'Stylish garment display racks for boutiques, showrooms, and trade shows. Various styles including round racks, garment rails, and display stands.',
 
@@ -228,7 +229,7 @@ const categories: ProductCategory[] = [
 
     name: 'Wooden Display Racks',
 
-    image: '/images/products/display-rack/wooden-racks-01-v2.webp',
+    image: productImg('woodenRack'),
 
     description: 'Elegant wooden display racks combining metal frames with wooden shelves. Perfect for boutiques, gift shops, and high-end retail environments.',
 
@@ -244,7 +245,7 @@ const categories: ProductCategory[] = [
 
     name: 'Display Tables & Stands',
 
-    image: '/images/products/display-rack/newspaper-racks-01-v2.webp',
+    image: productImg('newspaperRack'),
 
     description: 'Freestanding display tables and stands for publications, brochures, and promotional merchandise. Ideal for bookstores, newsstands, libraries, and retail floors.',
 
@@ -264,7 +265,7 @@ const categories: ProductCategory[] = [
 
     name: 'Stainless Steel Stamping',
 
-    image: '/images/products/stamping-parts/stainless-steel-stamping/stainless-01.webp',
+    image: productImg('stainlessStamp'),
 
     description: 'Corrosion-resistant stainless steel stamping in SUS304, SUS316 and SUS430. Progressive die, deep drawing and bending for automotive, electronics and food equipment.',
 
@@ -280,7 +281,7 @@ const categories: ProductCategory[] = [
 
     name: 'Carbon Steel Stamping',
 
-    image: '/images/products/stamping-parts/carbon-steel-stamping/carbon-01.webp',
+    image: productImg('carbonStamp'),
 
     description: 'High-strength carbon steel stamping in SPCC, DC01 and high-tensile grades. Brackets, supports and structural parts for automotive, construction and machinery.',
 
@@ -296,7 +297,7 @@ const categories: ProductCategory[] = [
 
     name: 'Aluminum Alloy Stamping',
 
-    image: '/images/products/stamping-parts/aluminum-alloy-stamping/alum-01.webp',
+    image: productImg('alumStamp'),
 
     description: 'Lightweight aluminum alloy stamping in 6061, 6063 and 5052. Heatsinks, enclosures and brackets for electronics, LED, automotive and solar.',
 
@@ -312,7 +313,7 @@ const categories: ProductCategory[] = [
 
     name: 'Copper / Brass Stamping',
 
-    image: '/images/products/stamping-parts/copper-brass-stamping/copper-01.webp',
+    image: productImg('copperStamp'),
 
     description: 'Conductive copper and brass stamping in C11000, C26000 and C27000. Terminals, connectors, contacts and decorative trim for electrical and plumbing.',
 
@@ -328,7 +329,7 @@ const categories: ProductCategory[] = [
 
     name: 'Galvanized & Aluzinc Stamping',
 
-    image: '/images/products/stamping-parts/galvanized-aluzinc-stamping/galv-01.webp',
+    image: productImg('galvStamp'),
 
     description: 'Corrosion-resistant galvanized and Galvalume (55 percent Al-Zn) coated sheet stamping. Brackets, panels and enclosures for construction, HVAC and outdoor use.',
 
@@ -344,7 +345,7 @@ const categories: ProductCategory[] = [
 
     name: 'Die Casting Parts',
 
-    image: '/images/products/die-casting-parts/die-casting-parts-01-v2.webp',
+    image: productImg('dieCasting'),
 
     description: 'Aluminum and zinc die casting components with CNC machining for complex geometries requiring high dimensional accuracy.',
 
@@ -360,7 +361,7 @@ const categories: ProductCategory[] = [
 
     name: 'Forging Parts',
 
-    image: '/images/products/forging-parts/forging-parts-01-v2.webp',
+    image: productImg('forging'),
 
     description: 'Hot forged components with superior grain flow. We specialize in high tensile 10.9 and 12.9 class using S40Cr and ML20MnTiB materials.',
 
@@ -376,7 +377,7 @@ const categories: ProductCategory[] = [
 
     name: 'Machining Parts',
 
-    image: '/images/products/machining-parts/machining-parts-01-v2.webp',
+    image: productImg('machining'),
 
     description: 'Precision CNC turned and milled parts from steel, stainless steel, aluminum, and brass. Multi-axis capabilities for complex geometries.',
 
@@ -392,7 +393,7 @@ const categories: ProductCategory[] = [
 
     name: 'Welding Parts',
 
-    image: '/images/products/welding-parts/welding-parts-01-v2.webp',
+    image: productImg('welding'),
 
     description: 'Custom welding fabrication including MIG, TIG, and spot welding. Assemblies from stamped, machined, and forged components.',
 
@@ -408,7 +409,7 @@ const categories: ProductCategory[] = [
 
     name: 'Plastic and Rubber Parts',
 
-    image: '/images/products/plastic-rubber-parts/plastic-rubber-parts-01-v2.webp',
+    image: productImg('plasticRubber'),
 
     description: 'Injection molded plastic and rubber components including seals, grommets, bushings, and custom molded parts.',
 
@@ -424,7 +425,7 @@ const categories: ProductCategory[] = [
 
     name: 'Tooling and Moulds',
 
-    image: '/images/products/tooling-and-moulds/tooling-and-moulds-01-v2.webp',
+    image: productImg('tooling'),
 
     description: 'Custom tooling design and manufacturing for cold heading, stamping, die casting, and injection molding applications.',
 
@@ -440,7 +441,7 @@ const categories: ProductCategory[] = [
 
     name: 'Heavy Equipment Parts',
 
-    image: '/images/products/heavy-equipment-parts/heavy-equipment-parts-01-v2.webp',
+    image: productImg('heavyEquipment'),
 
     description: 'Undercarriage spare parts for Caterpillar, Komatsu, and other heavy construction machinery. Track chains, rollers, idlers, and custom parts.',
 
@@ -456,7 +457,7 @@ const categories: ProductCategory[] = [
 
     name: 'Auto Parts',
 
-    image: '/images/products/auto-parts/auto-parts-1-v2.webp',
+    image: productImg('autoParts'),
 
     description: 'Automotive fasteners and components for Hino, Mitsubishi Fuso, Benz, Volvo, Nissan, and Suzuki. Wheel bolts, hub bolts, U-bolts, and wheel studs.',
 
@@ -472,7 +473,7 @@ const categories: ProductCategory[] = [
 
     name: 'Other Parts',
 
-    image: '/images/products/other-parts/other-parts-01-v2.webp',
+    image: productImg('otherParts'),
 
     description: 'Custom mechanical components per your specifications. We welcome inquiries for non-standard parts, prototype components, and specialty items.',
 

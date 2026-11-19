@@ -32,7 +32,7 @@ export const productImages = {
   heavyEquipment: '/images/products/heavy-equipment-parts/heavy-equipment-parts-01-v2.webp',
   autoParts: '/images/products/auto-parts/auto-parts-1-v2.webp',
   otherParts: '/images/products/other-parts/other-parts-01-v2.webp',
-  trackBushing: '/images/products/track-bushing-and-track-pin/track-bushing-and-track-pin-main.webp',
+  trackBushing: '/images/products/track-bushing-and-track-pin/track-bushing-and-track-pin-main-v2.webp',
 } as const;
 
 export type ProductImageKey = keyof typeof productImages;

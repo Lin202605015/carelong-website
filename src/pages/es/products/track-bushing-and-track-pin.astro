@@ -1,441 +1,492 @@
----
-import BaseLayout from '../../../layouts/BaseLayout.astro';
-import Breadcrumb from '../../../components/Breadcrumb.astro';
-import { productImg } from '../../../data/productImages';
----
-
-<BaseLayout
-  title="Buje y Pasador de Oruga — Piezas de Tren de Rodaje | Carelong"
-  description="Bujes y pasadores de oruga para excavadoras y buldóceres. Acero aleado tratado térmicamente, repuestos OEM para CAT, Komatsu y más."
->
-  <Breadcrumb items={[
-    { label: 'Productos', href: '/es/products' },
-    { label: 'Buje y Pasador de Oruga' }
-  ]} />
-
-  <header class="page-header">
-    <div class="container">
-      <h1>Buje y Pasador de Oruga</h1>
-      <p>Pasadores y bujes de tren de rodaje para excavadoras y buldóceres.</p>
-    </div>
-  </header>
-
-  <section class="section">
-    <div class="container">
-      <div class="product-overview">
-        <div class="product-image" style="background: #fff; border-radius: var(--radius-xl); box-shadow: var(--shadow-lg); display:flex; align-items:center; justify-content:center; height: 400px; overflow:hidden;">
-          <img src={productImg('trackBushing')} alt="Pasador y Buje de Oruga" style="max-height: 100%; max-width: 100%; object-fit: contain;" />
-        </div>
-        <div class="product-intro">
-          <p class="eyebrow">Descripción del Producto</p>
-          <h2>Buje y Pasador de Oruga</h2>
-          <p>Los pasadores y bujes de oruga son piezas clave de conexión en la cadena del tren de rodaje de excavadoras y buldóceres. Suministramos pasadores y bujes de acero aleado tratado térmicamente con repuestos OEM y medidas personalizadas.</p>
-
-          <div class="product-badges">
-            <span class="badge">Pasadores de Oruga</span>
-            <span class="badge">Bujes de Oruga</span>
-            <span class="badge">Acero Aleado Tratado</span>
-            <span class="badge">Servicio OEM</span>
-          </div>
-
-          <div class="product-actions">
-            <a href="/es/contact" class="btn btn-primary btn-lg">Solicitar Cotización</a>
-            <a href="/es/products" class="btn btn-primary btn-lg">Todos los Productos</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section section-alt">
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import Breadcrumb from '../../../components/Breadcrumb.astro';
+import { productImg } from '../../../data/productImages';
+---
+
+<BaseLayout
+  title="Buje y Pasador de Oruga — Piezas de Tren de Rodaje | Carelong"
+  description="Bujes y pasadores de oruga para excavadoras y buldóceres. Acero aleado tratado térmicamente, repuestos OEM para CAT, Komatsu y más."
+>
+  <Breadcrumb items={[
+    { label: 'Productos', href: '/es/products' },
+    { label: 'Buje y Pasador de Oruga' }
+  ]} />
+
+  <header class="page-header">
     <div class="container">
-      <header class="section-header" style="margin-top: var(--space-12);">
-        <h2>Especificaciones de Buje y Pasador de Oruga</h2>
-      </header>
-                              <div class="data-table-wrapper spec-xl-wrap oem-table-wrap" style="max-height: 620px; overflow: auto;">
-          <table class="data-table spec-table-xl oem-table">
-            <thead>
-              <tr><th>Marca</th><th>No. OEM</th><th>Tipo de Producto</th><th>Modelos Aplicables</th></tr>
-            </thead>
-            <tbody>
-              <tr><td>Caterpillar</td><td>108-0943</td><td>Pasador de oruga</td><td>D5N/D5M/D4H/561N/561M/561H HD S&amp;L</td></tr>
-              <tr><td>Caterpillar</td><td>160-7816</td><td>Pasador de oruga</td><td>D4H/561H S&amp;L; D4H TSK; D5K/D5G/D5C S&amp;L; 939C/939</td></tr>
-              <tr><td>Caterpillar</td><td>541-4624</td><td>Pasador de oruga</td><td>D5/D6N/D6M/D5H HDXL; 953K/D/C HDXL</td></tr>
-              <tr><td>Caterpillar</td><td>179-0126</td><td>Pasador de oruga</td><td>D6N/D6M/D5H HD S&amp;L; D6K2; 953K/D/C HD</td></tr>
-              <tr><td>Caterpillar</td><td>160-7818</td><td>Pasador de oruga</td><td>D5H Hybrid; D5H TSK Hybrid; 953D/C Hybrid</td></tr>
-              <tr><td>Caterpillar</td><td>248-2306</td><td>Pasador de oruga</td><td>D6/D6XE/D6T/D6R/D6H HDXL; 527 HDXL</td></tr>
-              <tr><td>Caterpillar</td><td>160-7820</td><td>Pasador de oruga</td><td>D6T/D6R/D6H HD; 963K HD</td></tr>
-              <tr><td>Caterpillar</td><td>503-0767</td><td>Pasador de oruga</td><td>D7/D7R/D7H/572R HDXL; D7E; 973K/973D</td></tr>
-              <tr><td>Caterpillar</td><td>152-8080</td><td>Pasador de oruga</td><td>D7R/H former HD (service)</td></tr>
-              <tr><td>Caterpillar</td><td>115-4923</td><td>Pasador de oruga</td><td>D7R/H HD service; D7E HD; 973K/D HD service</td></tr>
-              <tr><td>Caterpillar</td><td>460-6952</td><td>Pasador de oruga</td><td>D8T/D8R/D8N/D8GC PPR; D8 HDXL; D8L PPR</td></tr>
-              <tr><td>Caterpillar</td><td>451-3702</td><td>Pasador de oruga</td><td>D8T/D8R/D8N/D8GC General Duty</td></tr>
-              <tr><td>Caterpillar</td><td>7T-7054</td><td>Pasador de oruga</td><td>587T/R, 583T/R, PL83/PL87 (former, replaced by 460-6952)</td></tr>
-              <tr><td>Caterpillar</td><td>199-2794</td><td>Pasador de oruga</td><td>D8L non-PPR; D7/571/572 GD; 973D/C GD; 977 GD</td></tr>
-              <tr><td>Caterpillar</td><td>186-0780</td><td>Pasador de oruga</td><td>D9T/D9R/D9N HDXL &amp; PPR; D9L; 589</td></tr>
-              <tr><td>Caterpillar</td><td>6Y-1579</td><td>Pasador de oruga</td><td>D10T/D10R/D10N; D10</td></tr>
-              <tr><td>Caterpillar</td><td>458-7810</td><td>Pasador de oruga</td><td>D10T/D10R/D10N General Duty</td></tr>
-              <tr><td>Caterpillar</td><td>126-5343</td><td>Pasador de oruga</td><td>D11/D11T/D11R/D11N</td></tr>
-              <tr><td>Caterpillar</td><td>154-7311</td><td>Pasador de oruga</td><td>517; D5H TSK</td></tr>
-              <tr><td>Caterpillar</td><td>154-3664</td><td>Pasador de oruga</td><td>D4H TSK/Custom Skidder (former); D5C former; D4 S&amp;L; 941; 943; D4E</td></tr>
-              <tr><td>Caterpillar</td><td>303-9455</td><td>Pasador de oruga</td><td>D1/D2/D3K/D3G/D3C/D3B/D3/D4K/D4G/D4C/D4B S&amp;L; 935C/931C/933; AP650B/AP1050; BG225C/BG245C; 299D3</td></tr>
-              <tr><td>Caterpillar</td><td>6B-5278</td><td>Pasador de oruga</td><td>D3C/B, D3, D4C/B Sealed; 931/935; PR450; AP650B/AP1050 std</td></tr>
-              <tr><td>Caterpillar</td><td>527-8784</td><td>Pasador de oruga</td><td>D5/561/D6 GD (6.91&quot;); 951; 953C/B GD; 955; 977</td></tr>
-              <tr><td>Caterpillar</td><td>445-6542</td><td>Pasador de oruga</td><td>D6 General Duty (8.00&quot;); 955; 963D/C/B</td></tr>
-              <tr><td>Caterpillar</td><td>9K-4060</td><td>Pasador de oruga</td><td>D4 Sealed; PM565; PR750B/PR1000</td></tr>
-              <tr><td>Caterpillar</td><td>4B-6166</td><td>Pasador de oruga</td><td>D4 small OD bushing / 1/2&quot; bolt</td></tr>
-              <tr><td>Caterpillar</td><td>6B-5882</td><td>Pasador de oruga</td><td>D7/572 Sealed (41 sec); 977 Sealed</td></tr>
-              <tr><td>Caterpillar</td><td>188-5710</td><td>Pasador de oruga</td><td>D8/583 GD S&amp;L (41 sec)</td></tr>
-              <tr><td>Caterpillar</td><td>1M-1455</td><td>Pasador de oruga</td><td>D8/583 GD Sealed; D8/583 Pipelayer; 983 Sealed</td></tr>
-              <tr><td>Caterpillar</td><td>2P-9486</td><td>Pasador de oruga</td><td>D8 S&amp;L (39/41 sec); 983 S&amp;L</td></tr>
-              <tr><td>Caterpillar</td><td>4B-6620</td><td>Pasador de oruga</td><td>D8/583 Sealed (42 sec)</td></tr>
-              <tr><td>Caterpillar</td><td>2P-9423</td><td>Pasador de oruga</td><td>D9/594 S&amp;L</td></tr>
-              <tr><td>Caterpillar</td><td>2M-5652</td><td>Pasador de oruga</td><td>D9/594 Pipelayer Sealed</td></tr>
-              <tr><td>Caterpillar</td><td>152-8075</td><td>Pasador de oruga</td><td>939C/939 RBT</td></tr>
-              <tr><td>Caterpillar</td><td>605-9176</td><td>Pasador de oruga</td><td>953K HDXL Steel Mill</td></tr>
-              <tr><td>Caterpillar</td><td>561-6173</td><td>Pasador de oruga</td><td>963K HD Steel Mill</td></tr>
-              <tr><td>Caterpillar</td><td>4M-5989</td><td>Pasador de oruga</td><td>963K/D GD/Hybrid Steel Mill</td></tr>
-              <tr><td>Caterpillar</td><td>516-2015</td><td>Pasador de oruga</td><td>973K HD Steel Mill</td></tr>
-              <tr><td>Caterpillar</td><td>0</td><td>Pasador de oruga</td><td>973 GD Steel Mill; 551/552/TK751/TK752</td></tr>
-              <tr><td>Caterpillar</td><td>121-5394</td><td>Pasador de oruga</td><td>5130B/5130; Hitachi EX1900 (Cat link 597-1431)</td></tr>
-              <tr><td>Caterpillar</td><td>125-9383</td><td>Pasador de oruga</td><td>5110B</td></tr>
-              <tr><td>Caterpillar</td><td>110-3118</td><td>Pasador de oruga</td><td>5230</td></tr>
-              <tr><td>Caterpillar</td><td>294-3063</td><td>Pasador de oruga</td><td>6015/RH40; MD6640</td></tr>
-              <tr><td>Caterpillar</td><td>430-4202</td><td>Pasador de oruga</td><td>6015B</td></tr>
-              <tr><td>Caterpillar</td><td>535-3215</td><td>Pasador de oruga</td><td>6018/RH90</td></tr>
-              <tr><td>Caterpillar</td><td>471-2025</td><td>Pasador de oruga</td><td>6020B</td></tr>
-              <tr><td>Caterpillar</td><td>465-8480</td><td>Pasador de oruga</td><td>6030HD</td></tr>
-              <tr><td>Caterpillar</td><td>465-8392</td><td>Pasador de oruga</td><td>6030/RH120E</td></tr>
-              <tr><td>Caterpillar</td><td>533-6953</td><td>Pasador de oruga</td><td>6040/RH170</td></tr>
-              <tr><td>Caterpillar</td><td>465-8489</td><td>Pasador de oruga</td><td>6040HD/6040V2</td></tr>
-              <tr><td>Caterpillar</td><td>6Y-8186</td><td>Pasador de oruga</td><td>311/312/313/314/315F/315D/316E/317/318B/318C/320/321/323/325F GD; MD5075/MD5090; 320D/320C/538 clamp master</td></tr>
-              <tr><td>Caterpillar</td><td>340-8908</td><td>Pasador de oruga</td><td>311-318/320/321/322/323/324/325F/326 HD press fit; 318CL; MD5125</td></tr>
-              <tr><td>Caterpillar</td><td>6Y-0851</td><td>Pasador de oruga</td><td>325/329/330/330F/330GC slip fit; 330 NGH; 322CL</td></tr>
-              <tr><td>Caterpillar</td><td>261-1013</td><td>Pasador de oruga</td><td>325/329/330/330F/330GC PPR2; 324D/322C (324D FM); 511/TK711</td></tr>
-              <tr><td>Caterpillar</td><td>6Y-2751</td><td>Pasador de oruga</td><td>328/330/336/340 GD; 328-340 NGH; MD6240/MD6290; 521B/522B/532/541/TK732; 548</td></tr>
-              <tr><td>Caterpillar</td><td>541-4599</td><td>Pasador de oruga</td><td>MD6200</td></tr>
-              <tr><td>Caterpillar</td><td>585-5268</td><td>Pasador de oruga</td><td>345B/345C/345D/349D/349E/352 GD PPR3</td></tr>
-              <tr><td>Caterpillar</td><td>529-8461</td><td>Pasador de oruga</td><td>345B-352 HDXL; 568/330D/330C Forestry HDXL</td></tr>
-              <tr><td>Caterpillar</td><td>509-5199</td><td>Pasador de oruga</td><td>350/350L; MD6420(9.0&quot;); MD6540</td></tr>
-              <tr><td>Caterpillar</td><td>529-8463</td><td>Pasador de oruga</td><td>365BL/365CL/374D/374F/374 NGH; 385B/385C/390D/390F/395 NGH/5090 PPR2</td></tr>
-              <tr><td>Caterpillar</td><td>294-3061</td><td>Pasador de oruga</td><td>365B/365C/374D/374F HD; MD6380</td></tr>
-              <tr><td>Caterpillar</td><td>552-9465</td><td>Pasador de oruga</td><td>TK711 (7.50&quot;); 538/320D/320CL D5 HD PPR2</td></tr>
-              <tr><td>Caterpillar</td><td>576-4399</td><td>Pasador de oruga</td><td>521/522/TK721/TK722/TK741; 324D FM LGP; 558/325D/325C/325B/325 (325 FM)</td></tr>
-              <tr><td>Caterpillar</td><td>384-5479</td><td>Pasador de oruga</td><td>538/320D2 narrow PPR2</td></tr>
-              <tr><td>Caterpillar</td><td>565-0833</td><td>Pasador de oruga</td><td>538 NEXT GEN narrow PPR3</td></tr>
-              <tr><td>Caterpillar</td><td>158-4681</td><td>Pasador de oruga</td><td>302.5/302.5C/303/303CR/303E/303CCR/303.5/303.5CCR/303.5D/303.5 E steel track</td></tr>
-              <tr><td>Caterpillar</td><td>158-4772</td><td>Pasador de oruga</td><td>304CCR/304CR/304.5/305CR/305CCR/305D/305E/305.5/305.5D/306 steel track</td></tr>
-              <tr><td>Caterpillar</td><td>333-5616</td><td>Pasador de oruga</td><td>306 steel track</td></tr>
-              <tr><td>Caterpillar</td><td>168-6758</td><td>Pasador de oruga</td><td>307B/307C/307D/307E/308C/308D/308E</td></tr>
-              <tr><td>Caterpillar</td><td>093-0515</td><td>Pasador de oruga</td><td>307/307B/308B (42/44 sec)</td></tr>
-              <tr><td>Caterpillar</td><td>117-8882</td><td>Pasador de oruga</td><td>PM465</td></tr>
-              <tr><td>Caterpillar</td><td>367-8220</td><td>Pasador de oruga</td><td>299C/299D/299D2 steel track</td></tr>
-              <tr><td>Caterpillar</td><td>607-1448</td><td>Pasador de oruga</td><td>&nbsp;</td></tr>
-              <tr><td>Komatsu</td><td>20Y-32-11150</td><td>Pasador de oruga</td><td>PC200 Serie</td></tr>
-              <tr><td>Komatsu</td><td>20Y-32-K1231</td><td>Pasador de oruga</td><td>PC200 Serie</td></tr>
-              <tr><td>Komatsu</td><td>20Y-98-09010</td><td>Pasador de oruga</td><td>PC200 Serie</td></tr>
-              <tr><td>Komatsu</td><td>205-32-11150</td><td>Pasador de oruga</td><td>&nbsp;</td></tr>
-              <tr><td>Komatsu</td><td>205-98-09032</td><td>Pasador de oruga</td><td>&nbsp;</td></tr>
-              <tr><td>Komatsu</td><td>207-32-11151</td><td>Pasador de oruga</td><td>PC300/PC350 Serie</td></tr>
-              <tr><td>Komatsu</td><td>207-32-11152</td><td>Pasador de oruga</td><td>PC300/PC350 Serie</td></tr>
-              <tr><td>Komatsu</td><td>207-32-K2350</td><td>Pasador de oruga</td><td>PC300/PC350 Serie</td></tr>
-              <tr><td>Komatsu</td><td>207-98-09010</td><td>Pasador de oruga</td><td>PC300/PC350 Serie</td></tr>
-              <tr><td>Komatsu</td><td>207-98-09011</td><td>Pasador de oruga</td><td>PC300/PC350 Serie</td></tr>
-              <tr><td>Komatsu</td><td>207-98-09031</td><td>Pasador de oruga</td><td>PC300/PC350 Serie</td></tr>
-              <tr><td>Komatsu</td><td>202-98-09011</td><td>Pasador de oruga</td><td>&nbsp;</td></tr>
-              <tr><td>Komatsu</td><td>202-98-09030</td><td>Pasador de oruga</td><td>&nbsp;</td></tr>
-              <tr><td>Komatsu</td><td>202-98-09031</td><td>Pasador de oruga</td><td>&nbsp;</td></tr>
-              <tr><td>Komatsu</td><td>21N-32-11151</td><td>Pasador de oruga</td><td>PC1100/PC1250 Serie</td></tr>
-              <tr><td>Komatsu</td><td>21N-98-09021</td><td>Pasador de oruga</td><td>PC1100/PC1250 Serie</td></tr>
-              <tr><td>Komatsu</td><td>21T-98-09211</td><td>Pasador de oruga</td><td>&nbsp;</td></tr>
-              <tr><td>Komatsu</td><td>8240-32-1150</td><td>Pasador de oruga</td><td>&nbsp;</td></tr>
-              <tr><td>Komatsu</td><td>198-32-31953</td><td>Pasador de oruga</td><td>D475 Serie</td></tr>
-              <tr><td>Komatsu</td><td>198-32-31151</td><td>Pasador de oruga</td><td>D475 Serie</td></tr>
-              <tr><td>Komatsu</td><td>198-32-00211</td><td>Pasador de oruga</td><td>D475 Serie</td></tr>
-              <tr><td>Komatsu</td><td>198-98-09010</td><td>Pasador de oruga</td><td>D475 Serie</td></tr>
-              <tr><td>Komatsu</td><td>195-32-41151</td><td>Pasador de oruga</td><td>D375 Serie</td></tr>
-              <tr><td>Komatsu</td><td>195-32-E41151</td><td>Pasador de oruga</td><td>D375 Serie</td></tr>
-              <tr><td>Komatsu</td><td>195-32-11150</td><td>Pasador de oruga</td><td>D375 Serie</td></tr>
-              <tr><td>Komatsu</td><td>195-32-11571</td><td>Pasador de oruga</td><td>D375 Serie</td></tr>
-              <tr><td>Komatsu</td><td>195-32-22151</td><td>Pasador de oruga</td><td>D375 Serie</td></tr>
-              <tr><td>Komatsu</td><td>195-32-22151E</td><td>Pasador de oruga</td><td>D375 Serie</td></tr>
-              <tr><td>Komatsu</td><td>195-32-61250</td><td>Pasador de oruga</td><td>D375 Serie</td></tr>
-              <tr><td>Komatsu</td><td>195-98-09030</td><td>Pasador de oruga</td><td>D375 Serie</td></tr>
-              <tr><td>Komatsu</td><td>195-98-09230</td><td>Pasador de oruga</td><td>D375 Serie</td></tr>
-              <tr><td>Komatsu</td><td>176-32-11150</td><td>Pasador de oruga</td><td>&nbsp;</td></tr>
-              <tr><td>Komatsu</td><td>154-32-11151</td><td>Pasador de oruga</td><td>D85 Serie</td></tr>
-              <tr><td>Komatsu</td><td>154-98-09012</td><td>Pasador de oruga</td><td>D85 Serie</td></tr>
-              <tr><td>Komatsu</td><td>155-32-11153</td><td>Pasador de oruga</td><td>&nbsp;</td></tr>
-              <tr><td>Komatsu</td><td>155-98-09011</td><td>Pasador de oruga</td><td>&nbsp;</td></tr>
-              <tr><td>Komatsu</td><td>155-98-09030</td><td>Pasador de oruga</td><td>&nbsp;</td></tr>
-              <tr><td>Komatsu</td><td>144-98-09011</td><td>Pasador de oruga</td><td>&nbsp;</td></tr>
-              <tr><td>Komatsu</td><td>144-98-09031</td><td>Pasador de oruga</td><td>&nbsp;</td></tr>
-              <tr><td>Komatsu</td><td>140-803-7150</td><td>Pasador de oruga</td><td>&nbsp;</td></tr>
-              <tr><td>Komatsu</td><td>112-32-11155</td><td>Pasador de oruga</td><td>&nbsp;</td></tr>
-              <tr><td>Komatsu</td><td>112-32-11155E</td><td>Pasador de oruga</td><td>&nbsp;</td></tr>
-              <tr><td>Komatsu</td><td>101-98-09080</td><td>Pasador de oruga</td><td>&nbsp;</td></tr>
-              <tr><td>Komatsu</td><td>10F-98-09010</td><td>Pasador de oruga</td><td>&nbsp;</td></tr>
-              <tr><td>Komatsu</td><td>E4020700S</td><td>Pasador de oruga</td><td>&nbsp;</td></tr>
-              <tr><td>Komatsu</td><td>F40508A0S</td><td>Pasador de oruga</td><td>&nbsp;</td></tr>
-              <tr><td>Komatsu</td><td>F4050800S</td><td>Pasador de oruga</td><td>&nbsp;</td></tr>
-              <tr><td>Komatsu</td><td>E40507B0S</td><td>Pasador de oruga</td><td>&nbsp;</td></tr>
-              <tr><td>Komatsu</td><td>E40207B0S</td><td>Pasador de oruga</td><td>&nbsp;</td></tr>
-              <tr><td>Komatsu</td><td>KBA0147</td><td>Pasador de oruga</td><td>&nbsp;</td></tr>
-              <tr><td>Hitachi</td><td>4195135</td><td>Pasador de oruga</td><td>&nbsp;</td></tr>
-              <tr><td>Hitachi</td><td>4358599</td><td>Pasador de oruga</td><td>&nbsp;</td></tr>
-              <tr><td>Hitachi</td><td>4132765</td><td>Pasador de oruga</td><td>&nbsp;</td></tr>
-              <tr><td>Hitachi</td><td>4155607</td><td>Pasador de oruga</td><td>&nbsp;</td></tr>
-              <tr><td>Hitachi</td><td>4326065</td><td>Pasador de oruga</td><td>&nbsp;</td></tr>
-              <tr><td>Hitachi</td><td>4336499</td><td>Pasador de oruga</td><td>&nbsp;</td></tr>
-              <tr><td>Hitachi</td><td>70633365</td><td>Pasador de oruga</td><td>&nbsp;</td></tr>
-              <tr><td>Hitachi</td><td>4145372</td><td>Pasador de oruga</td><td>&nbsp;</td></tr>
-              <tr><td>Hitachi</td><td>4345170</td><td>Pasador de oruga</td><td>&nbsp;</td></tr>
-              <tr><td>Hitachi</td><td>3075265</td><td>Pasador de oruga</td><td>&nbsp;</td></tr>
-              <tr><td>Hitachi</td><td>4512417</td><td>Pasador de oruga</td><td>&nbsp;</td></tr>
-              <tr><td>Hitachi</td><td>4263691</td><td>Pasador de oruga</td><td>&nbsp;</td></tr>
-              <tr><td>Hitachi</td><td>4080991</td><td>Pasador de oruga</td><td>&nbsp;</td></tr>
-              <tr><td>Hitachi</td><td>4616101</td><td>Pasador de oruga</td><td>&nbsp;</td></tr>
-              <tr><td>Hitachi</td><td>2039112</td><td>Pasador de oruga</td><td>&nbsp;</td></tr>
-              <tr><td>Hitachi</td><td>4358587</td><td>Pasador de oruga</td><td>&nbsp;</td></tr>
-              <tr><td>Hitachi</td><td>4164871</td><td>Pasador de oruga</td><td>&nbsp;</td></tr>
-              <tr><td>Hitachi</td><td>4156583</td><td>Pasador de oruga</td><td>&nbsp;</td></tr>
-              <tr><td>Hitachi</td><td>4146208</td><td>Pasador de oruga</td><td>&nbsp;</td></tr>
-              <tr><td>Hitachi</td><td>4312641</td><td>Pasador de oruga</td><td>&nbsp;</td></tr>
-              <tr><td>Hitachi</td><td>4156538</td><td>Pasador de oruga</td><td>&nbsp;</td></tr>
-              <tr><td>Hitachi</td><td>4067238</td><td>Pasador de oruga</td><td>&nbsp;</td></tr>
-              <tr><td>Hitachi</td><td>4378885</td><td>Pasador de oruga</td><td>&nbsp;</td></tr>
-              <tr><td>Hitachi</td><td>4257102</td><td>Pasador de oruga</td><td>&nbsp;</td></tr>
-              <tr><td>Hitachi</td><td>4314671</td><td>Pasador de oruga</td><td>&nbsp;</td></tr>
-              <tr><td>Hitachi</td><td>4512361</td><td>Pasador de oruga</td><td>&nbsp;</td></tr>
-              <tr><td>Hitachi</td><td>4218734</td><td>Pasador de oruga</td><td>&nbsp;</td></tr>
-              <tr><td>Hitachi</td><td>4153370</td><td>Pasador de oruga</td><td>&nbsp;</td></tr>
-              <tr><td>Hitachi</td><td>4378891</td><td>Pasador de oruga</td><td>&nbsp;</td></tr>
-              <tr><td>Hitachi</td><td>4618168</td><td>Pasador de oruga</td><td>&nbsp;</td></tr>
-              <tr><td>Hitachi</td><td>4295230</td><td>Pasador de oruga</td><td>&nbsp;</td></tr>
-              <tr><td>Caterpillar</td><td>108-0944</td><td>Buje de oruga</td><td>D5N/D5M/D4H/561N/561M/561H HD S&amp;L</td></tr>
-              <tr><td>Caterpillar</td><td>224-3959</td><td>Buje de oruga</td><td>D4H/561H S&amp;L; D4H TSK; D5K/D5G/D5C S&amp;L; 939C/939</td></tr>
-              <tr><td>Caterpillar</td><td>106-1618</td><td>Buje de oruga</td><td>D5/D6N/D6M/D5H; D6K2; 517; D5H TSK; 953K/D/C; TK711; 538/320D/320CL</td></tr>
-              <tr><td>Caterpillar</td><td>229-6915</td><td>Buje de oruga</td><td>D5H Hybrid; D5H TSK Hybrid; 953D/C Hybrid</td></tr>
-              <tr><td>Caterpillar</td><td>0</td><td>Buje de oruga</td><td>D6/D6T/D6R/D6H; 527; 963K; 521/522/TK721; 324D FM LGP; 325 FM</td></tr>
-              <tr><td>Caterpillar</td><td>115-4924</td><td>Buje de oruga</td><td>D7/D7R/D7H/572R HDXL; D7E; 973K/973D</td></tr>
-              <tr><td>Caterpillar</td><td>165-1770</td><td>Buje de oruga</td><td>D7/D7R/D7H RBT; D7E RBT</td></tr>
-              <tr><td>Caterpillar</td><td>6Y-3914</td><td>Buje de oruga</td><td>D8T/D8R/D8N/D8GC; D8L; 587T/R; 583T/R; PL83/PL87</td></tr>
-              <tr><td>Caterpillar</td><td>502-6148</td><td>Buje de oruga</td><td>D8 HDXL Dura Link/Flat rail</td></tr>
-              <tr><td>Caterpillar</td><td>526-7460</td><td>Buje de oruga</td><td>D9T/D9R/D9N HDXL</td></tr>
-              <tr><td>Caterpillar</td><td>186-0781</td><td>Buje de oruga</td><td>D9T/D9R/D9N PPR</td></tr>
-              <tr><td>Caterpillar</td><td>6Y-2141</td><td>Buje de oruga</td><td>D9L; 589</td></tr>
-              <tr><td>Caterpillar</td><td>482-7709</td><td>Buje de oruga</td><td>D10T/D10R/D10N HDXL</td></tr>
-              <tr><td>Caterpillar</td><td>6Y-2057</td><td>Buje de oruga</td><td>D10T/D10R/D10N HD PPR / 5-tooth master</td></tr>
-              <tr><td>Caterpillar</td><td>458-7809</td><td>Buje de oruga</td><td>D10T/D10R/D10N General Duty</td></tr>
-              <tr><td>Caterpillar</td><td>143-0746</td><td>Buje de oruga</td><td>D10 PPR; 5110B</td></tr>
-              <tr><td>Caterpillar</td><td>541-1266</td><td>Buje de oruga</td><td>D11/D11T/D11R/D11N HDXL</td></tr>
-              <tr><td>Caterpillar</td><td>488-1332</td><td>Buje de oruga</td><td>D11/D11T/D11R/D11N HD</td></tr>
-              <tr><td>Caterpillar</td><td>566-2940</td><td>Buje de oruga</td><td>D11/D11T/D11R/D11N General Duty</td></tr>
-              <tr><td>Caterpillar</td><td>6Y-0929</td><td>Buje de oruga</td><td>D5H TSK/Custom Skidder (former link 6Y-5413)</td></tr>
-              <tr><td>Caterpillar</td><td>188-6246</td><td>Buje de oruga</td><td>D1/D2/D3K/D3G/D3C/D3B/D3/D4K/D4G/D4C/D4B S&amp;L; 935C/931C/933; AP650B/AP1050; 299D3</td></tr>
-              <tr><td>Caterpillar</td><td>6Y-1717</td><td>Buje de oruga</td><td>D3C/B, D3, D4C/B Sealed; 935C/931C; PR450; AP650B/AP1050 std</td></tr>
-              <tr><td>Caterpillar</td><td>6S-9051</td><td>Buje de oruga</td><td>D3 S&amp;L former split master; 935C/931C</td></tr>
-              <tr><td>Caterpillar</td><td>6S-3178</td><td>Buje de oruga</td><td>D3 former; 931/935 short UC</td></tr>
-              <tr><td>Caterpillar</td><td>7T-4628</td><td>Buje de oruga</td><td>D5C former 9K links; D4 S&amp;L; 941; 943</td></tr>
-              <tr><td>Caterpillar</td><td>527-8783</td><td>Buje de oruga</td><td>D5/561/D6 GD (6.91&quot;); 951; 953C/B GD; 955; 977</td></tr>
-              <tr><td>Caterpillar</td><td>456-1750</td><td>Buje de oruga</td><td>D6 General Duty (8.00&quot;); 955; 963D/C/B</td></tr>
-              <tr><td>Caterpillar</td><td>456-1746</td><td>Buje de oruga</td><td>D7/571/572 GD; 973D/C/973 GD; 977 GD</td></tr>
-              <tr><td>Caterpillar</td><td>9K-4061</td><td>Buje de oruga</td><td>D4 Sealed; PM565; PR750B/PR1000</td></tr>
-              <tr><td>Caterpillar</td><td>4K-3918</td><td>Buje de oruga</td><td>D4 small OD bushing / 1/2&quot; bolt</td></tr>
-              <tr><td>Caterpillar</td><td>8M-7289</td><td>Buje de oruga</td><td>D7/572 Sealed; 977 Sealed</td></tr>
-              <tr><td>Caterpillar</td><td>188-5658</td><td>Buje de oruga</td><td>D8/583 GD S&amp;L (41 sec)</td></tr>
-              <tr><td>Caterpillar</td><td>8M-2619</td><td>Buje de oruga</td><td>D8/583 GD Sealed; D8/583 Pipelayer; 983 Sealed</td></tr>
-              <tr><td>Caterpillar</td><td>2P-9484</td><td>Buje de oruga</td><td>D8 S&amp;L (39/41 sec); 983 S&amp;L</td></tr>
-              <tr><td>Caterpillar</td><td>8M-7230</td><td>Buje de oruga</td><td>D8/583 Sealed (42 sec)</td></tr>
-              <tr><td>Caterpillar</td><td>2P-9424</td><td>Buje de oruga</td><td>D9/594 S&amp;L</td></tr>
-              <tr><td>Caterpillar</td><td>2S-0253</td><td>Buje de oruga</td><td>D9/594 Pipelayer Sealed</td></tr>
-              <tr><td>Caterpillar</td><td>9G-8588</td><td>Buje de oruga</td><td>939C/939 6.75&quot; pitch; D5 (6I-9527/6Y-5407 links)</td></tr>
-              <tr><td>Caterpillar</td><td>109-0478</td><td>Buje de oruga</td><td>939C/939 RBT</td></tr>
-              <tr><td>Caterpillar</td><td>508-8981</td><td>Buje de oruga</td><td>953K HDXL Steel Mill</td></tr>
-              <tr><td>Caterpillar</td><td>561-6174</td><td>Buje de oruga</td><td>963K HD Steel Mill</td></tr>
-              <tr><td>Caterpillar</td><td>237-7305</td><td>Buje de oruga</td><td>963K/D GD/Hybrid Steel Mill</td></tr>
-              <tr><td>Caterpillar</td><td>516-2016</td><td>Buje de oruga</td><td>973K HD Steel Mill</td></tr>
-              <tr><td>Caterpillar</td><td>247-1475</td><td>Buje de oruga</td><td>973 GD Steel Mill</td></tr>
-              <tr><td>Caterpillar</td><td>207-6061</td><td>Buje de oruga</td><td>5130B/5130; Hitachi EX1900</td></tr>
-              <tr><td>Caterpillar</td><td>168-7576</td><td>Buje de oruga</td><td>5230</td></tr>
-              <tr><td>Caterpillar</td><td>168-7577</td><td>Buje de oruga</td><td>5230</td></tr>
-              <tr><td>Caterpillar</td><td>245-3805</td><td>Buje de oruga</td><td>6015/RH40; MD6640; MD6380; 374F/374D/365C/365B; 395/390F/390D/385C/5090</td></tr>
-              <tr><td>Caterpillar</td><td>430-4201</td><td>Buje de oruga</td><td>6015B</td></tr>
-              <tr><td>Caterpillar</td><td>471-2024</td><td>Buje de oruga</td><td>6020B</td></tr>
-              <tr><td>Caterpillar</td><td>493-9690</td><td>Buje de oruga</td><td>6030HD</td></tr>
-              <tr><td>Caterpillar</td><td>493-9691</td><td>Buje de oruga</td><td>6030HD</td></tr>
-              <tr><td>Caterpillar</td><td>465-8391</td><td>Buje de oruga</td><td>6030/RH120E</td></tr>
-              <tr><td>Caterpillar</td><td>534-1056</td><td>Buje de oruga</td><td>6040/RH170</td></tr>
-              <tr><td>Caterpillar</td><td>503-0040</td><td>Buje de oruga</td><td>6040HD/6040V2</td></tr>
-              <tr><td>Caterpillar</td><td>503-0041</td><td>Buje de oruga</td><td>6040HD/6040V2</td></tr>
-              <tr><td>Caterpillar</td><td>190-3523</td><td>Buje de oruga</td><td>311-326 series; 318CL; MD5075/MD5090/MD5125</td></tr>
-              <tr><td>Caterpillar</td><td>321-1462</td><td>Buje de oruga</td><td>325/329/330/330F/330GC; 330 NGH; 322CL</td></tr>
-              <tr><td>Caterpillar</td><td>261-1015</td><td>Buje de oruga</td><td>325/329/330/330F/330GC PPR2; 324D/322C; 511/TK711</td></tr>
-              <tr><td>Caterpillar</td><td>321-1463</td><td>Buje de oruga</td><td>328/330/336/340; MD6200/MD6240/MD6290; 521B/522B/532/541/TK732; 548</td></tr>
-              <tr><td>Caterpillar</td><td>227-3029</td><td>Buje de oruga</td><td>345B-352 HD; MD6250/MD6310/MD6420; 551/552/TK751/TK752; 325D FM/558; 568/330D/330C Forestry</td></tr>
-              <tr><td>Caterpillar</td><td>484-6673</td><td>Buje de oruga</td><td>345B/345C/345D/349D/349E/352 GD PPR3</td></tr>
-              <tr><td>Caterpillar</td><td>570-1301</td><td>Buje de oruga</td><td>345B-352 HDXL; 568/330D/330C Forestry HDXL</td></tr>
-              <tr><td>Caterpillar</td><td>509-5200</td><td>Buje de oruga</td><td>350/350L; MD6420(9.0&quot;); MD6540</td></tr>
-              <tr><td>Caterpillar</td><td>384-5480</td><td>Buje de oruga</td><td>538/320D2 narrow PPR2</td></tr>
-              <tr><td>Caterpillar</td><td>565-0832</td><td>Buje de oruga</td><td>538 NEXT GEN narrow PPR3</td></tr>
-              <tr><td>Caterpillar</td><td>158-4680</td><td>Buje de oruga</td><td>302.5-303.5 steel track</td></tr>
-              <tr><td>Caterpillar</td><td>158-4771</td><td>Buje de oruga</td><td>304-306 steel track</td></tr>
-              <tr><td>Caterpillar</td><td>333-5623</td><td>Buje de oruga</td><td>306 steel track</td></tr>
-              <tr><td>Caterpillar</td><td>168-6755</td><td>Buje de oruga</td><td>307B-308E (unsealed)</td></tr>
-              <tr><td>Caterpillar</td><td>168-6757</td><td>Buje de oruga</td><td>307B-308E (greased)</td></tr>
-              <tr><td>Caterpillar</td><td>145-2951</td><td>Buje de oruga</td><td>307B-307E (sealed)</td></tr>
-              <tr><td>Caterpillar</td><td>102-8107</td><td>Buje de oruga</td><td>307/307B/308B</td></tr>
-              <tr><td>Caterpillar</td><td>117-8880</td><td>Buje de oruga</td><td>PM465</td></tr>
-              <tr><td>Caterpillar</td><td>367-8223</td><td>Buje de oruga</td><td>299C/299D/299D2 steel track</td></tr>
-              <tr><td>Caterpillar</td><td>117-1371</td><td>Buje de oruga</td><td>E320 (nota del proveedor)</td></tr>
-              <tr><td>Caterpillar</td><td>117-1372</td><td>Buje de oruga</td><td>&nbsp;</td></tr>
-              <tr><td>Caterpillar</td><td>290-0825</td><td>Buje de oruga</td><td>&nbsp;</td></tr>
-              <tr><td>Caterpillar</td><td>159-3588</td><td>Buje de oruga</td><td>&nbsp;</td></tr>
-              <tr><td>Caterpillar</td><td>096-5257</td><td>Buje de oruga</td><td>&nbsp;</td></tr>
-              <tr><td>Komatsu</td><td>207-32-K2330</td><td>Buje de oruga</td><td>PC300/PC350 Serie</td></tr>
-              <tr><td>Komatsu</td><td>208-32-61140</td><td>Buje de oruga</td><td>PC400/PC450 Serie</td></tr>
-              <tr><td>Komatsu</td><td>208-32-61141</td><td>Buje de oruga</td><td>445FXL/450FXL/PC270LL/PC300/PC350/PC390/PC400/PC450</td></tr>
-              <tr><td>Komatsu</td><td>208-32-41140</td><td>Buje de oruga</td><td>PC490</td></tr>
-              <tr><td>Komatsu</td><td>209-32-12140</td><td>Buje de oruga</td><td>&nbsp;</td></tr>
-              <tr><td>Komatsu</td><td>202-98-09112</td><td>Buje de oruga</td><td>&nbsp;</td></tr>
-              <tr><td>Komatsu</td><td>195-32-E3120</td><td>Buje de oruga</td><td>D375 Serie</td></tr>
-              <tr><td>Komatsu</td><td>195-98-09131</td><td>Buje de oruga</td><td>D375 Serie</td></tr>
-              <tr><td>Komatsu</td><td>195-98-09160</td><td>Buje de oruga</td><td>D375 Serie</td></tr>
-              <tr><td>Komatsu</td><td>195-98-09161</td><td>Buje de oruga</td><td>D375 Serie</td></tr>
-              <tr><td>Komatsu</td><td>175-32-11140</td><td>Buje de oruga</td><td>D155 Serie</td></tr>
-              <tr><td>Komatsu</td><td>175-32-11241</td><td>Buje de oruga</td><td>D155 Serie</td></tr>
-              <tr><td>Komatsu</td><td>170-32-11144</td><td>Buje de oruga</td><td>&nbsp;</td></tr>
-              <tr><td>Komatsu</td><td>154-32-31140E</td><td>Buje de oruga</td><td>D85 Serie</td></tr>
-              <tr><td>Komatsu</td><td>154-32-31141</td><td>Buje de oruga</td><td>D85 Serie</td></tr>
-              <tr><td>Komatsu</td><td>154-98-09113</td><td>Buje de oruga</td><td>D85 Serie</td></tr>
-              <tr><td>Komatsu</td><td>154-98-09114</td><td>Buje de oruga</td><td>D85 Serie</td></tr>
-              <tr><td>Komatsu</td><td>154-98-09131</td><td>Buje de oruga</td><td>D85 Serie</td></tr>
-              <tr><td>Komatsu</td><td>154-98-09430</td><td>Buje de oruga</td><td>D85 Serie</td></tr>
-              <tr><td>Komatsu</td><td>155-32-11144</td><td>Buje de oruga</td><td>&nbsp;</td></tr>
-              <tr><td>Komatsu</td><td>155-32-11160</td><td>Buje de oruga</td><td>&nbsp;</td></tr>
-              <tr><td>Komatsu</td><td>155-98-09070</td><td>Buje de oruga</td><td>&nbsp;</td></tr>
-              <tr><td>Komatsu</td><td>155-98-09160</td><td>Buje de oruga</td><td>&nbsp;</td></tr>
-              <tr><td>Komatsu</td><td>156-32-11110</td><td>Buje de oruga</td><td>&nbsp;</td></tr>
-              <tr><td>Komatsu</td><td>135-32-11141</td><td>Buje de oruga</td><td>&nbsp;</td></tr>
-              <tr><td>Komatsu</td><td>135-32-11141E</td><td>Buje de oruga</td><td>&nbsp;</td></tr>
-              <tr><td>Komatsu</td><td>135-98-09130</td><td>Buje de oruga</td><td>&nbsp;</td></tr>
-              <tr><td>Komatsu</td><td>134-32-61140</td><td>Buje de oruga</td><td>D61E/D61EX/D61P/D61PX</td></tr>
-              <tr><td>Komatsu</td><td>130-32-11143</td><td>Buje de oruga</td><td>&nbsp;</td></tr>
-              <tr><td>Komatsu</td><td>130-98-09112</td><td>Buje de oruga</td><td>&nbsp;</td></tr>
-              <tr><td>Komatsu</td><td>130-98-09113</td><td>Buje de oruga</td><td>&nbsp;</td></tr>
-              <tr><td>Komatsu</td><td>130-98-09114</td><td>Buje de oruga</td><td>&nbsp;</td></tr>
-              <tr><td>Komatsu</td><td>130-98-09115</td><td>Buje de oruga</td><td>&nbsp;</td></tr>
-              <tr><td>Komatsu</td><td>130-98-09132</td><td>Buje de oruga</td><td>&nbsp;</td></tr>
-              <tr><td>Komatsu</td><td>130-98-09133</td><td>Buje de oruga</td><td>&nbsp;</td></tr>
-              <tr><td>Komatsu</td><td>114-32-A1130</td><td>Buje de oruga</td><td>&nbsp;</td></tr>
-              <tr><td>Komatsu</td><td>101-98-09210</td><td>Buje de oruga</td><td>&nbsp;</td></tr>
-              <tr><td>Komatsu</td><td>101-98-09220</td><td>Buje de oruga</td><td>&nbsp;</td></tr>
-              <tr><td>Hitachi</td><td>4278315</td><td>Buje de oruga</td><td>&nbsp;</td></tr>
-              <tr><td>Hitachi</td><td>3069392</td><td>Buje de oruga</td><td>&nbsp;</td></tr>
-              <tr><td>Hitachi</td><td>71401525</td><td>Buje de oruga</td><td>&nbsp;</td></tr>
-              <tr><td>Hitachi</td><td>4231860</td><td>Buje de oruga</td><td>&nbsp;</td></tr>
-              <tr><td>Hitachi</td><td>4164388</td><td>Buje de oruga</td><td>&nbsp;</td></tr>
-              <tr><td>Hitachi</td><td>70645947</td><td>Buje de oruga</td><td>&nbsp;</td></tr>
-              <tr><td>Hitachi</td><td>4616102</td><td>Buje de oruga</td><td>&nbsp;</td></tr>
-              <tr><td>Hitachi</td><td>4085382</td><td>Buje de oruga</td><td>&nbsp;</td></tr>
-              <tr><td>Hitachi</td><td>4328031</td><td>Buje de oruga</td><td>&nbsp;</td></tr>
-              <tr><td>Hitachi</td><td>4295792</td><td>Buje de oruga</td><td>&nbsp;</td></tr>
-              <tr><td>Hitachi</td><td>4159166</td><td>Buje de oruga</td><td>&nbsp;</td></tr>
-              <tr><td>Hitachi</td><td>3077925</td><td>Buje de oruga</td><td>&nbsp;</td></tr>
-              <tr><td>Hitachi</td><td>4156579</td><td>Buje de oruga</td><td>&nbsp;</td></tr>
-              <tr><td>Hitachi</td><td>3074677</td><td>Buje de oruga</td><td>&nbsp;</td></tr>
-              <tr><td>Hitachi</td><td>4201232</td><td>Buje de oruga</td><td>&nbsp;</td></tr>
-              <tr><td>Hitachi</td><td>4262582</td><td>Buje de oruga</td><td>&nbsp;</td></tr>
-              <tr><td>Hitachi</td><td>4158239</td><td>Buje de oruga</td><td>&nbsp;</td></tr>
-              <tr><td>Hitachi</td><td>4155606</td><td>Buje de oruga</td><td>&nbsp;</td></tr>
-              <tr><td>Hitachi</td><td>4165072</td><td>Buje de oruga</td><td>&nbsp;</td></tr>
-              <tr><td>Hitachi</td><td>4386609</td><td>Buje de oruga</td><td>&nbsp;</td></tr>
-              <tr><td>Hitachi</td><td>4132762</td><td>Buje de oruga</td><td>&nbsp;</td></tr>
-              <tr><td>Hitachi</td><td>4637799</td><td>Buje de oruga</td><td>&nbsp;</td></tr>
-              <tr><td>Hitachi</td><td>4640126</td><td>Buje de oruga</td><td>&nbsp;</td></tr>
-            </tbody>
-          </table>
+      <h1>Buje y Pasador de Oruga</h1>
+      <p>Pasadores y bujes de tren de rodaje para excavadoras y buldóceres.</p>
+    </div>
+  </header>
+
+  <section class="section">
+    <div class="container">
+      <div class="product-overview">
+        <div class="product-image" style="background: #fff; border-radius: var(--radius-xl); box-shadow: var(--shadow-lg); display:flex; align-items:center; justify-content:center; height: 400px; overflow:hidden;">
+          <img src={productImg('trackBushing')} alt="Pasador y Buje de Oruga" style="max-height: 100%; max-width: 100%; object-fit: contain;" />
         </div>
+        <div class="product-intro">
+          <p class="eyebrow">Descripción del Producto</p>
+          <h2>Buje y Pasador de Oruga</h2>
+          <p>Los pasadores y bujes de oruga son piezas clave de conexión en la cadena del tren de rodaje de excavadoras y buldóceres. Suministramos pasadores y bujes de acero aleado tratado térmicamente con repuestos OEM y medidas personalizadas.</p>
+
+          <div class="product-badges">
+            <span class="badge">Pasadores de Oruga</span>
+            <span class="badge">Bujes de Oruga</span>
+            <span class="badge">Acero Aleado Tratado</span>
+            <span class="badge">Servicio OEM</span>
+          </div>
+
+          <div class="product-actions">
+            <a href="/es/contact" class="btn btn-primary btn-lg">Solicitar Cotización</a>
+            <a href="/es/products" class="btn btn-primary btn-lg">Todos los Productos</a>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
-  <section class="section">
-    <div class="container">
-      <header class="section-header">
-        <p class="eyebrow">Detalles del Producto</p>
-        <h2>Especificaciones Técnicas</h2>
-      </header>
-      <div class="spec-table">
-        <div class="spec-row">
-          <div class="spec-name">Producto</div>
-          <div class="spec-value">Pasadores y bujes de oruga para tren de rodaje de orugas</div>
-        </div>
-        <div class="spec-row">
-          <div class="spec-name">Material</div>
-          <div class="spec-value">Acero aleado tratado térmicamente</div>
-        </div>
-        <div class="spec-row">
-          <div class="spec-name">Tratamiento Térmico</div>
-          <div class="spec-value">Endurecido por inducción / temple completo</div>
-        </div>
-        <div class="spec-row">
-          <div class="spec-name">Marcas Compatibles</div>
-          <div class="spec-value">CAT, Komatsu, Hitachi, Volvo, Hyundai</div>
-        </div>
-        <div class="spec-row">
-          <div class="spec-name">Aplicación</div>
-          <div class="spec-value">Excavadoras, buldóceres, cargadores de orugas</div>
-        </div>
-        <div class="spec-row">
-          <div class="spec-name">Servicio</div>
-          <div class="spec-value">Repuestos OEM y medidas personalizadas disponibles</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section cta-band">
-    <div class="container text-center">
-      <h2>¿Necesita Pasadores y Bujes de Oruga?</h2>
-      <p>Contáctenos para especificaciones y precios. Disponibles servicios OEM y medidas personalizadas.</p>
-      <div class="cta-actions">
-        <a href="/es/contact" class="btn btn-primary btn-lg">Solicitar Cotización</a>
-        <a href="mailto:Jason@carelong.com.cn?subject=Product%20Inquiry%20-%20Carelong%20Website" class="btn btn-outline-white btn-lg">Envíenos un Correo</a>
-      </div>
-    </div>
-  </section>
-</BaseLayout>
-
-<style>
-.eyebrow { font-size: 0.8125rem; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; color: var(--color-secondary); margin-bottom: var(--space-3); }
-.product-overview { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-12); align-items: center; }
-.product-intro h2 { margin-bottom: var(--space-4); }
-.product-intro p { color: var(--color-text-light); }
-.product-badges { display: flex; flex-wrap: wrap; gap: var(--space-2); margin: var(--space-6) 0; }
-.badge { display: inline-block; background: rgba(27, 75, 142, 0.08); color: var(--color-primary); padding: var(--space-1) var(--space-3); border-radius: 100px; font-size: 0.8125rem; font-weight: 600; }
-.product-actions { display: flex; gap: var(--space-4); flex-wrap: wrap; }
-.spec-table { display: flex; flex-direction: column; gap: var(--space-2); }
-.spec-row { display: flex; justify-content: space-between; padding: var(--space-4) var(--space-6); background: var(--color-bg); border: 1px solid var(--color-border); border-radius: var(--radius-md); }
-.spec-name { font-weight: 600; color: var(--color-text); }
-.spec-value { color: var(--color-text-light); text-align: right; }
-.data-table-wrapper { overflow-x: auto; border: 1px solid var(--color-border); border-radius: var(--radius-md); background: var(--color-bg); }
-.data-table { width: 100%; border-collapse: collapse; font-size: 0.875rem; }
-.data-table thead th { background: var(--color-primary); color: #fff; padding: var(--space-3) var(--space-4); text-align: left; font-weight: 600; white-space: normal; line-height: 1.4; }
-.data-table tbody td { padding: var(--space-3) var(--space-4); border-top: 1px solid var(--color-border); color: var(--color-text); word-wrap: break-word; }
-.data-table tbody tr:nth-child(even) td { background: rgba(27, 75, 142, 0.04); }
-.data-table tbody tr:hover td { background: rgba(27, 75, 142, 0.08); }
-.spec-xl-wrap { max-height: 68vh; overflow: auto; }
-.oem-table td:first-child { min-width: 112px; white-space: nowrap; }
-.oem-table thead th:first-child { min-width: 112px; }
-.spec-table-xl { table-layout: auto; width: 100%; font-size: 0.8125rem; }
-.spec-table-xl th, .spec-table-xl td { word-break: break-word; overflow-wrap: anywhere; font-size: 0.875rem; font-weight: 400; }
-.spec-table-xl thead th { position: sticky; top: 0; z-index: 2; box-shadow: 0 2px 5px rgba(0,0,0,.18); font-weight: 600; }
-.cta-band { background: var(--color-primary); color: #fff; }
-.cta-band h2 { color: #fff; margin-bottom: var(--space-4); }
-.cta-band p { color: rgba(255,255,255,0.85); font-size: 1.125rem; margin-bottom: var(--space-6); }
-.cta-actions { display: flex; gap: var(--space-4); justify-content: center; flex-wrap: wrap; }
-@media (max-width: 768px) {
-  .product-overview { grid-template-columns: 1fr; }
-  .spec-row { flex-direction: column; gap: var(--space-1); }
-  .spec-value { text-align: left; }
-}
-</style>
+
+  <section class="section section-alt">
+    <div class="container">
+      <header class="section-header" style="margin-top: var(--space-12);">
+        <h2>Especificaciones de Buje y Pasador de Oruga</h2>
+      </header>
+
+        <div class="oem-toolbar">
+          <input id="oemSearch" class="oem-search" type="search" autocomplete="off" placeholder="Buscar marca, No. OEM o modelo..." />
+          <span class="oem-scroll-hint">Desplácese arriba / abajo para ver las 295 filas</span>
+        </div>
+
+                              <div class="data-table-wrapper spec-xl-wrap oem-table-wrap" style="max-height: 620px; overflow: auto;">
+          <table class="data-table spec-table-xl oem-table">
+            <thead>
+              <tr><th>Marca</th><th>No. OEM</th><th>Tipo de Producto</th><th>Modelos Aplicables</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Caterpillar</td><td>108-0943</td><td>Pasador de oruga</td><td>D5N/D5M/D4H/561N/561M/561H HD S&amp;L</td></tr>
+              <tr><td>Caterpillar</td><td>160-7816</td><td>Pasador de oruga</td><td>D4H/561H S&amp;L; D4H TSK; D5K/D5G/D5C S&amp;L; 939C/939</td></tr>
+              <tr><td>Caterpillar</td><td>541-4624</td><td>Pasador de oruga</td><td>D5/D6N/D6M/D5H HDXL; 953K/D/C HDXL</td></tr>
+              <tr><td>Caterpillar</td><td>179-0126</td><td>Pasador de oruga</td><td>D6N/D6M/D5H HD S&amp;L; D6K2; 953K/D/C HD</td></tr>
+              <tr><td>Caterpillar</td><td>160-7818</td><td>Pasador de oruga</td><td>D5H Hybrid; D5H TSK Hybrid; 953D/C Hybrid</td></tr>
+              <tr><td>Caterpillar</td><td>248-2306</td><td>Pasador de oruga</td><td>D6/D6XE/D6T/D6R/D6H HDXL; 527 HDXL</td></tr>
+              <tr><td>Caterpillar</td><td>160-7820</td><td>Pasador de oruga</td><td>D6T/D6R/D6H HD; 963K HD</td></tr>
+              <tr><td>Caterpillar</td><td>503-0767</td><td>Pasador de oruga</td><td>D7/D7R/D7H/572R HDXL; D7E; 973K/973D</td></tr>
+              <tr><td>Caterpillar</td><td>152-8080</td><td>Pasador de oruga</td><td>D7R/H former HD (service)</td></tr>
+              <tr><td>Caterpillar</td><td>115-4923</td><td>Pasador de oruga</td><td>D7R/H HD service; D7E HD; 973K/D HD service</td></tr>
+              <tr><td>Caterpillar</td><td>460-6952</td><td>Pasador de oruga</td><td>D8T/D8R/D8N/D8GC PPR; D8 HDXL; D8L PPR</td></tr>
+              <tr><td>Caterpillar</td><td>451-3702</td><td>Pasador de oruga</td><td>D8T/D8R/D8N/D8GC General Duty</td></tr>
+              <tr><td>Caterpillar</td><td>7T-7054</td><td>Pasador de oruga</td><td>587T/R, 583T/R, PL83/PL87 (former, replaced by 460-6952)</td></tr>
+              <tr><td>Caterpillar</td><td>199-2794</td><td>Pasador de oruga</td><td>D8L non-PPR; D7/571/572 GD; 973D/C GD; 977 GD</td></tr>
+              <tr><td>Caterpillar</td><td>186-0780</td><td>Pasador de oruga</td><td>D9T/D9R/D9N HDXL &amp; PPR; D9L; 589</td></tr>
+              <tr><td>Caterpillar</td><td>6Y-1579</td><td>Pasador de oruga</td><td>D10T/D10R/D10N; D10</td></tr>
+              <tr><td>Caterpillar</td><td>458-7810</td><td>Pasador de oruga</td><td>D10T/D10R/D10N General Duty</td></tr>
+              <tr><td>Caterpillar</td><td>126-5343</td><td>Pasador de oruga</td><td>D11/D11T/D11R/D11N</td></tr>
+              <tr><td>Caterpillar</td><td>154-7311</td><td>Pasador de oruga</td><td>517; D5H TSK</td></tr>
+              <tr><td>Caterpillar</td><td>154-3664</td><td>Pasador de oruga</td><td>D4H TSK/Custom Skidder (former); D5C former; D4 S&amp;L; 941; 943; D4E</td></tr>
+              <tr><td>Caterpillar</td><td>303-9455</td><td>Pasador de oruga</td><td>D1/D2/D3K/D3G/D3C/D3B/D3/D4K/D4G/D4C/D4B S&amp;L; 935C/931C/933; AP650B/AP1050; BG225C/BG245C; 299D3</td></tr>
+              <tr><td>Caterpillar</td><td>6B-5278</td><td>Pasador de oruga</td><td>D3C/B, D3, D4C/B Sealed; 931/935; PR450; AP650B/AP1050 std</td></tr>
+              <tr><td>Caterpillar</td><td>527-8784</td><td>Pasador de oruga</td><td>D5/561/D6 GD (6.91&quot;); 951; 953C/B GD; 955; 977</td></tr>
+              <tr><td>Caterpillar</td><td>445-6542</td><td>Pasador de oruga</td><td>D6 General Duty (8.00&quot;); 955; 963D/C/B</td></tr>
+              <tr><td>Caterpillar</td><td>9K-4060</td><td>Pasador de oruga</td><td>D4 Sealed; PM565; PR750B/PR1000</td></tr>
+              <tr><td>Caterpillar</td><td>4B-6166</td><td>Pasador de oruga</td><td>D4 small OD bushing / 1/2&quot; bolt</td></tr>
+              <tr><td>Caterpillar</td><td>6B-5882</td><td>Pasador de oruga</td><td>D7/572 Sealed (41 sec); 977 Sealed</td></tr>
+              <tr><td>Caterpillar</td><td>188-5710</td><td>Pasador de oruga</td><td>D8/583 GD S&amp;L (41 sec)</td></tr>
+              <tr><td>Caterpillar</td><td>1M-1455</td><td>Pasador de oruga</td><td>D8/583 GD Sealed; D8/583 Pipelayer; 983 Sealed</td></tr>
+              <tr><td>Caterpillar</td><td>2P-9486</td><td>Pasador de oruga</td><td>D8 S&amp;L (39/41 sec); 983 S&amp;L</td></tr>
+              <tr><td>Caterpillar</td><td>4B-6620</td><td>Pasador de oruga</td><td>D8/583 Sealed (42 sec)</td></tr>
+              <tr><td>Caterpillar</td><td>2P-9423</td><td>Pasador de oruga</td><td>D9/594 S&amp;L</td></tr>
+              <tr><td>Caterpillar</td><td>2M-5652</td><td>Pasador de oruga</td><td>D9/594 Pipelayer Sealed</td></tr>
+              <tr><td>Caterpillar</td><td>152-8075</td><td>Pasador de oruga</td><td>939C/939 RBT</td></tr>
+              <tr><td>Caterpillar</td><td>605-9176</td><td>Pasador de oruga</td><td>953K HDXL Steel Mill</td></tr>
+              <tr><td>Caterpillar</td><td>561-6173</td><td>Pasador de oruga</td><td>963K HD Steel Mill</td></tr>
+              <tr><td>Caterpillar</td><td>4M-5989</td><td>Pasador de oruga</td><td>963K/D GD/Hybrid Steel Mill</td></tr>
+              <tr><td>Caterpillar</td><td>516-2015</td><td>Pasador de oruga</td><td>973K HD Steel Mill</td></tr>
+              <tr><td>Caterpillar</td><td>0</td><td>Pasador de oruga</td><td>973 GD Steel Mill; 551/552/TK751/TK752</td></tr>
+              <tr><td>Caterpillar</td><td>121-5394</td><td>Pasador de oruga</td><td>5130B/5130; Hitachi EX1900 (Cat link 597-1431)</td></tr>
+              <tr><td>Caterpillar</td><td>125-9383</td><td>Pasador de oruga</td><td>5110B</td></tr>
+              <tr><td>Caterpillar</td><td>110-3118</td><td>Pasador de oruga</td><td>5230</td></tr>
+              <tr><td>Caterpillar</td><td>294-3063</td><td>Pasador de oruga</td><td>6015/RH40; MD6640</td></tr>
+              <tr><td>Caterpillar</td><td>430-4202</td><td>Pasador de oruga</td><td>6015B</td></tr>
+              <tr><td>Caterpillar</td><td>535-3215</td><td>Pasador de oruga</td><td>6018/RH90</td></tr>
+              <tr><td>Caterpillar</td><td>471-2025</td><td>Pasador de oruga</td><td>6020B</td></tr>
+              <tr><td>Caterpillar</td><td>465-8480</td><td>Pasador de oruga</td><td>6030HD</td></tr>
+              <tr><td>Caterpillar</td><td>465-8392</td><td>Pasador de oruga</td><td>6030/RH120E</td></tr>
+              <tr><td>Caterpillar</td><td>533-6953</td><td>Pasador de oruga</td><td>6040/RH170</td></tr>
+              <tr><td>Caterpillar</td><td>465-8489</td><td>Pasador de oruga</td><td>6040HD/6040V2</td></tr>
+              <tr><td>Caterpillar</td><td>6Y-8186</td><td>Pasador de oruga</td><td>311/312/313/314/315F/315D/316E/317/318B/318C/320/321/323/325F GD; MD5075/MD5090; 320D/320C/538 clamp master</td></tr>
+              <tr><td>Caterpillar</td><td>340-8908</td><td>Pasador de oruga</td><td>311-318/320/321/322/323/324/325F/326 HD press fit; 318CL; MD5125</td></tr>
+              <tr><td>Caterpillar</td><td>6Y-0851</td><td>Pasador de oruga</td><td>325/329/330/330F/330GC slip fit; 330 NGH; 322CL</td></tr>
+              <tr><td>Caterpillar</td><td>261-1013</td><td>Pasador de oruga</td><td>325/329/330/330F/330GC PPR2; 324D/322C (324D FM); 511/TK711</td></tr>
+              <tr><td>Caterpillar</td><td>6Y-2751</td><td>Pasador de oruga</td><td>328/330/336/340 GD; 328-340 NGH; MD6240/MD6290; 521B/522B/532/541/TK732; 548</td></tr>
+              <tr><td>Caterpillar</td><td>541-4599</td><td>Pasador de oruga</td><td>MD6200</td></tr>
+              <tr><td>Caterpillar</td><td>585-5268</td><td>Pasador de oruga</td><td>345B/345C/345D/349D/349E/352 GD PPR3</td></tr>
+              <tr><td>Caterpillar</td><td>529-8461</td><td>Pasador de oruga</td><td>345B-352 HDXL; 568/330D/330C Forestry HDXL</td></tr>
+              <tr><td>Caterpillar</td><td>509-5199</td><td>Pasador de oruga</td><td>350/350L; MD6420(9.0&quot;); MD6540</td></tr>
+              <tr><td>Caterpillar</td><td>529-8463</td><td>Pasador de oruga</td><td>365BL/365CL/374D/374F/374 NGH; 385B/385C/390D/390F/395 NGH/5090 PPR2</td></tr>
+              <tr><td>Caterpillar</td><td>294-3061</td><td>Pasador de oruga</td><td>365B/365C/374D/374F HD; MD6380</td></tr>
+              <tr><td>Caterpillar</td><td>552-9465</td><td>Pasador de oruga</td><td>TK711 (7.50&quot;); 538/320D/320CL D5 HD PPR2</td></tr>
+              <tr><td>Caterpillar</td><td>576-4399</td><td>Pasador de oruga</td><td>521/522/TK721/TK722/TK741; 324D FM LGP; 558/325D/325C/325B/325 (325 FM)</td></tr>
+              <tr><td>Caterpillar</td><td>384-5479</td><td>Pasador de oruga</td><td>538/320D2 narrow PPR2</td></tr>
+              <tr><td>Caterpillar</td><td>565-0833</td><td>Pasador de oruga</td><td>538 NEXT GEN narrow PPR3</td></tr>
+              <tr><td>Caterpillar</td><td>158-4681</td><td>Pasador de oruga</td><td>302.5/302.5C/303/303CR/303E/303CCR/303.5/303.5CCR/303.5D/303.5 E steel track</td></tr>
+              <tr><td>Caterpillar</td><td>158-4772</td><td>Pasador de oruga</td><td>304CCR/304CR/304.5/305CR/305CCR/305D/305E/305.5/305.5D/306 steel track</td></tr>
+              <tr><td>Caterpillar</td><td>333-5616</td><td>Pasador de oruga</td><td>306 steel track</td></tr>
+              <tr><td>Caterpillar</td><td>168-6758</td><td>Pasador de oruga</td><td>307B/307C/307D/307E/308C/308D/308E</td></tr>
+              <tr><td>Caterpillar</td><td>093-0515</td><td>Pasador de oruga</td><td>307/307B/308B (42/44 sec)</td></tr>
+              <tr><td>Caterpillar</td><td>117-8882</td><td>Pasador de oruga</td><td>PM465</td></tr>
+              <tr><td>Caterpillar</td><td>367-8220</td><td>Pasador de oruga</td><td>299C/299D/299D2 steel track</td></tr>
+              <tr><td>Caterpillar</td><td>607-1448</td><td>Pasador de oruga</td><td>&nbsp;</td></tr>
+              <tr><td>Komatsu</td><td>20Y-32-11150</td><td>Pasador de oruga</td><td>PC200 Serie</td></tr>
+              <tr><td>Komatsu</td><td>20Y-32-K1231</td><td>Pasador de oruga</td><td>PC200 Serie</td></tr>
+              <tr><td>Komatsu</td><td>20Y-98-09010</td><td>Pasador de oruga</td><td>PC200 Serie</td></tr>
+              <tr><td>Komatsu</td><td>205-32-11150</td><td>Pasador de oruga</td><td>&nbsp;</td></tr>
+              <tr><td>Komatsu</td><td>205-98-09032</td><td>Pasador de oruga</td><td>&nbsp;</td></tr>
+              <tr><td>Komatsu</td><td>207-32-11151</td><td>Pasador de oruga</td><td>PC300/PC350 Serie</td></tr>
+              <tr><td>Komatsu</td><td>207-32-11152</td><td>Pasador de oruga</td><td>PC300/PC350 Serie</td></tr>
+              <tr><td>Komatsu</td><td>207-32-K2350</td><td>Pasador de oruga</td><td>PC300/PC350 Serie</td></tr>
+              <tr><td>Komatsu</td><td>207-98-09010</td><td>Pasador de oruga</td><td>PC300/PC350 Serie</td></tr>
+              <tr><td>Komatsu</td><td>207-98-09011</td><td>Pasador de oruga</td><td>PC300/PC350 Serie</td></tr>
+              <tr><td>Komatsu</td><td>207-98-09031</td><td>Pasador de oruga</td><td>PC300/PC350 Serie</td></tr>
+              <tr><td>Komatsu</td><td>202-98-09011</td><td>Pasador de oruga</td><td>&nbsp;</td></tr>
+              <tr><td>Komatsu</td><td>202-98-09030</td><td>Pasador de oruga</td><td>&nbsp;</td></tr>
+              <tr><td>Komatsu</td><td>202-98-09031</td><td>Pasador de oruga</td><td>&nbsp;</td></tr>
+              <tr><td>Komatsu</td><td>21N-32-11151</td><td>Pasador de oruga</td><td>PC1100/PC1250 Serie</td></tr>
+              <tr><td>Komatsu</td><td>21N-98-09021</td><td>Pasador de oruga</td><td>PC1100/PC1250 Serie</td></tr>
+              <tr><td>Komatsu</td><td>21T-98-09211</td><td>Pasador de oruga</td><td>&nbsp;</td></tr>
+              <tr><td>Komatsu</td><td>8240-32-1150</td><td>Pasador de oruga</td><td>&nbsp;</td></tr>
+              <tr><td>Komatsu</td><td>198-32-31953</td><td>Pasador de oruga</td><td>D475 Serie</td></tr>
+              <tr><td>Komatsu</td><td>198-32-31151</td><td>Pasador de oruga</td><td>D475 Serie</td></tr>
+              <tr><td>Komatsu</td><td>198-32-00211</td><td>Pasador de oruga</td><td>D475 Serie</td></tr>
+              <tr><td>Komatsu</td><td>198-98-09010</td><td>Pasador de oruga</td><td>D475 Serie</td></tr>
+              <tr><td>Komatsu</td><td>195-32-41151</td><td>Pasador de oruga</td><td>D375 Serie</td></tr>
+              <tr><td>Komatsu</td><td>195-32-E41151</td><td>Pasador de oruga</td><td>D375 Serie</td></tr>
+              <tr><td>Komatsu</td><td>195-32-11150</td><td>Pasador de oruga</td><td>D375 Serie</td></tr>
+              <tr><td>Komatsu</td><td>195-32-11571</td><td>Pasador de oruga</td><td>D375 Serie</td></tr>
+              <tr><td>Komatsu</td><td>195-32-22151</td><td>Pasador de oruga</td><td>D375 Serie</td></tr>
+              <tr><td>Komatsu</td><td>195-32-22151E</td><td>Pasador de oruga</td><td>D375 Serie</td></tr>
+              <tr><td>Komatsu</td><td>195-32-61250</td><td>Pasador de oruga</td><td>D375 Serie</td></tr>
+              <tr><td>Komatsu</td><td>195-98-09030</td><td>Pasador de oruga</td><td>D375 Serie</td></tr>
+              <tr><td>Komatsu</td><td>195-98-09230</td><td>Pasador de oruga</td><td>D375 Serie</td></tr>
+              <tr><td>Komatsu</td><td>176-32-11150</td><td>Pasador de oruga</td><td>&nbsp;</td></tr>
+              <tr><td>Komatsu</td><td>154-32-11151</td><td>Pasador de oruga</td><td>D85 Serie</td></tr>
+              <tr><td>Komatsu</td><td>154-98-09012</td><td>Pasador de oruga</td><td>D85 Serie</td></tr>
+              <tr><td>Komatsu</td><td>155-32-11153</td><td>Pasador de oruga</td><td>&nbsp;</td></tr>
+              <tr><td>Komatsu</td><td>155-98-09011</td><td>Pasador de oruga</td><td>&nbsp;</td></tr>
+              <tr><td>Komatsu</td><td>155-98-09030</td><td>Pasador de oruga</td><td>&nbsp;</td></tr>
+              <tr><td>Komatsu</td><td>144-98-09011</td><td>Pasador de oruga</td><td>&nbsp;</td></tr>
+              <tr><td>Komatsu</td><td>144-98-09031</td><td>Pasador de oruga</td><td>&nbsp;</td></tr>
+              <tr><td>Komatsu</td><td>140-803-7150</td><td>Pasador de oruga</td><td>&nbsp;</td></tr>
+              <tr><td>Komatsu</td><td>112-32-11155</td><td>Pasador de oruga</td><td>&nbsp;</td></tr>
+              <tr><td>Komatsu</td><td>112-32-11155E</td><td>Pasador de oruga</td><td>&nbsp;</td></tr>
+              <tr><td>Komatsu</td><td>101-98-09080</td><td>Pasador de oruga</td><td>&nbsp;</td></tr>
+              <tr><td>Komatsu</td><td>10F-98-09010</td><td>Pasador de oruga</td><td>&nbsp;</td></tr>
+              <tr><td>Komatsu</td><td>E4020700S</td><td>Pasador de oruga</td><td>&nbsp;</td></tr>
+              <tr><td>Komatsu</td><td>F40508A0S</td><td>Pasador de oruga</td><td>&nbsp;</td></tr>
+              <tr><td>Komatsu</td><td>F4050800S</td><td>Pasador de oruga</td><td>&nbsp;</td></tr>
+              <tr><td>Komatsu</td><td>E40507B0S</td><td>Pasador de oruga</td><td>&nbsp;</td></tr>
+              <tr><td>Komatsu</td><td>E40207B0S</td><td>Pasador de oruga</td><td>&nbsp;</td></tr>
+              <tr><td>Komatsu</td><td>KBA0147</td><td>Pasador de oruga</td><td>&nbsp;</td></tr>
+              <tr><td>Hitachi</td><td>4195135</td><td>Pasador de oruga</td><td>&nbsp;</td></tr>
+              <tr><td>Hitachi</td><td>4358599</td><td>Pasador de oruga</td><td>&nbsp;</td></tr>
+              <tr><td>Hitachi</td><td>4132765</td><td>Pasador de oruga</td><td>&nbsp;</td></tr>
+              <tr><td>Hitachi</td><td>4155607</td><td>Pasador de oruga</td><td>&nbsp;</td></tr>
+              <tr><td>Hitachi</td><td>4326065</td><td>Pasador de oruga</td><td>&nbsp;</td></tr>
+              <tr><td>Hitachi</td><td>4336499</td><td>Pasador de oruga</td><td>&nbsp;</td></tr>
+              <tr><td>Hitachi</td><td>70633365</td><td>Pasador de oruga</td><td>&nbsp;</td></tr>
+              <tr><td>Hitachi</td><td>4145372</td><td>Pasador de oruga</td><td>&nbsp;</td></tr>
+              <tr><td>Hitachi</td><td>4345170</td><td>Pasador de oruga</td><td>&nbsp;</td></tr>
+              <tr><td>Hitachi</td><td>3075265</td><td>Pasador de oruga</td><td>&nbsp;</td></tr>
+              <tr><td>Hitachi</td><td>4512417</td><td>Pasador de oruga</td><td>&nbsp;</td></tr>
+              <tr><td>Hitachi</td><td>4263691</td><td>Pasador de oruga</td><td>&nbsp;</td></tr>
+              <tr><td>Hitachi</td><td>4080991</td><td>Pasador de oruga</td><td>&nbsp;</td></tr>
+              <tr><td>Hitachi</td><td>4616101</td><td>Pasador de oruga</td><td>&nbsp;</td></tr>
+              <tr><td>Hitachi</td><td>2039112</td><td>Pasador de oruga</td><td>&nbsp;</td></tr>
+              <tr><td>Hitachi</td><td>4358587</td><td>Pasador de oruga</td><td>&nbsp;</td></tr>
+              <tr><td>Hitachi</td><td>4164871</td><td>Pasador de oruga</td><td>&nbsp;</td></tr>
+              <tr><td>Hitachi</td><td>4156583</td><td>Pasador de oruga</td><td>&nbsp;</td></tr>
+              <tr><td>Hitachi</td><td>4146208</td><td>Pasador de oruga</td><td>&nbsp;</td></tr>
+              <tr><td>Hitachi</td><td>4312641</td><td>Pasador de oruga</td><td>&nbsp;</td></tr>
+              <tr><td>Hitachi</td><td>4156538</td><td>Pasador de oruga</td><td>&nbsp;</td></tr>
+              <tr><td>Hitachi</td><td>4067238</td><td>Pasador de oruga</td><td>&nbsp;</td></tr>
+              <tr><td>Hitachi</td><td>4378885</td><td>Pasador de oruga</td><td>&nbsp;</td></tr>
+              <tr><td>Hitachi</td><td>4257102</td><td>Pasador de oruga</td><td>&nbsp;</td></tr>
+              <tr><td>Hitachi</td><td>4314671</td><td>Pasador de oruga</td><td>&nbsp;</td></tr>
+              <tr><td>Hitachi</td><td>4512361</td><td>Pasador de oruga</td><td>&nbsp;</td></tr>
+              <tr><td>Hitachi</td><td>4218734</td><td>Pasador de oruga</td><td>&nbsp;</td></tr>
+              <tr><td>Hitachi</td><td>4153370</td><td>Pasador de oruga</td><td>&nbsp;</td></tr>
+              <tr><td>Hitachi</td><td>4378891</td><td>Pasador de oruga</td><td>&nbsp;</td></tr>
+              <tr><td>Hitachi</td><td>4618168</td><td>Pasador de oruga</td><td>&nbsp;</td></tr>
+              <tr><td>Hitachi</td><td>4295230</td><td>Pasador de oruga</td><td>&nbsp;</td></tr>
+              <tr><td>Caterpillar</td><td>108-0944</td><td>Buje de oruga</td><td>D5N/D5M/D4H/561N/561M/561H HD S&amp;L</td></tr>
+              <tr><td>Caterpillar</td><td>224-3959</td><td>Buje de oruga</td><td>D4H/561H S&amp;L; D4H TSK; D5K/D5G/D5C S&amp;L; 939C/939</td></tr>
+              <tr><td>Caterpillar</td><td>106-1618</td><td>Buje de oruga</td><td>D5/D6N/D6M/D5H; D6K2; 517; D5H TSK; 953K/D/C; TK711; 538/320D/320CL</td></tr>
+              <tr><td>Caterpillar</td><td>229-6915</td><td>Buje de oruga</td><td>D5H Hybrid; D5H TSK Hybrid; 953D/C Hybrid</td></tr>
+              <tr><td>Caterpillar</td><td>0</td><td>Buje de oruga</td><td>D6/D6T/D6R/D6H; 527; 963K; 521/522/TK721; 324D FM LGP; 325 FM</td></tr>
+              <tr><td>Caterpillar</td><td>115-4924</td><td>Buje de oruga</td><td>D7/D7R/D7H/572R HDXL; D7E; 973K/973D</td></tr>
+              <tr><td>Caterpillar</td><td>165-1770</td><td>Buje de oruga</td><td>D7/D7R/D7H RBT; D7E RBT</td></tr>
+              <tr><td>Caterpillar</td><td>6Y-3914</td><td>Buje de oruga</td><td>D8T/D8R/D8N/D8GC; D8L; 587T/R; 583T/R; PL83/PL87</td></tr>
+              <tr><td>Caterpillar</td><td>502-6148</td><td>Buje de oruga</td><td>D8 HDXL Dura Link/Flat rail</td></tr>
+              <tr><td>Caterpillar</td><td>526-7460</td><td>Buje de oruga</td><td>D9T/D9R/D9N HDXL</td></tr>
+              <tr><td>Caterpillar</td><td>186-0781</td><td>Buje de oruga</td><td>D9T/D9R/D9N PPR</td></tr>
+              <tr><td>Caterpillar</td><td>6Y-2141</td><td>Buje de oruga</td><td>D9L; 589</td></tr>
+              <tr><td>Caterpillar</td><td>482-7709</td><td>Buje de oruga</td><td>D10T/D10R/D10N HDXL</td></tr>
+              <tr><td>Caterpillar</td><td>6Y-2057</td><td>Buje de oruga</td><td>D10T/D10R/D10N HD PPR / 5-tooth master</td></tr>
+              <tr><td>Caterpillar</td><td>458-7809</td><td>Buje de oruga</td><td>D10T/D10R/D10N General Duty</td></tr>
+              <tr><td>Caterpillar</td><td>143-0746</td><td>Buje de oruga</td><td>D10 PPR; 5110B</td></tr>
+              <tr><td>Caterpillar</td><td>541-1266</td><td>Buje de oruga</td><td>D11/D11T/D11R/D11N HDXL</td></tr>
+              <tr><td>Caterpillar</td><td>488-1332</td><td>Buje de oruga</td><td>D11/D11T/D11R/D11N HD</td></tr>
+              <tr><td>Caterpillar</td><td>566-2940</td><td>Buje de oruga</td><td>D11/D11T/D11R/D11N General Duty</td></tr>
+              <tr><td>Caterpillar</td><td>6Y-0929</td><td>Buje de oruga</td><td>D5H TSK/Custom Skidder (former link 6Y-5413)</td></tr>
+              <tr><td>Caterpillar</td><td>188-6246</td><td>Buje de oruga</td><td>D1/D2/D3K/D3G/D3C/D3B/D3/D4K/D4G/D4C/D4B S&amp;L; 935C/931C/933; AP650B/AP1050; 299D3</td></tr>
+              <tr><td>Caterpillar</td><td>6Y-1717</td><td>Buje de oruga</td><td>D3C/B, D3, D4C/B Sealed; 935C/931C; PR450; AP650B/AP1050 std</td></tr>
+              <tr><td>Caterpillar</td><td>6S-9051</td><td>Buje de oruga</td><td>D3 S&amp;L former split master; 935C/931C</td></tr>
+              <tr><td>Caterpillar</td><td>6S-3178</td><td>Buje de oruga</td><td>D3 former; 931/935 short UC</td></tr>
+              <tr><td>Caterpillar</td><td>7T-4628</td><td>Buje de oruga</td><td>D5C former 9K links; D4 S&amp;L; 941; 943</td></tr>
+              <tr><td>Caterpillar</td><td>527-8783</td><td>Buje de oruga</td><td>D5/561/D6 GD (6.91&quot;); 951; 953C/B GD; 955; 977</td></tr>
+              <tr><td>Caterpillar</td><td>456-1750</td><td>Buje de oruga</td><td>D6 General Duty (8.00&quot;); 955; 963D/C/B</td></tr>
+              <tr><td>Caterpillar</td><td>456-1746</td><td>Buje de oruga</td><td>D7/571/572 GD; 973D/C/973 GD; 977 GD</td></tr>
+              <tr><td>Caterpillar</td><td>9K-4061</td><td>Buje de oruga</td><td>D4 Sealed; PM565; PR750B/PR1000</td></tr>
+              <tr><td>Caterpillar</td><td>4K-3918</td><td>Buje de oruga</td><td>D4 small OD bushing / 1/2&quot; bolt</td></tr>
+              <tr><td>Caterpillar</td><td>8M-7289</td><td>Buje de oruga</td><td>D7/572 Sealed; 977 Sealed</td></tr>
+              <tr><td>Caterpillar</td><td>188-5658</td><td>Buje de oruga</td><td>D8/583 GD S&amp;L (41 sec)</td></tr>
+              <tr><td>Caterpillar</td><td>8M-2619</td><td>Buje de oruga</td><td>D8/583 GD Sealed; D8/583 Pipelayer; 983 Sealed</td></tr>
+              <tr><td>Caterpillar</td><td>2P-9484</td><td>Buje de oruga</td><td>D8 S&amp;L (39/41 sec); 983 S&amp;L</td></tr>
+              <tr><td>Caterpillar</td><td>8M-7230</td><td>Buje de oruga</td><td>D8/583 Sealed (42 sec)</td></tr>
+              <tr><td>Caterpillar</td><td>2P-9424</td><td>Buje de oruga</td><td>D9/594 S&amp;L</td></tr>
+              <tr><td>Caterpillar</td><td>2S-0253</td><td>Buje de oruga</td><td>D9/594 Pipelayer Sealed</td></tr>
+              <tr><td>Caterpillar</td><td>9G-8588</td><td>Buje de oruga</td><td>939C/939 6.75&quot; pitch; D5 (6I-9527/6Y-5407 links)</td></tr>
+              <tr><td>Caterpillar</td><td>109-0478</td><td>Buje de oruga</td><td>939C/939 RBT</td></tr>
+              <tr><td>Caterpillar</td><td>508-8981</td><td>Buje de oruga</td><td>953K HDXL Steel Mill</td></tr>
+              <tr><td>Caterpillar</td><td>561-6174</td><td>Buje de oruga</td><td>963K HD Steel Mill</td></tr>
+              <tr><td>Caterpillar</td><td>237-7305</td><td>Buje de oruga</td><td>963K/D GD/Hybrid Steel Mill</td></tr>
+              <tr><td>Caterpillar</td><td>516-2016</td><td>Buje de oruga</td><td>973K HD Steel Mill</td></tr>
+              <tr><td>Caterpillar</td><td>247-1475</td><td>Buje de oruga</td><td>973 GD Steel Mill</td></tr>
+              <tr><td>Caterpillar</td><td>207-6061</td><td>Buje de oruga</td><td>5130B/5130; Hitachi EX1900</td></tr>
+              <tr><td>Caterpillar</td><td>168-7576</td><td>Buje de oruga</td><td>5230</td></tr>
+              <tr><td>Caterpillar</td><td>168-7577</td><td>Buje de oruga</td><td>5230</td></tr>
+              <tr><td>Caterpillar</td><td>245-3805</td><td>Buje de oruga</td><td>6015/RH40; MD6640; MD6380; 374F/374D/365C/365B; 395/390F/390D/385C/5090</td></tr>
+              <tr><td>Caterpillar</td><td>430-4201</td><td>Buje de oruga</td><td>6015B</td></tr>
+              <tr><td>Caterpillar</td><td>471-2024</td><td>Buje de oruga</td><td>6020B</td></tr>
+              <tr><td>Caterpillar</td><td>493-9690</td><td>Buje de oruga</td><td>6030HD</td></tr>
+              <tr><td>Caterpillar</td><td>493-9691</td><td>Buje de oruga</td><td>6030HD</td></tr>
+              <tr><td>Caterpillar</td><td>465-8391</td><td>Buje de oruga</td><td>6030/RH120E</td></tr>
+              <tr><td>Caterpillar</td><td>534-1056</td><td>Buje de oruga</td><td>6040/RH170</td></tr>
+              <tr><td>Caterpillar</td><td>503-0040</td><td>Buje de oruga</td><td>6040HD/6040V2</td></tr>
+              <tr><td>Caterpillar</td><td>503-0041</td><td>Buje de oruga</td><td>6040HD/6040V2</td></tr>
+              <tr><td>Caterpillar</td><td>190-3523</td><td>Buje de oruga</td><td>311-326 series; 318CL; MD5075/MD5090/MD5125</td></tr>
+              <tr><td>Caterpillar</td><td>321-1462</td><td>Buje de oruga</td><td>325/329/330/330F/330GC; 330 NGH; 322CL</td></tr>
+              <tr><td>Caterpillar</td><td>261-1015</td><td>Buje de oruga</td><td>325/329/330/330F/330GC PPR2; 324D/322C; 511/TK711</td></tr>
+              <tr><td>Caterpillar</td><td>321-1463</td><td>Buje de oruga</td><td>328/330/336/340; MD6200/MD6240/MD6290; 521B/522B/532/541/TK732; 548</td></tr>
+              <tr><td>Caterpillar</td><td>227-3029</td><td>Buje de oruga</td><td>345B-352 HD; MD6250/MD6310/MD6420; 551/552/TK751/TK752; 325D FM/558; 568/330D/330C Forestry</td></tr>
+              <tr><td>Caterpillar</td><td>484-6673</td><td>Buje de oruga</td><td>345B/345C/345D/349D/349E/352 GD PPR3</td></tr>
+              <tr><td>Caterpillar</td><td>570-1301</td><td>Buje de oruga</td><td>345B-352 HDXL; 568/330D/330C Forestry HDXL</td></tr>
+              <tr><td>Caterpillar</td><td>509-5200</td><td>Buje de oruga</td><td>350/350L; MD6420(9.0&quot;); MD6540</td></tr>
+              <tr><td>Caterpillar</td><td>384-5480</td><td>Buje de oruga</td><td>538/320D2 narrow PPR2</td></tr>
+              <tr><td>Caterpillar</td><td>565-0832</td><td>Buje de oruga</td><td>538 NEXT GEN narrow PPR3</td></tr>
+              <tr><td>Caterpillar</td><td>158-4680</td><td>Buje de oruga</td><td>302.5-303.5 steel track</td></tr>
+              <tr><td>Caterpillar</td><td>158-4771</td><td>Buje de oruga</td><td>304-306 steel track</td></tr>
+              <tr><td>Caterpillar</td><td>333-5623</td><td>Buje de oruga</td><td>306 steel track</td></tr>
+              <tr><td>Caterpillar</td><td>168-6755</td><td>Buje de oruga</td><td>307B-308E (unsealed)</td></tr>
+              <tr><td>Caterpillar</td><td>168-6757</td><td>Buje de oruga</td><td>307B-308E (greased)</td></tr>
+              <tr><td>Caterpillar</td><td>145-2951</td><td>Buje de oruga</td><td>307B-307E (sealed)</td></tr>
+              <tr><td>Caterpillar</td><td>102-8107</td><td>Buje de oruga</td><td>307/307B/308B</td></tr>
+              <tr><td>Caterpillar</td><td>117-8880</td><td>Buje de oruga</td><td>PM465</td></tr>
+              <tr><td>Caterpillar</td><td>367-8223</td><td>Buje de oruga</td><td>299C/299D/299D2 steel track</td></tr>
+              <tr><td>Caterpillar</td><td>117-1371</td><td>Buje de oruga</td><td>E320 (nota del proveedor)</td></tr>
+              <tr><td>Caterpillar</td><td>117-1372</td><td>Buje de oruga</td><td>&nbsp;</td></tr>
+              <tr><td>Caterpillar</td><td>290-0825</td><td>Buje de oruga</td><td>&nbsp;</td></tr>
+              <tr><td>Caterpillar</td><td>159-3588</td><td>Buje de oruga</td><td>&nbsp;</td></tr>
+              <tr><td>Caterpillar</td><td>096-5257</td><td>Buje de oruga</td><td>&nbsp;</td></tr>
+              <tr><td>Komatsu</td><td>207-32-K2330</td><td>Buje de oruga</td><td>PC300/PC350 Serie</td></tr>
+              <tr><td>Komatsu</td><td>208-32-61140</td><td>Buje de oruga</td><td>PC400/PC450 Serie</td></tr>
+              <tr><td>Komatsu</td><td>208-32-61141</td><td>Buje de oruga</td><td>445FXL/450FXL/PC270LL/PC300/PC350/PC390/PC400/PC450</td></tr>
+              <tr><td>Komatsu</td><td>208-32-41140</td><td>Buje de oruga</td><td>PC490</td></tr>
+              <tr><td>Komatsu</td><td>209-32-12140</td><td>Buje de oruga</td><td>&nbsp;</td></tr>
+              <tr><td>Komatsu</td><td>202-98-09112</td><td>Buje de oruga</td><td>&nbsp;</td></tr>
+              <tr><td>Komatsu</td><td>195-32-E3120</td><td>Buje de oruga</td><td>D375 Serie</td></tr>
+              <tr><td>Komatsu</td><td>195-98-09131</td><td>Buje de oruga</td><td>D375 Serie</td></tr>
+              <tr><td>Komatsu</td><td>195-98-09160</td><td>Buje de oruga</td><td>D375 Serie</td></tr>
+              <tr><td>Komatsu</td><td>195-98-09161</td><td>Buje de oruga</td><td>D375 Serie</td></tr>
+              <tr><td>Komatsu</td><td>175-32-11140</td><td>Buje de oruga</td><td>D155 Serie</td></tr>
+              <tr><td>Komatsu</td><td>175-32-11241</td><td>Buje de oruga</td><td>D155 Serie</td></tr>
+              <tr><td>Komatsu</td><td>170-32-11144</td><td>Buje de oruga</td><td>&nbsp;</td></tr>
+              <tr><td>Komatsu</td><td>154-32-31140E</td><td>Buje de oruga</td><td>D85 Serie</td></tr>
+              <tr><td>Komatsu</td><td>154-32-31141</td><td>Buje de oruga</td><td>D85 Serie</td></tr>
+              <tr><td>Komatsu</td><td>154-98-09113</td><td>Buje de oruga</td><td>D85 Serie</td></tr>
+              <tr><td>Komatsu</td><td>154-98-09114</td><td>Buje de oruga</td><td>D85 Serie</td></tr>
+              <tr><td>Komatsu</td><td>154-98-09131</td><td>Buje de oruga</td><td>D85 Serie</td></tr>
+              <tr><td>Komatsu</td><td>154-98-09430</td><td>Buje de oruga</td><td>D85 Serie</td></tr>
+              <tr><td>Komatsu</td><td>155-32-11144</td><td>Buje de oruga</td><td>&nbsp;</td></tr>
+              <tr><td>Komatsu</td><td>155-32-11160</td><td>Buje de oruga</td><td>&nbsp;</td></tr>
+              <tr><td>Komatsu</td><td>155-98-09070</td><td>Buje de oruga</td><td>&nbsp;</td></tr>
+              <tr><td>Komatsu</td><td>155-98-09160</td><td>Buje de oruga</td><td>&nbsp;</td></tr>
+              <tr><td>Komatsu</td><td>156-32-11110</td><td>Buje de oruga</td><td>&nbsp;</td></tr>
+              <tr><td>Komatsu</td><td>135-32-11141</td><td>Buje de oruga</td><td>&nbsp;</td></tr>
+              <tr><td>Komatsu</td><td>135-32-11141E</td><td>Buje de oruga</td><td>&nbsp;</td></tr>
+              <tr><td>Komatsu</td><td>135-98-09130</td><td>Buje de oruga</td><td>&nbsp;</td></tr>
+              <tr><td>Komatsu</td><td>134-32-61140</td><td>Buje de oruga</td><td>D61E/D61EX/D61P/D61PX</td></tr>
+              <tr><td>Komatsu</td><td>130-32-11143</td><td>Buje de oruga</td><td>&nbsp;</td></tr>
+              <tr><td>Komatsu</td><td>130-98-09112</td><td>Buje de oruga</td><td>&nbsp;</td></tr>
+              <tr><td>Komatsu</td><td>130-98-09113</td><td>Buje de oruga</td><td>&nbsp;</td></tr>
+              <tr><td>Komatsu</td><td>130-98-09114</td><td>Buje de oruga</td><td>&nbsp;</td></tr>
+              <tr><td>Komatsu</td><td>130-98-09115</td><td>Buje de oruga</td><td>&nbsp;</td></tr>
+              <tr><td>Komatsu</td><td>130-98-09132</td><td>Buje de oruga</td><td>&nbsp;</td></tr>
+              <tr><td>Komatsu</td><td>130-98-09133</td><td>Buje de oruga</td><td>&nbsp;</td></tr>
+              <tr><td>Komatsu</td><td>114-32-A1130</td><td>Buje de oruga</td><td>&nbsp;</td></tr>
+              <tr><td>Komatsu</td><td>101-98-09210</td><td>Buje de oruga</td><td>&nbsp;</td></tr>
+              <tr><td>Komatsu</td><td>101-98-09220</td><td>Buje de oruga</td><td>&nbsp;</td></tr>
+              <tr><td>Hitachi</td><td>4278315</td><td>Buje de oruga</td><td>&nbsp;</td></tr>
+              <tr><td>Hitachi</td><td>3069392</td><td>Buje de oruga</td><td>&nbsp;</td></tr>
+              <tr><td>Hitachi</td><td>71401525</td><td>Buje de oruga</td><td>&nbsp;</td></tr>
+              <tr><td>Hitachi</td><td>4231860</td><td>Buje de oruga</td><td>&nbsp;</td></tr>
+              <tr><td>Hitachi</td><td>4164388</td><td>Buje de oruga</td><td>&nbsp;</td></tr>
+              <tr><td>Hitachi</td><td>70645947</td><td>Buje de oruga</td><td>&nbsp;</td></tr>
+              <tr><td>Hitachi</td><td>4616102</td><td>Buje de oruga</td><td>&nbsp;</td></tr>
+              <tr><td>Hitachi</td><td>4085382</td><td>Buje de oruga</td><td>&nbsp;</td></tr>
+              <tr><td>Hitachi</td><td>4328031</td><td>Buje de oruga</td><td>&nbsp;</td></tr>
+              <tr><td>Hitachi</td><td>4295792</td><td>Buje de oruga</td><td>&nbsp;</td></tr>
+              <tr><td>Hitachi</td><td>4159166</td><td>Buje de oruga</td><td>&nbsp;</td></tr>
+              <tr><td>Hitachi</td><td>3077925</td><td>Buje de oruga</td><td>&nbsp;</td></tr>
+              <tr><td>Hitachi</td><td>4156579</td><td>Buje de oruga</td><td>&nbsp;</td></tr>
+              <tr><td>Hitachi</td><td>3074677</td><td>Buje de oruga</td><td>&nbsp;</td></tr>
+              <tr><td>Hitachi</td><td>4201232</td><td>Buje de oruga</td><td>&nbsp;</td></tr>
+              <tr><td>Hitachi</td><td>4262582</td><td>Buje de oruga</td><td>&nbsp;</td></tr>
+              <tr><td>Hitachi</td><td>4158239</td><td>Buje de oruga</td><td>&nbsp;</td></tr>
+              <tr><td>Hitachi</td><td>4155606</td><td>Buje de oruga</td><td>&nbsp;</td></tr>
+              <tr><td>Hitachi</td><td>4165072</td><td>Buje de oruga</td><td>&nbsp;</td></tr>
+              <tr><td>Hitachi</td><td>4386609</td><td>Buje de oruga</td><td>&nbsp;</td></tr>
+              <tr><td>Hitachi</td><td>4132762</td><td>Buje de oruga</td><td>&nbsp;</td></tr>
+              <tr><td>Hitachi</td><td>4637799</td><td>Buje de oruga</td><td>&nbsp;</td></tr>
+              <tr><td>Hitachi</td><td>4640126</td><td>Buje de oruga</td><td>&nbsp;</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="oem-count" id="oemCount" data-tmpl="Mostrando __N__ de __T__ filas">Mostrando 295 de 295 filas</p>
+        <p class="oem-empty" id="oemEmpty" hidden>No hay marca, número OEM ni modelo que coincida con su búsqueda.</p>
+
+    </div>
+  </section>
+  <section class="section">
+    <div class="container">
+      <header class="section-header">
+        <p class="eyebrow">Detalles del Producto</p>
+        <h2>Especificaciones Técnicas</h2>
+      </header>
+      <div class="spec-table">
+        <div class="spec-row">
+          <div class="spec-name">Producto</div>
+          <div class="spec-value">Pasadores y bujes de oruga para tren de rodaje de orugas</div>
+        </div>
+        <div class="spec-row">
+          <div class="spec-name">Material</div>
+          <div class="spec-value">Acero aleado tratado térmicamente</div>
+        </div>
+        <div class="spec-row">
+          <div class="spec-name">Tratamiento Térmico</div>
+          <div class="spec-value">Endurecido por inducción / temple completo</div>
+        </div>
+        <div class="spec-row">
+          <div class="spec-name">Marcas Compatibles</div>
+          <div class="spec-value">CAT, Komatsu, Hitachi, Volvo, Hyundai</div>
+        </div>
+        <div class="spec-row">
+          <div class="spec-name">Aplicación</div>
+          <div class="spec-value">Excavadoras, buldóceres, cargadores de orugas</div>
+        </div>
+        <div class="spec-row">
+          <div class="spec-name">Servicio</div>
+          <div class="spec-value">Repuestos OEM y medidas personalizadas disponibles</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section cta-band">
+    <div class="container text-center">
+      <h2>¿Necesita Pasadores y Bujes de Oruga?</h2>
+      <p>Contáctenos para especificaciones y precios. Disponibles servicios OEM y medidas personalizadas.</p>
+      <div class="cta-actions">
+        <a href="/es/contact" class="btn btn-primary btn-lg">Solicitar Cotización</a>
+        <a href="mailto:Jason@carelong.com.cn?subject=Product%20Inquiry%20-%20Carelong%20Website" class="btn btn-outline-white btn-lg">Envíenos un Correo</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+.eyebrow { font-size: 0.8125rem; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; color: var(--color-secondary); margin-bottom: var(--space-3); }
+.product-overview { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-12); align-items: center; }
+.product-intro h2 { margin-bottom: var(--space-4); }
+.product-intro p { color: var(--color-text-light); }
+.product-badges { display: flex; flex-wrap: wrap; gap: var(--space-2); margin: var(--space-6) 0; }
+.badge { display: inline-block; background: rgba(27, 75, 142, 0.08); color: var(--color-primary); padding: var(--space-1) var(--space-3); border-radius: 100px; font-size: 0.8125rem; font-weight: 600; }
+.product-actions { display: flex; gap: var(--space-4); flex-wrap: wrap; }
+.spec-table { display: flex; flex-direction: column; gap: var(--space-2); }
+.spec-row { display: flex; justify-content: space-between; padding: var(--space-4) var(--space-6); background: var(--color-bg); border: 1px solid var(--color-border); border-radius: var(--radius-md); }
+.spec-name { font-weight: 600; color: var(--color-text); }
+.spec-value { color: var(--color-text-light); text-align: right; }
+.data-table-wrapper { overflow-x: auto; border: 1px solid var(--color-border); border-radius: var(--radius-md); background: var(--color-bg); }
+.data-table { width: 100%; border-collapse: collapse; font-size: 0.875rem; }
+.data-table thead th { background: var(--color-primary); color: #fff; padding: var(--space-3) var(--space-4); text-align: left; font-weight: 600; white-space: normal; line-height: 1.4; }
+.data-table tbody td { padding: var(--space-3) var(--space-4); border-top: 1px solid var(--color-border); color: var(--color-text); word-wrap: break-word; }
+.data-table tbody tr:nth-child(even) td { background: rgba(27, 75, 142, 0.04); }
+.data-table tbody tr:hover td { background: rgba(27, 75, 142, 0.08); }
+.spec-xl-wrap { max-height: 68vh; overflow: auto; }
+.oem-table td:first-child { min-width: 112px; white-space: nowrap; }
+.oem-table thead th:first-child { min-width: 112px; }
+.spec-table-xl { table-layout: auto; width: 100%; font-size: 0.8125rem; }
+.spec-table-xl th, .spec-table-xl td { word-break: break-word; overflow-wrap: anywhere; font-size: 0.875rem; font-weight: 400; }
+.spec-table-xl thead th { position: sticky; top: 0; z-index: 2; box-shadow: 0 2px 5px rgba(0,0,0,.18); font-weight: 600; }
+.cta-band { background: var(--color-primary); color: #fff; }
+.cta-band h2 { color: #fff; margin-bottom: var(--space-4); }
+.cta-band p { color: rgba(255,255,255,0.85); font-size: 1.125rem; margin-bottom: var(--space-6); }
+.cta-actions { display: flex; gap: var(--space-4); justify-content: center; flex-wrap: wrap; }
+@media (max-width: 768px) {
+  .product-overview { grid-template-columns: 1fr; }
+  .spec-row { flex-direction: column; gap: var(--space-1); }
+  .spec-value { text-align: left; }
+}
+
+.oem-toolbar { display: flex; gap: var(--space-3); align-items: center; flex-wrap: wrap; margin-bottom: var(--space-3); }
+.oem-search { flex: 1; min-width: 220px; padding: 10px 14px; font-size: 0.9rem; color: var(--color-text); background: #fff; border: 1px solid var(--color-border); border-radius: var(--radius-md); outline: none; }
+.oem-search:focus { border-color: var(--color-primary); box-shadow: 0 0 0 3px rgba(27, 75, 142, 0.1); }
+.oem-scroll-hint { font-size: 0.8rem; color: var(--color-text-light); white-space: nowrap; }
+.oem-count { margin: var(--space-3) 0 0; font-size: 0.8125rem; color: var(--color-text-light); }
+.oem-empty { margin: var(--space-4) 0; padding: var(--space-5); text-align: center; color: var(--color-text-light); font-size: 0.9rem; border: 1px dashed var(--color-border); border-radius: var(--radius-md); }
+.oem-empty[hidden] { display: none; }
+.spec-table-xl tbody tr[hidden] { display: none; }
+.spec-table-xl thead th:nth-child(3), .spec-table-xl tbody td:nth-child(3) { min-width: 170px; white-space: nowrap; overflow-wrap: normal; word-break: normal; }
+.spec-table-xl tbody td.hit { color: var(--color-primary); font-weight: 600; }
+@media (max-width: 768px) { .oem-scroll-hint { white-space: normal; } }
+</style>
+
+<script>
+  (() => {
+    const search = document.getElementById('oemSearch');
+    const scroller = document.querySelector('.spec-xl-wrap');
+    if (!search || !scroller) return;
+    const rows = Array.from(scroller.querySelectorAll('tbody tr'));
+    const cells = rows.map((r) => Array.from(r.querySelectorAll('td')));
+    const haystacks = cells.map((cs) => cs.map((c) => c.textContent.toLowerCase()).join(' '));
+    const countEl = document.getElementById('oemCount');
+    const emptyEl = document.getElementById('oemEmpty');
+    const tmpl = countEl.dataset.tmpl;
+    const total = rows.length;
+    function render() {
+      const q = (search.value || '').trim().toLowerCase();
+      let shown = 0;
+      rows.forEach((row, i) => {
+        const match = !q || haystacks[i].includes(q);
+        row.hidden = !match;
+        cells[i].forEach((cell) => cell.classList.toggle('hit', !!q && cell.textContent.toLowerCase().includes(q)));
+        if (match) shown++;
+      });
+      countEl.textContent = tmpl.replace('__N__', String(shown)).replace('__T__', String(total));
+      emptyEl.hidden = shown !== 0;
+      if (q) scroller.scrollTop = 0;
+    }
+    search.addEventListener('input', render);
+    render();
+  })();
+</script>

@@ -37,7 +37,7 @@ const isEs = lang === 'es';
 
 // H1 should be the short product name only — strip everything after the first " - ".
 // Title is used as <title> tag (good for SEO), but H1 should be a clean short heading.
-// Example: "Pernos de Rueda - Fabricante de Pernos de Cubo | Carelong" → "Pernos de Rueda"
+// Example: "Pernos de Maza - Fabricante de Pernos de Cubo | Carelong" → "Pernos de Maza"
 const fullTitle = isEs ? titleEs : titleEn;
 const h1Text = fullTitle.split(' - ')[0].split(' | ')[0].trim();
 ---

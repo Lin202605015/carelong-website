@@ -1,259 +1,259 @@
----
-import { productImg } from '../data/productImages';
-interface Props {
-  title: string;
-  description?: string;
-  canonical?: string;
-  noindex?: boolean;
-  breadcrumbs?: Array<{ label: string; href?: string }>;
-  lang?: 'en' | 'es';
-}
-
-const {
-  title,
-  description,
-  canonical,
-  noindex,
-  breadcrumbs,
-  lang = 'en',
-} = Astro.props;
-import { siteConfig } from '../data/site';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
-import '../styles/global.css';
-
-const siteTitle = title.includes(' | ') ? title : `${title} | ${siteConfig.name}`;
-
-// Trim meta description to <=155 chars at a word boundary.
-// Google truncates longer snippets in SERPs anyway, so pre-trimming keeps the
-// displayed snippet clean (no mid-word cut). Applies to both EN and ES.
-function trimMeta(d: string, max = 155): string {
-  if (!d || d.length <= max) return d;
-  const cut = d.slice(0, max);
-  const lastSpace = cut.lastIndexOf(' ');
-  return lastSpace > 0 ? cut.slice(0, lastSpace) : cut;
-}
-const metaDescription = trimMeta(description || siteConfig.description);
-const canonicalURL = canonical ? new URL(canonical, siteConfig.url) : new URL(Astro.url.pathname, siteConfig.url);
-
-// Auto-generate BreadcrumbList from URL pathname when no `breadcrumbs` prop is provided.
-const pathSegments = Astro.url.pathname.split('/').filter(Boolean);
-const isEsPath = pathSegments[0] === 'es';
-const segs = isEsPath ? pathSegments.slice(1) : pathSegments;
-const bcLabels: Record<string, Record<string, string>> = {
-  en: {
-    'about': 'About Us',
-    'quality': 'Quality Control',
-    'capabilities': 'Manufacturing Capabilities',
-    'contact': 'Contact Us',
-    'faq': 'FAQ',
-    'products': 'Products',
-    'bolts-and-nuts': 'Bolts and Nuts',
-    'hub-bolts': 'Hub Bolts',
-    'plow-bolts': 'Plow Bolts',
-    'track-bolts': 'Track Bolts',
-    'segment-bolts': 'Segment Bolts',
-    'nuts': 'Nuts',
-    'stamping-parts': 'Stamping Parts',
-    'track-bushing-and-track-pin': 'Track Bushing and Track Pin',
-
-
-    'die-casting-parts': 'Die Casting Parts',
-    'forging-parts': 'Forging Parts',
-    'machining-parts': 'Machining Parts',
-    'welding-parts': 'Welding Parts',
-    'plastic-rubber-parts': 'Plastic and Rubber Parts',
-    'heavy-equipment-parts': 'Heavy Equipment Parts',
-    'auto-parts': 'Auto Parts',
-    'tooling-and-moulds': 'Tooling and Moulds',
-    'other-parts': 'Other Parts',
-  },
-  es: {
-    'about': 'Sobre Nosotros',
-    'quality': 'Control de Calidad',
-    'capabilities': 'Capacidades de Fabricación',
-    'contact': 'Contáctenos',
-    'faq': 'Preguntas Frecuentes',
-    'products': 'Productos',
-    'bolts-and-nuts': 'Pernos y Tuercas',
-    'hub-bolts': 'Pernos de Rueda',
-    'plow-bolts': 'Pernos de Arado',
-    'track-bolts': 'Pernos de Oruga',
-    'segment-bolts': 'Pernos de Segmento',
-    'nuts': 'Tuercas',
-    'stamping-parts': 'Piezas Estampadas',
-    'track-bushing-and-track-pin': 'Buje y Pasador de Oruga',
-
-
-    'die-casting-parts': 'Piezas Fundidas',
-    'forging-parts': 'Piezas Forjadas',
-    'machining-parts': 'Piezas Mecanizadas',
-    'welding-parts': 'Piezas Soldadas',
-    'plastic-rubber-parts': 'Piezas de Plástico y Caucho',
-    'heavy-equipment-parts': 'Repuestos de Maquinaria Pesada',
-    'auto-parts': 'Autopartes',
-    'tooling-and-moulds': 'Herramentales y Moldes',
-    'other-parts': 'Otras Piezas',
-  }
-};
-const autoBreadcrumbs = segs.map((seg, i) => {
-  const prefix = isEsPath ? '/es' : '';
-  const href = prefix + '/' + segs.slice(0, i + 1).join('/');
-  const label = (bcLabels[isEsPath ? 'es' : 'en'][seg] || seg.replace(/-/g, ' '));
-  return { label, href };
-});
-const finalBreadcrumbs = (breadcrumbs !== undefined) ? breadcrumbs : autoBreadcrumbs;
-const hasBreadcrumbs = Array.isArray(finalBreadcrumbs) && finalBreadcrumbs.length > 0;
-
-// Product Schema lookup: auto-add Product JSON-LD for product detail pages (EN/ES share this map).
-const PRODUCT_SCHEMA: Record<string, { en: string; es: string; img: string }> = {
-  'bolts-and-nuts/hub-bolts': { en: 'Hub Bolts', es: 'Pernos de Maza', img: productImg('hubBolt') },
-  'bolts-and-nuts/plow-bolts': { en: 'Plow Bolts', es: 'Pernos de Arado', img: productImg('plowBolt') },
-  'bolts-and-nuts/track-bolts': { en: 'Track Bolts', es: 'Pernos de Oruga', img: productImg('trackBolt') },
-  'bolts-and-nuts/segment-bolts': { en: 'Segment Bolts', es: 'Pernos de Segmento', img: productImg('segmentBolt') },
-  'bolts-and-nuts/hex-nuts': { en: 'Hex Nuts', es: 'Tuercas Hexagonales', img: productImg('hexNut') },
-  'bolts-and-nuts/flange-nuts': { en: 'Flange Nuts', es: 'Tuercas de Brida', img: productImg('flangeNut') },
-  'bolts-and-nuts/nylon-nuts': { en: 'Nylon Nuts', es: 'Tuercas de Nylon', img: productImg('nylonNut') },
-  'bolts-and-nuts/wheel-nuts': { en: 'Wheel Nuts', es: 'Tuercas de Rueda', img: productImg('wheelNut') },
-  'bolts-and-nuts/slotted-nuts': { en: 'Slotted Nuts', es: 'Tuercas Ranuradas', img: productImg('slottedNut') },
-  'die-casting-parts': { en: 'Die Casting Parts', es: 'Piezas de Fundición a Presión', img: productImg('dieCasting') },
-  'forging-parts': { en: 'Forging Parts', es: 'Piezas Forjadas', img: productImg('forging') },
-  'machining-parts': { en: 'Machining Parts', es: 'Piezas Mecanizadas', img: productImg('machining') },
-  'welding-parts': { en: 'Welding Parts', es: 'Piezas Soldadas', img: productImg('welding') },
-  'plastic-rubber-parts': { en: 'Plastic & Rubber Parts', es: 'Piezas de Plástico y Caucho', img: productImg('plasticRubber') },
-  'heavy-equipment-parts': { en: 'Heavy Equipment Parts', es: 'Piezas de Equipo Pesado', img: productImg('heavyEquipment') },
-  'auto-parts': { en: 'Auto Parts', es: 'Autopartes', img: productImg('autoParts') },
-  'other-parts': { en: 'Other Parts', es: 'Otras Piezas', img: productImg('otherParts') },
-  'tooling-and-moulds': { en: 'Tooling & Moulds', es: 'Utillaje y Moldes', img: productImg('tooling') },
-  'track-bushing-and-track-pin': { en: 'Track Bushing and Track Pin', es: 'Buje y Pasador de Oruga', img: productImg('trackBushing') },
-
-  'display-rack/supermarket-display-racks': { en: 'Supermarket Display Racks', es: 'Exhibidores para Supermercados', img: productImg('supermarketRack') },
-  'display-rack/wall-mounted-storage-racks': { en: 'Pegboard & Slatwall Display Racks', es: 'Exhibidores de Pegboard y Slatwall', img: productImg('wallMountedRack') },
-  'display-rack/clothing-display-racks': { en: 'Clothing Display Racks', es: 'Exhibidores de Ropa', img: productImg('clothingRack') },
-  'display-rack/wooden-display-racks': { en: 'Wooden Display Racks', es: 'Exhibidores de Madera', img: productImg('woodenRack') },
-  'display-rack/newspaper-magazine-racks': { en: 'Display Tables & Stands', es: 'Mesas y Soportes de Exhibición', img: productImg('newspaperRack') },
-};
-
-// Resolve current product detail page (exclude /products index & 3 category pages which already have Product schema).
-const productKey = (() => {
-  const parts = Astro.url.pathname.split('/').filter(Boolean);
-  const p = parts[0] === 'es' ? parts.slice(1) : parts;
-  if (p[0] !== 'products' || p.length < 2) return null;
-  const slug = p.slice(1).join('/');
-  return Object.prototype.hasOwnProperty.call(PRODUCT_SCHEMA, slug) ? slug : null;
-})();
-const productInfo = productKey ? PRODUCT_SCHEMA[productKey] : null;
----
-<!DOCTYPE html>
-<html lang={lang}>
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content={metaDescription} />
-  <title>{siteTitle}</title>
-  <link rel="canonical" href={canonicalURL} />
-  <link rel="sitemap" href="/sitemap.xml" />
-  <meta name="generator" content={Astro.generator} />
-  {noindex && <meta name="robots" content="noindex" />}
-
-  <!-- Google tag (gtag.js) - GA4 -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-8B17FN8LEV"></script>
-  <script is:inline>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-8B17FN8LEV', {
-      'page_hostname': window.location.hostname,
-      'page_location': window.location.href,
-    });
-  </script>
-  <meta property="og:title" content={siteTitle} />
-  <meta property="og:description" content={metaDescription} />
-  <meta property="og:url" content={canonicalURL} />
-  <meta property="og:type" content="website" />
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta property="og:image" content="https://carelong.com.cn/images/og-image.jpg" />
-  <meta property="og:site_name" content="Xiamen Carelong" />
-  <link rel="icon" type="image/png" href="/images/logo.png" />
-
-  <!-- Alternate language links -->
-  <link rel="alternate" hreflang="en" href={canonical ? canonical : `https://carelong.com.cn${Astro.url.pathname.replace(/^\/es\//, '/')}`} />
-  <link rel="alternate" hreflang="es" href={canonical ? (lang === 'en' ? `https://carelong.com.cn/es${Astro.url.pathname.replace(/^\/(es)?\//, '/')}` : canonical) : `https://carelong.com.cn/es${Astro.url.pathname.replace(/^\/(es)?\//, '/')}`} />
-  <link rel="alternate" hreflang="x-default" href={canonical ? canonical : `https://carelong.com.cn${Astro.url.pathname.replace(/^\/es\//, '/')}`} />
-  
-  <!-- Global Schema.org: Organization + Website -->
-  <script type="application/ld+json" set:html={JSON.stringify({
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "Organization",
-        "@id": "https://carelong.com.cn/#organization",
-        "name": "Xiamen Carelong Co., Ltd.",
-        "alternateName": "Carelong",
-        "url": "https://carelong.com.cn",
-        "logo": "https://carelong.com.cn/images/logo.png",
-        "description": lang === 'es' ? siteConfig.descriptionEs : siteConfig.description,
-        "foundingDate": "2005",
-        "address": {
-          "@type": "PostalAddress",
-          "streetAddress": "24/D, Hong Xiang Building, No.258, South Hubin Road",
-          "addressLocality": "Xiamen",
-          "addressCountry": "CN"
-        },
-        "contactPoint": {
-          "@type": "ContactPoint",
-          "telephone": "+86-592-5185361",
-          "email": "Jason@carelong.com.cn",
-          "contactType": "sales",
-          "availableLanguage": ["English", "Chinese", "Spanish"]
-        },
-        "sameAs": ["https://www.linkedin.com/company/xiamen-carelong", "https://www.youtube.com/channel/UCF-M01Bbz0waIdaphthC29w"]
-      },
-      {
-        "@type": "WebSite",
-        "@id": "https://carelong.com.cn/#website",
-        "url": "https://carelong.com.cn",
-        "name": "Xiamen Carelong",
-        "publisher": { "@id": "https://carelong.com.cn/#organization" }
-      },
-      {
-        "@type": "WebPage",
-        "@id": canonicalURL.toString() + "#webpage",
-        "url": canonicalURL.toString(),
-        "name": siteTitle,
-        "description": metaDescription,
-        "isPartOf": { "@id": "https://carelong.com.cn/#website" }
-      },
-      ...(hasBreadcrumbs ? [{
-        "@type": "BreadcrumbList",
-        "@id": canonicalURL.toString() + "#breadcrumb",
-        "itemListElement": [
-          { "@type": "ListItem", "position": 1, "name": isEsPath ? "Inicio" : "Home", "item": isEsPath ? "https://carelong.com.cn/es" : "https://carelong.com.cn" },
-          ...finalBreadcrumbs.map((b, i) => ({
-            "@type": "ListItem",
-            "position": i + 2,
-            "name": b.label,
-            ...(b.href ? { "item": "https://carelong.com.cn" + b.href } : {})
-          }))
-        ]
-      }] : []),
-      ...(productInfo ? [{
-        "@type": "Product",
-        "@id": canonicalURL.toString() + "#product",
-        "name": isEsPath ? productInfo.es : productInfo.en,
-        "image": new URL(productInfo.img, siteConfig.url).href,
-        "brand": { "@id": "https://carelong.com.cn/#organization" },
-        "manufacturer": { "@id": "https://carelong.com.cn/#organization" },
-        "url": canonicalURL.toString()
-      }] : [])
-    ]
-  })} />
-</head>
-<body>
-  <Header />
-  <main>
-    <slot />
-  </main>
-  <Footer />
-</body>
+---
+import { productImg } from '../data/productImages';
+interface Props {
+  title: string;
+  description?: string;
+  canonical?: string;
+  noindex?: boolean;
+  breadcrumbs?: Array<{ label: string; href?: string }>;
+  lang?: 'en' | 'es';
+}
+
+const {
+  title,
+  description,
+  canonical,
+  noindex,
+  breadcrumbs,
+  lang = 'en',
+} = Astro.props;
+import { siteConfig } from '../data/site';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import '../styles/global.css';
+
+const siteTitle = title.includes(' | ') ? title : `${title} | ${siteConfig.name}`;
+
+// Trim meta description to <=155 chars at a word boundary.
+// Google truncates longer snippets in SERPs anyway, so pre-trimming keeps the
+// displayed snippet clean (no mid-word cut). Applies to both EN and ES.
+function trimMeta(d: string, max = 155): string {
+  if (!d || d.length <= max) return d;
+  const cut = d.slice(0, max);
+  const lastSpace = cut.lastIndexOf(' ');
+  return lastSpace > 0 ? cut.slice(0, lastSpace) : cut;
+}
+const metaDescription = trimMeta(description || siteConfig.description);
+const canonicalURL = canonical ? new URL(canonical, siteConfig.url) : new URL(Astro.url.pathname, siteConfig.url);
+
+// Auto-generate BreadcrumbList from URL pathname when no `breadcrumbs` prop is provided.
+const pathSegments = Astro.url.pathname.split('/').filter(Boolean);
+const isEsPath = pathSegments[0] === 'es';
+const segs = isEsPath ? pathSegments.slice(1) : pathSegments;
+const bcLabels: Record<string, Record<string, string>> = {
+  en: {
+    'about': 'About Us',
+    'quality': 'Quality Control',
+    'capabilities': 'Manufacturing Capabilities',
+    'contact': 'Contact Us',
+    'faq': 'FAQ',
+    'products': 'Products',
+    'bolts-and-nuts': 'Bolts and Nuts',
+    'hub-bolts': 'Hub Bolts',
+    'plow-bolts': 'Plow Bolts',
+    'track-bolts': 'Track Bolts',
+    'segment-bolts': 'Segment Bolts',
+    'nuts': 'Nuts',
+    'stamping-parts': 'Stamping Parts',
+    'track-bushing-and-track-pin': 'Track Bushing and Track Pin',
+
+
+    'die-casting-parts': 'Die Casting Parts',
+    'forging-parts': 'Forging Parts',
+    'machining-parts': 'Machining Parts',
+    'welding-parts': 'Welding Parts',
+    'plastic-rubber-parts': 'Plastic and Rubber Parts',
+    'heavy-equipment-parts': 'Heavy Equipment Parts',
+    'auto-parts': 'Auto Parts',
+    'tooling-and-moulds': 'Tooling and Moulds',
+    'other-parts': 'Other Parts',
+  },
+  es: {
+    'about': 'Sobre Nosotros',
+    'quality': 'Control de Calidad',
+    'capabilities': 'Capacidades de Fabricación',
+    'contact': 'Contáctenos',
+    'faq': 'Preguntas Frecuentes',
+    'products': 'Productos',
+    'bolts-and-nuts': 'Pernos y Tuercas',
+    'hub-bolts': 'Pernos de Maza',
+    'plow-bolts': 'Pernos de Arado',
+    'track-bolts': 'Pernos de Oruga',
+    'segment-bolts': 'Pernos de Segmento',
+    'nuts': 'Tuercas',
+    'stamping-parts': 'Piezas Estampadas',
+    'track-bushing-and-track-pin': 'Buje y Pasador de Oruga',
+
+
+    'die-casting-parts': 'Piezas Fundidas',
+    'forging-parts': 'Piezas Forjadas',
+    'machining-parts': 'Piezas Mecanizadas',
+    'welding-parts': 'Piezas Soldadas',
+    'plastic-rubber-parts': 'Piezas de Plástico y Caucho',
+    'heavy-equipment-parts': 'Repuestos de Maquinaria Pesada',
+    'auto-parts': 'Autopartes',
+    'tooling-and-moulds': 'Herramentales y Moldes',
+    'other-parts': 'Otras Piezas',
+  }
+};
+const autoBreadcrumbs = segs.map((seg, i) => {
+  const prefix = isEsPath ? '/es' : '';
+  const href = prefix + '/' + segs.slice(0, i + 1).join('/');
+  const label = (bcLabels[isEsPath ? 'es' : 'en'][seg] || seg.replace(/-/g, ' '));
+  return { label, href };
+});
+const finalBreadcrumbs = (breadcrumbs !== undefined) ? breadcrumbs : autoBreadcrumbs;
+const hasBreadcrumbs = Array.isArray(finalBreadcrumbs) && finalBreadcrumbs.length > 0;
+
+// Product Schema lookup: auto-add Product JSON-LD for product detail pages (EN/ES share this map).
+const PRODUCT_SCHEMA: Record<string, { en: string; es: string; img: string }> = {
+  'bolts-and-nuts/hub-bolts': { en: 'Hub Bolts', es: 'Pernos de Maza', img: productImg('hubBolt') },
+  'bolts-and-nuts/plow-bolts': { en: 'Plow Bolts', es: 'Pernos de Arado', img: productImg('plowBolt') },
+  'bolts-and-nuts/track-bolts': { en: 'Track Bolts', es: 'Pernos de Oruga', img: productImg('trackBolt') },
+  'bolts-and-nuts/segment-bolts': { en: 'Segment Bolts', es: 'Pernos de Segmento', img: productImg('segmentBolt') },
+  'bolts-and-nuts/hex-nuts': { en: 'Hex Nuts', es: 'Tuercas Hexagonales', img: productImg('hexNut') },
+  'bolts-and-nuts/flange-nuts': { en: 'Flange Nuts', es: 'Tuercas de Brida', img: productImg('flangeNut') },
+  'bolts-and-nuts/nylon-nuts': { en: 'Nylon Nuts', es: 'Tuercas de Nylon', img: productImg('nylonNut') },
+  'bolts-and-nuts/wheel-nuts': { en: 'Wheel Nuts', es: 'Tuercas de Rueda', img: productImg('wheelNut') },
+  'bolts-and-nuts/slotted-nuts': { en: 'Slotted Nuts', es: 'Tuercas Ranuradas', img: productImg('slottedNut') },
+  'die-casting-parts': { en: 'Die Casting Parts', es: 'Piezas de Fundición a Presión', img: productImg('dieCasting') },
+  'forging-parts': { en: 'Forging Parts', es: 'Piezas Forjadas', img: productImg('forging') },
+  'machining-parts': { en: 'Machining Parts', es: 'Piezas Mecanizadas', img: productImg('machining') },
+  'welding-parts': { en: 'Welding Parts', es: 'Piezas Soldadas', img: productImg('welding') },
+  'plastic-rubber-parts': { en: 'Plastic & Rubber Parts', es: 'Piezas de Plástico y Caucho', img: productImg('plasticRubber') },
+  'heavy-equipment-parts': { en: 'Heavy Equipment Parts', es: 'Piezas de Equipo Pesado', img: productImg('heavyEquipment') },
+  'auto-parts': { en: 'Auto Parts', es: 'Autopartes', img: productImg('autoParts') },
+  'other-parts': { en: 'Other Parts', es: 'Otras Piezas', img: productImg('otherParts') },
+  'tooling-and-moulds': { en: 'Tooling & Moulds', es: 'Utillaje y Moldes', img: productImg('tooling') },
+  'track-bushing-and-track-pin': { en: 'Track Bushing and Track Pin', es: 'Buje y Pasador de Oruga', img: productImg('trackBushing') },
+
+  'display-rack/supermarket-display-racks': { en: 'Supermarket Display Racks', es: 'Exhibidores para Supermercados', img: productImg('supermarketRack') },
+  'display-rack/wall-mounted-storage-racks': { en: 'Pegboard & Slatwall Display Racks', es: 'Exhibidores de Pegboard y Slatwall', img: productImg('wallMountedRack') },
+  'display-rack/clothing-display-racks': { en: 'Clothing Display Racks', es: 'Exhibidores de Ropa', img: productImg('clothingRack') },
+  'display-rack/wooden-display-racks': { en: 'Wooden Display Racks', es: 'Exhibidores de Madera', img: productImg('woodenRack') },
+  'display-rack/newspaper-magazine-racks': { en: 'Display Tables & Stands', es: 'Mesas y Soportes de Exhibición', img: productImg('newspaperRack') },
+};
+
+// Resolve current product detail page (exclude /products index & 3 category pages which already have Product schema).
+const productKey = (() => {
+  const parts = Astro.url.pathname.split('/').filter(Boolean);
+  const p = parts[0] === 'es' ? parts.slice(1) : parts;
+  if (p[0] !== 'products' || p.length < 2) return null;
+  const slug = p.slice(1).join('/');
+  return Object.prototype.hasOwnProperty.call(PRODUCT_SCHEMA, slug) ? slug : null;
+})();
+const productInfo = productKey ? PRODUCT_SCHEMA[productKey] : null;
+---
+<!DOCTYPE html>
+<html lang={lang}>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content={metaDescription} />
+  <title>{siteTitle}</title>
+  <link rel="canonical" href={canonicalURL} />
+  <link rel="sitemap" href="/sitemap.xml" />
+  <meta name="generator" content={Astro.generator} />
+  {noindex && <meta name="robots" content="noindex" />}
+
+  <!-- Google tag (gtag.js) - GA4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-8B17FN8LEV"></script>
+  <script is:inline>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-8B17FN8LEV', {
+      'page_hostname': window.location.hostname,
+      'page_location': window.location.href,
+    });
+  </script>
+  <meta property="og:title" content={siteTitle} />
+  <meta property="og:description" content={metaDescription} />
+  <meta property="og:url" content={canonicalURL} />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta property="og:image" content="https://carelong.com.cn/images/og-image.jpg" />
+  <meta property="og:site_name" content="Xiamen Carelong" />
+  <link rel="icon" type="image/png" href="/images/logo.png" />
+
+  <!-- Alternate language links -->
+  <link rel="alternate" hreflang="en" href={canonical ? canonical : `https://carelong.com.cn${Astro.url.pathname.replace(/^\/es\//, '/')}`} />
+  <link rel="alternate" hreflang="es" href={canonical ? (lang === 'en' ? `https://carelong.com.cn/es${Astro.url.pathname.replace(/^\/(es)?\//, '/')}` : canonical) : `https://carelong.com.cn/es${Astro.url.pathname.replace(/^\/(es)?\//, '/')}`} />
+  <link rel="alternate" hreflang="x-default" href={canonical ? canonical : `https://carelong.com.cn${Astro.url.pathname.replace(/^\/es\//, '/')}`} />
+  
+  <!-- Global Schema.org: Organization + Website -->
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://carelong.com.cn/#organization",
+        "name": "Xiamen Carelong Co., Ltd.",
+        "alternateName": "Carelong",
+        "url": "https://carelong.com.cn",
+        "logo": "https://carelong.com.cn/images/logo.png",
+        "description": lang === 'es' ? siteConfig.descriptionEs : siteConfig.description,
+        "foundingDate": "2005",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "24/D, Hong Xiang Building, No.258, South Hubin Road",
+          "addressLocality": "Xiamen",
+          "addressCountry": "CN"
+        },
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "telephone": "+86-592-5185361",
+          "email": "Jason@carelong.com.cn",
+          "contactType": "sales",
+          "availableLanguage": ["English", "Chinese", "Spanish"]
+        },
+        "sameAs": ["https://www.linkedin.com/company/xiamen-carelong", "https://www.youtube.com/channel/UCF-M01Bbz0waIdaphthC29w"]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://carelong.com.cn/#website",
+        "url": "https://carelong.com.cn",
+        "name": "Xiamen Carelong",
+        "publisher": { "@id": "https://carelong.com.cn/#organization" }
+      },
+      {
+        "@type": "WebPage",
+        "@id": canonicalURL.toString() + "#webpage",
+        "url": canonicalURL.toString(),
+        "name": siteTitle,
+        "description": metaDescription,
+        "isPartOf": { "@id": "https://carelong.com.cn/#website" }
+      },
+      ...(hasBreadcrumbs ? [{
+        "@type": "BreadcrumbList",
+        "@id": canonicalURL.toString() + "#breadcrumb",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": isEsPath ? "Inicio" : "Home", "item": isEsPath ? "https://carelong.com.cn/es" : "https://carelong.com.cn" },
+          ...finalBreadcrumbs.map((b, i) => ({
+            "@type": "ListItem",
+            "position": i + 2,
+            "name": b.label,
+            ...(b.href ? { "item": "https://carelong.com.cn" + b.href } : {})
+          }))
+        ]
+      }] : []),
+      ...(productInfo ? [{
+        "@type": "Product",
+        "@id": canonicalURL.toString() + "#product",
+        "name": isEsPath ? productInfo.es : productInfo.en,
+        "image": new URL(productInfo.img, siteConfig.url).href,
+        "brand": { "@id": "https://carelong.com.cn/#organization" },
+        "manufacturer": { "@id": "https://carelong.com.cn/#organization" },
+        "url": canonicalURL.toString()
+      }] : [])
+    ]
+  })} />
+</head>
+<body>
+  <Header />
+  <main>
+    <slot />
+  </main>
+  <Footer />
+</body>
 </html>

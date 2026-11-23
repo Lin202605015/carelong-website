@@ -16,7 +16,7 @@ export const ui = {
     viewAllProducts:{ en: 'View All Products', es: 'Ver Todos los Productos' },
     // sub-nav
     boltsAndNuts:   { en: 'Bolts and Nuts',         es: 'Pernos y Tuercas' },
-    hubBolts:       { en: 'Hub Bolts',               es: 'Pernos de Rueda' },
+    hubBolts:       { en: 'Hub Bolts',               es: 'Pernos de Maza' },
     plowBolts:      { en: 'Plow Bolts',              es: 'Pernos de Arado' },
     trackBolts:     { en: 'Track Bolts',             es: 'Pernos de Oruga' },
     segmentBolts:   { en: 'Segment Bolts',           es: 'Pernos de Segmento' },

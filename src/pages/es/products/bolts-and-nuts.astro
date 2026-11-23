@@ -1,625 +1,625 @@
----
-
-import BaseLayout from '../../../layouts/BaseLayout.astro';
-
-import Breadcrumb from '../../../components/Breadcrumb.astro';
-
-
-
-const subcategories = [
-
-  {
-
-    slug: 'hub-bolts',
-
-    name: 'Pernos de Rueda',
-
-    image: '/images/products/bolts-and-nuts/hub-bolts/hub-bolt -(1)-v2.webp',
-
-    description: 'Pernos de alta resistencia para aplicaciones automotrices y equipos pesados. Disponibles en varios tamaños y especificaciones.',
-
-    count: 5,
-
-  },
-
-  {
-
-    slug: 'plow-bolts',
-
-    name: 'Pernos de Arado',
-
-    image: '/images/products/bolts-and-nuts/plow-bolts/plow-bolt-01-v2.webp',
-
-    description: 'Pernos de arado para tren de rodaje de maquinaria de construcción. Duraderos y confiables para aplicaciones de trabajo pesado.',
-
-    count: 5,
-
-  },
-
-  {
-
-    slug: 'track-bolts',
-
-    name: 'Pernos de Oruga',
-
-    image: '/images/products/bolts-and-nuts/track-bolts/track-bolt-01-v2.webp',
-
-    description: 'Pernos de eslabón de oruga para excavadoras y bulldozers. Alta resistencia clase 10.9 y 12.9.',
-
-    count: 5,
-
-  },
-
-  {
-
-    slug: 'segment-bolts',
-
-    name: 'Pernos de Segmento',
-
-    image: '/images/products/bolts-and-nuts/segment-bolts/segment-bolt-01-v2.webp',
-
-    description: 'Pernos de segmento para tren de rodaje de equipos pesados. Fabricados con precisión según especificaciones OEM.',
-
-    count: 5,
-
-  },
-
-  {
-
-    slug: 'hex-nuts',
-
-    name: 'Tuercas Hexagonales',
-
-    image: '/images/products/bolts-and-nuts/hex-nuts/hex-nuts-01-v2.webp',
-
-    description: 'Tuercas hexagonales estándar para uso industrial y automotriz. M6–M36, Grado 8/10, DIN 934 e ISO 4032.',
-
-    count: 5,
-
-  },
-
-  {
-
-    slug: 'flange-nuts',
-
-    name: 'Tuercas de Brida',
-
-    image: '/images/products/bolts-and-nuts/flange-nuts/flange-nuts-01-v2.webp',
-
-    description: 'Tuercas de brida hexagonales y dentadas con base de arandela integrada. M6–M24, DIN 6923, ISO 4161.',
-
-    count: 5,
-
-  },
-
-  {
-
-    slug: 'nylon-nuts',
-
-    name: 'Tuercas de Nylon',
-
-    image: '/images/products/bolts-and-nuts/nylon-nuts/nylon-nuts-01-v2.webp',
-
-    description: 'Tuercas autoblocantes con inserto de nilón para conexiones resistentes a vibraciones. M4–M24, Grado 8/10, DIN 982.',
-
-    count: 5,
-
-  },
-
-  {
-
-    slug: 'wheel-nuts',
-
-    name: 'Tuercas de Rueda',
-
-    image: '/images/products/bolts-and-nuts/wheel-nuts/wheel-nuts-01-v2.webp',
-
-    description: 'Tuercas de rueda para camiones, remolques y vehículos comerciales. M18–M27, Grado 10.9/12.9.',
-
-    count: 5,
-
-  },
-
-  {
-
-    slug: 'slotted-nuts',
-
-    name: 'Tuercas Ranuradas',
-
-    image: '/images/products/bolts-and-nuts/slotted-nuts/slotted-nuts-01-v2.webp',
-
-    description: 'Tuercas hexagonales ranuradas y de castillo para bloqueo con chaveta. M6–M36, DIN 935, ISO 7035.',
-
-    count: 5,
-
-  },
-
-];
-
-const navGroups = [
-  { slug: 'bolts-and-nuts', name: 'Pernos y Tuercas', children: [
-    { slug: 'bolts-and-nuts/hub-bolts', name: 'Pernos de Maza' },
-    { slug: 'bolts-and-nuts/plow-bolts', name: 'Pernos de Arado' },
-    { slug: 'bolts-and-nuts/track-bolts', name: 'Pernos de Oruga' },
-    { slug: 'bolts-and-nuts/segment-bolts', name: 'Pernos de Segmento' },
-    { slug: 'bolts-and-nuts/hex-nuts', name: 'Tuercas Hexagonales' },
-    { slug: 'bolts-and-nuts/flange-nuts', name: 'Tuercas de Brida' },
-    { slug: 'bolts-and-nuts/nylon-nuts', name: 'Tuercas de Nylon' },
-    { slug: 'bolts-and-nuts/wheel-nuts', name: 'Tuercas de Rueda' },
-    { slug: 'bolts-and-nuts/slotted-nuts', name: 'Tuercas Ranuradas' },
-  ]},
-  { slug: 'display-rack', name: 'Expositores y Estanterías', children: [
-    { slug: 'display-rack/supermarket-display-racks', name: 'Estanterías para Supermercados' },
-    { slug: 'display-rack/wall-mounted-storage-racks', name: 'Expositores de Pegboard y Slatwall' },
-    { slug: 'display-rack/clothing-display-racks', name: 'Expositores de Ropa' },
-    { slug: 'display-rack/wooden-display-racks', name: 'Expositores de Madera' },
-    { slug: 'display-rack/newspaper-magazine-racks', name: 'Mesas y Stands de Exhibición' },
-  ]},
-  { slug: 'stamping-parts', name: 'Piezas Estampadas', children: [{ slug: 'stamping-parts/stainless-steel-stamping', name: 'Estampado de Acero Inoxidable' }, { slug: 'stamping-parts/carbon-steel-stamping', name: 'Estampado de Acero al Carbono' }, { slug: 'stamping-parts/aluminum-alloy-stamping', name: 'Estampado de Aleación de Aluminio' }, { slug: 'stamping-parts/copper-brass-stamping', name: 'Estampado de Cobre / Latón' }, { slug: 'stamping-parts/galvanized-aluzinc-stamping', name: 'Estampado de Chapa Galvanizada y Aluzinc' }] },
-  { slug: 'die-casting-parts', name: 'Piezas de Fundición a Presión', children: [] },
-  { slug: 'forging-parts', name: 'Piezas Forjadas', children: [] },
-  { slug: 'machining-parts', name: 'Piezas Mecanizadas', children: [] },
-  { slug: 'welding-parts', name: 'Piezas Soldadas', children: [] },
-  { slug: 'plastic-rubber-parts', name: 'Piezas de Plástico y Caucho', children: [] },
-  { slug: 'tooling-and-moulds', name: 'Utillaje y Moldes', children: [] },
-  { slug: 'heavy-equipment-parts', name: 'Piezas de Equipo Pesado', children: [] },
-  { slug: 'auto-parts', name: 'Autopartes', children: [] },
-  { slug: 'other-parts', name: 'Otras Piezas', children: [] },
-];
-
-
-const productSchema = {
-  "@context": "https://schema.org",
-  "@graph": subcategories.map(cat => ({
-    "@type": "Product",
-    "name": cat.name,
-    "description": cat.description,
-    "image": "https://carelong.com.cn" + cat.image,
-    "url": "https://carelong.com.cn/es/products/bolts-and-nuts/" + cat.slug,
-    "category": "Bolts and Nuts",
-    "brand": { "@type": "Brand", "name": "Carelong" }
-  }))
-};
-const productSchemaJson = JSON.stringify(productSchema).replace(/</g, '\u003c');
----
-
-
-
-<BaseLayout
-
-  lang="es"
-
-  title="Pernos y Tuercas — Fabricante y Exportador | Carelong"
-
-  description="Fabricante de pernos y tuercas de calidad. Pernos de rueda, pernos de arado, pernos de oruga, pernos de segmento, tuercas de brida, tuercas hexagonales, tuercas de nilón, tuercas de rueda, bridas, tornillos."
-
->
-
-  <Breadcrumb items={[
-
-    { label: 'Productos', href: '/es/products' },
-
-    { label: 'Pernos y Tuercas' }
-
-  ]} />
-
-
-
-  <header class="page-header">
-
-    <div class="container">
-
-      <h1>Pernos y Tuercas</h1>
-
-      <p>Pernos y tuercas de calidad para aplicaciones automotrices, de construcción e industriales.</p>
-
-    </div>
-
-  </header>
-
-
-
-  <section class="section products-section">
-        <aside class="product-sidebar">
-        <nav class="product-nav" aria-label="Categorías de Productos">
-          <p class="product-nav-title">Categorías de Productos</p>
-          <ul>
-            {navGroups.map(g => (
-              g.children.length > 0 ? (
-                <li class="nav-group">
-                  <div class="nav-group-head">
-                    <a href={`/es/products/${g.slug}`} class="nav-link">{g.name}</a>
-                    <span class="nav-count">{g.children.length}</span>
-                    <button class="nav-toggle" type="button" aria-expanded="false" aria-label={`Toggle ${g.name} subcategories`}>▸</button>
-                  </div>
-                  <ul class="nav-sublist">
-                    {g.children.map(ch => (
-                      <li><a href={`/es/products/${ch.slug}`} class="nav-sublink">{ch.name}</a></li>
-                    ))}
-                  </ul>
-                </li>
-              ) : (
-                <li><a href={`/es/products/${g.slug}`} class="nav-link">{g.name}</a></li>
-              )
-            ))}
-          </ul>
-        </nav>
-      </aside>
-
-    <div class="container">
-
-      <header class="section-header">
-
-        <p class="eyebrow">Categorías de Producto</p>
-
-        <h2>Pernos y Tuercas</h2>
-
-        <p class="section-desc">Fabricamos una amplia gama de pernos y tuercas de alta resistencia para diversas aplicaciones. Seleccione una categoría a continuación para ver nuestros productos.</p>
-
-      </header>
-
-
-
-      <div class="subcategory-grid">
-
-        {subcategories.map(cat => (
-
-          <a href={`/es/products/bolts-and-nuts/${cat.slug}`} class="subcategory-card">
-
-            <div class="card-image">
-
-              <img src={cat.image} alt={cat.name} loading="lazy" />
-
-            </div>
-
-            <div class="card-body">
-
-              <span class="product-count">{cat.count} productos</span>
-
-              <h3>{cat.name}</h3>
-
-              <p>{cat.description}</p>
-
-              <span class="btn btn-primary btn-sm">
-
-                Ver Productos
-
-                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-
-                  <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-
-                </svg>
-
-              </span>
-
-            </div>
-
-          </a>
-
-        ))}
-
-      </div>
-
-    </div>
-
-  </section>
-
-
-
-  <section class="section section-alt">
-
-    <div class="container">
-
-      <header class="section-header">
-
-        <p class="eyebrow">Nuestras Capacidades</p>
-
-        <h2>¿Por qué elegir los Pernos y Tuercas de Carelong?</h2>
-
-      </header>
-
-      <div class="features-grid">
-
-        <div class="feature-item">
-
-          <div class="feature-icon">🏭</div>
-
-          <h3>Fabricación de Precisión</h3>
-
-          <p>Los procesos de estampado en frío y forja en caliente garantizan propiedades mecánicas superiores y precisión dimensional para cada perno y tuerca.</p>
-
-        </div>
-
-        <div class="feature-item">
-
-          <div class="feature-icon">🔬</div>
-
-          <h3>Calidad Comprobada</h3>
-
-          <p>Cada lote se somete a pruebas de dureza, tracción e inspección dimensional para cumplir con los estándares internacionales.</p>
-
-        </div>
-
-        <div class="feature-item">
-
-          <div class="feature-icon">📐</div>
-
-          <h3>Especificaciones Personalizadas</h3>
-
-          <p>Disponibles tamaños, materiales, tratamientos superficiales y empaques personalizados. Servicios OEM y ODM para requisitos específicos.</p>
-
-        </div>
-
-        <div class="feature-item">
-
-          <div class="feature-icon">🚚</div>
-
-          <h3>Entrega Confiable</h3>
-
-          <p>Nuestras alianzas logísticas establecidas aseguran que sus pedidos lleguen a tiempo, siempre — a Norteamérica, Europa y más allá.</p>
-
-        </div>
-
-      </div>
-
-    </div>
-
-  </section>
-
-
-
-  <section class="section cta-band">
-
-    <div class="container text-center">
-
-      <h2>¿Necesita Pernos y Tuercas?</h2>
-
-      <p>Contáctenos para especificaciones, muestras y precios competitivos. Disponibles tamaños OEM y personalizados.</p>
-
-      <div class="cta-actions">
-
-        <a href="/es/contact" class="btn btn-primary btn-lg">Solicitar Cotización</a>
-
-        <a href="mailto:Jason@carelong.com.cn?subject=Consulta%20de%20Producto%20-%20Carelong%20Website" class="btn btn-outline-white btn-lg">Envíenos un Email</a>
-
-      </div>
-
-    </div>
-
-  </section>
-
-<script>
-  document.querySelectorAll('.product-nav .nav-toggle').forEach(function (btn) {
-    btn.addEventListener('click', function () {
-      var group = btn.closest('.nav-group');
-      var isOpen = group.classList.toggle('open');
-      btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-    });
-  });
-</script>
-
-<script type="application/ld+json" is:inline set:html={productSchemaJson}></script>
-</BaseLayout>
-
-
-
-<style>
-
-
-/* Product Sidebar (sticky floating nav) — same as /products */
-.products-section {
-  display: grid;
-  grid-template-columns: 230px 1fr;
-  gap: var(--space-8);
-  align-items: start;
-  max-width: calc(230px + var(--space-8) + var(--container-max) + 2 * var(--space-6));
-  margin: 0 auto;
-  padding-left: var(--space-6);
-  padding-right: var(--space-6);
-}
-
-.products-section > .container {
-  max-width: none;
-  margin: 0;
-  width: 100%;
-}
-
-.product-sidebar {
-  position: sticky;
-  top: 84px;
-  align-self: start;
-}
-
-.product-nav {
-  background: var(--color-bg);
-  border: 1px solid var(--color-border);
-  border-radius: 16px;
-  padding: 1.25rem;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
-}
-
-.product-nav-title {
-  font-size: 0.8125rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  color: var(--color-text-light);
-  margin: 0 0 var(--space-3);
-}
-
-.product-nav > ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-1);
-}
-
-.product-nav a {
-  display: block;
-  padding: 0.5rem 0.75rem;
-  border-radius: 8px;
-  color: var(--color-text);
-  text-decoration: none;
-  font-size: 0.9375rem;
-  font-weight: 500;
-  transition: background 0.15s ease, color 0.15s ease;
-}
-
-.product-nav a:hover {
-  background: rgba(27, 75, 142, 0.08);
-  color: var(--color-primary);
-}
-
-.product-nav a.active {
-  background: var(--color-primary);
-  color: #fff;
-}
-
-.product-nav .nav-group-head {
-  display: flex;
-  align-items: center;
-  gap: 0.35rem;
-}
-
-.product-nav .nav-link {
-  flex: 1;
-  display: block;
-  padding: 0.5rem 0.75rem;
-  border-radius: 8px;
-  color: var(--color-text);
-  text-decoration: none;
-  font-size: 0.9375rem;
-  font-weight: 500;
-  transition: background 0.15s ease, color 0.15s ease;
-}
-
-.product-nav .nav-link:hover {
-  background: rgba(27, 75, 142, 0.08);
-  color: var(--color-primary);
-}
-
-.product-nav .nav-count {
-  flex-shrink: 0;
-  font-size: 0.6875rem;
-  font-weight: 700;
-  color: var(--color-primary);
-  background: rgba(27, 75, 142, 0.08);
-  padding: 0.1rem 0.45rem;
-  border-radius: 100px;
-  min-width: 1.4rem;
-  text-align: center;
-}
-
-.product-nav .nav-toggle {
-  flex-shrink: 0;
-  border: none;
-  background: transparent;
-  cursor: pointer;
-  font-size: 0.7rem;
-  line-height: 1;
-  color: var(--color-text-light);
-  padding: 0.35rem;
-  border-radius: 6px;
-  transition: transform 0.15s ease, background 0.15s ease;
-}
-
-.product-nav .nav-toggle:hover {
-  background: rgba(27, 75, 142, 0.08);
-}
-
-.product-nav .nav-group.open .nav-toggle {
-  transform: rotate(90deg);
-}
-
-.product-nav .nav-sublist {
-  list-style: none;
-  margin: 0;
-  padding: 0 0 0 0.5rem;
-  display: none;
-}
-
-.product-nav .nav-group.open .nav-sublist {
-  display: block;
-}
-
-.product-nav .nav-sublink {
-  display: block;
-  padding: 0.4rem 0.75rem 0.4rem 1.25rem;
-  border-radius: 8px;
-  color: var(--color-text-light);
-  text-decoration: none;
-  font-size: 0.875rem;
-  transition: background 0.15s ease, color 0.15s ease;
-}
-
-.product-nav .nav-sublink:hover {
-  background: rgba(27, 75, 142, 0.08);
-  color: var(--color-primary);
-}
-
-@media (max-width: 1024px) {
-  .products-section { grid-template-columns: 1fr; }
-  .product-sidebar { position: static; margin-bottom: var(--space-6); }
-}
-
-.eyebrow { font-size: 0.8125rem; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; color: var(--color-secondary); margin-bottom: var(--space-3); }
-
-.section-header { text-align: center; margin-bottom: var(--space-12); }
-
-.section-desc { color: var(--color-text-light); max-width: 640px; margin: var(--space-4) auto 0; }
-
-.subcategory-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-6); }
-
-.subcategory-card { background: #fff; border: 1px solid var(--color-border); border-radius: var(--radius-lg); overflow: hidden; text-decoration: none; color: inherit; transition: transform 0.2s, box-shadow 0.2s; }
-
-.subcategory-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
-
-.card-image { height: 200px; background: #fff; display: flex; align-items: center; justify-content: center; }
-
-.card-image img { max-width: 90%; max-height: 90%; object-fit: contain; }
-
-.card-body { padding: var(--space-6); }
-
-.product-count { display: inline-block; background: rgba(27, 75, 142, 0.08); color: var(--color-primary); padding: var(--space-1) var(--space-3); border-radius: 100px; font-size: 0.75rem; font-weight: 600; margin-bottom: var(--space-3); }
-
-.card-body h3 { font-size: 1.25rem; margin-bottom: var(--space-3); color: var(--color-text); }
-
-.card-body p { color: var(--color-text-light); font-size: 0.9375rem; line-height: 1.6; margin-bottom: var(--space-4); }
-
-.features-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--space-8); }
-
-.feature-item { text-align: center; }
-
-.feature-icon { font-size: 2.5rem; margin-bottom: var(--space-4); }
-
-.feature-item h3 { font-size: 1.125rem; margin-bottom: var(--space-3); }
-
-.feature-item p { color: var(--color-text-light); font-size: 0.9375rem; line-height: 1.6; }
-
-.cta-band { background: var(--color-primary); color: #fff; }
-
-.cta-band h2 { color: #fff; margin-bottom: var(--space-4); }
-
-.cta-band p { color: rgba(255,255,255,0.85); font-size: 1.125rem; margin-bottom: var(--space-6); }
-
-.cta-actions { display: flex; gap: var(--space-4); justify-content: center; flex-wrap: wrap; }
-
-@media (max-width: 1024px) {
-
-  .subcategory-grid { grid-template-columns: repeat(2, 1fr); }
-
-  .features-grid { grid-template-columns: repeat(2, 1fr); }
-
-}
-
-@media (max-width: 640px) {
-
-  .subcategory-grid { grid-template-columns: 1fr; }
-
-  .features-grid { grid-template-columns: 1fr; }
-
-}
-
-</style>
+---
+
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+
+import Breadcrumb from '../../../components/Breadcrumb.astro';
+
+
+
+const subcategories = [
+
+  {
+
+    slug: 'hub-bolts',
+
+    name: 'Pernos de Maza',
+
+    image: '/images/products/bolts-and-nuts/hub-bolts/hub-bolt -(1)-v2.webp',
+
+    description: 'Pernos de alta resistencia para aplicaciones automotrices y equipos pesados. Disponibles en varios tamaños y especificaciones.',
+
+    count: 5,
+
+  },
+
+  {
+
+    slug: 'plow-bolts',
+
+    name: 'Pernos de Arado',
+
+    image: '/images/products/bolts-and-nuts/plow-bolts/plow-bolt-01-v2.webp',
+
+    description: 'Pernos de arado para tren de rodaje de maquinaria de construcción. Duraderos y confiables para aplicaciones de trabajo pesado.',
+
+    count: 5,
+
+  },
+
+  {
+
+    slug: 'track-bolts',
+
+    name: 'Pernos de Oruga',
+
+    image: '/images/products/bolts-and-nuts/track-bolts/track-bolt-01-v2.webp',
+
+    description: 'Pernos de eslabón de oruga para excavadoras y bulldozers. Alta resistencia clase 10.9 y 12.9.',
+
+    count: 5,
+
+  },
+
+  {
+
+    slug: 'segment-bolts',
+
+    name: 'Pernos de Segmento',
+
+    image: '/images/products/bolts-and-nuts/segment-bolts/segment-bolt-01-v2.webp',
+
+    description: 'Pernos de segmento para tren de rodaje de equipos pesados. Fabricados con precisión según especificaciones OEM.',
+
+    count: 5,
+
+  },
+
+  {
+
+    slug: 'hex-nuts',
+
+    name: 'Tuercas Hexagonales',
+
+    image: '/images/products/bolts-and-nuts/hex-nuts/hex-nuts-01-v2.webp',
+
+    description: 'Tuercas hexagonales estándar para uso industrial y automotriz. M6–M36, Grado 8/10, DIN 934 e ISO 4032.',
+
+    count: 5,
+
+  },
+
+  {
+
+    slug: 'flange-nuts',
+
+    name: 'Tuercas de Brida',
+
+    image: '/images/products/bolts-and-nuts/flange-nuts/flange-nuts-01-v2.webp',
+
+    description: 'Tuercas de brida hexagonales y dentadas con base de arandela integrada. M6–M24, DIN 6923, ISO 4161.',
+
+    count: 5,
+
+  },
+
+  {
+
+    slug: 'nylon-nuts',
+
+    name: 'Tuercas de Nylon',
+
+    image: '/images/products/bolts-and-nuts/nylon-nuts/nylon-nuts-01-v2.webp',
+
+    description: 'Tuercas autoblocantes con inserto de nilón para conexiones resistentes a vibraciones. M4–M24, Grado 8/10, DIN 982.',
+
+    count: 5,
+
+  },
+
+  {
+
+    slug: 'wheel-nuts',
+
+    name: 'Tuercas de Rueda',
+
+    image: '/images/products/bolts-and-nuts/wheel-nuts/wheel-nuts-01-v2.webp',
+
+    description: 'Tuercas de rueda para camiones, remolques y vehículos comerciales. M18–M27, Grado 10.9/12.9.',
+
+    count: 5,
+
+  },
+
+  {
+
+    slug: 'slotted-nuts',
+
+    name: 'Tuercas Ranuradas',
+
+    image: '/images/products/bolts-and-nuts/slotted-nuts/slotted-nuts-01-v2.webp',
+
+    description: 'Tuercas hexagonales ranuradas y de castillo para bloqueo con chaveta. M6–M36, DIN 935, ISO 7035.',
+
+    count: 5,
+
+  },
+
+];
+
+const navGroups = [
+  { slug: 'bolts-and-nuts', name: 'Pernos y Tuercas', children: [
+    { slug: 'bolts-and-nuts/hub-bolts', name: 'Pernos de Maza' },
+    { slug: 'bolts-and-nuts/plow-bolts', name: 'Pernos de Arado' },
+    { slug: 'bolts-and-nuts/track-bolts', name: 'Pernos de Oruga' },
+    { slug: 'bolts-and-nuts/segment-bolts', name: 'Pernos de Segmento' },
+    { slug: 'bolts-and-nuts/hex-nuts', name: 'Tuercas Hexagonales' },
+    { slug: 'bolts-and-nuts/flange-nuts', name: 'Tuercas de Brida' },
+    { slug: 'bolts-and-nuts/nylon-nuts', name: 'Tuercas de Nylon' },
+    { slug: 'bolts-and-nuts/wheel-nuts', name: 'Tuercas de Rueda' },
+    { slug: 'bolts-and-nuts/slotted-nuts', name: 'Tuercas Ranuradas' },
+  ]},
+  { slug: 'display-rack', name: 'Expositores y Estanterías', children: [
+    { slug: 'display-rack/supermarket-display-racks', name: 'Estanterías para Supermercados' },
+    { slug: 'display-rack/wall-mounted-storage-racks', name: 'Expositores de Pegboard y Slatwall' },
+    { slug: 'display-rack/clothing-display-racks', name: 'Expositores de Ropa' },
+    { slug: 'display-rack/wooden-display-racks', name: 'Expositores de Madera' },
+    { slug: 'display-rack/newspaper-magazine-racks', name: 'Mesas y Stands de Exhibición' },
+  ]},
+  { slug: 'stamping-parts', name: 'Piezas Estampadas', children: [{ slug: 'stamping-parts/stainless-steel-stamping', name: 'Estampado de Acero Inoxidable' }, { slug: 'stamping-parts/carbon-steel-stamping', name: 'Estampado de Acero al Carbono' }, { slug: 'stamping-parts/aluminum-alloy-stamping', name: 'Estampado de Aleación de Aluminio' }, { slug: 'stamping-parts/copper-brass-stamping', name: 'Estampado de Cobre / Latón' }, { slug: 'stamping-parts/galvanized-aluzinc-stamping', name: 'Estampado de Chapa Galvanizada y Aluzinc' }] },
+  { slug: 'die-casting-parts', name: 'Piezas de Fundición a Presión', children: [] },
+  { slug: 'forging-parts', name: 'Piezas Forjadas', children: [] },
+  { slug: 'machining-parts', name: 'Piezas Mecanizadas', children: [] },
+  { slug: 'welding-parts', name: 'Piezas Soldadas', children: [] },
+  { slug: 'plastic-rubber-parts', name: 'Piezas de Plástico y Caucho', children: [] },
+  { slug: 'tooling-and-moulds', name: 'Utillaje y Moldes', children: [] },
+  { slug: 'heavy-equipment-parts', name: 'Piezas de Equipo Pesado', children: [] },
+  { slug: 'auto-parts', name: 'Autopartes', children: [] },
+  { slug: 'other-parts', name: 'Otras Piezas', children: [] },
+];
+
+
+const productSchema = {
+  "@context": "https://schema.org",
+  "@graph": subcategories.map(cat => ({
+    "@type": "Product",
+    "name": cat.name,
+    "description": cat.description,
+    "image": "https://carelong.com.cn" + cat.image,
+    "url": "https://carelong.com.cn/es/products/bolts-and-nuts/" + cat.slug,
+    "category": "Bolts and Nuts",
+    "brand": { "@type": "Brand", "name": "Carelong" }
+  }))
+};
+const productSchemaJson = JSON.stringify(productSchema).replace(/</g, '\u003c');
+---
+
+
+
+<BaseLayout
+
+  lang="es"
+
+  title="Pernos y Tuercas — Fabricante y Exportador | Carelong"
+
+  description="Fabricante de pernos y tuercas de calidad. Pernos de rueda, pernos de arado, pernos de oruga, pernos de segmento, tuercas de brida, tuercas hexagonales, tuercas de nilón, tuercas de rueda, bridas, tornillos."
+
+>
+
+  <Breadcrumb items={[
+
+    { label: 'Productos', href: '/es/products' },
+
+    { label: 'Pernos y Tuercas' }
+
+  ]} />
+
+
+
+  <header class="page-header">
+
+    <div class="container">
+
+      <h1>Pernos y Tuercas</h1>
+
+      <p>Pernos y tuercas de calidad para aplicaciones automotrices, de construcción e industriales.</p>
+
+    </div>
+
+  </header>
+
+
+
+  <section class="section products-section">
+        <aside class="product-sidebar">
+        <nav class="product-nav" aria-label="Categorías de Productos">
+          <p class="product-nav-title">Categorías de Productos</p>
+          <ul>
+            {navGroups.map(g => (
+              g.children.length > 0 ? (
+                <li class="nav-group">
+                  <div class="nav-group-head">
+                    <a href={`/es/products/${g.slug}`} class="nav-link">{g.name}</a>
+                    <span class="nav-count">{g.children.length}</span>
+                    <button class="nav-toggle" type="button" aria-expanded="false" aria-label={`Toggle ${g.name} subcategories`}>▸</button>
+                  </div>
+                  <ul class="nav-sublist">
+                    {g.children.map(ch => (
+                      <li><a href={`/es/products/${ch.slug}`} class="nav-sublink">{ch.name}</a></li>
+                    ))}
+                  </ul>
+                </li>
+              ) : (
+                <li><a href={`/es/products/${g.slug}`} class="nav-link">{g.name}</a></li>
+              )
+            ))}
+          </ul>
+        </nav>
+      </aside>
+
+    <div class="container">
+
+      <header class="section-header">
+
+        <p class="eyebrow">Categorías de Producto</p>
+
+        <h2>Pernos y Tuercas</h2>
+
+        <p class="section-desc">Fabricamos una amplia gama de pernos y tuercas de alta resistencia para diversas aplicaciones. Seleccione una categoría a continuación para ver nuestros productos.</p>
+
+      </header>
+
+
+
+      <div class="subcategory-grid">
+
+        {subcategories.map(cat => (
+
+          <a href={`/es/products/bolts-and-nuts/${cat.slug}`} class="subcategory-card">
+
+            <div class="card-image">
+
+              <img src={cat.image} alt={cat.name} loading="lazy" />
+
+            </div>
+
+            <div class="card-body">
+
+              <span class="product-count">{cat.count} productos</span>
+
+              <h3>{cat.name}</h3>
+
+              <p>{cat.description}</p>
+
+              <span class="btn btn-primary btn-sm">
+
+                Ver Productos
+
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+
+                  <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+
+                </svg>
+
+              </span>
+
+            </div>
+
+          </a>
+
+        ))}
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+
+  <section class="section section-alt">
+
+    <div class="container">
+
+      <header class="section-header">
+
+        <p class="eyebrow">Nuestras Capacidades</p>
+
+        <h2>¿Por qué elegir los Pernos y Tuercas de Carelong?</h2>
+
+      </header>
+
+      <div class="features-grid">
+
+        <div class="feature-item">
+
+          <div class="feature-icon">🏭</div>
+
+          <h3>Fabricación de Precisión</h3>
+
+          <p>Los procesos de estampado en frío y forja en caliente garantizan propiedades mecánicas superiores y precisión dimensional para cada perno y tuerca.</p>
+
+        </div>
+
+        <div class="feature-item">
+
+          <div class="feature-icon">🔬</div>
+
+          <h3>Calidad Comprobada</h3>
+
+          <p>Cada lote se somete a pruebas de dureza, tracción e inspección dimensional para cumplir con los estándares internacionales.</p>
+
+        </div>
+
+        <div class="feature-item">
+
+          <div class="feature-icon">📐</div>
+
+          <h3>Especificaciones Personalizadas</h3>
+
+          <p>Disponibles tamaños, materiales, tratamientos superficiales y empaques personalizados. Servicios OEM y ODM para requisitos específicos.</p>
+
+        </div>
+
+        <div class="feature-item">
+
+          <div class="feature-icon">🚚</div>
+
+          <h3>Entrega Confiable</h3>
+
+          <p>Nuestras alianzas logísticas establecidas aseguran que sus pedidos lleguen a tiempo, siempre — a Norteamérica, Europa y más allá.</p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+
+  <section class="section cta-band">
+
+    <div class="container text-center">
+
+      <h2>¿Necesita Pernos y Tuercas?</h2>
+
+      <p>Contáctenos para especificaciones, muestras y precios competitivos. Disponibles tamaños OEM y personalizados.</p>
+
+      <div class="cta-actions">
+
+        <a href="/es/contact" class="btn btn-primary btn-lg">Solicitar Cotización</a>
+
+        <a href="mailto:Jason@carelong.com.cn?subject=Consulta%20de%20Producto%20-%20Carelong%20Website" class="btn btn-outline-white btn-lg">Envíenos un Email</a>
+
+      </div>
+
+    </div>
+
+  </section>
+
+<script>
+  document.querySelectorAll('.product-nav .nav-toggle').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var group = btn.closest('.nav-group');
+      var isOpen = group.classList.toggle('open');
+      btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    });
+  });
+</script>
+
+<script type="application/ld+json" is:inline set:html={productSchemaJson}></script>
+</BaseLayout>
+
+
+
+<style>
+
+
+/* Product Sidebar (sticky floating nav) — same as /products */
+.products-section {
+  display: grid;
+  grid-template-columns: 230px 1fr;
+  gap: var(--space-8);
+  align-items: start;
+  max-width: calc(230px + var(--space-8) + var(--container-max) + 2 * var(--space-6));
+  margin: 0 auto;
+  padding-left: var(--space-6);
+  padding-right: var(--space-6);
+}
+
+.products-section > .container {
+  max-width: none;
+  margin: 0;
+  width: 100%;
+}
+
+.product-sidebar {
+  position: sticky;
+  top: 84px;
+  align-self: start;
+}
+
+.product-nav {
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: 16px;
+  padding: 1.25rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+}
+
+.product-nav-title {
+  font-size: 0.8125rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--color-text-light);
+  margin: 0 0 var(--space-3);
+}
+
+.product-nav > ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.product-nav a {
+  display: block;
+  padding: 0.5rem 0.75rem;
+  border-radius: 8px;
+  color: var(--color-text);
+  text-decoration: none;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.product-nav a:hover {
+  background: rgba(27, 75, 142, 0.08);
+  color: var(--color-primary);
+}
+
+.product-nav a.active {
+  background: var(--color-primary);
+  color: #fff;
+}
+
+.product-nav .nav-group-head {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.product-nav .nav-link {
+  flex: 1;
+  display: block;
+  padding: 0.5rem 0.75rem;
+  border-radius: 8px;
+  color: var(--color-text);
+  text-decoration: none;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.product-nav .nav-link:hover {
+  background: rgba(27, 75, 142, 0.08);
+  color: var(--color-primary);
+}
+
+.product-nav .nav-count {
+  flex-shrink: 0;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  background: rgba(27, 75, 142, 0.08);
+  padding: 0.1rem 0.45rem;
+  border-radius: 100px;
+  min-width: 1.4rem;
+  text-align: center;
+}
+
+.product-nav .nav-toggle {
+  flex-shrink: 0;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  font-size: 0.7rem;
+  line-height: 1;
+  color: var(--color-text-light);
+  padding: 0.35rem;
+  border-radius: 6px;
+  transition: transform 0.15s ease, background 0.15s ease;
+}
+
+.product-nav .nav-toggle:hover {
+  background: rgba(27, 75, 142, 0.08);
+}
+
+.product-nav .nav-group.open .nav-toggle {
+  transform: rotate(90deg);
+}
+
+.product-nav .nav-sublist {
+  list-style: none;
+  margin: 0;
+  padding: 0 0 0 0.5rem;
+  display: none;
+}
+
+.product-nav .nav-group.open .nav-sublist {
+  display: block;
+}
+
+.product-nav .nav-sublink {
+  display: block;
+  padding: 0.4rem 0.75rem 0.4rem 1.25rem;
+  border-radius: 8px;
+  color: var(--color-text-light);
+  text-decoration: none;
+  font-size: 0.875rem;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.product-nav .nav-sublink:hover {
+  background: rgba(27, 75, 142, 0.08);
+  color: var(--color-primary);
+}
+
+@media (max-width: 1024px) {
+  .products-section { grid-template-columns: 1fr; }
+  .product-sidebar { position: static; margin-bottom: var(--space-6); }
+}
+
+.eyebrow { font-size: 0.8125rem; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; color: var(--color-secondary); margin-bottom: var(--space-3); }
+
+.section-header { text-align: center; margin-bottom: var(--space-12); }
+
+.section-desc { color: var(--color-text-light); max-width: 640px; margin: var(--space-4) auto 0; }
+
+.subcategory-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-6); }
+
+.subcategory-card { background: #fff; border: 1px solid var(--color-border); border-radius: var(--radius-lg); overflow: hidden; text-decoration: none; color: inherit; transition: transform 0.2s, box-shadow 0.2s; }
+
+.subcategory-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
+
+.card-image { height: 200px; background: #fff; display: flex; align-items: center; justify-content: center; }
+
+.card-image img { max-width: 90%; max-height: 90%; object-fit: contain; }
+
+.card-body { padding: var(--space-6); }
+
+.product-count { display: inline-block; background: rgba(27, 75, 142, 0.08); color: var(--color-primary); padding: var(--space-1) var(--space-3); border-radius: 100px; font-size: 0.75rem; font-weight: 600; margin-bottom: var(--space-3); }
+
+.card-body h3 { font-size: 1.25rem; margin-bottom: var(--space-3); color: var(--color-text); }
+
+.card-body p { color: var(--color-text-light); font-size: 0.9375rem; line-height: 1.6; margin-bottom: var(--space-4); }
+
+.features-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--space-8); }
+
+.feature-item { text-align: center; }
+
+.feature-icon { font-size: 2.5rem; margin-bottom: var(--space-4); }
+
+.feature-item h3 { font-size: 1.125rem; margin-bottom: var(--space-3); }
+
+.feature-item p { color: var(--color-text-light); font-size: 0.9375rem; line-height: 1.6; }
+
+.cta-band { background: var(--color-primary); color: #fff; }
+
+.cta-band h2 { color: #fff; margin-bottom: var(--space-4); }
+
+.cta-band p { color: rgba(255,255,255,0.85); font-size: 1.125rem; margin-bottom: var(--space-6); }
+
+.cta-actions { display: flex; gap: var(--space-4); justify-content: center; flex-wrap: wrap; }
+
+@media (max-width: 1024px) {
+
+  .subcategory-grid { grid-template-columns: repeat(2, 1fr); }
+
+  .features-grid { grid-template-columns: repeat(2, 1fr); }
+
+}
+
+@media (max-width: 640px) {
+
+  .subcategory-grid { grid-template-columns: 1fr; }
+
+  .features-grid { grid-template-columns: 1fr; }
+
+}
+
+</style>
